@@ -1,0 +1,100 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-13T00:01:08-05:00
+
+====== User Authentication and Login ======
+Created Sunday 13 December 2020
+
+**pip install flask-bcrypt**
+**from flask_bcrypt import Bcrypt**
+
+#create an instance of the Bcrypt class
+
+**bcrypt = Bcrypt()**
+#generate a password hash
+**bcrypt.generate_password_hash('testing')**
+	**b**'sflk2h22rhwgfoih2t5p2p[]wtjpwhew'	#**fake password hash:)**
+
+#**b** means it is in bites; if you want a string, use **bcrypt.generate_password_hash('testing').decode('utf-8')**
+
+Each time the above is run, even with the same password, it gives a different hash. How can we verify if the password is correct?
+
+**Check to verify password:**
+	**hashed_pw = bcrypt.generate_password_hash('testing')**
+		**b**'iljwiopihj23-2-u-twu9j-9weut-0tr2ujr0wjhsdj'
+	
+	**bcrypt.check_password_hash(hashed_pw, 'password')**
+		returns **False** since the original password was **testing**
+	**bcrypt.check_password_hash(hashed_pw, 'testing')**
+		returns **True** since it matches the original password
+	
+	{{.\pasted_image.png}}
+	
+
+**Step 1:**
+	in "__init__.py" file:
+		**from flask_bcrypt import Bcrypt**
+		under the **db = SQLAlchemy(app)** line:
+			**bcrypt = Bcrypt()**
+
+**Step 2:**
+	in routes.py:
+		**from flaskblog import app, db, bcrypt**
+	
+	in the "register" route:
+		**if form.validate_on_submit():**
+			**hashed_password = generate_password_hash(form.password.data).decode('utf-8')**
+
+
+**Step 3 - initialize a new user in the SQLite Database:**
+	in "routes.py"'s "register" route:
+		if form.validate_on_submit():
+			hashed_password = generate_password_hash(form.password.data).decode('utf-8')
+				**user = User(username=form.username.data, email=form.email.data, password= hashed_password)**
+			**db.session.add(user)**
+			**db.session.commit()**
+			#NOTE: NEVER pass in the raw password to the DB
+			
+**Step 4 - How to Handle a signup with information that already exists:**
+	@app.route('/register', methods=['GET', 'POST']
+	in **forms.py:**
+		**add function to "class RegistrationForm(Flaskform):**
+			**def validate_field(self, field):**
+				**if True:**
+					**raise ValidationError('Validation Message')**
+
+
+
+**Step 5 - How to Handle User Logins:**
+	pip install flask_login
+	
+	in "**__init__.py":**
+		**from flask_login import [[LoginManager]]**
+		create an instance of the "LoginManager" in the **__init__.py** file, just below the **Bcrypt()** instance
+	{{.\pasted_image001.png}}
+	
+	over in **models.py**, import the login_manager instance:
+		**from flaskblog import login_manager**
+	
+	in **models.py**, create a decorated function that will know how to access user id information:
+		from flask_login import "UserMixin"
+		allow the User class to also inherit from UserMixin
+		{{.\pasted_image003.png}}
+	
+	go to **routes.py** and **from flask_login import __login_user__**
+		change the logic of the the "login" route so that if the form data is valid, we check to see if the user's form data (**email and password)** are in the database. If not, it will flash an error message. If so, it will redirect them to the home page.
+		**NOTE** that the __login_user__ import from **flask_login** will actually log the user in.
+		
+		{{.\pasted_image004.png}}
+	
+	**Handle the case of a User going to the Login page again after already being logged in:**
+		**from flask_login import current_user**
+		At the top of the __login__ and __register__ routes, add in an if statement to see if the user is authenticated. If so, redirect to the home page.
+		
+		{{.\pasted_image005.png}}
+		
+
+
+
+**Create a Logout Route and Display it in Navigation:**
+

@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-04T22:56:20-04:00
+
+====== Testing Redirects ======
+Created Sunday 04 July 2021
+
+You can test for a redirect simply by checking to see if the status code is 302, but you can also check to see that the **redirect follows through:**
+
+**Example:**
+	def test_redirection_followed(self):
+		with app.test_client() as client:
+			resp = client.get('/redirect-me', **follow_redirects=True**)
+			html = resp.get_data(as_text=True)
+			
+			self.assertEqual(resp.status_code, 200)
+			self.assertIn('<h1>Color Form</h1>', html)
+			self.assertEqual(urlparse(resp.location).path, '/my_new_path')
+			
+
+

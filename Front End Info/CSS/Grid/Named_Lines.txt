@@ -1,0 +1,65 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-12T11:34:02-04:00
+
+====== Named Lines ======
+Created Wednesday 12 May 2021
+
+Suppose you have a container with the following:
+	**grid-template-columns: 1fr 5fr;**
+	
+	
+And a header class with the following:
+	**.header {**
+		**grid-column: 1 / 3;**
+	**}**
+	
+
+
+Another way to refer to these values is to make them into **named lines**.
+
+**Example:**
+	**.container {**
+		**grid-template-columns: 1fr [content-start] 5fr [content-end];**
+	**}**
+	
+	
+	**.header {**
+		**grid-column: content-start / content-end;**
+	**}**
+
+
+This makes it easier to refer to those lines, rather than just using somewhat random numbers.
+
+
+
+**Referring to More than One Class with Named Lines:**
+	- say I want to be able to use named lines with both the header AND the footer. I can't use **content-start** twice; the HTML won't understand it.
+	
+	- instead, I can give it more than one name:
+	**.container {**
+		**grid-template-columns: [footer-start] 1fr [content-start] 5fr [content-end footer-end];**
+	**}**
+	
+	
+	**.header {**
+		**grid-column: content-start / content-end;**
+	**}**
+
+	
+	**.footer {**
+		**grid-column: footer-start / footer-end;**
+	**}**
+	
+	
+	
+	**NOTE: **Because they both refer to the same thing, you could use:
+		**.header {**
+			**grid-column: content;**
+		**}**
+		
+		
+		**.footer {**
+			**grid-column: footer;**
+		**}**
+

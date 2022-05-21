@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-19T13:43:49-05:00
+
+====== Composition ======
+Created Saturday 19 February 2022
+
+Composition refers to the idea of having several classes make up one larger object. These classes typically do not inherit from a Superclass, though there's nothing that says they can't.
+
+**Brief Example:**
+	- let's say we were going to program a bedroom
+	- You might need: walls, bed, lamp, ceiling
+	
+	- each of the types below is another class, and not a primitive type
+	
+public class Bedroom {
+	private Wall wall1;
+	private Wall wall2;
+	private Wall wall3;
+	private Wall wall4;
+	private Bed bed;
+	private Lamp lamp;
+	private Ceiling ceiling;
+	
+	public Bedroom(Wall wall1, ....) {
+		this.wall1 = wall1;
+		this.wall2 = wall2;
+		**// continue with the rest...**
+	}
+	
+	public void makeBed() {
+		bed.makeBed();
+	}
+	
+	public Lamp getLamp() {
+		return lamp;
+	}
+}
+

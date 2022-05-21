@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-25T23:57:30-04:00
+
+====== Uses of Trees ======
+Created Friday 25 September 2020
+
+**Common Uses for Trees in Computer Science:**
+	- **Hierarchical data** (file structure systems, family tree, company’s corporate structure)
+	- **Again, when we modify a Tree and give it rules and parameters, it can become much more powerful than a simple Tree.**

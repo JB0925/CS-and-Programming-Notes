@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-28T14:46:01-04:00
+
+====== String Functions - Length, upper, lower ======
+Created Sunday 28 March 2021
+
+Calling LENGTH on a string will give you it's length
+{{.\pasted_image.png}}
+
+
+Calling UPPER or LOWER on a string will uppercase or lowercase the entire string.
+{{.\pasted_image001.png}}
+
+**NOTE: You can call UPPER or LOWER on a single string if needed.**
+
+
+**See the CONCAT page for information on how to use the CONCAT function, and how to use pipes to concatenate strings as well.**

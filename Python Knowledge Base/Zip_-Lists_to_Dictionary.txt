@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-31T10:14:24-04:00
+
+====== Zip -Lists to Dictionary ======
+Created Friday 31 July 2020
+
+Zip allows you to take two lists and package them together, essentially pairing index [0] of list 1 with index [0] of list 2, index [1] of list 1 with index [1] of list 2, etc.
+
+Here's an easy way to create a dictionary using Zip():
+
+**names = 'bob  julian  tim  sara'.split()**
+**ages = '11  22  33  44'.split()**
+**new_dict = dict(zip(names, ages))**
+
+OUTPUT:
+**{'bob':'11', 'julian': '22', 'tim': '33', 'sara': '44'}**
+
+
+OR you can iterate over it using a defaultdict from collections, and it will append all of the items (if there are multiple) to the matching key. Example:
+
+	**for month, day in zip(moty, days):**
+	**        holidays[month].append(day)**
+

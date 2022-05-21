@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-24T14:48:34-04:00
+
+====== Event Delegation ======
+Created Monday 24 May 2021
+
+Say you have a scenario where you want to add a remove button, radio box, checkbox, etc. beside every item in a div, and this div is update dynamically.
+
+You could add a new event listener every time you create a new button to go with the new text on the screen, but this could grow to be a gigantic number of eveny listeners, which is not very efficient.
+
+
+**Event Delegation:**
+	The idea behind event delegation is that we make the parent element of the thing want to control, a **delegate** that acts on behalf of all of the child elements that we want to work on.
+	
+	{{~/Desktop/ScreenShots/Event Delegation.png}}
+	
+	In the code above, instead of trying to create an event listener on every single submit of a form, **we put a listener on the document**. If the target of a click has the class **radio**, which only **radio buttons** would have, then we do work on both the button and, more importantly, the **li** beside it.
+	
+	**Benefit:**
+		- we have ONE listener instead of potentially thousands of listeners
+		- this is more space efficient than creating hundreds or thousands of listeners.
+		
+		
+

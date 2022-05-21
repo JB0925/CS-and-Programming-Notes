@@ -1,0 +1,47 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-19T12:20:03-04:00
+
+====== Key Events - key presses, keyup, keydown ======
+Created Monday 19 April 2021
+
+Say we have an input in our HTML.
+
+{{~/Desktop/Screen Shot 2021-04-19 at 12.32.47 PM.png}}
+
+
+There are three different types of "**key**" events that can happen
+
+1). Key up
+2). Key press
+3). Key down
+
+**Example:**
+	const input = document.querySelector('#username');
+	
+	input.addEventListener('keydown', function() {
+		console.log('KEY DOWN!!!');
+	}};
+	
+	
+**KEY DOWN:**
+	- fires any time a key is pressed (letters, numbers, space bar, caps lock, tab, etc.)
+	- will continue to fire for as long as the key is held down
+	- DOES WORK for keys that don't print anything on screen.
+	
+
+**KEY UP:**
+	- fires once a key is let go.
+	- only fires once
+	- DOES WORK for keys that don't print anything on screen.
+
+
+**KEY PRESS:**
+	- only works with letters and numbers, and the enter key
+	- does not work with arrow keys, shift key, etc.
+	- **General rule: **Key press only works with keys that print something on the screen (even an empty space).
+	
+
+
+**NOTE: **In a **key** **event**, we **want** the event object that can be passed into the **addEventListener** function
+

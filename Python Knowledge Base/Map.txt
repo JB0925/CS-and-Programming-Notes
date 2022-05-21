@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-30T23:22:29-05:00
+
+====== Map ======
+Created Saturday 30 January 2021
+
+**Map is a cool way to apply a function to every member of an iterable individually.**
+
+**Syntax:**
+	**map(function, iterable)**
+	
+**Examples:**
+	{{.\pasted_image.png}}
+	
+	In the example above, we have an **ops** dict, which is made up of methods from the **operator** module
+	**op** is the method being asked for by the function's argument
+	**map: ** here, we use a lambda function, with **a** being each member of the list, **number** being the number passed into the function, and calling **op(a, number)**, then finally passing in the iterable.
+	Don't forget to cast it to a list
+	
+	{{.\pasted_image001.png}}
+	
+	here, we use a similar idea, but as a way to add one iterable item to an item in another iterable
+	again, we use the ops dict and call it on a tuple of values, **a**, (**op(a[0], a[1])**)
+	finally, we use **zip()** on the two lists to combine each consecutive item of the two lists together into a tuple
+	

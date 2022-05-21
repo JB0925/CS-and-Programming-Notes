@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-02T23:24:32-04:00
+
+====== Writing a Function Component ======
+Created Wednesday 02 June 2021
+
+**Here's our Class Component From Before:**
+
+	class Hello extends React.Component {
+		render() {
+			return **(**
+				**<div>**
+					**<h1>Hello There!</h1>**
+**			      <h1>Hello There!</h1>**
+**			      <h1>Hello There!</h1>**
+				**</div>**
+			**);**
+		};
+	};
+
+
+**How do we write a function component?:**
+
+function Hello() {
+	return (
+		<div>
+			<h1>Hello There!</h1>
+			<h1>Hello There!</h1>
+			<h1>Hello There!</h1>
+		</div>
+	);
+};
+
+`ReactDOM.render(<Hello/>, document.querySelector('#root'));
+
+
+{{~/Desktop/ScreenShots/React Function Component.png}}
+
+
+The above returns the same thing as the Class Component did.

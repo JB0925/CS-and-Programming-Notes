@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-06T10:06:08-05:00
+
+====== Purpose ======
+Created Thursday 06 January 2022
+
+**Docker compose** allows you to do two things:
+
+1). Avoid writing so much / such verbose language in the docker CLI.
+	**Example:**
+		Instead of **docker build -t jbrink0925/myimage:latest**
+		
+		You just run:
+			**docker-compose up --build**
+	
+	
+	**Example 2:**
+		Instead of **docker run -p 8080:8080 jbrink0925/myimage**
+		
+		You just run:
+			**docker-compose up**
+

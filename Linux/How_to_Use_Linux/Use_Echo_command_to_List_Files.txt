@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-19T09:35:48-05:00
+
+====== Use Echo command to List Files ======
+Created Tuesday 19 January 2021
+
+say you want all of the files in a directory that start with a particular letter.
+
+You can list these with the **echo** command:
+	**1). echo p***
+		the above will print all of the files that start with the letter **p** in the current directory
+	
+	**2). echo "../../bin/p***
+		the above will list all the files that start with **p, **but this time in the directory that is two back of the **pwd** and in the folder called **bin**
+	
+	**Use Question Marks to Search for a Number of Letters:**
+	**3). echo '../../bin/???**
+		find all three letter long files in a directory by using 3 question marks:
+			- the first example shows an example of what **#2** looks like on this page, and the last example shows what **#3** looks like
+	
+	{{.\pasted_image.png}}
+	

@@ -1,0 +1,56 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-28T22:29:07-05:00
+
+====== Bitwise Operators ======
+Created Monday 28 December 2020
+
+Python (and most programming languages) takes advantage of the use of Bitwise Operators:
+
+**Name____________Operator_______________Example__________________Compound Operator**
+
+**Bitwise AND		        &                                    a & b						&=   (a &= b means a = a & b)**
+
+**Bitwise OR			|					a | b							|=	(a |= b means a = a | b)**
+
+**Bitwise XOR			^					a ^ b						^=	same as above**
+
+**Bitwise NOT			~					   ~ a**
+
+**Bitwise Left Shift		«					a « n						<<= a <<= n	(means a = a « n)**
+
+**Bitwise Right Shift		»					a » n						>>= a >>= n    (means a = a » n)**
+
+
+
+
+**AND:**
+{{.\pasted_image.png}}   =    {{.\pasted_image001.png}}
+
+with **AND, **both values must be **1** in order for the new number to have the value **1** in that place. Otherwise, the new number's value in that place is **0.**
+
+
+
+**OR:**
+{{.\pasted_image002.png}}  =	{{.\pasted_image003.png}}
+
+with **OR**, **EITHER** number can have a **1** in a particular place in order for the new number to have a **1** in the same place.
+
+
+
+**XOR:**
+{{.\pasted_image004.png}} =	{{.\pasted_image005.png}}
+with **XOR**, if **BOTH** values are 1, the new number's value is **0**. If **BOTH** numbers value is **0, **the new number's value is **0. **If one of the numbers has a value of **1**, the new number's value is **1**
+
+
+
+**NOT:**
+{{.\pasted_image006.png}} = 	{{.\pasted_image007.png}}
+The opposite of the first number.
+
+
+
+**Left Shift and Right Shift:**
+	both of these shift the value of the bits to the right or left by the number specified in assignment.
+	Left shift will make the number bigger, and right shift will make the number smaller
+	

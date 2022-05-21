@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-13T22:51:12-05:00
+
+====== SQLAlchemy Setup and Queries ======
+Created Saturday 13 February 2021
+
+{{.\pasted_image.png}}
+
+{{.\pasted_image001.png}}
+
+
+**How to Create Tables and Classes for querying:**
+{{.\pasted_image002.png}}
+
+**NOTE:** the **get_id(self)** method is used later in the **flask_login** portion of the app.
+
+
+**Instantiating the Database:**
+{{.\pasted_image003.png}}
+
+Notice the **db.create_all()** used to instantiate the database
+
+
+**Basic Queries:**
+	- **Classname.query.all()		**#queries the entire class to see all of the objects stored. You can also access it like a list with slicing, etc.
+	- **Classname.query.filter_by(name=maybesomeform.fieldname.data).first()**
+	
+
+

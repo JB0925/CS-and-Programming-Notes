@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-10T11:55:11-04:00
+
+====== Parsing the Request Body ======
+Created Friday 10 September 2021
+
+You first need to tell Express to parse request bodies for form data or JSON:
+
+**Example:**
+	const express = require("express");
+	
+	const app = express();
+	
+	**app.use(express.json());**
+	**app.use(express.urlencoded({ extended: true }));**
+
+**NOTE:** There used to be a widely used module called **body-parser** that was used to parse JSON data from the body. Now, we have **express.json**, so **body-parser** isn't necessary
+
+.{{~/Desktop/ScreenShots/Express request.query.png}}	
+
+
+

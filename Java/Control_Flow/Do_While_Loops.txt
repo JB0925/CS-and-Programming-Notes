@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-16T11:11:39-05:00
+
+====== Do While Loops ======
+Created Wednesday 16 February 2022
+
+**Example:**
+
+A **do-while loop** is **always** executed **at least once.**
+
+int count = 1;
+do {
+	System.out.println("count is " + count);
+	count++;
+} while (count < 6);

@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-12T11:44:26-05:00
+
+====== date ======
+Created Thursday 12 November 2020
+
+type **date** into the shell to get the current date and time
+
+two other options to get only the time or only the date:
+
+{{.\pasted_image.png}}
+
+the %A is the day of the week
+
+Also, **date +"%Y-%m-%d" would return:**
+		2021-05-26
+		
+	  **date +"%m-%d-%Y" would return:**
+		05-26-2021
+
+

@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-24T23:45:16-04:00
+
+====== Trees-Into to Hierarchical Data ======
+Created Thursday 24 September 2020
+
+All the data structures so far have been **linear** (**arrays, arrayLists, stacks, queues, Linked Lists, Doubly Linked Lists, Dictionaries)**
+
+**Trees store data hierarchically instead of linearly.**
+
+A real world example is a **Family Tree**, where the people in the tree aren't stored linearly; they are stored hierarchically
+
+Another example is the file structure on your computer (**folders inside of folders inside of folders, then find your document)**
+

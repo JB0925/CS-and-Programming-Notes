@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-19T21:53:37-05:00
+
+====== Add Users to the Database ======
+Created Thursday 19 November 2020
+
+{{.\pasted_image.png}}
+
+Step 1). create a variable(found_users) to query the database using the "user" variable above.
+
+Step 2). if there are found_users (Truthy), then add the users email to the session with **session['email'] = found_users.email**, so basically adding a new dict key to session and its value is the User object's email address.
+
+Step 3). If there are no found users, create one.
+				**usr = Users(user, '')**
+				**db.session.add(usr)**
+				**db.session.commit()**
+				
+				
+				
+**Another Example of Adding an Email value to the User object in the database:**
+
+{{.\pasted_image001.png}}
+
+set an "email" var = to the value coming from the form in the html
+
+query the database again for the user
+
+if found_users, then found_users.email attribute = email
+
+always remember to commit to the database
+

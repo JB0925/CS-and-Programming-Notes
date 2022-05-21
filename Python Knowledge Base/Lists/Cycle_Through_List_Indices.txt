@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-14T12:11:05-05:00
+
+====== Cycle Through List Indices ======
+Created Monday 14 December 2020
+
+Need to assign a value based on list indices? 
+
+No need to create a throwaway variable to assign an int to, then manage the int with a bunch of "if/then" statements.
+
+**To increase an index without getting an IndexError:**
+	**my_list = 'N E S W'.split()**
+	**word = 'E'**
+	
+	**if direction == 'R':**
+		**idx = (my_list.index(word) + num_from_loop) % len(my_list)**
+		**word = my_list[idx]**
+		
+
+**To decrease an index without getting an IndexError:**
+	**my_list = 'N E S W'.split()**
+	**word = 'E'**
+	
+	**if direction == 'L':**
+		**idx = (my_list.index(word) - num_from_loop) % len(my_list)**
+		**word = my_list[idx]**
+
+**See Example Below:**
+
+{{.\pasted_image.png}}
+

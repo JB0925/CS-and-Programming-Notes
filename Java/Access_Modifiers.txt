@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-24T12:15:38-05:00
+
+====== Access Modifiers ======
+Created Thursday 24 February 2022
+
+When we talk about Access Modifiers, we are talking about the keywords **public, private, protected, static** and **final**.

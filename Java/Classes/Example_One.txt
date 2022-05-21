@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-18T11:21:42-05:00
+
+====== Example One ======
+Created Friday 18 February 2022
+
+public class Car {
+	private int doors;
+	private int wheels;
+	private String model;
+	private String engine;
+	private String color;
+	
+	public int getDoors() {
+		return doors;
+	}
+	
+	public void setDoors(int numDoors) {
+		this.doors = numDoors;
+	}
+	
+	**// You could continue making getters and**
+	**// setters for all of the other variables as**
+	**// well.**
+}
+
+
+**Creating an Object From the Car Class:**
+
+public class Main {
+	public static void main(String[] args) {
+		Car porsche = new Car();
+	}
+}

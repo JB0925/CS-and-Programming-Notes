@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-21T23:01:52-04:00
+
+====== Inserting Into a BST ======
+Created Wednesday 21 July 2021
+
+1). Check to see if length == 0 or self.root is None.
+		- if so, return None
+
+
+2). if your node's value is less than the current node's value:
+		check to see if current node has a left node:
+			if not, then **node's parent** is cur
+			**set cur.left** = node
+			
+			if it does, then call insert(node, cur)
+		
+		if node.value > cur.value:
+			if **cur** has no **right child**:
+				node,parent = cur
+				cur.right = node
+			
+			otherwise:
+				return insert(node, cur)
+

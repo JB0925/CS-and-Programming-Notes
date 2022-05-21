@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T14:10:23-05:00
+
+====== Lint JS by Configuring and Running ESLint ======
+Created Sunday 09 January 2022
+
+To install eslint:
+	**npm install --save-dev eslint**
+	
+Following that, you can run:
+	**npx eslint .**
+
+Once this is complete, if you type **commandButton + .** over the eslint error, it will give you options as to how to fix the error.
+
+**NOTE:** You can also, in your terminal, run **npx eslint . --fix **to do the same thing.
+
+	
+
+

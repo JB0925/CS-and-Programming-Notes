@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-05T22:43:58-04:00
+
+====== Turn a 2D Array into a Map ======
+Created Saturday 05 June 2021
+
+**Example:**
+
+	const bandNames = [
+		[20, 'Matchbox Twenty'],
+		[3, '3 Doors Down'],
+		[41, 'Sum 41']
+	];	
+	
+	
+	**Convert to a Map:**
+		const mappedBands = new Map(bandNames);
+			**this returns {20: "Matchbox Twenty", 3: "3 Doors Down", 41: "Sum 41"}**
+			
+	
+	**Convert From a Map Back Into an Array:**
+		Use **spread: **
+			**[...mappedBands];**
+				This returns the same array as there is at the top.
+

@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-11-03T21:07:50-04:00
+
+====== Working With Thunks ======
+Created Wednesday 03 November 2021
+
+A **thunk** is just a function that is returned from another function. Rather than executing the inner function right away, it is stored inside of a wrapper function, then called when necessary. Usually, these are created alongside the typical **action creator functions**.
+
+**How to Create a Thunk:**
+
+Let's pretend we are getting "todos" from an API. **First**, we will write a typical action creator function that gets passed to a reducer. 
+
+**const gotTodos = todos => {**
+	**return {**
+		type: "LOAD_TODOS",
+		todos
+	**};**
+**};**
+
+**const showError = error => {**
+	**return {**
+		type: "SHOW_ERROR",
+		error
+	**};**
+**};**
+
+**const startLoad = () => {**
+	**return {**
+		type: "SHOW_SPINNER"
+	**};**
+**};**
+
+This is a normal action creator function that would get called by **useDispatch** along the lines of **onClick={dispatch(gotTodos(todos))}**. This function will get called in our **thunk** function.
+
+
+**The Thunk Function:**
+
+**const getTodosFromApi = () => {**
+	return async function(dispatch) {
+		**dispatch(startLoad());**
+		
+		try {
+			  let res = await axios.get("/api/todos");
+		  **dispatch(gotTodos(res.data.todos));**
+		} catch(e) {
+			**dispatch(showError(err.response.data));**
+		}
+	}
+**};**
+
+In this **thunk, **we have called multiple **dispatches**, and we also called an async function.
+
+Now, we can call **getTodosFromApi** in a normal **dispatch** inside of a component as we normally would, i.e. **dispatch(getTodosFromApi());**
+
+
+In essence, the **thunk** looks a lot like an async **useEffect **in that you cannot make **useEffect **itself async, you have to write a callback and then make that function async, then call the function.

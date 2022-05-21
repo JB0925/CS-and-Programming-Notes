@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T23:29:44-05:00
+
+====== IAM Access Keys ======
+Created Saturday 08 January 2022
+
+Once you have your user, scroll down on the **users** screen and click **create access keys**.
+
+Create them, and then you can run **aws configure if you haven't already.**
+
+Enter them in when prompted by the CLI.

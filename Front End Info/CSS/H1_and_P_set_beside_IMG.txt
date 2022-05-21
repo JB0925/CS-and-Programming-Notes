@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-30T00:19:56-04:00
+
+====== H1 and P set beside IMG ======
+Created Wednesday 30 June 2021
+
+To get an h1 and a p to set nicely beside an image inside of a container:
+
+**HTML:**
+{{~/Desktop/ScreenShots/h1 and p set beside img.png}}
+
+**Container** is a flex-box set to column
+
+**first-container** is an experimental flex-box that had no effect; can ignore / not needed
+
+**one** is a grid
+
+**first-col, second-col** are the columns inside the grid
+
+
+
+**CSS:**
+{{~/Desktop/ScreenShots/h1 and p sit beside img css1.png}}	{{~/Desktop/ScreenShots/h1 and p sit beside img css2.png}}
+
+
+Above is the main CSS used to set up the grid, img, h1, p, and a elements.
+
+To make the text stack on top of the image nicely on smaller screen, we get rid of columns and go with only rows. It also shows the main settings for the images. See below:
+
+{{~/Desktop/ScreenShots/h1 and p sit beside img css media queries.png}}	{{~/Desktop/ScreenShots/h1 and p sit beside img css last.png}}
+

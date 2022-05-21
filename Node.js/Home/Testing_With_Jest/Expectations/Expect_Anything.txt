@@ -1,0 +1,42 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-08T20:32:34-04:00
+
+====== Expect Anything ======
+Created Wednesday 08 September 2021
+
+Sometimes, you aren't sure of what the exact value will be. Maybe you will make a random index, so you can't know exactly which array value to return.
+
+**Example Function:**
+	const TOYS = ["doll", "top", "iPad"];
+	
+	function getRandomToy() {
+	  let idx = Math.floor(
+		  Math.random() * TOYS.length + 1);
+	  return {
+		toy: {
+		  name: TOYS[idx],
+		  price: 34.99
+		}
+	  };
+	}
+	
+	
+	module.exports = {getRandomToy};
+
+
+**Example Test With "Any":**
+	const { getRandomToy } = require("./any");
+	
+	test("random toy", function () {
+	  let toy = getRandomToy();
+	  expect(toy).toEqual({
+		toy: {
+		  name: **expect.any(String)**,
+		  price: 34.99
+		}
+	  });
+	});
+
+Since **getRandomToy** will use a random index, you can use **expect.any(type)** to handle it.
+

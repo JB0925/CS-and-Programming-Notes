@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-16T14:59:07-05:00
+
+====== pipe character ======
+Created Monday 16 November 2020
+
+**pipe character "|" means:**
+		**take the output of the program to the left, and make it the input of the program to the right**
+		
+
+**Examples:**
+	**ls -l /** 			#gives the content of the root directory
+	**tail -n(num) filename_here**		#gives the last line(s) of whatever file is passed to it
+	
+	**Combined with pipe character:**
+		**ls -l / | tail -n1			#**gives the last line of a directory listing 
+
+		**ls -l / | tail -n1 > ls.txt		**#writes the last line of the root directory to a file in the current directory called ls.txt
+

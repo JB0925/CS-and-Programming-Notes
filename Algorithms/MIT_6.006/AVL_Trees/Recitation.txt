@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-23T00:06:43-05:00
+
+====== Recitation ======
+Created Saturday 23 January 2021
+
+**What is a BST: Binary Search Tree**
+	- every node has at most two children
+	- right children are greater than the key
+	- left children are less than the key
+      
+	**Operations:**
+		- min
+		- max
+		- insert
+		- delete
+		- search
+		- next_largest
+		
+		**All are O(h) - height of the tree**
+			- height of the tree is the longest path from the root to a leaf
+			- **h = max(h1, h2) + 1**
+			- the **height** of a leaf is called as -1, so that adding -1 + 1 == 0
+			
+	**Representation Invariant for AVL:**
+		- the height of the left and right subtrees differ by at most 1
+		- has to be a BST
+		- the height of an AVL is **O(lg n)**
+
+
+**Rotations:**
+	- **Initial Setup - right rotation:**
+		- what will it look like if we do a right rotation on Node B?
+		{{.\pasted_image.png}}   	------->	{{.\pasted_image001.png}}
+		
+		- in the first picture, we have a doubly left heavy A Node. To balance this, we call **right_rotate()** on B.
+		- A was the parent of B, but now **B is the parent of A**. Also, Node **c** is the left child of A, and Node e maintains its position.
+		- also, **NOTE:** even though Node **B** is less than Node **A** (**we know this because it's a left child of A in picture 1)**, everything is still properly ordered. **B is the root, but A is its right child (i.e greater than B)**, and **C is its left child (i.e. less than B...same as in the first picture)**
+		- the smaller child nodes are still less properly ordered as well
+		- **c** is now a left child of Node **A. This makes sense because c is < A (it was a left child of A to begin with.**
+		- **NOTE:** remember to change the parent when you change the child (**i.e. c's parent WAS B, but now c's parent is A**)
+			- do them in pairs
+			- also, in the diagram above, **B's parent **is now **e.**
+				- if **B** > **e**, then **e.right = B**, else: **e.left = B**
+
+
+	- **Initial Setup - left rotation:**
+		{{.\pasted_image002.png}}		--------->		{{.\pasted_image004.png}}
+		**NOTE: k / k+1 means "k OR k + 1"**
+		
+

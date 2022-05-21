@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-04T23:11:15-04:00
+
+====== Getting Data From a Post Request via a Form ======
+Created Sunday 04 April 2021
+
+**Example form:**
+{{.\pasted_image.png}}
+
+**Get data from the Form on a POST request:**
+	- to get data from a POST request, you have to create a new view. You can call it the same name.
+	**Example:**
+		{{.\pasted_image001.png}}
+		
+		**NOTES:**
+			- note the use of the different **router** methods(GET and POST)
+			- ignore the difference in view models (typo was fixed)
+			- to use **post **to get data from forms, you'll need to use **async** and **await**, both in the view and in the viewmodel:
+				**Example:**
+					{{.\pasted_image002.png}}
+					
+					- notice how the **load()** function is **async** and the form is **await**
+					- in the top example, **vm.load()** is the **load() **function directly above.
+

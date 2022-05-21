@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-08T15:44:43-05:00
+
+====== Conceptual Overview of CSS ======
+Created Monday 08 February 2021
+
+When we write CSS, we are writing **CSS Rules**. An example of a **rule** is:
+		**h1 {**
+		   **color: purple;**
+		}
+		
+		This will make all **h1** elements on the screen **purple**
+		
+		
+		**img {**
+			**width: 100px;**
+			**height: 200px;**
+		}
+		
+		This changes the width and height of all image tags.
+		
+		
+		**Fancier Example:**
+			**input[type="text"]: nth-of-type(2n) {**
+				**border: 2px solid red;**
+			}
+			
+			The above example selects **EVERY OTHER** **input** element where **type="text"** and gives it a red border.
+
+
+
+
+There are a **TON **of CSS Properties. You don't need to memorize them all! If you don't know what a property is or what it is called, Google it!
+

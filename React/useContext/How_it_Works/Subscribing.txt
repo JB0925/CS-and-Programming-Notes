@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-23T00:36:09-04:00
+
+====== Subscribing ======
+Created Saturday 23 October 2021
+
+Any component inside of a Provider has access to the **value** prop...as long as they are subscribed to the Provider.
+
+**How to Subscribe:**
+
+In all child / grandchild, etc., components that you want to have access to the **value** prop:
+
+import React, { **useContext** } from "react";
+import CountContext from "./Context";
+
+const GreatGrandChildComponent = () => {
+	**const value = useContext(CountContext);**
+}
+
+
+Now you can use whatever was passed in to **Context.Provider, **state will update, and components will re-render.
+

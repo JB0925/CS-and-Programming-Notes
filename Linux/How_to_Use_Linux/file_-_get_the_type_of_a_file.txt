@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-15T08:52:16-05:00
+
+====== file - get the type of a file ======
+Created Friday 15 January 2021
+
+Use the **file** command to get the type of a file on the system:
+
+{{.\pasted_image.png}}
+
+
+{{.\pasted_image001.png}}

@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-09T21:55:38-04:00
+
+====== Create a Mask For an Image ======
+Created Monday 09 August 2021
+
+Step 1). Create a shape, then click **fill**.
+
+Step 2). At the top click and scroll to where it says **image**.
+
+It will bring up a checkered rectangle, and in the middle it will say "**choose image**" Click that.
+
+Find the image you wish to use, and let it fill the initial shape.
+
+
+**Create a Mask:**
+	- next, create a new shape and place it inside of the shape that has the image fill.
+	
+	- At the top, click **use as mask**
+	
+	  - Finally, on the **shape with the background image**, hold **control** and click over on the left on the shape name. Click **move to front** and your other shape will now be a mask for the shape with the image background.
+
+
+Once set, **group both** by hitting **Control + g**
+
+Once they are grouped, you can then move your **mask shape **anywhere you want.
+

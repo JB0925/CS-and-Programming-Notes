@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-20T23:09:27-04:00
+
+====== textwrap ======
+Created Tuesday 20 October 2020
+
+**import textwrap**
+
+textwrap is a module that allows you to make larger changes to a piece of text than you might if you were to use strip() or split(), etc.
+
+
+#code using textwrap that allows you to dedent the first line in a paragraph, then indent all other lines:
+
+{{.\pasted_image.png}}
+
+if you wanted to return instead of print, you'd set **poem[i]** or **poem[i+1]** equal to the print lines
+
+https://pymotw.com/2/textwrap/

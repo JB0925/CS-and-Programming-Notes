@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T22:33:26-05:00
+
+====== Recompiling All Files in a Directory On Change ======
+Created Sunday 12 December 2021
+
+For a bigger project, you won't want to recompile every time you make a change in any file.
+
+You also won't want to run **tsc myfile.ts -w** on every file in the directory.
+
+**How to Make the Compiler Watch a Directory:**
+
+1). run **tsc --init **inside of the directory (**two dashes**)
+
+2). run **tsc**, and now every file will be recompiled
+
+3). run **tsc -w** to run "watch mode" on every file in the directory, which means you don't have to type **tsc app.ts**,. etc. again. As soon as you save a file in that directory, it will be recompiled.
+
+**NOTE: with "tsc -w", you can't run the file in the VSCode terminal while in watch mode.**
+
+**You can, however, still run the file via Node from the MacOS terminal.**
+
+
+

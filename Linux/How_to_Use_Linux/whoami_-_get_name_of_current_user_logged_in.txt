@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-10T23:11:10-05:00
+
+====== whoami - get name of current user logged in ======
+Created Sunday 10 January 2021
+
+{{.\pasted_image.png}}
+
+returns the name of the current user that is logged in
+
+Another command that does the same thing is **logname**

@@ -1,0 +1,61 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-26T13:09:12-05:00
+
+====== ArrayList Methods ======
+Created Saturday 26 February 2022
+
+**Collections.sort()**
+	- sorts the list in place
+	
+**Collections.sort(myList, Collections.reverseOrder())**
+	- sorts the list in place, in reverse order (decreasing)
+	
+**Comparing An ArrayList of Objects:**
+	1). Make sure your class implements the **Comparable** interface
+	
+	2). Implement the **compareTo **method:
+		@Override
+		public int compareTo(Student element) {
+			int comparison = ((Student)element).getStudentAge();
+			
+			return this.studentAge - comparison;
+				**// sorts objects by age in ascending order**
+			
+			**// for descending order:**
+				return comparison - this.studentAge;
+		}
+		
+		
+		Then, in calling code:
+			Collections.sort(myArray);
+	
+	
+	3). Use **Comparator **to sort by different attributes of an object
+	
+public static Comparator<Student> StuNameComparator = new Comparator<Student>() {
+
+	public int compare(Student s1, Student s2) {
+	   String StudentName1 = s1.getStudentname().toUpperCase();
+	   String StudentName2 = s2.getStudentname().toUpperCase();
+
+	   //ascending order
+	   return StudentName1.compareTo(StudentName2);
+
+	   //descending order
+	   //return StudentName2.compareTo(StudentName1);
+	}};
+
+Then, in calling code:
+
+	Collections.sort(arraylist, Student.StuNameComparator);
+
+
+
+**Creating a Synchronized ArrayList:**
+	- In order to use ArrayList in a multi-threaded environment, you need to synchronize it, or use a synchronized version. This link has several good options, including **Collections.synchronizedList();**
+	
+
+**Collections.swap(myList, index1, index2);**
+	- swaps two elements in an ArrayList at the given indices
+

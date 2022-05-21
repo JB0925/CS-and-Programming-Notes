@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T21:37:04-04:00
+
+====== NPM ======
+Created Monday 06 September 2021
+
+**NPM** is like pip for Python.
+
+The command line tool, **npm**, comes with Node just like pip comes with Python.
+
+It makes it easy to manage dependencies for a project.
+
+You can register with **npm** to publish open-source or proprietary packages

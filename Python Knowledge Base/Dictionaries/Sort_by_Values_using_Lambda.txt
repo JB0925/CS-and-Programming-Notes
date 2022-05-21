@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-12T21:02:17-04:00
+
+====== Sort by Values using Lambda ======
+Created Monday 12 October 2020
+
+A good page explaining how to sort dicts by values using lambda functions:
+
+
+https://www.geeksforgeeks.org/ways-sort-list-dictionaries-values-python-using-lambda-function/
+
+

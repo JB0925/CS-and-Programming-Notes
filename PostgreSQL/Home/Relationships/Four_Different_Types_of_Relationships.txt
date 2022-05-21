@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-28T22:29:27-04:00
+
+====== Four Different Types of Relationships ======
+Created Sunday 28 March 2021
+
+There are four different types of relationships in SQL. They are:
+	- **One to many**
+	- **Many to one**
+	- **One to one**
+	- **Many to many**
+	
+**For examples of One to Many and Many to One, see the two pages with the same names.**
+
+

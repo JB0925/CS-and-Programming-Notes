@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-21T23:05:31-04:00
+
+====== Uses for Doubly Linked Lists ======
+Created Monday 21 September 2020
+
+**Doubly Linked List – Uses:**
+	- The back and forth functionality of a Doubly Linked List lends itself to be implemented in a lot of Stack-like functionality:
+		- **A browser cache, which allows you to go back and forth between webpages**
+		**- “Undo/Redo” functionality in a lot of Word Processors/Excel programs**
+		**- “Open Recent” functionality in many applications**
+

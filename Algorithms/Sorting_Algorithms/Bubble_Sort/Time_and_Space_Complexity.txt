@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-13T22:03:41-04:00
+
+====== Time and Space Complexity ======
+Created Tuesday 13 October 2020
+
+**Bubble Sort – Time Complexity:**
+	- Bubble sort has a time complexity score almost always (worst or average case) of O(n**2).
+	- The best case score is O(n), but this is misleading because the best case scenario is an already sorted list
+
+	- It’s a very inefficient algorithm due to how long it takes for a small element at the front of a list to “bubble” up toward the back (or vice versa)
+
+
+**Bubble Sort – Space Complexity:**
+	- Bubble sort has a space complexity score of O(1) in the worst case scenario. This is because it is an in-place algorithm, meaning it uses no auxiliary memory.
+
+	- Bubble sort is a little more efficient than selection sort, but still very inefficient overall.
+	- It is sometimes called the “generic bad sorting algorithm”.

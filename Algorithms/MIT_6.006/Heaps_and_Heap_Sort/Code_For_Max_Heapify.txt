@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-08T09:23:17-05:00
+
+====== Code For Max Heapify ======
+Created Friday 08 January 2021
+
+**NOTE: **To get the parent node (**not necessarily root**), within Max_Heapify(), you'd call:
+				**arr[(i-1)/2]**
+		
+		To get the left child:
+				**arr[(2*i)+1]**
+		
+		To get the right child:
+				**arr[(2*i)+2]**
+				
+
+
+**NOTE:** to do Max_heapify(), you need to call left(), and right(), two function used to get the left child and right child of the parent node
+
+**def left(i):**
+	return (2*i)+1
+
+**def right(i):**
+	return (2*i)+2
+
+**def max_heapify(A, i):**
+	l = left(i)
+	r = right(i)
+	if l < len(A) and A[l] > A[i]:
+		largest = l
+	else:
+		largest = i
+	
+	if r < len(A) and A[r] > A[largest]:
+		largest = r
+	
+	if largest ≠ i:
+		A[i], A[largest] = A[largest], A[i]
+		max_heapify(A, largest)
+
+
+

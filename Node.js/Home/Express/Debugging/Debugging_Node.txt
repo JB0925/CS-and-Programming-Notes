@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-10T21:52:23-04:00
+
+====== Debugging Node ======
+Created Friday 10 September 2021
+
+1). console.log();
+
+2). start up Node with the **--inspect-brk** flag
+	- open **chrome://inspect** to pull it up in the Chrome debugger

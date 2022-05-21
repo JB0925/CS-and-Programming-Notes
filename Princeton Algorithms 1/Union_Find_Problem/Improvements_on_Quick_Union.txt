@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-18T00:02:34-05:00
+
+====== Improvements on Quick Union ======
+Created Friday 18 December 2020
+
+**Improvement #1:**
+	**Weighting**
+	{{.\pasted_image.png}}
+
+	**keep track of the root of the larger smaller tree; keep a balance so that we don't get very tall trees**
+	
+	**Weighted Quick Union Demo:**
+	{{.\pasted_image001.png}}
+	**array is set up as it was in the beginning**
+	
+	**Example:**
+	{{.\pasted_image002.png}}
+	**Normally, we would make the root of A point to the root of B**
+	If we did this, we would make __i of 3__ equal to  8
+	Then, our tree would have a height of two: __8 - 3 - 4__
+	Instead, we make 8 point to __4__
+	This way, the __root__ of 3 is 4, and the __root__ of 8 is 4, but our tree does not go deeper and deeper, because both 3 and 8 point to 4.
+	
+	**We are linking the SMALLER TREE to the LARGER TREE, instead of creating an even taller tree where 4 and 3 get linked to 8.**
+	
+	{{.\pasted_image003.png}}
+	
+	Here, we have **union(4, 9)**. Instead of changing the __root__ of 4 to equal 9, we change the root of 9 to equal 4. **This way, we are not adding the larger "4" tree under the 9 tree. The 9 tree is smaller, so we change its value to "4" and link the smaller tree to the bigger tree.**
+	
+	
+	**Code for Weighted Quick Union:**
+	
+	{{.\pasted_image004.png}}
+	
+	step 1 and 2 are identical to quick union
+	the part in white deals with **pointing the smaller tree to the larger tree, instead of creating an even larger tree by doing the opposite**
+	
+	__sz[i]__ and __sz[j]__ are used to keep track of the height of the trees.
+		**if size[i] > size[j]:**
+			**id[i] = j;	size[j] += sz[i]'**
+		**else:**
+			**id[j] = i; size[i] += size[j]**
+			
+	
+	
+	**Performance:**
+		the **Weighted Quick Union** algorithm is O(logN), because each time you perform an operation, the size of the tree increases by 1, and you can only double log(N) times because then you will get to the point where you have reached N items
+		
+		
+	

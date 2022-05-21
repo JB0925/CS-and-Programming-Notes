@@ -1,0 +1,51 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-10T09:20:23-05:00
+
+====== How to Manage a Container ======
+Created Wednesday 10 March 2021
+
+**How to Run a Container:**
+		**docker -d -p choice(8080, 3000, 8000, etc.): CONTAINER_PORT_NUMBER CONTAINER NAME**
+
+
+**How to Stop a Container:**
+		**docker stop 4duj3jdegjtt433jvjf**
+		
+					**OR**
+		
+		**docker stop SILLY_NAME_HERE**
+
+
+**How to Restart a Container:**
+		**docker start SILLY_NAME_HERE**
+		
+
+
+
+**How to Get the List of Running Containers:**
+		**docker ps --help**
+		**docker ps -a   		**#gives a longer, more detailed list of containers
+		
+
+
+**How to Delete a Container:**
+		**docker rm CONTAINER_NAME**
+		
+					OR
+		
+		**docker rm CONTAINER_ID**
+		
+
+
+**How to Delete All Containers at Once:**
+		**docker ps -aq 			**#will list all containers, but only by their ID's
+		**docker rm $(docker ps -aq)**
+		
+		**NOTE: **Won't work if you are currently running a container
+		
+		If you are currently running a container and want to remove all containers anyway:		
+				**docker rm -f $(docker ps -aq)**
+
+
+

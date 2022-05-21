@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T14:09:05-05:00
+
+====== Static Analysis Testing ======
+Created Sunday 09 January 2022
+
+Static Analysis Testiing refers to catching bugs such as linting rules, mistakes in using incorrect types, invalid syntax, etc.
+

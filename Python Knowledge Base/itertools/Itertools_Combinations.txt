@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-09T00:41:27-04:00
+
+====== Itertools Combinations ======
+Created Sunday 09 August 2020
+
+The itertools combinations method will allow you to return the number of possible combinations of various items in a data structure:
+
+{{.\pasted_image.png}}
+
+{{.\pasted_image001.png}}
+
+{{.\pasted_image002.png}}
+

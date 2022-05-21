@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-18T22:25:34-04:00
+
+====== Escape Characters ======
+Created Sunday 18 October 2020
+
+**List of escape characters to use in python:**
+
+**Code			Result**
+	
+\'				Single Quote	
+\\				Backslash	
+\n				New Line	
+\r				Carriage Return	
+\t				Tab	
+\b				Backspace	
+\f				Form Feed	
+\ooo				Octal value	
+\xhh				Hex value
+
+https://www.w3schools.com/python/gloss_python_escape_characters.asp

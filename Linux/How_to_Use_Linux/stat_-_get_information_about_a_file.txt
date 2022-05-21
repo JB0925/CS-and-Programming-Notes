@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-13T20:18:46-05:00
+
+====== stat - get information about a file ======
+Created Friday 13 November 2020
+
+to get information about a file from Linux:
+		**stat filename**
+		
+{{.\pasted_image.png}}
+
+
+

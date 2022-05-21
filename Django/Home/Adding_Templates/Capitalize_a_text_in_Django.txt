@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-28T21:28:08-05:00
+
+====== Capitalize a text in Django ======
+Created Sunday 28 February 2021
+
+{{request.user|capfirst}} will capitalize a user's name in a template.

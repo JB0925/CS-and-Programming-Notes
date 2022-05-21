@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-08T23:24:31-04:00
+
+====== Update Existing State ======
+Created Thursday 08 July 2021
+
+It is not a good idea to update exisiting state with just **this.setState()** alone.
+
+Instead, you have two choices:
+	1). pass in a callback function and call **this.setState()** inside of it
+	
+	2). create a function to pass in as a callback that you can call more than once.
+	
+**Example #1:**
+	class Xyz extends Component {
+		constructor(props) {
+			super(props)
+			this.state = {
+				thing1: 'x',
+				thing2: 'y',
+				thing3: 3
+			}
+		}
+		
+		handleClick = (evt) => {
+			**this.setState(curState => ({thing3: curState.thing3 + 2}));**
+		}
+	}
+
+
+**Example #2:**
+	class Xyz extends Component {
+		constructor(props) {
+			super(props)
+			this.state = {
+				thing1: 'x',
+				thing2: 'y',
+				thing3: 3
+			}
+		}
+		**incrementCounter (st) {**
+			**return {thing3: st.thing3 + 2}**
+		**}**
+		
+		handleClick = (evt) => {
+			**this.setState(this.incrementCounter);**
+		}
+	}
+

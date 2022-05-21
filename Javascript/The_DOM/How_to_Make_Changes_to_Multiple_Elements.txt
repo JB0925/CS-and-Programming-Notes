@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-17T23:36:08-04:00
+
+====== How to Make Changes to Multiple Elements ======
+Created Saturday 17 April 2021
+
+**How to iterate over a tag or tags that we got from querySelector or querySelectorAll, or getElementsByClass, etc.:**
+
+Remember, these methods return an array-like object that **do have a length and can be accessed by index**, but they are **NOT** arrays. To iterate through them, you have to use a traditional for loop:
+
+
+const allLis = document.querySelectorAll('li');
+
+for (let i = 0; i < allLis.length; i++) {
+	console.log(allLis[i]);
+	allLis[i].innerText = 'hellllllllllooooooo';
+};
+
+**Once inside the for loop, you can read and write these elements, with methods we've already learned.,**
+
+
+**Example 2:**
+	for (let li of allLis) {
+		li.innerHTML = 'WE ARE <b>THE CHAMPIONS</b>!!!!!'
+	}
+		
+		**this changes the HTML and the text so that now, the text will be bolded.**
+		
+

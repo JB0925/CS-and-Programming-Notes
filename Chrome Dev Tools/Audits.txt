@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-11T00:28:56-05:00
+
+====== Audits ======
+Created Saturday 11 December 2021
+
+The **lighthouse** tab gives you ratings as to the performance of your website.
+
+click it, click off of **progressive web app**, then click **generate report.**
+
+To run another report on a different page, look next to the lighthouse in the top left, and then click the down arrow. Finally, click **new report.**

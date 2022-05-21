@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-10T14:38:32-05:00
+
+====== Font Size ======
+Created Wednesday 10 February 2021
+
+The font size property changes the size of the font.
+
+There are many, many choices when you want to choose a different font. We will look at pixels first:
+
+**Pixels or px:**
+
+	- the most commonly used absolute unit (will always be the same in a document)
+	- it is **CALLED** a **pixel** but does **NOT** necessarily equal the width of one pixel on our machine
+	- pixels are **NOT** recommended for responsive websites
+	

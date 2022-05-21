@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-14T14:59:04-04:00
+
+====== Creating Queries with Subqueries ======
+Created Wednesday 14 April 2021
+
+A **subquery **is a type of query where one part of the query is dependent upon another part.
+
+Let's say we want to list the **name, price** from the **products** table, but only if the price of the item is more expensive than the most expensive item from the Toys department.
+
+We can't do this query unless we know the price of the most expensive item from the Toys department.
+
+
+So, we might first have to run a query:
+	SELECT MAX(price)
+	FROM products
+	WHERE department = 'Toys';
+	
+	
+	**This will give us 876.**
+
+
+So now, we can run our second query:
+	SELECT name, price
+	FROM products
+	WHERE price > 876;
+
+
+**You can combine the two with a Subquery.**
+
+**Example:**
+	SELECT name, price
+	FROM products
+	WHERE price > (
+		SELECT MAX(price) FROM products WHERE department = 'Toys'
+	);
+	
+	
+	**The query inside the parentheses is executed first by the database, then the first query is executed.**

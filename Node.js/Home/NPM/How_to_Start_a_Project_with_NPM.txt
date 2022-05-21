@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T21:38:45-04:00
+
+====== How to Start a Project with NPM ======
+Created Monday 06 September 2021
+
+1). cd into the directory you want to start the project
+
+2). run **npm init**
+	- this creates **package.json** that has metadata and dependencies
+	
+	- if you are in a hurry, or just want the defaults, simply type **npm init --yes**
+	
+
+**NOTE: **Make sure you commit the **package.json** in Git.
+
+
+

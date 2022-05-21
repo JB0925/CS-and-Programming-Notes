@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T13:42:26-05:00
+
+====== Changing the AMI ======
+Created Saturday 08 January 2022
+
+The **AMI** is an **Amazon Machine Image**.
+
+The AWS provider knows that it cannot change the AMI of an instance after being created, so TF will destroy the old instance and create a new one.
+
+To apply these changes, run **terraform apply**
+
+Terraform can make some changes in place, but changing the AMI for an EC2 requires Terraform to destroy the old AMI and recreate it using the new one.
+
+
+**NOTE:** You will see **-/+ resource "aws_instance" "app_server" **
+
+
+The minus / plus means a resource is being terminated and recreated.

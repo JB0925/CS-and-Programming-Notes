@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-03T16:59:20-05:00
+
+====== How to Get a Command Prompt Inside of a Container ======
+Created Monday 03 January 2022
+
+We have seen how we can use:
+	**docker exec -it container_id command**
+	
+to run a command in a currently running container.
+
+However, we can actually get a command prompt **inside of the container**, if we want to run several commands.
+
+To do this, run:
+	**docker exec -it container_id sh**
+	

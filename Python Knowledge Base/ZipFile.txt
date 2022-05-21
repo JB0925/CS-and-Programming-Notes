@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-02T23:47:42-05:00
+
+====== ZipFile ======
+Created Saturday 02 January 2021
+

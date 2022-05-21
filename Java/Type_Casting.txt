@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-07T00:55:13-05:00
+
+====== Type Casting ======
+Created Monday 07 February 2022
+
+To type cast in Java, we do so like this:
+
+**(typeYouWant) (someValue / someOtherVal);**
+
+**Example:**
+
+(**byte) (myMinByteValue / 2);**
+
+This casts an integer value to a **byte** data type.

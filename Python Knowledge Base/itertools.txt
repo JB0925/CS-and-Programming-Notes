@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-27T01:31:51-04:00
+
+====== itertools ======
+Created Monday 27 July 2020
+
+**SEE DOCS HERE:**
+		https://docs.python.org/3/library/itertools.html#itertools.cycle
+
+#Python itertools makes it easy to make a sequence starting a number.
+
+🐍 Check out more 
+@pybites
+ tips at https://codechalleng.es/tips 💡
+
+{{.\pasted_image001.png}}
+
+Another example of itertools.count:
+
+**import itertools**
+
+
+**class Animal:**
+**    _seq = itertools.count(10001)**
+**    _zoo = []**
+
+**    def __init__(self, name):**
+**        self.id = next(self._seq)**
+**        self.name = name.title()**
+**        self._zoo.append(self)**

@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-02T10:14:14-04:00
+
+====== JOIN with a GROUP BY clause ======
+Created Friday 02 April 2021
+
+Say we have a users table, and a photos table.
+The photos table has a foreign key of "user_id", that shows which photos belong to which users.
+In order to write a query to get usernames AND a count of how many photos each user posted, you can use the below:
+
+SELECT username, COUNT(*)
+FROM users
+JOIN photos
+ON users.id = photos.user_id
+GROUP BY username;

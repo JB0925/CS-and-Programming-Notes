@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-10T13:44:14-05:00
+
+====== text-align ======
+Created Wednesday 10 February 2021
+
+**h1 {**
+   **text-align: center;**
+   **width: 50%;**
+	}
+
+
+The above example would center all **h1** tags in the middle of the screen.
+**NOTE: **changing the **width** property can make for some unexpected changes. For example, above I set the width to 50%. All **h1's** will still right align, but **now** the **h1** element only goes 50% of the way across the screen, whereas **before** it went 100% of the way across the screen. So it will still be right aligned, but only to its 50% margin.
+

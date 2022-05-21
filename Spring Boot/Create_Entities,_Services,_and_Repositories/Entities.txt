@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-19T23:50:16-05:00
+
+====== Entities ======
+Created Saturday 19 February 2022
+
+**Entities are typically a representation of a single table in a database.**
+
+Below is an example Entity:
+
+**NOTES:**
+	1). The Class needs to be decorated with **@Entity**
+	
+	2). We need to choose a primary key for our DB, so we use the @Id decorator for that.
+	
+	3). We also decorate it with @GeneratedValue(strategy = GenerationType.AUTO) to make the primary key auto-increment
+	
+	**NEXT STEPS:** Create a **controller** for this entity. Also, create an Interface for this class in the Service folder.
+
+{{~/Desktop/ScreenShots/SpringBoot - First Entity.png}}
+{{~/Desktop/ScreenShots/SpringBoot - FirstEntity2.png}}
+{{~/Desktop/ScreenShots/SpringBoot - First Entity 3.png}}
+

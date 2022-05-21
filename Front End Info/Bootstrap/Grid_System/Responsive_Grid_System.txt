@@ -1,0 +1,83 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-28T01:13:00-05:00
+
+====== Responsive Grid System ======
+Created Sunday 28 February 2021
+
+Same as the regular grid system, except the fact that we now use names like **sm, lg, xs, md** in addition to numbers.
+**NOTE: class="row no-gutters"** will remove any space between any elements in a row.
+
+**NOTE: **The following **col-md-3 col-6** would mean that above the medium breakpoint, this item would take up 3 units of space in the row. Below the medium breakpoint, it would take up 6 units of space in the row.
+
+**Example:**
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				Some text goes here
+			</div>
+			<div class="col-md-6">
+				Some other text goes here
+			</div>
+		</div>
+	</div>
+	
+	- In the above example, the **md** class is used as a **breakpoint**. This means that, until the screen size shrinks, the two columns will share 6 units of space. When the screen size shrinks to the **medium (md) breakpoint**, the two columns (and their text) will stack on top of each other.
+
+**Example 2:**
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-xl-3">
+				Some text goes here
+			</div>
+			<div class="col-md-6 col-xl-3">
+				Some other text goes here
+			</div>
+			<div class="col-md-6 col-xl-3">
+				More text
+			</div>
+			<div class="col-md-6 col-xl-3">
+				Other text
+		  </div>
+		</div>
+	</div>
+	
+	- In this example, we have **two breakpoints**. When screen size is **extra large**, the four columns will share 3 units of space in the row. As the screen shrinks, when it gets to the **medium** breakpoint, the four columns will share 6 units of space in the row (**two columns stacked on top each other, twice**). 
+	- Below the **medium** breakpoint, the **default is xs.** Since neither **s** or **xs** is specified, it will then stack to where all four columns stack on top of each other.
+	- If each **xl** was given 4 units of space instead of 3, this would overflow the row, and one column would stack under one other column.
+	- **Remember, if the breakpoints are not specified, ALL columns will stack on top of each other.**
+	
+	- **Rule of Thumb:** As the screen gets bigger, the units get smaller, and vice versa.
+
+
+
+**Making Images Responsive:**
+	- With the **img** tag, use the class of **img-fluid** to make it responsive
+	- Remember to use the **container-row-col** syntax
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<img class="img-fluid"
+					   src="https://www.areallyreallylongurl.here.com/picture1"
+					   alt="pic1">
+			</div>
+			<div class="col">
+					  <img class="img-fluid"
+					   src="https://www.areallyreallylongurl.here.com/picture2"
+						alt="pic2">
+			</div>
+			<div class="col">
+					  <img class="img-fluid"
+					   src="https://www.areallyreallylongurl.here.com/picture3"
+						alt="pic3">
+			</div>
+		  </div>
+	   </div>
+	
+	- The above example will place three pictures in a row side by side.
+	- This example uses **no breakpoints** (**only uses "col" instead of "col-md-6", etc.**)
+	- If you give the **col** div a breakpoint, the pictures will respond in the same manner as the text in the above examples.
+	- So if the **class="col-xl-4"**, then when the screen is **xl**, the pictures will sit three side by side, taking up four units of space in the row.
+	- Once the screen goes below the **xl** breakpoint, if no other breakpoints are specified, the pictures will stack on top of each other.
+	
+	

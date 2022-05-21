@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-20T00:41:29-04:00
+
+====== Multiple Route Params ======
+Created Friday 20 August 2021
+
+**NOTE:** In your **Route** component, you need to be sure to use the **exact** attribute.
+
+**Example:**
+
+<Route exact path="/food/:foodName/drink/:drinkName" component={Meal}/>
+
+Then, in your **Meal** component, you have access to **this.props.match.params.foodName** and **this.props.match.params.drinkName**

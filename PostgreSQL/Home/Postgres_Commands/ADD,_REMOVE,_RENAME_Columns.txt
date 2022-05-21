@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-12T23:40:51-04:00
+
+====== ADD, REMOVE, RENAME Columns ======
+Created Monday 12 July 2021
+
+ALTER TABLE books ADD COLUMN in_paperback BOOLEAN;
+
+ALTER TABLE books DROP COLUMN in_paperback;
+
+ALTER TABLE books RENAME COLUMN page_count TO num_pages;
+
+
+**NOTE:** Note how in the first statement, you can specify constraints at the end of the statement.

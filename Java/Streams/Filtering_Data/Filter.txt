@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-24T00:24:33-04:00
+
+====== Filter ======
+Created Sunday 24 April 2022
+
+**Example:**
+
+List<Car> cars = myCars.getCars();
+**List<Car> carsLessThan2K = cars.stream().filter(c -> c.price < 2000).collect(Collectors.toList());**

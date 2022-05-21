@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-13T22:05:23-04:00
+
+====== Odd Even Sort ======
+Created Tuesday 13 October 2020
+
+**Odd-Even Sort (or Brick Sort):**
+	- It is a simple sort, and a variation of Bubble Sort
+	- Its time-complexity is O(n**2)
+	- Compares all odd/even indexed adjacent elements in the list
+	- Swaps if they are in the wrong order
+
+	- Next, it compares all even/odd adjacent elements in the list and swaps if they are mixed up
+	- It keeps doing this until there is a sorted list (odd/even, even/odd, odd/even, etc).
+	- Its space-complexity is O(1)….again, it’s an in-place algorithm
+	
+
+**def odd_even_sort(a):**
+	**swap = True**
+	
+	**while swap:**
+		**try:**
+			**swap = False**
+			**for i in range(1, len(a), 2):**
+				**if a[i] > a[i+1]:**
+					**swap = True**
+					**a[i], a[i+1] = a[i+1], a[i]**
+			
+			**for j in range(0, len(a), 2):**
+				**if a[j] > a[j+1]:**
+					**swap = True**
+					**a[j], a[j+1] = a[j+1], a[j]**
+		
+		**except IndexError:**
+			**pass**
+	
+	**return a**
+	

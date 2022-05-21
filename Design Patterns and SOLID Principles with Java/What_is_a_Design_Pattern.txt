@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-22T10:43:23-04:00
+
+====== What is a Design Pattern ======
+Created Friday 22 April 2022
+
+A **design pattern** is a resuable solution that can be applied during software design
+
+They are **not** specific solutions; rather, they are general guidelines
+
+In order to use them properly, you must understand the problems they solve.
+

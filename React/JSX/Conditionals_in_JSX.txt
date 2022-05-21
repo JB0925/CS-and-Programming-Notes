@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-06T23:20:50-04:00
+
+====== Conditionals in JSX ======
+Created Sunday 06 June 2021
+
+How can we render conditional code in JSX?
+
+**Example 1 - Ternary Operators:**
+{{~/Desktop/ScreenShots/JSX Conditional 1.png}}
+
+Here, we have created a Component called "NumPicker".
+
+Inside of the **<p>** tag, we are rendering conditional code. If **num === 7**, we render "Congrats!" inside the **p** tag. Else, we render **try again later...**
+
+**NOTE: **Notice the placement of the call to **randomNum(). **It is placed outside of the **return** but inside of **render. This is done so that it won't be called twice. **
+
+
+**Want to Add an Image?**
+
+{{~/Desktop/ScreenShots/JSX Conditional Image.png}}
+
+This code is the same as above, except this time we used a ternary operator to conditionally display an image.
+
+
+
+**Another Way to Display the Image:**
+	Since we only want to display the image if the number is 7, and we don't want to display anything in that space otherwise, we can use a boolean statement:
+	
+	{{~/Desktop/ScreenShots/React Conditional Boolean Operator.png}}
+	
+
+**A Third Way to Display Conditional Code:**
+	We can simply use if / else statements, we just have to put them **inside** the "**render**" statement, but **outside** the "**return**" statement.
+	
+	{{~/Desktop/ScreenShots/If : Else React Component.png}}
+	
+	Above the the refactored **render()** statement, now using if / else conditional code rather than **ternary** or **boolean** operators.
+

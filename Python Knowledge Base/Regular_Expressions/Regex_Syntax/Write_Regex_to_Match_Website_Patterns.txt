@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-29T01:55:06-04:00
+
+====== Write Regex to Match Website Patterns ======
+Created Wednesday 29 July 2020
+
+https://www.google.com
+http://coreyms.com
+https://youtube.com
+https://www.nasa.gov
+
+https?://(www\.)?(w+)(\.w+)
+
+? 0 or 1 of the item it is behind
+
+:// = literal colon and double forward slash
+
+(www\.) = a group to match www and a literal period, NOT the "." any character period.
+
+? after (www\.) means 0 or 1 of that pattern, i.e. it is an optional pattern (some of the URL's above don't have the "www."

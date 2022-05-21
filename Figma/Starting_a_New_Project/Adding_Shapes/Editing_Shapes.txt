@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-09T21:39:23-04:00
+
+====== Editing Shapes ======
+Created Monday 09 August 2021
+
+Click on a shape.
+
+At the top, you can click the first option, which is  **edit shapes.**
+
+Do that, and you can manipulate the shapes in different ways.
+

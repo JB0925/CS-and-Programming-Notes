@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-09T22:58:09-05:00
+
+====== Network ======
+Created Thursday 09 December 2021
+
+The **network** tab tells you what files are being loaded, the status, how long they take to load, their size, etc.
+
+You can click on any of the tabs at the top such as JS, CSS, etc. to see only those specific types of files.
+
+You can inspect AJAX calls to see the results, headers, what was sent, etc. by clicking on the **XHR** tab.

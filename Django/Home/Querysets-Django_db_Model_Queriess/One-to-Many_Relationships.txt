@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-27T21:31:19-05:00
+
+====== One-to-Many Relationships ======
+Created Saturday 27 February 2021
+
+A one-to-many relationship is one where a user or object of some kind is related to several other objects in another DB table.
+
+To establish this relationship in Django, you can use a '**ForeignKey** in the DB that has the "many"; or the DB with all of the objects related to the one user.
+
+**Example:**
+{{.\pasted_image.png}}
+
+The **Results** table is meant to store lists of objects. The last column is called **person**. This is the "one", or the person that all of the objects in the list are related to. 
+
+You can see that the first argument is the **User** model (**imported at the top**). The **on_delete=models.CASCADE** means that if the person is deleted from the **User** model, Django will delete all of the items associated with them that are in the **Results** table.
+
+
+**A Basic Query:**
+	**from django.contrib.auth.models import User**
+	**from dir_name.models import Results**
+	
+	user = User.objects.filter(username='Joe').first()
+	info = Results.objects.filter(person__id=user.id)
+	
+	This search is linking a person from the User model named Joe (if that person is in the table...), to a sequence of objects in the Results table.
+	
+	If the results query returns data, we can then type **print(item[5].price)** and get back the price of the 5th indexed object in the Results query.
+
+
+https://stackoverflow.com/questions/15507171/django-filter-query-foreign-key
+
+https://books.agiliq.com/projects/django-orm-cookbook/en/latest/one_to_many.html
+
+

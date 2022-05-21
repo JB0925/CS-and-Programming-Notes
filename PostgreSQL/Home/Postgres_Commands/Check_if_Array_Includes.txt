@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-11T22:41:28-04:00
+
+====== Check if Array Includes ======
+Created Sunday 11 July 2021
+
+SELECT * FROM analytics 
+  WHERE genres @> '{"Education"}';
+
+The above checks returns all columns for any entry that includes "Education" as part of the array in the **genres** column.

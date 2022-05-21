@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-25T15:44:52-04:00
+
+====== Sorting ======
+Created Thursday 25 March 2021
+
+**The .sort()** method sorts the array in place (same array) and returns the array.
+
+**Example:**
+	**let people = ["Daniel", "Angie", "Sharon", "Zuby"];**
+	**people.sort()**
+	**console.log(people)**
+		returns an array sorted into ["Angie", "Daniel", "Sharon", "Zuby"]
+	
+	
+	**This method works well for strings, but does not work for numbers. To sort numbers, you have to pass a compare function into the .sort() method.**
+	

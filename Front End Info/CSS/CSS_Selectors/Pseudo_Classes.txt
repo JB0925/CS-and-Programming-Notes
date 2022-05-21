@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-10T23:55:39-05:00
+
+====== Pseudo Classes ======
+Created Wednesday 10 February 2021
+
+**Examples:**
+
+{{.\pasted_image.png}}
+
+Pseudo Classes are keyword arguments that specify a special state of a selected element. **They are modifiers.**
+
+**They always start with a ":"**
+
+**Example:**
+	'**button:hover {**
+		**background-color: blue;**
+	**}**
+
+
+
+The '**:active **pseudo class pertains to times when you click a link and, while you are clicking on it, it turns a different color or something else happens to it.
+
+**Example:**
+{{.\pasted_image001.png}}		{{.\pasted_image002.png}}		{{.\pasted_image003.png}}
+
+
+Remember, **p + button **is an **adjacent selector**, meaning that the second element **(button**) comes **directly after** the first element (**p**).
+When clicked on (**when it is active**), the orange button will turn purple.
+
+
+
+**Nth-of-type(n):**
+	if you use **p:nth-of-type(3)**, it will only change the 3rd element**.**
+	if you change it to **p:nth-of-type(3n)**, it will change it to every third element
+	
+
+**How to Color a Checkerboard:**
+	- say your class is "square" and you want odd squares red, and even squares black
+	- **.square {**
+		  **background-color: red;**
+	  }
+	
+	- '**.square:nth-of-type(2n) {**
+		   **background-color: black;**
+	   **}**
+	

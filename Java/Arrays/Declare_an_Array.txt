@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-14T20:53:53-05:00
+
+====== Declare an Array ======
+Created Monday 14 February 2022
+
+**Example:**
+	int intArray[];
+		OR
+	int[] intArray;
+	
+	short shortArray[];
+		OR
+	short[] shortArray;
+	
+**Example 2:**
+	array of objects created from the class **myClass**
+	
+	**MyClass myClassArray[];**
+
+
+**Example 3:**
+	array of plain Java objects
+		Object[] myObjects;
+			OR
+		Object myObjects[];
+
+
+**Example 4:**
+	array of unknown types
+	
+	Collection[] myCollection;
+		OR
+	Collection myCollection[];
+	

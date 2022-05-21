@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-04T13:03:32-05:00
+
+====== AGE ======
+Created Thursday 04 March 2021
+
+You can get the age of a person, or the difference in time between now and when something was created, by using **AGE.**
+
+{{.\pasted_image.png}}
+
+- first one returns a column of the ages of the people
+- second is similar, but returns more columns
+
+**AGE()** **takes two parameters; usually NOW()** **and some date in the past.**
+

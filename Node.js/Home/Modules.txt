@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T22:30:59-04:00
+
+====== Modules ======
+Created Monday 06 September 2021
+
+Like in Python, modules allow us to share code across different files in a Node project.
+
+This system is sometimes called
+**commonJS Modules**
+
+There are no **script** tags in Node, so you must import and export modules explicitly.
+

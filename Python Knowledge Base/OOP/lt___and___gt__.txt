@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-07T23:12:58-04:00
+
+====== lt   and   gt ======
+Created Friday 07 August 2020
+
+lt and gt are in-class methods that allow for built in comparisons of created class instances:
+
+
+**def __lt__(self, other):**
+	**return (self.x, self.y) < (other.x, other.y)**
+
+
+**def __gt__(self, other):**
+	**return (self.x, self.y) > (other.x, other.y)**
+	
+
+**def __eq__(self, other):**
+	**return (self.x, self.y) == (other.x, other.y)**
+	

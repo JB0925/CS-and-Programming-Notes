@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-15T08:46:23-05:00
+
+====== Remove Duplicates ======
+Created Tuesday 15 February 2022
+
+We can remove duplicates from an array by using two pointers and a for loop.
+
+We increment the first pointer only once arr[p1] ≠ arr[p2]. Then we swap the values at those pointers.
+
+def remove_duplicates(nums: List[int]) -> int:
+	if not nums:
+		return 0
+	
+	i = 0
+	for j in range(1, len(nums)):
+		if nums[i] ≠ nums[j]:
+			i += 1
+			nums[i], nums[j] = nums[j], nums[i]
+	
+	return i + 1
+	
+	to return the array:
+		return nums[:i+1]
+

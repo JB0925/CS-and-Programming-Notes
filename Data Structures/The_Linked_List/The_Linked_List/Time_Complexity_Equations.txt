@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-20T23:10:42-04:00
+
+====== Time Complexity Equations ======
+Created Sunday 20 September 2020
+
+1). **Accessing: O(n)......sequential access data structure...have to go through each element to get to what you need**
+2). **Searching: O(n)......same as above**
+3). **Inserting: O(1)...if inserting at the HEAD or TAIL, O(n) if inserting in the middle (because you have to traverse through the list until you **
+					 **get to the point you need to insert at**
+
+4). **Deleting: O(n) or O(1).....same as #3.**
+
+
+
+

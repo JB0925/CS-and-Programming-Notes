@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-16T21:38:06-04:00
+
+====== Set Up a Test DB ======
+Created Thursday 16 September 2021
+
+const { Client } = require("pg");
+
+const DB_URI = process.env.NODE_ENV === 'test' ? "postgresql:///cats_test" 
+	  : "postgresql:///cats";
+
+let db = new Client({
+	connectionString: DB_URI
+});
+
+db.connect();
+
+module.exports = db;
+

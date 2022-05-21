@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-23T00:07:00-04:00
+
+====== Setting Up a Join Table ======
+Created Friday 23 July 2021
+
+Here are some examples of how to set up relationships with a join table in SQLAlchemy:
+
+**Example:**
+class Employee(db.Model):   # ...
+	**# direct navigation: emp -> employeeproject & back**
+	assignments = db.relationship('EmployeeProject',
+								  backref='employee')
+	
+	**liz = Employee.query.get(2)**
+	**liz.state #returns the state Liz is in / is from**
+	
+	**liz.assignments**
+		**# returns information about the projects liz is involved in, and what role she has in each**
+
+
+
+**Example #2:**
+class Project(db.Model):   # ...
+	# direct navigation: proj -> employeeproject & back
+	assignments = db.relationship('EmployeeProject',
+								  backref='project')
+	
+	**project = Project.query.get('car')**
+	**project.proj_name**
+		# returns the name of the project 
+	
+	**project.assignments**
+		# returns all relevant information from the **employees_projects** table, regarding the selected project.
+		
+
+
+**NOTE: **For both of these, they work both ways because of the **backref**. So, if you ran **emp_proj = EmployeeProject.query.get(1)**, and then ran **emp_proj.employee**, you would get information from the **Employee** model regarding that `EmployeeProject query. 
+
+You could also do **emp_proj.project** to get information about that instance's project(s).
+
+
+**Another Example:**
+>>> liz.assignments
+[<EmployeeProject 2, server>, <EmployeeProject 2, car>]
+
+>>> liz.assignments[0].project
+<Project server Deploy Server>
+
+**Because "assignments" are `EmployeeProject objects, you can then use that to get specific project information based on your initial query. See above.**
+

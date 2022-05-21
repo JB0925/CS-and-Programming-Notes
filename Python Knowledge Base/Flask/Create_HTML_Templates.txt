@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-24T00:24:15-04:00
+
+====== Create HTML Templates ======
+Created Saturday 24 October 2020
+
+with all the other flask imports, import **render_template**
+
+
+**Basic HTML Template:**
+
+{{.\pasted_image.png}}
+
+Instead of typing in a paragraph or message, etc., you can put a variable in double braces (dict brackets), and use the back end (Flask) to pass the information to the front end (HTML)
+
+**Passing from Back End (Flask) to Front End (HTML):**
+
+{{.\pasted_image001.png}}
+
+**Passing Multiple Args into Flask:**
+
+{{.\pasted_image002.png}}
+
+**And Passing Those Args Into HTML:**
+
+{{.\pasted_image003.png}}
+
+
+
+

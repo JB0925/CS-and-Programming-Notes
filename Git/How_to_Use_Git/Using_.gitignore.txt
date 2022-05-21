@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-29T11:30:14-04:00
+
+====== Using .gitignore ======
+Created Thursday 29 October 2020
+
+Sometimes, Python caches files, such as when you import modules from other places on your computer, and stores this information in Pycache.
+
+To have Git ignore this cache and make it so that it doesn't keep telling you those files are untracked, you can **make a text document called ".gitignore" and save it in the same directory.**
+
+**This is what needs to go in the ".gitignore" file:**
+{{.\pasted_image.png}}
+
+note that you can also add more files to be ignored underneath the "_pycache_" file
+
+
+Next, add the **".gitignore" **file to the repo, and commit it to the repo:
+
+{{.\pasted_image001.png}}
+
+

@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-09T22:35:22-04:00
+
+====== Sort Alphabetically ======
+Created Sunday 09 August 2020
+
+**lst = sorted(somelist)   OR  lst = sorted(somelist, reverse=True)**
+
+https://www.kite.com/python/answers/how-to-sort-a-list-alphabetically-in-python#:~:text=Use%20sorted()%20to%20sort,list%20to%20sort%20it%20alphabetically.&text=sorted(iterable%2C%20key%3DNone,list%2C%20set%20key%20to%20str.

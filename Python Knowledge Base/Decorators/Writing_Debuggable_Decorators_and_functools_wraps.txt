@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-21T12:01:25-04:00
+
+====== Writing Debuggable Decorators and functools wraps ======
+Created Wednesday 21 October 2020
+
+If you decorate a function, then try to call any information about it (such as func.__name__, or func.__doc__), it will instead return the info from the decorator function. To get around this:
+
+**from functools import wraps**
+
+def uppercase(func):
+	@wraps(func)
+	def wrapper():
+		return func().upper()
+	return wrapper
+	
+
+Small little change, but what this does is allows the original function (**one being passed into the decorator**) to keep its docstring, name, etc.
+

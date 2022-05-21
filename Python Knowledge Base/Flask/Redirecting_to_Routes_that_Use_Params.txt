@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-08T00:44:29-04:00
+
+====== Redirecting to Routes that Use Params ======
+Created Sunday 08 August 2021
+
+Say you need to set an anchor tag's href property, but the route is dependent upon some data that you don't have access to in the method, or in the Jinja template, but it is in the URL:
+
+**How to Set a Route That is Calling the Same URL as the Current Page:**
+	<a href="{{ url_for(request.endpoint, **request.view_args) }}">Page
+	</a>

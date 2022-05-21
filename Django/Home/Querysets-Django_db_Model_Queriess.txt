@@ -1,0 +1,60 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-18T23:56:11-05:00
+
+====== Querysets-Django db Model Queriess ======
+Created Thursday 18 February 2021
+
+open the Django interactive shell with **python manage.py shell**
+
+presumably, you have a **models.py** file created inside your **app**
+
+**from pages.models import 'ModelName**
+
+
+'**ModelName.objects.all()**
+	- returns a list of all 'ModelName objects that have been created
+
+
+**from django.contrib.auth.models import User**
+
+**User.objects.all()**
+	- returns a list of all User objects (at this point, only the **superuser**)
+
+
+
+**Create a new 'ModelName Object:**
+	**me = User.objects.get(username='jesse')**
+	**Post.objects.create(author=me, title='sample', text='Test')**
+	
+	To double check that everything worked, call '**ModelName.objects.all()** again
+		- 
+
+**Query the ORM:**
+	- **'ModelName.objects.filter(author=me)**
+		- returns a Queryset of all objects where the author is 'me'
+	
+	- **'ModelName.objects.filter(title__contains='some string')**
+		- returns a Queryset of all objects that contain 'some string'
+	
+	- **'ModelName.objects.filter(published_date__lte=timezone.now())**
+		- **__lte** means 'less than or equal to'
+		- returns a list of objects that were published with a time less than or equal to now
+		
+	- **post = 'ModelName.objects.get(title='some title')**
+		- gets a post from the ORM with the title 'some title' and stores it in a variable called 'post'
+
+
+**Ordering Objects:**
+	- **'ModelName.objects.order_by('created_date')**
+		- returns a Queryset where the posts are ordered by the date they were created
+		- adding - to 'created_date'  ('**-created_date**') orders them in reverse order
+
+
+**Method Chaining:**
+	- '**ModelName.objects.filter(published_date__lte=timezone.now()).order_by('published_date')**
+		- returns a Queryset where the posts were published in the past AND then ordered by their published date
+
+
+
+

@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-19T00:17:04-05:00
+
+====== Breadth First Search ======
+Created Tuesday 19 January 2021
+
+The following is a BFS algorithm to find a number in the minimum amount of steps using a given rule:
+
+{{.\pasted_image.png}}
+
+
+
+https://stackoverflow.com/questions/47125112/generate-any-number-in-the-fewest-step-using-multiply-by-2-or-divide-by-3

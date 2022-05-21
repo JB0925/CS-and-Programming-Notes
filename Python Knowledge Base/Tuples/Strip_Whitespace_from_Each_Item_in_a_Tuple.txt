@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-01T23:30:19-04:00
+
+====== Strip Whitespace from Each Item in a Tuple ======
+Created Tuesday 01 September 2020
+
+**k = tuple(tuple(''.join(i.split()) for i in a) for a in k)**
+
+stackoverflow.com/questions/14278360/python-strip-spaces-in-tuple
+

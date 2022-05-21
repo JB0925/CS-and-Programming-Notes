@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-12T23:43:25-04:00
+
+====== Schema Design - Crow's Foot Notation ======
+Created Monday 12 July 2021
+
+{{~/Desktop/ScreenShots/SQL Crow's Foot Notation.png}}
+
+The most important things here are the presence of the FOREIGN KEY relationships, noted in italics. 
+
+**In the MOVIES table, **it has a FOREIGN KEY of **studio_id** that links it to the **STUDIOS** table.
+
+**In the ROLES table,** it has two FOREIGN KEY relationships:
+	1). a **movie_id** key to relate it to the **MOVIES** table.
+	2). a **actor_id** key to relate it to the **ACTORS** table.

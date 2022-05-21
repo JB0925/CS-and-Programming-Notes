@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-31T13:09:09-04:00
+
+====== Safety and Idempotence ======
+Created Saturday 31 July 2021
+
+**Safety** refers to the idea of an HTTP verb that can have no adverse effects on an application. A GET request is safe because you can make that GET request 10 times, and nothing in a database or on the server will change.
+
+A POST request is NOT safe, because it can alter data that is not meant to be altered. Same goes for PUT, PATCH, and DELETE requests.
+
+
+**Idempotence** is the idea that you can use an HTTP verb over and over and get the exact same result each time. A GET request is also **idempotent**, for the same reasons as above.
+
+
+**SAFETY and IDEMPOTENCE CHART**
+
+**Request		Safe?		Idempotent?**
+GET			yes			yes
+
+POST		no			no
+
+PUT / PATCH	no			yes
+
+DELETE		no			yes

@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-02T22:35:45-04:00
+
+====== Basic Requirements to Run a React File ======
+Created Wednesday 02 June 2021
+
+The standard way to run a React file is to use **create React app.**
+
+However, you can get started by including the **react.development.js** file, and the **react-dom.development.js** file.
+
+<script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+
+**NOTE: **These two tags go at the bottom of the HTML document.
+
+{{~/Desktop/ScreenShots/React Starter Code.png}}
+
+
+We also need the **babel-standalone** file to support the JSX language.
+
+**NEW: ** for the **fourth script tag**, where we normally put our personal JS logic, you have to include a **type** in order to use JSX.
+
+That **type** is **"text/jsx".**
+

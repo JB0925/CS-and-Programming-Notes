@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-02T22:47:23-04:00
+
+====== How to Define a Component ======
+Created Wednesday 02 June 2021
+
+**Step 1 - Create a Class:**
+	class Hello extends React.Component {
+		render() {
+			return <h1>Hello there!</h1>
+		}
+	}
+	
+	**NOTE: **This **MAKES** the component, but does NOT put it on a webpage.
+
+
+**Step 2 - In the HTML doc, create an element in **
+		**which to render your component:**
+		
+		<div id="root"></div>
+		
+
+**Step 3 - Use ReactDOM:**
+	Back in the JS file, you will write:
+		**ReactDOM.render(<componentName/>)**
+		
+		In our case, that's ReactDOM.render(<Hello/>)
+		
+		**NOTE:** The weird tag around "Hello" is a JSX tag.
+		
+
+**Step 4 - Tell `ReactDOM where to render it:**
+		`ReactDOM.render(<Hello/>, document.querySelector('#root'))
+
+
+{{~/Desktop/ScreenShots/First React Component.png}}
+
+

@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T22:55:13-04:00
+
+====== Reading Files ======
+Created Monday 06 September 2021
+
+We read files with **fs.readFile(path, encoding, callback);**
+
+**path** = like in python, it is the path to the file, relative to PWD
+
+**encoding **= how to interpret the file
+	- for text files, this is almost always **utf8**
+	- for binary files, (such as an image), we just omit this argument
+
+**callback** = a function that takes **error** and **data**
+
+
+**Example:**
+	const fs = require('fs');
+	
+	fs.readFile('myFile.txt', 'utf8', function(err, data) {
+		if (err) {
+			console.log(err);
+			process.exit(1);
+		}
+		
+		console.log(`file contents: ${data}`);
+	});
+	
+	console.log('reading file...');
+	
+	// remember, the file wouldn't have been read at the point that the last line runs, because it is async
+
+
+
+
+
+
+

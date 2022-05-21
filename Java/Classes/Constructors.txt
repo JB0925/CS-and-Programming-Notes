@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-18T22:04:51-05:00
+
+====== Constructors ======
+Created Friday 18 February 2022
+
+A constructor initializes a new object before it is used.
+
+You can have more than one constructor.
+
+**Example:**
+
+public class Account {
+	private int number;
+	private double balance;
+	private String customerName;
+	
+	**public Account(int number, double balance, String customerName) {**
+		this.number = number;
+		this.balance = balance;
+		this.customerName = customerName;
+	}
+}

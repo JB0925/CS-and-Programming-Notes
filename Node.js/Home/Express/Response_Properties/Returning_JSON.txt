@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-10T21:16:02-04:00
+
+====== Returning JSON ======
+Created Friday 10 September 2021
+
+To return JSON implicitly, use the following:
+
+**Example:**
+	app.get('api/staff/:fname', (req, res) => {
+		return **res.json({ fname: req.params.fname });**
+	})
+	
+	**NOTE:** Of course, the actual JSON data doesn't have to come from the request at all.

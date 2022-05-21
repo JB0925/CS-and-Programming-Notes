@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T21:50:46-05:00
+
+====== IAM Tags ======
+Created Saturday 08 January 2022
+
+I am tags are everywhere in AWS. They are used to help you track or control access within your group.
+
+For instance, you could add **department: Engineering** to a user. This would follow them around to allow you to easily see what department they are in.
+

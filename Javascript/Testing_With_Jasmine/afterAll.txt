@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-28T00:19:06-04:00
+
+====== afterAll ======
+Created Friday 28 May 2021
+
+**afterAll** is the opposite of **beforeAll**, in that it is often used to tear down something, such as a test database, after all tests have run.
+
+The syntax is the same as all the other hooks.

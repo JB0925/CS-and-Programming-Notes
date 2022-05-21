@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-09T00:48:46-04:00
+
+====== Query Example 5 - Login User ======
+Created Friday 09 April 2021
+**from sqlalchemy.future import select**
+**from remind_me.data import db_session**
+**from sqlalchemy import func**
+**from remind me.services import user_service**
+
+
+**Use Async / Await to Login a User:**
+
+{{file:///var/folders/j3/_t3lnk4s6qj4626wqs10dzf40000gn/T/TemporaryItems/NSIRD_screencaptureui_oewkij/Screen%20Shot%202021-04-09%20at%2012.52.19%20AM.png}}
+
+# call **async** on the function
+# use the **async with** block to create a session
+# new query syntax to find a user, **BUT DONT CALL .first()**
+# **await** the part of the code that talks to the database
+# the **user** variable is saying to either set **user** to what the query found, and if it didn't find anything, set **user** = None
+
+
+**USE async / await in other methods that use "login_user()":**
+{{file:///var/folders/j3/_t3lnk4s6qj4626wqs10dzf40000gn/T/TemporaryItems/NSIRD_screencaptureui_0ryLKd/Screen%20Shot%202021-04-09%20at%2012.57.46%20AM.png}}
+
+# the function is already **async**, so we only need to call **await** on the part of the method that talks to the database, i.e., "user = **await** user_service.login_user(vm.email, vm.password)
+
+
+
+

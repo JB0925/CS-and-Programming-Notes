@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-28T10:11:31-05:00
+
+====== Docker Swarm ======
+Created Friday 28 January 2022
+
+Docker Swarm allows us a way to push changes to our production environment while experiencing minimal amounts of loss.
+
+Swarm has two types of nodes: **manager nodes** and **worker nodes**
+
+**Starting Docker Swarm:**
+	docker swarm init --advertise-addr **public IP address**
+
+
+**Updating Docker-Compose.yml For Docker Swarm:**
+
+**NOTE:** We only update **docker-compose.prod.yml** because we only need these changes in our **production** environment.
+
+**NOTE:** New additions for **Docker Swarm** are bolded.
+
+node-app:
+	**deploy:**
+	**  replicas: 8**
+	**  restart_policy:**
+		**condition: any**
+	**  update_config:**
+		**parallelism: 2**
+		**delay: 15s**
+	build:
+	  context: .
+	  args:
+		NODE_ENV: production
+	environment:
+	  - NODE_ENV=production
+	  - MONGO_USER=${MONGO_USER}
+	  - MONGO_PASSWORD=${MONGO_PASSWORD}
+	  - SESSION_SECRET=${SESSION_SECRET}
+	command: node index.js
+
+
+**Deploy Using Swarm:**
+
+docker stack deploy -c docker-compose.yml -c docker-compose.prod.yml myapp

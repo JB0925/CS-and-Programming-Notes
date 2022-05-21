@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-13T20:56:00-05:00
+
+====== Check Battery ======
+Created Friday 13 November 2020
+
+use **acpi -V	**to check on the status of the computer's battery

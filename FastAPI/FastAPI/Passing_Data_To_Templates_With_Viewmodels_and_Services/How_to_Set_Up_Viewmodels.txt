@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-04T00:32:30-04:00
+
+====== How to Set Up Viewmodels ======
+Created Sunday 04 April 2021
+
+First, you need to create a **viewmodel** for all other viewmodels to inherit from.
+
+**Here is the base template for the viewmodel:**
+{{.\pasted_image.png}}
+
+
+
+**And here is the "IndexViewModel", or the Viewmodel for the Homepage:**
+{{.\pasted_image001.png}}
+
+
+**See the "register.py" file in "remind_me", as well as all of the viewmodel files to see how they work.**

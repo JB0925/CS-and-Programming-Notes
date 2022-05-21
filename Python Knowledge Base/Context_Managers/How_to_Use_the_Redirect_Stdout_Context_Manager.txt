@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-25T22:39:14-04:00
+
+====== How to Use the Redirect Stdout Context Manager ======
+Created Sunday 25 October 2020
+
+**Explanation of what is happening in the code below with "redirect_stdout", "BuiltInFunctionType", and "StringIO":**
+
+{{.\pasted_image.png}}
+
+**0). if not isinstance(builtin, "BuiltinFunctionType"):**
+		**raise "ValueError"**
+				checking to make sure the "builtin" arg that gets passed in is an instance of the "BuiltinFunctionType" attribute from Types. If it isn't, a "ValueError" gets raised. "BuiltinFunctionType" just means the built in functions such as **min, max, len, pow, etc.**
+
+**1). f = StringIO():**
+		The "StringIO" from io creates a file like object which you can read from, write to, etc. Here, we instantiate a blank "StringIO" object.
+
+**2). with redirect_stdout(f):**
+		**help(builtin)**
+		**return len(f.getvalue())**
+		
+			The "redirect_stdout" context manager temporarily redirects **sys.stdout** to another file or file-like object.
+			Here, that **file or file-like object** is the "**StringIO" object created above with "f".**
+			
+			So, **with redirect_stdout(f):** literally means, "redirect the sys.stdout to the file-like object we created called "f".
+			
+			Next, we call help on the builtin function we passed in. 
+			
+			Finally, we return **len(f.getvalue()) **to get the length of the value/output. 
+			
+			to read from the object, we could call **f.read()**
+			
+			to write to the object, we could call **f.write()**
+
+https://docs.python.org/3/library/contextlib.html		#contextlib docs, one of which is about **redirect_stdout**
+https://docs.python.org/3/library/types.html			#info on BuiltinFunctionType
+https://docs.python.org/3/library/functions.html			#list of all the builtin functions in Python
+https://www.geeksforgeeks.org/stringio-module-in-python/	  #info on "StringIO" and some of the methods available with it
+

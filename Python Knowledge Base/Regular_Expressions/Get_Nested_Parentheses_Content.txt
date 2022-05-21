@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-19T22:54:32-05:00
+
+====== Get Nested Parentheses Content ======
+Created Saturday 19 December 2020
+
+{{.\pasted_image.png}}
+
+**Explanation:**
+	\(	= the ( character, escaped with a backslash
+	
+	([^()]*) = a capturing group, anything not equal to parentheses, one or more
+	
+	\)	= the ) character, escaped with a backslash
+	
+
+https://stackoverflow.com/questions/17779744/regular-expression-to-get-a-string-between-parentheses-in-javascript
+

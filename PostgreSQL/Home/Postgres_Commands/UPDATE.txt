@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-04T22:46:48-05:00
+
+====== UPDATE ======
+Created Thursday 04 March 2021
+
+UPDATE allows us to update a column, or multiple columns, based on the WHERE clause that is used.
+If no WHERE clause is used, it updates every row.
+
+For example:
+	**UPDATE person SET email = 'omar@gmail.com';**
+		- would set everyone's email in the **person** table to 'omar@gmail.com 
+		- most of the time, we don't want this
+	
+	
+	**UPDATE person SET email = 'omar@gmail.com' WHERE id = 2011;**
+		- updates only the person who has the **id** of 2011 
+		
+	
+	**UPDATE person SET first_name = 'Joe', last_name = 'Montana' WHERE id = 100;**
+		- updates the first and last name of the person with the **id** of 100
+
+
+**ALWAYS USE A WHERE CLAUSE.**
+
+
+
+

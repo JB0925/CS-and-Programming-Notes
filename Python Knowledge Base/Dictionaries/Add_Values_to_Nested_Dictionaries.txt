@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-19T23:15:41-04:00
+
+====== Add Values to Nested Dictionaries ======
+Created Wednesday 19 August 2020
+
+https://www.geeksforgeeks.org/python-nested-dictionary/#:~:text=One%20way%20to%20add%20a,'key'%3A%20'value'%7D%20.

@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-24T08:11:50-04:00
+
+====== Using Middleware on All Routes ======
+Created Friday 24 September 2021
+
+const express = require("express");
+const app = express();
+const routes = require("./routes/auth");
+const ExpressError = require("./expressError");
+**const { authenticateJWT } = require("./middleware/auth");**
+
+**app.use(authenticateJWT);**

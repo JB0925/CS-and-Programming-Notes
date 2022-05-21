@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-15T08:11:10-04:00
+
+====== Installing PG ======
+Created Wednesday 15 September 2021
+
+run **npm install pg** in your terminal

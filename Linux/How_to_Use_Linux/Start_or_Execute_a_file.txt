@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-13T14:33:26-05:00
+
+====== Start or Execute a file ======
+Created Friday 13 November 2020
+
+**If you have the "x" permission and you are in the directory of the file:**
+		[[./filename]]
+		
+
+**If you do not have the "x" permission:**
+		**sh filename**
+

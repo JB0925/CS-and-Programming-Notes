@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-06T22:53:02-04:00
+
+====== Class Variables vs. Instance Variables ======
+Created Thursday 06 August 2020
+
+You can create variables for a class, which makes some things way easier:
+
+class Animal:
+	count = 10001
+	names = {}
+	
+	def "__init__"(self, name):
+		self.name = name
+		if self.name not in Animal.names.keys():
+			Animal.names[self.name] = Animal.count
+			Animal.count += 1
+
+
+**So when we refer to a class variable, we need to use the class name instead of self.**
+
+If you use it in an @classmethod, you can use cls.names instead of Animal.names
+

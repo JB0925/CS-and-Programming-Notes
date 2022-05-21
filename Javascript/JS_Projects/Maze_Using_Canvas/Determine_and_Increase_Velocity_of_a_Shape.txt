@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-16T21:19:34-04:00
+
+====== Determine and Increase Velocity of a Shape ======
+Created Sunday 16 May 2021
+
+First, destructure another object out of Matter.js:
+
+**const {Engine, Render, Runner, World, Bodies, Body} = Matter;**
+
+**Disable Gravity on Engine (not required):**
+	- You will have a lot of boilerplate code required to initialize the Matter.js "world".
+	- once **engine** is created with **const engine = Engine.create();**, add the following below it:
+	- **engine.world.gravity.y = 0;**
+
+
+The one we need to get/manipulate the velocity is **Body.**
+
+Use **Body.setVelocity();** to change the velocity of the shape.
+
+**Syntax:**
+	- **Body.setVelocity(<shape>, {x:x, y: y - 5})**
+
+
+From here, create a **document** addEventListener, and listen for **keydown** events.
+
+Select the keys that you want to be **up, down, left, and right**, and get their **key** value, or the **keyCode** value.
+
+
+**Inside the document.addEventListener()**, add:
+	- **const {x, y} = <shape>.velocity;**
+	
+	Then, just call **Body.setVelocity(<shape>, {x:x, y:y}) **as needed.
+	
+	**NOTE:** You will have to manipulate the x and y values in order to get the shape to move. See the sample below.
+	
+{{~/Desktop/ScreenShots/Matter.js Shape Velocity.png}}
+
+First statement: moves the shape **up.**
+Second statement: moves the shape **down.**
+Third statement: moves the shape **left.**
+Fourth statement: moves the shape **right.**
+

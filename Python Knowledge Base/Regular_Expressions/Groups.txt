@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-12T20:04:35-05:00
+
+====== Groups ======
+Created Thursday 12 November 2020
+
+**non-capturing group = ?:**
+		**m = re.search(r'(\w+), (?:\w+), (\w+)', 'foo,quux,baz')**
+			maybe you don't want to return "quux", but you need to match it as part of the overall pattern.
+		**m.groups()**
+			('foo', 'baz')
+		
+		**using a non-capturing group will match the overall pattern, but won't return the middle group with the ?: non-capturing special characters**
+
+
+If you have more than one group in your regex search, you can use **.groups(), .group, or groupdict() **to return parts of the string found in the regex search. **The group numbering is ONE based instead of the normal ZERO based.**
+
+**.groups() Example:**
+	**m = re.search(r'(\w+), (\w+), (\w+)', 'foo,quux,baz')**
+		Each of the above matches a sequence of word characters. There are three groups. To access the captured matches, you can use **.groups()**, which will return a tuple with all of the strings.
+		
+		**m.groups()**
+			('foo', 'quux', 'baz')
+		
+		**m.group(1)**
+			'foo'
+		**m.group(2)**
+			'quux'
+		**m.group(3)**
+			'baz'
+		**m.group(0)	or 		m.group()			**#returns all the groups as one string
+			'foo, quux, baz'
+		
+		**m.group(2, 3)					**#these two examples return a tuple of the string groups in the order specified
+			('quux', 'baz')
+		**m.group(3, 2, 1)**
+			('baz', 'quux', 'foo')
+			
+
+**Backreferences:**
+		use \1, \2, etc. to reference a group that you've already created.
+		
+		**regex = r'(\w+), \1'**
+		**m = re.search(regex, 'foo, foo')**
+		**m.groups()**
+			('foo', foo')
+		**m.group(1)**
+			'foo'
+			
+		**HOWEVER:**
+		
+		**m = re.search(regex, 'foo, qux')**
+			This will return None because the "\1" in **regex** means "match the same thing again"
+			
+			
+

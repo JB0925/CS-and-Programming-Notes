@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-19T22:39:37-05:00
+
+====== Run App With Maven ======
+Created Saturday 19 February 2022
+
+Once Maven has been installed with **brew install maven**, you can open the terminal and run:
+	**mvn spring-boot:run **
+	
+
+Exit the Application with CMD + C
+

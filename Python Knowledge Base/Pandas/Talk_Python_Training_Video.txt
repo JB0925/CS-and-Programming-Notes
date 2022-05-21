@@ -1,0 +1,58 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-02T00:05:57-04:00
+
+====== Talk Python Training Video ======
+Created Wednesday 02 September 2020
+
+Working With Columns and Column Values:
+
+numerical columns have available methods:
+	**.sum(), .mean(), .min(), .max()**
+	
+	**df['invoice'].nunique()**......gives the amount of unique invoices (or whatever the numerical column is)
+	
+
+
+**df['col_name'].head()** .....gives the head of an individual column
+
+
+**df['product'].nunique()** .....gives the number of unique products in the column
+
+**df['product'].value_counts()** .....gives the amount of each type of product in the column (i.e. shirts=275, pants=200, etc.)
+
+**df['product'].value_counts().div(100)** ......gives the amount of each type of product in the column, this time divided by 100 (shirts=2.75, pants=2.00)
+
+**df['product'].value_counts(normalize=True)** ....gives the percentage of each item in the table as a decimal (shirts=0.275, pants=0.200)
+
+Working With Multiple Columns:
+
+	**var = ['col1', 'col2']**
+	**df[var].mean()** ......gives the mean value of the two columns in var     OR   **df'col1', 'col2'.mean()** .....same thing
+	
+	**df[['col1', 'col2']].describe() .....**gives the statistical analysis of the two columns named
+	
+
+Working With Column Names:
+	[**c.replace(' ', '_') for c in df.columns] ....**list comprehension changes each column name that has a space between words, and replaces the space with an underscore
+	
+	to make the above permanent....assign the LC to a variable   **var = [c.replace(' ', '_') for c in df.columns)]**
+	
+	**var = [c.lower() for c in df.columns]  ......**changes each column name to a lower cased string
+	
+	**df.loc[0, :] ....**returns info for row 0, all columns       **df.loc[[1,2,3], :] .....**returns info for rows 1-3, all columns
+	
+	**df.loc[:, ['col1', 'col2', 'col3']].....**returns the info for all rows, of the columns specified in the list
+	
+	**df.loc1,2,3], ['col1', 'col2', 'col3'....**same as above, except for rows 1-3
+
+	**df.loc[:, 'col1' : 'col3'].....**all rows, first column through last column
+	
+	**company_only = df.loc[:, 'company' : 'extended_amount'].copy() **....new dataframe based on the conditions
+	
+	
+	
+	
+	
+	
+

@@ -1,0 +1,61 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-20T13:30:38-05:00
+
+====== Prototype Chain ======
+Created Thursday 20 January 2022
+
+JS uses the prototype object to find methods and properties on everything.
+
+If a property cannot be found, JS works its way up the prototype chain (looks through the prototype of every object).
+
+Before classes, you had to use the **prototype** to create a "class" that inherited from another "class"
+
+**Example:**
+
+**Dog.prototype = Object.create(Animal.prototype);**
+
+This is the same as saying **class Dog extends Animal**.
+
+
+
+**Example of Inheriting Properties From Other Classes Before the "Class" Keyword:**
+
+function Animal(species) {
+	this.species = species;
+	this.isAlive = true;
+}
+
+**// let's add a new method to the prototype**
+Animal.prototype.die = function() {
+	if(this.isAlive) {
+		this.isAlive = false;
+		return `The ${this.species} has died.`
+	}
+	
+	return "YOU CAN'T DIE TWICE!!";
+}
+
+
+**// let's make Dog inherit properties from Animal**
+function Dog(name, age) {
+	**Animal.call(species, "dog") // same as "super()"**
+	this.name = name
+	this.age = age
+}
+
+**// Now Dog will inherit methods from the Animal prototype**
+Dog.prototype = Object.create(Animal.prototype);
+
+**// Adding a new method to the Dog prototype**
+Dog.prototype.howl = function() {
+	return `${this.name} says AWOOOOOoooo!!!`;
+};
+
+
+
+**End Result:**
+	- Dog now has a **howl** method on its prototype and a **die** method on its prototype that it **inherited **from Animal.
+	
+	It also inherited the Animal properties by using **Animal.call(species, "dog")**
+

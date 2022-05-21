@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-27T21:42:02-05:00
+
+====== The bulk create method ======
+Created Saturday 27 February 2021
+
+Use bulk_create to store a list of objects into a database at once.
+
+**Example:**
+{{.\pasted_image.png}}
+
+Here I am saying that if there is a list of search results, call the **bulk_create** method on each item in, in this case, each namedtuple, over the whole list of objects.
+
+https://stackoverflow.com/questions/24388297/how-to-save-list-of-objects-in-django-models

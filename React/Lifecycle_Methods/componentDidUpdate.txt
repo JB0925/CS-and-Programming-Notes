@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-02T01:02:00-04:00
+
+====== componentDidUpdate ======
+Created Monday 02 August 2021
+
+Components often update during their life cycle.
+
+Here are some situations that occur that often cause components to update:
+	- your props change, **i.e. the values passed down from the PARENT components change**
+	
+	- **state** changes; we call **this.setState** often to update components
+	
+	- **forceUpdate **is called. This is called when you get data that isn't in props or state, but you want to manually force a re-render.
+
+
+**If used, `componentDidUpdate will be called every time a component updates.**
+
+This is a great function to call to implement any side effect operations, such as snycing up with `localStorage, making changes to a database, updating the DOM with non-React controlled components.
+
+
+**Example:**
+	class Timer extends Component {
+		constructor(props) {
+			super(props)
+			this.state = {quote: ""}
+		}
+		
+		`**componentDidMount() {**
+			axios.get(url).then(res => {
+				setTimeout(() => {
+					this.setState({quote: res.data});
+				}.bind(this), 3000);
+			});
+		**}**
+		
+		`**componentDidUpdate() {**
+			// write code here
+		}
+	}
+
+
+

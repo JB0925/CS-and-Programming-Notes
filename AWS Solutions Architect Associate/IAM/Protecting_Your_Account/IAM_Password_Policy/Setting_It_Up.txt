@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T23:05:44-05:00
+
+====== Setting It Up ======
+Created Saturday 08 January 2022
+
+Go to **account settings** on the left hand side of the dashboard.
+
+Click on **change password policy.**
+

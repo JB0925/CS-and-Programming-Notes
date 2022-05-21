@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-30T15:04:47-04:00
+
+====== Handling Datetime in JSON ======
+Created Thursday 30 July 2020
+
+JSON can't decode datetime.datetime objects, so to ensure that it works, you can create a simple function to handle it:
+
+def convert_to_string(time):
+	if isinstance(time, datetime.datetime):
+		return str(time)
+
+Then, to dump it into a JSON file, simply call:
+
+		**json.dumps(x, default= convert_to_string)**
+
+
+https://code-maven.com/serialize-datetime-object-as-json-in-python

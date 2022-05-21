@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-20T10:00:28-04:00
+
+====== Pathname Expansion ======
+Created Thursday 20 May 2021
+
+====== Pathname Expansion ======
+Created Thursday 20 May 2021
+
+**Symbols:**
+	- *** = **anything, 1 or more than one
+	
+	- **? = **1 of anything (can join multiple together to search for, say, 3 of something)
+	
+	- **[a-z] = **anything that starts with a lowercase letter from a-z
+	
+	- **^ = **not. So, **[^A-EJ-Z]*.txt** means anything that doesn't start with an uppercase letter from A-E, or J-Z, that has characters after that uppercase letter, and that ends in **.txt** 
+	
+**Examples:**
+	**cat *.txt**
+		- will print the contents of any file in the directory that begins with anything and ends in **txt**
+	
+	**echo [A-E]*.txt**
+		- will print out all file names that begin with a capital letter from A-E and have other characters, and ends in **.txt**
+		
+	**echo [^A-E]*.???**
+		- will print out all file names that do not start out with uppercase A-E, that have characters after that first one, and that end in three characters. So, a .html file would not get printed here, because it ends in four characters.
+

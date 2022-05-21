@@ -1,0 +1,84 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-29T22:19:55-04:00
+
+====== Arrow Functions ======
+Created Monday 29 March 2021
+
+Arrow functions are like lambda functions, in that they are anonymous, almost inline, functions that can be called to modify one or many values. Here are some examples:
+
+**NOTE: **If you are returning an object with an implicit return, you must wrap the object in parentheses.
+	**Example:**
+		const **myFunc** = x = > (
+		{
+			'thirdPower': x ** 3,
+			'double': x * x
+		});
+		
+**NOTE:** Arrow functions don't have access to the **this** keyword that is used in objects and classes.
+	**Example:**
+		let **myObj** = {
+			'name': 'Bubba',
+			hello: () = > {
+				return `${**this.name**} says hello!`
+			};
+		};
+		**This will return " says hello!"**
+	
+	**Correct Example:**
+		let **myObj** = {
+			'name': 'Bubba',
+			hello: **function**() {
+				return `${this.name} says hello!`
+			};
+		};
+		**This will return "Bubba says hello!"**
+
+
+**NOTE: **You cannot use the keyword **arguments** with arrow functions. You can only use **arguments** when using the **function** keyword.
+
+
+**Example 1: Basic Arrow Function**
+	let multiply = (x, y) => {
+		return x * y
+	};
+	console.log(multiply(5, 6))
+
+**Example 2: One parameter with no parentheses**
+	let double = x => {
+		return x ** 2
+	};
+
+
+**Example 3: Inline**
+	const myFunc = x => x % 2 === 0;
+
+
+**Example 4: Implicit Return**
+	const add = n => (
+		n + 10
+	)
+	**NOTE: The use of parentheses instead of brackets.**
+	
+
+**Example 5: Arrow function with Map**
+	numbers = [1,2,3,4,5]
+	const oddOrEven = numbers.map((n) => n ** 2);
+	console.log(oddOrEven)
+		returns [1, 4, 9, 15, 25]
+
+
+**Example 6: using a ternary operator**
+	const oddOrEven = x => (
+		x % 2 === 0 ? 'even' : 'odd'
+	);
+
+
+**Example 7: Using Map with a ternary operator**
+	const myNewArray = numbers.map(x => (
+		x % 2 === 0 ? 'even' : 'odd'
+	));
+	console.log(myNewArray)
+		returns ['odd', 'even', 'odd', 'even', 'odd']
+
+

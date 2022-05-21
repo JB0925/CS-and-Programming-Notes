@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-15T22:29:47-04:00
+
+====== textwrap.dedent ======
+Created Tuesday 15 September 2020
+
+Use textwrap.dedent to remove any common leading whitespace from every line in text:
+
+{{.\pasted_image.png}}

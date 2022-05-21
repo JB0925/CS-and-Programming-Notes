@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-13T12:30:53-05:00
+
+====== chmod - change file permissions ======
+Created Friday 13 November 2020
+
+to change the file permissions for a given file, you can use **chmod:**
+
+1). **+ or - = add or take away permissions**
+
+2). **rwxXst = (read, write, execute file (or search for a directory), execute only if it's already a file or already has permissions for some other user, set user or group ID on execution, restricted deletion flag or sticky bit)**
+
+**chmod + x 		**#add execute file permissions to this user for this file
+
+**chmod -w		**#take away write to file privileges for a user

@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T14:41:08-05:00
+
+====== How to TypeCast an Object ======
+Created Sunday 12 December 2021
+
+const person: **{**
+**  name: string, age: number,**
+**  hobbies: string[], role: [number, string]**
+**}** = {
+  name: "Jesse",
+  age: 39,
+  hobbies: ["coding", "guitar"],
+  role: [2, "coder"]
+};
+
+Bolded is the typecasting. The actual object is below that.

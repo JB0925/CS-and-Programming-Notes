@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-31T17:23:47-04:00
+
+====== JOIN and filter with WHERE ======
+Created Wednesday 31 March 2021
+
+Say you want to get all comments from the **comments** table that were posted for the same photo from the **photos** table.
+
+**Example Query:**
+	SELECT contents, url
+	FROM comments
+	JOIN photos
+	ON comments.photo_id = photo.id;
+
+
+**Now say you want to further filter it so that you want all comments from one photo where the comment AND the photo come from the same user (i.e. user posted the photo and also commented on it).**
+
+**Example Query:**
+	SELECT contents, url
+	FROM comments
+	JOIN photos
+	ON comments.photo_id = photos.id
+	WHERE comments.user_id = photos.user_id;
+	
+The SQL directly above would further filter the query to return only results where the **photo and comment were posted by the same user.**
+
+
+**Example of Query 2:**
+{{.\pasted_image.png}}
+
+
+**Example of Query 1:**
+{{.\pasted_image001.png}}
+
+The picture is too big to capture, but you can see that we have 100 rows instead of just 21.
+

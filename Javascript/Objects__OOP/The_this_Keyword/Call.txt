@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-08T21:38:20-04:00
+
+====== Call ======
+Created Tuesday 08 June 2021
+
+Every function in JS has a call method.
+
+**We can use it to set the "this" property explicitly.**
+
+**Example:**
+	let cat = {
+		name: 'Harvey',
+		meow: function() {
+			return `${**this.name**} says meow!`
+		}
+	};
+
+	let dog = {
+		name: 'Steve'
+	}
+	
+	
+	**We saw earlier how saving "cat.meow" to a variable, and then calling it, didn't work.**
+	
+	We can  get around this using the **call** method, but it has to be used every time you want to use that variable, and thus is not ideal.
+	
+	**Example:**
+		let message = cat.meow
+		console.log(**message.call(cat)**);
+			**returns "Harvey says meow!"**
+			
+		**You can even run this using an object that doesn't have the "meow" method, such as "dog" above:**
+			console.log(**message.call(dog)**);
+				**returns "Steve says meow!"**
+		
+		**NOTE 1: **If arguments are needed after you set **this** (first arg), you can pass them in as needed to **call**.
+		
+		**NOTE 2: **The above works and returns the correct statement, but if you tried to run **message** again afterward, it would just refer to the window object again.
+
+		If you need to use it repeatedly, use **bind.**
+

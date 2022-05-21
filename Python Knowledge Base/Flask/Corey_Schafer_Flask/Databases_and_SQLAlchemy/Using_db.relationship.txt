@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-02T14:03:52-05:00
+
+====== Using db.relationship ======
+Created Wednesday 02 December 2020
+
+db.relationship in flask-sqlalchemy makes it so that one aspect of one class can access aspects of another class.
+
+To do this:
+	1). **Each class must have a primary key**
+	
+	2). **One attribute of one class must have a foreign key, i.e. ForeignKey=('request.id')	#**lowercase R refers to table name, not class name
+	
+	3). **The "relationship" attribute's first argument must be the other class' name.**
+
+
+Two Classes Using SQLAlchemy:
+{{.\pasted_image.png}}
+
+by setting the relationship in the classes above, **you can now use an instance of the Post class to get the User information of the person who wrote it.**
+
+**Example:**
+{{.\pasted_image001.png}}
+{{.\pasted_image002.png}}
+{{.\pasted_image003.png}}
+{{.\pasted_image004.png}}
+
+**NOTE:** the **post.user_id** column is using the "**ForeignKey 'user._id' to pull data from the User class**
+**NOTE: **even though there is no **"author"** column, by using "**author**" as a backref, it is pulling the information about the User who wrote the post, which comes from the User class.
+
+

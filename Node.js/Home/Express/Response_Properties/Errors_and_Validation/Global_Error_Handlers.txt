@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-10T21:24:14-04:00
+
+====== Global Error Handlers ======
+Created Friday 10 September 2021
+
+This is a better way to handle errors:
+
+**NOTES:**
+	- Error handlers should be at the bottom of the file, just above **app.listen()**
+	
+	- They should match every HTTP verb and path, so we use **app.use(callback_here)**
+	
+	- The callback signature has **4** parameters
+		- function(**error, req, res, next**);
+		- That's how Express knows it's an error handler
+
+
+**Example:**
+	app.use((err, req, res, next) => {
+		let status = err.status || 500;
+		let message = err.message;
+		
+		return res.status(status).json({
+			error: {message, status}
+		});
+	});
+	

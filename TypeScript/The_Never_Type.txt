@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T22:09:48-05:00
+
+====== The Never Type ======
+Created Sunday 12 December 2021
+
+**Example:**
+
+function generateError(msg: string, code: number): **never** {
+  throw { message: msg, errorCode: code };
+};
+
+
+**never** is a type to make it really clear that this function is **never** supposed to return anything. It is similar to **void**, but maybe a little bit more clear.

@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-01T23:46:15-05:00
+
+====== Using SQLAlchemy ======
+Created Sunday 01 November 2020
+
+Step 1). **from flask_sqlalchemy import SQLAlchemy**
+
+Step 2). create an HTML form of some sort:
+{{.\pasted_image.png}}
+
+
+Step 3). alter the User function to accepts methods POST and GET. Check to see if the method is POST and, if it is, set an "email" variable = a request.form value
+{{.\pasted_image001.png}}
+
+Step 4). Create a database object, add two new app parameters:
+{{.\pasted_image002.png}}
+
+
+Step 5). Create a class to handle the SQLAlchemy database. Create attributes that handle some of the aspects of the SQL database.
+{{.\pasted_image003.png}}
+
+
+Step 6). Add "db.create_all() above app.run(debug=True)
+{{.\pasted_image004.png}}
+
+

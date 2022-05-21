@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-24T00:55:09-04:00
+
+====== CSS and Assets in CRA ======
+Created Thursday 24 June 2021
+
+You can import CSS and images, etc., directly into JS files with Create React App.
+
+**Example:**
+	(top of file)
+	
+	import React, { Component } from "react";
+	**import myImage from "./myImage.jpg";**
+	**import "./App.css";**
+
+
+**Standard Way to Handle CSS in Create React App:**
+	- make a CSS file for each component
+		- **House.css** for the **House** component, etc.
+		
+	- **import **the CSS file at the top of the **component** file
+		- Create React App with automatically load that CSS
+		
+		
+	- It is **convention** to give the **top level element** in your component **"className="Filename"**, where **Filename** is the CSS file name.
+	
+	- **ALL** lower elements in the component get prefixed with **Filename-title, Filename-address, etc.**
+	
+	
+	**Example:**
+		<div **className="House">**
+			<p **className="House-title"**>{ this.props.title }</p>
+			<p **className="House-address"**>{ this.props.address }</p>
+		</div>
+		
+	
+	**NOTE: **Any styles defined in the CSS file **DO NOT** apply **ONLY** to the component. They will apply to anything that matches the selectors in the CSS file, so be careful.
+	
+	**NOTE2: **If you want to, you can create a **src/css** and/or a **src/img** directory if you have a lot of these files. It's up to you! Just make sure to reference the path correctly.
+	
+
+

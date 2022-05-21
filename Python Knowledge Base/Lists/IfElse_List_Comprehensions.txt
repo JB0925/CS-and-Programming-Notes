@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-12T21:06:39-04:00
+
+====== IfElse List Comprehensions ======
+Created Monday 12 October 2020
+
+**result = [ '_' if word[i].isalpha() else ' ' for i in range(5)]**

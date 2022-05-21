@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-31T21:36:34-04:00
+
+====== DELETE Example ======
+Created Saturday 31 July 2021
+
+In the DELETE example, we will remove a car from our database:
+
+**Example:**
+
+@app.route('/cars/<id>', methods=['DELETE'])
+def delete_car(id):
+	car = Car.query.get(id)
+	if car:
+		db.session.delete(car)
+		db.session.commit()
+		return jsonify({"car": "deleted"})
+	  return jsonify({'car': 'not found'})
+
+
+**Explanation:**
+	1). set up the route with the DELETE method
+	2). try to query for the car
+	3). If you have the car, delete it and return a JSON response letting the user know it's been deleted.
+	
+	4). If not, return JSON saying "not found"

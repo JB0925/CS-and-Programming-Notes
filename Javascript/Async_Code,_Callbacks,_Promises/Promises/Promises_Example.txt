@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-21T10:17:45-04:00
+
+====== Promises Example ======
+Created Wednesday 21 April 2021
+
+Here is a larger example of a Promise in action:
+{{~/Desktop/ScreenShots/JS Promise Example.png}}
+
+Here we are creating a new function called **moveTheButton**, and passing it one parameter, **code**.
+
+The **moveTheButton** function is **returning a Promise**.
+
+The Promise uses **setTimeout**, which also takes a function.
+
+Inside of **setTimeout**, I created a Status Codes object. 
+
+Then, the meat of the function says that **if the code passed in IS in the Status Codes object, **then return the **resolve** function **WITH the status for the code that is passed in.**
+
+**If the code is NOT in the object**, return the reject function with the message **"not in codes object!"**
+
+
+**EXECUTING THE FUNCTION:**
+
+In the example, I've called moveTheButton with an argument of **2**.
+
+I then chain the **then **and **catch** methods to it, **MAKING SURE TO PASS IN the values from RESOLVE and REJECT in the function.**
+
+I then write a small function to **console.log** what the **resolve **and **reject** functions return.
+
+**However, there is a better way to call / execute the function! SEE THE NEXT PAGE FOR AN EXAMPLE!**

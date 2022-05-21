@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-05-08T00:10:43-04:00
+
+====== Rabin-Karp String Matching ======
+Created Sunday 08 May 2022
+
+The **Rabin-Karp String Matching** algorithm is based on hashing. First, let's talk about where you might use it.
+
+**Scenario:**
+	- Say we are looking for the string **ata** inside of the larger string **cgatgcacatgcatagctagc**
+	
+**The Naive Way:**
+	- start at the beginning of the larger string, index the first three letters (**string[i:i+3]**), compare to the target string of **ata**. If it matches, great! If not, move over one to the right and repeat.
+	- run in O(n*m)
+	
+
+**Rabin-Karp Algorithm:**
+	- hash the target string
+	- use the same approach as before, moving through groups of three in the larger string , but instead of comparing them, **get the hash of the group of 3 letters**.
+	
+	**The Key:**
+		- To compute the next hash, you don't need to recompute the **full hash of the next 3 letters**.
+		
+		- If you have letters **abc**, hash them
+		- your next letters are **bcd**. But wait....instead of hashing the new group of three letters you can do:
+			**hash(abc) / hash(a) + hash(d)**
+			
+		- if the new hash matches the target string hash, you can then compare the two string to see if there is a match. **If the hash doesn't match, then you know it isn't a match.**
+		
+		- You CANNOT assume that just because the hash matches the target string's hash, that you have found a match. This is due to collisions.
+

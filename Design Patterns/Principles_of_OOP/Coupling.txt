@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-01T00:14:09-05:00
+
+====== Coupling ======
+Created Tuesday 01 February 2022
+
+Coupling occurs when one class depends on another class.
+
+**Example:**
+
+class Main {
+	constructor() {
+		this.hello = "hello"
+	}
+
+	getStuff(name) {
+	  **const user = User("Jesse")**
+	}
+}
+
+In the example, the Main class depends on the User class. 
+
+Well, what if the user class changes? That then breaks the main class.
+
+Well what if something else relies on the User class? You'd have to update that, too. 
+
+What if the User class is dependent upon some other class or function that updates? That would need to change, too. 
+
+This tight coupling makes applications hard to extend. 
+
+**Example of Loose Coupling:**
+	- a car: If you change a tire, the other tires don't suddenly HAVE to be changed
+	- if the transmission goes bad, the windshield doesn't automatically need to be replaced.
+	
+**How to Build Loosely Coupled Applications:**
+	- use **interfaces**
+	

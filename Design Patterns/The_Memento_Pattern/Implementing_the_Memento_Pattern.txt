@@ -1,0 +1,224 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-22T13:19:16-04:00
+
+====== Implementing the Memento Pattern ======
+Created Friday 22 April 2022
+
+Our Memento Pattern will have three parts:
+	- a Document class
+		- like a simple text editor
+		- can edit content, choose font type and font size
+	- a DocumentState class
+		- essentially saving, or memoizing, the current document
+	- a History class
+		- an object to store the saved DocumentState objects
+		
+
+**The Document:**
+
+package com.codewithmosh.memento;
+
+import java.lang.reflect.Field;
+import java.util.List;
+
+public class Document {
+	private String content;
+	private String fontName;
+	private int fontSize;
+
+	public Document(String content, String fontName, int fontSize) {
+		this.content = content;
+		this.fontName = fontName;
+		this.fontSize = fontSize;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.setContent(content, false);
+	}
+
+	public void setContent(String content, boolean blank) {
+		if (!blank) {
+			this.content += content;
+		} else {
+			this.content = content;
+		}
+	}
+
+	public String getFontName() {
+		return fontName;
+	}
+
+	public void setFontName(String fontName) {
+		this.fontName = fontName;
+	}
+
+	public int getFontSize() {
+		return fontSize;
+	}
+
+	public void setFontSize(int fontSize) {
+		this.fontSize = fontSize;
+	}
+	
+	**// This method allows us to choose a previous version of our document, **
+	**// a document state that was previously saved, and "rewind" an attribute**
+	**// to be what it was in that previous version of the document**
+	public void undo(History history, String attributeName, int index) {
+		
+		**// Getting the previous document that we want to revent an attribute back to**
+		DocumentState previousState = this.restore(history, index, attributeName);
+		try {
+			Document oldDocument = previousState.getDocument();
+			Field oldField = oldDocument.getClass().getDeclaredField(attributeName);
+			this.getClass().getDeclaredField(attributeName).set(this, oldField.get(oldDocument));
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	**// A method that allows us to save our document's current version**
+	public DocumentState createState() {
+		return new DocumentState(new Document(this.content, this.fontName, this.fontSize));
+	}
+	
+	**// Restoring a previous version of the document from the history**
+	public DocumentState restore(History history, int index, String attributeName) {
+		List<String> fieldNames = history.getHistory().get(index).getAllFields();
+		if (fieldNames.contains(attributeName)) {
+			return history.getHistory().get(index);
+		}
+
+		return null;
+	}
+
+	@Override
+	public String toString() {
+		return "Document{" +
+				"content='" + content + '\'' +
+				", fontName='" + fontName + '\'' +
+				", fontSize=" + fontSize +
+				'}';
+	}
+}
+
+
+
+**The DocumentState:**
+
+package com.codewithmosh.memento;
+
+import java.lang.reflect.Field;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+**// This class just takes in a document and saves it as is.**
+**// It has a helper method that gets all of the document's fields.**
+**// This will be useful if we add future fields to the Document class**
+public class DocumentState {
+	private Document document;
+
+	public DocumentState(Document document) {
+		this.document = document;
+	}
+
+	public Document getDocument() {
+		return this.document;
+	}
+
+	public List<String> getAllFields() {
+		Field[] fields = document.getClass().getDeclaredFields();
+		return Arrays.stream(fields)
+				.map(field -> field.toString().split("\\."))
+				.map(str -> str[str.length - 1])
+				.collect(Collectors.toList());
+	}
+
+	@Override
+	public String toString() {
+		return "DocumentState{" +
+				"document=" + document +
+				'}';
+	}
+}
+
+
+
+**The History:**
+
+package com.codewithmosh.memento;
+
+import java.util.ArrayList;
+import java.util.List;
+
+**// A simple history, built essentially with a Stack, used to store**
+**// previously saved versions of the document**
+public class History {
+	private ArrayList<DocumentState> states = new ArrayList<>();
+
+	public History() {
+	}
+
+	public void push(DocumentState state) {
+		states.add(state);
+	}
+
+	public List<DocumentState> getHistory() {
+		return this.states;
+	}
+
+	public DocumentState pop() {
+		int index = this.states.size() - 1;
+		return this.states.remove(index);
+	}
+
+	@Override
+	public String toString() {
+		return "History{" +
+				"states=" + states +
+				'}';
+	}
+}
+
+
+**The Main Class - How it Works:**
+
+package com.codewithmosh;
+
+import com.codewithmosh.memento.Document;
+import com.codewithmosh.memento.History;
+
+public class Main {
+
+	public static void main(String[] args) {
+		**// Creating a history object to save versions of our document,**
+		**// and creating the document itself**
+		History history = new History();
+		Document document = new Document(
+				"hi how are you?",
+				"arial",
+				14
+		);
+
+		document.setContent(" I am well!");
+		history.push(document.createState());	**//Saving the current version of the doc before we continue.**
+		document.setContent(" That's so great!");
+		document.undo(history, "content", 0);	**// Oops, we want to rewind the content, essentially taking away**
+													**// the previous line.**
+		document.setContent(" That's so great!");
+		history.push(document.createState());	**// We added that line back and now we save the document again**
+		document.setFontSize(9);
+		System.out.println(document);
+		document.undo(history, "fontSize", history.getHistory().size() - 1); **// We want to change the font size back to**
+																		  **// what it was previously**
+		System.out.println(document);
+	}
+}
+
+
+

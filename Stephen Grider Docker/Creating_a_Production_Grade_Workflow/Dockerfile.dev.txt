@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T01:33:29-05:00
+
+====== Dockerfile.dev ======
+Created Saturday 08 January 2022
+
+A **Dockerfile.dev** file is used in development
+
+Normally, we'd build the image using **docker build -t jbrink0925/my_image .**
+
+Now, we would run **docker build -f Dockerfile.dev .**
+
+The **-f** stands for **file.**
+

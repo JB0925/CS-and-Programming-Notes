@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-16T14:13:02-04:00
+
+====== How to Increment and Decrement Variables ======
+Created Tuesday 16 March 2021
+
+**Increment:**
+	Let's say that we have **var myVar = 31;**
+	
+	To increment this, you can say **myVar = myVar + 10;**
+	
+	
+	**The Quicker Way:**
+		- **myVar++;**
+
+
+
+**Decrement:**
+	Again, pretend we have **var myVar = 30;**
+	
+	To decrement, you can say **myVar = myVar - 10**
+	
+	**The Quicker Way:**
+		- **myVar- -;				(**two minus signs directly beside each other**)**
+		
+
+
+
+

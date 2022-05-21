@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-12T12:11:48-05:00
+
+====== mkdir - make a new directory or folder ======
+Created Thursday 12 November 2020
+
+**mkdir dirname_here				**#makes a new folder/directory
+
+**NOTE: 		**When creating a new directory, don't leave any whitespace between words, or it will create more than one directory.
+
+
+**How to Create a directory with subdirectories inside of it:**
+	- **mkdir -p directory1/directory2    etc., **
+
+

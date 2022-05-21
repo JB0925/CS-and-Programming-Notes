@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-25T09:55:16-04:00
+
+====== allMatch ======
+Created Monday 25 April 2022
+
+The **allMatch** method is the same thing as **all** in Python.
+
+**Example:**
+
+int[] nums = new int[] {2,4,6,8,10};
+System.out.println(
+	Arrays.stream(nums)
+			 .boxed()
+			 .allMatch(n -> n % 2 == 0)
+);
+
+The above would print **true**, because all numbers inside nums are even.
+
+However, if you changed 8 to 9, you would get **false**, because then one number does not meet the criteria in the predicate.

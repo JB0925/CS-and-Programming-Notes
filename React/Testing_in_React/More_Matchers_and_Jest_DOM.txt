@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-11T14:35:35-04:00
+
+====== More Matchers and Jest DOM ======
+Created Monday 11 October 2021
+
+Create-React-App comes with a setup file that extends that matching capabilities of Jest.
+
+This is called Jest-DOM.
+
+**Helpful Jest-DOM Matchers:**
+	.toHaveClass()
+		Check whether an element has a certain class
+	.toBeInTheDocument()
+		Check whether an element is in the document
+	.toContainHTML()
+		Check whether the element contains a certain HTML string
+	.toBeEmpty()
+		Check whether the element has any content
+	.toHaveTextContent(content here);
+		- checks whether the text of an element contains what is passed in
+	
+	**NOTE: **All of these examples also work with the **.not** matcher from Jest as well.
+
+
+**Example Usage:**
+	const { getByText } = render(<Counter />);
+	  const h2 = getByText("Current count: 0");
+	expect(h2).toBeInTheDocument();
+	expect(h2).toHaveTextContent("Current");
+	
+	Here, we selected an **h2** in the **Counter** component, using the **getByText **method from **render**.
+	
+	Then, we called two Jest-DOM matchers in the **expect** calls. 
+	

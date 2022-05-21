@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-28T22:19:04-04:00
+
+====== Many to One ======
+Created Sunday 28 March 2021
+
+**Examples:**
+	- many different coins belong to one user
+	- many different Facebook photos belong to one user
+	
+	**One to many and many to one relationships are the exact opposite of each other.**

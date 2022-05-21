@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-31T23:17:59-05:00
+
+====== How to Start a Django project ======
+Created Sunday 31 January 2021
+
+**django-admin startproject config .**
+
+
+run the **tree** command to see what is in the directory:
+	{{.\pasted_image.png}}
+	
+
+**What do these files inside config mean?**
+	- **settings.py: **controls the project's settings
+	- **urls.py: **tells Django which pages to build in response to a browser or URL request
+	- **wsgi.py, or Web Server Gateway Interface: **helps Django serve the web pages
+	- **manage.py: **helps Django execute various commands, such as running the local web server or creating a new app
+	- **asgi.py, or Asynchronous Server Gateway Interface: **allows for an optional **ASGI** to be run
+

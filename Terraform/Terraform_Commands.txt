@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-07T22:18:13-05:00
+
+====== Terraform Commands ======
+Created Friday 07 January 2022
+
+**terraform init**
+	- starts a new terraform project and downloads / installs the providers listed in the **main.tf** file
+
+**terraform fmt**
+	- formats and validates the configuration files
+
+**terraform validate**
+	- ensures your config files are syntactically valid and internally consistent
+
+**terraform apply**
+	- applies the configuration
+	
+**terraform show**
+	- allows you to inspect the current state
+
+**terraform state list**
+	- lists the resources in your project's state
+
+**terraform destroy**
+	- destroys / terminates resources managed by your TF project
+	
+
+
+	

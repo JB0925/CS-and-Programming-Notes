@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-22T23:51:02-04:00
+
+====== More Complex Axios Requests ======
+Created Thursday 22 April 2021
+
+Here is an example of chaining Axios requests, much like we did with Fetch and XMLHttpResponse.
+
+{{~/Desktop/ScreenShots/Axios Chained Requests.png}}
+
+
+**Refactoring the Above Code:**
+
+{{~/Desktop/ScreenShots/Axios-fetchPlanets.png}}
+
+**fetchPlanets** is used to return a Promise from the url passed into it. The default is the swapi site if nothing else is passed in.
+
+{{~/Desktop/ScreenShots/Axios-printPlanets.png}}
+
+**printPlanets** literally just prints the planets and returns a resolved Promise with the data's next link. The Promise is necessary to keep the **.then / .catch** chain going.
+
+{{~/Desktop/ScreenShots/Axios-catchErrors.png}}
+
+**catchErrors** is just a catch function to catch any errors that Axios throws at us.
+
+
+
+
+**Putting It All Together:**
+
+{{~/Desktop/ScreenShots/Axios-Refactored.png}}
+
+
+Nice and tidy code that 
+
+1). gets the data from the link
+2). Prints the data and returns the data
+3). Gets and returns data from another link
+4). Prints that data and returns a Promise
+6). Catches any errors that may occur.
+
+

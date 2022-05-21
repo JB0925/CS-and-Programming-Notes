@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-23T00:49:57-04:00
+
+====== Using Context to Update a Parent's State ======
+Created Saturday 23 October 2021
+
+We know you can use Context to share props through multiple nested components that are nested many layers deep.
+
+We can also update the parent's state inside of a component that is several times removed from the parent as well.
+
+

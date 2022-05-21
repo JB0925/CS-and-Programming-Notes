@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-21T09:11:27-05:00
+
+====== How to Compile a C Program ======
+Created Thursday 21 January 2021
+
+first command is **gcc** (GNU C Compiler)
+
+running **gcc filename.c** will create a binary file in the same directory
+
+
+**How to execute the Binary that is produced?:**
+	- '**./binary_name.out** will execute the binary file
+	
+
+**How to change the name of the output/binary that is produced?:**
+	- **gcc filename.c -o new_name_here**
+	- execute the new file with '**./new_name_here**
+	
+
+**Some Options and What they Mean:**
+	- **gcc** : name of the compiler
+	- **-std=c11** : the standard to be used to compile is the C version from 2011.
+	- **-Wall** : means to not display all of the warning messages
+	- **-fmax-errors=10 **: means to only display up to 10 error messages at a time
+	- **-Wextra **: gives more advanced warnings other than for things like syntax errors, etc.
+	- **program_name.c -o new_name** : name of the program to be executed, then the **-o** is for renaming the binary file
+	

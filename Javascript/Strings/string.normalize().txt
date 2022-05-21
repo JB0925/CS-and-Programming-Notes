@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-04T14:03:41-04:00
+
+====== string.normalize() ======
+Created Sunday 04 July 2021
+
+Sometimes, string that look exactly the same and are the same length do not evaluate as being the same.
+
+This is because, sometimes, the character codes behind the letters do not match up.
+
+To make them the same, use **.normalize()**
+
+**Example:**
+	return **string1.normalize() === string2.normalize()**

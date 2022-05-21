@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-22T23:27:21-04:00
+
+====== useContext ======
+Created Friday 22 October 2021
+
+React Context makes it easier to share props between multiple components.
+
+Prop-drilling refers to passing down a prop from a parent component through multiple child component. You can think of it as passing down a component through multiple levels.

@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-04T19:58:47-05:00
+
+====== Port Mapping ======
+Created Tuesday 04 January 2022
+
+Port Mapping is essentially saying:
+	"route incoming requests from localhost to this port to this other port inside the container"
+	
+**Syntax:**
+	docker images
+		- get id
+	docker run -p 8080:8080 image_id
+	

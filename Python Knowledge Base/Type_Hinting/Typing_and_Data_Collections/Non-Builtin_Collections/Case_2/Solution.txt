@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-20T12:08:46-04:00
+
+====== Solution ======
+Created Monday 20 September 2021
+
+The Solution? Use types from the Collections module:
+
+**NOTE:** Using any of the following from collections comes with a performance cost, so be careful if working on code where performance is critical.
+
+In this example, instead of subclassing a regular dict, we will subclass the **UserDict **from collections. 
+
+There are also **UserString **and **UserList **in the collections module as well. Use these any time you want to make small changes to a string or list.
+
+**Example of Subclassing the UserDict:**
+
+The beautiful thing here is that the code is the exact same as subclassing a regular dict, so we don't even have to do much that is different. **The difference is, now, the .get() method will work just fine.**
+
+	class NutritionInfo(**UserDict**):
+		def __getitem__(self, key):
+			try:
+				return super().__getitem__(key)
+			
+			except KeyError:
+				pass
+			
+			for alias in get_aliases(key):
+				try:
+					return super().__getitem__(alias)
+				
+				except KeyError:
+					pass
+			
+		   raise KeyError(f"Could not find {key} or any of its aliases.")
+

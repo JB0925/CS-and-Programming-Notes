@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-13T09:03:32-04:00
+
+====== BiFunction ======
+Created Wednesday 13 April 2022
+
+BiFunctions give us a way to have two arguments in one function and do two things in one function.
+
+**Standard Way of Writing It:**
+	public int firstThenSecond(int num1, int num2) {
+		return (num1 + 1) * num2;
+	}
+
+
+**Writing It As a BiFunction:**
+	import java.util.function.BiFunction;
+	**BiFunction<Integer, Integer, Integer> firstThenSecond = (num1, num2) -> (num1 + 1) * num2;**
+	
+
+**Using it:**
+	int myNum = firstThenSecond.apply(9,10);
+	System.out.println(myNum);
+	

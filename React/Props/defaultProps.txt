@@ -1,0 +1,47 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-19T13:04:30-04:00
+
+====== defaultProps ======
+Created Saturday 19 June 2021
+
+You can set default props in case a value is not passed in.
+
+**Example:**
+	class Hello extends React.Component {
+		**const defaultProps = {**
+			**from: "all of us!!!"**
+		**}**
+		render() {
+			const {to, from} = this.props;
+			return (
+				<div>
+					<h1>Hello {to} from {from}!</h1>
+				</div>
+			)
+		}
+	}
+	
+	
+	**And now in our App Component:**
+	
+	class App extends React.Component {
+		render() {
+			return (
+				<div>
+					<Hello to="Paul" from="Ringo"/>
+				<Hello to="John"/>
+				</div>
+			)
+		}
+	}
+	
+	**The first example will render as "Hello Paul from Ringo"**
+	
+	**The second example, where "from" is not passed in, will render as "Hello John from all of us!!!"**
+	
+{{~/Desktop/ScreenShots/defaultProps in Component.png}}
+
+**In the App Component:**
+{{~/Desktop/ScreenShots/defaultProps - prop missing from App Component.png}}
+

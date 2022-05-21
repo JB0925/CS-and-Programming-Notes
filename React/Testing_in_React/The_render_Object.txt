@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-11T14:18:41-04:00
+
+====== The render Object ======
+Created Monday 11 October 2021
+
+Tests that use the React Testing Library are able to make use of the **render** object.
+			import { **render** } from "@testing-library/react";
+
+
+You could use **render** for smoke tests:
+	test("it renders without crashing", () => {
+		**render**(<App />)
+	});
+	
+	
+You can also destructure methods out of the **render** object, such as for writing this snapshot test:
+	test("it matches the snapshot", () => {
+		const **{ asFragment }** = **render**(<App />);
+		expect(asFragment()).toMatchSnapshot();
+	});
+	
+
+**Other Methods You can Destructure From "render":**
+	- .getByText()
+		- Find first matching element by its text, and throw error if not found
+	
+	- .queryByText()
+		- same as above, but returns **null** if nothing is found
+	
+	- .getAllByText()
+		- same as getByText, but finds **all** matches instead of **first**
+	
+	- .queryAllByText()
+		- same as queryByText, but finds **all** matches instead of **first match**
+		
+	- .{get,query}ByPlaceholderText()
+		- find **first** matching element by placeholder text (**useful for form inputs)**
+		
+	- .{get,query}AllByPlaceholderText()
+		- same as above, but finds **all** matches instead of only **first match**
+		
+	- .{get,query}ByTestId()
+		- Finds **first** matching element by a **data-testid** attribute (can be used if there is no other easy way to grab an element)
+	
+	- .{get,query}AllByTestId()
+		- Same as above, but finds **all** matches instead of only **first match**
+

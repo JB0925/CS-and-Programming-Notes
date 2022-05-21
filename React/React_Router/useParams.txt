@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-19T20:16:47-04:00
+
+====== useParams ======
+Created Tuesday 19 October 2021
+
+**useParams** is an object that contains all of the key: value pairs that are found in a route's parameters.
+
+**How to Make URL Parameters:**
+	<Route exact path="/food/**__:name__">**
+		<Food />
+	</Route>
+	
+
+We pass parameters into a URL in React the same way we do in Express.
+
+
+**How to Access Route Parameters Using useParams:**
+	  import { useParams } from "react-router-dom";
+
+	const Food = () => {
+		**const { name } = useParams();**
+		const [src, setSrc] = useState("");
+		
+		useEffect(() => {
+			const requestSrc = async(searchTerm) => {
+				try {
+					const response = await axios.get("myurl.com", {
+						params: { q: searchTerm, KEY: "wkghkgn2tnksngks"
+					});
+					
+					setSrc(src => response.data.data[0].images.url);
+				} catch (err) {
+					console.log(err);
+				};
+			};
+			
+			requestSrc(**name**);
+		}, [name]);
+	};
+	
+**Explanation:**
+	In the example above, in **How to Make URL Parameters**, we have defined a route that uses the parameter **:name**. Because of this, we:
+		1). import useParams
+		2). Destructure **name** from useParams
+		3). Create an effect with **useEffect** that runs on component mount AND every time name updates.
+		4). We know that name updates every time a new URL is passed in, and this is what triggers the AJAX call and the setting of the new **src** in state.
+

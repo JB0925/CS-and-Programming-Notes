@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T23:34:27-05:00
+
+====== Include ======
+Created Sunday 12 December 2021
+
+The **include** key works the same way as the **exclude** key, except that when you use **include**, anything that you **don't **put in the value array **WILL NOT** get recompiled when you run **tsc** or **tsc -w**
+
+You can also include an entire folder in the **include **array:
+
+**"include":  [**
+  **"jsFiles/",**
+  **"Component"**
+**]**

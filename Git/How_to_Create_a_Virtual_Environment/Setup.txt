@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-30T11:42:21-04:00
+
+====== Setup ======
+Created Friday 30 October 2020
+
+From the Windows command line, make sure you are in the directory where you want to start the virtual environment, then:
+		- **python -m venv some_name_here**
+
+
+call **dir** on the command line when given the next promt, and you should see **some_name_here** listed in the directory
+
+to activate the Virtual Environment, be in the directory containing the folder and do the following:
+		**- C:\Users\superuser\Desktop>some_name_here\Scripts\activate.bat**
+
+
+This will bring up a new prompt with the name of the Virtual Environment in parentheses. See below:
+{{.\pasted_image.png}}
+
+
+**Delete a Virtual Environment:**
+
+	- To delete a Virtual Environment, run **rmdir some_name_here**
+	- To delete the entire Venv, subdirectories and all, run **rmdir some_name_here [[/s]]**
+
+
+
+**Create an Environment that has access to the dependencies that your global Python verison has:**
+
+	- at the command prompt:
+			- **python -m venv some_name_here --system-site-packages**
+	
+	- not used very	
+
+
+

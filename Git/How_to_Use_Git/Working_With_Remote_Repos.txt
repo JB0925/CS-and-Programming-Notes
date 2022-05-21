@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-29T13:53:21-04:00
+
+====== Working With Remote Repos ======
+Created Thursday 29 October 2020
+
+**There are four major Git** **commands that talk to remote repos:**
+	- **clone**
+	- **fetch**
+	- **pull**
+	-** push**
+	
+**Clone:**
+	**git clone** is what you use when you have the address of a known repository and you want to make a local copy. 
+	Example:
+		**git clone long address goes here		**#can go to "Git Hub" and find the address to clone
+
+
+**Push:**
+	**git push** is what you use when you want to upload your changes to a remote repo, such as [[GitHub]]
+	
+
+
+**Pull:**
+	opposite of **git push**. **Git pull downloads files from a remote repo and puts them into your local repo.**
+

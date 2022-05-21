@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-10T08:53:20-04:00
+
+====== Route Parameters ======
+Created Friday 10 September 2021
+
+How do we pass in a parameter, such as an id or username, to a route?
+
+**Example:**
+	app.get('/cookies/**:language**', (req, res) => {
+		res.send('xyz')
+	});
+
+
+By passing in the "**:language**", you are requesting a route parameter, similar to the <language> that is used in Flask.

@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-27T01:05:30-05:00
+
+====== Bags, Stacks, and Queues ======
+Created Sunday 27 December 2020
+
+**Two ways of implementing a Stack:**
+	1). Linked List (push/add, pop, is_empty())
+	2). array (or Python list)
+	
+
+**Drawback to using arrays (not Python lists):**
+	the biggest drawback is that, in most languages, the array size has to be declared ahead of time.
+	This is not so in Python, but in most other languages you do.
+	
+**Things to Consider when Creating a Stack:**
+	1). Throw an exception if you pop from an empty stack
+	2). Overflow (i.e., the amount of objects on the stack is greater than the size of the stack.) Create a resizing array to use in that situation.
+	
+
+**Resizing Array:**
+	with a resizing array, if your main array is full, you create a "resizing array", which is just like your other array, except twice as big.
+	you copy over the data from the other array to the new array.
+	
+	Code:
+	{{.\pasted_image.png}}
+	**Step 1). **
+		create a new class called **ResizingArrayStack**, or something similar
+		
+	**Step 2).**
+		create a **push** method, that takes the string and an item
+		
+		__if N == len(string):__
+			__resize(2 * len(s))__
+			s[N++] = item
+

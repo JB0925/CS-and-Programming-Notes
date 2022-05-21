@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-28T21:46:03-04:00
+
+====== Create Login Page, GET and POST ======
+Created Wednesday 28 October 2020
+
+Step 1:
+
+{{.\pasted_image.png}}   #with flask, create a login function, decorate with **@app.login('/login', methods=['POST', 'GET'])**
+													render template(login.html).....we will create a login.html page that will be rendred when we go to **[[/login.]]**
+
+
+Step 2:
+
+{{.\pasted_image001.png}}		# create the login.html page. Have it inherit from the base.html template. 
+															The **title block** gives a title to the page, which can be seen by hovering the cursor above the page's tab in the browser.
+															
+															Content block:
+																**create a form:** used to get user input. **action='#'** will redirect the user to the same page
+																	**method='post'** is used to get data from the user; usually **GET** will be used to pass info from a server to the page
+																
+																**1st P tag:**
+																	prints **Name:** to the screen
+																**2nd P tag:**
+																	has an **input** tag inside of it, **type=text name =nm** then close the **input** tab and close the **P** tag. The **type=text** means the input will be text. 
+																**3rd P tag:**
+																	has another **input** tag inside of it, this one creates a submit button
+																
+																**end form**
+															**end block**
+
+
+**HOW TO CHECK WHETHER YOU HAVE REACHED A PAGE WITH A GET REQUEST OR A POST REQUEST:**
+
+**from Flask import request**
+
+
+

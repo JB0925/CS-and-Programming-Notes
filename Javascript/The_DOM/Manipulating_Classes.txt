@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-18T00:50:29-04:00
+
+====== Manipulating Classes ======
+Created Sunday 18 April 2021
+
+Use **.classList **and its methods to change CSS styles:
+
+let h1 = document.querySelector('h1');
+
+h1.classList.remove('done');
+	- removes the class **done** from the element
+
+
+h1.classList.toggle('done');
+	- can add and remove the class **done**
+	
+
+
+**To change ONE style, use the .style.(style here) method**
+
+**To change a class, use variable.classList.toggle('className')**
+
+

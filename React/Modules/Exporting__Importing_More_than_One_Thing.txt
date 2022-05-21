@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-20T00:59:28-04:00
+
+====== Exporting  Importing More than One Thing ======
+Created Sunday 20 June 2021
+
+If I want to export more than one thing from a file, remove **default**, and wrap those items in curly braces:
+
+{{~/Desktop/ScreenShots/React - Export More than one thing.png}}
+
+
+**To import them into another file, use the same curly braces:**
+
+{{~/Desktop/ScreenShots/React - Importin Multiple Things.png}}
+
+Last line, you can see how we wrapped **help, dumb, stupid** in curly braces to import them.
+

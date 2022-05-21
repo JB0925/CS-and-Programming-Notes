@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T19:19:19-05:00
+
+====== Enum Type ======
+Created Sunday 12 December 2021
+
+Enums are numerical values written as words, and the words have some type of meaning.
+
+**Example:**
+
+enum Role { ADMIN, READ_ONLY, AUTHOR }
+	- each name gets a numerical value, starting with 0. So **Role.ADMIN = 0, etc.**
+	
+
+**Ways You Can Alter The Values:**
+
+enum Role { ADMIN = 5, READ_ONLY, AUTHOR }
+	- ADMIN's value becomes 5 instead of 0
+	- READ_ONLY is 6
+	- AUTHOR is 7
+	
+**OR**
+
+enum Role { ADMIN = 5, READ_ONLY = 100, AUTHOR = 27 }
+	- you can assign a value to each one individually if you want
+	
+**OR**
+
+enum Role { ADMIN = "ADMIN", READ_ONLY = 100, AUTHOR = "AUTHOR" }
+	

@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-05T21:51:16-05:00
+
+====== Buttons ======
+Created Friday 05 February 2021
+
+Buttons are created like so:
+	- **<button>Enter text here</button>**
+
+By default, buttons will submit your form, **UNLESS** they are not in the form to begin with. You can use **Javascript** to make a button submit information outside of the form.
+
+To change the default value, add a **type** attribute inside of the **button** element, and set it equal to **type="button"**
+
+**Example:**
+	- **<button type="button">Text Here</button>**
+
+
+Another way to create a **submit** button is to use the **input** element:
+	- This is not recommended
+	- **<input type="submit">**
+	- **<input type="submit" value="submit">			**# the value attribute allows us to change the text of the button
+
+
+
+**Radio Buttons:**
+	- to create a radio button, use the **<input>** tag
+	- **<input type="radio" name="size" id="size1">**
+	
+	- to associate buttons together, give them all the same name. This will ensure that you can only click on one button at a time.
+	- **NOTE: **make sure to add the **value** attribute. This ensures that this value will be sent to the server, and is important for distinguishing between items
+	
+
+**Select Menu:**
+	- to create a **select** menu, use the **<select>** tag
+	**Example:**
+		{{.\pasted_image.png}}		{{.\pasted_image001.png}}
+
+
+	- **NOTE:** You can also include a placeholder option by setting the **value** attribute to "" and setting the text to something like "**Please make a choice"**
+	- just as you can add **checked** to a checkbox input, you can also add **selected** to any option tag, and it will be preselected for you
+
+
+

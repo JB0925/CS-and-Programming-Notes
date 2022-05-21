@@ -1,0 +1,67 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-11T14:23:12-05:00
+
+====== Write a Context Manager as a Generator Function ======
+Created Wednesday 11 November 2020
+
+The **yield** statement is a big key to writing this function.
+
+**from contextlib import contextmanager**
+**from datetime import date**
+**from time import time, sleep**
+**from collections import Counter**
+
+violations = Counter()
+
+**@contextmanager**
+def timeit():
+	try:						#**create something that will measure the time between an event happening and record it**
+		start = time()
+		yield							  #**this is where whatever you want to happen within the "with" statement will be produced**
+		end = time()
+	
+	except RuntimeError:
+		pass
+	
+	finally:
+		difference = end - start					**#calculate the elapsed time between the two**
+		if difference >= 2.2:						**#if the difference is greater than 2.2, update the dictionary with the day of the week key**
+			day = date.today().isocalendar()[2]
+			violations.update(day)
+			
+			if violations.get(day) >= 3:			**# if that key has a value of 3 or more, print the alert message**
+			
+**VERY IMPORTANT TO REMEMBER THAT THE "YIELD" ABOVE HAS A BIG IMPACT ON THE REST OF YOUR CODE, AND IS WHERE THE "DIFFERENCE" is created.**
+
+
+**Ways to Use the Above Context Manager:**
+	
+	1). **Data Structure Iteration**
+		for num in [0,1,2,3,4,5]:
+			with timeit():
+				sleep(num)
+
+	**#the above would produce the ALERT_MSG because 3,4,and 5 are greater than 2.2**
+	
+	2). **Separate Instances of the Context Manager**
+		with timeit():
+			sleep(2)			#**nothing would be recorded and no message printed**
+		
+		with timeit():
+			sleep(4)			#**first recording to "violations"**
+		
+		with timeit():
+			sleep(5)			#**second recording to "violations"**
+			
+		with timeit():
+			sleep(1)			**#no recording and no message printed**
+			
+		with timeit():
+			sleep(3)			**#3rd recording to "violations"; triggers the ALERT_MSG to be printed**
+
+
+
+
+				print(ALERT_MSG)
+

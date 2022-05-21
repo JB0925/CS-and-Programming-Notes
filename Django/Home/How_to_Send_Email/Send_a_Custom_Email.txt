@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-09T10:44:26-05:00
+
+====== Send a Custom Email ======
+Created Tuesday 09 March 2021
+
+Go to the templates folder and inside the allauth/account folder. From there you should have a directory called **email**. Go in there and find the confirmation_signup.txt files where you can edit and save them to reflect the changes you want to make. 

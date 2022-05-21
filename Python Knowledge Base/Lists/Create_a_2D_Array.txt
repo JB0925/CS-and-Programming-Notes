@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-23T00:25:36-05:00
+
+====== Create a 2D Array ======
+Created Wednesday 23 December 2020
+
+**1).**
+	l = [['-'] *100] * 100
+	
+
+**2). l = [['-' for i in range(100)] for j in range(100)]		**#nested lists i.e. list of lists
+
+
+
+**3). l = [(x, y) for x in range(100) for y in range(100)]**
+
+
+https://www.geeksforgeeks.org/python-using-2d-arrays-lists-the-right-way/

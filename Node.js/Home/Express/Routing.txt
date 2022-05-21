@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-11T12:26:27-04:00
+
+====== Routing ======
+Created Saturday 11 September 2021
+
+**Why Use Routing?**
+	- placing all routes in **app.js** can get messy very quickly
+	
+
+**How to set up routing?**
+1). Make a new file, maybe **routes.js**
+
+2). const express = require("express");
+	 **const router = new express.Router();**
+
+
+**NOTE:** Routes in this file should have some sort of similiarity, i.e. **"/users", "/users/:id", "/users/:id/delete"**
+	- the above are all tied to a **user**
+	
+
+**NOTE: **However, when we make the route, we actually leave the prefix off, and include it in **app.js**
+
+
+**Example Routes:**
+	**router.get**("/", (req, res) {
+		return res.json(users)
+	});
+	
+	**router.delete**("/:id", (req, res) {
+		const idx = users.findIndex(u => u.id === req.params.id);
+		
+		users.splice(idx, 1);
+		return res.json({message: "Deleted"});
+	});
+	
+	**module.exports = router;**
+	

@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-02T21:50:03-05:00
+
+====== Add a Column to a Table ======
+Created Tuesday 02 March 2021
+
+To add a column to a table, the syntax is:
+
+**ALTER TABLE table_name (**press enter; not semicolon)
+**ADD COLUMN column_name DATA TYPE CONSTRAINTS** (if any) ;
+
+
+If you want to add more than one column at a time, press enter after the ADD COLUMN line, but don't end it with a semicolon. Then repeat the same syntax for the new column.
+
+{{.\pasted_image.png}}
+
+
+https://www.postgresqltutorial.com/postgresql-add-column/

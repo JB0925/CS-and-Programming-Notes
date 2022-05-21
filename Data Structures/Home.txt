@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-12T15:10:38-04:00
+
+====== Home ======
+Created Saturday 12 September 2020
+
+**Data Structure:**
+	A way to **store**, organize, and **manage** information (or data) in a way that allows you the programmer to easily **access** or **modify** the values within them.
+	
+	**GOAL:**
+		1). Store information
+		2). Access the information
+
+
+**Efficiency:**
+	The metrics used to judge the **speed** and **efficiency** of different data structures
+	
+	
+**Intermediate Data Structures: **
+	- A little more complicated than the basic data structures
+	- Have special attributes which make them stand out
+
+**Some Data Structures:**
+	- arrays (lists)
+	- Array Lists
+	-Stacks
+	-Queues
+	-Linked Lists
+	-Doubly Linked Lists
+	-Dictionaries
+	-Hash-Tables
+	-Trees
+	-Tries
+	-Heaps
+	-Graphs
+	
+
+

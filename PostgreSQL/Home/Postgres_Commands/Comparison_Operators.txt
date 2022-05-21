@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-02T23:30:35-05:00
+
+====== Comparison Operators ======
+Created Tuesday 02 March 2021
+
+Allows us to perform comparison, logical and bitwise operators
+In SQL, not equal is **< >, **with no space inbetween
+
+**Example:**
+	**SELECT 1 = 1;**
+		returns **t** for True
+	
+	**SELECT 1 = 2;**
+		returns **f** for False
+	
+	**SELECT 1 <= 1;**
+		returns **f **for False
+	
+	**SELECT 1 <> 2;**
+		returns **t **for True
+
+	**SELECT 'Jesse' = 'jesse';**
+		returns **f **for False
+
+
+**These are useful for filtering down our data in the WHERE clause.**
+
+**MORE COMPARISON OPERATORS:**
+ 
+- **IN (**is the value present in a list?)
+-** ! = (**also not equal to)
+- **BETWEEN** (is the value between two other values?) **SELECT * FROM table WHERE val BETWEEN 2 AND 4;**
+- **NOT IN** (is the value not present in a list?)
+
+
+
+

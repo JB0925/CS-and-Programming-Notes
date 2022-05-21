@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-26T22:34:47-04:00
+
+====== Strip Characters ======
+Created Sunday 26 July 2020
+
+How to strip a newline from a group of words in a file, then append those words to a new list:
+
+	 **for word in words:**
+		 **wordlist.append(word.strip('\n')**
+	 **return wordlist**
+
+This appends every word in the list of words to the new list and strips off the newline character at the same time.
+
+
+https://www.kite.com/python/answers/how-to-remove-newline-character-from-a-list-in-python#:~:text=Use%20str.,well%20as%20newline%20characters%20removed.
+
+
+Sometimes, using .strip() will strip off too many characters. This is because it removes leading and trailing characters. So, to mitigate that, you can use .rstrip() and .lstrip().
+
+**Example:**
+
+**lst = [line.lstrip('<category').rstrip('/category>') for line in r1]**
+
+
+https://stackoverflow.com/questions/20306223/python-string-strip-stripping-too-many-characters

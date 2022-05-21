@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-26T22:03:31-05:00
+
+====== My Aliases ======
+Created Tuesday 26 January 2021
+
+gs = git status
+ga = git add [have to add the file here]
+gc = git commit -m [add message with quotes here]
+gpush = git push
+gpull = git pull
+gl = git log
+gm = git merge [branch name here]
+gba = git branch -a
+gbd = git branch -d

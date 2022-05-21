@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-16T15:38:57-04:00
+
+====== Escaping quotes in strings ======
+Created Tuesday 16 March 2021
+
+Just like in Python, to escape a literal, you need to use the backslash character.
+
+With a string:
+	**"I am a \"double quoted\" string inside \"double quotes.\""**
+		Will return **I am a "double quoted" string inside "double quotes."**
+		
+
+
+OR
+
+
+**Just Use Single Quotes to Start Your String:**
+	**'I am a "double quoted" string inside "double quotes." '**
+
+
+
+OR
+
+
+**Use Backticks:**
+	` **Now I can use 'single quotes' and "double quotes" inside of the string. `**
+	

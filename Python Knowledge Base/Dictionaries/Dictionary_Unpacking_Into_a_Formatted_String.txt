@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-02T20:27:10-05:00
+
+====== Dictionary Unpacking Into a Formatted String ======
+Created Tuesday 02 February 2021
+
+Here's how you can unpack a dictionary into a formatted string, such as a URL:
+
+{{.\pasted_image.png}}

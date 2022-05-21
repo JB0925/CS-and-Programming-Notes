@@ -1,0 +1,69 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-27T12:05:30-05:00
+
+====== Decision Trees and Lower Bounds ======
+Created Wednesday 27 January 2021
+
+**Linear Time Sorting: When is it possible, and when is it not possible?**
+	- Theorem: **Sorting requires O(n lg n) time in the WORST case**
+	- Proof: **You can get away with linear time (sometimes)**
+	- Counter Example: 
+
+
+**In this Lecture:**
+	- We will prove that searching requires **O(log n)** time  (binary_search)
+	- We will prove that sorting requires **O(n log n) **time   (merge_sort, quicksort)
+	- We will prove that, in certain situations, we can get **O(n)** time with a sorting algorithm:
+			- counting sort
+			- radix sort
+
+
+**Comparison Model:**
+	- all input items are **black boxes (Abstract Data Types)**, i.e. we don't really know what they are
+	- only operation supported by the data structure is comparison **(<, >, <=, >=, ==)**
+	- **time cost is the number of comparisons made**
+
+
+
+**Decision Tree:**
+	- if we know that our algorithms are ONLY comparing items, it can be viewed as a tree of all possible comparisons and their outcomes, and the resulting answer
+	
+	**Example: Binary Search:**
+		- let's say we call **binary_search(3)			**
+		{{.\pasted_image.png}}				
+	
+	**Here is a Decision Tree that maps all of the possible comparisons and their outcomes:**
+	{{.\pasted_image001.png}}	
+	
+	**Decision Tree Features:				Algorithm**
+		- for every internal Node				  there is a binary decision (on a comparison, in this case)
+		- leaf 							  means one of the possible outcomes / answers
+		- going from root to leaf				  algorithm execution
+		- path from root to leaf				  running time of algorithm
+		- height of the tree  					  worst case running time
+		
+		**Decision Trees are not always practical, but they can provide a lot of information (running time, for example)**
+
+
+
+**Searching Lower Bounds:**
+	- for searching, if we have **n** preprocessed items, then finding a given item among them **in the comparison model** will take **O(lg n)** time **in the worst case**.
+		**Why?**
+			- decision tree is binary and it must have **AT LEAST** **n** leaves; 1 for each answer
+			- in our tree above, **n** = 3, and the **number of leaves** = 4
+			- if **point 1 above **is True, then the **height** of the tree must be **AT LEAST** **lg n.**
+
+
+**Sorting Lower Bounds:**
+	- for sorting, if we have **n** preprocessed items, then sorting those items **in the comparison model** will take **O(n lg n)** time **in the worst case.**
+		**Why?**
+			- decision tree is binary, and the # of leaves has to be **AT LEAST** equal to the number of possible answers, which is **n!**
+			- height of the Decision Tree is **AT LEAST** log(n)
+				- **lg(n (n-1) * (n-2) * (n-3).....1)**
+				= **lg n + lg(n-1) + lg(n-2) +.....lg2 + lg(1)**
+					- so if **n = 5**
+						- height would be 2.32 + 2 + 1.58 + 1 = ~ 7
+
+
+

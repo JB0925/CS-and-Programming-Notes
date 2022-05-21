@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-12T12:08:37-04:00
+
+====== justify and align self ======
+Created Wednesday 12 May 2021
+
+Just as in flexbox, you can use **justify-self** and **align-self** to move one individual item around.
+
+
+Remember:
+	**justify-self = row axis**
+	**align-self = vertical axis**
+	
+	options = **start, center, end**

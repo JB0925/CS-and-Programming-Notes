@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-11T12:32:56-05:00
+
+====== Creating a Dockerfile ======
+Created Thursday 11 March 2021
+
+So far, we have seen how to use **volumes** to mount onto a container (host to container). 
+
+When we build a custom image, we may not want to mount onto it.
+	- Best thing to do instead is to copy all the files
+	
+	
+**Remember, an Image should have everything that your app needs to run:**
+	- **OS**
+	- **software**
+	- **hardware**
+	
+
+
+**How to create a Dockerfile:**
+	- make sure you are in the root folder of the project
+	- make a file entitled **Dockerfile**
+	
+	
+	You will always use an existing image as your base image, 
+
+
+
+
+**What goes in the Dockerfile?**
+
+**FROM **[[nginx:latest]]
+**ADD . [[/path/to/content/from/container/]]   (same as with Volumes)**
+ 
+

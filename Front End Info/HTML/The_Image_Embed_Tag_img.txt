@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-04T12:05:08-05:00
+
+====== The Image Embed Tag img ======
+Created Thursday 04 February 2021
+
+An **<img>** tag has no closing tag; only **<img ......lot of other stuff here, continuing on....>**
+
+**Usage Example:**
+	{{.\pasted_image.png}}
+	
+	- So, **<img src="path/to/file/file name.jpg" **
+	- **NOTE: **the width part is best to do in CSS
+	
+	**You can also do the same thing with an image from the web. Right click the image, click "Copy Image Address", then paste that address into your <img> tag.**
+	
+
+**The 'alt' attribute:**
+	- use the alt attribute for times when someone is using a screenreader, or as a backup in situations where your image does not load.
+	**Example:**
+		{{.\pasted_image001.png}}
+

@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-25T23:38:10-04:00
+
+====== Mutate a Global List Through a Function ======
+Created Friday 25 September 2020
+
+**lst = [1,2,3,4,5]**
+
+def myFunc(L):
+	for item in L:
+		item.reverse()
+		new_list = [item for item in L]
+	
+	L[:] = new_list
+
+**myFunc(lst)**
+**print(lst)**
+
+**[5,4,3,2,1]**
+
+
+**The above will NOT provide a return value, but it will MUTATE a globally defined list, such as the examples in BOLD at the bottom. The function is called on the globally defined list "lst", which then MUTATES the list to equal the output "[5,4,3,2,1]".**
+
+
+https://stackoverflow.com/questions/31359652/how-to-mutate-a-list-with-a-function-in-python
+

@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-09T21:16:42-04:00
+
+====== Combine Two Shapes ======
+Created Monday 09 August 2021
+
+First, create the shapes, then arrange the how you want to. 
+
+Select them by clicking and dragging over top of all of them.
+
+Then, at the top, click the two blocks that look like they overlap and click **Union**.
+

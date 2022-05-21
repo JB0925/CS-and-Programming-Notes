@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-16T20:44:16-04:00
+
+====== React Custom Hooks ======
+Created Saturday 16 October 2021
+
+You can make your own hooks to:
+	- abstract logic
+	- handle repeated tasks
+	- generate your own JSX
+	
+
+**Examples:**
+	- we often have to toggle some aspects of state
+		- this could be hiding or showing a modal, or moving something from one place to another
+

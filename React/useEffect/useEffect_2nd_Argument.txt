@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-15T08:53:04-04:00
+
+====== useEffect 2nd Argument ======
+Created Friday 15 October 2021
+
+You can tell React to skip applying an effect if a certain condition is met.
+
+**useEffect**'s second argument is an array, where you place the name of the **dependencies**.
+
+
+useEffect(() => {
+	document.title = `WOW${"!".repeat(count)}`;
+}, [count]);
+
+This tells React that you want to apply this affect on **first render**, but also whenever **count** is updated.
+
+React will give you a warning about using this pattern when the effect does depend on props or state, so be judicial in using it.
+

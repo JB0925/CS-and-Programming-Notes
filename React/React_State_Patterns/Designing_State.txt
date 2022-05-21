@@ -1,0 +1,46 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-09T00:52:26-04:00
+
+====== Designing State ======
+Created Friday 09 July 2021
+
+How to design state:
+
+1). Minimize state:
+	- you want to put as little in state as possible.
+	- Your Litmus test:
+		- does **myProperty** change? If not, it should be a prop, not in state
+		- is **myProperty** already captured by some other property in state or props? 
+		  Derive it from there instead.
+	
+	**Example of Bad State Design:**
+		this.state = {
+			firstName: 'Matt',
+			lastName: 'Jones',
+			age: 64,
+			birthday: '1955-01-08T07:56:04.711Z'
+			mood: 'happy'
+		}
+		
+		**In this example, the firstName and lastName probably never change, so they don't need to be a part of state; they can be a part of props instead.**
+		
+		**Also, the age will eventually change, but we have the birthday, (which doesn't change), and we can derive the age from the birthday. **
+		
+		**Neither age nor birthday need to be in state.**
+		
+		
+		**Updated:**
+			this.props = {
+				firstName: 'Matt',
+				lastName: 'Jones',
+				age: 64,
+				birthday: '1955-01-08T07:53:59.711Z'
+			}
+			
+			this.state {
+				mood: 'happy'
+			}
+
+
+

@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-20T00:14:24-05:00
+
+====== Repository ======
+Created Sunday 20 February 2022
+
+Repository deals with database interactions.
+
+For this, it does not need its own entity; you just need an interface.
+
+Here, we are using the JpaRepository and passing it our entity **Department**, and the data type of its primary key, which is **Long**.
+
+**Example:**
+	**NOTE:** The reference to Long below is becuase the primary key of the table is of data type Long.
+
+**NOTE:** If you only want to use the standard queries, you can leave the Repository methodless.
+
+If you want to use a **custom SELECT query**, you MUST use **findBy **as the beginning of the method name.
+
+public Interface DepartmentRepository extends JpaRepository<Department, Long> {
+	**// custom query**
+	public Department findByDepartmentName(String departmentName);
+	
+	**// Same as SELECT * FROM departments**
+						**WHERE name = departmentName**
+}

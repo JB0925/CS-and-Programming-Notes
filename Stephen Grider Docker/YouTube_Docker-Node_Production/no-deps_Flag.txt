@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-27T22:21:21-05:00
+
+====== no-deps Flag ======
+Created Thursday 27 January 2022
+
+The **--no-deps **flag is useful for when you want to rebuild a particular container, and **none** of its dependencies.
+
+**version: "3.7"**
+**services:**
+	**node-app:**
+		**build:**
+			**context: .**
+		**depends_on:**
+		  - **mongodb**
+
+
+If we just run **docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build node-app**, it will still rebuild the **mongodb** container, even though we didn't specify it, because **node-app** depends on **mongodb**. If we write:
+
+**docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build --no-deps node-app**
+
+Then it will **only** rebuild the **node-app **service by itself.
+

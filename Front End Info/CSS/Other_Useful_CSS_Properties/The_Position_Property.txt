@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-16T12:10:47-05:00
+
+====== The Position Property ======
+Created Tuesday 16 February 2021
+
+The **position** property sets how an element is positioned in a document. The **top, right, bottom, and left** properties determine the final location of positioned elements.
+
+The **top, right, bottom, and left **properties do the opposite of what you would think: **top: 100px;** moves the item down 100px, **left: 100px;** moves the item right 100px, etc.
+
+**Position Values:**
+	- **static: **the element is positioned according to the normal flow of the document, and the top, right, bottom, and left and z-index properties have no effect. **Static** is default.
+	
+	- **relative: **element is positioned according to the normal flow of the document, and then offset //relative to itself// based on top, right, bottom, left values.
+	
+	- **absolute: **element is removed from the normal document flow. Setting **position: absolute;** and then setting **top: 50px;** will move the item 50px lower than the absolute top of the document, etc.
+	**NOTE: **if the **element's parent** has its position set to anything other than **static**, then setting the **element's position **to **absolute** will be relative to the element's parent. 
+	
+	- **fixed: **almost exactly like **absolute**, except that it will stay exactly where it is, even as you scroll.
+	
+	- **sticky: **starts out **not fixed**, ends up being **fixed **as you scroll past its initial position
+	

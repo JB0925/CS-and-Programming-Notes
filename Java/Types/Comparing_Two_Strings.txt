@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-16T11:35:43-05:00
+
+====== Comparing Two Strings ======
+Created Wednesday 16 February 2022
+
+**Strings must be compared with the ".equals()" method, and NOT "==".**
+
+String firstString = "hi";
+
+String secondString = "hi";
+
+String thirdString = "hiiii";
+
+
+**// Result**
+	firstString**.equals**(secondString);
+		**// true**
+	
+	firstString**.equals**(thirdString);
+		**// false**
+		
+
+

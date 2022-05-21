@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-22T11:16:25-04:00
+
+====== Template Pattern ======
+Created Friday 22 April 2022
+
+You use the Template Pattern when several classes have similar functionality, but differ from each other slightly.
+
+The idea is to share as much code between them as you can.
+
+
+**Steps:**
+	- Identify the methods, attributes, etc. from each class that are the same, and **encapsulate** them into a **base class**
+	
+	- Push the specificities into subclasses, which will hook into the steps that the base class exposes

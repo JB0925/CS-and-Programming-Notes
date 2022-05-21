@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-05T12:02:50-05:00
+
+====== Recursively Clean Dict Keys in Heavily Nested Structure ======
+Created Tuesday 05 January 2021
+
+**Depending on the circumstances, some of this might have to change, but the idea is still the same:**
+	- call **replace** on what you want to remove
+	- check if the values are instances of **dicts** and, if they are, **call the function on the value**
+	- check if the values are instances of **lists** and, if they are, **call the function on items in the list**
+	- finally, set **new_dict[key] = value**
+	- **return**
+	
+{{.\pasted_image.png}}
+{{.\pasted_image002.png}}   # there is no indentation there, only the first leve inside the for loop
+
+
+

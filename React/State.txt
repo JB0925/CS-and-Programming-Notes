@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-25T20:22:54-04:00
+
+====== State ======
+Created Friday 25 June 2021
+
+In any reasonably sized web app, the User Interface has to be stateful.
+
+**Examples:**
+	- logged in users see something different than logged out users
+	- clicking "edit profile' opens up a modal (pop-up) window
+	- sections of a website can expand or collapse, i.e. a side bar or clicking "read more"
+	
+
+
+The state of the client interface (frontend) is not always directly related to the state of the server.

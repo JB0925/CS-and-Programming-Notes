@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-12T23:43:01-04:00
+
+====== Strip Punctuation ======
+Created Saturday 12 September 2020
+
+Two ways to strip punctuation from python strings:
+
+{{.\pasted_image.png}}

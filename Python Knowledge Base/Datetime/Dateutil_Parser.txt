@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-22T01:18:45-04:00
+
+====== Dateutil Parser ======
+Created Saturday 22 August 2020
+
+**from dateutil.parser import parse**
+Imagine you have this log line:
+
+>>> **log_line = 'INFO 2014-07-03T23:27:51 supybot Shutdown complete.'**
+Up until recently I used datetime's strptime like so:
+
+>>> **date_str = '%Y-%m-%dT%H:%M:%S'**
+>>> **datetime.strptime(log_line.split()[1], date_str)**
+	 **datetime.datetime(2014, 7, 3, 23, 27, 51)**
+More string manipulation and you have to know the format string syntax. dateutil's parse takes this complexity away:
+
+>>> **timestamp = parse(log_line, fuzzy=True)**
+>>> **print(timestamp)**
+	 **2014-07-03 23:27:51**
+>>> **print(type(timestamp))**
+	   **<class 'datetime.datetime'>**
+
+
+How to ignore timezones with **parse()**:
+	**print(parse(str_obj, ignoretz=True))**

@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T14:25:22-05:00
+
+====== Query Data with Outputs ======
+Created Saturday 08 January 2022
+
+In this section, we will use output values to organize data to be easily queried and displayed to the Terraform user.
+
+**1). **Create an **outputs.tf** file.
+
+**2).** Add configuration to it to define outputs for the EC2 instance. 
+
+**Example:**
+
+output "instance_id" {
+  description = "ID of the EC2 instance"
+  value       = aws_instance.app_server.id
+}
+
+output "instance_public_ip" {
+  description = "Public IP address of the EC2 instance"
+  value       = aws_instance.app_server.public_ip
+}
+
+**This defines the EC2 instance's ID and public IP address as outputs for the TF user.**
+
+
+**3).** Run **terraform apply** to be able to use these new output values.
+
+**4). **Run **terraform output** to be able to query the outputs.

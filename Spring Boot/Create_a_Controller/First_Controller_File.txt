@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-19T22:00:26-05:00
+
+====== First Controller File ======
+Created Saturday 19 February 2022
+
+Here we create a RestController that will contain REST endpoints:
+
+{{~/Desktop/ScreenShots/SpringBoot REST Controller.png}}
+

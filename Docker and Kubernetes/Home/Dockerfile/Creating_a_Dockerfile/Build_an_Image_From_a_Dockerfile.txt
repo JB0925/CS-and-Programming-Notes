@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-12T15:11:34-05:00
+
+====== Build an Image From a Dockerfile ======
+Created Friday 12 March 2021
+
+If you run **docker image ls**, you will get a list of all associated items with a particular image
+
+The way to build an image from a Dockerfile is **docker build --tag [[website:latest]] .**
+	- must specify the **tag (-t **or **--tag)**
+	- the "." at the end of the command tells Docker where to find your Dockerfile
+
+
+**If you run "docker build --tag [[website:latest]] .", it will start building the image**
+
+Run **docker image ls** again, and now you will see another image....the one you just made
+
+
+Run **docker run --name website -p 8080:80 -d [[website:latest]]**
+	- "--name website" - giving your image a name
+	- "-p 8080:80" **opening up ports**
+	- "-d website:latest": **detatched mode, image_name : tag**
+			- returns an image id
+
+

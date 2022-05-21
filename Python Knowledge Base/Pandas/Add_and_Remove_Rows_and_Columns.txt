@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-09T13:28:18-04:00
+
+====== Add and Remove Rows and Columns ======
+Created Wednesday 09 September 2020
+
+Delete Columns:
+	**df.drop(columns=['first', 'last'], inplace=True)**...returns the data frame without the columns that are in the list
+	
+
+Split Column and Create Two New Ones From It:
+	 **df['full_name'].str.split(' ', expand=True)**
+
+
+Add the Above as New Columns:
+	**df[['first', 'last']] = df['full_name'].str.split(' ', expand=True)**
+
+
+Add Single Row:
+	**df.append({'first':'Tony'}, ignore_index=True)**
+	
+	
+Add New Data Frame to Existing One:
+	**df.append(other_dataframe, ignore_index=True)**
+	
+
+Delete a Row:
+	**df.drop(index=4, inplace=True)....**takes out entire row at index 4
+	
+	
+Get Rid of a Row/Rows When You Don't Know the Index:
+	**df.drop(index=df[df['last'] == 'Doe'].index)**
+	
+	Can also put the above into a variable like this:
+	
+	**filt = df['last'] = 'Doe'**
+	**df.drop(index=df[filt].index)**.....makes it easier to read
+

@@ -1,0 +1,53 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-27T12:27:37-04:00
+
+====== Testing With Jasmine ======
+Created Thursday 27 May 2021
+
+Jasmine is a popular 'JavaScript testing framework.
+
+There are others, such as Mocha and Jest, etc.
+
+**Jasmine** has to be imported via a script tag.
+
+
+
+
+**How to Set Up Jasmine:**
+	Google Search **Jasmine JS Testing** or something similar. The background is a purplish color.
+	
+	Look for **Jasmine standalone**
+	
+	Click it and, inside of that link, you need to **copy the CDN files.** There should be **1 CSS file **and **3 scripts.**
+	
+	Like usual, the link tag goes in the HEAD of an HTML document.
+	
+	The **script tags** from Jasmine go at the bottom of the body **BEFORE** any self-created JS files.
+	
+	**JASMINE CDN UNPKG FILES:**
+		CSS
+			<link rel="stylesheet" href="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine.css"/>
+		
+		JS
+			<script src="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+			<script src="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+			<script src="https://unpkg.com/jasmine-core/lib/jasmine-core/boot.js"></script>
+	
+	
+	It is good practice to separate your tests from the actual functions, etc., in your production code.
+		- **make a file that has the same name as the file you are testing, BUT PUT .test IN THE NAME**
+		
+		**Example:**
+			- You are testing the code written in **taxes.js**
+			- You call your test file for taxes.js **taxes.test.js**
+			- **INCLUDE** this script under the JS file that you wrote in the body of your HTML 
+			- **NOTE:** You need to make a new, blank (**except for the typical HTML jargon**) HTML file to do your testing in. 
+			
+		{{~/Desktop/ScreenShots/Jasmine HTML File Setup.png}}
+		
+		
+		**Example of Jasmine ^{Test} Code:**
+		
+		{{~/Desktop/ScreenShots/Jasmine Test Code.png}}
+

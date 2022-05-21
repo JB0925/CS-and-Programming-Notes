@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-01T00:30:27-05:00
+
+====== Create an Interface ======
+Created Tuesday 01 February 2022
+
+In Java, creating an interface is as simple as:
+
+**public interface TaxCalculator {**
+	**float calculateTax();**
+}
+
+
+This means that any class that uses the **TaxCalculator **interface MUST have the **calculateTax** method.
+
+**NOTE** that there are no curly braces after the name of the function. 

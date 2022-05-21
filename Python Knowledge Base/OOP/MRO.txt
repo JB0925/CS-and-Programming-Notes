@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-10T22:59:13-04:00
+
+====== MRO ======
+Created Monday 10 August 2020
+
+MRO stands for **Method Resolution Order**
+
+In classes, sometimes a class will inherit from multiple other classes. 
+
+MRO essentially means "where the class is going to look to first for its inheritance."
+
+**class A:**
+**    def process(self):**
+**        print('A process()')**
+
+
+**class B:**
+**    def process(self):**
+	  **print('B process()')**
+
+
+**class C(A, B):**
+**    pass**
+
+
+**obj = C()  **
+**obj.process()    **
+**print(C.mro())   # print MRO for class C**
+
+The above diagram illustrates hierarchy of classes.
+When run, the above program displays the following output:
+**A process()**
+**[<class '__main__.C'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>]**
+
+This is important for when you are using super().method from an inherited class. 
+The above example has two **process** methods. MRO says that **class C** will search for the **.process()** method first in class A (**first in line in terms of inheritance)**, then class B. If there was only a **.process()** method in class B, it would search class A, realize there is no **.process()** method in A, then search class B and use that **.process()** method.
+
+Really Good Explanation: http://www.srikanthtechnologies.com/blog/python/mro.aspx
+
+Error explanation: https://stackoverflow.com/questions/29214888/typeerror-cannot-create-a-consistent-method-resolution-order-mro
+
+
+

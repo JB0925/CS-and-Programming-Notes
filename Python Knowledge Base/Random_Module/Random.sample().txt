@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-24T14:34:31-05:00
+
+====== Random.sample() ======
+Created Tuesday 24 November 2020
+
+**Use random.sample to get a random sample from a sequence:**
+
+import random
+
+names = 'bob joe sara tim julian lacey leslie'.split()
+
+**random.sample(names, 4)**
+	returns **['joe', 'leslie', 'julian', 'bob']**
+
+**random.sample(names, 2)**
+	returns **['bob', 'tim']**
+
+

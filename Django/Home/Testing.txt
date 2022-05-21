@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-01T23:40:23-05:00
+
+====== Testing ======
+Created Monday 01 February 2021
+
+When you create an app, it automatically creates an **app_name/tests.py** file.
+
+**Here are two examples of simple tests:**
+{{.\pasted_image.png}}
+
+**NOTE:** We are using **'SimpleTestCase** instead of '**TestCase** because, for this app, we are not using a database.
+
+The class **'SimpleTests** inherits from **'SimpleTestCase** and has two methods to do a simple test to see if the specified pages exist.

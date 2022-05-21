@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-25T23:47:08-05:00
+
+====== Static ======
+Created Friday 25 February 2022
+
+Static variables within a class represent variables or methods that are not unique to each instance created with the class; rather they are unique to the class itself.
+
+When working **within** static methods, you **cannot reference or use** non-static methods or variables from outside of the method that **are not static as well**.
+
+However, you can access **static** methods and variables from within **non-static** methods

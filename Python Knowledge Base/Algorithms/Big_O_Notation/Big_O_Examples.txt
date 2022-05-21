@@ -1,0 +1,53 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-11T22:02:19-04:00
+
+====== Big O Examples ======
+Created Tuesday 11 August 2020
+
+**O(1) Constant:**
+def constant(values):
+	print(values[0])
+
+print(constant([1,2,3]) = 1....always the first index from the list....constant
+
+
+**O(n) Linear:**
+for val in lst:
+	print(val)
+
+print([1,2,3]) = 1, 2, 3.....runs through a list and prints out each item....BigO gets larger as n for n in lst gets larger. Still good performance.
+
+
+**O(n^2) Quadratic:**
+for item_1 in lst:
+	for item_2 in lst:
+		print(item_1, item_2) prints 1, 1    1, 2     1, 3, etc. 
+Two loops nested makes it quadratic, because for every n in the list, you have to do it n^2. **A 10 item list would have 10^2, or 100, operations. **As numbers get larger, the computational resources it takes to run become greater. 
+
+
+
+												**__WORST CASE VS BEST CASE SCENARIOS__**
+
+	**def matcher(lst, match):**
+	
+		**for item in lst:**
+			**if item == match:**
+				**return True**
+		**return False**
+		
+Best Case: **print(matcher(lst, 1).....best case because the item it's seeking is index[0].     O(1) Constant**
+
+Worst Case: **print(matcher(lst, 20).....worst case because the entire lst must be searched, n elements. O(n) Linear**
+
+
+
+
+**Space Complexity:**
+
+Concerned with how much memory/space an algorithm uses. 
+
+**def memory(n):				#TIME COMPLEXITY  O(n).......Linear......because you go through a list that grows as n grows.**
+	**for x in range(n):			 #SPACE COMPLEXITY O(1)......Constant......because you are only creating one object "Memory!"**
+		**print('memory!')**
+

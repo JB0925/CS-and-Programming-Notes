@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-29T13:48:44-04:00
+
+====== Cherry Picking ======
+Created Thursday 29 October 2020
+
+Cherry picking allows you to move commits from one branch to another by **specifying exactly which commits you mean to move.**
+
+
+Easiest way to do this is to specify a single SHA:
+	**git cherry-pick 4a4f4492ded......**
+	
+
+The above tells Git to take the changes that happened to 4a4f4492ded, and apply them to the current branch.
+

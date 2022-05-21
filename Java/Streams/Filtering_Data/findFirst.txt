@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-25T09:49:16-04:00
+
+====== findFirst ======
+Created Monday 25 April 2022
+
+The **findFirst** method works similarly to the **indexOf** method for Lists and arrays in other languages.
+
+Essentially, it can be turned into the Streams version of that.
+
+**NOTE:** It is NOT giving you the index of the number, but instead is letting you check to see if it is present in the group.
+
+**Example:**
+
+int[] nums = new int[] {1,2,3,4,5,6};
+int result = Arrays.stream(nums)
+				   .boxed()
+				   .filter(n -> n == 3)
+				   .findFirst()
+				   .orElse(-1);
+				
+System.out.println(result);
+	**// returns 3**
+	
+However, if we changed it to **.filter(n -> n == 9)**, it would return -1, because 9 is not present in the array.
+

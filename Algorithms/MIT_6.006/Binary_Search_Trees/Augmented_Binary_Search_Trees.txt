@@ -1,0 +1,51 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-10T20:44:21-05:00
+
+====== Augmented Binary Search Trees ======
+Created Sunday 10 January 2021
+
+**New Requirement:**
+	compute **Rank(t): **how many planes are scheduled to land at times <= t
+	
+	Augment the BST structure:
+		{{.\pasted_image.png}}
+		you are keeping track of the size of the subtrees, which is what the numbers are for outside of the keys
+		so, subtree 43 has a height of 1, because it is the only element in its tree
+		subtree 46 has a height of 2 (46, 41)
+		subtree 79 has a height of 3 (79,64, 83)
+		subtree 49 (root) has a height of 6 (all of the other nodes are under it)
+		
+		if you insert or delete from the tree, you must change the size numbers
+		as you insert, follow the path of the nodes as you would with a regular BST, 
+		but for each Node you visit, increase its **size** number by 1
+		
+		
+		**How do we compute Rank(t) from the subtree sizes?**
+			1). walk down the tree to find the desired time **t**
+			2). as you walk down, add in the nodes that are smaller (+1)
+			3). Add in the subtree sizes to the left
+			
+			**Example:**
+				**Rank(79)**
+				
+				Step 1). Look at the root (49)
+							49 < 79, so total += 1
+				
+				Step 2). Look to the right since 49 < 79 **BUT** also add in the subtree sizes of the nodes to the left, since they all "landed" before **t**
+						**To the left of 49 is 46, which has a height of 2, so total += 2**
+						**NOTE: **we do not add the Nodes underneath, because they are counted in the height of the Node immediately to the left of 49
+									i.e., there are TWO nodes to the left of 49, so the **total += 2 and NOT total += 3**
+						
+						**To the RIGHT of 49 IS t (79), so total += 1 because Rank(t) wants all planes landing <= t.**
+				
+				Step 3). Look to the left of **79**, since the nodes to the **RIGHT of 79** would be greater.
+						There is **1** node to the left of **79**, so **total += 1**
+						
+				**After all of this, the total is 5 planes that are landing BEFORE or AT Time 79.**
+				
+				
+			**The bad news:**
+				One side of the tree could keep growing and growing, making it **MORE** like a **LIST** and **LESS** like a **BST**
+				
+

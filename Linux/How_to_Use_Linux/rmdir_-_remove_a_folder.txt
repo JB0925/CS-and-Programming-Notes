@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-13T14:30:32-05:00
+
+====== rmdir - remove a folder ======
+Created Friday 13 November 2020
+
+call **rmdir folder_name** on a directory and it will delete that directory, as long as you are in the path of the directory

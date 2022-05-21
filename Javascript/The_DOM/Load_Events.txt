@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-23T23:49:36-04:00
+
+====== Load Events ======
+Created Sunday 23 May 2021
+
+Whenever the browser encounters a script, it runs it right away. This is why it's a good idea to put most script tags at the bottom of the body. Some exceptions might be libraries such as Axios, etc.
+
+**A Way Around This:**
+	If you really want to put your script at the top of your HTML file, you can run an addEventListener for "DomContentLoaded 
+	
+	- **document.addEventListener('DOMContentLoaded', () => {**
+		**// your code goes here**
+	**});**
+	
+	All of the code inside an event listener with '**DOMContentLoaded** will only run once the DOM is loaded.
+	
+	'DOMContentLoaded is only waiting for the HTML document to be loaded and parsed.
+	
+	**It does not wait for everything on the page to be fully loaded.**
+	
+
+
+**Wait For Everything on the Page to be Fully Loaded:**
+	- **window.addEventListener('load', function() {**
+		// your code goes here
+	**});**
+	
+	
+	**This code will not run until everything in the DOM is fully loaded.**
+	
+
+
+1). Use **'DOMContentLoaded** if you want to wait for the page to load, but don't necessarily care that everything on the page has loaded.
+
+2). Use **window.addEventListen('load', function() {}); **if you really need everything on the page to be fully loaded.
+
+**NOTE: **Option 2 can lead to bad User Experience at times, if the user has to wait a couple seconds before anything happens.
+

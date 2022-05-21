@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-01T23:21:28-04:00
+
+====== Debounce an Input ======
+Created Sunday 01 August 2021
+
+Debouncing is the process of waiting to some type of call. It is typically used on inputs, where a function fires as a user types.
+
+{{~/Desktop/ScreenShots/Debounce an Input.png}}
+
+`**searchCupcakesOnInput** makes an API call and adds its results to the DOM.
+
+**debounce** adds a timeout that is cleared on each new input keystore
+
+Finally, it is called at the bottom **searchInput.on('input'....)**

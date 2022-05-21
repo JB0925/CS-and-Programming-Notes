@@ -1,0 +1,53 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-14T22:40:06-05:00
+
+====== Min Heap Code and Notes ======
+Created Thursday 14 January 2021
+
+setting up the constructor for the class:
+	{{.\pasted_image.png}}
+	
+**NOTE: In this implementation, we will be using (2p) to access the left child, and (2p + 1) to access the right child. This is because, effectively, our heap begins at index 1 (index 0 is a zero used to help with integer division of indices), whereas our max heap began at index 0.**
+
+
+**Add or Insert Method:**
+	- when adding to a heap, it is important to make sure that the new Node eventually finds its proper place. 
+	- for this, we could use a version of **max_heapify()** where the > are switched to <.
+	{{.\pasted_image001.png}}
+	
+	This shows the percolation of the **7 **Node up to its rightful place
+	
+	To complete the percolation of the new node to its correct spot, we will need two methods:
+		- percUp(self, i) - **a variation of max_heapify(a, i)**
+		- insert(self, i) - code for inserting a Node into the list and moving it to its correct spot.
+		
+
+
+**delMin() Method:**
+	- finding the minimum value in the heap is easy, as it will always be the first item in the heap or, in this case, **self.heaplist[1]**.
+	- to delete it, we will move the last Node in the heap up to the root
+	- then, we will need to compare it to the children below it and, if necessary, swap it
+	
+	**Code for delMin and Helper Methods:**
+	**Code for delMin and Helper Methods:**
+	{{.\pasted_image003.png}}
+	
+	**-minChild: **is saying that if i * 2 + 1 is greater than the **Heap Size**, just return i *2
+				otherwise, compare **heaplist[i*2] with heaplist[i*2+1] **and return the index of the smaller value
+	
+	-**percDown: ** is saying that while i * 2 is <= the Heap Size, the smaller child of **self.heaplist[i]** is **mc **(**i*2 **or **i*2+1**)
+				   compare the values at the two indices (**i** and **mc**), and swap **IF** the value at **i** is greater than the value at **mc**
+				  finally, increment the **i** value by setting it equal to **mc**, which will then increase **mc **the next turn through the loop 
+				   that makes this **O(log n)**
+	
+	-**delMin: **is saying that the value we want to return is index 1 of the heaplist
+			   set heaplist[1] = the value of the heaplist at the index equal to its current size
+			  then, pop that value (**self.heaplist[self.heaplist.currentsize]**)
+			  call **percDown** on index 1 (**where the swapped value is now**)
+			  decrease the current size by 1, and return the initial minimum value
+
+
+**buildHeap Method for Building an Entire Heap from a List:**
+
+

@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-09T22:57:48-05:00
+
+====== Elements ======
+Created Thursday 09 December 2021
+
+**Three ways to access an HTML element in the "elements" tab:**
+
+1). By going into the elements tab itself, and clicking and highlighting the element you want.
+
+2). By going to the element itself and clicking CMD + click, then **inspect**. This will take you directly to the element in the elements tab.
+
+3). By clicking the **Arrow in the box** that is directly beside the **responsive design icon.**
+
+**Element good to knows:**
+	- lightish green: the amount of margin persent
+	- orangish: the amount of padding present

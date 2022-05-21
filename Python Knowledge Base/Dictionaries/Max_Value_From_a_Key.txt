@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-26T22:18:46-04:00
+
+====== Max Value From a Key ======
+Created Sunday 26 July 2020
+
+To return the maximum value out of all keys in a dictionary, you can use:
+
+	 **return max(word_values, key= word_values.get)**
+
+word_values = the dictionary
+.get method = will return the key, in this case the largest since I used max()
+
+
+https://stackoverflow.com/questions/268272/getting-key-with-maximum-value-in-dictionary 
+
+
+To return the maximum VALUE instead of the KEY with the maximum value, you can use:
+
+		**return max(word_values.values())**
+
+https://www.kite.com/python/answers/how-to-find-the-max-value-in-a-dictionary-in-python
+
+
+
+
+
+

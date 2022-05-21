@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-08T01:46:48-04:00
+
+====== Render prop vs Component Prop ======
+Created Sunday 08 August 2021
+
+So, how do we pass props to a component in React Router?
+
+We can use the **render** and **component **props.
+
+**<Switch>**
+	**<Route exact path="/dog" component={() => <Dog name="Muffins"/>}/>**
+	**<Route exact path="/about" render={() => <Dog name="Biscuit"/>}/>**
+**</Switch>**
+
+
+So what's the difference?
+
+Doing it with **component** makes the component re-render, but also re-mount each time.
+
+Doing it with **render, ONLY** makes the component re-render
+

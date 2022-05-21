@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-19T09:30:40-05:00
+
+====== Updatedb - update the database ======
+Created Tuesday 19 January 2021
+
+if you want to update the database of all the files in the system:
+	**updatedb**
+
+
+install with:
+	**sudo apt install mlocate		**OR
+	**sudo apt install locate**

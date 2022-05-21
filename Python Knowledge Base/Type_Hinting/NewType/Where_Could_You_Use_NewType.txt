@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-12T21:51:33-04:00
+
+====== Where Could You Use NewType ======
+Created Sunday 12 September 2021
+
+- separating a normal string from a `**SanitizedString** to catch bugs like a SQL injection. By creating `**SanitizedString**, you are letting other devs know that the ONLY strings that should be passed into your function have been checked, cleaned, and are of the type `**SanitizedString**, which is usually ONLY created in one place.
+
+- giving a user the type of `**LoggedInUser** to distinguish logged in users from non-logged-in users
+
+- tracking certain ID's to be used in other parts of a program. If the ID's aren't of type `**CheckedID**, then we know that they aren't valid and our function, provided that we are using a type checker, won't use them.

@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-23T00:29:13-05:00
+
+====== Use Zip to Create a Dict ======
+Created Wednesday 23 December 2020
+
+nums = **[(n, k) for n in range(100) for k in range(100)]**
+my_dict = **dict(zip(nums, [None] * 100))**
+
+helpful link:
+
+https://stackoverflow.com/questions/65418541/python-how-can-i-turn-a-list-of-tuples-into-dictionary-keys/65418755#65418755

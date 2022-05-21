@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-29T14:20:55-04:00
+
+====== Turn a String Into an Array Easily ======
+Created Saturday 29 May 2021
+
+let myString = 'hello';
+
+let newArray = Array.from(myString);
+	**returns ['h', 'e', 'l', 'l', 'o'];**

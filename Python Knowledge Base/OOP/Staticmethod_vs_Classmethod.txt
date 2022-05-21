@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-05T22:06:27-04:00
+
+====== Staticmethod vs Classmethod ======
+Created Wednesday 05 August 2020
+
+https://www.geeksforgeeks.org/class-method-vs-static-method-python/
+
+A class method is bound to the class and can change the state of the class.
+
+A static method is also bound to the class, but cannot change the state of the class. 
+
+A static method is more like a utility function.
+
+
+You can create class variables before you define init. This can be extremely helpful, depending on what you are trying to do. 
+
+
+You can call @classmethod variables using cls. For example, if I want to call a class variable in a regular method, I need to use **classname.var, **but if I want to use a class variable in an @classmethod, I can just write **cls.var.**
+
+
+**Hardcoding the Type of a Classmethod:**
+	To hard code a classmethod to return the type of the class, instead of "class str", "class int", etc.:
+		**return cls(what you are returning here)**
+		**Example:**
+			{{.\pasted_image.png}}
+

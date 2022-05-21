@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-25T01:40:52-05:00
+
+====== re.subn ======
+Created Wednesday 25 November 2020
+
+With **re.subn**, you can get use regex to replace items in a string, and also get the total number of subs made:
+
+{{.\pasted_image.png}}

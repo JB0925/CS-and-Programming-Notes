@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-14T21:14:16-05:00
+
+====== Instantiating an Array ======
+Created Monday 14 February 2022
+
+When an array is declared like:
+	int[] myArray;
+		OR
+	int myArray[];
+	
+it only creates a reference to the array; it does not actually create the array in memory.
+
+**Instantiating an Array:**
+	int intArray[];
+	intArray = new int[22];
+		- this allocates memory to an array
+	
+	**OR**
+	
+	int[] intArray = new int[22];
+		- same as above
+		
+
+**NOTE: **When instantiating an array like above with the word **new**, an int array will be created with 0's, a boolean array will be created with **false**'s, and a reference type array will be created with **null**'s.
+

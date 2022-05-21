@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-02T11:53:14-04:00
+
+====== Hard Links ======
+Created Thursday 02 September 2021
+
+**Syntax:**
+	**ln path/to/file.txt new_file_name.txt**
+	
+
+**Notes:**
+	- if you delete the original file, the linked file will still exist.
+	- if you move the original file, the linked file will still exist and will still be updated.
+	

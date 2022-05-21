@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-11-01T13:26:11-04:00
+
+====== Preventing Re-Renders with Redux ======
+Created Monday 01 November 2021
+
+The easiest way to prevent re-renders with Redux is to import **shallowEqual** from "react-redux", and then use it as the second argument in the useSelector hook. This is helpful when dealing with objects or arrays.
+
+**Example:**
+
+import { useSelector, shallowEqual } from "react-redux";
+
+const { num1, num2 } = useSelector(state => ({
+	num1: state.num1,
+	num2: state.num2
+}), **shallowEqual**);

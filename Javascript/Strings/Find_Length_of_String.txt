@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-17T09:44:40-04:00
+
+====== Find Length of String ======
+Created Wednesday 17 March 2021
+
+Akin to **len( )** in Python, Javascript uses the **.length** property.
+
+
+**Example:**
+	var cuteDog = 'You have a cute dog.";
+	var count = 0;
+	
+	count = cuteDog.length;
+	
+	run **console.log(count)** and it should return 20, counting whitespace as well.

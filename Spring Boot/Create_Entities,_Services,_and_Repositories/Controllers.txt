@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-20T22:16:33-05:00
+
+====== Controllers ======
+Created Sunday 20 February 2022
+
+**Controllers** are the RESTful routes that will be used by the API, and form the endpoints that a user will call.

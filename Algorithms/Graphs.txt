@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-06T23:00:51-04:00
+
+====== Graphs ======
+Created Friday 06 August 2021
+
+A **graph** is a series of nodes, or **vertices** that are connected through a series of **edges**.
+
+There is no order, and graphs are not linear, such as a list / array, linked list, etc.

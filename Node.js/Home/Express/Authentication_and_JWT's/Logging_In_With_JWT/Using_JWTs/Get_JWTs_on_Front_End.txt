@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-23T22:16:48-04:00
+
+====== Get JWTs on Front End ======
+Created Thursday 23 September 2021
+
+In the beginning of the front end script, make a request to the server to get the JWT
+
+**let resp = await axios.post(**
+	**"/login", {username: "jane", password: "secret"});**
+
+**let token = resp.data;**
+
+
+
+Then, in future requests where login is needed, we will look for a token called **_token**
+
+**await axios.get("/secret", {params: {_token: token}});**
+
+**await axios.post("/other", {_token: token});**
+

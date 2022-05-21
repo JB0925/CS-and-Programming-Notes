@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-17T20:45:12-04:00
+
+====== Adding Methods to Model Classes ======
+Created Saturday 17 July 2021
+
+You can add methods to Model classes to perform simple calculations, return a simple string, etc.
+
+**Example:**
+
+def feed(self, val=20):
+	self.hunger -= val
+	self.hunger = max(self.hunger, 0)
+
+
+**NOTE: **Remember, for a method like this that is supposed to update the database, you need to call **db.session.add(instance)** and **db.session.commit()** within the route.
+
+

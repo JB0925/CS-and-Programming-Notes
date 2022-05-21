@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-09T13:46:07-04:00
+
+====== Building Your First API ======
+Created Friday 09 April 2021
+
+{{file:///var/folders/j3/_t3lnk4s6qj4626wqs10dzf40000gn/T/TemporaryItems/NSIRD_screencaptureui_DBTXd7/Screen%20Shot%202021-04-09%20at%208.34.12%20PM.png}}
+
+# add '**FastAPI** and **uvicorn **with poetry
+# create the api with **api = fastapi.FastAPI()**
+
+# set the route of the api with **api.get** or **api.post**, etc.
+
+# define a function and use **type hints** to ensure that the data you are passing in is validated in the way that you are expecting
+
+# return the data as a JSON object
+
+# run the api

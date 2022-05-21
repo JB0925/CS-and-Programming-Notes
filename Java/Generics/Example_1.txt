@@ -1,0 +1,61 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-23T11:58:00-05:00
+
+====== Example 1 ======
+Created Wednesday 23 February 2022
+
+In this example, our class has a type that will be passed to it at runtime. We are also able to use that type in the class' fields and methods.
+
+**NOTE:** Using the <T> for a method parameter, etc., will ensure that you are getting the correct type at runtime. Otherwise, it will throw an error.
+
+**NOTE:** Notice the **T extends Player. **That puts an upper bound on what T can be. So, you could not do:
+	**Team<String> buffaloBills = new Team<>("Buffalo Bills");**
+	
+This, of course, would not work because a String would not have the same methods as an instance of the Player class would.
+
+
+**NOTE:** We also added an interface implementation to compare teams because, without it, you could compare any team to any other team, and it wouldn't make any sense to compare a FootballTeam to a BaseballTeam , etc. If you took out the **T**, and left it as **implements Comparable<Team>**, you'd then be able to compare football teams to baseball teams, etc.
+
+
+**Example:**
+public class Team<**T extends Player**> **implements Comparable<Team<T>>** {
+	private String name;
+	private int played = 0;
+	
+	private ArrayList<T> members = new `ArrayList<>();
+	
+	public boolean addPlayer(T player) {
+		if (members.contains(player)) {
+			....
+		}
+	}
+	
+	@Override
+	public int compareTo(Team<T> team) {
+		if (this.ranking() > team.ranking()) {
+			return -1;
+		} else if (this.ranking() < team.ranking()) {
+			return 1;
+		}
+		
+		return 0;
+	}
+}
+
+
+**public interface Comparable {**
+	**public int compareTo(Team<T> team);**
+**}	**
+
+
+**// Instantiating the Class**
+public class Main {
+	public static void main(String[] args) {
+		Team<FootballPlayer> Bills = new Team<>("Buffalo Bills");
+		
+		**// Now, you won't be able to add anyone from the class of BaseballPlayer, etc., to the team, which ensures that the team stays realistic.**
+	}
+}
+
+

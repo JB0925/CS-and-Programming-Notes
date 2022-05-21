@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-05T10:11:31-04:00
+
+====== WHERE Clause and ALL ======
+Created Wednesday 05 May 2021
+
+{{~/Desktop/ScreenShots/ALL with WHERE Clause.png}}
+
+
+An ALL statement lets us get all of the values from a particular query. Here, we use it with a subquery.
+
+
+We are asking for the name, department, and price from the products table WHERE the price is greater than ALL the prices in the table where the department is "Industrial".
+
+
+**Example 2:**
+
+{{~/Desktop/ScreenShots/Another ALL example.png}}
+
+
+Here, we are selecting several columns from the products table, but ONLY if their price is less than the AVERAGE price / weight ratio.
+
+Again, we truly didn't HAVE to have a Subquery with an ALL statement in it, but we used it as practice.

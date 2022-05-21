@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-19T22:16:50-05:00
+
+====== Application Configuration ======
+Created Saturday 19 February 2022
+
+The **application.properties** file, located in **src/main/resources**, is where you can change things such as which port your application will run on, etc.
+
+For example, simply typing **server.port = 3001** would allow your application to run on port 3001.

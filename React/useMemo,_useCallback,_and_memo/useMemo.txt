@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-07T23:27:51-05:00
+
+====== useMemo ======
+Created Tuesday 07 December 2021
+
+**useMemo** is a way to cache / memoize the results of specific functions.
+
+It takes a **dependency array, **just like useEffect. The dependency array means that that the **memo** will be updated when the value in the dependency array changes.
+
+const posts = React.useMemo(() => getPosts(searchTerm), [searchTerm])
+
+**The above is memoizing the result of "getPosts" to save those so that the function doesn't have to be called again if the searchTerm does not change.**
+
+**How It Works:**
+
+// initial render with searchTerm = 'puppies':
+// - getPosts is called
+// - posts is a new array of posts
+
+// rerender with searchTerm = 'puppies':
+// - getPosts is ***not*** called
+// - posts is the same as last time 🤓
+
+// rerender with searchTerm = 'cats':
+// - getPosts is called
+// - posts is a new array of posts
+
+// rerender render with searchTerm = 'puppies' (again):
+// - getPosts is called
+// - posts is a new array of posts

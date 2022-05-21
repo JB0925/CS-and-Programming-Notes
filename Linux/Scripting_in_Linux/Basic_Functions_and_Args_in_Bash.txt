@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-28T01:06:11-05:00
+
+====== Basic Functions and Args in Bash ======
+Created Saturday 28 November 2020
+
+The following code creates a function called **mcd** that uses mkdir to create a directory and immediately cd's into it:
+{{.\pasted_image.png}}
+**NOTE: **notice how the prompt doesn't show up until you close the curly brace. This is how you know you are still writing your function.
+
+The following picture shows an example of what happens when you call the function with an argument:
+{{.\pasted_image001.png}}
+Notice how as soon as I ran the command, it created "bites" and cd'ed into that directory
+
+
+**BASH VARIABLES:**
+
+Bash uses a variety of special variables to refer to arguments, error codes, and other relevant variables. Below is a list of some of them:
+{{.\pasted_image002.png}}
+
+**NOTE: **when you run some of the above commands, you may get a number. **0** means everything went ok, any other number means an error probably occurred.
+
+		the **$? **will return the exit code of the previous command
+		**true** will always have a code of 0 and **false** will always return a code of 1
+
+
+

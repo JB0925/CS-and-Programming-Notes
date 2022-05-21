@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-15T00:21:04-04:00
+
+====== Any  All ======
+Created Saturday 15 August 2020
+
+How to use any and all:
+
+{{.\pasted_image.png}}
+
+
+{{.\pasted_image001.png}}    **example of how to use all to check if all characters of one string are in another string.**

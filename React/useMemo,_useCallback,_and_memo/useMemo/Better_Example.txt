@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-01T01:28:41-05:00
+
+====== Better Example ======
+Created Saturday 01 January 2022
+
+**useMemo** is a way to cache the results of expensive function calls. So you will call the function once and, as long as the results of that function don't change, the function won't be called again. Instead, the results are memoized.
+
+In the example below, we **won't call getDivisors again** unless **num** changes. This can have a good impact on performance if we have props that only change after a certain number of renders.
+
+**NOTE:** Pay attention to the fact that **useMemo**, is written almost exactly like **useEffect** and **useCallback**, including the dependency array. We just pass in a function whose results we want to cache. As long as whatever in the dependency array doesn't change, we won't call that function again.
+
+**Example:**
+
+import React, { useMemo } from "react";
+import { getDivisors } from "./helpers";
+
+function NumberDivisors({ num }) {
+  **// don't recompute the divisors**
+**  // if the number is unchanged**
+  let divisors = useMemo(() => getDivisors(num), [num])
+  
+  return (
+	<div>
+	  Here are all the divisors of {num}!
+	  <ul>
+		{divisors.map(divisor => (
+		  <li key={divisor}>{divisor}</li>
+		))}
+	  </ul>
+	</div>
+  );
+}

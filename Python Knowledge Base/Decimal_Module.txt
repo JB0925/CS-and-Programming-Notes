@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-28T21:27:05-05:00
+
+====== Decimal Module ======
+Created Saturday 28 November 2020
+
+**from decimal import Decimal**
+
+return **Decimal(number).quantize(0)**
+
+the above rounds a float with .5 in it to the nearest even integer
+
+So 2.5 would round to 2, and 0.5 would round to 0, however, 3.5 would round to 4
+
+
+**Another Example:**
+	- say you have a list of floats = **[3.34, 3.33, 3.33]**
+	- the total sum will return as 10.0
+	- if you want to return it as 10.00:
+		**for num in lst:**
+			**num = Decimal(str(num)).quantize(Decimal('0.00'))**
+			**new_lst.append(num)**
+		**return sum(new_lst)**
+	
+	- because we used **quantize**, it will return with two decimal precision
+	- also, **if we want to add them all together, they ALL have be decimal.Decimal objects**
+

@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-04T00:12:20-05:00
+
+====== Inheritance in UML ======
+Created Friday 04 February 2022
+
+{{~/Desktop/ScreenShots/Inheritance UML.png}}
+
+This pattern shows that the **Rectange** class inherits from the **Shape **class.

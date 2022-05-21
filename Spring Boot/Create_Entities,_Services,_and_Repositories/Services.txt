@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-20T00:04:25-05:00
+
+====== Services ======
+Created Sunday 20 February 2022
+
+Services are the business logic that gets abstracted away from the main controllers / RESTful routes. Think of the classes we create in Node / Express that are used in calls by the API routes.
+
+1). Create an Interface for your Service.
+	- public interface DepartmentService {
+	   public Department saveDepartment(Department department);
+	}
+	
+	**NOTE:** These are just the methods that need to be implemented in the Service Impl.
+
+2). Create a class for the implementation of that interface. These methods implement the methods from the Service interface, call the Database, handle any logic, and are what the Controllers use to when their endpoints are hit.
+
+	**@Service**
+	- public class DepartmentServiceImpl implements DepartmentService {
+	
+	   @Autowired
+		 DepartmentRepo departmentRepo;
+	
+		 @Override
+		 public Department    saveDepartment(Department department) {
+		return departmentRepository.save(department);
+	}
+	}
+	

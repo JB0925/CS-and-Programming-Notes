@@ -1,0 +1,80 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-03T01:44:57-04:00
+
+====== Time and Space Complexity ======
+Created Saturday 03 October 2020
+
+**Time and Space Complexity - Introduction:**
+	- We need some way to **differentiate** between the different **sorting algorithms** we'll talk about during this series
+	- We want to choose our algorithm based on which will take the least time, while also saving the most space in memory
+	
+**Time Complexity:**
+	- a **function **describing how many **instructions** are required from the computer to **finish sorting** a list using that algorithm
+	- the time is measured by the **amount of instructions required** instead of time, because time is an unreliable metric in CS
+	
+	- Time is **NOT** a good measurement of time complexity because if you give a laptop and a super computer the same algorithm to perform a sort on a list with 1,000,000 elements, you already know that the supercomputer will finish first because it has so many more resources available to it
+	- allows you to actually test the performance of the algorithm without bias, instead of testing the algorithm and the machines they are being run on
+	
+	- **We judge a particular sorting algorithm using TRHEE different metrics:**
+		- Best-Case
+		- Average-Case
+		- Worst-Case
+		
+	- As the programmer, you should know how the algorithm you choosee will perform under the best, average, and worst conditions
+	
+	
+**Space Complexity:**
+	- refers to a function describing the amount of **extra memory**, or **space**, that a certain algorithm will take in memory
+	- some algorithms (Bucket sort) require the computer to allocate **extra memory** so that they can be run
+	- Time Complexity: **# of instructions required				**Space Complexity: **Amount of Extra Space Needed**
+	
+	- Extra Space = **Auxillary Space**
+	- many times, algorithms **DO NOT **need extra space to perform a sort . **These are called "In-Place" Algorithms. **They sort the list in place. A **Selection Sort is an example of this**
+	
+	- we measure the Space Complexity performance in terms of their **Worst-Case Scenario**
+	- this is so we don't plan on using more memory than the computer actually has, causing the program to crash
+	- you have to make tradeoffs between time and space....which do you need more?
+	
+	
+**Big O Notation:**
+	**Best													Worst**
+	O(1)			O(n)			O(log n)			O(n log n)		O(n**2)
+	
+	- these are functions that will return either:
+		**a). **the number of instructions required if it is a **time-complexity equation**
+		**b). **the amount of extra memory required if it is a **space-complexity equation**
+		- "**n**" is equal to the size of the list or Data Structure we are working with
+	
+	- **time-complexity functions** will return the best, average, and worst case scenarios
+	- **space-complexity functions** will return the worst case scenario
+	
+**O(1):**
+	- this is the BEST a sorting algorithm can score in terms of **Space-Complexity**
+	- a **sorting algorithm** will **NEVER **have an O(1) **Time-Complexity**
+	- if the **sorting algorithm** has O(1) **Space-Complexity, **it means that no additional memory is required by the computer
+		- these are the "**In-Place Algorithms**" mentioned earlier....such as the **Selection Sort**
+
+**O(log n):**
+	- this is the NEXT BEST Big O() equation
+	- **this also cannot be applied to Time-Complexity Equations**
+	- it follows a **logarithmic curve**
+	- the larger the data set is, the better an O(log n) algorithm will perform
+	- the curve will start off steep, then flatten out as time goes on with a bigger data set
+	- **Example of O(log n) Algorithm:**
+		- Binary Search
+		
+**O(n):**
+	- Third Best Big O() equation
+	- **this is the first one that might show up in the Time-Complexity Equations category for a sorting algorithm**
+	- it is linear (the amount of steps required or extra space in memory is proportionate to the size of the list/ Data Structure
+
+**O(n log n):**
+	- is similar to O(n), only multiplied by n, which is **the size of the list being sorted**
+	- **this differs from O(log n) in that as the data grows, the curve gets steeper, instead of flattening off like O(log n)**
+	
+**O(n**2):**
+	- the last **common** type of equation is O(n**2)
+		- it is **very inefficient**
+		
+

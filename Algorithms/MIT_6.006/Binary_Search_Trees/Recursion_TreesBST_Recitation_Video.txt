@@ -1,0 +1,97 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-11T12:14:50-05:00
+
+====== Recursion TreesBST Recitation Video ======
+Created Monday 11 January 2021
+
+**Most Popular Operations With a Binary Search Tree:**
+	**Search/Query:**
+		- max, min
+		- next_largest
+		- search
+	
+	**Updates:**
+		- insert
+		- delete
+
+
+**Search/Find Operation:**
+	- start at the **root**, compare the **value** you are looking for to the key of the **root. **If it is less than the **root**, go **LEFT**. If it is greater than the **root**, go **RIGHT.**
+	{{.\pasted_image.png}}
+	
+	**NOTE:** This is pretty much like Binary Search, with a recursive call. The **DIFFERENCE **is that you aren't splitting the array in half each time; you are looking through each **RIGHT** or **LEFT** child Node to find a match. So, this is **O(h)**, where **h** is the **height of the tree**. This is **ALMOST** like **O(log n)**, but isn't guaranteed to be **O(log n)** because of what is written below:
+			 
+			In the worst case, searching is **O(n)**. This happens is you have a tree that is more like a list, where each element is bigger than the next.
+
+
+**Insertion Into a BST:**
+	{{.\pasted_image001.png}}
+	**The above is a recursive algorithm for inserting into a BST. Here are the steps:**
+		**In this problem, assume that the "current value" discussed is the root note to start, then goes deeper with each recursive call.**
+		
+		1). if the node submitted is None, just return
+		
+		2). if the key of the node is less than the key of the current value (**self.key):**
+				if the current Node's left child (**self.left)** is None, then set the new node's parent to **self **(the current value), and set **self.left**'s (the current value's left child) pointer to **the new Node value.**
+				
+				otherwise, if the current Node's left child is not None, you will call **insert()** again on the left child **(self.left.insert(node))**
+		
+		3). Repeat step 2, this time for the current value's right child **(self.right.insert(node))**
+		
+		**Running Time: O(h)**
+		
+	
+	**This code (insert()) is very similar to the "find()" method above, except that when self.left/right is None, it doesn't return; it creates a new Node.**
+
+
+
+**Find_Next_Largest:**
+	{{.\pasted_image002.png}}
+	
+	**Explanation:**
+		to find the next largest node:
+			if the current Node's right child is not None:
+				make a recursive call to **self.right.find_min()**
+			
+			set **current = self** (current Node)
+			while the parent of the current Node isn't None and while the current value is the right child of the current value's parent:
+				current = the current value's parent
+			return the parent of the current value
+	
+	
+	If you get to a leaf that is on the left side of its parent, you would only need to go back one Node to find the next largest value, because that parent is going to be larger by definition
+	
+	If you get to a leaf that is on the right side of its parent, then you have to trace back up until the branch begins to turn to the right, then go up one more time (in this case, directions are backwards). **This is because, when moving up and to the right, you know that those values are larger than any values in any branches stemming from its left child**
+	
+	
+	**To find the next smallest, it would be the opposite:**
+		go up to the right until you can't anymore. If you can turn left at any point, the first left node available is the next smallest
+		
+		**Code implementation:**
+			to code this, **copy** the code from **next_largest(self):**
+				replace** LEFT** with **RIGHT**
+				replace **MIN** with **MAX**
+				you're finished
+				
+
+
+**Deletions:**
+{{.\pasted_image004.png}}
+**deletions involves some changing pointers around to point to other nodes, much like in a linked list**
+
+
+
+
+
+
+
+**Find Min:**
+	{{.\pasted_image003.png}}
+	
+	**Explanation:	**current is equal to the self value. 
+					while the current value's left child is not None:
+						current is equal to the current value's left child
+					
+					at the end, return the current value
+

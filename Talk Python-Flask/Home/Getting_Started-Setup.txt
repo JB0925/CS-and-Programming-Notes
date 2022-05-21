@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-14T23:51:11-05:00
+
+====== Getting Started-Setup ======
+Created Sunday 14 February 2021
+
+{{.\pasted_image.png}}
+
+**The basic file structure:**
+	- main directory is **pypi_app**
+	- directly inside of it we create **app.py, data(dir), requirements-dev.txt, requirements.txt, static(dir), templates(dir), viewmodels(dir), and view(dir)**
+	- directly inside of **static**, we create three more directories (**css, img, **and **js**)
+
+
+**NOTE:** initialize everything after you've create all of the files, etc., but running **pipenv install flask**, which automatically creates a virtual environment and a Pipfile, which is like what a **requirements.txt** should be.
+
+
+

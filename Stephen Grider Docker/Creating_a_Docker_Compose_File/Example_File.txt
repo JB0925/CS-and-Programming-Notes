@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-06T09:34:13-05:00
+
+====== Example File ======
+Created Thursday 06 January 2022
+
+**NOTES AT BOTTOM!**
+
+version: '3.7'
+services:
+	redis-server:
+		image: 'redis-demo'
+	node-app:
+		build: .
+		ports:
+			- '4001:8081'
+			
+
+**Explanation:**
+	- **Version** is what version of docker compose is being used
+	
+	- **services** are which containers to create
+	
+	**- image** means that you are building the "redis-server" container from an image called "redis-demo"
+	
+	- **build: . **means that you are building that container from a Dockerfile in the PWD
+	
+	**- ports** are the ports to listen on. The first ones means that the local user will listen on 4001, and that the container will listen on 8081
+	
+
+**NOTE:** By composing the docker-compose.yml file in this way, we have made it so that the two containers listed in the file are automatically on the same network, and can automatically talk to one another.
+

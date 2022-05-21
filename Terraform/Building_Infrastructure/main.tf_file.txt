@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-07T19:57:30-05:00
+
+====== main.tf file ======
+Created Friday 07 January 2022
+
+**// holds terraform settings, including providers**
+// **that TF uses to setup infrastructure.**
+terraform {
+  **// for each provider, the "source" attr provides an optional hostname, namespace, and provider type.**
+**TF providers come from the TF Registry by default.**
+  required_providers {
+	aws = {
+	  source  = "hashicorp/aws"
+	  **// it is not required, but recommended to set a version constraint so that TF doesn't install a provider that doesn't work with your configuration.**
+	
+		**// if not provided, the version defaults to the most recent version upon initialization**
+	  version = "~> 3.27"
+	}
+  }
+
+  required_version = ">= 0.14.9"
+}
+
+**// The provider block configures the specified provider. It is a plugin used by TF to create and manage your resources. You can have multiple provider blocks.**
+provider "aws" {
+  **// points TF to the AWS creds stored in local AWS config file**
+  profile = "default"
+  region  = "us-west-2"
+}
+
+**// Defines components of your infrastructure. Could be an EC2 instance, or a Heroku application, etc.**
+
+**// Always has two strings before the open bracket: the resource type and the resource name**
+resource "aws_instance" "app_server" {
+  **// these are args used to configure the resource. In this case, the AMI Id is an Ubuntu image, and the instance type is "t2.micro".**
+  ami           = "ami-830c94e3"
+  instance_type = "t2.micro"
+
+  tags = {
+	Name = "ExampleAppServerInstance"
+  }
+}

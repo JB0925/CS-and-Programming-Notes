@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-16T21:58:50-04:00
+
+====== Testing a RESTful JSON API ======
+Created Thursday 16 September 2021
+
+**Example Routes:**
+	GET		`/cats 	Displays all cats
+	GET		`/cats/:id	Display a single cat
+	POST	`/cats/:id	Create a cat
+	PATCH	`/cats/:id	Update a cat
+	DELETE	`/cats/:id	Delete a cat

@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-04T22:20:57-04:00
+
+====== Setitem Method ======
+Created Tuesday 04 August 2020
+
+https://www.geeksforgeeks.org/__getitem__-and-__setitem__-in-python/
+
+Setitem allows you to set a new simply by referencing self.__setitem__(*args) in a new method.
+
+Getitem allows you to get the value of an item by referencing self.__getitem__(*args) in a new method.
+
+

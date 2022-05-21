@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-24T14:47:42-05:00
+
+====== Customize the Way Models Appear on the Admin Page ======
+Created Wednesday 24 February 2021
+
+in **app_name/admin.py** add the following:
+
+**from django.contrib import admin**
+**from .models import 'MyModel**
+
+@admin.register('MyModel)
+class 'MyModelAdmin(admin.'ModelAdmin):
+	list_display = ('title', 'slug', 'author', 'publish', 'status')
+	
+
+**By doing this, we are telling Django that our model is registered in the site using a custom class that inherits from 'ModelAdmin.**
+
+**NOTE: **The above can take the place of **admin.site.register('MyModel)**
+			- **list_display** allows you to set the fields of your model that you want to be displayed on the admin page
+
+
+
+**More:**
+	- **list_filter** = ('status', 'created', 'publish', 'author')
+	- **search_fields** = ('title', 'body')
+	- **prepopulated_fields = **{'slug': ('title' , )}
+	- **raw_id_fields** = ('author' ,)
+	- **date_hierarchy **= 'publish'
+	- **ordering** = ('status', 'publish')
+	
+	
+	**list_display** makes the admin page display the Model fields you specified in it
+	**list_filter **creates a sidebar on the right that allows you to filter your results
+	**search_fields **creates a search bar that can be used to search for items passed in to the **search_fields **parameter
+	**date_hierarchy** creates navigation links to navigate through a date hierarchy
+	**ordering** shows the Model objects in order of the elements pass into it
+	
+	
+	

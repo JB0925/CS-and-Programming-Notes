@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-16T14:33:28-04:00
+
+====== Common Stack Methods ======
+Created Wednesday 16 September 2020
+
+**Stack Methods:**
+	1). Push method
+	2). Pop method
+	3). Peek method
+	4). Contains method
+
+**Push Method:			Push(object), returns None**
+	- pushes an object onto the **top** of the stack
+	- by pushing, the latest pushed object becomes the top of the stack, and its size increases by one
+	- **stack.push('now')       stack = ['now']**
+	- **stack.push('channel')  stack = ['now', 'channel']**
+	-** stack.push('this')        stack = ['now', 'channel', 'this']......** and so on
+	
+**Pop Method:			Pop(), returns the object back to the user**
+	- takes no arguments
+	- first object on the stack gets popped off and returned to the programmer, second element is now the top of the stack
+	
+**Peek Method:			Peek(), returns the contents of the top element**
+	- allows you to get the value at the top of the list without removing it
+	- if I ran it on the above example:
+		**stack.peek() = 'this'**
+
+**Contains Method:		Contains(object), returns a boolean of whether or not that object is in the stack**
+	- used for searching through the stack
+	
+	
+	
+	

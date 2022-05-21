@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-22T11:48:25-04:00
+
+====== Pros and Cons ======
+Created Friday 22 April 2022
+
+**Pros:**
+	- Easily provide alternative implementations
+	- reduce code duplication
+
+**Cons:**
+	- Difficult to maintain
+	- Clients bound to defined steps
+	
+
+The **Template Pattern** should only be used locally and in minimal instances. 
+
+It is not ideal for situations in which maybe you are building a library, and are intending to share the code you are writing so that others can make applications with it. If they use it and then you try to make changes, you will likely end up breaking functionality in other applications with the changes you have made to your code.
+	

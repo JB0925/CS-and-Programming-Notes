@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-20T10:50:54-04:00
+
+====== Other Uses for Generics ======
+Created Monday 20 September 2021
+
+Generics can be used for any type and can be used to deduplicate code:
+
+Let's say we have a recipe API:
+	def get_nutrition_info(recipe: str) -> Union[NutritionInfo, APIError]:
+		#code here
+	
+	def get_ingredients(recipe: str) -> Union[list[Ingredient], APIError]:
+		#code here
+	
+	def get_restaurants_serving(recipe: str) -> Union[list[Restaurant], APIError]:
+	
+	
+**Instead of typing out "APIError" every time, we can create a generic to handle this:**
+	T = TypeVar("T")
+	APIResponse = Union[T, APIError]
+	
+	def get_nutrition_info(recipe: str) -> APIResponse[NutritionInfo]:
+		#code here
+	
+	def get_ingredients(recipe: str) -> APIResponse[Ingredient]:
+		#code here
+
+
+Using TypeVar makes it easy to set "T" to any type that we want, and we can then set our APIResponse return type to be a Union of T (really anything) and the APIError.
+

@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-05T10:05:22-04:00
+
+====== WHERE Clause and NOT IN ======
+Created Wednesday 05 May 2021
+
+{{~/Desktop/ScreenShots/NOT IN statment WHERE clause.png}}
+
+**NOT IN** gives us a way to use a WHERE clause to filter for things that aren't within a particular group.
+
+
+In this example, we are selecting the department column from the products table, and then we run a subquery to **exclude departments that also have an item with a price less than 100.**
+

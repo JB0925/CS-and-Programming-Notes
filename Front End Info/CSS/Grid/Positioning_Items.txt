@@ -1,0 +1,89 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-11T10:20:07-04:00
+
+====== Positioning Items ======
+Created Tuesday 11 May 2021
+
+We start out with:
+	{{~/Desktop/ScreenShots/Grid Positioning - 1.png}}
+
+Which produces:
+	{{~/Desktop/ScreenShots/Grid Positioning - 1a.png}}
+	
+	**NOTE:** even though a third row has been defined, there is no third row yet because we have **four** divs taking up **five** space requirements.
+	
+
+**Stretch the Header Across the Page:**
+	To do that, in the **.header** class for the header div, set **grid-column-start: 1; **and **grid-column-end: 3;**
+	- grid column end is the **end of the page**. This will make the header span across, and it will also make the third row begin to populate, as the footer div gets pushed down there. **NOTE: **An alternative, shorthand way to achieve the same thing is just to use **grid-column: 1 / 3;**, as seen below to the right. Both the code on the left and the right achieve the same colored divs seen below.
+	
+	{{~/Desktop/ScreenShots/Grid Positioning - 2.png}}		{{~/Desktop/ScreenShots/Grid Positioning - 2b.png}}
+	
+	
+	Result:
+	{{~/Desktop/ScreenShots/Grid Positioning - 2a.png}}
+	
+
+
+**Make the Footer Stretch Across the Page:**
+	- To make the footer stretch across, you would do the same thing as you did to the **.header class**
+		**.footer {**
+			**grid-column: 1 / 3;**
+		**}**
+		
+		OR
+		
+		**.footer {**
+			**grid-column: 1 / span 2;**
+		**}**
+		
+		OR
+		
+		**.footer {**
+			**grid-column 1 / -1**
+		**}**
+		
+		
+	- you could also do it using only the difference between the **numerator **and **denominator:**
+		**.footer {**
+			**grid-column: span 2;**
+		**}**
+		
+	
+	And the result:
+	{{~/Desktop/ScreenShots/Grid Positioning - 3.png}}
+	
+	
+**Divy up the space between the Content and the Menu:**
+	- Normally, we want more space for the content, and we want the menu to be a sort of sidebar. To make this flexible, add more columns than you might need at the time, and set the **menu** and **column** to span across certain amounts of the space
+	
+	**Example:**
+	
+	{{~/Desktop/ScreenShots/Grid Positioning - 4.png}}
+	
+	Here, we've turned our space into a grid of 12 units that are 1 fraction each. We can now set the content to take up most of the space, and the menu to take up just a part of the space.
+	
+	Using **grid-column**, I set the **menu** to have a grid column spanning from the first column (far left) to the third column.
+	
+	Also using **grid-column**, I set the **content** to have a grid column spanning from the **third** column, all the way to the end (**-1**).
+	
+	{{~/Desktop/ScreenShots/Grid Positioning - 4b.png}}
+	
+	
+	Result:
+	{{~/Desktop/ScreenShots/Grid Positioning - 4a.png}}
+	
+	
+
+**Make the Menu Stretch to the Top:**
+	- to do this, you have to make the space available to the **menu**, so you have to remove the left most part of the header. Set header to **grid-column {3 / -1};**
+	
+	Use **grid-row** to set the new height of the menu:
+		- **grid-row: {1 / 3};**
+		- this makes it as tall as the first row, and go down through to the footer.
+		
+		- **make it as tall as the view height:**
+			- again, change the **.footer {grid-column: 3 / -1}**
+			- then, set **.menu {grid-row: 1 / -1}**
+

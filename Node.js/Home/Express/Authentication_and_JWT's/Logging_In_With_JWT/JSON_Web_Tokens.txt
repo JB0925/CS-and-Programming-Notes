@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-23T21:55:33-04:00
+
+====== JSON Web Tokens ======
+Created Thursday 23 September 2021
+
+JSON Web Tokens are an open standard and are implemented across most tech stacks, making them easy to use across different services.
+
+JWT's can store any arbitrary payload of info, which are "signed" using a secret key, so they can be validated later.
+
+A JWT is a **string** that has 3 parts:
+
+**Header:** metadata about the token (signing algo used and type of token)
+
+**Payload:** data to be stored in the token(usually an object)
+	- will typically have things like the user ID
+	- not encrypted; **don't put secret info in it**
+
+**Signature: **version of header and payload, signed with secret key
+

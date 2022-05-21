@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-02T21:16:56-05:00
+
+====== Create a Table ======
+Created Tuesday 02 March 2021
+
+Creating a table always begins with:
+	**CREATE TABLE table_name (**
+		a **column name + **a **data type** + **constraints if there are any**
+	)
+
+
+**Example:**
+	CREATE TABLE person (
+		id int,
+		first_name VARCHAR(50),
+		last_name VARCHAR(50),
+		gender VARCHAR(10),
+		date_of_birth TIMESTAMP,
+	)
+
+
+**NOTE: At the command prompt, write "CREATE TABLE person (" and press Enter. Continue the pattern for every column name + data type, followed by a comma then Enter. At the last one, close parentheses and end with a semicolon and press enter. If correctly done, it will say CREATE TABLE.**
+
+{{.\pasted_image.png}}
+
+
+If you press **\d** now, you will see a TABLE and a SEQUENCE. The sequence is because we used BIGSERIAL as a data type.
+
+

@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-09T23:14:00-04:00
+
+====== Route Handlers ======
+Created Thursday 09 September 2021
+
+**Route Handlers** are the same as Flask views:
+
+**Example:**
+	app.get('/dogs', (request, response) => {
+		return response.send('Dogs go bark');
+	});
+
+
+**NOTES: **
+	- response.send determines the content type for you
+	
+	- every handler should have a callback with two params:
+		- request (an object that contains information about the request)
+		
+		- response(contains useful methods for sending a response)
+		
+		- often referred to as **req** and **res**
+

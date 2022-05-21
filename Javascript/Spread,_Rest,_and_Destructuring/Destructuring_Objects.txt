@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-14T12:47:31-04:00
+
+====== Destructuring Objects ======
+Created Wednesday 14 April 2021
+
+**Create an Object:**
+	const **runner** = {
+	   first: 'Jim',
+	   last: 'Davis',
+	   country: 'USA',
+	   rank: 15
+	};
+	
+
+
+**Destructuring the Object:**
+	**const {first, last} = runner; **
+	
+	Would return a new variable **first**, set to Jim, and **last** set to Davis.
+	
+	If you wrote **const {first, last, time} = runner;**
+	
+		It would set **first** to Jim, **last** to Davis, and **time** to **undefined.**
+		
+		This is because **time isn't a property of the object "runner".**
+	
+	
+	In an array, it would just take the next value in the array and set it to **time**.
+	
+	**NOTE: **You could also do **const {first, last, time = '3:46:08'}**
+		**first === 'Jim'**
+		**last === 'Davis'**
+		**time === '3:46:08'**
+
+	This is similar to the **.get()** method in Python where, if no value is found with that key, you are setting a default value. No value for **time** was found, so it uses the default value.
+
+
+**Give a variable a new name (not the object property name):**
+	const {country: **nation**} = runner;
+	
+	This would create a new variable called nation, and give it the value associated with **runner.country**
+	This process can be done with multiple object properties / new variables at once.
+	
+
+
+**Use the REST operator (...) to Destructure an Object:**
+	const {first, last, ...other} = runner;
+	
+	This would create a variable named first from runner.first, a variable named last from runner.last, and everything else would become a new object called **other**.
+	

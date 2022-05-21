@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-29T11:18:03-04:00
+
+====== Create a New Repo ======
+Created Thursday 29 October 2020
+
+**To create a new repo:**
+	git config --global user.name "first last"
+
+
+**Then, create a directory to store files in:**
+	mkdir example
+	cd example			#cd = change directory
+	git init
+	
+
+**Ask Git about the new repo:**
+	git status
+	

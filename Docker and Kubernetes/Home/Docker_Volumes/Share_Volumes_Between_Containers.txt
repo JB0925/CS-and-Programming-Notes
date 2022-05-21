@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-11T12:12:30-05:00
+
+====== Share Volumes Between Containers ======
+Created Thursday 11 March 2021
+
+Say you had a container, **website**, that you wanted to share a volume with a new container that you will call **website-copy**
+
+Use the **volumes-from** command: see below
+
+**Start a New Container:**
+	- **docker run --name website-copy --volumes-from website -d -p 8081:80 nginx**
+		- NOTE: Make sure you don't run it on the same port twice, i.e., if the port for the first container is 8080, the second should be something like 8081
+		- after this command, everything that was in **website** should now appear in the new **website-copy** container
+		
+

@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-07T00:11:26-05:00
+
+====== Variables ======
+Created Monday 07 February 2022
+
+**int** - declares an integer
+	**int newNumber = 5;**

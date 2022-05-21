@@ -1,0 +1,61 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-14T08:50:09-04:00
+
+====== Correlated Subqueries ======
+Created Friday 14 May 2021
+
+A correlated subquery works well in cases where we want to get the **MAX** value from each category of something.
+For example, you could find the item with the **MAX** price where the department it is in is unique.
+
+**Another Example:**
+	- how to pull the author (and related information) with the greatest author_id from a table for each category / subject of a table of books.
+	- So, we should end up with ONE author, etc., for the Children's Books, ONE author, etc., for the Computer Books, etc.
+	
+	
+	SELECT first_name, last_name, **p.id, **title, subject, subject_id
+	FROM (
+				 SELECT first_name, last_name, **authors.id**, title, subject, subject_id
+			 FROM authors
+			 JOIN books
+			 ON books.author_id = authors.id
+			 JOIN subjects
+			 ON subjects.id = books.subject_id
+			) AS p
+	WHERE **p.id** = (
+					  SELECT MAX(author_id)
+					  FROM books
+					  WHERE p.subject_id = books.subject_id
+					);
+
+
+**What it returns:**
+	- The above returns a list of the author and his book information for EACH subject, where the author has the HIGHEST id in the subject grouping.
+	
+	**NOTE: **Giving the FROM table an alias (**p**) is what allows us to access **p** and its information in the WHERE clause's subquery.
+	
+
+**The WHERE Clause:**
+	- In the FROM clause, we created a table and called it **p**. In the WHERE clause, we are saying to match **p.id** (**the author's id**) to the MAX author's id for each subject.
+	
+	- So, if there are 3 Children's books, give me the information for the author who has the HIGHEST id amongst the children's books.
+	
+
+
+
+**Another Example:**
+{{~/Desktop/ScreenShots/Correlated Subquery-PostgreSQL.png}}
+
+
+**What it's Asking For:**
+	- this query is asking for the **name, department**, and **price** from the **products** table.
+	- we give it the alias **p** to be able to reference it later
+	- we look for the items WHERE **p.price** is equal to the **MAX** price from each department (selecting the item with highest price from each dept.)
+	- we then order our query by price from highest to lowest
+	
+
+**Results:**
+{{~/Desktop/ScreenShots/Correlated Subquery Results.png}}
+
+**NOTE:** Pay attention to the middle column, **department**. Notice how none of the departments repeat.
+

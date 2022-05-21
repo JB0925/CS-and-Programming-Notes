@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-09T20:59:34-04:00
+
+====== Add a Drop Shadow ======
+Created Monday 09 August 2021
+
+Once you have created your shape, **you must give the shape's "fill" at least 1% opacity, or no shadow will show.**
+
+From there, you can click **effect** and choose **drop shadow**. Once you've done that, you can play with the **x, y, blur**, and **opacity percentage** to get the desired shadow.
+

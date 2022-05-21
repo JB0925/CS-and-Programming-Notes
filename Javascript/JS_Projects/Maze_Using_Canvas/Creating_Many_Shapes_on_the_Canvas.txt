@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-03T22:52:24-04:00
+
+====== Creating Many Shapes on the Canvas ======
+Created Monday 03 May 2021
+
+**NOTE: **Adding **wireframes: false** to the Render class instance will make it so that shapes are filled in with random colors.
+
+{{~/Desktop/ScreenShots/Shapes - Fill Colors.png}}
+
+To see more options for shapes, go to the Matter.js docs and look for Bodies.
+
+Three main types of shapes:
+	1). Rectangle (takes X and Y coords, and a height and width)
+	2). Circle (takes X and Y coords and a radius)
+	3). Polygons (varying sides, takes X and Y coords, number of sides, and a radius)
+	
+We already know how to create a shape and add it to the world, now let's look at this function for how to add many shapes at once:
+
+{{~/Desktop/ScreenShots/Add Many Shapes - Matter.js.png}}
+
+Here, I've created a shape array generator. I set **sides = null **and **radius = null**, because a rectangle doesn't take those arguments.
+
+To use this function, you must pass in a shapeName. From here, we check the shapename and call the appropriate **Bodies.shapeName()** method, adding in the X and Y coordinates, as well as the number of sides and radius, if applicable. Finally, return the array.
+
+**NOTE: **Each call to **Bodies.shapeName()** can take an optional **options** object. We can use this to set the color of our shapes with **fillStyle: 'color'** if we want. 
+
+Here, I've used the **fillStyle** option to set all rectangles to be green. **You can also pass in RGB, Hex, etc., values instead of a string name.**
+
+Finally, we call world.add on each call to the shapecreator function.

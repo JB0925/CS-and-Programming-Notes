@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-05-08T14:04:46-04:00
+
+====== Properties of a Red-Black Tree ======
+Created Sunday 08 May 2022
+
+A **red-black tree** is a BST with some extra "stuff".
+
+Every node has a color; either **red** or **black**.
+	- it is a single bit of info.
+	
+
+**Rules of a RB Tree:**
+	- the Root and the NIL nodes (if applicable) are **black**
+	- Every **red** node **must have BOTH** of its children be **black** child nodes
+	- Number of **black nodes** on any path from any node to a leaf must be the same
+	
+	**Example of Rule Three:**
+		- **Path #1: **
+			- Start at 10, visit 8, 6, N
+				- there are **four black nodes**
+		
+		**- Path #2:**
+			- Start at 10, visit 12, 11, 11.5, 11.2, N
+			- there are six nodes overall, but **still four black nodes** along the path
+		
+		
+		No matter which path is taken from the starting node (10, in this case) to a leaf, it will always have four **black** nodes on any path from the starting node to a leaf.
+	
+	{{~/Desktop/ScreenShots/Red-Black Tree.png}}
+	
+	
+	

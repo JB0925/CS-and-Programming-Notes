@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-16T15:19:38-04:00
+
+====== Updating a Record in the DB ======
+Created Friday 16 July 2021
+
+Step 1: perform a query to access the item from the database.
+
+Step 2: change the attribute, i.e. pet.name = 'scruffy'
+
+Step 3: db.session.add(pet)
+
+Step 4: db.session.commit()

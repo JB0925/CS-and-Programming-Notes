@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-08T01:38:08-04:00
+
+====== The NavLink Component ======
+Created Sunday 08 August 2021
+
+The `**NavLink** component has the same syntax as the **Link** component, except that there is a special prop called **activeClassName** that allows you to give a nav link a special style to show that the page is active.
+
+**Example:**
+	**<NavLink exact activeClassName="class-name-here" to="/route1">About</NavLink>**

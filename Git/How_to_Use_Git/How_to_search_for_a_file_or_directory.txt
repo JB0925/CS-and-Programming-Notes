@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-06T15:32:05-05:00
+
+====== How to search for a file or directory ======
+Created Friday 06 November 2020
+
+**More of a Linux thing than a Git thing, but:**
+
+Command: **ls | grep thing you want to search**

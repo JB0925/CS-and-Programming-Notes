@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T22:43:55-05:00
+
+====== Executing Tests ======
+Created Sunday 09 January 2022
+
+To execute tests using the **npm run test** script, first build the image:
+	**docker build -f Dockerfile.dev .**
+	
+Then run your tests with:
+	**docker run -it image_id npm run test**
+	
+Now you can interact with the test watcher, etc.
+

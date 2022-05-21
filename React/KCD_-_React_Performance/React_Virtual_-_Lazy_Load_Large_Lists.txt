@@ -1,0 +1,95 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-02T19:36:30-05:00
+
+====== React Virtual - Lazy Load Large Lists ======
+Created Sunday 02 January 2022
+
+Say we have a dropdown menu of cities to choose from. In that dropdown, there may be 10,000 cities to choose from, but a user can only see 20 at a time before having to scroll further. 
+
+This can obviously have an effect on performance.
+
+We can lazily load those extra items as the user scrolls using **React Virtual.**
+
+This concept is known as **windowing**.
+
+**NOTE:** I did a test on this in the browser. I rendered a list of 100,000 items the "normal" way, and then I did the same using **React Virtual**. 
+	Results:
+		**Normal Way: **~ 4.5 seconds over several attempts
+		**React Virtual: **~ 900 milliseconds over several attempts
+	
+	Clearly a giant difference!
+	
+	
+**Example of Using React Virtual:**
+
+import React, { useCallback, useRef } from "react";
+import faker from "faker";
+import { useVirtual } from "react-virtual";
+import './App.css';
+
+const FakeData = () => {
+  **// creating  dummy array and then populating it with fake data**
+  const fakeArray = Array(100000).fill(null);
+  const newFakeArray = fakeArray.map(val => `${faker.name.firstName()} ${faker.name.lastName()}`);
+
+  **// This ref is needed as a way to make the container div scrollable by react virtual**
+  const parentRef = useRef();
+  
+  **// creating the "rowVirtualizer" that tells React how big the data set is, **
+  **// which div is the scrollable div, and roughly how many items to display**
+  **// before loading the next set of data**
+
+  **NOTE: estimateSize MUST be passed in via useCallback as you see below**
+  const rowVirtualizer = useVirtual({
+	size: newFakeArray.length,
+	parentRef,
+	estimateSize: useCallback(() => 25, [])
+  });
+  
+  **NOTE:** **Normally, I'd create these styles in a CSS file; this is just for example**
+  return (
+	  **// This is the scrollable div, as it has the ref**
+	<div className="haha" ref={parentRef} style={{
+	  height: "100vh", width: "100%", overflow: "auto"
+	}}>
+	
+	**// This is like the container for all of the data. Inside of this div, we render all of the data.**
+	  <div className="haha-two"
+		   style={{
+			 height: `${rowVirtualizer.totalSize}px`,
+			 width: "100%",
+			 position: "relative"
+		   }}>
+		{rowVirtualizer.virtualItems.map(virtualRow => (
+		  <div
+			 key={virtualRow.index}
+			 style={{
+			   position: "absolute",
+			   top: "0",
+			   left: "0",
+			   width: "100%",
+			   **// You'd have to pass a style object in here for these last two**
+			   height: `${virtualRow.size}px`,
+			   transform: `translateY(${virtualRow.start}px)`
+			 }}>
+			**// This doesn't have to be a div; it could be anything. It just needs to be nested inside of whatever has the position of "absolute"**
+			<div>{newFakeArray[virtualRow.index]} {virtualRow.index}</div>
+		  </div>
+		))}
+	  </div>
+	</div>
+  )
+};
+
+function App() {
+  return (
+	<div className="App">
+	  <FakeData />
+	</div>
+  );
+}
+
+export default App;
+
+

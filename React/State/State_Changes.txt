@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-25T20:43:05-04:00
+
+====== State Changes ======
+Created Friday 25 June 2021
+
+State is designed to constantly change in response to events (**clicks, etc.**)
+
+Think of a chess board. Every move by each player, represents a state change.
+
+
+**What Does State Track?**
+	- Frontend / client state tracks:
+		- **UI logic: The modal pops up when the button is clicked**
+		
+		- **Business Logic: The changing state of data, i.e. in an email inbox, messages are displayed differently based on whether they are read or unread**
+		
+		
+

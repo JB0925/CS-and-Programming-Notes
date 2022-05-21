@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-16T12:30:16-04:00
+
+====== The DOM ======
+Created Friday 16 April 2021
+
+The DOM is the Document Object Model.
+
+
+In JS, the entire web page is known as the Document.
+
+You can call **console.log(dir(document)) (or something like that)** to find out all of the information about the **document and its properties**

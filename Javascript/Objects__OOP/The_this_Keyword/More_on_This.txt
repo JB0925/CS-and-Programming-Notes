@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-08T21:31:36-04:00
+
+====== More on This ======
+Created Tuesday 08 June 2021
+
+**When using "This", it refers to whatever is to the left of the dot.**
+
+If there is nothing to the left of the dot, then it refers to the window object.
+
+
+**Example:**
+	let cat = {
+		name: 'Harvey',
+		meow: function() {
+			return `${**this.name**} says meow!`
+		}
+	};
+	
+	**This example will refer to the cat object:**
+		cat.meow();
+			**returns "Harvey says meow!"**
+	
+	**This example will not work:**
+		let catMeow = cat.meow
+		catMeow();
+			**returns "   says meow!"**
+
+	
+	In the first example, to the left of the dot, is the cat object. The **this **refers to the cat object.
+	
+	In the second example, there is nothing to the left of the dot, so it refers to the window. In most other examples, it would return **undefined says meow!, **but the window does have a name property that is usually an empty string. 
+	

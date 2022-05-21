@@ -1,0 +1,61 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-21T11:29:51-04:00
+
+====== Decorate Function That Takes Arbitrary Arguments ======
+Created Wednesday 21 October 2020
+
+**This is an example of decorating a function where the FUNCTION BEING DECORATED takes an arbitrary number of arguments**
+
+**NOTE: This is different than the case where the DECORATOR FUNCTION ITSELF takes an argument (outside of the "func" argument)**
+
+
+**Example:**
+
+def proxy(func):
+	def wrapper(*args, **kwargs):
+		return f 'Hi {func(*args, **kwargs)}, how are you?!?'
+	return wrapper
+	
+
+@proxy
+def title(name):
+	return name.title()
+
+
+print(title('jesse brink'))			**returns Hi, Jesse Brink, how are you?!?**
+
+
+
+
+
+**Another Example:**
+
+def trace(func):
+	def wrapper(*args, **kwargs):
+		print(f 'TRACE: calling {func.__name__}()' 
+			  f ' with {args}, {kwargs}')
+		
+		original_result = func(*args, **kwargs)
+		
+		print(f ' TRACE: {func.__name__}()'
+				f ' returned {original_result!r}')
+
+		return original_result
+	return wrapper
+	
+
+@trace
+def say(name, line):
+	return f '{name}: {line}
+	
+say('Jane', 'Hello, World')
+
+**returns 			TRACE: calling say() with ("Jane", "Hello, World"), {}**
+						**TRACE: say() returned "Jane: Hello, World"**
+					  **Jane: Hello, World**
+					
+
+www.dbader.org/blog/python-decorators 
+
+

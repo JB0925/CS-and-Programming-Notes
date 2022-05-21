@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-29T22:33:04-04:00
+
+====== Generators ======
+Created Wednesday 29 July 2020
+
+list comprehension = [n for n in nums if n % 2 == 0]
+
+generator = (n for n in nums if n % 2 == 0)
+
+
+So what's the difference? 
+
+A generator takes up a lot less memory when you are working with a big file. 
+
+
+Good page with info on generators:
+
+https://www.geeksforgeeks.org/generators-in-python/

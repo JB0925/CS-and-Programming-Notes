@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-04T21:12:20-05:00
+
+====== Specifiying a Workdir ======
+Created Tuesday 04 January 2022
+
+In the Dockerfile, it is good practice to use the WORKDIR command. This is because, in your project, you may have a folder name that conflicts with one of the directories in the container. This would overwrite one of those important directories.
+
+**Example:**
+
+FROM node:alpine
+
+**WORKDIR /usr/app**
+
+COPY ./ ./ 
+RUN npm install
+
+CMD ["npm", "start"]
+
+The WORKDIR command says "store my app inside of the **usr** directory in a directory called **app.**
+
+Then, any path you specify AFTER that is relative to that WORKDIR path. So "./ ./" means "copy everything from my current local path to /usr/app 

@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-23T00:23:53-04:00
+
+====== The Dictionary ======
+Created Wednesday 23 September 2020
+
+**Dictionaries:**
+	- Dictionaries are one of the most abstract Data Structures
+	- Dictionaries are also sometimes called maps and associative arrays 
+	- Dictionary stores information in KEY/VALUE pairs
+
+Think of a KEY/VALUE pair like a social security number….
+Dictionaries don’t have a numerical index….they use a key as their index.
+
+Keys can be anything you can think of
+
+**Two extremely important limitations of dictionaries:**
+	- Every key can only appear once in the dictionary
+	- Each key can only have one value
+
+**There can be duplicate values in a dictionary (two separate, different keys, with the same value)**

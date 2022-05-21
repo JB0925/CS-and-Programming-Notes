@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T20:03:51-05:00
+
+====== Configuring Prettier ======
+Created Sunday 09 January 2022
+
+Head over to prettier.io/playground
+
+On the sidebar on the left, you can click whichever values you like, sort of like JSON schema.
+
+From there, you can copy and paste your configuration.
+
+Then you can put it into a **.prettierrc** file in the **src** directory.
+
+Now, when you run **npx run format**, it will follow all of the rules that you set up in the configuration file.

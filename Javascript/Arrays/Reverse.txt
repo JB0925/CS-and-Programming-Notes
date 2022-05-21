@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-25T10:24:45-04:00
+
+====== Reverse ======
+Created Thursday 25 March 2021
+
+**Reverse** modifies the array in-place, i.e. it does not make a copy; it modifies the original array.
+
+**Example:**
+	let myLst = [3, 5, 7, 9];
+	myLst.reverse();
+	console.log(myLst)
+	
+	**The above returns the same list, just sorted in reverse, i.e. [9, 7, 5, 3].**
+	

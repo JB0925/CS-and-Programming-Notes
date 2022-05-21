@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-24T22:15:14-04:00
+
+====== Functools.partial ======
+Created Thursday 24 September 2020
+
+functools.partial allows you to put a basic wrapper around an existing function so that you can set a default value where there normally wouldn't be one.
+
+See the picture:
+
+{{.\pasted_image.png}}

@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-03T10:57:44-05:00
+
+====== HTML Tags ======
+Created Wednesday 03 February 2021
+
+- We create **elements** by writing **tags**.
+- Most (not all) elements consist of an opening and closing tag
+
+<p> tag - stands for paragraph, but does not have to be text...could be an image, form, labels, etc.
+		- **to add space between lines of text, close the p tag and open a new one**
+
+
+**<h1></h1> through <h6></h6> tags:**
+		- should **always** only have **one** **<h1>** tag on a page, and it should always be the page's main heading
+		- should **never** have an **<h3>** tag without an h2, and an h1, etc.
+

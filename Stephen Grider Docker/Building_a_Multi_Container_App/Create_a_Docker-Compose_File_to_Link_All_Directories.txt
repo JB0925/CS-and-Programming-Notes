@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-10T22:14:51-05:00
+
+====== Create a Docker-Compose File to Link All Directories ======
+Created Monday 10 January 2022
+
+In the **root project directory:**
+
+**docker-compose.yml**
+
+**NOTE: **context: ./server says "look to the Dockerfile.dev in the "server" directory.
+
+**NOTE2: **The first line under **volumes** is saying **"look to the node_modules folder in app for the required node_modules"**
+
+The next line says **"map the rest of the server directory to the container's app directory so that when we make changes, they are reflected without having to rebuild.**
+
+**NOTE: **Here, we have built several services. One for the database with **postgres**, one for **redis**. Each of these is pulled from an image on **hub.docker.com**. Next, we have built services for the server, client, and worker directories. Each of these comes from a **Dockerfile.dev** file.
+
+version: "3.7"
+services:
+  postgres:
+	image: "postgres:latest"
+	environment:
+	  POSTGRES_PASSWORD: postgres_password
+  redis:
+	image: redis:latest
+  server:
+	build:
+	  dockerfile: Dockerfile.dev
+	  context: ./server
+	volumes:
+	  - /app/node_modules
+	  - ./server:app
+	**environment:**
+	**  - REDIS_HOST=redis**
+	**  - REDIS_PORT=6379**
+	**  - PGUSER=postgres**
+	**  - PGHOST=postgres**
+	**  - PGDATABASE=postgres**
+	**  - PGPASSWORD=postgres_password**
+	**  - PGPORT=5432**
+   client:
+	  **stdin_open: true     // needed for react apps**
+	build:
+	  dockerfile: Dockerfile.dev
+	  context: ./client
+	volumes:
+	  - /app/node_modules
+	  - ./client:/app
+   worker:
+	   build:
+	  dockerfile: Dockerfile.dev
+	  context: ./worker
+	volumes:
+	  - /app/node_modules
+	- ./worker:/app

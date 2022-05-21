@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-12T13:52:17-04:00
+
+====== GROUP BY with more than one HAVING ======
+Created Monday 12 July 2021
+
+SELECT first_name, last_name, CAST(AVG(price) as int), COUNT(*) 
+FROM owners
+JOIN vehicles
+ON owners.id = vehicles.owner_id
+**GROUP BY first_name, last_name HAVING COUNT(*) > 1 AND CAST(AVG(price) as int) > 10000**
+ORDER BY first_name DESC;
+
+If you were to try the above with a WHERE clause, it would not work because WHERE clauses don't take **aggregate functions**.
+
+To get the same information, we can use **multiple conditions in the HAVING clause.**
+
+Above, we are looking for those who have more than one car **(HAVING COUNT(*) > 1)** AND
+we want the avg price of their cars to be greater than 10000 (**AND CAST(AVG(price) as int))**

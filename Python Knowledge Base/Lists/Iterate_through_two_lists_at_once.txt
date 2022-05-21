@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-27T21:31:55-04:00
+
+====== Iterate through two lists at once ======
+Created Sunday 27 September 2020
+
+If you need to use the items in one list to perform an operation with the items in another list, use **range():**
+
+**for x in range(len(line_length)):**
+**        total = line_length[x] // round(total_time[x])**
+**        wps.append(total)**
+
+each item in the **line_length** list needed to be divided by each item in the **total_time** list, and the indexes lined up, so I just used **range(), **then called each item from each list using the index **[x]**.

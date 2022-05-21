@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-26T01:02:30-04:00
+
+====== DFS Postorder Traversal ======
+Created Monday 26 July 2021
+
+{{~/Desktop/ScreenShots/DFS Postorder Traversal.png}}
+
+This algorithm is the same as DFS Preorder Traversal, except that this one start with the **leaf nodes at the bottom of the tree in terms of which nodes are first appended to the list.**
+
+**NOTE: **Notice that the only difference between this and Preorder is the placement of the **data.append(str(node))** line.
+
+Here, it is at the bottom of **traversal.**
+
+In Preorder, it is at the top of **traversal.**
+
+That small change affect how the data is arranged and stored in the **data** array.

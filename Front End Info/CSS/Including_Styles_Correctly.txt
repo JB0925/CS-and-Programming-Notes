@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-08T15:45:11-05:00
+
+====== Including Styles Correctly ======
+Created Monday 08 February 2021
+
+The recommended way to write in CSS styles is with an outside stylesheet that you link to each html document. 
+
+You **CAN** also do it "**inline"** i.e., inside of each element tag.
+
+You **CAN **also add it with the **<style>** tag inside of the head section.
+
+
+**Neither of the above two is recommended.**
+
+The reason that the last two ways is NOT recommended is because it is impossible to share those styles with anyone else, and it makes your code harder to read.
+

@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-19T23:27:33-05:00
+
+====== Load Images ======
+Created Thursday 19 November 2020
+
+First, get an image and save it in a folder called "images" inside of your Static folder (**keep it organized**)
+
+**On the HTML file of the page you want to display the image on, use the same "href" tag, but take out the the "rel" and "type" sections, and change the path for "url_for()" to images/ and change the "<link" tag to "<image".**
+
+
+{{.\pasted_image001.png}}
+
+
+Again, note that this is on the actual HTML page that you want to display, **NOT **the base template.
+
+
+
+

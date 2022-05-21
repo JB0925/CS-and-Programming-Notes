@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-21T22:45:12-05:00
+
+====== Shunting-Yard Convert Infix to Postfix ======
+Created Monday 21 December 2020
+
+{{.\pasted_image.png}}
+{{.\pasted_image001.png}}
+
+**The above takes an infix expression and converts it to postfix.**
+
+**Step 1). Create a precedence dict to specify in which order the operators should be popped in.**
+
+**Step 2). Create a stack to catch the (, and a list to catch all letters(variables) and digits, and finally, split the passed in expression by whitespace.**
+
+**Step 3). if the token is a letter or digit, append it to the postfixList.**
+			**if it is a "(", push it onto the opstack**
+				**if it is a ")", pop the opstack**
+				
+				**while the topToken is not "(", append each token to the postfixList.**
+				**topToken = opStack.pop()**
+			
+			**else:**
+				**while the stack is not empty and prec[first item on opStack] >= prec[token]:**
+					**postfixList.append(popped value from the opStack)**
+				**when you exit the loop, push the last token onto the opStack**
+		
+		**finally, while the opStack isn't empty:**
+			**append opStack.pop() to the postfixList**
+		
+		**return ''.join(postfixList)**
+

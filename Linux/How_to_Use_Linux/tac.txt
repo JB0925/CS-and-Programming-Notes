@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-16T09:37:19-04:00
+
+====== tac ======
+Created Sunday 16 May 2021
+
+Opposite of **cat**. Prints the output of a file, **starting with the last line**, and ending with the first

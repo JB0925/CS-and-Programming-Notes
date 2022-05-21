@@ -1,0 +1,46 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-01T11:48:13-05:00
+
+====== What is a Database ======
+Created Monday 01 March 2021
+
+A database is a place where you can **store, manipulate, and retrieve data**. Usually stored inside of a computer's server.
+
+Postgres is the database. SQL is the structured query language.
+
+SQL is a programming language. It is very powerful.
+
+Been around since 1974 and is used all over the internet.
+
+
+**How is data stored?**
+	- data stored in tables
+	- inside the table, data is stored in columns and rows
+	
+	- if a table is called **person**, the columns might be **id, first_name, last_name, gender, age**
+	- the rows would be related to a specific person
+	
+
+
+**What is a relational database?**
+	- a relational database is one where two tables have a link of some kind.
+	- for example, a table of people has a **car_id** column, and the table "car" has an **id** column. the **car_id** is the link between the person in the "people" table, and the car in the **car** table.
+	
+	- another example is in my instrument project. One table, **User** stores user data and another table**, Results** stores search results. It has a **ForeignKey** relationship linking the person to an instance of the **User** table so that all search data with that person's name "belongs to" them.
+
+
+**What is Postgres?**
+	- it is the most advanced open source relational database
+	- it is an **object-relational database management system.**
+	- it is modern and open source
+
+
+**Install Postgres:**
+	- **sudo apt-get install postgresql-12**
+	- get up and running with postgres:
+		- **sudo -i -u postgres**
+		- **sudo -u postgres psql**
+		
+		**NOTE: **If you need to restart, run **sudo service postgresql restart**
+	

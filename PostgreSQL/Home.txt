@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-01T11:47:59-05:00
+
+====== Home ======
+Created Monday 01 March 2021
+
+Postgress uses SQL to create tables, make queries, etc.

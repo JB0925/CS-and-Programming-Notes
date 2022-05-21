@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-05T21:52:00-05:00
+
+====== Common Input Types ======
+Created Friday 05 February 2021
+
+the most common element in a form is the **input** element
+	- input has no closing tag
+	- one of the most important attributes of the **input** element is the **type="" **attribute
+	- if **type == text** the you are able to type text into the form
+	- if **type == password**, then the text being typed is obscured
+	- if **type == number**, then you get to choose the the color of the box where you are
+
+Another attribute is the **placeholder** attribute
+	- if the **placeholder** attribute is used, then it adds placeholder text before you start typing
+	- **placeholder **is only available in certain field **types**, such as **text** and **password**
+	
+{{.\pasted_image.png}}
+	

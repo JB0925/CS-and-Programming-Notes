@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-09T22:55:34-04:00
+
+====== Type Hints ======
+Created Friday 09 April 2021
+

@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-24T15:41:22-05:00
+
+====== Rotate Characters in a String ======
+Created Tuesday 24 November 2020
+
+**Two ways to rotate characters in a string:**
+
+1). s = 'hello'
+	 s = s[2:] + s[:2]
+	'llohe'
+	
+2). from collections import deque
+
+	d = deque(s)
+	d.rotate(-2)
+	print(d)
+	
+	deque(['l', 'l', 'o', 'h', 'e'])
+	

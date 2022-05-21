@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-15T08:09:29-04:00
+
+====== useEffect ======
+Created Friday 15 October 2021
+
+In functional React, **useEffect **works the same as the **Lifecycle Methods** componentDidMount, componentDidUpdate, componentWillMount, etc.
+
+**Example:**
+	import React, { useState, **useEffect** } from "react";
+	
+	useEffect(() => {
+		document.title = `WOW${"!".repeat(num)}`;
+	});
+	
+
+In the example above, this will ONLY happen once after each new re-render of the page.
+

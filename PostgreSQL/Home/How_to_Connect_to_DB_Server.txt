@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-01T12:53:37-05:00
+
+====== How to Connect to DB Server ======
+Created Monday 01 March 2021
+
+**Install Postgres:**
+	- **sudo apt-get install postgresql-12**
+	- get up and running with postgres:
+		- **sudo -i -u postgres**........................................brings up the Postgres server prompt "postgres@jesse..."
+		- **sudo -u postgres psql  .......**or just "**psql**"
+		
+		  **NOTE: **If you need to restart, run **sudo service postgresql restart**
+		**  NOTE2: Honestly, "sudo -u postgres psql" seems to work just fine for entering to postgres command prompt**
+	
+	- to log out of Postgres, use the **\q** command
+	- to get out of the Postgres terminal prompt, use **logout** or **Ctrl-d**
+
+
+**How to Connect to/Create a Database:**
+	- once you have the Postgress terminal prompt "postgres@jesse...", run **createdb jesse **(or whatever you want to call it)
+
+
+
+
+**Creating a New Role:**
+	- at the Postgres server prompt, enter **createuser --interactive**
+		- you will be prompted for name of the "role" to add (**jesse**) and if the new role should be a superuser (**yes**)
+		- find out more about the createuser command by using **man createuser**
+
+
+**Open Postgres Promt with the New Role:**
+	- if you have a Linux user with the same name as the role you created, you can run **sudo -u role_name psql**
+	- **NOTE: **running the above will prompt you to enter your password. If you've not made one, run the following:
+		- exit back to main terminal prompt
+		- run **sudo -u role_name psql postgres**
+		- run **\password postgress**............**also, try ALTER USER role_name PASSWORD 'password here';**
+		- will prompt you to enter the new password twice
+
+
+**Connect User to a Different Database:**
+	- run **psql -d database_name**
+	- check current connection information with **\conninfo**
+	
+	**OR**
+	
+	- **psql -h localhost -p 5432 -U jesse searchresults**
+	if you run the code directly above on a database that doesn't exist, it will not work
+	
+	once you are verified as having a "role", in the **postgres=#** shell, you can enter **\c database_name**
+
+
+**To Switch Ownership of a Database:**
+	**ALTER DATABASE db_name OWNER TO user_name;**
+
+

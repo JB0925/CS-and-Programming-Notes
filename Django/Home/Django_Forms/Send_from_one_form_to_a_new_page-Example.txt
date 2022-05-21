@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-20T21:55:53-05:00
+
+====== Send from one form to a new page-Example ======
+Created Saturday 20 February 2021
+
+**Imports:**
+{{.\pasted_image.png}}
+
+**search.models** could just be **.models**
+Here we are importing the **db models**, **render** to render the template
+We DO NOT need line 2 or line 5
+
+**First Page:**
+{{.\pasted_image001.png}}
+Two options: If the request is a POST, then we establish a form and, if that form is valid, we redirect to another page
+					- otherwise, we establish a form, then put that into a "context" variable, and render the first page.
+
+
+**View Page:**
+{{.\pasted_image002.png}}
+This page is the inverse of the first page. If the method is GET, then we just render the view page template.
+
+If not, then we collect all of the form data and save it into a model object. Save the model object.
+Finally, choose one of the data points, and pass it into the render template request.
+

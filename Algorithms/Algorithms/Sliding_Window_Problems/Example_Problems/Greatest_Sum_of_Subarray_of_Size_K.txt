@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-23T10:06:05-04:00
+
+====== Greatest Sum of Subarray of Size K ======
+Created Thursday 23 September 2021
+
+**Problem:**
+	- Given an array, and an integer K, find the greatest sum that can be made of a subarray of size K
+	
+
+**Code:**
+	def max_value(arr, k):
+		# check edge cases
+		**if not arr or if k >= len(arr):**
+			**return 0**
+			
+		# Initialize two sum variables to the value of the first K elements in the array
+		**maxsum = tempsum = sum(arr[0:k+1])**
+		
+		#start our window at the Kth element of the array, and always slide one value out of the tempsum, and collect the newest value
+		# set maxsum to the max of maxsum and tempsum
+		**for i in range(k, len(arr)):**
+			**tempsum = tempsum - arr[i-k] + arr[i]**
+			**maxsum = max(maxsum, tempsum)**
+		
+		**return maxsum**
+		
+

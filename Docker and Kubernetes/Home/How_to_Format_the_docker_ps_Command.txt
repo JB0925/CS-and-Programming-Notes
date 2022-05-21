@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-10T10:29:30-05:00
+
+====== How to Format the docker ps Command ======
+Created Wednesday 10 March 2021
+
+If you type **docker ps**, you get helpful information, but the screen is crammed and it can be hard to read.
+
+Run **docker ps --format**
+
+
+
+BUT you have to set and save the format.
+
+**FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"**
+
+
+**Save the Format String in a Variable to Reuse:**
+		**export FORMAT=the string above**
+		
+		Then, you can run **docker ps --format=$FORMAT** to get a nice, neat listing of all of your containers
+

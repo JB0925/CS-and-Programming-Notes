@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T12:04:31-05:00
+
+====== Storage Optimized ======
+Created Sunday 09 January 2022
+
+Great for storage-intensive tasks that require high, sequential read and write access to large data sets on local storage
+
+**Use Cases:**
+	- High frequency online transaction processing (OLTP) systems.
+	- RMDBS & no SQL databases
+	- Cache for in-memory databases (i.e. Redis)
+	- Data warehousing applications
+	- Distributed File Systems
+	
+**Storage Optimized Instance Type Prefixes:**
+	- i
+	- d
+	- h1
+	
+	
+	

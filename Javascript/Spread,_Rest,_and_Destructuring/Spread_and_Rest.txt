@@ -1,0 +1,56 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-04T17:46:40-04:00
+
+====== Spread and Rest ======
+Created Friday 04 June 2021
+
+**Spread** and **Rest** are essentially the same thing, but rest is done in a function declaration, and spread can be done anywhere with arrays or objects.
+
+**Syntax:**
+	[...myArray] OR {...myObject}
+	
+	
+
+**Rest:**
+	const myFunc = (...nums) => {
+		return nums.filter(num => num % 2 === 0);
+	};
+	
+	console.log(myFunc(8,3,1,2,4));
+		**returns [8, 2, 4]**
+		
+	We used **rest** here to capture all values passed in into an array. Then we can perform array methods on them.
+	
+
+**Examples of Spread:**
+	let myArr = [1,2,3,4,5];
+	let newArr = [6,9, ...myArr];
+		**returns [6, 9, 1, 2, 3, 4, 5]**
+	
+	Of course, we could just do
+		**let newArr = [...myArr]**
+			returns [1, 2, 3, 4, 5]
+	
+	**Spread Two Arrays:**
+		let thirdArr = [...myArr, ...newArr];
+			**this spreads both arrays into a new object**
+
+
+
+**Spread with Objects:**
+	let myObj = {
+		name: 'jesse',
+		age: 39
+	};
+	
+	**let newObj = {...myObj}**
+		this returns a copy of myObj, under a new variable name
+		
+	
+	**Change a key or Add a key:**
+		let newObj = {...myObj, name: 'joe'}
+		
+		This returns:
+			**{name: "joe", age: 39}**
+

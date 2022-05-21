@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-27T23:52:29-05:00
+
+====== Argparse and vars() ======
+Created Friday 27 November 2020
+
+in Python, you can use **vars()** to easily access the **argparse** Namespace
+
+{{.\pasted_image001.png}}

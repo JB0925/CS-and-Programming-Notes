@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-19T11:54:10-04:00
+
+====== Chaining If and Else Statements ======
+Created Friday 19 March 2021
+
+**Conditions:**
+	- num < 5 return **'tiny'**
+	- num < 10 return 'small'
+	- num < 15 return 'medium'
+	- num < 20 return 'large'
+	- num >= 20 return 'huge'
+	
+
+**Example of Chaining If and Else statements:**
+
+function testSize(num) {
+  if (num < 5) {
+	return 'tiny'
+  }  else if (num < 10) {
+	  return 'small'
+  }  else if (num < 15) {
+	  return 'medium'
+  }  else if (num < 20) {
+	  return 'large'
+  }  else {
+	  return 'huge'
+  }
+}
+

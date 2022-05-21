@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-20T12:15:56-04:00
+
+====== UNIQUE ======
+Created Thursday 20 May 2021
+
+**UNIQUE:**
+	- makes sure that a value that isn't UNIQUE can't be entered into the table
+	- this can be set when creating a table, i.e.:
+		**CREATE TABLE products (**
+			id SERIAL PRIMARY KEY,
+			name VARCHAR(40) NOT NULL **UNIQUE**,
+			age INTEGER NOT NULL
+		);
+		
+	- this can also be set after the fact, AS LONG AS there are NO duplicate values in the table in the column you are trying to set it for. If there are, you will have to DELETE or UPDATE those records.
+	
+	- **ALTER TABLE products ADD CONSTRAINT unique_name UNIQUE(name);**
+		- sets a column to have the UNIQUE constraint on the **name** column after the table has already been created
+
+
+**How to Drop Constraint:**
+	**ALTER TABLE products DROP CONSTRAINT unique_name;**
+

@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-19T23:09:16-04:00
+
+====== Many to Many Queries ======
+Created Sunday 19 September 2021
+
+For many to many queries, your best option is to write a JOIN. Once you have it, you can pick it apart by destructuring, using **map** on **result.rows, **etc.

@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-16T22:01:12-04:00
+
+====== Testing Read ======
+Created Thursday 16 September 2021
+
+describe("GET `/cats", () => {
+	test("Does the route get a list of cats?", 		async() => {
+			const resp = await request(app).get(`/cats`);
+			expect(resp.statusCode).toBe(200);
+			expect(resp.body).toEqual({
+				cats: [testCat]
+		});
+	  });
+});
+
+
+describe("GET `/cats/:id", () => {
+	test("Does the route get one cat?", async() => {
+		const resp = await request(app).get(`/cats/${testCat.id}`);
+		expect(resp.statusCode).toBe(200);
+		expect(resp.body).toEqual({cat: testCat});
+	});
+	
+	test("Does the route respond w/ 404 if the cat doesn't exist?", async() => {
+		const resp = await request(app).get(`/cats/0`);
+		expect(resp.statusCode).toBe(404);
+	});
+});

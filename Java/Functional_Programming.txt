@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-13T08:38:13-04:00
+
+====== Functional Programming ======
+Created Wednesday 13 April 2022
+
+Functional programming is similar to arrow functions in JS.
+
+The syntax is very similar.

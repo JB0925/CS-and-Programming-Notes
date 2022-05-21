@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-02T22:36:44-05:00
+
+====== Use i to get data from a file ======
+Created Tuesday 02 March 2021
+
+Go to mockaroo.com, create your columns, **MAKE SURE EVERYTHING MATCHES YOUR TABLE**
+
+Select SQL, dowload the file
+
+Go to VSCode, edit the CREATE TABLE statement to match your table EXACTLY, save everything as is
+
+In another Ubuntu terminal, navigate to where you saved the file (Downloads) and copy the **pwd**
+
+Go back to your **psql terminal**
+
+At the prompt, paste in the **pwd** of the file, then **forward-slash** and **file_name.sql**
+
+Press Enter, and the data will populate your table
+
+At the end, go back and add an **id** column to the table:
+	ALTER TABLE person
+	ADD COLUMN id BIGSERIAL NOT NULL PRIMARY KEY;
+
+
+

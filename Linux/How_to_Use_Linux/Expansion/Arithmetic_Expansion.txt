@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-26T11:44:17-04:00
+
+====== Arithmetic Expansion ======
+Created Wednesday 26 May 2021
+
+Very simply, arithmetic expansion allows you to perform mathematical operations in the Terminal.
+
+**Syntax:**
+	**$((number operator number))**
+	**$((3 + 7))		returns 10**
+	**$((3 ** 10))	returns 30**
+	
+	
+**List of Operators:**
+	multiply = *
+	exponentiation = **
+	addition = +
+	subtraction = -
+	division = /
+	

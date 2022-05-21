@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-08T00:54:15-04:00
+
+====== Using Switch and Exact ======
+Created Sunday 08 August 2021
+
+**Switch** allows to to switch the components, based on the route given, instead of seeing all components at once.
+
+**Exact** says to match the exact path **ONLY.**
+
+
+In **App.js**, we first need to import the **Route** component. At this time we can also import **switch.**
+	**import { Route, Switch } from "react-router-dom";**
+	
+
+**The App Component Itself:**
+**Here, we wrap Switch around the routes:**
+	class App extends Component {
+		render() {
+			return (
+				<div className="App">
+					**<Switch>**
+						<Route **exact** path="/dog" component={Dog}/>
+						<Route **exact **path="/" component={About}/>
+						<Route **exact** path="/home" component={Home}/>
+					**</Switch>**
+				</div>
+			)
+		}
+	}

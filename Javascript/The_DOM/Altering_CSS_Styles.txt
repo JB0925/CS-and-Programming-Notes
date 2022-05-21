@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-18T00:08:21-04:00
+
+====== Altering CSS Styles ======
+Created Sunday 18 April 2021
+
+**let h1 = document.querySelector('h1');**
+
+h1.style.color
+	- this will **return an empty string** UNLESS the style is defined inline
+	- you CAN change the style using the DOM/JS
+		- **h1.style.color = 'green'**
+			- makes the selected h1 tag green
+	
+	**NOTE: **in normal CSS, changing the background color of an element would look like **background-color: green;**
+	
+	In JS, multiword attributes are camelcased, so **background-color** would be **backgroundColor**
+
+
+

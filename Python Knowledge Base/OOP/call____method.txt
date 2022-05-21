@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-02T22:05:40-04:00
+
+====== call    method ======
+Created Sunday 02 August 2020
+
+using __ call __  (no spaces), allows you to call a class as a function. Example:
+
+class RecordScore:
+	"""Class to track a game's maximum score"""
+	def __init__(self):
+		self.score_list = []
+    
+    
+	def __call__(self, n):
+		if n not in self.score_list:
+			self.score_list.append(n)
+		return max(self.score_list)
+
+
+More on __ call __:
+
+[[https://www.geeksforgeeks.org/__call__-in-python/#:~:text=The __call__ method,arg2%2C ...) ]].
+
+https://www.python-course.eu/python3_magic_methods.php

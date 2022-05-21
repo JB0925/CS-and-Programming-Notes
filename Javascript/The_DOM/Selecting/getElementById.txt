@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-16T15:36:17-04:00
+
+====== getElementById ======
+Created Friday 16 April 2021
+
+Selects an element by its ID and returns that object.
+
+
+**Example:**
+	const img = document.getElementById('bear-photo');
+	
+	If and only if there is a match, the object will be returned to you,
+	
+	If there is not a match, it will return **null**.
+	
+	

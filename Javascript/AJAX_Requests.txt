@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-21T14:26:03-04:00
+
+====== AJAX Requests ======
+Created Wednesday 21 April 2021
+
+AJAX = **Asynchronous 'JavaScript and XML**
+
+Really, today, we use JSON instead of XML.
+
+**AJAX requests are made when you make a request and the page doesn't refresh, but updates in place to reflect the results of the request you made.**
+
+
+AJAX returns data in JSON format.
+
+Javascript then gets that data and decides what to do with it in the browser.

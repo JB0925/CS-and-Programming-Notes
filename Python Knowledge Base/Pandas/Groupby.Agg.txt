@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-04T23:59:09-04:00
+
+====== Groupby.Agg ======
+Created Friday 04 September 2020
+
+**df = df.groupby('year')['sales'].agg(sum='sum', mean='mean', max='max')**
+
+**df = df.groupby('year').sales.agg(sum='sum', mean='mean', max='max')**
+
+the above creates a new dataframe from an existing one, taking the sum, mean, and max values from one column (**sales**), grouped by the year.
+
+in the agg parentheses, the keyword is the column name, and the string in quotes is the method to use on the column being aggregated.
+
+
+https://stackoverflow.com/questions/12589481/multiple-aggregations-of-the-same-column-using-pandas-groupby-agg
+
+https://stackoverflow.com/questions/39309435/how-to-sum-and-to-mean-one-dataframe-to-create-another-dataframe

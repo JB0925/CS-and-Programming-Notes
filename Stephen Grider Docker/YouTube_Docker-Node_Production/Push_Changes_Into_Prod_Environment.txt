@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-27T22:04:02-05:00
+
+====== Push Changes Into Prod Environment ======
+Created Thursday 27 January 2022
+
+**NOTE:** This is suboptimal. You should not be making builds on a production server because it takes away resources and memory. You should do it on another machine.
+
+1). Make changes
+
+2). Push to GitHub
+
+3). Pull changes from GitHub into production environment.
+
+4). Here, there is no Nodemon, so you will have to rebuild containers and update images, etc.
+	Option 1). **docker-compose down && docker-compose up ----**takes a bit longer
+	
+	Option 2). **docker-compose up --build** ----will rebuild the containers by default
+	
+	Option 3). Even better....**docker-compose up --build --no-deps name_of_service_that_needs_rebuilt**
+	
+	
+	By passing in option three, you don't waste any time rebuilding the other services that do not need to be rebuilt.
+	
+	The **--no-deps** flag tells docker-compose not to rebuild any dependencies of the service, i.e. if the service has a **depends_on:** flag in the docker-compose file

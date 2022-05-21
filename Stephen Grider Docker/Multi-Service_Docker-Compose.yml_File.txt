@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-10T13:24:26-05:00
+
+====== Multi-Service Docker-Compose.yml File ======
+Created Monday 10 January 2022
+
+Under the **services** section, we have two services:
+	- web
+	- tests
+
+We have given it the **build context** and the Volumes so that it can **see** the node_modules folder, as well as map to the pwd.
+
+When **docker-compose up** is run (after being built), it will run the tests AND the web server process.
+
+There is no way to interact with the test runner, unfortunately.
+
+version: '3'
+services:
+	web:
+		 build:
+			 context: .
+			 dockerfile: Dockerfile.dev
+		 ports:
+		- "3000:3000"
+	   volumes:
+		  - /app/node_modules
+		  - **.**:/app
+	tests:
+		build:
+		   context: .
+		   dockerfile: Dockerfile.dev
+		   volumes:
+			- /app/node_modules
+			- **.**:/app
+		 command: ["npm", "run", "test"]

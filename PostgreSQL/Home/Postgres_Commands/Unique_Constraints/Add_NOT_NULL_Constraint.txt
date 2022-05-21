@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-19T13:37:48-04:00
+
+====== Add NOT NULL Constraint ======
+Created Wednesday 19 May 2021
+
+To add a NOT NULL constraint after the fact in Postgres:
+	**ALTER TABLE table_name ALTER COLUMN column_name SET NOT NULL;**

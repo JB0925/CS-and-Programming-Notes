@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-02T23:16:51-05:00
+
+====== Retrieving Logs From a Container ======
+Created Sunday 02 January 2022
+
+To get logs from a container:
+
+1). **docker create container_name**
+	- this spits out an id
+	
+2). **docker start id_from_previous**
+	- spits out another id
+
+3). **docker logs most_recent_id**
+	- logs out anything that was printed out when running the container previously
+	
+
+**NOTE: **Using **docker logs **does **NOT** restart the container; it just gets the log from the container
+

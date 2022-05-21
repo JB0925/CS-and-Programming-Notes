@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-03T21:18:59-05:00
+
+====== NULLIF ======
+Created Wednesday 03 March 2021
+
+**NULLIF** takes two arguments and will return the first argument if the second argument is not equal to the first. If they are equal, it will return NULL
+
+**Example:**
+	{{.\pasted_image.png}}
+		returns NULL
+	
+	{{.\pasted_image001.png}}
+		returns the first argument, 10
+	
+	
+	{{.\pasted_image002.png}}
+	
+	Now with NULLIF:
+		{{.\pasted_image003.png}}
+			returns NULL
+	
+	{{.\pasted_image004.png}}
+		returns 5 because arg1 and arg2 aren't equal
+

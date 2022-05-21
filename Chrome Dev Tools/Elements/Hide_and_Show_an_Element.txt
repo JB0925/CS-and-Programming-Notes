@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-10T12:42:51-05:00
+
+====== Hide and Show an Element ======
+Created Friday 10 December 2021
+
+To hide an element, select it, CTRL + click it, and select **hide element**. This will hide the element from view, but it will still take up the same amount of space. 
+
+To show it again, repeat the process above.

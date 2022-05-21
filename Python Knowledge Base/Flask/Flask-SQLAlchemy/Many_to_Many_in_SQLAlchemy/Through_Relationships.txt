@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-23T12:53:24-04:00
+
+====== Through Relationships ======
+Created Friday 23 July 2021
+
+These are similar to the other join relationships we saw, but they go **"through"** a join table (typically) and allow you to get information about **one queried object** from **another table**
+
+**Example:**
+class Employee(db.Model):   # ...
+	**# direct navigation: emp -> project & back**
+	projects = db.relationship('Project',
+							   **secondary='employees_projects',**
+							   **backref='employees**')
+
+	The **secondary** attribute is what allows us to use **employees_projects** as a join or connecting table, and the **backref**, like before, allows us to do things like **emp_instance.projects **and **project_instance.employees**, without ever having to set up the same thing on the projects table.

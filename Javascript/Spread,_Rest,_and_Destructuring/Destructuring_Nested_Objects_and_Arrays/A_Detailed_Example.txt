@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-05T14:01:37-04:00
+
+====== A Detailed Example ======
+Created Saturday 05 June 2021
+
+{{~/Desktop/ScreenShots/Nested Array Destructuring .png}}
+
+Here, we have a **movies array**. We want to access the second person, Susan, in the **actors** array, nested inside of **movies[1]**.
+
+At the bottom, you see we:
+	1). started with a **[**
+	2). used a comma (**,**) to bypass the first position (**movies[0]**) in the array
+	3). used destructuring on the second object. Because it is an object, we used **{}**
+	4). we use the **actors** key. and we access the array that is its value:
+		**actors: [, person2]**
+		Here, we also skipped the first person in the **actors** array
+	
+	5). we close off the destructuring with **}] = movies**, as movies is the original array.
+	
+
+
+**Destructuring an Object Nested Inside of Another Object:**
+
+{{~/Desktop/ScreenShots/Destructuring a Nested Object.png}}
+
+Here, we still access the second item in the array (noted by the **,**).
+
+Then, we access the **second object** with **{actors:**
+
+Then, we get the **key** **"person2"** from the object nested inside of it.
+
+Because all of it is still inside of an array, we still have to use array brackets on it.
+

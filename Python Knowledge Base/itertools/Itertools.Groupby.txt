@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-12T23:45:35-04:00
+
+
+====== Itertools.Groupby ======
+Created Saturday 12 September 2020
+
+{{.\pasted_image.png}}
+
+
+# slight alternative to the above:
+
+def group_cars_by_manufacturer(cars):
+	"""Iterate though the list of (manufacturer, model) tuples
+	   of the cars list defined above and generate the output as described
+	   in the Bite description (see the tests for the full output).
+       
+	   No return here, just print to the console. We use pytest > capfd to
+	   validate your output :)
+	"""
+	cars.sort()
+	key = lambda x: x[0]						# **groupby takes a key: here I've set the key to the first item in the tuple, so it will group by**
+	for make, model in groupby(cars, key):			   **the models by the first item (make) in each tuple**
+		print(make.upper())
+		for item in model:
+			print(f'- {item[1]}')
+		print()
+
+https://www.geeksforgeeks.org/itertools-groupby-in-python/

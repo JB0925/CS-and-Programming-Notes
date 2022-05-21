@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-23T11:09:34-04:00
+
+====== Merge Intervals Problems ======
+Created Thursday 23 September 2021
+
+**Problem:**
+	-Given a 2D array, where the outer array's values are arrays of intervals (A=start and B=end), **merge** the intervals:
+		**Example Outcome:**
+			input: [[2,6], [1,3], [8,10], [15,18]]
+			output: [[1,6], [8,10], [15,18]]
+			
+			The arrays that are [2,6] and [1,3] are overlapping, and therefore need to be merged to make [1,6]
+			
+
+**Steps:**
+
+1). Sort based on beginning intervals:
+	- **array.sort((a,b) => a[0] - b[0]);**
+
+
+2). Check if overlapping condition is true:
+	- **is b[0] <= a[1]?**
+	
+3). Merge:
+	- make new array **c**
+		- **c[0] = a[0]**
+		- **c[1] = max(a[1], b[1])**
+		
+
+4). Repeat until all intervals have been checked.
+
+
+
+

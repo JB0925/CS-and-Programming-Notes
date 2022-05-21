@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-23T22:38:45-04:00
+
+====== The State Pattern ======
+Created Saturday 23 April 2022
+
+**NOTE:** Something to think about: If what you are doing does not **need** the State pattern, don't try to force it. If it can be handled in a simple "if / else" statement, and is something that most likely won't or can't be extended in the future (**think of a stopwatch's click to start and stop**), the State Pattern can end up making things more complex.
+
+The State Pattern revolves around the idea of Application state that can consistently change. You could manage this state with a ton of "if / else" statements, but this is not maintainable if you plan to add to your application.
+
+**Example:**
+	- Say you build a UI Drawing application. Each time someone clicks a tool, the way the cursor looks changes, and the way the cursor behaves also changes. 
+	- Using a Switch statement or if / else statements does not work long term, because if you add other types of functionality to your app, your code will break.
+	
+**Instead:**
+	- You can use the State pattern, by creating an interface or an Abstract class that has certain methods on it, that each sub class will have to implement, **but that each one can implement in their own way.**
+	- You can also add methods that are particular to a specific type of tool by using this pattern.
+	
+	- You can then create a UIControl class, in which it can take in any type of tool and easily call its methods, without having to worry about breaking code when adding code later in the future.
+	
+
+**Diagram:**
+
+{{~/Desktop/ScreenShots/The State Pattern.png}}
+
+**Explanation:**
+	- In the diagram, the UIControl class is an **abstract class**, that requires any classes that inherit from it to have the **draw** method, which you can see that TextBox and CheckBox both have.
+	- From here, the **Main** class will use these classes and easily call their methods, knowing that each one will have a **draw()** method that is unique to it, and knowing that they are all of type **UIControl.**
+	
+	- This pattern is a good example of the **Open - Closed Principle**, which says that our code should be **open** for extension, but **closed** for modification, meaning you can add new functionality without having to change the existing code.
+	

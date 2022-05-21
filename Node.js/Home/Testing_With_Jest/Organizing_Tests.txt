@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-08T20:16:20-04:00
+
+====== Organizing Tests ======
+Created Wednesday 08 September 2021
+
+Test files should be named **fileName.test.js**
+
+You can place it in the same directory as the JS file that it itests.
+
+You can also put all tests into a **folder **called **"dunder" tests**, where dunder is the Python-esque double underscores on each side of the tests
+
+
+If you have a **package.json**, you don't need to have additional configuration.
+
+If not, you'll need to create an **empty** "**jest.config.js"** file.
+
+

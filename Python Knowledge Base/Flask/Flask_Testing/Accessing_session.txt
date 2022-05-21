@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-04T22:13:51-04:00
+
+====== Accessing session ======
+Created Sunday 04 July 2021
+
+How to access session while unit testing Flask apps:
+
+**IMPORTANT:** **Method #2** is for setting the state of the session **pre** HTTP request. **Method #1** is for accessing the session **after** the HTTP request.
+
+**Method #2 **demonstrates how this works and how they play together.
+
+
+**Method #1:**
+
+1). import flask (lowercase f)
+
+2). resp = client.post('/questions/0', data={'radio': 'Yes'})
+	 **self.assertIn('Yes', flask.session['responses'])**
+
+
+
+**Method #2:**
+
+def test_my_func(self):
+	with app.test_client() as client:
+		with client.session_transaction() as sesh:
+			**sesh['responses'] = ['yes', 'no']**
+		
+		resp = client.post('/questions/10')
+		self.assertEqual(urlparse(resp.location).path, '/questions/2')
+		**self.assertEqual(len(flask.session['responses'], 2)**
+
+

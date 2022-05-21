@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-15T14:57:14-05:00
+
+====== Abstract Methods and ABC Inheritance ======
+Created Friday 15 January 2021
+
+**Abstract methods** guarantee that when you inherit from a class with an abstract method, you HAVE to create that method or else, trying to instantiate the class will raise a TypeError.
+
+**How to Create an "AbstractMethod / "AbstractMethod Class:**
+	1). imports:
+			{{.\pasted_image.png}}
+	
+	2). create the Abstract Class:
+		{{.\pasted_image001.png}}
+		**NOTE: **the use of the blue arrows is to signify that if you want to make this an Abstract Class, it has to inherit from ABC and call the constructor of ABC as well.
+		
+		The above has two @abstractmethod's and one that is also a property.
+		If these are not implemented in any class that inherits from them, it will throw the "**TypeError** discussed above.
+	
+	
+	3). Create other classes that inherit from the "**AbstractBaseClass**" that you just created:
+		{{.\pasted_image002.png}}
+		Nothing fancy in what is directly above, but it does implement both methods from the "AbstractBaseClass", so this will work.
+

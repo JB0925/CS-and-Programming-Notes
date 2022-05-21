@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-20T21:31:16-05:00
+
+====== Send Data from A Form to Another Page ======
+Created Saturday 20 February 2021
+
+In **app_name/urls.py**, we have been giving each **view** a name:
+{{.\pasted_image.png}}
+
+We can use this name to send form data to another page. In the **<form action="">** section, check out the code. Also, note the **csrf_token**:
+{{.\pasted_image002.png}}
+
+**Remember:** Every form element has a **label**, and the **field** itself. 
+
+

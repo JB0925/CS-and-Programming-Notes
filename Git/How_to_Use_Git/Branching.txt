@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-29T12:15:37-04:00
+
+====== Branching ======
+Created Thursday 29 October 2020
+
+Branches are a way to keep separate streams of development apart. Very important when working on a team.
+
+**Switch to a New Branch:**
+{{.\pasted_image.png}}
+
+edit or create files, add and commit to the new branch.....then type "git log", and you will see all of the master branch commits as well as the one you just made in the new branch, but **if you go back to the master branch with "git checkout master", **you won't see the new commit you made in the new branch. 
+
+
+**How to Compare the State of Two Branches:**
+	use the **git show-branch** command
+	
+	**Example:**
+		**git show-branch my_new_feature master**
+		
+		This generates:
+		{{.\pasted_image001.png}}
+		
+		For this picture, **in the first two lines,** the **red** "*" means that that branch is currently checked out
+		The **green** "!" is used for all other branches.
+		
+		Third line is a separator
+		
+		Starting on line 4, there are commits that are in one branch, but not the other
+

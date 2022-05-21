@@ -1,0 +1,47 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-26T19:27:33-05:00
+
+====== HashSet ======
+Created Saturday 26 February 2022
+
+A HashSet is just like a typical set in most languages. Built on a hash table, O(1) for most operations. Contains no duplicates. Does not retain any order.
+
+
+**Add to a HashSet: **
+	HashSet<String> mySet = new HashSet<String>();
+	mySet.**add("new");**
+	mySet.**add("string");**
+	
+
+**Completely Empty a HashSet:**
+	mySet.**clear();**
+	
+
+**Clone an Existing Set:**
+	HashSet<Integer> mySet = new HashSet<Integer>();
+	for (int i = 0; i < 10; i++) {
+		mySet.add(i);
+	}
+
+	  HashSet<Integer> mySet2 = (HashSet<Integer>) mySet.clone();
+
+
+
+**Check for Membership:**
+	mySet.**contains(elementToLookFor);**
+	
+
+**Check Whether Set is Empty:**
+	mySet.**isEmpty();**
+	
+
+**Check the Length of the Set:**
+	mySet.**size();**
+	
+
+**Remove an item from the Set:**
+	mySet.**remove(item);**
+	
+
+

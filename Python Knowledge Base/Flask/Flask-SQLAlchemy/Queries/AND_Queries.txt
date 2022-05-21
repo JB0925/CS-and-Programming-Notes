@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-19T23:39:32-04:00
+
+====== AND Queries ======
+Created Monday 19 July 2021
+
+**Employee.query.filter(Employee.state == 'CA', Employee.id > 65)**
+
+OR
+
+**Employee.query.filter( (Employee.state == 'CA') & (Employee.id > 65) )**

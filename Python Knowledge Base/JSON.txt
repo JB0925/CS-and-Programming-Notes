@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-30T15:04:21-04:00
+
+====== JSON ======
+Created Thursday 30 July 2020
+
+open a json file to read:
+
+**import json**
+
+	**with open('data.json') as f:**
+		**reader = json.load(f)**
+
+
+
+https://www.programiz.com/python-programming/json
+
+above link has many helpful methods for reading in and writing json files.

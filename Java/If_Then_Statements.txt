@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-07T23:27:57-05:00
+
+====== If Then Statements ======
+Created Monday 07 February 2022
+
+**Example:**
+
+boolean isAlien = false;
+
+if (isAlien == false)
+	System.out.println("Not an alien.");
+	
+**NOTE: **No semicolon after the **if** statement.
+

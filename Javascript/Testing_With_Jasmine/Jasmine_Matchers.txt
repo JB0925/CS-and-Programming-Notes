@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-27T22:48:17-04:00
+
+====== Jasmine Matchers ======
+Created Thursday 27 May 2021
+
+**toEqual()**
+	- checks for equality, i.e. "**does it look the same?"**
+	- does NOT care about memory references
+
+**toBe()**
+	- checks for one item to have the same reference as another, **if those items are objects, arrays, etc.**
+	- using **toBe()** to check for equality with strings, numbers, etc., will work because **JS considers one primitive to be the same as another, as long as their values are the same**
+
+
+**toContain()**
+	- does an object or array contain the item in parentheses?
+	- **expect(COLORS).toContain('red');**
+	
+
+**.not**
+	- added before another matcher to check to make sure something isn't true, or isn't happening
+
+
+**toBeInstanceOf()**
+	- same as **isinstance()** in Python
+	- **expect(makeString(['h','e','l','l','o'])).toBeInstanceOf(String);**
+
+
+**toThrowError()**
+	- way to test and see if a function will throw an error as the intended result
+	- **expect(() => {calculateTaxes('asfkahgsdg')}).toThrowError('Your error message goes here');**
+	- **NOTE:** The use of the arrow function in the beginning of the function. It is used to capture the resuls of the test, and 
+	saves it from throwing errors on other, untested functions
+	
+
+There are many more if you check the Jasmine docs.
+

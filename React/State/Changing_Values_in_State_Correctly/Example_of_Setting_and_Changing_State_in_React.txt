@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-25T23:33:31-04:00
+
+====== Example of Setting and Changing State in React ======
+Created Friday 25 June 2021
+
+Here is a small example of how to change state in React using **this.setState()**.
+
+**Here is the App Component:**
+	- notice how is is passed the **prop** called **maxNum**. This is used in **Rando.js**
+	
+{{~/Desktop/ScreenShots/Changing State - App Component.png}}
+
+
+**Rando Component:**
+{{~/Desktop/ScreenShots/Changing State in React - pt2.png}}
+
+**NOTES: **
+	- remember, to use state, we have to set it up with the addition of the constructor
+	
+	- then, we create another method **makeTimer()** and call **this.setState({num: rand});**
+	
+
+

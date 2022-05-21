@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-15T08:55:02-04:00
+
+====== SQL Injection ======
+Created Wednesday 15 September 2021
+
+A **SQL Injection** occurs when an attacker tries to execute undesirable SQL statements on your db.
+
+It is fairly common, and easy to be vulnerable if you aren't careful.
+
+
+**Example:**
+
+router.get("/search", async function (req, res, next) {
+  try {
+	const type = req.query.type;
+    
+	const results = await db.query(
+	  `SELECT id, name, type 
+	   FROM users
+	   WHERE type='${type}'`);
+
+	return res.json(results.rows);
+  }
+
+  catch (err) {
+	return next(err);
+  }
+});
+
+
+**The Problem:** The problem is that the **type** variable is coming from a user search / query string. Well, in the example above, if that search was for **staff**, then all would be ok. But, **if the search was for: "bwah-hah"; DELETE FROM users;", **then that would fill our db query with:
+	SELECT id, type, name
+	FROM users WHERE type = 'bwah-hah'; **DELETE FROM users;**
+	
+As you can imagine, this would delete **every user record** in the DB, and potentially more if other tables have ON DELETE = CASCADE set.
+

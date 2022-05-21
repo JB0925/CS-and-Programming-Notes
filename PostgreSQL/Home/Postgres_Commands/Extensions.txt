@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-07T01:49:01-05:00
+
+====== Extensions ======
+Created Sunday 07 March 2021
+
+**Extensions are functions that can add extra functionality to a database.**
+
+**View All Available Extensions:**
+	- **SELECT * FROM pg_available_extensions;**
+
+
+
+

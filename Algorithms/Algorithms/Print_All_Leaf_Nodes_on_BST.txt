@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-26T01:08:32-04:00
+
+====== Print All Leaf Nodes on BST ======
+Created Monday 26 July 2021
+
+**Code:**
+{{~/Desktop/ScreenShots/Print all BST Leaves.png}}
+
+**Explanation:**
+	**NOTE:** This only works on a BST.
+	
+	- if we don't have a root, we just return
+	
+	- if we hit level two, we know we have a root, so we check to see if the root has **no children**.
+		- if it doesn't have children, we print the root's value and , again, just return
+	
+	if we hit level three, that means the root has either a left node, right node, or both
+	
+	- we check the left first and, if there is a **root.left**, we make a recursive call to **print_leaves** with **root.left**
+	
+	- we then make the same check and conditional call on **root.right**
+	

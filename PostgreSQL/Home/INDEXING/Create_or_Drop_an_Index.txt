@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-13T00:18:51-04:00
+
+====== Create or Drop an Index ======
+Created Tuesday 13 July 2021
+
+You can create an index after your table is created, and you can also drop it:
+
+CREATE INDEX index_name ON table_name (column_name);
+
+
+
+**Create a multi-column index:**
+
+CREATE INDEX index_name ON table_name (column1_name, column2_name);
+
+
+
+
+**Drop an index:**
+
+DROP INDEX full_name;

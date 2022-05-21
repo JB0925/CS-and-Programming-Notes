@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-13T12:36:43-05:00
+
+====== rm - remove a file ======
+Created Friday 13 November 2020
+
+call **rm filename_here **to remove a file. You need to be in the directory where the file is to make this happen, or type the path to the file.
+
+You cannot remove directories with just **rm**, but you can use the **-r** flag, which would allow you to do it via recursive removal
+
+
+**rm -ri folder_name** will also remove directories recursively, but it will prompt you to ask what you want to do before removing them, i.e. "Are you sure you want to do this?"
+
+To make the above process faster, if you know for sure that you want to remove all of the files and directories it asks about, you can use the **yes** command, ala:
+
+**yes | rm -ri folder_name**
+
+
+

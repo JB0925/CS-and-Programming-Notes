@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-16T14:00:49-04:00
+
+====== Basic Math Operations ======
+Created Tuesday 16 March 2021
+
+
+**Addition:**
+	var **sum** = 10 + 10;				Can also use **var_name ++** to increment by 1
+	**console.log(sum)**
+		returns 20
+
+
+**Subtraction:**
+	var **difference** = 45 - 13;			Can also use **var_name- - **to decrement by 1
+	**console.log(difference)**
+		returns 32
+
+
+**Multiplication:**
+	var **product = 8 * 10;**
+	**console.log(product)**
+		reutrns 80
+		
+
+**Division:**
+	var **quotient** = 66 / 33;
+	**console.log(var)**
+		returns 2
+		

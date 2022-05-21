@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T00:00:23-05:00
+
+====== IAM Security Tools ======
+Created Sunday 09 January 2022
+
+You have two tools you can use as Security tools:
+
+1). IAM Credentials Report (account-level)
+	- a report that lists all your account's users and the status of their various credentials.
+
+2). IAM Access Advisor (user-level)
+	- Access advisor shows the service permissions granted to a user and when those services were last accessed.
+	
+	- You can use this information to revise your policies.
+	

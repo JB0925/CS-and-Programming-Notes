@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-05T21:49:57-04:00
+
+====== Flex-Grow ======
+Created Wednesday 05 May 2021
+
+Dictates how unused space should be spread between flex items.
+
+Flex grow will make an item stretch to the space specified.
+
+**Example:**
+	flex-grow: 3;
+	
+	- this would make this item 3x as big as the other items.
+	
+
+
+

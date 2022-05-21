@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-05T10:00:10-05:00
+
+====== sub Elements ======
+Created Friday 05 February 2021
+
+See **<sup>** and think of the opposite.
+
+**<sub>** prints text below the baseline
+
+{{.\pasted_image.png}}
+
+{{.\pasted_image001.png}}

@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-18T01:48:25-04:00
+
+====== Add Line BEFORE a Condition is Met ======
+Created Tuesday 18 August 2020
+
+**Sample code that shows how to add a line that comes before a condition is met:**
+
+def create_chart():
+	lst = []
+	final = []
+	info = defaultdict(str)
+	i = namedtuple('i', 'title')
+
+	**with open(SAFARI_LOGS, 'r') as f:**
+	**    content = f.readlines()**
+**          for idx, c in enumerate(content):**
+	**          if 'slack channel' in c:**
+	**                lst.append(content[idx-1:idx])**
+	
+	
+https://stackoverflow.com/questions/45291666/python-extracting-3-lines-before-and-after-a-match
+
+2nd answer in link
+

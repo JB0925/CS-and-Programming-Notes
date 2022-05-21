@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-10T23:29:59-05:00
+
+====== uptime - display the amount of time the system has been booted ======
+Created Sunday 10 January 2021
+
+{{.\pasted_image.png}}
+
+typing **uptime** gives the current time and shows that my system has been booted for 49 minutes

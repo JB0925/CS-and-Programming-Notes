@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-12T21:31:17-05:00
+
+====== How to send Email via Gmail ======
+Created Friday 12 March 2021
+
+1). Set up a gmail account to handle your emails.
+
+2). Go to accounts.google.com and allow **less secure apps.**
+
+3). Go to https://accounts.google.com/DisplayUnlockCaptcha and turn this setting on
+
+4). Set your **settings.py** to the following:
+{{.\pasted_image.png}}
+
+5). Make sure to set the EMAIL_HOST_USER and EMAIL_HOST_PASSWORD in your **.env** file
+
+6). Add the two settings above to your **.env.example** file.
+
+7). If deploying to Heroku, use **heroku config:set VAR_NAME='var values'** for the two variables in step 5.

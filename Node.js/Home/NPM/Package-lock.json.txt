@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T21:46:37-04:00
+
+====== Package-lock.json ======
+Created Monday 06 September 2021
+
+**package-lock.json** contains exact versions of dependencies that are actually installed.
+
+When you run **npm install**, it looks first at **package-lock.json**, and then at **package.json**
+if necessary.
+

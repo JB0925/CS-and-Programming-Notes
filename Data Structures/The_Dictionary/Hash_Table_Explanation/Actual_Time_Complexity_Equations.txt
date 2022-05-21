@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-23T14:48:49-04:00
+
+====== Actual Time Complexity Equations ======
+Created Wednesday 23 September 2020
+
+With a dictionary, the worst-case scenario (a Linked List where every key is stored at the same index in the dictionary) is not likely to ever happen, given a bare minimum functioning Hash Function.
+
+**IF** it did:
+	1). Accessing O(n)
+	2). Searching O(n)
+	3). Inserting O(n)
+	4). Deleting O(n)
+	
+**OR....** the exact same thing as a Linked List.
+
+
+Here are the **average** case scenarios for Time Complexity Equations for Dictionaries:
+	1). Accessing = O(1)
+	2). Searching = O(1)
+	3). Inserting = O(1)
+	4). Deleting = O(1)			**To do any of the four operations to the left with a dictionary, all that needs to happen is to run the key**
+									**through a Hash Function and it will tell us what index in the Hash Table to go to in order to perform that **
+									**operation**
+

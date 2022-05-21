@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-19T23:11:02-04:00
+
+====== Adding Conditional Styles ======
+Created Saturday 19 June 2021
+
+One way to add conditional styles in React is to use a ternary operator:
+
+{{~/Desktop/ScreenShots/Conditional Styles in React.png}}
+
+Here, you can see how we change the class we add to the **<p>** based on a condition.
+
+**NOTE: **The entire ternary operator is wrapped in brackets.
+

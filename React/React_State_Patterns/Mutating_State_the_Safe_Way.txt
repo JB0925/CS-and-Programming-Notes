@@ -1,0 +1,55 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-08T23:39:58-04:00
+
+====== Mutating State the Safe Way ======
+Created Thursday 08 July 2021
+
+**React wil NOT rerender if the item we are setting state with is a reference to the old item.**
+	This won't work: **onClick={() => items.push("haha")}**
+	
+	**THIS WORKS: **onClick={**() => setItems([...items, "haha"]**}
+	
+	
+
+Often, state will include arrays, objects, nested arrays, arrays of objects, etc.
+
+The best way to alter an array or object in state is to **make a copy of it.**
+
+This can be done using any **pure function**, such as **map, filter, reduce, etc., **and the **spread** operator.
+
+Say we have a list of TODO's, and we need to change one's status to **done**
+
+**Example #1:**
+	**setup:**
+	class `MyTodos extends Component {
+		constructor(props) {
+			super(props)
+			this.state = {
+				todos: [
+					{message: 'ksdfhjsk', done: true},
+					{message: 'skfhdssd', done: false}
+				]
+			}
+		}
+	}
+	
+	**Above we have a list of TODO objects inside of state. The function below will be used to update the state to change the "done" property to true if an id matches some condition.**
+
+	completeTodo(id) {
+		const newTodos = this.state.todos.map(todo => {
+			if (todo.id === id) {
+				return {...todo, done: true}
+			}
+			return todo
+		});
+		this.setState({todos: newTodos})
+	}
+	
+	**Unpacking the Above:**
+		1). created a function called **completeTodo(id)**
+		2). created a new array with **map** to replace our old array of objects
+			- if the id of the todo is equal to the passed in id, we return a copy of the todo, except the **done** value is set to **true**
+			- else, we just return the todo
+		3). Finally, we call **this.setState** and change todos to newTodos
+

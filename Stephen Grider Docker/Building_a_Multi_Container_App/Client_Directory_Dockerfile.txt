@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-10T22:02:02-05:00
+
+====== Client Directory Dockerfile ======
+Created Monday 10 January 2022
+
+Here is the Dockerfile.dev for the **client** subdirectory:
+
+FROM node:16-alpine
+WORKDIR /app
+COPY ./package.json ./ 
+RUN npm install
+COPY . .
+CMD ["npm", "run", "start"]

@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-22T23:09:27-05:00
+
+====== Inner Classes ======
+Created Tuesday 22 February 2022
+
+There are four types of nested classes in Java:
+	1). static
+	2). non-static
+	3). local
+	4). anonymous

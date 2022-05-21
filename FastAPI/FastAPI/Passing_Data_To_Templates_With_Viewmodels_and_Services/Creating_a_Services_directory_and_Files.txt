@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-03T23:56:45-04:00
+
+====== Creating a Services directory and Files ======
+Created Saturday 03 April 2021
+
+In the directory with the **init** file, create a **services** directory and add your services files (.py)
+
+Also, in the same directory, create a **viewmodels** directory. Inside of the **viewmodels** directory, create a **home** and a **shared** directory.
+
+In **shared**, create **viewmodel.py**
+
+In **home** create **indexviewmodel.py**
+

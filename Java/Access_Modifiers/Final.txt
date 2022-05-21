@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-25T23:50:10-05:00
+
+====== Final ======
+Created Friday 25 February 2022
+
+Final variables are typically constants.
+
+Like **const**, they cannot be changed.

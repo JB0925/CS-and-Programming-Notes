@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-10T23:54:55-05:00
+
+====== Direct Descendent Selector ======
+Created Wednesday 10 February 2021
+
+**Direct Descendent / Direct Child:**
+	- selects only the (**element 2s**) that **ARE** children of (**element 1**)
+	
+
+
+**Example:**
+	
+	- **div > li {**
+		**color: white;**
+**         }**
+
+
+
+**Explanation:**
+	- mostly the same as adjacent selectors, except that the **direct child/descendent** selects only those elements that are children of the first element.
+	- **NOTE: Direct descendent does NOT mean doubly/triply, etc., nested. Has to be the FIRST CHILD of the parent element.**
+	- in the example, we are selecting **li** tags that are **children** of **div tags**.
+	
+	**NOTE: This is not as commonly used as the "Descendent Selector" or the "Adjacent Selector"**
+	
+	
+	
+{{.\pasted_image001.png}}			{{.\pasted_image002.png}}		{{.\pasted_image003.png}}
+
+
+
+
+

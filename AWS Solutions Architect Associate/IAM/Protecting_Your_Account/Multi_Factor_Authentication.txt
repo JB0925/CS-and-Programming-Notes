@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T22:59:01-05:00
+
+====== Multi Factor Authentication ======
+Created Saturday 08 January 2022
+
+Users have access to your account, and can possibly change configurations or delete resources in your AWS account.
+
+You want to protect your Root Accounts and IAM users.
+
+MFA = password you know + security device you own
+
+
+**MFA Device Options:**
+	- virtual MFA device
+		- Google Authenticator
+		- Authy
+		
+	- physical Security Key
+		- YubiKey (not aws)
+			- supports multiple roots and users
+		
+		- Hardware Key Fob (Gemalto)
+		
+		- Hardware Key Fob for AWS GovCloud
+			(US Based)
+

@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-05T10:00:43-05:00
+
+====== sup Elements ======
+Created Friday 05 February 2021
+
+**What is <sup>?:**
+	- **<sup>** is superscript text
+	- think of exponents, or citing sources
+	- raises the text above the rest of the line
+
+{{.\pasted_image.png}}
+
+{{.\pasted_image001.png}}
+

@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-16T20:03:13-05:00
+
+====== Example Files ======
+Created Sunday 16 January 2022
+
+**Main .yml File:**
+
+version: "3.7"
+services:
+  node-app:
+	build: .
+	ports:
+	  - "3000:3000"
+	environment:
+	  - PORT=3000
+
+
+**Dev File:**
+
+version: "3.7"
+services:
+  node-app:
+	build:
+	  context: .
+	  **specify NODE_ENV to determine which dependencies get installed**
+	  args:
+		NODE_ENV: development
+	volumes:
+	  **- .:/app      reflect changes on reload**
+	  - /app/node_modules
+	environment:
+	  - NODE_ENV=development
+	command: npm start
+
+**Prod File:**
+
+version: "3.7"
+services:
+  node-app:
+	build:
+	  context: .
+	  **see above**
+	  args:
+		NODE_ENV: production
+	environment:
+	  - NODE_ENV=production
+	command: node index.js

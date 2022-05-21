@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-26T00:26:16-04:00
+
+====== BFS on Tree ======
+Created Monday 26 July 2021
+
+First, you have to have a tree set up.
+It doesn't have to be a BST, but some kind of tree.
+
+**The Code:**
+{{~/Desktop/ScreenShots/BFS Tree Traversal.png}}
+
+**Explanation:**
+	**THE BFS ALGO WORKS LEFT TO RIGHT**
+	
+	- write a function that takes the root of the tree as an argument
+	- create a **queue: **it can be a list / array, or it can be a **special Queue class** that functions similar to a Doubly Linked List, but with only the **push** and **pop** functionality
+	
+	- place the **root** into the **queue**
+	- create a **visited **array to push each value from the queue into, one at a time
+	
+	- while the queue is not empty, pop the first node from the queue and put it in **visited**.
+	
+	- last, check to see if the node has a **left node**. If so, then put the **node.left** into the **queue**
+	
+	- do the same thing for **node.right**
+	
+	- return **visited**

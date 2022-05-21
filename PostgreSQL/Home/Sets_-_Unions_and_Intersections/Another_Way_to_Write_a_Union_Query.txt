@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-13T12:11:26-04:00
+
+====== Another Way to Write a Union Query ======
+Created Tuesday 13 April 2021
+
+**Example:**
+	SELECT * FROM products
+	UNION
+	SELECT * FROM products;
+
+
+**NOTE: **You cannot do this with two columns that have different data types, i.e. numbers and strings.
+

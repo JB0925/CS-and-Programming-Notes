@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-02T14:29:04-05:00
+
+====== Create a Database and Delete a Database ======
+Created Tuesday 02 March 2021
+
+running **CREATE DATABASE db_name_here;				**#make sure to end with a semicolon
+
+
+**Delete:**
+	- **DROP DATABASE db_name_here;**
+	- be careful; data is gone forever
+

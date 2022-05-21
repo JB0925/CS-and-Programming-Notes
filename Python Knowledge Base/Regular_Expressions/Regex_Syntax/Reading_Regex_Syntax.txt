@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-29T01:39:15-04:00
+
+====== Reading Regex Syntax ======
+Created Wednesday 29 July 2020
+
+[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
+
+**First character set = all lower and uppercase letters, digits 0-9, _, ., +, and -      the + after the character set means one or more of those characters.**
+
+**literal @ symbol**
+
+**Second character set = all lower/uppercase letters, digits 0-9, and "-"      the + after the set means one or more of those**
+
+**\. means search for a literal period, NOT any character ("." usually means any character)**
+
+**Third character set = all lower/uppercase letters, digits 0-9, "-", and "."       the + after the set means one or more of those**

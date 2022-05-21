@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-16T15:32:08-04:00
+
+====== Declaring String Variables ======
+Created Tuesday 16 March 2021
+
+**Declaring a string:**
+	var **myString;**
+	
+**Assigning a string:**
+	**myString = "Alan Turing";**
+	
+
+**Declaring and assigning at the same time:**
+	**var myString = 'Alan Turing';**
+	
+
+
+**NOTE: **Strings can be assigned, just like in Python, using single or double quotes, or backticks (not like Python).
+		Strings can also be concatenated with the **+** operator, just like in Python.
+		Strings can also be concatenated with the += operator.
+		
+		Just like Python, you can concatenate strings with variables:
+			**var myName = "Jesse";**
+			**var sentence = "My name is " + myName + ". Nice to meet you!"**
+			
+
+pick up at 30:14
+

@@ -1,0 +1,53 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-26T22:49:09-04:00
+
+====== Singledispatch decorator ======
+Created Monday 26 October 2020
+
+**from functools import singledispatch**
+
+**How to use the "@singledispatch" decorator from functools:**
+
+Singledispatch allows you to write a generic function that will do the same thing for a multitude of types. This is because of the decorator in step 2 and 3.
+First, you need to decorate a generic function with "@singledispatch", as is done in step 1.
+
+**1). **{{.\pasted_image.png}}		# decorate the "base_function" with the "@singledispatch" decorator
+															this raises a "ValueError" if the type isn't supported in the functions to come.
+
+
+**2). **{{.\pasted_image001.png}}			# decorate the "sub-function" with the "@base_function.register(type), **then define the**
+															**function for those types.** Notice it has been **decorated more than once to support multiple types.** 
+
+
+**3). **{{.\pasted_image002.png}}				# same as number 2, just written slightly differently to support multiple types that needed to be
+															written differently than the types in #2.
+															
+
+**4). **{{.\pasted_image003.png}}		# here, I've defined several variables to pass into the **count_down()** function. Notice how 
+															we don't call the **sub_function**, we call the **base_function "count_down()" and pass**
+															**the variables into it. **So, **not print(_(b)). **Instead, we call **print(count_down(b))**.
+															
+															If I pass each of those variables into the function, they will print:
+															**1234**
+															**123**
+															**12**
+															**1**
+															
+															A float would print:
+															**12.34**
+															**12.3**
+															**12"."**
+															**12**
+															**1**
+															
+															Calling **print(count_down(c))**, would raise a "ValueError" because it isn't in the supported types defined by the **@count_down.register(type)** decorator. This is intended.
+
+**Very Helpful Link:**
+https://www.blog.pythonlibrary.org/2016/02/23/python-3-function-overloading-with-singledispatch/
+
+**Docs:**
+https://docs.python.org/3/library/functools.html#functools.singledispatch
+
+
+

@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-06T23:00:54-04:00
+
+====== Embedding JS in JSX ======
+Created Sunday 06 June 2021
+
+{{~/Desktop/ScreenShots/Rendering actual JS in JSX.png}}
+
+Above, we can see how curly braces are used to render the result of 2 * 8 in the browser. 
+
+We can also pass JS function calls between the curly braces as well.
+
+{{~/Desktop/ScreenShots/Embedded JS Function in JSX.png}}
+
+Notice how the function **myMood()** is passed into the curly braces. This will return a new mood that gets rendered each time. 

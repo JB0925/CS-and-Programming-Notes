@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-14T20:46:36-05:00
+
+====== Run Binary Search on Array ======
+Created Monday 14 February 2022
+
+int[] allNums = new int[]{13,14,15,16};
+
+const myIndex = **java.util.Arrays.binarySearch(allNums, myNum);**
+
+
+**Example 2:**
+	- check to see if an integer is in a sorted array
+
+if (java.util.Arrays.binarySearch(allNums, num1) >= 0) {
+	// do stuff
+}

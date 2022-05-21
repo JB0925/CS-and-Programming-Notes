@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-25T01:01:22-04:00
+
+====== Adding Bootstrap and Template Inheritance ======
+Created Sunday 25 October 2020
+
+**Template Inheritance is like a base template that all of your other templates can work off of.**
+
+**To allow for template inheritance, you have to add BLOCKS to your HTML.**
+
+**Format for a Block:**
+	{% block content %}{% endblock %}
+	
+
+The above code is saved in a file called "base.html"
+
+**index.html** will now inherit from **base.html**
+
+
+Now, in the **index.html** file, with everything erased:
+{{.\pasted_image001.png}}
+
+**CAN'T DEFINE THE SAME BLOCK TWICE**
+
+Now, the **base.html** file looks like this:
+
+{{.\pasted_image002.png}}
+
+And the **Flask_App.py** file looks like this:
+
+{{.\pasted_image003.png}}
+
+
+
+**What is Bootstrap?:**
+
+	Bootstrap is a CSS-like framework that can be used to style your website.
+
+**Working With Bootstrap:**
+
+1). Copy the CSS tags and paste them as the first items in your <head> section:
+{{.\pasted_image004.png}}
+
+{{.\pasted_image005.png}}
+
+2). Copy the Javascript tags and place them as the last items in your <body> section:
+{{.\pasted_image006.png}}
+{{.\pasted_image007.png}}
+
+3). Search for **navbar** on the Bootstrap website:		https://getbootstrap.com/docs/4.3/getting-started/introduction/
+
+4). Find a nav bar style that you like and copy the code into your base file as the first item in the body. (**code too large to show: see base.html)**
+
+
+
+

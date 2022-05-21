@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-05-16T23:09:20-04:00
+
+====== Properties of Strongly Connected Components ======
+Created Monday 16 May 2022
+
+1). If there is more than one MSCC in a graph, they can ONLY be MSSCs if there is no overlap, meaning that no other node is present in the other subset.
+
+2). An **MSCC Supergraph** is when someone draws edges between each instance of an MSCC.
+	- The **MSCC Supergraph** MUST be a **directed acyclic graph (DAG)**
+	- if there IS a cycle, then the entire graph becomes one big MSCC
+
+3). The reverse graph (edges pointing the other way) has the same MSCCs as the original.
+

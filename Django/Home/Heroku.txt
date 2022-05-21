@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-01T23:44:21-05:00
+
+====== Heroku ======
+Created Monday 01 February 2021
+
+**Heroku is now installed globally, so no need to reinstall each time we create a new venv.**
+
+1). Type **heroku login** from the terminal and be prepared to enter your information: **jbrink0925@gmail.com, Music929@**
+
+2). 
+
+Here are some other items we need to use with **Heroku:**
+	- install **Gunicorn**
+	- add a **Procfile** file
+	- update **ALLOWED_HOSTS**
+	
+	pipenv install gunicorn==19.9.0
+	
+	A Procfile file can have multiple lines, but for our simple app, it will only have one. This is used to specify that we will be using Gunicorn as our production web server.
+		- create the Procfile file:	**touch Procfile && vi Procfile**
+		- add this line: **web: gunicorn config.wsgi --log-file -**
+	
+	
+	Allowed Hosts:
+		- open **config/settings.py** and, under **ALLOWED_HOSTS**, add the '*' to the empty list
+

@@ -1,0 +1,92 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-05-10T19:06:36-04:00
+
+====== Insert ======
+Created Tuesday 10 May 2022
+
+Insert works the same way as it does in a BST
+
+Newly inserted nodes always start as **red**.
+
+
+**Three Insertion Scenarios:**
+	1). If the newly inserted node's parent is **black**, then you are finished. This is because the **black height** of the **parent node** remains unchanged.
+	
+	2). If the newly inserted node's parent is **red:**
+		- if the parent's parent (new node's grandparent) is black AND has **another red child on the other side**:
+			- make the grandparent node red
+			- make both of its children black
+			- the new node can stay red
+			- **black height** of the grandparent will increase by one, but **black heights for nodes ABOVE the grandparent** will stay the same
+			
+			- if, when making the grandparent **red, **you find that its **parent is also red**, then you simply recursively call the same algorithm
+	
+	3). If the node's parent is **red** and its parent's other child on the other side is **black**, then you must perform a **tree rotation.**
+	
+
+**Tree Rotations:**
+
+Two types of tree rotations:
+	- right rotation:
+		- new node' s parent left rotates clockwise upwards
+		- its grandparent becomes its right child
+		- new node's parent's **left children are still** its left children
+		- new node's parent's **right children** become grandparent's **left children**
+		- grandparent's right child (and its children) **stay on **as its right children
+		
+		**Another way to look at it:**
+			- grandparent becomes right child of new node's parent
+			- new node's parent's right child becomes grandparent's left child
+			- everything else stays the same
+			
+			- newest node stays red
+			- grandparent becomes red
+			- everything else stays the same
+
+	- left rotation:
+		- new node's parent is on grandparent's right and rotates counter clockwise upwards
+		- the grandparent becomes its left child
+		- grandparent's left child stays as its left child
+		- new node's parent's left child becomes grandparent's right child
+		- new node's parent's right child stays as its right child
+		
+		**Another way to look at it:**
+			- grandparent becomes left child of new node's parent
+			- new node's parent's left child becomes grandparent's right child
+			- everything else stays the same
+
+	**These are both implemented via pointer swaps**
+	
+**When do you do each rotation?**
+	- if the new node is its parent's left child, then you only have to do a **right rotation**
+	
+	- if the new node is its parent's right child, then you have to do:
+		- **left rotation**
+		- **right rotation**
+		
+		
+
+**Cases to Consider - Recap:**
+
+1). New node's parent is black - all done!
+
+2). New node's parent is red, but it's grandparent's other child is also red.
+	- grandparent becomes red
+	- both grandparent's children become black
+	- new node stays red
+	
+3). New node's parent is red, but its grandparent's other child is black:
+	- new node's parent becomes the parent of the grandparent, which is now the RIGHT child of new node's parent
+	- new node's parent's RIGHT children become the LEFT children of the grandparent
+	- grandparent is now RED
+	- all other children stay put
+	
+4). New node's parent is red, grandparent's other child is black, AND new node is the RIGHT child of its parent:
+	1). Left rotation:
+		- grandparent is now new node's parent's LEFT child
+		- new node's parent's LEFT child becomes grandparent's RIGHT child
+	
+	2). Right rotation:
+		- 
+

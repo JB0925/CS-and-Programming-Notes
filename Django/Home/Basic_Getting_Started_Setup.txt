@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-01T14:57:02-05:00
+
+====== Basic Getting Started Setup ======
+Created Monday 01 February 2021
+
+{{.\pasted_image.png}}
+
+**1). **Create a** "templates" **folder inside of the** project dir, **then a **some_name.html** file inside that directory
+	- go to **config/settings.py** and under **TEMPLATES** add to the **DIRS** key: **[str(BASE_DIR.joinpath('templates'))]**
+
+**2). **Create any **views** you'd like by going to **app_name/views.py** and adding a view. 
+
+**3) OPTIONAL:	**If you are using a database, run **python manage.py migrate**, which will create a **db.sqlite3** file. 
+
+**3).** Add the URL Configs to two places:
+	- **config/urls.py**
+	{{.\pasted_image001.png}}
+	
+	- **app_name/urls.py**
+	{{.\pasted_image002.png}}
+	
+	**NOTE: .views** means the **views** file in the same directory as the current file
+	**NOTE2: **when using Class-based views, you **always** add the **.as_view()** method to the class.
+

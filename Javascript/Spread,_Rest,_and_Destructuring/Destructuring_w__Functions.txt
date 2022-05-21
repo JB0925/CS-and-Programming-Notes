@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-14T14:38:58-04:00
+
+====== Destructuring w  Functions ======
+Created Wednesday 14 April 2021
+
+**Destructuring an Object with a function:**
+	function print({first_name, age})
+		{
+			console.log(`Name: ${name}, Age: ${age}' )
+		};
+	
+	
+	console.log(print(myObject));
+	
+	Would return the first name and age of whichever object is passed in, provided the object has first_name and age attributes.
+
+
+**Destructuring an Array with a Function:**
+	let myArray = ['joe smith', 21, 'construction'];
+	
+	function allAboutJoe([name, age, job]) {
+		console.log(name, age, job)
+	};
+	
+	console.log(allAboutJoe(myArray));
+	

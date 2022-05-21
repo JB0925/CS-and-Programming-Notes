@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-16T14:47:49-05:00
+
+====== rmdir - remove an empty directory ======
+Created Monday 16 November 2020
+
+call **rmdir [[/path/to/dirname]]**
+

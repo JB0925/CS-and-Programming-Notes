@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-13T08:39:22-04:00
+
+====== Simple Example ======
+Created Wednesday 13 April 2022
+
+**import java.util.function.Function;**
+
+Function<Integer, Integer> add = number -> number + 1;
+
+
+**NOTES:**
+
+	 1). This method has to be declared in one of two ways:
+		- inside of another method
+		- with the access modifier **static** in front of it.
+		
+	 2). To actually run this function and make it work, you'd need to do something similar to the following:
+	**System.out.println(add.apply(2));**
+		**// 3**
+

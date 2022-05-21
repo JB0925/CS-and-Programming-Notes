@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-11T14:22:16-04:00
+
+====== Template Areas ======
+Created Tuesday 11 May 2021
+
+To use Template Areas, you have to give your **container** the **grid-template-areas** property, as shown below:
+
+	**grid-template-areas:**
+		"h h h h h h h h h h h h"
+		"m c c c c c c c c c c c"
+		"f f f f f f f f f f f f";
+		
+	**NOTE:** You have to give **grid-template-areas **the exact same amount of strings per line as you have **columns**.
+	
+	
+	Now, you give your individual classes a **grid-area** letter from the **grid-template-areas** above, and your content will grow to match.
+	
+	For instance, if you give **.menu** {**grid-area: m;}**, it will fill in the first column, all the way from the bottom of the header, to the top of the footer.
+	
+	{{~/Desktop/ScreenShots/Template Areas 1.png}}	    {{~/Desktop/ScreenShots/Template Areas - Nice Layout.png}}
+	
+	
+	**The above results in the layout to the right.**
+	
+
+**NOTE:** If you use a **period** in the **container's "grid-template-areas"** property, it will make that section of the grid be blank / cancelled out.
+
+
+	

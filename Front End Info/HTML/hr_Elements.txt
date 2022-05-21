@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-05T10:00:32-05:00
+
+====== hr Elements ======
+Created Friday 05 February 2021
+
+**What is <hr>?**
+
+	- the tag has no closing tag, and no content goes inside of it
+	- represents a line break, and is sometimes used to convey a change or diversion from one theme to a new one
+	- prints a thin, gray line on screen, though you can style it with CSS

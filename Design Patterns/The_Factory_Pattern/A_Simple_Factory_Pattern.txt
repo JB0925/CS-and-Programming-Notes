@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-17T23:50:25-05:00
+
+====== A Simple Factory Pattern ======
+Created Thursday 17 February 2022
+
+{{~/Desktop/ScreenShots/Simple Factory Pattern.png}}
+
+Here we have created a Pizza Factory called SimplePizzaFactory 
+
+It has a method, whose return type is Pizza, called createPizza. It accepts a type of pizza that is a String.
+
+It has conditional logic to choose which pizza class to instantiate and return.
+
+
+**How do we use it?**
+
+public Pizza orderPizza(String type) {
+	**// an instance of SimplePizzaFactory**
+	Pizza pizza = factory.createPizza(type);
+	
+	pizza.prepare();
+	pizza.cook();
+	return pizza;
+}

@@ -1,0 +1,119 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-13T23:57:37-04:00
+
+====== Aggregating, Merging, and Grouping Data ======
+Created Sunday 13 September 2020
+
+Talk Python-Aggregating, Grouping , and Merging in Pandas
+
+Aggregating Data for One Column:
+df[‘price’].agg([‘mean’]) …returns the mean or average value for the price column in the dataframe
+Can pass in more than one value into the list above. Some examples of aggregation choices:
+	-mean, size
+	-std, count
+	-min, var, sem
+	-max, describe
+	-sum, first, last
+
+Can use on the entire dataframe to get mathematical computations for numerical columns:
+	df.agg([‘mean’, ‘max’]) ….will return the mean values of all numeric columns and will return the column with the maximum  value
+
+
+
+
+
+Create a dictionary to pass in the column names as keys, and the agg function as a value or list of values:
+	agg_cols = {‘quantity’:’sum’,
+				‘price’: [‘mean’, ‘std’],
+			‘invoice’:’count’,
+			‘extended_amount’ : ‘sum’}
+
+df.agg(agg_cols) ….returns a dataframe with the four columns as columns, but the math functions act as indices. Each math function only works on the column it was specified to go to. So quantity column will list NaN for the mean, std, and count columns, but will list the sum of the quantity column.
+df.agg(agg_cols).fillna(0) …same as directly above, but fills a 0 in place of the NaN values.
+
+Grouping:
+df.groupby([‘product’])[‘quantity’].sum()  groups by the product, then returns the sum of the quantity column for each group.
+
+Better way to do what is directly above:
+prod_cols = {‘quantity’:’sum’}…example with a list: prod_cols = {‘quantity’: [’sum’, ‘mean’]}
+df.groupby([‘product’]).agg(prod_cols)
+
+
+Can group by more than one column:
+df.groupby([‘company’, ‘product’]).agg(prod_cols)  ….would return a dataframe that would show each company, all of their products, and the mathematical functions specified in the prod_cols dictionary.
+
+df.groupby([‘company’, ‘product’]).agg(prod_cols).reset_index() …changes the index from the company name to the original index, and makes a new column for the company name
+
+Column naming with .agg:
+df.groupby(‘product’).agg(invoice_total =(‘invoice’, ‘count’), max_purchase=(‘extended_amount’, ‘max’))
+
+
+Pivot Table and crosstab:
+pd.pivot_table(df, index=[‘company’],
+			columns=[‘product’],
+			values=[‘extended_amount’],
+			aggfunc= ‘sum’,
+			margins= True,
+			fill_value= 0)
+
+See below to get a good idea of how this works:
+
+
+Info on pd.crosstab: 
+	
+More Pivot Table:
+pd.pivot_table(df, index=[‘company’, product], #took out column names, added 
+			values=[‘extended_amount’],		product to index
+			aggfunc= [‘sum’, ‘mean’, ‘max’],#3 Math functions instead of 1
+			margins= True,
+			fill_value= 0)
+
+
+
+
+
+
+
+
+
+More on CrossTab:
+pd.crosstab(df[‘company’], df[‘product’])  returns a table that counts the number of each item for each company.      See below:
+
+
+pd.crosstab(df[‘company’], df[‘product’], values= df[‘extended_amount’], aggfunc= ‘sum’, normalize=True) #normalize returns percentages for all, including NaN’s
+
+
+Same code as directly above, but with (normalize= ‘columns’) passed in, normalizes the columns and shows them as a percentage of each column’s total amount (i.e. Company A sold 0.017 percent of the books, Company B sold 0.00435 percent of the books, etc.)
+
+Normalize= ‘index’ ….shows the percentage of the row itself….i.e. 60% of Abatz Company’s purchases were books, 27% of their purchases were shirts, etc.
+
+Append Data:			Merge Data:
+pd.concat([df1, df2])		pd.merge(df_name, other df, left_on= ‘col’, 
+					right_on=’col2’, how=’left’)
+
+
+pd.concat([ ]) or df.append(other_df) will join two data frames into one.
+
+pd.merge(old_df, new_df, left_on=’company’, right_on=’company_name’, how=’left’)
+The code directly above joins two data frames, left_on and right_on tell Pandas that ‘company ‘ and company_name’ are the same, 
+and how=’left’ tells Pandas we are going to do a left join.
+
+Returns what is below:
+
+
+
+
+Instead of “left_on=” and “right_on=”, we could just change levels[‘company_name’] to levels[‘company’] like this:
+levels = levels.rename(columns={‘Company Name’ : ‘company’})
+
+The bold code directly above makes pd.merge much simpler. By changing the
+ name of the column to match the other DataFrame, now pd.merge becomes 
+pd.merge(all_sales, levels) .   It also does not duplicate the column name. 
+
+
+
+
+
+
+

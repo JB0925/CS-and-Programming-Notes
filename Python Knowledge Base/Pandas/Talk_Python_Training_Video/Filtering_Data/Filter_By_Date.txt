@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-13T23:41:41-04:00
+
+====== Filter By Date ======
+Created Sunday 13 September 2020
+
+**df[df['purchase_date'] >= '12-1-2019']  **...returns all rows and columns where the info in brackets is True
+
+**purchase_date = df['purchase_date'].dt.month == 11**
+**product_type = df['product'] == 'book'**
+
+**df[purchase_date & product_type] **....returns all rows and columns that have a **month of 11** and the **product is a book**
+
+
+#create a new column  **df['min_order_size'] = 5**
+#call df.head() to see that the new column was added   **df.head()**
+
+#variable to use to search dataframe   **small_orders = df['quantity'] < df['min_order_size']**
+
+#use the variable to query the dataframe, return a subset of columns  **df.loc[small_orders, 'company':'product']**
+
+**df.query('quantity' > 10)  **....returns all rows and columns where the quantity is greater than 10
+

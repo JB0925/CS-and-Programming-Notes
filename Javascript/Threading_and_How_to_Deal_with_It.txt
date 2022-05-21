@@ -1,0 +1,61 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-21T14:18:05-04:00
+
+====== Threading and How to Deal with It ======
+Created Friday 21 May 2021
+
+JS is **single-threaded**, much like Python.
+
+This means, that only one thing can run at a time.
+
+Everything has to wait until the thing before it is finished.
+
+
+**Example:**
+	greet();
+	alert('Stop!";
+	sayHello();
+	
+	- Here, the **greet** function will run.
+	- Then, the **alert** will run.
+		- the problem is, the alert **will not stop** until you go in the browser and click the **OK** button
+		- this means that **sayHello() will not run** until the **OK** button has been clicked on the **alert**
+		- you could come back tomorrow and, if the button was not clicked, you'd still be waiting for **sayHello()** to run
+
+
+**How do we get around this?**
+	- we can get around the single-threadedness with **setTimeout**
+	
+	**Example:**
+		greet();
+		**setTimeout(sayHello, 3000);**
+		greet();
+		
+		- In this example, **both** greet calls will execute immediately, and then, **3 seconds later**, sayHello() will execute.
+	
+	**Example2:**
+		greet();
+		**setTimeout(sayHello, 3000);**
+		**setTimeout(sayHello, 1000);**
+		greet();
+		
+		- in this example, **both** greet calls will execute, then, **one second later**, the **second** sayHello will execute. **Two seconds after that**, the **first** sayHello will execute (1+2 = 3)
+		- **setTimeout** calls execute the number of seconds **from when JS first encounters it, NOT necessarily in order.**
+		
+
+
+**Another Way to Get Around It:**
+	- we can also get around it with **setInterval();**
+	- to clear the interval and stop the timer, you call **clearInterval()**, and pass in the **id** of the **setInterval** call. It's a good idea to assign **setInterval** to a variable, so you can just pass in the variable name instead of an **id**.
+	
+	**Example:**
+		const id = setInterval(sayHello, 2000);
+		greet();
+		id;
+		greet();
+		
+		- Here, just as above, the two greet calls will be executed **immediately**, while the **setInterval** call will be executed over and over **every two seconds** until **clearInterval(id);** is called.
+		
+		
+

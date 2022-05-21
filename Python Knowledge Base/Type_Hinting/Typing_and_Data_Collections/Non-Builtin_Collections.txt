@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-20T08:58:48-04:00
+
+====== Non-Builtin Collections ======
+Created Monday 20 September 2021
+
+Non-builtin collections would be things like Stacks, Graphs, etc.
+
+**Two Types of non-builtins:**
+	1). Ones that aren't representable by some other by another collection type. For example, you **could** represent a Stack with a simple list, so a Stack would not fit here. A **Graph**, however, would fit. See the next page, **Case 1**, for more on this.
+	
+	2). Ones that **are **representable by an already exisiting collection type, but you want / need to modify some of its behaviors or characteristics.
+	
+
+
+
+

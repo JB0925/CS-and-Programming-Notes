@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-06T23:07:30-04:00
+
+====== Send AJAX Request to Python Server ======
+Created Tuesday 06 July 2021
+
+**NOTE:**
+	- if sending a POST request from Axios / JS, you access the data with **request.json**
+	
+	- if sending a GET request, you access the data with **request.args.get('my_key_here')**
+
+
+In Flask, you can make a route return JSON instead of serving HTML content.
+
+**Python Backend Example 1:**
+{{~/Desktop/ScreenShots/Flask Return JSON for Axios GET Request.png}}
+
+**Axios GET request to send data to Flask server:**
+{{~/Desktop/ScreenShots/Axios Request to Flask.png}}
+
+The **Python** route is set up to **receive** data from an AJAX request, validate it, and return it.
+
+The **JS** is a form submission where we get the value from the input, send it to **Python **to validate. We get the data back from Python, and we use it to display messages on the front end.
+
+**Flow: **Axios GET request to Flask server, Flask validates and returns data, data gets used in JS front end.
+
+
+**Example #2 - POST Request:**
+{{~/Desktop/ScreenShots/Flask Server to get data from AJAX POST Request.png}}
+
+**JS POST Request:**
+{{~/Desktop/ScreenShots/Axios POST Request to Flask Server.png}}
+
+In **Python, **we get data from a POST request and add it to the session.
+We don't really need to return the data, but we have to have a return value in a Flask route.
+
+In **JS**, we send a POST request to the Flask server when the timer runs out. It lets the server know that another game has been played, and it adds it to the session, which is later displayed in the HTML.
+

@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-04T19:59:56-04:00
+
+====== Creating a User in FastAPI ======
+Created Sunday 04 April 2021
+
+To create a user in FastAPI, we need to create a User class.
+
+Later, we will turn this into a SQLAlchemy class, but for now:       #**see "SQLAlchemy Database/Create a Table**
+
+{{.\pasted_image.png}}
+

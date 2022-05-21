@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-10T21:19:36-05:00
+
+====== The Command Line Interface ======
+Created Sunday 10 January 2021
+
+**Elementary Command Line Structure:**
+	The elementary commands are in the form of:
+		**command options files/data**
+		the files/data section is optional
+	
+	The **command** portion of the command is almost always the name of a software application
+		This can either be an OS command, or a software application/command written by a user
+

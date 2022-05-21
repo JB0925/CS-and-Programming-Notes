@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-28T22:20:40-05:00
+
+====== Enum ======
+Created Monday 28 December 2020
+

@@ -1,0 +1,53 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-06T23:19:55-05:00
+
+====== Pytest and Pytest Django ======
+Created Saturday 06 March 2021
+
+**LOOK INTO PYTEST XDIST...PYTEST >= 6.0.0**
+
+**Things that need to be done to use pytest with django inside a poetry environment:**
+	- poetry add pytest, pytest-django
+	- add a pytest.ini file
+		Contents:
+			{{.\pasted_image.png}}
+	
+	- create your tests in the **tests** directory for the project
+	- run your tests with **pytest**
+		- you can run an individual test with **pytest 'path/to/file.py**
+		- you can use **-vv** to get more information on each test that fails
+
+
+
+**My Tests:**
+	- check the Musical_Instrument_Crawler/crawler folder, under **tests**
+
+
+**Helpful Django Pytest Docs:**
+	- https://pytest-django.readthedocs.io/en/latest/helpers.html
+
+
+**Things to Remember:**
+	Create a Logged In User:
+		- {{.\pasted_image001.png}}
+		- you can use this logged in user to test for things that should happen when a user is logged in
+		- don't login the user when you want to test things that should happen when a user is logged out
+
+
+	**Render_to_string:**
+		- helpful method for rendering html content to a string, then checking to see if something is in it
+		{{.\pasted_image002.png}}
+	
+	
+	**Make Multiple Assertions:**
+		{{.\pasted_image003.png}}
+		
+	
+	**Test Logged Out, Then Logged In:**
+		{{.\pasted_image004.png}}
+		
+		- first, we take a logged out user and check to see if they are (appropriately) redirected.
+		- then, we log the user in and check to see if a certain string is in the response content
+		**NOTE: Use "follow=True" to have the url follow until its final destination (i.e. if it will redirect, then go to the correct link)**
+

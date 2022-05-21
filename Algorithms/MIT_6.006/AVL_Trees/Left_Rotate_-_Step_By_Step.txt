@@ -1,0 +1,42 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-25T12:09:03-05:00
+
+====== Left Rotate - Step By Step ======
+Created Monday 25 January 2021
+
+**1). Initial Tree:**
+	{{.\pasted_image.png}}	{{.\pasted_image001.png}}
+	**Set the y = x's right child, and make y's parent the same as x's parent**
+
+
+**2). Check to See What Y's Parent Is:**
+		- in the picture above, y's parent is the root, so we would just make **y** the **root, **
+			- if y's parent's left child is **x**, then set y's parent's left child to y
+			- vice versa for y's parent's right child
+			
+		**Example for Case #3 (y.parent.right = x):**
+			{{.\pasted_image002.png}}		{{.\pasted_image003.png}}
+
+
+**3). Set x.right = y.left:**
+	- **y.left **is going to be greater than **x** because it is on **x's** right side, and it is lower down the tree than x.
+		- this means that y's left child **(y.left)** will be x's right child (**x.right**)
+		-**remember to also set x.right's parent (x.right.parent) = x IF X.RIGHT is not None**
+		
+		{{.\pasted_image004.png}}		{{.\pasted_image005.png}}
+		
+
+
+**4). Set y's left child to be x (y.left = x), and set x's parent to be y:**
+		{{.\pasted_image006.png}}				{{.\pasted_image007.png}}
+
+
+
+**Update The Heights of X and Y;**
+		{{.\pasted_image008.png}}				{{.\pasted_image009.png}}
+
+
+
+**NOTE: For right_rotate(), everything would be the same, just swap "right" with "left" and vice versa, i.e. (y = x.left) and (x.left = y.right)**
+

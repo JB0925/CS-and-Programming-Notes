@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-09T23:45:52-04:00
+
+====== Filtering Data ======
+Created Wednesday 09 September 2020
+
+Boolean Indexing:
+
+	**viva = df['company'] == 'Viva'**
+	**qty_10 = df['quantity'] > 10**
+	**df.loc[via & qty_10, :] ......**colon means all from start to end
+	
+	
+	**viva = df['company'] == 'Viva'**
+	print(**viva**) ....returns a boolean value as to whether or not the row has a company name of Viva
+	
+	**df.loc[viva, :]** ...returns all rows and columns for rows where Viva is the company name
+	
+	can get same result as directly above with **df[viva]**
+	
+	**qty_10 = df['quantity'] >= 10 **....returns boolean value as to whether or not the row has a quantity greater than or equal to 10
+	**df.loc[(qty_10 & viva), :] **...returns all rows and columns where quantity is greater than/equal to 10 and company = Viva
+	
+	**df.loc[(qty_10 & viva), 'purchase_date':'price']**....returns same as above, except only for start column through end column
+	
+	**df['company'].str.contains('buzz')**....finds all rows where "buzz" is in the Company Name and returns boolean True/False
+	
+	
+	**df.loc[df['sku'].str.startswith('S')]**...boolean True/False for whether or not the row's SKU starts with "S"
+	**df.loc[df['sku'].str.startswith('S'), 'product'] **....same as above, but returns the product row for those that start with S.
+**      df.loc[df['sku'].str.startswith('S'), 'product'].value_counts() **....same as above, but instead returns the number of each kind of product for rows where **df['sku']** starts with S
+
+
+
+
+
+

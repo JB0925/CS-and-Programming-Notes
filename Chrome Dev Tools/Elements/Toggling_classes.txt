@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-10T12:36:27-05:00
+
+====== Toggling classes ======
+Created Friday 10 December 2021
+
+To look at an element's styles, select that element and look below to see what styles are given to it.
+
+**To toggle a class on/off of an element, look to the TOP of the STYLE box. You can click on and off of the blue arrows to toggle classes.**

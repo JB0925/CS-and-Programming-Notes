@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-17T09:52:45-04:00
+
+====== String Immutability ======
+Created Wednesday 17 March 2021
+
+Just like in Python, strings are immutable. This DOES NOT mean you can't change a string.
+
+It does mean that individual characters do not support assignment, i.e. no **myString[3] = 's';**
+
+
+To change the character at index 3, you'd have to basically reassign the variable to whatever you want to entire string to be.
+
+
+**Example:**
+	var myString = 'Jello World';
+		**Can't do myString[0] = 'H';**
+	
+	myString = 'Hello World';
+		**This is how you change it.**
+

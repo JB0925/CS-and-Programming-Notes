@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-04T23:17:48-04:00
+
+====== Flexbox ======
+Created Tuesday 04 May 2021
+
+With Flexbox, you have a container and Items.
+
+Each of these have their own properties:
+
+{{~/Desktop/ScreenShots/Container and Flex Item Properties.png}}
+

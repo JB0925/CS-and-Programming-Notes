@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T01:46:38-05:00
+
+====== Do We Need the Copy CMD ======
+Created Sunday 09 January 2022
+
+In the **docker-compose.yml** file, we are using **docker volumes** to tell our application "hey, sync up locally with the **app** directory in the container." That works well and, so, because of that, do we really need the COPY command in the **Dockerfile.dev**?
+
+
+The answer is, yes you probaly can get rid of it, but you should leave it in there as a reminder of what should happnen, just in case the **.yml** file isn't present later on.
+
+

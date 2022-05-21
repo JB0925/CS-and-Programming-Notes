@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-03T14:57:55-05:00
+
+====== GROUP BY keyword ======
+Created Wednesday 03 March 2021
+
+**Example:**
+	**SELECT DISTINCT country_of_birth FROM person;**
+		- returns a big list of unique country names
+	
+	
+	**SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth;**
+		- COUNT(*) is an SQL function that returns a count of the number of times it sees a particular value
+		{{.\pasted_image.png}}
+		
+		Above is a small snippet of what was returned from running the SELECT statement above.
+		You can see that 117 people were from **Indonesia**, and 27 people were from **Sweden**, etc.
+

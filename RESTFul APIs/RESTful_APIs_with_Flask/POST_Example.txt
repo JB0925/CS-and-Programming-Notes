@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-31T20:59:56-04:00
+
+====== POST Example ======
+Created Saturday 31 July 2021
+
+Here, we are using the **POST** method to **create** a new car.
+
+@app.route('/cars', methods=['POST'])
+def make_car():
+	car = request.json
+	new_car = Car(make=car['make'], model=car['model'], price=car['price'])
+	db.session.add(new_car)
+	db.session.commit()
+	  return (jsonify(car=serialize_cars(new_car)), 201)
+
+**Explanation:**
+	1). Grab the car from **request.json**
+	2). Turn it into a Car object
+	3). add and commit it to the database
+	4). we return a JSON representation of the new car we created.
+
+
+**The above adds a new car to the database and returns a JSON representation of that new car AND a STATUS_CODE of 201 CREATED.**
+

@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-21T09:46:40-04:00
+
+====== Decorator that has parameters  takes arguments ======
+Created Wednesday 21 October 2020
+
+**Special Syntax for Decorators that take parameters:**
+
+def make_html(element):
+	def decorator(func):
+		def wrapper(*args, **kwargs):
+			return f'<{element}>{func(*args, **kwargs)}</{element}>'
+		return wrapper
+	return decorator
+	
+
+@make_html('p')
+@make_html('strong')
+def get_text(text):
+	return text
+	
+**Output:**
+	**<p><strong>I code in PyBites.</strong></p>**
+	
+	
+Doing this allows you to use the same decorator more than once on a function.
+

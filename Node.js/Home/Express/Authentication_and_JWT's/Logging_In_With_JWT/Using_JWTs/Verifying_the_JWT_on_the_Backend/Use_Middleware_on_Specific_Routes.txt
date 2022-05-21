@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-24T08:52:08-04:00
+
+====== Use Middleware on Specific Routes ======
+Created Friday 24 September 2021
+
+Remember, if you want to use middleware only on specific routes, all you need to do is add the method after the URL in the route:
+
+router.get("/secret",
+  **ensureLoggedIn,**
+  async function (req, res, next) {
+	try {
+	  return res.json({ message: "Made it!" });
+	} catch (err) {
+	  return next(err);
+	}
+  });

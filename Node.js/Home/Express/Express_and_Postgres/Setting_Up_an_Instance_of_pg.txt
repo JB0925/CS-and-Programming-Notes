@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-15T08:11:34-04:00
+
+====== Setting Up an Instance of pg ======
+Created Wednesday 15 September 2021
+
+Typically, this logic will go into another file, similar to what we did with **models.py**
+
+**const { Client } = require("pg");**
+
+**let DB_URI;**
+
+if (process.env.NODE_ENV === "test") {
+	 DB_URI = "postgresql:///users_test"
+} else {
+	 DB_URI = "postgresql:///users";
+};
+
+
+**let db = new Client( {**
+	**connectionString: DB_URI**
+**})**
+
+
+**db.connect();**
+
+
+module.exports = db;
+

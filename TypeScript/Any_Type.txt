@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T19:36:16-05:00
+
+====== Any Type ======
+Created Sunday 12 December 2021
+
+**Any **is a flexible type that, for the most part, should be avoided.
+
+This is what types are in JavaScript and the **any** type offers no real advantage in TypeScript 

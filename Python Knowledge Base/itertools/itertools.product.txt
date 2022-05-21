@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-17T00:09:23-05:00
+
+====== itertools.product ======
+Created Thursday 17 December 2020
+
+get cartesian products with **itertools.product():**
+
+**Example:**
+	{{.\pasted_image.png}}
+		returns:
+			{{.\pasted_image001.png}}
+	
+	So it returns all variations for the length of the repeat (default = 1), of whatever iterable you pass in
+	
+
+**Example in Non-Trivial Code:**
+	{{.\pasted_image002.png}}
+	
+	here, I take an binary address, and count the number of X's with the **list.count()** method.
+	Then, I create a product object of binary digits (**0,1**), and set the **repeat** to the **count **variable
+	In the loop, I loop through each product in the list, and, if the **bitaddress** variable is 'X', I assign the **Kth** item of the product object
+	to the new_address list.
+	

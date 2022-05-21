@@ -1,0 +1,58 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-11T14:05:19-04:00
+
+====== Testing in React ======
+Created Monday 11 October 2021
+
+Create-React-App comes with **jest** and **react-testing-library**.
+
+Most of the tests will be written with jest, but we are able to use **matchers** from RTL as well.
+
+There are **two **types of tests in React:
+	- Each of these three types of tests uses the **render** object from the **React Testing Library:**
+		- import { **render** } from "@testing-library/react";
+	
+	This **render **object has many useful methods on it that are used, one of which can be seen in the Snapshot test below.
+
+
+	**Types of Tests**
+	
+	1). Smoke tests
+		- simple tests, usually the first ones, that are only used to assert **"Does this component render at all?"**
+		
+		**Example Smoke Test:**
+			import React from "react";
+			import { render } from "@testing-library/react";
+			import App from "./App";
+			
+			it("renders without crashing", function() {
+			  render(<App />);
+			});
+	
+	2). Snapshot Tests
+		- slightly more complex tests that assert **"Does my component's HTML render in the way that I expect?"**
+		
+		**Example Snapshot Test:**
+			import React from "react";
+			import { render } from "@testing-library/react";
+			import FixedComponent from "./FixedComponent";
+			
+			// smoke test
+			it("renders without crashing", function() {
+			  render(<FixedComponent />);
+			});
+			
+			// snapshot test
+			it("matches snapshot", function() {
+			  const {**asFragment**} = render(<FixedComponent />);
+			  **expect(asFragment()).toMatchSnapshot();**
+			});
+
+		
+		**NOTE: **If your component takes props and, depending on those props, may render different things, you may want to create different snapshots by rendering the **same** component with **different **props.
+		
+		**NOTE #2:** With a Snapshot test, the first time it is run, it will fail because there is no snapshot of the code. When the test is run, is creates a **snapshots** directory and files inside of it that show a snapshot of the HTML from your component. From the second time running it, it should then start passing. If it does not, then there may be something wrong with your component or tests!
+		
+		
+

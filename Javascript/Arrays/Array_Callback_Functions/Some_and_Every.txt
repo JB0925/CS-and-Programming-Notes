@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-30T12:11:32-04:00
+
+====== Some and Every ======
+Created Tuesday 30 March 2021
+
+These are equivalent to **any **and **all** in Python.
+They return a boolean. **EVERY will return True if ALL values in the array meet the condition**, and **SOME will return True if even just ONE value meets the passed in criteria.**
+
+
+**Example of Every:**
+	const words = ['dog', 'cat', 'ball'];
+	**words.every(word => {**
+		**return word.length >= 3;**
+	});
+	
+	This would return TRUE because every word is 3 letters long or greater.
+	
+	
+	**words.every(word => word[0] === 'd');**
+		This would return FALSE because only one word starts with **d.**
+	
+	
+	**words.every(word => {**
+		const last = word.length - 1;
+		return word[last] === 'g'
+	});
+		**This would also return FALSE because only ONE word has an ending "g".**
+		
+

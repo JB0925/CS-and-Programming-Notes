@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-26T22:14:02-04:00
+
+====== Templating and CSS in Express ======
+Created Sunday 26 September 2021
+
+To serve dynamic html templates in Express, use **nunjucks**, which is essentially a port of Jinja2.
+
+**npm install nunjucks**
+**const nunjucks = require("nunjucks");**
+
+**nunjucks.configure("templates", {**
+	autoescape: true,
+	express: app
+**});**
+
+
+To serve CSS, create a directory called **public** on the same level as **app.js**. Then run this middleware:
+	**app.use(express.static(process.cwd() + '/public'));**
+	
+
+In your HTML file, reference your stylesheet like:
+	<link rel="stylesheet" href="/css/file.css">
+	

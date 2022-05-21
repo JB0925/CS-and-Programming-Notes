@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-17T18:07:36-04:00
+
+====== Predicate ======
+Created Sunday 17 April 2022
+
+Predicates are functional interfaces that take in a single parameter and return a Boolean, effectively making you write a boolean expression.
+
+**Example:**
+	Predicate<String> showOrNot = show -> show.equals("yes");
+	
+**Explanation:**
+	What this is saying is, "return **true** if show == "yes", otherwise return **false**.
+	
+**Usage Example:**
+	if (**showOrNot.test(myVar)** {
+		// do stuff...
+	}
+	

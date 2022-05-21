@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-25T11:44:27-05:00
+
+====== How to Pass Form Data to a Template ======
+Created Thursday 25 February 2021
+
+**Some Basic Logic For Passing Form Data from Page to Page:**
+
+{{.\pasted_image.png}}
+
+
+Using the **'@login_required** decorator here means that if a User tries to go here without being logged in, they will be redirected to the login page.
+
+**Send From:**
+	**Basic Idea:**
+		- create an instance of the form
+			- if it's a POST request, pass the POST request data to our form and, if it's valid data, save it. 
+			- redirect to the Display page
+			
+			- if it's NOT a POST request, pass the bank form into a **render** call to render the page's HTML.
+
+{{.\pasted_image001.png}}
+
+**Send To:**
+	**Basic Idea:**
+		- if it's a GET request, just render the basic html of the page
+		
+		- if it's a POST request, pull the data out from the form (**notice the special handling of the 'BooleanField**), create a model object, save it, and render the display_page template, this time with the info passed in as context.
+		
+		
+
+
+
+

@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-23T12:33:55-05:00
+
+====== Multiple Upper Bounds ======
+Created Wednesday 23 February 2022
+
+**Example:**
+	public class Team<**T extends Player & Coach & Manager**> {
+		**//**
+	}
+	
+	
+	Now, you can accept people on the team from the Player, Coach, and Manager class.

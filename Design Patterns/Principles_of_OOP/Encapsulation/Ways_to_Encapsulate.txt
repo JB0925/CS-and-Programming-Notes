@@ -1,0 +1,47 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-02T00:19:57-05:00
+
+====== Ways to Encapsulate ======
+Created Wednesday 02 February 2022
+
+How do we use encapsulation?
+
+In Java, you'd need to make the class variable **private.**
+
+**Example:**
+
+public class Account {
+	**private** float balance;
+}
+
+public class Main {
+	public static void main() {
+		var account = new Account();
+		**account.balance = -1;**
+	}
+}
+
+
+The above bolded line will then throw an error, because you can't modify **balance** due to it being a private variable inside of the **Account** class.
+
+
+**How do we get and set private variables?**
+	- By using **getters** and **setters**
+	
+For example, 
+
+public class Account {
+	**private** float balance;
+	
+	**public void setBalance(float balance) {**
+		if (balance >= 0) {
+			this.balance = balance;
+		}
+	}
+	
+	**public float getBalance() {**
+		  return **balance**
+	}
+}
+

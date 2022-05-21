@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-25T12:11:21-04:00
+
+====== The Slice Method ======
+Created Thursday 25 March 2021
+
+Slice is like doing list slicing in Python.
+
+**myLst[3:6]   **in [[JavaScript]] is **myLst.slice(3, 6)**
+	returns a new list that is a subset of the original list
+	- does not modify the original list
+	- is not inclusive, so just like in Python, you have to provide a final index that is one greater than the final value you want.
+	
+	- **NOTE: You can also pass in negative indices to slice()**. For example, **.slice(-1)** will return an array with the last element in the original array, and **.slice(-4, -1)** will return an array with the values starting at index **-4, **and ending at **index -1 (non inclusive)**
+	
+	

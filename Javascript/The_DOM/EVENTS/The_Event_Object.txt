@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-19T08:17:20-04:00
+
+====== The Event Object ======
+Created Monday 19 April 2021
+
+**Example:**
+
+	h1 = document.querySelector('h1');
+	h1.addEventListener('click', function(**evt**) {
+		**console.log(evt)**
+		alert('hey, you clicked me!!!')
+	});
+	
+
+When you use **addEventListener**, you have access to a callback object that has information about the event that happened. **This can be useful in things like keypress events, etc., where you might need to know what key was pressed. **You treat this object like any other object. To access it, you pass it into the **function** argument that **addEventListener** takes. You can call it **e, evt**, or **event**, or whatever you want. 
+
+YOU DO NOT HAVE TO USE THIS IF YOU DON'T WANT TO.
+
+
+

@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-02T21:35:43-05:00
+
+====== Create Tables With Constraints ======
+Created Tuesday 02 March 2021
+
+It is a good idea to specify constraints into the table to ensure that before someone enters new records into the table, it must satisfy the constraints placed onto the table.
+
+**Example:**
+	CREATE TABLE person (
+		id BIGSERIAL **NOT NULL PRIMARY KEY**,
+		first_name VARCHAR(50) **NOT NULL**,
+		last_name VARCHAR(50) **NOT NULL**,
+		gender VARCHAR(10) **NOT NULL**,
+		date_of_birth DATE **NOT NULL**,
+	);
+
+The constraints are placed in bold. **NOT NULL** means that you are not allowed to place an entry into the table without that value.
+BIGSERIAL - an autoincrementing 8-bit integer
+PRIMARY KEY - what uniquely identifies a person in the actual table, i.e. four people can have the same first and last name (John Smith), but they can never have the same id
+
+{{.\pasted_image.png}}

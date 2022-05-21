@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-29T11:58:24-04:00
+
+====== Checking Out Past Versions of Your Code ======
+Created Thursday 29 October 2020
+
+**Use the SHA to tell Git to go to any of the previously saved commits and view the repo as it was then:**
+
+Go to **Git Log** to get the SHA for a commit.
+
+**HEAD: **Git's name for whatever SHA you happen to be looking at at any time. 
+			- NOT what is on your filesystem.
+			- NOT what is in your staging area.
+			
+**DETATCHED HEAD:**
+			- a HEAD pointing to a SHA that does not have a branch (or label) associated with it
+
+
+**How to Get Back to Where You Were:**
+		- type:
+			**git checkout master**
+
+

@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-23T17:01:19-05:00
+
+====== Store Functions in Dicts to Call Later ======
+Created Saturday 23 January 2021
+
+Here's how you can store a function in a dictionary and then, when the dictionary key is called, you can call the function:
+
+**Storing the functions as dict values:**
+	{{.\pasted_image.png}}
+
+
+**Calling the functions later with dict.get():**
+	{{.\pasted_image001.png}}
+	
+	notice the parentheses after the .get call. That is the parentheses used to call the function.
+	

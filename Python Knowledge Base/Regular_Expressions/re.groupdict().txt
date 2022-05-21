@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-10T15:37:15-05:00
+
+====== re.groupdict() ======
+Created Tuesday 10 November 2020
+
+for **re.Match** objects, such as **re.search()** and **re.match()**, you can return a dictionary of all the match objects if you want to. This is done with **groupdict()**
+
+**Example:**
+
+MIME-Version: 1.0
+**From: redacted-address**
+**To: redacted-address**
+**Subject: A Test From SendGrid**
+Message-ID: <1371661773.974270694268263@mf9.sendgrid.net>
+**Date: Wed, 19 Jun 2013 17:09:33** +0000 (UTC)
+
+
+So, if we needed to match the bolded parts of the bolded lines:
+
+re.search(r'(?P<from>(?<=From: )[^\n]+).*(?P<to>(?<=To: )[^\n]+).*(?P<subject>(?<=Subject: )[^\n]+).*(?P<date>(?<=Date: )[\w\d\s,:]+[\d]{2})', header, re.DOTALL).groupdict()
+
+**returns:**
+
+{'from': 'redacted-address', 'to': 'redacted-address', 'subject': 'A Test From SendGrid', 'date': 'Wed, 19 Jun 2013 17:09:33'}
+
+**IMPORTANT NOTES ABOUT THE PATTERN ABOVE:**
+
+1). grouping:
+		to make a named group, "**?P<groupname>" **is needed before the text you want to search for. Following that is any regex you want to match the text.
+
+2). Positive Lookbehind:
+		in the example above, after the "?P<groupname>" section, I used a **Positive Lookbehind: (?P<from>(?<=From: )[^\n]+)**
+		so, after the group name, I used more parentheses to delineate the **Positive Lookbehind.** This means that for whatever regex that is written after it, **whatever is in the Positive Lookbehind** must come directly before it.
+				so, **(?<=From: )[^\n]+) **means that "**From: " **must come directly before the "any non-newline characters" portion that is being searched, which really narrows it down to the only section that has "**From: **" and makes the search much easier.
+				
+3). **.* **between groups:
+		**.*** between the groups means it will match any character that appears 0 or more times, which includes the \n newline because of # 4:
+		
+
+4). re.DOTALL:
+		In regex, "." typically means any character except for "\n". So, if there is a \n in a string, the regex you wrote won't look past the \n.
+		However, with the **re.DOTALL** flag, it will include the "\n" and allow it to look past it.
+

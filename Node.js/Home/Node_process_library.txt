@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T21:51:16-04:00
+
+====== Node process library ======
+Created Monday 06 September 2021
+
+Node provides a global object, called **process**
+
+**process** is used to manage the current script.
+
+Using **process**, we can:
+	- access environment variables
+	- see the command line args passed to the script
+	- kill the script

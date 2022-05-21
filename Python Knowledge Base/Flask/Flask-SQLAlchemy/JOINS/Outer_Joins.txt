@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-22T23:40:02-04:00
+
+====== Outer Joins ======
+Created Thursday 22 July 2021
+
+Remember, outer joins will give us everything from the first table, regardless of whether or not there is a match in the second table. (Same as Left Join).
+
+**Example:**
+	emps = (db.session.query(Employee, Department)
+			.outerjoin(Department).all())
+
+
+**NOTE: **If you wanted to do a RIGHT JOIN to get all info from Department, regardless of whether there was a match or not in Employee, you'd just put Employee inside of the .join() call.
+

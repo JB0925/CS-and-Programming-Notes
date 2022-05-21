@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-18T10:01:39-04:00
+
+====== Access Array Data with Indices ======
+Created Thursday 18 March 2021
+
+Just like Python, you can access an array value using bracket notation and an index value.
+
+**Example:**
+	**var ourData = [50, 60, 70];**
+	**var myNumber = ourData[0];**
+	
+	**console.log(myNumber)**
+		- returns 50
+

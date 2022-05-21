@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-12T12:33:44-05:00
+
+====== Using Vim ======
+Created Thursday 12 November 2020
+
+to enter or edit a text file in a directory, use:
+
+		**vi filename.txt**
+		
+
+to insert changes:
+		**press the lowercase letter "i" **, and then you can type freely
+		
+
+to go back to **NORMAL** mode:
+		**hit ESC**
+
+
+to save changes:
+		**once in NORMAL mode (see above)**, type **:w**, and your work will be saved
+
+to quit once back in **NORMAL** mode:
+	to quit without saving - **:q**
+	to force quit - **:q!**
+	to quit and save - "**:wq**
+	another way to quit and save - **:x**
+	
+

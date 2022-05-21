@@ -1,0 +1,81 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-18T11:36:53-04:00
+
+====== The Splice Method ======
+Created Thursday 18 March 2021
+
+Similar to Python's **lst.remove(lst[2:4]) OR lst.insert()**
+
+**Syntax:**
+	**myList.splice(start_index, how many things to remove, items to insert**
+	
+**USING SPLICE TO INSERT:**
+	**myList = myList.splice(1, 0, "cat")**
+	console.log(mylist)
+		**returns myList with the word "cat" inserted at the first index**
+
+
+**USING SPLICE TO DELETE:**
+	let **myList = ['cat', 'dog', 'bear', 'whale'];**
+	**myList.splice(1, 2)							#**this is now a returnable object
+		deletes two items from **myList**, starting at **index 1**
+			so now, **myList = ['cat', 'whale']**
+
+
+**USING SPLICE TO DELETE AND INSERT AT THE SAME TIME:			**#replace
+	let **myList = ['cat', 'dog', 'bear', 'whale'];**
+	  **myList.splice(1, 2, 'sugar')**
+		deletes two items from **myList, **starting at **index 1**, but this time **INSERTS** "sugar" in at index 1
+			so, **myList = ['cat', 'sugar', 'whale'];**
+
+
+**Splice Method with Only One Argument:**
+	**Example:**
+		**var myList = [2,4,6,8];**
+		**myList.splice(1);**
+			returns **[2]**
+		**myList.splice(2);**
+			returns **[4,6]**
+
+
+**Splice Method with Two Args:**
+	**Example:**
+		**var myList = [2,4,6,8];**
+		**myList.splice(0, 2);			**#start at index 0 and take two elements out of the array and return them as a new, separate array
+		**console.log(myList)**
+			returns **[6,8]**
+			
+**NOTE: **Remember that just like **.pop()**, **.splice()** also returns the specified element(s) as an array, **so you can set this as a variable, aka:**
+			**var newList = myList.splice(0, 2);**
+			console.log(myList);
+				**returns [6,8]**
+			console.log(newList)
+				**returns [2,4]**
+
+
+
+
+**Slice:**
+	A string method that slices a string starting at the passed in index and returns everything to the end of the string, unless you pass in an end index.
+	
+	"**Baseball".slice(4)**
+		- returns **"ball"** (starts at index 4, to end of string)
+	
+	
+	**"Baseball".slice(40)**
+		- returns ""
+	
+	**"Baseball".slice(0, 5)**
+		- **NOT** inclusive
+		- returns **"Baseb"**
+
+
+
+**Replace:**
+	**Example:**
+		- let annoyingLaugh = '**teehee** so funny! **teehee**!';
+		- **annoyingLaugh.replace('teehee', 'haha')**
+			- returns '**haha** so funny! **teehee!'**
+			- **NOTE** how it only replaces the first instance of the substring
+

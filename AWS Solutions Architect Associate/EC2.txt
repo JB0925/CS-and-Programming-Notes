@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T11:38:49-05:00
+
+====== EC2 ======
+Created Sunday 09 January 2022
+

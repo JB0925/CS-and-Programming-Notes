@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-11T20:51:10-04:00
+
+====== What the files look like ======
+Created Saturday 11 September 2021
+
+Here is a snapshot of a fake Cat API, created to get familiar with Supertest and how it all works. Obviously the data, imports, and logic will change, but we will **always** need **server.js**, exporting and importing **app**, and moving **app.listen** into **server.js.**
+
+**TAKEAWAY: **This is pretty much just **jest** testing. You even run the test with **jest**. The big thing that it gives you is a **request client**, which allows you to actually test your routes to ensure they work like you think they should:
+	**const res = await request(app).get()**
+
+Obviously, you can also use .post, .patch, etc.
+
+{{~/Desktop/ScreenShots/Supertest Setup and Test Example.png}}
+

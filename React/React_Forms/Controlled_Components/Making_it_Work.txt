@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-21T23:46:26-04:00
+
+====== Making it Work ======
+Created Wednesday 21 July 2021
+
+1). Set the **value** attribute on the input to be some part of the **state,**
+		maybe **this.state.fullName**, for example.
+
+2). Since **handleChange **runs on every keystroke to update the React state,
+	 the displayed value will update as the user types.
+
+3). Every state mutation will have an associated handler function. This makes it easy to modify or change state.
+		**Example:**
+			handleChange(evt) {
+				this.setState({
+					fullName: evt.target.value
+				});
+				
+			}
+
+4). An **onSubmit** event is added to the form element itself. This is used to clear the input and start **username** over as an empty string.
+
+
+

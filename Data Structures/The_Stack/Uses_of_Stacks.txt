@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-16T14:51:51-04:00
+
+====== Uses of Stacks ======
+Created Wednesday 16 September 2020
+
+Stacks are used everywhere, both in the actual writing of code as well as in real world scenarios
+
+**A few examples:**
+	- undo/redo button
+	- back-paging on web browsers
+	- recursion and recursive functions
+	

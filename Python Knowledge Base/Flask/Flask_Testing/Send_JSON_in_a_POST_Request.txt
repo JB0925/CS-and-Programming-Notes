@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-06T23:23:23-04:00
+
+====== Send JSON in a POST Request ======
+Created Tuesday 06 July 2021
+
+If you need to send JSON in a POST request to a route while testing, here's how you do it:
+
+**1).** import json
+
+{{~/Desktop/ScreenShots/Flask Unittest send JSON in POST Request.png}}
+
+
+**NOTE:** Data must be a dictionary, and then you call **json.dumps()** on it. 
+		Also, add **content_type='application/json'**
+

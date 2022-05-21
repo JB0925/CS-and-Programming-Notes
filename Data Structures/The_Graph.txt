@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-03T01:35:08-04:00
+
+====== The Graph ======
+Created Saturday 03 October 2020
+
+{{.\pasted_image.png}}
+
+
+{{.\pasted_image001.png}}
+
+{{.\pasted_image002.png}}
+
+{{.\pasted_image003.png}}
+
+{{.\pasted_image004.png}}
+
+{{.\pasted_image005.png}}
+
+{{.\pasted_image006.png}}
+
+{{.\pasted_image007.png}}
+

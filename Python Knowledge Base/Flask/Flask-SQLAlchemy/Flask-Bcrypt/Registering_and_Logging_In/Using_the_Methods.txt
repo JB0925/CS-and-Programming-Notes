@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-05T01:27:50-04:00
+
+====== Using the Methods ======
+Created Thursday 05 August 2021
+
+**Registering:**
+	tim = User.register("tim", "hello world")
+	db.session.add(tim)
+	db.session.commit()
+
+
+**Logging In:**
+	User.login("tim", "hello world")
+		-returns the user
+

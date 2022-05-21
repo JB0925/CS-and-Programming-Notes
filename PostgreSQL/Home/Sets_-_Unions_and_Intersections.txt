@@ -1,0 +1,63 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-13T08:17:55-04:00
+
+====== Sets - Unions and Intersections ======
+Created Tuesday 13 April 2021
+
+**Query:** Find the four highest priced items, AND the four items with the highest price-to-weight ratio.
+
+**SQL to find 4 highest priced items:**
+	SELECT *
+	FROM products
+	ORDER BY price DESC
+	LIMIT 4;
+	
+	Returns the four highest priced items, ranked from most expensive to least.
+
+
+**SQL to find highest price-to-weight ratio:**
+	SELECT *
+	FROM products
+	ORDER BY price / weight DESC
+	LIMIT 4;
+	
+	Returns the four highest price/weight ratio items, biggest ratio to smallest.
+	
+
+
+**How can we combine these queries?:**
+	Use the **UNION** keyword. The purpose of **UNIONb **and **UNION ALL** is to join together two separate queries.
+	
+	To do so, write both queries with **NO** semicolons, wrap both in separate parentheses and, in between the parentheses, use the **UNION** keyword.
+	
+	**Example:**
+	
+	(
+	   SELECT *
+	   FROM products
+	   ORDER BY price DESC
+	   LIMIT 4
+		)
+	**UNION**
+	(
+		   SELECT *
+	   FROM products
+	   ORDER BY price / weight DESC
+	   LIMIT 4
+		);
+
+{{file:///var/folders/j3/_t3lnk4s6qj4626wqs10dzf40000gn/T/TemporaryItems/NSIRD_screencaptureui_XXK6zs/Screen%20Shot%202021-04-13%20at%208.57.46%20AM.png}}
+
+
+**NOTE: There are 7 rows, not 8, because one of the rows is present in BOTH queries**
+
+To see all 8 rows, you would use the same syntax as above, just the keywords **UNION ALL** instead of just **UNION.**
+
+
+{{~/Desktop/Screen Shot 2021-04-13 at 9.47.05 AM.png}}
+
+
+Here, we can see that there are 8 rows, and that the row with the product **Incredible Granite Mouse** is listed twice.
+
+

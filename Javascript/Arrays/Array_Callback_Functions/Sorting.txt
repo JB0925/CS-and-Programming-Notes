@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-31T08:54:28-04:00
+
+====== Sorting ======
+Created Wednesday 31 March 2021
+
+Using **myArray.sort()** will work just fine if the values being sorted are strings. 
+
+For numbers, pass in a callback function.
+
+**Examples:**
+	To sort in ascending order (smallest to biggest):
+	**let nums = [5,2,4,3,1];**
+	
+	Ascending:
+		**nums = nums.sort((a,b) => a - b);**
+			returns a new array of **[1,2,3,4,5]** and the old array is gone
+	
+	Descending:
+		**nums = nums.sort((a,b) => b - a);**
+			returns a new array of **[5,4,3,2,1]** and the old array is gone
+
+
+**Example with Objects:**
+	let people = [
+		{
+			name: 'Joe',
+			age: 32
+		},
+		{
+			name: 'Steve',
+			age: 21
+		}
+	];
+	
+	
+	**people = people.sort((a,b) => a.age - b.age);**
+		would return the list of book objects sorted with the youngest person first (index 0)
+		Doing **b.age - a.age** would return the opposite (descending order)
+		
+
+
+

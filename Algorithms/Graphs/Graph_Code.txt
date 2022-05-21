@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-06T23:33:36-04:00
+
+====== Graph Code ======
+Created Friday 06 August 2021
+
+**This is for an UNDIRECTED GRAPH.**
+
+class Graph:
+	def `__init__(self):
+		self.adjacency_list = {}
+	
+	
+	def add_vertex(self, vertex):
+		if not self.adjacency_list[vertex]:
+			self.adjacency_list[vertex] = [ ]
+	
+	
+	def add_edge(self, vertex1, vertex2):
+		self.add_vertex(vertex1)
+		self.add_vertex(vertex2)
+		self.adjacency_list[vertex1].append(vertex2)
+		self.adjacency_list[vertex2].append(vertex1)
+	
+	
+	def remove_edge(self, vertex1, vertex2):
+		if not self.adjacency_list[vertex1] or not self.adjacency_list[vertex2]:
+			return
+		
+		self.adjacency_list[vertex1].remove(vertex2)
+		self.adjacency_list[vertex2].remove(vertex1)
+		return self
+	
+	
+	def remove_vertex(self, vertex):
+		if not self.adjacency_list[vertex]:
+			return
+		
+		for v in self.adjacency_list[vertex]:
+			self.remove_edge(v, vertex)
+
+		del self.adjacency_list[vertex]
+		return self
+		
+		
+		
+		
+		
+

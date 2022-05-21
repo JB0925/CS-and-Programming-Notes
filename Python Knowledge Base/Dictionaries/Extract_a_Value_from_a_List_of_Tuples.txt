@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-26T22:45:22-04:00
+
+====== Extract a Value from a List of Tuples ======
+Created Sunday 26 July 2020
+
+https://stackoverflow.com/questions/38148105/python-accessing-individual-values-in-a-dictionary-of-a-list-of-tuples
+
+First answer is the best.
+
+your_dict = {'Key1': [('Hi', 1), ('Bye', 2)], 'Key2': [('Cats', 'Blue'), ('Dogs', 'Red')]}
+
+
+for key in your_dict:
+	for t in your_dict[key]:
+		for i in t:
+			print(i)

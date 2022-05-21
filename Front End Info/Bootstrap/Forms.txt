@@ -1,0 +1,68 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-28T22:18:30-05:00
+
+====== Forms ======
+Created Sunday 28 February 2021
+
+Classes used in Bootstrap Forms:
+	- **form-group:** adds a little bit of margin between elements; associates a <label> with an <input>
+	- **form-control: **inputs take this class
+	
+	**NOTE:** wrap each input/label combination in a div with the class of **form-control**
+	**Example:**
+		<div class="form-control">
+			<label for="email">Email</label>
+			<input type="email" class="form-control" id="email" placeholder="email">
+		</div>
+	
+	**Example 2 With a Select Box (Choose one choice of many):**
+		<div class="form-control">
+			<label for="state">State</label>
+			<select class="form-control" id="state" name="state">
+				<option value="AL">Alabama</option>
+				<option value="AK">Alaska</option>
+			</select>
+		</div>
+	
+	
+	- **form-control-lg** and **form-control-sm:** make the form inputs larger or smaller. Not useful for radio or checkboxes
+	
+
+
+**Checkboxes:**
+	- these are not easy to style and, for the most part, will look like the standard, out of the box, HTML checkbox
+	{{.\pasted_image.png}}
+	- wrapped in a div with the class of **form-check**
+	- input gets a class of **form-check-input**
+	- label gets a class of **form-check-label**
+	
+	- One other option is to use the "customized checkbox"
+	{{.\pasted_image001.png}}
+	- this adds a little bit of glow when you hover
+
+
+**Radio Buttons and Switches, Customized Selects, Range sliders:**
+	- can also get "custom" radio boxes and switches, Selects, and range sliders; consult the docs for more info.
+
+
+
+**How to put form elements side by side if desired:**
+	- just use the grid system
+		<div class="container">
+			<div class="row">
+				<div class="form-control col-6">
+					<label for="email">Email</label>
+					<input type="email" class="form-control" id="email" placeholder="email">
+			  </div>
+				<div class="form-control col-6">
+					<label for="email">Email</label>
+					<input type="email" class="form-control" id="email" placeholder="email">
+				</div>
+			</div>
+		</div>
+	
+	- **This would create a form where each form input would share 6 units of the 12 unit grid row**
+	- **NOTE:** instead of "row", you can use **form-row** if you want. This makes the form inputs closer together
+	- **NOTE: **to make these responsive, instead of **col-6**, you can use **col-md-6**. This means that, above the **medium** breakpoint, the inputs would share 6 units of space in the row. Below the medium breakpoint, they would stack on top of each other. For another example, **col-md-3 col-6** would mean that above the medium breakpoint, the item would take up 3 units of space in the row, and below the medium breakpoint, it would take up 6 units of space.
+	

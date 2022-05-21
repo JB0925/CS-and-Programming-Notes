@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-05T13:31:03-04:00
+
+====== Destructuring Nested Arrays ======
+Created Saturday 05 June 2021
+
+const movies = [ {
+	title: 'Batman',
+	year: 2000,
+	category: 'action'
+},
+{
+	title: 'Superman',
+	year: 1974,
+	category: 'action'
+},
+{
+	title: 'The Sandlot',
+	year: 1997,
+	category: 'comedy'
+}];
+
+
+**const {movies: [first]} = movie;**
+**const {movies: [, second]} = movie;**
+console.log(first);
+	returns the first object in the array
+
+console.log(second);
+	returns the second object in the array
+
+
+**How to get ONE value out of ONE object in the array:**
+	**const {movies: [{year}]} = movies;**
+	console.log(year);
+		**returns 2000**
+	
+	**const {movies: [, {year: date}]} = movies;**
+	console.log(date);
+		**returns 1974**
+	
+	**Remember, a comma pass in tells JS to skip over a position, so here we skipped the first position and went right to the second.**
+	We also renamed the **year** variable to be **date.**
+	

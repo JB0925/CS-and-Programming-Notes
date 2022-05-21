@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-23T15:03:51-05:00
+
+====== Docker-Compose Rebuild Quickly ======
+Created Sunday 23 January 2022
+
+**Scenario:** You are running a container / multiple containers. You add new packages, change your code, etc.
+
+To restart with the changes, you'd typically have to do:
+	**docker-compose down**
+		- wait for containers to stop
+	
+	**docker-compose up -d --build**
+		- rebuild images and run containers
+		
+
+**How to Get Around It:**
+	simply run **docker-compose up -d --build -V**
+	
+	- this will recreate the container with the new changes reflected
+	
+	- it creates **brand new anonymous volumes**, so that the new additions to **node_modules** are reflected
+	
+**NOTES:**
+	- you obviously need to be in detached mode, or a different terminal, to make this work
+	
+	- 
+	

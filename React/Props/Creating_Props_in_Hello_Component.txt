@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-13T01:03:07-04:00
+
+====== Creating Props in Hello Component ======
+Created Sunday 13 June 2021
+
+**Example "Hello" Component:**
+	class Hello extends React.Component {
+		render() {
+			console.log(this.props);
+			return <h1>Hello There!</h1>
+		};
+	};
+	
+	
+
+**So how do we pass the "to" and "from" props in?**
+	- on the **index.js** file, when rendering the app and calling the component, you will pass in the **props** as if they were HTML attributes:
+	
+	**Example:**
+		class App extends React.Component {
+			render() {
+				return (
+					<div>
+						<Hello to="**ringo**" from="**paul**"/>
+						<NumPicker/>
+					</div>
+				)
+			}
+		}	
+		
+		**The "to" and "from" are the props.**
+		
+
+	Thinking back to our **console.log(this.props)** statement in the **Hello** component, it will now have an **Object** with {from: "ringo", to: "paul"} in it.
+	
+	Because it is an **Object**, you could console.log(**this.props.to**) or console.log(**this.props.from**) like you could with any other object.
+	
+
+**Let's Rewrite Our Hello Component to Include the Usage of the "to" and "from" Props:**
+
+	class Hello extends React.Component {
+		render() {
+			return <h1>Hi {this.props.to} from {this.props.from}.</h1>
+		};
+	};
+	
+	
+	**Now, if we run our app, we see:**
+		**Hi Ringo from Paul.**
+

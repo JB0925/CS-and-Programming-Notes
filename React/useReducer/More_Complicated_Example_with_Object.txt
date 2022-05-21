@@ -1,0 +1,81 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-07T20:54:11-05:00
+
+====== More Complicated Example with Object ======
+Created Tuesday 07 December 2021
+
+**/** The Inital State to pass into useReducer**
+const initialState = {
+	plus: 0,
+	minus: 10,
+	times: 10
+  }
+
+
+**/** The Reducer Function - takes original state AND an action object**
+const countReducer = (oldState, { type, payload }) => {
+	let { plus, minus, times } = oldState;
+	
+	switch (type) {
+	  case "plus":
+		return {
+		  ...oldState,
+		  plus: plus + payload
+		}
+		
+	  case "minus":
+		return {
+		  ...oldState,
+		  minus: minus - payload
+		}
+		
+	  case "times":
+		return {
+		  ...oldState,
+		  times: times * payload
+		}
+
+	  default:
+		throw new Error();
+	} 
+  }
+
+**NOTE: **The action object does NOT have to have a **payload** property.
+
+
+**/** Action Objects**
+const plusAction = {
+	type: "plus",
+	payload: 1
+  }
+
+  const minusAction = {
+	type: "minus",
+	payload: 1
+  }
+
+  const timesAction = {
+	type: "times",
+	payload: 2
+  }
+
+
+**/** Declaring useReducer**
+const [state, dispatch] = useReducer(countReducer, initialState); 
+
+**Remember, useReducer takes the Reducer fn, and the starting state.**
+
+
+**/** Helper fns that Update State**
+const increment = () => dispatch(plusAction);
+const decrement = () => dispatch(minusAction);
+const multiply = () => dispatch(timesAction);
+
+let { plus, minus, times } = state; **from useReducer**
+
+return (
+  <div>
+	<button onClick={increment}>{plus}</button>
+	etc...
+  </div> 

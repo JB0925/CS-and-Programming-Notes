@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-16T15:12:12-05:00
+
+====== tail ======
+Created Monday 16 November 2020
+
+call **tail -n(number) filename.txt     **to get the last N lines of the file, directory listing, etc.

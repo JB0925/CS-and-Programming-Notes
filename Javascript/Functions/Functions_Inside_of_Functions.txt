@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-28T23:40:33-04:00
+
+====== Functions Inside of Functions ======
+Created Sunday 28 March 2021
+
+Much like a Python decorator, you can create a function inside of another function:
+
+**Example:**
+	function func1(a, b) {
+		function func2() {
+			  return `${a} multiplied by ${b} is ${a * b}.`
+		}
+		return func2()
+	}

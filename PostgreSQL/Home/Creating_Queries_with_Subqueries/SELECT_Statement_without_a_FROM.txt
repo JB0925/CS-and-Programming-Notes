@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-14T11:54:29-04:00
+
+====== SELECT Statement without a FROM ======
+Created Friday 14 May 2021
+
+You can write a valid SELECT clause without using a FROM statement.
+
+This can be done with a subquery, **as long as the subquery returns only one single value**.
+
+{{~/Desktop/ScreenShots/SELECT without FROM.png}}
+
+
+
+This could be useful when you only need one particular value, or you want to get the result of some math problem from a table.
+
+
+

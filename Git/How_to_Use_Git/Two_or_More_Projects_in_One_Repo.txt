@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-11-01T08:49:15-04:00
+
+====== Two or More Projects in One Repo ======
+Created Monday 01 November 2021
+
+To push two or more projects to one repo, just push them on different branches.
+
+**Example:**
+
+Project1:
+	git remote add origin ...
+	git push -u origin master:project1
+	
+Project2:
+	git remote add origin ...
+	git push -u origin master:project2
+	

@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-19T00:50:51-05:00
+
+====== Closures ======
+Created Wednesday 19 January 2022
+
+A closure is the ability for **inner functions** to remember variables defined in **outer functions** long after the outer function has returned.
+
+This is useful for encapsulating logic and creating private variables.
+
+**Example:**
+
+function idGenerator() {
+  let start = 0;
+  return function generate() {
+	start++;
+	return start;
+  };
+}
+
+**let nextId = idGenerator();**
+
+**nextId()**
+	**// 1**
+
+**nextId();**
+	**// 2**
+
+nextId is the **function that was returned** from **idGenerator**. It remembers the start variable and, because of that, is able to increment it by one each time we call it.
+

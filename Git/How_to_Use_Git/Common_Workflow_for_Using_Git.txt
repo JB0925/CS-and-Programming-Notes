@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-27T21:30:47-05:00
+
+====== Common Workflow for Using Git ======
+Created Friday 27 November 2020
+
+The following is a common workflow that many developers use every day re: Git:
+
+**Step 1 - Create a new Branch and checkout the new branch:**
+		git branch new_branch_name
+		git checkout new_branch_name
+
+**Step 2 - make changes to your file(s), add to staging area and commit (ALL ON NEW BRANCH; NOT MASTER):**
+		git add -A     **OR**     git add filename.py
+		git commit -m "updated my file"
+
+**Step 3 - push the new_branch to the remote repository:**
+		git push -u origin new_branch_name
+		git branch -a	**#confirms the new_branch is in the remote repository**
+
+**Step 4 - merge the new_branch with master:**
+		**#checkout master first**
+		git checkout master
+		git pull
+		git branch --merged				**#tells the branches that have been merged so far**
+		git merge new_branch_name
+		git push
+
+**Step 5 - delete the new_branch:**
+		git branch --merged				**#ensures the new_branch is actually merged with master**
+		git branch -d new_branch_name
+		git branch -a					#**will show that the new_branch is deleted locally, but NOT from the remote repository**
+		git push origin --delete new_branch_name		**#removes the branch from the remote repo**
+

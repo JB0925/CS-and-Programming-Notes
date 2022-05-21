@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-02T23:08:24-04:00
+
+====== How to Return Multiple Components at Once ======
+Created Wednesday 02 June 2021
+
+To return multiple components at once, you have to wrap your **return statement** in **parentheses:**
+
+	class Hello extends React.Component {
+		render() {
+			return **(**
+				<h1>Hello there!</h1>
+			**)**
+		}
+	}
+
+
+
+	`ReactDOM.render(<Hello/>, 		document.querySelector('#root'))
+	
+
+**A Couple of Notes:**
+	- Notice the **parentheses** after **render** instead of the curly braces
+	
+	- In order to return **more than one adjacent element in one component**, you have to **wrap them in some container **(like a div).
+	
+	class Hello extends React.Component {
+		render() {
+			return **(**
+				**<div>**
+					**<h1>Hello There!</h1>**
+**			      <h1>Hello There!</h1>**
+**			      <h1>Hello There!</h1>**
+				**</div>**
+			**);**
+		};
+	};
+

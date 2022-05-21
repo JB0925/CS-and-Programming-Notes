@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-08T23:53:59-05:00
+
+====== Find the pitch of recorded audio ======
+Created Sunday 08 November 2020
+
+def get_pitch(filename):
+	x, sr_ = librosa.load(filename)
+	pitches, mags = librosa.piptrack(y=x,sr=sr_)
+	index = mags[:,128].argmax()
+	pitch = pitches[index, 128]
+	note_name = librosa.hz_to_note(pitch)
+    
+	if len(note_name) > 2:
+		return f'{note_name[0]}#'
+	return note_name[0]

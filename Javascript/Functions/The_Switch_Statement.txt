@@ -1,0 +1,56 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-19T12:12:57-04:00
+
+====== The Switch Statement ======
+Created Friday 19 March 2021
+
+Instead of chaining **if / else** statements, you can use the **switch** statement.
+**Scroll down for info on the DEFAULT option in a switch statement.**
+
+
+**Example:**
+	function caseInSwitch(val) {
+	   var answer = '';
+	   switch(val) {
+		  case 1:
+		   answer = 'alpha';
+		   break;
+		case 2:
+		   answer = 'beta';
+		   break;
+		case 3:
+		   answer = 'gamma';
+		   break;
+		case 4:
+		   answer = 'delta';
+		   break;
+	   }
+	return answer;
+}
+
+
+
+**Default Option in a Switch Statement:**
+	It is kind of like "else" in an **if / else** statement.
+	function caseInSwitch(val) {
+	   var answer = '';
+	   switch(val) {
+		  case 1:
+		   answer = 'alpha';
+		   break;
+		case 2:
+		   answer = 'beta';
+		   break;
+		case 3:
+		   answer = 'gamma';
+		   break;
+		case 4:
+		   answer = 'delta';
+		   break;
+		default:
+		   answer = 'stuff';
+		   break;
+	   }
+	return answer;
+}

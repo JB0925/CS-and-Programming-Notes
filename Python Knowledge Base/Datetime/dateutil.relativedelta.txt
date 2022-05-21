@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-21T22:39:34-04:00
+
+====== dateutil.relativedelta ======
+Created Monday 21 September 2020
+
+**from dateutil.relativedelta import relativedelta**
+
+https://dateutil.readthedocs.io/en/stable/relativedelta.html
+
+useful as an alternative to datetime.timedelta
+
+pass in two datetime objects and it will find the amount of difference in the years, months, days, etc. Very expansive and will take many arguments.

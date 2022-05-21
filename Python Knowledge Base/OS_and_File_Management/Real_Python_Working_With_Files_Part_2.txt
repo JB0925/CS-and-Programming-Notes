@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-21T12:16:35-04:00
+
+====== Real Python Working With Files Part 2 ======
+Created Wednesday 21 October 2020
+
+**How to Create Multiple Directories:**
+
+1). Use **os.mkdirs():**
+	- it can be used to create individual directories and directory trees
+	**Example:**
+		import os
+		os.makedirs('2018/10/05')
+		
+		**This creates the nested directory where 2018 is the parent, inside of that is 10, and inside of that is 5.**
+	
+	You can change the permissions of the directories you create by changing the mode when calling mkdirs:
+	**Example:**
+		import os
+		os.makedirs('2018/10/05', mode=0o770)
+	
+	**more on permission modes: 		**www.docs.python.org/3/library/os.html#os.makedirs  
+	
+
+
+2). Use **pathlib.Path():**
+	**Example:**
+		import pathlib
+		p = pathlib.Path('2018/10/05')
+		p.mkdir(parents=True)
+		
+	**Passing "parents=True" to Path.mkdir() will make it create the directory "05" and any other parent directories necessary to create a valid path.**
+	
+
+
+Both **os.makedirs() **and **Path.mkdir()** will raise an error if the file already exists.
+To override this, pass **exist_ok=True** as a keyword argument when calling either function
+

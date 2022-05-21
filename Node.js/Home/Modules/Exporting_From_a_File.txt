@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T22:39:09-04:00
+
+====== Exporting From a File ======
+Created Monday 06 September 2021
+
+Use the built in **module.exports** to export things from a file:
+
+**Example:**
+
+const myGlobal = 42;
+
+function add() {
+	// stuff
+}
+
+class User {
+	constructor(name, username) {
+		this.name = name
+		this.username = username
+	}
+}
+
+const iDontNeedThis = 'not needed';
+
+
+**module.exports = {**
+	**myGlobal: myGlobal,**
+	**add: add,**
+	**User: User**
+**}**

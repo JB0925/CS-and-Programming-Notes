@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-26T19:44:18-05:00
+
+====== HashSet to Array ======
+Created Saturday 26 February 2022
+
+String[] array = new String[hset.size()];
+
+**hset.toArray(array);**

@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-02T22:55:06-05:00
+
+====== Navigate Your Filesystem ======
+Created Wednesday 02 December 2020
+
+**Get Info About Directories:**
+
+**ls -a**
+	lists all files in your directory (not long form), including dot files
+	
+**ls -la**
+	lists all files, including dot files, in **long list form**. (will tell you whether or not the item is a directory and what permissions you have)
+	
+
+
+
+**Change Directories:**
+
+**cd . . / . . **
+	**. .** is a relative path. Doing **cd . .** will take you one step back to the parent directory of the directory you are in
+	
+	Doing **cd . . / . .** will take you two paths back.....**cd . . / . . / . . **will take your three directories back, and so on
+	
+	
+**cd -**
+	will take you back to the last directory you were in. Almost works as a toggle switch if you need to go back and forth between two directories.
+	
+
+**cd or cd ~**
+	will take you to the **home** directory
+	**NOTE: can also use the "~" as a starting point. See the picture below:**
+{{.\pasted_image.png}}
+

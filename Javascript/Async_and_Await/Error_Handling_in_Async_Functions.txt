@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-23T14:55:06-04:00
+
+====== Error Handling in Async Functions ======
+Created Friday 23 April 2021
+
+One way to handle errors with an async function is to add a **.catch** clause to it:
+
+{{~/Desktop/ScreenShots/catch w async function.png}}
+
+
+Another way is to add a **try/catch** block inside the function itself:
+
+{{~/Desktop/ScreenShots/Try : Catch in async function.png}}
+
+

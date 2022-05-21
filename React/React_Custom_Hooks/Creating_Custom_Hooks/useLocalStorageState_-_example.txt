@@ -1,0 +1,66 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-17T00:35:20-04:00
+
+====== useLocalStorageState - example ======
+Created Sunday 17 October 2021
+
+**Example Before useLocalStorageState:**
+
+const Counter = () => {
+	const [count, setCount] = useState(() => {
+		let value;
+		value = JSON.parse(window.localStorage.getItem('count') || 0);
+		return value;
+	});
+	
+	useEffect(() => {		**// will happen every time count is reset**
+		window.localStorage.setItem('count', count);
+	}, [count]);
+	
+	const addToCount = () => {
+		setCount(count => count + 1);
+	};
+
+	return (
+		<>
+			<h4>{count}</h4>
+			<button onClick={addToCount}>Add</button>
+		</>
+	)
+}
+
+
+**Writing useLocalStorageState:**
+	const useLocalStorageState = (key, defaultValue = JSON.stringify(yourvalhere)) => {
+		const [state, setState] = useState(() => {
+			let value = JSON.parse(window.localStorage.getItem(key) || defaultValue);
+			return value;
+		});
+		
+		useEffect(() => {
+			window.localStorage.setItem(key, state);
+		}, [key,state]);
+		
+		return [state, setState];
+	};
+
+
+**Rewriting Counter:**
+const Counter = () => {
+	const [count, setCount] = useLocalStorageState('count', 0);
+	
+	const addToCount = () => {
+		setCount(count => count + 1);
+	};
+
+	return (
+		<>
+			<h4>{count}</h4>
+			<button onClick={addToCount}>Add</button>
+		</>
+	)
+}
+
+**Now**, in this update, we have our **useEffect** abstracted away. We have also abstracted away the initial setting of state in the initial call to **useState**.
+

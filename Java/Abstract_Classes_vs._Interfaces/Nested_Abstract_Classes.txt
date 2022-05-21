@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-23T09:20:57-05:00
+
+====== Nested Abstract Classes ======
+Created Wednesday 23 February 2022
+
+Say we have the following abstract class:
+	public abstract class Animal {
+		private String name;
+		
+		public Animal(String name) {
+			this.name = name;
+		}
+		
+		public String getName() {
+			return name;
+		}
+		
+		public abstract void eat();
+		public abstract void breathe();
+	}
+
+
+
+We can then go and create another, more specific but also fairly generic class, called "Bird" and make it abstract as well, so that more specific types of birds will have to implement its methods:
+
+	public abstract class Bird **extends** Animal {
+		public Bird(String name) {
+			super(name);
+		}
+		
+		@Override
+		public void eat() {
+			System.out.println(getName() + " is pecking.");
+		}
+		
+		@Override
+		public void breathe() {
+			System.out.prinln("Just breathe");
+		}
+		
+		**public abstract void fly();**
+	}

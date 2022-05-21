@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-14T22:47:50-04:00
+
+====== Shorthand Object Properties ======
+Created Wednesday 14 April 2021
+
+Shorthand Object Properties allow us to create an object from existing variables **without following the Key;Value syntax.**
+
+**Example:**
+{{~/Desktop/Screen Shot 2021-04-14 at 10.49.04 PM.png}}
+
+Here, we have several variables. We use the **shorthand object property** to create **team** object.
+
+You can also do this in a function. 
+
+let guard = 'Jordan';
+let forward = 'Pippen';
+let center = 'Longley';
+
+const team = {
+	guard,
+	forward,
+	center
+};
+
+**returns {guard: "Jordan", forward: "Pippen", center: "Longley"}**
+
+
+
+**Computed Keys:**
+	let player1 = "Michael Jordan";
+	let player2 = "Karl Malone";
+	
+	const team = {
+		[player1]: "Bulls",
+		[player2]: "Jazz"
+	};
+	
+	**returns {"Michael Jordan": "Bulls", "Karl Malone": "Jazz"}**
+	

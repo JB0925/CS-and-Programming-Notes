@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-20T12:41:51-05:00
+
+====== CSS Variables ======
+Created Saturday 20 February 2021
+
+Variables can be used in a similar manner to Python classes. 
+
+Basically, you create a main CSS class and give it one or more variables, which you can then use in other classes (**almost like "self"**)
+
+**Syntax:**
+	- {{.\pasted_image.png}}
+	In the example above, you can see the **variables** notated with **--var-name: value;**
+	To use them in another class, do the following:
+	
+	{{.\pasted_image001.png}}
+	You can see that it's basically like calling a Python function called **var**, with the argument being initially called it's name, followed by a **comma** and then the value, closed parentheses, and a semicolon.
+	**NOTE:** The **, gray** portion is called a **fallback value**, meaning that if something happens and the initial style or color can't show up, then use this color instead.

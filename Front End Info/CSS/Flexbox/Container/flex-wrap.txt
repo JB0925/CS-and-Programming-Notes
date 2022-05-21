@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-04T23:58:48-04:00
+
+====== flex-wrap ======
+Created Tuesday 04 May 2021
+
+**flex-wrap** specifies whether items are forced to be in a single line, **or they can be wrapped into multiple lines.**
+
+Without **flex-wrap (and if you have "flex-direction" set to row)**, changing the **width** will not change the size of the **flex-items** inside the **container**. They squeeze to fit into the container.
+
+**flex-wrap** allows the items to be displayed over multiple lines.
+
+**flex-wrap: wrap;**
+	- the code above will set the boxes to wrap when there is not enough space.
+	- **flex-wrap  controls the cross-axis**
+
+{{~/Desktop/ScreenShots/Flex-Wrap.png}}
+
+
+
+**flex-wrap: wrap-reverse;**
+
+{{~/Desktop/ScreenShots/flex-wrap: wrap-reverse.png}}
+
+
+
+
+

@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-27T14:03:03-05:00
+
+====== Typography ======
+Created Saturday 27 February 2021
+
+Think of typography as small additions you can make to classes to change HTML elements.
+
+**h1:**
+	**Display classes:**
+		- example: **<h1 class="display-1">Heading</h1>**
+		- there are four display classes **display-1, display-2, display-3, display-4**
+
+
+**p:**
+	**Lead class:**
+		- example: **<p class="lead">text</p>**
+		- makes the paragraph font bigger and bolder
+
+
+**Alignment:**
+	- can use classes like **text-left, text-center, text-right** to align text within an element
+	- **NOTE: **you may have to use **mx-auto** to center text
+
+**Text Color:**
+	- class="**text-primary**" or whatever else
+	- **NOTE:** use the **"bg-primary**", etc., to change the background color
+
+
+
+

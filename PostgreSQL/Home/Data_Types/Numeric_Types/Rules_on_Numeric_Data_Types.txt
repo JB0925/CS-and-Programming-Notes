@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-18T15:27:54-04:00
+
+====== Rules on Numeric Data Types ======
+Created Tuesday 18 May 2021
+
+**If the column is the ID column of the table → **Mark the **type** as **serial**
+
+**Need to store a number without a decimal? **→ Mark the **type **as **integer**
+
+**Need to store a number with a decimal, and the data needs to be very accurate? → **Mark the **type** as **numeric**
+							think bank balance, grams of gold, scientific calculations, etc.
+
+**Need to store a number with a decimal and the decimal isn't super important?  → **Mark the **type **as **double precision**
+							think kilograms of trash in a landfill, liters of water in a lake, air pressure in a tire
+							
+
+
+

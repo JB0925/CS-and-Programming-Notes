@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-21T09:37:11-04:00
+
+====== Decorators ======
+Created Wednesday 21 October 2020
+
+**Create a Basic Decorator:**
+
+def myfunc(func):
+	def wrapper(*args, **kwargs):
+		print('This is fun!')
+		print(func(*args, **kwargs))
+		print('bye!')
+	return wrapper
+	
+@myfunc
+def why(a, b):						**returns		This is fun!**
+	return a + b								  **13**
+															**bye!**
+print(why(7, 6)
+
+
+
+**Example of a timer function using a decorator:**
+import time
+
+def timer(func):
+	def wrapper(*args, **kwargs):
+		before = time.time()
+		func()
+		print(f'This took {time.time() - before} seconds to run.')
+	return wrapper
+	
+
+@timer
+def wait():
+	return time.sleep(3)
+
+print(wait())		**output=This took 3.000047589610 seconds to run.'**
+
+www.dbader.org/blog/python-decorators 
+https://realpython.com/primer-on-python-decorators/

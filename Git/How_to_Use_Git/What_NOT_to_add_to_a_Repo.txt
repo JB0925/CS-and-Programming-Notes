@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-29T11:42:41-04:00
+
+====== What NOT to add to a Repo ======
+Created Thursday 29 October 2020
+
+First, only put **source files (user created)** into Version Control(Git); never put **generated files(computer generated)** into Version Control
+
+A **generated file **is something the computer creates; usually by processing a source file. 
+	**Example:**
+			**source file:  **a hello.py file that you create
+			**generated file:  **a hello.pyc (Pycache) file that is made by the computer
+
+
+We don't store generated files for two reasons:
+	1). It wastes time and space, and can create conflict if you are generating CPython files and someone else is generating JPython files, etc.
+	
+	2). They are often larger than the original source files, and take up a lot of space.
+			**Git Rule:**
+					**Avoid committing large files**
+					**Never put confidential info into Git or GitHub...no passwords, API Keys, etc.**
+
+

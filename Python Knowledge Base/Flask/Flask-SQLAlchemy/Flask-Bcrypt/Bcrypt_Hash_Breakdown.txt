@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-04T22:49:57-04:00
+
+====== Bcrypt Hash Breakdown ======
+Created Wednesday 04 August 2021
+
+**prefix: b'2b** - Bcrypt's hashing algorithm
+
+**work factor: $12** - the work factor. This can't be lower than 5, and it can't be higher than 30. Even 18 is really, really slow. **Default is 12. **
+
+**NOTE:** If you want to change the **work factor**, you do so when generating the salt. **bcrypt.gensalt(rounds=14)**
+
+Following those, we have the **salt,** which is then followed by the **hash.**
+

@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-27T22:33:08-05:00
+
+====== Better Production Workflow ======
+Created Thursday 27 January 2022
+
+1). Build image on dev server
+
+2). Push image to **Dockerhub**
+
+3). Pull the image from **Dockerhub** into our **production server**
+	- log in to hub dot docker dot com and click **create repository**
+	- Give it a name and make it public
+	
+	- in prod environment, run **docker login** and provide relevant data
+	
+	- copy username/repo_name from Dockerhub
+      
+	- get current image name by running **docker image ls** 
+
+	- in prod server, **rename** the image you want to push by running
+		- **docker image tag current_image_name newname**
+	
+	- push to Dockerhub by running **docker push new_image_name**
+
+
+4). In **docker-compose.yml, update to:**
+
+version: "3.7"
+services:
+	node-app:
+		build: .
+		**image: jbrink0925/node-app**
+
+
+5). re-run **docker-compose up**
+	- this will pull the **jbrink0925/node-app** image and create a container for it in the production app
+

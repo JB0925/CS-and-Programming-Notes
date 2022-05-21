@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-02T10:19:21-04:00
+
+====== HAVING ======
+Created Friday 02 April 2021
+
+You will never see HAVING without GROUP BY.
+
+GROUP BY filters out groups. 
+
+
+**Example: Find all photos with more than 2 comments where the photo's id is less than 3**
+
+SELECT photo_id, COUNT(*)
+FROM comments
+WHERE photo_id < 3
+GROUP BY photo_id HAVING COUNT(*) > 2;
+
+
+**Example: Find all users where the user has commented on the first two photos and added more than 2 comments on those photos**
+
+SELECT user_id, COUNT(*)
+FROM comments
+WHERE photo_id <= 2
+GROUP BY user_id 
+HAVING COUNT(*) > 2;
+{{.\pasted_image.png}}

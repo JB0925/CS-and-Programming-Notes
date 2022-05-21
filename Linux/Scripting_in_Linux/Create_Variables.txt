@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-28T00:56:30-05:00
+
+====== Create Variables ======
+Created Saturday 28 November 2020
+
+create a variable on the command line with no spaces, like this: **foo=bar**
+
+to print the variable, call **echo "$foo"	**returns **bar**
+
+**NOTE:	**if you call **echo '$foo'** in single quotes instead of double quotes, it will print **$foo**
+
+{{.\pasted_image.png}}
+

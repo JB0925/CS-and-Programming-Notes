@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-05T12:03:53-05:00
+
+====== Upsert ======
+Created Friday 05 March 2021
+
+**Example:**
+
+	**INSERT INTO person (first_name, last_name, email)**
+	**VALUES ('Jhon', 'Smith', 'bababooey@gmail.com')**
+	**ON CONFLICT (id) DO UPDATE SET email = EXCLUDED.email**
+	

@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-16T15:05:33-04:00
+
+====== Handling Errors and Rollbacks ======
+Created Friday 16 July 2021
+
+You can use **db.session.rollback()** to force out bad data that you previously tried to commit.
+
+**try:**
+	user = User(name='John', email='john@gmail.com')
+	db.session.add(user)
+	db.session.commit()
+**except:**
+	db.session.rollback()
+	

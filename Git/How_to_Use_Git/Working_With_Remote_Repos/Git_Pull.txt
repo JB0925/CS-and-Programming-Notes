@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-11T15:02:51-05:00
+
+====== Git Pull ======
+Created Wednesday 11 November 2020
+
+to pull from a "GitHub" repo:
+	1). **if it's not set as the origin:**
+			**git pull origin master**
+	
+	2). **if it is set as the origin:**
+			**git pull**
+

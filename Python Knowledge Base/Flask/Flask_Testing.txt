@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-04T14:36:24-04:00
+
+====== Flask Testing ======
+Created Sunday 04 July 2021
+
+To be able to test routes, urls, redirects, etc., in Flask, we can use the **test_client()** method built into Flask.
+
+**Example:**
+	
+	from app import app
+	from unittest import 'TestCase
+	
+	class ColorViewsTestCase('TestCase):
+		def test_color_form(self):
+			with app.test_client() as client:
+				resp = client.get('/')
+				**#get only text from the html**
+				html = res.get_data(**as_text=True**)
+				
+				self.assertEqual(res.status_code, 200)
+				self.assertIn('<h1>Color Form</h1>', html)
+

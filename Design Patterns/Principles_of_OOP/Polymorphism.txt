@@ -1,0 +1,55 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-02T01:33:27-05:00
+
+====== Polymorphism ======
+Created Wednesday 02 February 2022
+
+Polymorphism deals with the the idea of a class or class method being able to have many different implementations, depending on the needs of what is being implemented.
+
+**Example:**
+
+public **abstract** class UIControl {
+	public void enable() {
+		System.out.println("Enabled");
+	}
+	
+	public **abstract** void draw()
+		**// no implementation**
+}
+
+
+**NOTE:** Because it is abstract, the **UIControl** class can never be instantiated, only extended.
+
+**NOTE:** Because it is abstract, the **draw** method **HAS TO** be implemented by any class that extends the **UIControl** class. Kind of like an interface.
+
+
+**Continued:**
+
+public class TextBox extends UIControl {
+	public void **draw**() {
+		System.out.println("Drawing a TextBox");
+	}
+}
+
+
+public class CheckBox extends UIControl {
+	public void **draw**() {
+		System.out.println("Drawing a Checkbox");
+	}
+}
+
+
+public class Main {
+	public static void main(String[] args) {
+		drawUIControl(new Checkbox());
+		**// thing is, this could be "new TextBox(), etc."**
+		
+		**// Polymorphism allows a class to take on many forms.**
+	}
+
+	public static void drawUIControl(UIControl control) {
+		control.draw();
+			**// remember, "control" is an instance of a class that extends UIControl**
+	}
+}

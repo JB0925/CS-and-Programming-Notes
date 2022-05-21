@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-09T21:41:25-05:00
+
+====== Numpy ======
+Created Monday 09 November 2020
+
+Use numpy to make calculations on each object in an array:
+
+{{.\pasted_image.png}}

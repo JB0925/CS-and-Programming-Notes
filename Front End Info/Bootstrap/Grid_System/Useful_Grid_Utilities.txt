@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-28T21:29:11-05:00
+
+====== Useful Grid Utilities ======
+Created Sunday 28 February 2021
+
+**Vertically Align Content:**
+	- In the **class="row"**, you can add **align-items-start, align-items-center, **or **align-items-end** to vertically align content.
+	- **Example:** if you have three columns in your row, but one's height is greater because there is more text in it, you can add **align-items-start** to align the shorter columns with the **top** of the taller column, **align-items-end** to align them with the **bottom** of the taller column, or **align-items-center** to align them with the middle of the taller column.
+	
+	- To align **ONE** column with the **start, center, **or **end** of the other columns, use **class="align-self-center"**, etc.
+
+
+
+**Horizontally Align Content:**
+	- in the **class="row"**, you can add **justify-content- ** and **start, center, end, around, **or **between **to horizontally align content.
+	- this is useful for when you have **horizontal** space that you want to position your items in
+	- **justify-content-start** will push all items to the left
+	- **justify-content-end** will push all items to the right
+	- **justify-content-center** will center all items in the row
+	- **justify-content-between** will push some items to the left, and some to the right, leaving a space in the middle
+	- **justify-content-around **???
+	
+	**Responsivness:**
+		- you can make these responsive by adding **justify-content-md-start** (This would make it so that when the screen size hit the **medium** breakpoint, the content gets pushed to the left side of the row
+		- **Example:**
+			- **class="justify-content-center justify-content-lg-start"** would mean that when a screen is smaller than the **large** breakpoint, the content is going to be in the center of the page. Once it hits the large breakpoint and above, it will move to the left of the row.
+			- **This is essentially working backwards from column breakpoints, because with column breakpoints, it works in decreasing order **(i.e. "When the screen is xl, I want each column to take 4 units of space. At the medium breakpoint, I want them to take 6 units of space.")
+
+
+**NOTE: **The **align-items-** class also has access to the responsive options that **justify-content** has. The syntax is the same.
+
+
+
+

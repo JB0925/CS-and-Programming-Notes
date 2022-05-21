@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-10T13:44:47-05:00
+
+====== line-height ======
+Created Wednesday 10 February 2021
+
+Line height controls the height of a line:
+
+Very wide spaced lines:
+{{.\pasted_image.png}}		{{.\pasted_image001.png}}
+
+
+
+Very close together lines:
+{{.\pasted_image002.png}}		{{.\pasted_image003.png}}
+
+

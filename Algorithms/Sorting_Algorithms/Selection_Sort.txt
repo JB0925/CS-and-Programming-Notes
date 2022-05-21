@@ -1,0 +1,74 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-04T01:09:44-04:00
+
+====== Selection Sort ======
+Created Sunday 04 October 2020
+
+**Selection Sort:**
+	- a simple, **in-place**, **comparison-based**, **unstable** sorting algorithm which slowly builds an unsorted list into a sorted list by repeatedly searching for the **smallest** value, and placing it in it's correct location
+		- **in-place: **sort the algorithm without any extraneous memory
+		- **comparison-based: **sort the elements in the list in comparison to one another, as opposed to a different method
+		- **unstable: **where the order of duplicate elements is not preserved
+			- think of a deck of cards...four different "10" cards
+			- in a **stable** algorithm, the order of the "10" cards before the algorithm, would be the order they are in after going through the algorithm
+			- in an **unstable** algorithm, the cards might be in a different order once the list is sorted
+		
+		**Example:**
+			lst = [3,  9,  3,  8,  1,  4]
+			- list is split into two parts, **sorted half** on the left, **unsorted half** on the right
+
+
+**Selection Sort: The Algorithm:**
+	- start with 3 variables
+		- **Counter: int = 0**
+		**- Traversing Index: int = 0**
+		**- Minimum Index: int = Counter + 1**
+		
+	- search the list from the **Counter** through the end of the data using our **Traversing Index**, and compare every element we pass over to the value stored at the **Minimum Index**
+	- if the value is less than the value stored at the **Minimum Index**, we re-set **Minimum Index** to whatever our **Traversing Index** is
+	- after traversing the whole list, we swap the values counting at the **Counter** and the **Minimum Index**
+	- increase the **Counter** by 1, set the **Minimum Index** to the **Counter**, and set the **Traversing Index** = **Counter + 1**
+	- repeat until the list is sorted
+
+**Example Selection Sort 1:**
+	- Counter = 0
+	- Minimum_Index = Counter
+	- Traversing_Index = Counter + 1
+	
+	**Index	0		1		2		3		4**
+	**Value	4		3		5		10		1**
+	
+	- start at the traversing index [1] and compare the Value to that of the Value at the minimum index[0]
+	- if traversing index[Value] < minimum index[Value]:
+		minimum index = traversing index
+		traversing index += 1
+	- else:
+		traversing index += 1
+	
+	- next up, min_index = 1, traversing_index = 2			**5 is greater than 3**
+	- next, min_index still = 1, traversing_index = 3			**10 greater than 3, so look at the ELSE clause above**
+	- next, min_index still = 1, traversing_index = 4			**1 less than 3, so look at IF clause above...**min_index = 4
+	
+	
+	**First pass through the list is complete......swap the values of the Counter with the minimum_index**
+	
+	now, the counter has moved up to index 1 (Counter += 1)
+	the min_index = the Counter(1)
+	traversing_index = 1 + Counter ②
+	
+	- on turn 2 through the list, the next smallest value was stored as the counter, so no swaps take place
+		- increase Counter by 1
+		- min_index = Counter
+		traversing_index = 1 + Counter
+		
+	- **continue to compare the values**
+	
+	- turn 3 through the list:
+		Counter, min_index = 2
+		traversing_index = Counter + 1
+		first object through, 10 > 5, so no change, except traversing_index += 1
+		second pass, position 4 is less than position 2, so **swap the VALUES** of the two positions
+		
+
+

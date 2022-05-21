@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-26T22:27:57-05:00
+
+====== Take A Screenshot of a Website ======
+Created Tuesday 26 January 2021
+
+{{.\pasted_image.png}}

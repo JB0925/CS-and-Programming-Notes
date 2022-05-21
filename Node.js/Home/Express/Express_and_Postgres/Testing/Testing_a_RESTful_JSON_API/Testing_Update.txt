@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-16T22:29:25-04:00
+
+====== Testing Update ======
+Created Thursday 16 September 2021
+
+/** PATCH /cats/[id] - update cat; return `{cat: cat}` */
+
+describe("PATCH /cats/:id", function() {
+  test("Updates a single cat", async function() {
+	const response = await request(app)
+	  .patch(`/cats/${testCat.id}`)
+	  .send({
+		name: "Troll"
+	  });
+	expect(response.statusCode).toEqual(200);
+	expect(response.body).toEqual({
+	  cat: {id: testCat.id, name: "Troll"}
+	});
+  });
+
+  test("Responds with 404 if can't find cat", async function() {
+	const response = await request(app).patch(`/cats/0`);
+	expect(response.statusCode).toEqual(404);
+  });
+});

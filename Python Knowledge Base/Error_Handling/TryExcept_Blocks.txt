@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-27T20:57:18-04:00
+
+====== TryExcept Blocks ======
+Created Monday 27 July 2020
+
+This picture shows how you can handle a [[ZeroDivisionError]] with "raise". The user would only see the exception that was raised.
+
+
+{{.\pasted_image.png}}

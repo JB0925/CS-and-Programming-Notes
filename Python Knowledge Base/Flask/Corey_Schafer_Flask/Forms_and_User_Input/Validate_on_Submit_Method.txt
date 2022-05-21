@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-01T12:07:25-05:00
+
+====== Validate on Submit Method ======
+Created Tuesday 01 December 2020
+
+**from flask import flash**
+
+@app.route('/register', methods= ['GET', 'POST'])
+def register():
+	form = RegistrationForm()
+	if form.validate_on_submit():
+		flash(f'Account created for {form.username.data}!', 'success')
+		return redirect(url_for('home')
+		
+
+
+**HTML/Jinja2 for Executing the Above on the template page:**
+
+
+
+
+

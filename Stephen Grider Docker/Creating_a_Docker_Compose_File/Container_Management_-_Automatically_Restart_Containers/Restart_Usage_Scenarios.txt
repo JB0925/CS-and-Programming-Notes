@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-06T10:38:57-05:00
+
+====== Restart Usage Scenarios ======
+Created Thursday 06 January 2022
+
+How do you know when to pick **restart: always** or **restart: on-failure**, etc?
+
+Think about what you are running. 
+
+If you have created a web API, you'll probably want to keep that up 24 / 7, and use the **restart:always** tag.
+
+On the other hand, if you're using it to process a file, you may only want to restart it on-failure, because that process is probably supposed to exit after successful completion

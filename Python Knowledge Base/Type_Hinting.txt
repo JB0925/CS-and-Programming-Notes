@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-12T20:27:52-04:00
+
+====== Type Hinting ======
+Created Sunday 12 September 2021
+
+**Constraining Types:**
+	**Optional**
+		- used to replace **None** references in your code
+	
+	**Union**
+		- used to present a selection of types
+	
+	**Literal**
+		- used to restrict developers to very specific values
+	
+	**Annotated**
+		- used to provide additonal description of your types
+	
+	`**NewType**
+		- Use to restrict type to a specific context
+	
+	**Final**
+		- Use to prevent variables from being rebound to a new _{value}
+

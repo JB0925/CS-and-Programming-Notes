@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-13T23:09:22-05:00
+
+====== Handling User Logins ======
+Created Saturday 13 February 2021
+
+{{.\pasted_image.png}}
+
+
+**Step 1:**
+	- set up a login_manager using '**LoginManager**
+	{{.\pasted_image001.png}}
+
+**Step 2:**
+	- not directly related to **flask_login** setup, but note the use of '**UserMixin **and **get_id**, which will be used later with the **login_user** method, which is why we include them in the **User** class.
+	{{.\pasted_image002.png}}
+	
+
+**Step 3:**
+	- use your **login_manager** to load a user with '**@login_manager.user_loader **
+	- this is where, internally, the **self.get_id** method and the '**UserMixin** class get used in conjunction with **login_user**
+	{{.\pasted_image003.png}}
+
+
+**Step 4:**
+	- **Basic Login Logic:**
+
+{{.\pasted_image004.png}}
+
+**Explanation:**
+	- check to see if the current user (**which pulls from 'UserMixin**) is authenticated
+	- if not, create the **login** form
+	- if the submitted form is valid, make a query to the database to see if the user is in the database
+	- if the user's name is in the data and the hashed password and the raw password match, then login the user
+	- **remember** is optional and I used it here because it was a field on my form
+

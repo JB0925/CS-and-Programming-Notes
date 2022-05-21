@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-16T00:29:41-04:00
+
+====== RETURNING clause ======
+Created Thursday 16 September 2021
+
+If you put a **RETURNING** clause in your SQL statement when creating or updating, it will return the data that is in the RETURNING clause for you.
+
+**NOTE:** Don't just SELECT * or RETURNING *; be specific.
+
+**Example:**
+	- see last page for more complete reference.
+	
+	- **INSERT INTO users**
+	  (name, type)
+	  VALUES(val1, val2)
+	  **RETURNING name, type** 
+	

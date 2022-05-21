@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T22:54:04-04:00
+
+====== Files ======
+Created Monday 06 September 2021
+
+Node comes with a built in module for reading files called **fs**.
+
+It is often used to read and write files.
+
+Import it at the top of your file:
+	**const fs = require('fs')**;
+	

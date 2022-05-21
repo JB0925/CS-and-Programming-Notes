@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-26T00:37:36-04:00
+
+====== Merge Two Sorted Linked Lists ======
+Created Monday 26 July 2021
+
+**Code:**
+{{~/Desktop/ScreenShots/Merge Two Linked Lists.png}}
+
+**Explanation:**
+	**NOTE: This ONLY works if both lists are sorted in ascending order**
+	**The Algorithm:**
+		- it's important to note that l1 and l2 are NOT lists themselves; they are the head nodes of the `LinkedList instances
+		
+		- if l1 is None, we return l2
+		- if l2 is None, we return l1
+		
+		 **Check Values:**
+			- if l1.val < l2.val, we set **l1.next** to a recursive call to **merge_two_lists, where "l1" is l1.next**
+
+			- then we return l1
+			
+			- if l2.val <= l1.val, we do the same as above
+	
+	
+	**The Setup:**
+		- Our Doubly Linked List has an appendleft method, which appends new values to the head in O(1) time
+		- We create two lists of ints, zip them together, then use the **appendLeft **method to insert the values into the respective lists (**already initialized**) in anscending order
+		
+		- we create a variable**, new_list**, which merges the two lists
+		- then we use a while loop to iterate over the **new_list** and print out each node's value
+

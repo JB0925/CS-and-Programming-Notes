@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-11T17:01:24-04:00
+
+====== Sorting ======
+Created Sunday 11 April 2021
+
+
+To sort, we use **ORDER BY** keywords,
+
+**Example:**
+	SELECT *
+	FROM products
+	**ORDER BY **price;
+
+
+Sorting, by default, goes from **least to greatest**,. To go the opposite way, use the **DESC** keyword after the ORDER BY keyword:
+	SELECT *
+	FROM products
+	ORDER BY price DESC;
+	
+	
+

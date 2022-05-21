@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-03T14:30:22-05:00
+
+====== BETWEEN keyword ======
+Created Wednesday 03 March 2021
+
+The **BETWEEN **keyword is used to select data from a range.
+
+**Example:**
+	**SELECT * FROM person**
+	**WHERE date_of_birth**
+	**BETWEEN DATE '2000-01-01' AND '2015-01-01';**
+	
+	The above gets all rows and columns for people born between those two dates
+	
+	{{.\pasted_image.png}}

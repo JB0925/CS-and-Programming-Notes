@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-16T20:46:15-04:00
+
+====== Example of Triple JOIN Subquery ======
+Created Sunday 16 May 2021
+
+{{~/Desktop/ScreenShots/Triple JOIN Subquery.png}}
+
+**Explanation:**
+	- We are getting the concatenated first and last name from **users**, the id from **orders**, and the name and price from **products**
+	- Then, we run a subquery to pull out the first_name, last_name, and id from **users** 
+	- Join that information by pulling out the id, user_id, product_id from **orders**
+	- Join them where **orders.user_id = users.id**
+	- Join all of that by pulling out the name, price, and id from **products**
+	- Join that information with the two tables above where **products.id = orders.product.id**
+	- ONLY include those if the **price** is greater than the **average price** from **products**
+	- Order all of it by **price** in **descending order**, then by **last_name**

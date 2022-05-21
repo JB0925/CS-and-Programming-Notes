@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T23:32:47-05:00
+
+====== AWS CloudShell ======
+Created Saturday 08 January 2022
+
+CloudShell is like a VM on AWS that is only available in certain AWS Regions.
+
+you can do all kinds of things with cloudshell, including everything that you can do in a a local terminal.
+
+You can download files from CloudShell to your local machine, and you can also upload files from your local machine to access within CloudShell.

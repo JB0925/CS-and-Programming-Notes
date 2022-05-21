@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-10T22:41:43-05:00
+
+====== cal - current month calendar ======
+Created Sunday 10 January 2021
+
+the command **cal** will give a calendar of the current month with the month name, year, all weeks, and today's date highlighted. 
+Also includes the day of the week (SMTWTHFS)
+
+typing **cal -j **will give the date in **julian days**, which is **the number of days since January 1st.**
+	So, for example **February 1,2021 **would appear as **32** because it is the 32nd day of the year.

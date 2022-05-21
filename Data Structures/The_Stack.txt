@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-16T13:33:24-04:00
+
+====== The Stack ======
+Created Wednesday 16 September 2020
+
+**Random Access Data Structures: **Arrays, arrayLists, etc.   ....elements can always be accessed directly and in **O(1) **or **constant** time
+
+**Sequential Access Data Structures: **Stacks, Queues, etc.
+	- elements can only be accessed in a particular order
+	- each element is dependent upon the others
+	- may only be obtainable through those other elements
+	
+Think of sequential access data structures like a tape measure....in order to get to 72in, you first have to go past 1, 2, 3, etc.
+
+**RADS												SADS**
+1). O(1) accessing 										Do not provide O(1) accessing
+2). Independent elements that can be simply accessed			Dependent elemens
+	 by index.
+3). Arrays and Array Lists									Stacks, Queues, Linked Lists, etc.
+
+
+**The Stack:**
+	- a sequential access data structure where we add and remove elements according to the LIFO (**Last In First Out) **Principle
+	- like a stack of books (if you want a book in the middle of the stack, you first have to take off the books on top of it i.e. **LIFO**)

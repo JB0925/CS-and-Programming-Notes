@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-21T23:30:41-04:00
+
+====== Controlled Components ======
+Created Wednesday 21 July 2021
+
+In HTML, form elements such as **input, textarea, **and **select **typically maintaint their own state and update it based on user input.
+
+In React, mutable state is stored in **this.state** and is only updated with **this.setState.**
+
+**How do we use React to control form input state?**
+	- in other words, how do we let **React state** know that the form input has changed, **AS SOON AS **it changes (prior to any submissions of the form)
+	
+
+We want to make React state the **single source of truth.**
+	React controls:
+		- What is shown (the value of the input)
+		- What happens when the user types (this gets stored in state)
+	
+	Input elements that are controlled in this way are called **controlled components**
+	
+
+**Example:**
+	class App extends Component {
+		constructor(props) {
+			super(props)
+			this.state = {fullName: ''}
+		}
+		this.handleChange = this.handleChange.bind(this)
+		this. handleSubmit = this.handleSubmit.bind(this
+	
+	render() {
+		return (
+			<form **onSubmit={this.handleSubmit}>**
+				<label for="fullname">Full Name</label>
+				input name="fullname" value={this.state.fullName}
+				  **onChange={this.handleChange} [[/>]]**
+				  <button>Add!</button>
+			</form>
+		)
+	   }
+	}
+
+
+**Explanation:**
+	- in **onChange**, **this,handleChange** is being used to update the state, and thus update the input value on every change of the data in that input field.
+	

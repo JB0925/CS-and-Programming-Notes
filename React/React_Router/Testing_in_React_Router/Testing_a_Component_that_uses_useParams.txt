@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-21T09:05:53-04:00
+
+====== Testing a Component that uses useParams ======
+Created Thursday 21 October 2021
+
+In order to test a component that uses **useParams**, where part of the component relies on the route parameters being given by the user, you need to wrap your component (for the test) in a **MemoryRouter AND a Route with a path.**
+
+**Example:**
+{{~/Desktop/ScreenShots/Testing With useParams.png}}
+
+
+Another option is to put the example from above in its own function and then call that function with the component you want to test:
+
+**import {Route, MemoryRouter} from 'react-router-dom';**
+
+...
+
+const renderWithRouter = (component) => (
+  render(
+	<MemoryRouter initialEntries={['blogs/1']}>
+	  <Route path='blogs/:blogId'>
+		{component}
+	  </Route>
+	</MemoryRouter>
+  )
+)

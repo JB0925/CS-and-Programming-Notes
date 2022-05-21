@@ -1,0 +1,64 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-27T00:06:03-04:00
+
+====== Form Input Examples ======
+Created Tuesday 27 July 2021
+
+We know there are many types of form inputs. Here's how to make them in Flask-wtf:
+
+`**BooleanField**
+	- usually renders a checkbox
+
+`**DateField / `DateTimeField**
+	- Date or Date and Time
+
+`**IntegerField / `FloatField**
+	- numeric types
+
+`**StringField / `TextAreaField**
+	- single line of text OR larger text area
+
+
+
+**SELECTION FROM CHOICES:**
+
+`**RadioField**
+	- series of radio buttons from **choices**
+
+`**SelectField**
+	- drop down menu from **choices**
+
+**`SelectMultipleField**
+	- Multi-select box from **choices**
+
+
+
+Setting **choices** inline:
+	weather = `SelectField('Weather',
+		choices=[('rain', 'Rain'), ('nice', 'Nice Weather')])
+		
+
+Convert Result From **choices** to **int:**
+	priority = SelectField('Priority Code', 
+							choices=[(1, 'High'), (2, 'Low')],
+						  **coerce=int**)
+						
+
+
+Setting **Choices** Dynamically:
+	**The Form:**
+		class AddFriendForm(FlaskForm):
+			**friend** = SelectField('Friend', coerce=int)
+	
+	**The Route:**
+		@app.route('/get-friend')
+		def handle_friend_form():
+			form = AddFriendForm()
+			
+			users = [(u.id, u.name) for u in User.query.all()]
+			
+			**form.friend.choices = users**
+	
+	**NOTE:** Pay attention to how to **users** list is a **two-tuple**, which is exactly what is passed in to **choices** in general.
+	

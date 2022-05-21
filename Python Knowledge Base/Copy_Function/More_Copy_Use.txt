@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-07T21:31:52-04:00
+
+====== More Copy Use ======
+Created Monday 07 September 2020
+
+when looping through an file/file object, the dictionary you are trying to create will get overwritten on each turn through the loop, and you will be left with the final item instead of everything you expected/wanted. Using **copy.deepcopy(item)** is a way to get around this:
+
+Sample Code:
+
+	def convert_to_json(members=members):
+		info = {}
+		final = []
+		for row in members.split():
+			**info = copy.deepcopy(info)**
+			if ',' in row or ';' in row or '|' in row:
+				row = row.replace(',', ' ').replace(';', ' ').replace('|', ' ')
+				row = row.split()
+				info['id'] = row[0]
+				info['first_name'] = row[1]
+				info['last_name'] = row[2]
+				info['email'] = row[3]
+				final.append(info)
+	
+		del final[0]
+		**info = json.dumps(final)**
+		return info
+	
+For the above, just inside the for loop and before any other actions take place, I set the **info** dictionary as a deepcopy, which allowed each individual version to get appended to the **final** list. 
+
+I had to delete one dictionary from the list because I didn't need it, then turned **the list of dictionaries in json** using **json.dumps()**.
+
+https://stackoverflow.com/questions/47876205/for-loop-is-overwriting-dictionary-values-in-list
+
+Next to last answer in the above was the most helpful.
+

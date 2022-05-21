@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-09T17:07:27-05:00
+
+====== Hex Colors ======
+Created Tuesday 09 February 2021
+
+Hex colors are still based on having three channels based from 0-255 each (**RGB**), but hex colors are obviously written using Hexadecimal numbers.
+
+A hexadecimal color number has 6 digits: first two are the **red **channel, **second two** are the **green** channel, **last two** are the **blue** channel
+
+**You can find an online color picker that will give you hex numbers for each color in the picker.**
+
+**NOTE:**
+	- if you have hex numbers that are where all of the sets of two are duplicates (**#000000 or #FF88CC**), you can shorten them to three digits:
+			- **#000000 = #000**
+			- **#FF88CC = #F8C**
+			- **AADD65 = has to be writen like it is, because the last pair are not duplicates**
+
+
+

@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-08T01:14:34-04:00
+
+====== Query Example 1 - User Count ======
+Created Thursday 08 April 2021
+
+**from sqlalchemy.future import select**
+**from remind_me.data import db_session**
+**from sqlalchemy import func**
+**from remind me.services import user_service**
+
+**A Basic Query to get the count of all users:**
+
+**async **def user_count() -> int:
+	**async **with db_session.create_async_session() as session:
+		query** = **select(func.count(User.id))
+		result** = await **session.execute(query)		#this is the async part where the web app can do other work
+		return result.scalar()	    
+
+
+**NOTE: **Because of the way async and await work (they work their way up the stack), **wherever you use this async function, **you have to use the **await** keyword. Then, inside of that function, you have to declare it as **async**.
+		**Example:**
+			- **async** def my_func():
+				self.name = 'Jesse'
+				self.user_count = **await **user_service.user_count()
+		
+		Then, if you use that function/method in another function/method/view, you'd again have to label the function/method/view as **async** and the call of the **my_func()** method as **await**
+
+

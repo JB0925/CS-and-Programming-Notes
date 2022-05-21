@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-28T00:56:17-05:00
+
+====== Scripting in Linux ======
+Created Saturday 28 November 2020
+

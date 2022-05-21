@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-03-11T17:10:25-05:00
+
+====== Gen Web Server PK and CSR ======
+Created Friday 11 March 2022
+
+CSR = certificate signing request
+
+To generate the server's PK and CSR, the process is almost the same:
+
+openssl req -newkey rsa:4096 -keyout server-key.pem -out server-cert.pem -subj "C=US/ ST=Virginia/L=Locust Grove/O=None/OU=None/ CN=*.mysite.com/emailAddress=[[jbrink0925@gmail.com"]]
+
+**NOTE: **All of the "**subj"** information needs to be changed to the server's information.
+
+**NOTE: **Add the above to the **gen.sh** file **just below** the key and cert information
+
+After running it, you will again be prompted to enter a password. Then, the new files will generate.

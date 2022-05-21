@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-23T12:27:15-05:00
+
+====== Upper Bounds ======
+Created Wednesday 23 February 2022
+
+If you create a class with a Generic type, and don't put a bound on it, this could cause a problem at runtime.
+
+**Example:**
+	public class Team<T> {
+		ArrayList<T> members = new ArrayList<>();
+
+		public addPlayer(T player) {
+			this.members.add(player);
+			Sout(player.getName());
+		}
+	}
+	
+	
+	Then, if you tried to add the String "Joe" to the Team...."Joe" isn't going to have a **getName()** method.
+
+
+
+**How To Fix It:**
+	You can fix it by putting an upper bound on what the type can be, like this:
+	
+	**public class Team<T extends Player> {**
+		**//**
+	}
+	
+	
+	This makes it so that only instances that are of or inherited from the Player class can be accepted into the Team.
+	

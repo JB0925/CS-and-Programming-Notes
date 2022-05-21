@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-21T13:55:36-04:00
+
+====== Custom Template Tags ======
+Created Sunday 21 March 2021
+
+Custom template tags are like helper functions that allow you to do something to a piece of data that is passed into the template.
+
+Inside of your app, create a directory called **templatetags**. Inside of that, create an "**__init__.py" **file that is empty, and then create a **tags.py** file where the helper functions live.
+
+**Example:**
+{{.\pasted_image.png}}
+
+
+{{.\pasted_image001.png}}
+
+**In tags.py:**
+	{{.\pasted_image002.png}}
+  You can add however many custom template tags that you need. The **item** variable is the piece of data that the function will alter.
+
+
+**In the template itself:**
+	{{.\pasted_image003.png}}
+	
+	{{.\pasted_image004.png}}
+
+	[[Home:URLPattern]]**Syntax:** double brackets, data/information to act on, pipe, function name from **tags.py**, closed brackets.

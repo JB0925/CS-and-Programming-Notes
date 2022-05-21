@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-26T22:47:10-04:00
+
+====== Delete Items From a Dictionary ======
+Created Sunday 26 July 2020
+
+Many times, it does not work to loop through a dictionary and try to delete items. This is because the dictionary will change size as it goes through the loop, and it will throw an error.
+
+It is often just easier to create a new dictionary with certain qualifications. You can do this with a dictionary comprehension:
+
+**mydict = { k:v for k,v in mydict.items() if len(v) > var }**
+
+Obviously just an example, but it is an easy way to do it.
+
+https://stackoverflow.com/questions/5384914/how-to-delete-items-from-a-dictionary-while-iterating-over-it
+
+Answer #2 in the link above.
+

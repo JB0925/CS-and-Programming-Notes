@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-10T23:54:40-05:00
+
+====== Adjacent Selector ======
+Created Wednesday 10 February 2021
+
+**Adjacent Selector:**
+	- Selects only the (**element 2**) that is **preceded** by (**element 1**) **AND** element 2 **IS NOT** nested inside of element 1
+	- for **nested tags**, see **Descendent Selector**
+	
+
+**Syntax:**
+	- **h1 + p  {**
+		**color: red;**
+	**}**
+	
+
+
+**Meaning:**
+	- means to **select** all **<p>** elements that are immediately preceded by an **<h1>** are **ARE ON THE SAME LEVEL as the h1 (**i.e. not nested / child tags)
+	
+	

@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-10T22:13:11-05:00
+
+====== Worker Directory Dockerfile ======
+Created Monday 10 January 2022
+
+FROM node:16-alpine
+WORKDIR /app 
+COPY ./package.json ./ 
+RUN npm install
+COPY . .
+CMD ["npm", "run", "dev"]

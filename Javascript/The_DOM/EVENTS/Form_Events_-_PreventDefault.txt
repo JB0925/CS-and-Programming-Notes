@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-20T08:15:49-04:00
+
+====== Form Events - PreventDefault ======
+Created Tuesday 20 April 2021
+
+{{~/Desktop/Screen Shot 2021-04-20 at 8.51.41 AM.png}}
+
+Above is a basic HTML form.
+
+**Using the Event Object's "PreventDefault" attribute and getting value from the form:**
+
+1). Select the form object.
+
+
+2). Add an "**addEventListener**" tag to the form. 
+
+
+3). When you pass in the **function**, make sure to pass in the **event** object. 
+
+
+4), Use **event.preventDefault()** to keep the form from submitting.
+
+
+5). To get the values and print them:
+	- select each input that you want information from **by its ID or class name**
+	- for now, use **console.log(myVar.value);** to be able to see and access the information that is passed into the form's individual inputs.
+	
+	**NOTE: Use "myVar.checked" to get a "True" or "False" bool from a checkbox.**
+	
+{{~/Desktop/Screen Shot 2021-04-20 at 10.47.41 AM.png}}
+
+

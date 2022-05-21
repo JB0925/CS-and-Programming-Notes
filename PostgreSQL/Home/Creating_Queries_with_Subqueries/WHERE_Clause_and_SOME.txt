@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-05T10:37:01-04:00
+
+====== WHERE Clause and SOME ======
+Created Wednesday 05 May 2021
+
+**The keyword SOME is an alias for ANY. They do the same thing, except that SOME will check to see if your test case value is greater than / less than, etc., AT LEAST one value from the group on the right hand side.**
+
+{{~/Desktop/ScreenShots/SOME and WHERE Clause.png}}
+
+
+**Example Above:**
+	- We are selecting the name, dept, price FROM the products table, ONLY if the price in the row is GREATER THAN AT LEAST ONE of the prices for items in the Industrial category.
+	
+	

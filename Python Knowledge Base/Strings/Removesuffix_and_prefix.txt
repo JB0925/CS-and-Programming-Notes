@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-02T20:25:35-05:00
+
+====== Removesuffix and prefix ======
+Created Tuesday 02 February 2021
+
+**NOTE: Only available in Python 3.9**
+
+{{.\pasted_image.png}}
+

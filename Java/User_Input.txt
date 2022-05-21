@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-17T09:18:27-05:00
+
+====== User Input ======
+Created Thursday 17 February 2022
+
+To get user input from the console, we need to import **java.util.Scanner**
+
+**Example and Explanation of Code:**
+{{~/Desktop/ScreenShots/Java User Input.png}}
+
+1). Instantiate the new Scanner, the way we get user input from the terminal. Pass it the **System.in**.
+
+2). Because the next thing we are doing is prompting the user for an integer, we do a check to make sure it is an integer by running **scanner.hasNextInt();**
+
+3). If **hasNextInt** is true, we take the value from **scanner.nextInt();** and assign it to the variable **int yearOfBirth**
+	int yearOfBirth = scanner.nextInt();
+
+4). We then run **scanner.nextLine();** after assigning the int value because, if we don't, it will **skip the execution of the next part,** which is trying to get the user's name.
+
+5). We then print a line asking for the user's name, followed by assigning the **name** variable to **scanner.nextLine();**, and then print out a message.
+
+6). If **hasNextInt** is NOT true, we print a message letting the user know why.
+

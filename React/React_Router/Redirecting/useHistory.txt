@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-19T21:46:08-04:00
+
+====== useHistory ======
+Created Tuesday 19 October 2021
+
+The **history** object is a wrapper for the **window.history** object that we can access in the browser console.
+
+We have access to the history object using the **useHistory** hook.
+
+The **history object** has a "**.push(url)**" method that adds the URL to the session history.
+
+Unlike **<Redirect />**, hitting the back button will return to the page that we got redirected **from**.
+
+**Example:**
+	import { useHistory } from "react-router-dom";
+	
+	const Contact = () => {
+		**const history = useHistory();**
+		
+		const handleSubmit = evt => {
+			evt.preventDefault();
+			**history.push("/");**
+		};
+	};
+	
+
+The example above would redirect us to the home page / base route whenever a form is submitted.
+

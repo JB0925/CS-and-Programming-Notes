@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-09T15:10:19-05:00
+
+====== Error Handling with useContext ======
+Created Thursday 09 December 2021
+
+You can create a function to handle getting the content you need from useContext and throw an error if no context is avaliable:
+
+**const AppContext = React.useContext();**
+
+**// function we wrote to return the Provider with value and children loaded**
+const AppContextProvider = props => {
+  const [count, setCount] = useState(0);
+  const [otherVal, setOtherVal = useState("abc");
+
+  const myFunc = () => 7 + 8;
+  const value = { count, setCount, otherVal, setOtherVal, myFunc };
+  
+  return <**AppContext.Provider value={value} {...props}></AppContext.Provider>**
+};  
+
+const **useCount** = () => {
+  const context = **useContext(AppContext);**
+  if (!context) throw new Error ("no values provided!");
+
+  return context;
+};
+
+
+function CountDisplay() {
+  // get the count from useContext with the CountContext
+
+  **const { count } = useCount(); destructure the value obj**
+  return <div>{`The current count is ${count}`}</div>
+}

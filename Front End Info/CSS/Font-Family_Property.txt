@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-08T15:46:09-05:00
+
+====== Font-Family Property ======
+Created Monday 08 February 2021
+
+The **font-family** property is what we use to actually change the font of an element:
+
+Changing fonts is not as simple as we think, because it depends on what fonts are installed in your browser.
+
+If you use a font that your browser does not support, the text will still show, but not in the font that you intended.
+
+**Simple Font Changing:**
+{{.\pasted_image.png}}		{{.\pasted_image001.png}}
+
+**The example above is called a "font-stack", and is much more common than just choosing one font because this allows you to have backups if a browser does not support your main font.**
+
+The last in the list above, **sans-serif**, means to choose any available font from the **sans-serif** family.
+
+

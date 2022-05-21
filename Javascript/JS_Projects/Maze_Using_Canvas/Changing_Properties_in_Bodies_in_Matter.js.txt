@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-16T23:34:54-04:00
+
+====== Changing Properties in Bodies in Matter.js ======
+Created Sunday 16 May 2021
+
+One thing to note, is that it's a really good idea to give your Bodies objects labels if you plan to manipulate them later.
+
+Here, we add the **"wall"** label to our horizontal and vertical walls.
+
+{{~/Desktop/ScreenShots/Labels for Walls - Matter.js.png}}
+
+You can see the **label: "wall"** in each array's **options** object.
+
+
+From there, we manipulate the world itself.
+
+Remember, earlier, we changed **engine.world.gravity.y = 0**
+
+Now, we change it back to 1:
+	**world.gravity.y = 1;**
+
+**world.bodies** is an array, so we call **forEach** on it and manipulate the **setStatic() property** of each item in the array:
+
+{{~/Desktop/ScreenShots/Change Static Property in world.bodies - Matter.js.png}}
+
+We use the **Body** object to update the **setStatic** property.
+

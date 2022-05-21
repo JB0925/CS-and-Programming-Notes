@@ -1,0 +1,47 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-12T00:03:37-05:00
+
+====== Make default.conf File ======
+Created Wednesday 12 January 2022
+
+1). Create a new directory called **nginx** in the **root** of the project.
+
+2). Put a file in it called **default.conf**
+
+3). **NOTE: **Semicolons are **really important in this file.**
+
+4). **NEXT STEPS:** Create an Nginx container, build a Dockerfile for it, and connect the **default.conf** file to it.
+
+
+**Example:**
+
+**// there is an "upstream" called "client", and it's found at port 3000.**
+upstream client {
+  server client:3000;
+}
+**// there is an upstream called "api", listening on port 5000.**
+upstream api {
+  server api:5000;
+}
+**// Nginx server listen on port 80**
+server {
+  listen 80;
+  **// if requests come in to "/", route them to the client**
+  location / {
+	proxy_pass http://client;
+  }
+
+  **// opening up websocket connections in the client**
+  location /sockjs-node {
+	  proxy_pass http://client;
+	  proxy_http_version 1.1;
+	  proxy_set_header Upgrade $http_upgrade;
+	  proxy_set_header Connection "Upgrade";
+  }
+  **// if requests come in to "/api", use a regex to cut off "/api" and route the request to the server / api**
+  location /api {
+	rewrite /api/(.*) /$1 break;
+	proxy_pass http://api;
+  }
+}

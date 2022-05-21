@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-17T18:24:25-04:00
+
+====== Combining Predicates ======
+Created Sunday 17 April 2022
+
+You can chain predicates to make a multiple boolean expression:
+
+**Example:**
+	Predicate<String> isValid = num -> num.startsWith("07");
+	Predicate<String> containsNumber3 = num -> num.contains("3");
+	
+	**Chaining Them Together with "and" or "or":**
+		isValid.**and**(containsNumber3).test("07567800345");
+		
+		**// would return "true" because it starts with "07" and has a "3" in it.**
+
+		isValid.**or**(containsNumber3).test("068765430021");
+		
+		**// still returns "true" because while it doesn't begin with "07", it does have a "3" in it.**
+

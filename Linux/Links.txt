@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-02T11:49:33-04:00
+
+====== Links ======
+Created Thursday 02 September 2021
+
+Links are like copies of a file that can be made in any directory, simply by using the correct syntax.
+
+**Things to Know:**
+	- updating either the PARENT or the LINKED file will change BOTH files
+	
+	- There are two types of links: a HARD link and a SYMBOLIC link, or "symlink
+	

@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-14T22:57:32-04:00
+
+====== Computed Properties ======
+Created Wednesday 14 April 2021
+
+Add a property with a dynamic key.
+
+**Example:**
+	const role = 'host';
+	const role2 = 'comedian';
+	const person = 'Some Guy';
+	const person2 = 'Funny Guy';
+	
+	**const team = {**
+		**[role] = person;**
+		**[role2] = person2;**
+	**}**
+	
+	
+	Here, we used the some of the variables as keys, and the other variables as values. If we print out this object, it would return:
+	
+		**{'host': 'Some Guy', 'comedian': 'Funny Guy'}**
+
+
+
+**Use Computed Properties in a Function:**
+	function myFunc(obj, k, v) => {
+		return {...obj, [k]: v}
+	};
+	
+	
+	This arrow function means "**return everything from our initial object, and then compute the key (k) and set it equal to our value (v).**
+	
+	Note the use of spread with the object.
+	
+	
+	
+	**Variation:**
+		function myFunc(obj, k, v) => ({...obj, [k]: v});
+		
+		This means the same as above. Return the original object, compute the key and set it equal to the value, and then add it to the returned object.
+

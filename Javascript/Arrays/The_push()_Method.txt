@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-18T10:12:16-04:00
+
+====== The push() Method ======
+Created Thursday 18 March 2021
+
+Equivalent to **.append() **in Python.
+
+**Example:**
+	**var myArray = [1,2,3];**
+	**myArray.push(4);**
+	**console.log(myArray);**
+		returns **[1,2,3,4]**
+	
+	**myArray.push([13,14,15])**
+	**console.log(myArray)**
+		returns **[1,2,3,4, [13,14,15]]**
+

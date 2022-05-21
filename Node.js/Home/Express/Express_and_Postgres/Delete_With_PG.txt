@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-16T08:13:03-04:00
+
+====== Delete With PG ======
+Created Thursday 16 September 2021
+
+**Example:**
+
+router.delete("/:id", async(req, res, next) {
+	try {
+		const result = db.query(
+			`DELETE FROM users
+			 WHERE id=$1`, [req.params.id]
+		);
+		
+		return res.json({ message: "deleted" });
+	} catch (err) {
+		return next(err);
+	}
+});

@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-10T21:18:18-04:00
+
+====== Sending an Implicit Status Code ======
+Created Friday 10 September 2021
+
+Use **res.status(status_here)** to send a status code with your response:
+
+**Example:**
+	app.get('/whoops', (req, res) => {
+		return **res.status(404).json("Nothing here!");**
+	});

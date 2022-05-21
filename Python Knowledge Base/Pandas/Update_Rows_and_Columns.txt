@@ -1,0 +1,88 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-01T23:45:19-04:00
+
+====== Update Rows and Columns ======
+Created Tuesday 01 September 2020
+
+Change Column Names:
+	**df.columns = ['name', 'next', 'next_next']**
+	**df.rename(columns=['name': 'new_name'], inplace=True)**
+	
+if you want to make one blanket change across all columns:
+	**df.columns = [x.upper() for x in df.columns]**     OR     **df.columns = df.columns.str.replace(' ', '_')**
+	
+Change Row Values:
+	**df.loc[2, ['last', 'email']] = ['Smith', 'JohnSmith@email.com']**.....changes certain columns of a specified row
+	
+	**df.loc[2] = ['John', 'Smith', 'JohnSmith@email.com']**......changes entire row values
+
+if only changing one value:
+	**df.loc[2, 'last'] = 'Smith'** ......column name doesn't go in separate brackets
+	**df,at[2, 'last'] = 'Smith'** .....same thing
+	
+**filt = df.Email = 'JohnDoe@email.com'**
+**df[filt]** ........gives you all rows and columns that match the filter
+
+to set a value using the above:
+	**df.loc[filt, 'last'] = 'Smith'**
+	
+Change case of everything in a column:
+	**df.Email.str.lower() .....or upper(), etc.**
+	
+**Methods:**
+	**1). apply**
+	**2). map**
+	**3). applymap**
+	**4). replace**
+	
+**df['Email'].apply(len)** .......returns the length of the email address in each row
+
+
+**def update_email(email):**
+	**return email.upper()   **#see directly below
+
+**df[‘email’].apply(update_email)**…..no parentheses or parameters in the function
+name
+
+**df[‘email’] = df[‘email’].apply(update_email)** ….same as above, but changes the
+whole dataframe, whereas the previous example doesn’t.
+
+**df[‘email’] = df[‘email’].apply(lambda x: x.lower())** ….use of a lambda function
+instead of writing a typical function like in the above example
+
+**Use Apply on Entire DataFrame:**
+**df.apply(len, axis=’columns’)**….gives the row index and the number of columns in
+each row
+
+**df.apply(pd.Series.min/max)**…..gives the min or max value for an entire Series in
+pandas
+
+**df.apply(lambda x: x.min())**….same as above, just note that x is a Series.
+
+**Applymap**
+
+Applymap applies a function or method over everything in the entire dataframe.
+**df.applymap(len)**….returns the length of each item in row[0], row[1], row[2], etc.
+**df.applymap(str.lower)**….returns each column value as a lowercase string. Won’t
+work if there are any numerical values in a column.
+
+**Map**
+
+Map is used to make changes to each element in an entire Series.
+**df[‘first’].map({‘corey’ : ‘chris’, ‘jane’ : ‘marcus’})**……would change the “first”
+values to the second name in the dictionary sequence. Note that if there is
+another value, those will be changed to “NaN”, so it may be best to use the
+replace method instead.
+
+**Replace**
+
+**df[‘first’].replace({‘corey’ : ‘chris’, ‘jane’ : ‘marcus’})**…..same as above, but the
+third value in the column would stay the same instead of becoming “NaN.” So it
+basically only makes changes to what is specified in parentheses.
+
+Series of “yes” and “no” responses in a DataFrame:
+**df[‘name’].map({‘yes’ : True, ‘no’ : False})** ….uses the map function to
+apply the new value “True” if the original value is “yes,” and “False” if the original
+value is “no.” Words not in quotations represent Boolean expressions.
+

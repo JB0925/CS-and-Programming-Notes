@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-24T00:41:38-04:00
+
+====== TakeWhile ======
+Created Sunday 24 April 2022
+
+TakeWhile is exactly like filter, **except** for the fact that once the filtering condition is no longer true, it exits.
+
+**Example:**
+	- if we were to run filter here:
+		List<Integer> nums = List.of(2,4,6,8,9,10,12);
+		nums.stream()
+			  .filter(n -> n % 2 == 0)
+			  .forEach(System.out::println);
+		
+		We'd get:
+			**// 2, 4, 6, 8, 10, 12**
+			
+	
+	With takeWhile:
+		List<Integer> nums = List.of(2, 4, 6, 8, 9, 10, 12);
+		nums.stream()
+			  .takeWhile(n -> n % 2 == 0)
+			  .forEach(System.out::println);
+		
+		We'd get:
+			**// 2, 4, 6, 8**
+			
+			
+	**It terminates as soon as the predicate is no longer true.**
+	

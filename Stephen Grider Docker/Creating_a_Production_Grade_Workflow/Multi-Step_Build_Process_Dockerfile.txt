@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T23:56:24-05:00
+
+====== Multi-Step Build Process Dockerfile ======
+Created Sunday 09 January 2022
+
+Inside of this Dockerfile, we will have two blocks of configuration.
+
+When we do that, we get the ability to specify a second base image.
+
+**Example:**
+
+FROM node:16-alpine **as** builder
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+COPY . .
+
+RUN npm run build
+
+
+FROM nginx
+**COPY --from=builder /app/build /user/share/nginx/html**
+
+The above is saying to copy from the **builder **part above, the directory **/app/build** into **/usr/share/nginx/html**

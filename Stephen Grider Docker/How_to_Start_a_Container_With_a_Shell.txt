@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-03T21:43:19-05:00
+
+====== How to Start a Container With a Shell ======
+Created Monday 03 January 2022
+
+**NOTE:** Starting a container with a shell generally means that you won't be able to run the main process that you typically use the container for.
+
+To start a container with a shell prompt, you would run:
+	**docker run -it container_name sh**

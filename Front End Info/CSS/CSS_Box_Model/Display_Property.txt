@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-15T09:26:11-05:00
+
+====== Display Property ======
+Created Monday 15 February 2021
+
+Some elements are **block** elements by default, and some are **inline** by default. For example, **h1's** are block elements and **spans** are inline.
+
+**Examples:**
+	**h1 {**
+		**display: inline;**
+	**}**
+	
+By doing this, you are putting the**<h1>** elements side by side (**inline**) instead of their default **block**. Essentially, you are getting rid of the default **<br>**.
+
+With **inline elements**, width, height, padding, etc. are ignored, no matter what you write in the style sheet.
+
+The way around this is to use **display: inline-block;**
+
+
+**display: inline-block; ** is a way to take block elements and turn them into **inline** elements, but still respect width, height, etc., **which is unline inline elements.**
+
+
+
+**NOTE:** using **display: none;** will hide, but not delete an element.
+
+
+

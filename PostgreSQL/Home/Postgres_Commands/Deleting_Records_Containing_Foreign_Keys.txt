@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-07T01:07:58-05:00
+
+====== Deleting Records Containing Foreign Keys ======
+Created Sunday 07 March 2021
+
+You cannot immediately delete an object from a table if it has a FOREIGN KEY relationship with an item in another table.
+
+If you want to remove the object from the table, you have to remove the FOREIGN KEY that it is related to from the record in the other table.
+
+**Two Options:**
+	- completely delete the object in the other table that has the FOREIGN KEY relationship to the item in the other table.
+		- i.e., delete this object first before deleting the other object
+	
+	- UPDATE the FOREIGN KEY from the other table; set it to NULL, then delete the object from the first table
+	
+	
+	

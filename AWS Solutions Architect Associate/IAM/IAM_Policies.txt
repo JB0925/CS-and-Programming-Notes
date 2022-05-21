@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T22:14:05-05:00
+
+====== IAM Policies ======
+Created Saturday 08 January 2022
+
+IAM Policies can be attached to groups, or as **inline** **policies** that are attached to users.
+
+Various members of a group can inherit Policies from different groups / teams.
+
+
+**Structure of IAM Policies:**
+	- **Version: **policy language version, always includes "2012-10-17"
+	
+	- **id: **an identifier for the policy (optional)
+	
+	- **Statement: **one or more individual statements (required)
+	
+	
+	**Statements Consist of:**
+		- **Sid**: an identifier for the statement (optional)
+		
+		- **Effect:** whether the statement allows or denies access (Allow, Deny)
+		
+		- **Principal:** account/user/role to which this policy is applied to
+		
+		**- Action:** list of actions this policy allows or denies
+		
+		**- Resource:** list of resources to which the actions applied to
+		
+		**- Condition: **conditions for when this policy is in effect (optional)
+

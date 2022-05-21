@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-20T00:24:25-04:00
+
+====== What is Webpack ======
+Created Sunday 20 June 2021
+
+CRA comes with Webpack:
+
+- **it enables us to import and export modules**
+	- and it packages up all CSS/JS/images into a single file for the browser to use
+	
+- **it reloads the page whenever files are saved, so long as the server is running**

@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-17T19:43:08-04:00
+
+====== Intro to Streams ======
+Created Sunday 17 April 2022
+
+Streams allow us to do things like map, filter, forEach, allMatch, anyMatch, noneMatch, collect, etc.
+
+**Example:**
+
+public static void main(String[] args) {
+
+   **// Create a List of "Person" objects**
+		List<Person> people = List.of(
+			   new Person("Maria", Gender.MALE),
+			   new Person("Todd", Gender.FEMALE),
+				new Person("Bob", Gender.PREFER_NOT_TO_SAY)
+		);
+		
+   **// Use the Streams API to create a list of the people above, but just their gender, and only the ones not equal to MALE.**
+		List<Gender> allGenders = people.stream()
+				.map(person -> person.gender)
+				.filter(gender -> !gender.name().equals("MALE"))
+				.collect(Collectors.toList());
+
+   **// Use method reference to print out each one in the list.**
+		allGenders.forEach(System.out::println);
+	}

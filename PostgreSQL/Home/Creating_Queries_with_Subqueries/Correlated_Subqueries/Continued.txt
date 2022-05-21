@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-14T10:12:45-04:00
+
+====== Continued ======
+Created Friday 14 May 2021
+
+Query: Without using a JOIN or GROUP BY, print the number of orders for each product.
+	**NOTE:** This is an exercise; using a JOIN or GROUP BY is the best way to do it in practice.
+
+
+{{~/Desktop/ScreenShots/Correlated Subquery in SELECT.png}}
+
+
+This query returns each product name, and how many orders contained that product.
+
+We have an OUTER QUERY, and an INNER SUBQUERY.
+
+The outer query is just getting the name from the products table, but again the **alias of "p1"** is what is most helpful here.
+
+We use the **p1** alias to make a comparison in our subquery.
+
+
+In the subquery, we get the count of each item in which the **orders.product_id** column matches the **products.id** column.

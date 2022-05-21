@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-05T08:22:37-04:00
+
+====== Subqueries in a WHERE Clause ======
+Created Wednesday 05 May 2021
+
+You can also run a subquery in a WHERE clause:
+
+{{~/Desktop/ScreenShots/WHERE Clause Subquery Example.png}}
+
+
+**Explanation:**
+	- The above query is saying to give me all the **prices** from **products **where the **price >** than the **average price of the products**, and to order them in descending order and only give the first 10.
+	
+
+**NOTE: You cannot give your WHERE clause Subquery an alias (i.e. AS p, etc.);**
+

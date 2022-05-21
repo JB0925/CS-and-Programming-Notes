@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-27T00:25:14-04:00
+
+====== Testing With WTF ======
+Created Tuesday 27 July 2021
+
+Testing
+**For tests to work, need to disable CSRF checking in tests:**
+
+demo/tests.py
+**app.config['WTF_CSRF_ENABLED'] = False**
+
+demo/tests.py
+class SnackViewsTestCase(TestCase):
+	"""Tests for views for Snacks."""
+
+	def test_snack_add_form(self):
+		with app.test_client() as client:
+			resp = client.get("/add")
+			html = resp.get_data(as_text=True)
+
+			self.assertEqual(resp.status_code, 200)
+			self.assertIn('<form id="snack-add-form"', html)
+
+	def test_snack_add(self):
+		with app.test_client() as client:
+			d = {"name": "Test2", "price": 2}
+			resp = client.post("/add", data=d, follow_redirects=True)
+			html = resp.get_data(as_text=True)
+
+			self.assertEqual(resp.status_code, 200)
+			self.assertIn("Added Test2 at 2", html)

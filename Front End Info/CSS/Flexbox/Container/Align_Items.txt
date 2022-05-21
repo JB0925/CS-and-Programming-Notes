@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-05T20:36:00-04:00
+
+====== Align Items ======
+Created Wednesday 05 May 2021
+
+Align items sets the alignment of items on the **cross-axis.**
+
+**align-items: flex-start;**
+{{~/Desktop/ScreenShots/Align-Items: Flex-Start.png}}
+The **flex** property is set to **row**, so the cross-axis is vertical. The items are aligned to the top of the container.
+
+
+**align-items: flex-end;**
+	- does the opposite. The cross-axis is vertical, so the items are aligned to the bottom of the screen.
+	
+
+**align-items: center;**
+	- aligns the items in the center of the cross-axis. **Setting justify-content AND align-items to "center" will center the content in the middle of the screen.**
+	
+
+**align-items: stretch;**
+	- this is the default without even setting **align-items**. Setting **align-items** to **stretch** stretches them to fit the entirety of the cross axis from top to bottom. **Even if each item has its own "height" property, if you set "align-items" to "stretch", it will fill the container along the cross-axis.**
+	
+**align-items: baseline;**
+	- aligns the items on the cross axis along the baseline of their text.
+
+
+
+

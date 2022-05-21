@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-18T22:01:16-05:00
+
+====== Looping Over a String ======
+Created Friday 18 February 2022
+
+**Using an Index with a String:**
+
+for (int i = 0; i < placeToStop; i++) {
+	if (myString**.charAt(i) **== yourString**.charAt(i)**
+	// do stuff...
+}

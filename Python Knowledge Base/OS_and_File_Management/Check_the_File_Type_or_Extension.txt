@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-22T23:56:38-04:00
+
+====== Check the File Type or Extension ======
+Created Thursday 22 October 2020
+
+import os
+
+for item in os.scandir(os.getcwd()):
+	**name, ext = os.path.splitext(item)**
+	#do more stuff
+	
+	
+
+https://www.kite.com/python/answers/how-to-check-the-type-of-a-file-in-python#:~:text=Use%20os.,Call%20os.
+

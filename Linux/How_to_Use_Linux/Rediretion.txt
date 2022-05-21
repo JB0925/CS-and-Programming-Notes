@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-16T14:09:13-04:00
+
+====== Rediretion ======
+Created Sunday 16 May 2021
+
+**Symbols:**
+	- **>** redirect stdout
+	- **< **redirect stdin
+	- **> > **append
+	
+	**NOTE: **If you are writing to a file that already has data, you MUST use append if you don't want to lose that data.
+
+**Examples:**
+	**sort -n numbers.txt > myFile.txt**
+	- takes the output from the **sort** command and redirects it to write to **myFile.txt**
+	
+	**sort colors.txt > > myFile.txt**
+	- now that **myFile.txt** has data, we **append** to it using **> >**
+	- adds the output from sorting **colors.txt** to the existing data in **myFile.txt**
+	
+	
+**Redirect Stdin:**
+	**cat < numbers.txt**
+	- same as **cat numbers.txt**, but is more useful once **piping** is used
+	
+
+**Redirect Stdin and Stdout Together:**
+	**cat < orig.txt > new.txt**
+	- this sends the data from **orig.txt** as **stdin** for **cat** to use, and then redirects the output to write to **new.txt**
+	- same as **cat orig.txt > new.txt**
+	
+
+
+**Redirect Stderr:**
+	**cat orig.txt 2> new.txt**
+	- this sends the standard error of **orig.txt** to 
+	  **new.txt**
+	
+
+**Redirect Stdout and Stderr together:**
+	**cat orig.txt > new.txt 2>&1**
+	- this sends the **stdout** of the **cat** command's input to **new.txt** and, if there is an error, will also send that to **new.txt**
+	
+	
+	Another Way in Newer Bash Versions:
+		**cat orig.txt &> new.txt**
+

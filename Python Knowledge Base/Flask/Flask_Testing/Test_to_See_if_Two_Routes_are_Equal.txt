@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-04T22:20:01-04:00
+
+====== Test to See if Two Routes are Equal ======
+Created Sunday 04 July 2021
+
+First, **from urllib.parse import urlparse**
+
+**Example:**
+	resp = client.post('/questions/3')
+	**self.assertEqual(urlparse(resp.location).path, '/thanks')**
+
+

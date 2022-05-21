@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-09T23:18:22-04:00
+
+====== Request-Response Cycle ======
+Created Thursday 09 September 2021
+
+Whenever a user makes a request, Express will invoke the **first matching route handler** that it finds until a response is issued.
+
+app.get('/dogs', (req, res) => {
+	return res.send("hello");
+});
+
+
+**// this one will never get matched**
+app.get('/dogs', (req, res) => {
+	return res.send('How are you?');
+});

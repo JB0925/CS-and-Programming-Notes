@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T14:10:09-05:00
+
+====== TypeCasting Variables ======
+Created Sunday 12 December 2021
+
+**Example:**
+
+const number2: **number** = 5;
+const isHappy: boolean = true;
+
+
+**You can also typecast variables ahead of time:**
+
+**Example:**
+	let number1: **number**
+	
+	number1 = 5;
+	
+	number1 = "12" **// will throw error**

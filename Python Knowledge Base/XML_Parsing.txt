@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-06T23:50:14-04:00
+
+====== XML Parsing ======
+Created Sunday 06 September 2020
+
+Python package called Elementree:
+
+	**import xml.etree.ElementTree as ET**
+
+to parse, the following code works:
+
+root variable below has a 'tag' and an 'attrib'.....tag = the xml tag, attrib, the dictionary of items belonging to each tag
+
+	**root = ET.fromstring(some_xml_string)**
+	**for var in root:**
+		**print(var.attrib)**
+		
+to access individual elements in the attrib dictionary, you call them just like a regular dictionary.
+	**print(var.attrib['some_key'])**
+	
+
+helpful documentation:
+	https://docs.python.org/2/library/xml.etree.elementtree.html
+	
+	
+	

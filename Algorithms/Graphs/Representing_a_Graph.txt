@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-06T23:11:41-04:00
+
+====== Representing a Graph ======
+Created Friday 06 August 2021
+
+There are two main ways to represent a graph:
+	- **Adjacency Matrix**
+	- **Adjacency List**
+	
+
+**Adjacency Matrix**
+	- usually a **2D array**, where nodes are stored at the **top **and **left, **and **edges / connections** are stored as 0s or 1s, where 0s mean no connection, and 1s mean there is a connection
+	
+	- Essentially, you read it like a **multiplication table**, or a **grid**, where you trace **A** down from the top and **D** over from the left. When they meet in the middle, if there is a 0, there is no connection. If there is a 1, there is a connection between those two vertices.
+
+
+**Adjacency List**
+	- this is often represented in actual code as a **2D array. **If the values are numbers, we use the **array indices** to store the **edges / connections**
+		- [
+		"0" [1, 5, 2],
+		"1" [0, 2],
+		"2" [1, 0]
+		]
+		
+		**NOTE: Notice how "1" is in the array at index "0", so "0" has to be in the array at index 1.**
+	
+	
+	- if the **vertices** are not **numbers**, we can use a **dictionary / map**
+		- {
+			"A": ["C", "F"],
+			"B": ["E", "C"],
+			"C": ["A", "B"]
+		}
+

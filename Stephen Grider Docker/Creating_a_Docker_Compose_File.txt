@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-06T09:24:48-05:00
+
+====== Creating a Docker Compose File ======
+Created Thursday 06 January 2022
+
+**1). **Create a docker-compose.yml file in the root directory of the repository.
+
+**2). **Specify a version of docker-compose that you want to use. **Ex: version: '3.7'**
+
+**3).** Specify the types of containers you want to run. **Ex:**
+	**services:**
+		**redis-server:**
+			**image: 'redis-demo'**
+		**node-app:**
+			**build: .         **<- build from Dockerfile
+		  **ports:**
+			**- '4001:8081'**
+		  **environment:**
+			**- PORT=4000**
+			**- etc.**
+			
+
+**NOTE:** Instead of **environment**, you could also use this syntax:
+	**env_file:**
+		**- ./.env**
+

@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-15T15:32:56-05:00
+
+====== Clear Dictionaries - Methods ======
+Created Tuesday 15 December 2020
+
+**Ways to clear a dictionary:**
+
+1). Completely clear the dictionary, leaving it blank:
+		**my_dict.clear()**
+			returns **{}**
+			
+
+2). Clear the dict values, but not the keys:
+		**my_dict = {'joe': 5, 'sarah': 8, 'tom': 16}**
+		**my_dict = my_dict.fromkeys(my_dict, 0)**
+		**print(my_dict)**
+			returns **{'joe': 0, 'sarah": 0, 'tom': 0}**
+			
+		**Example 2:**
+			**my_dict = dict.fromkeys((n,k) for n in range(3) for k in range(3))**
+			NOTE = this works when creating a dictionary from scratch
+
+
+https://stackoverflow.com/questions/65418541/python-how-can-i-turn-a-list-of-tuples-into-dictionary-keys/65418755#65418755

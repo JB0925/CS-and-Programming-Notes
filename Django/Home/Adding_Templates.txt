@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-01T20:31:05-05:00
+
+====== Adding Templates ======
+Created Monday 01 February 2021
+
+**Getting Started:**
+	- in the main directory of the project, and inside the virtual environment:
+		- **mkdir templates**
+		- **touch templates/template_name.html**
+
+
+	- go back to **config/settings.py** and update the **TEMPLATES** list
+	- in the dict under **DIRS**, enter:
+		{{.\pasted_image.png}}
+		- **this allows you to not have to create a new templates folder, then a subfolder with the same name as the app, then a some_name.html file inside of that, for EVERY app you create**
+		- instead, we made this subtle change to the **project's** "**config/settings.py"** file
+		
+	- from there, you can code the **templates/home.html** file however you'd like
+
+

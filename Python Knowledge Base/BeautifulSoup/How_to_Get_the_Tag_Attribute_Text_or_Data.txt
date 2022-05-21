@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-07T14:24:47-05:00
+
+====== How to Get the Tag Attribute Text or Data ======
+Created Sunday 07 February 2021
+
+For example, to get the **href** link from an anchor tag, you cannot just use **a.text**
+
+You need to treat it like a dictionary key, as below:
+
+{{.\pasted_image.png}}
+
+To find out if **amazon.com** was in the **href** attribute of the **<a>** tags I collected, I wrote the conditional **if AMAZON in link['href']**
+
+
+If that does not work, all of the HTML elements are stored in an **attrs** attribute, that is like a dict. It has a **.values()** attribute as well.
+In the example below, I needed to get the **src** url from the **img** element, but they were nested and **tag.img['src']** was not working.
+To make this work, I had to cast all of the dict_values to a list and choose the first one:
+
+{{.\pasted_image001.png}}
+
+
+https://stackoverflow.com/questions/35416575/get-the-href-text-of-a-link-that-has-a-certain-class-attribute-using-beautifulso

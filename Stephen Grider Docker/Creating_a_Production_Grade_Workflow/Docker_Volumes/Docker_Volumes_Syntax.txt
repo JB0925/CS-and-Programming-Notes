@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T00:46:07-05:00
+
+====== Docker Volumes Syntax ======
+Created Sunday 09 January 2022
+
+To utilize docker volumes:
+
+**docker run -p 3000:3000 \**
+  **-v /app/node_modules \**
+  **-v $(pwd):/app \**
+  **image_id**
+
+
+**The usage of "-v":**
+	- with the first **-v**, we are putting a bookmark on the **node_modules** folder
+	
+	- with the second one, we are mapping the **pwd** into the **/app** folder.
+
+
+This is obviously a long winded way of running the app. So how do we get around this? By writing a **docker-compose.yml **file. See **Docker-compose WITH Volumes.**	
+	

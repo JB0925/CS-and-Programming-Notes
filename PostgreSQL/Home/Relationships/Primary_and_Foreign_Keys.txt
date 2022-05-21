@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-29T23:06:28-04:00
+
+====== Primary and Foreign Keys ======
+Created Monday 29 March 2021
+
+A **primary key** is a unique identifier in a particular table of a row.
+
+A **foreign key** is a link to an item in another table. **A foreign key does not have to be unique.** 
+**Primary keys** CANNOT change, but **foreign keys** CAN change.
+
+Example:
+{{.\pasted_image.png}}
+
+Here, in the **photos** table, the **foreign key** is the **user_id **column. In this table, we are linking a **photo** to a **user** in the **users** table by the **user_id.**
+
+
+**When deciding which table should get a foreign key, it should be the MANY table, in a One to Many relationship.**
+
+{{.\pasted_image001.png}}
+In the above example, comments gets two foreign keys. One for the **photos** table (one photo has many comments), and one for the **users** table (One user has many comments).
+
+In **comments**, the **user_id** column will keep of all comments that belong to **one** user.
+The **photo_id** column will keep track of all comments that belong to One photo.
+
+If we look at the first row of **comments**, that particular comment was made by user with the **user_id** of 4, and it was made on the photo with the **photo_id** of 3. **So user #4 (sim3onis) made the comment "cool pic" on photo #3.**
+
+
+The **photos** table also has a **foreign key (user_id)**, because **ONE** user can have **MANY** photos.
+
+{{.\pasted_image002.png}}

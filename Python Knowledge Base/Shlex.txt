@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-24T12:39:05-04:00
+
+====== Shlex ======
+Created Saturday 24 October 2020
+
+shlex is a standard library module that can be used to split strings along quotes
+
+**import shlex**
+
+**line = shlex.split(line)**
+
+will return a split list, with double quoted strings preserved as one element

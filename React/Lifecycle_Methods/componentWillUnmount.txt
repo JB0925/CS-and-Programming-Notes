@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-02T01:53:22-04:00
+
+====== componentWillUnmount ======
+Created Monday 02 August 2021
+
+This method is more of a cleanup method, and is called right as a component is being torn down.
+
+In this method, you might:
+	- clear timers
+	- clear intervals
+	- tie up loose ends in a database
+	- etc.,
+
+There is no point in setting state in this method, as the component will not be rendered again anyway.
+

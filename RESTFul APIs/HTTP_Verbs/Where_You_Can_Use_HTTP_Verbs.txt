@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-30T23:03:32-04:00
+
+====== Where You Can Use HTTP Verbs ======
+Created Friday 30 July 2021
+
+**Verb		Forms / Links		AJAX		Server-side**
+GET			  yes			 yes				yes
+
+POST		  yes			 yes				yes
+
+PUT / PATCH     no				 yes				yes
+
+DELETE		  no				 yes				yes

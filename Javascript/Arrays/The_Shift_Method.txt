@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-18T10:18:39-04:00
+
+====== The Shift Method ======
+Created Thursday 18 March 2021
+
+The shift function is just like the **pop** function, but for the first element of the array instead of the last.
+
+Similar to Python's **lst.pop(0)**
+
+**Example:**
+	**var myArray = [1,2,3];**
+		**x = myArray.shift();**
+	  **console.log(x);**
+		returns 1
+	  **console.log(myArray);**
+		returns **[1,2]**
+

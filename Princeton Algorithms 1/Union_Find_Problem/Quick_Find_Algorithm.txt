@@ -1,0 +1,74 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-17T00:41:44-05:00
+
+====== Quick Find Algorithm ======
+Created Thursday 17 December 2020
+
+This is an **eager** algorithm. Eager algorithms execute immediately and return a result. They are often easier to understand and debug.
+
+**Data Structure Used:	**integer array of size N
+
+**Interpretation:	p** and **q** are connected if they have the same id
+				array = [0,1,1,8,8,0,0,1,8,8]
+				**so, array[0], array[5], **and **array[6]** are connected, etc.
+				
+				{{.\pasted_image.png}}		#examples of the connections
+				
+
+**NOTE on Quick UNION:**
+	**union(a,b)**
+	to perform a **union** operation, you have to change the ids of all of the objects equal to **a**, so that they are equal to **b.**
+	{{.\pasted_image003.png}}	the bolded was a 4, but had to be changed in the array to 3 to perform the union operation
+
+
+**Quick Find Demo:**
+
+{{.\pasted_image001.png}}
+
+{{.\pasted_image004.png}}
+
+In the example above, we see many array ids that have already been changed to perform the **union** operation. array[8] and array[9] are already connected. In the array, they are both equal to 8. In the graphic, they are connected because **8 is connected to 3, 3 to 4, and 4 to 9. **Obviously, in the array, array[3] and array[4] are also connected.
+
+{{.\pasted_image005.png}}
+
+In the above example, 5 and 0 are not connected. However, 5 and 6 are (both have ids of 5). In order to connect 0 to 5, you have to change **BOTH** the id for array[5] **AND **array[6] to 0 (**first item in the method is changed to match the second**).
+
+
+
+**Quick Find Code:**
+
+{{.\pasted_image007.png}}
+
+Code in Java for Quick Union Problem:
+	Step 1). create a class **public class QuickFindUF**
+							{
+								**private int[ ] id:		#**create an array variable bound to the method
+								
+								**public QuickFindUF(int N)**
+								{
+									**id = new int[N]:		**#populate the array with numbers 0 through 9
+									**for (int i = 0: i < N: i++)**
+									**id[i] = 1:**
+								}
+								
+								**public boolean connected(int p, int q)	**#the **QUICK FIND** method
+								{ **return id[p] == id[q]: }**
+								
+								**public void union(int p, int q)				**# the **UNION** method
+								{									**# **set the parameters to ints
+									**int pid = id[p]:						  **# python: **for i in range(len(id)):**
+									**int qid = id[q]:						  **# 	   **if id[i] == pid:**
+									**for (int i = 0: i < id.length: i++)			   	id[i] = qid**
+										**if (id[i] == pid) id[i] = qid:**
+								}
+								
+								
+**Code Analysis:**
+{{.\pasted_image008.png}}		# populating the array = **O(N)**
+																	  # **Union** method = **O(N)	**going through each array element
+																	  # **Find** method = **O(1)	**using array index to read from list
+
+**The Union() algorithm is too slow. It takes O(N^2) array accesses to process 1 turn through the array**
+
+

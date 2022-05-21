@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-25T14:10:22-05:00
+
+====== Bootstrap Containers ======
+Created Thursday 25 February 2021
+
+you can wrap html elements in divs that have classes that are Bootstrap containers
+
+**container-fluid: **full screen width container
+**container**: has a good amount of margin on left and right
+**container-sm, container-md, container-lg, container-xl**: responsive and will change to fit the width of the screen they are on
+
+
+**Example of a div with a class of container wrapping a form:**
+{{.\pasted_image.png}}
+

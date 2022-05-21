@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-21T13:46:11-04:00
+
+====== setInterval and clearInterval contd ======
+Created Friday 21 May 2021
+
+Here, we are using **setInterval **and **clearInterval** to create two functions.
+
+**Function Objectives:**
+
+1). **countDown** serves as a countdown timer. Once the timer hits 0, we exit and console.log "DONE!"
+
+2). **randomGame** serves as a random number generator. We draw a random number every 1000ms (1s), and add to a counter each time. If the random number is greater than 0.75, we break out of the timer, and console.log the **counter** variable.
+
+**countDown function:**
+	{{~/Desktop/ScreenShots/set & clear Interval Example .png}}
+	
+	**NOTE:** It's important to give the **setInterval** timer a variable name. This assures that you are able to clear the interval later. 
+	
+	Inside the interval, we run a check to see if n > 0. If it is, we console.log n, and decrement n.
+	
+	Otherwise, we console.log "DONE!", and **clearInterval**, passing in **count**, which is the variable name of the **setInterval** timer.
+	
+	**NOTE: **Make sure to assign a time value at the end of your function.
+	
+
+**randomGame Function:**
+	{{~/Desktop/ScreenShots/set&clear Interval #2.png}}
+	
+	**NOTES:** Similar to **countDown**. Assign the **setInterval** timer to a variable, so we can close it out later with **clearInterval**. Each time **randomNumber **runs, we get a new random number.
+	
+	Outside the **setInterval / randomNumber**, we create a **counter** to keep track of how many times we have to call a new random number before we reach >= 0.75. 
+	
+	Inside the **setInterval / randomNumber**, we draw a new random number, and increment the counter by 1. 
+	
+	We run a check to see if the random number is greater than 0.75. **If it is**, we create a message with the value of the **counter**, console.log the message, and **clearInterval** by passing in **randomNumber.**
+	
+	Again, we made sure to set the time at the end of **setInterval.**
+	

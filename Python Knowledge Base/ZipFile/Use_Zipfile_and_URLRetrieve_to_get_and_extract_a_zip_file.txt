@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-02T23:48:16-05:00
+
+====== Use Zipfile and URLRetrieve to get and extract a zip file ======
+Created Saturday 02 January 2021
+
+{{.\pasted_image.png}}

@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-10T23:54:10-05:00
+
+====== ID Selector ======
+Created Wednesday 10 February 2021
+
+**NOTE: **An **id** should **ONLY** be used once. This is because you are trying to create a **hook** to single out the one element.
+
+In addition to using **id** attributes to associate a **label** with an **input**, we can use **ids** to style **one** particular element on a page individually.
+
+To do this, give the **individual element you are trying to style an id.**
+
+Then, in your css file, choose that **id** by writing **#idname**, and writing your css as you normall would. **This is called a "hook".**
+
+
+**Example:**
+{{.\pasted_image001.png}}		{{.\pasted_image.png}}		{{.\pasted_image002.png}}
+
+
+**Only that one button has that color.**
+
+
+
+

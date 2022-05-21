@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-17T13:55:35-04:00
+
+====== input, src, href, and value ======
+Created Saturday 17 April 2021
+
+Like **innerHTML**, with **input, value, href** and **src**, you can also get and set their values.
+
+**Example:**
+	let a = document.querySelector('a');
+	**a.href;**
+		- returns the **href** value for the first <a> tag in the document
+	
+	**a.href = 'https://www.google.com';***
+		- sets the href to the passed in value
+

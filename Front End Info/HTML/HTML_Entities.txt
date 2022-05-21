@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-05T11:11:48-05:00
+
+====== HTML Entities ======
+Created Friday 05 February 2021
+
+HTML Entities are used to display special characters on a page.
+
+{{.\pasted_image.png}}
+
+**Example:**
+	- a diamond, a copyright symbol, a cross, etc.
+	- also used when you want to use a symbol that is significant to the syntax of HTML (i.e. <, >)
+	- instead of "1 < 6", write "1 &lt; 6"
+	{{.\pasted_image001.png}}
+	
+	- to find the codes, search for **HTML Entity Codes**
+	- you can also use an **Entity Number** to do the same thing
+	

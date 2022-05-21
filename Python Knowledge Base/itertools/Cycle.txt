@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-16T20:33:19-04:00
+
+====== Cycle ======
+Created Friday 16 October 2020
+
+# way to create an infinite cycle of objects
+
+**from itertools import cycle**
+
+# create an infinite cycle of letters and numbers
+
+
+**from string import ascii_uppercase**
+
+seq_list = [ ]
+
+for index, letter in enumerate(ascii_uppercase, start=1):
+		seq_list.append(index)
+		seq_list.append(letter)
+
+final = cycle(seq_list)			# **cycle takes in one iterable**
+
+while True:
+	yield next(final)
+	
+
+# **the above code will generate an infinite list of numbers and letters, one at a time**
+

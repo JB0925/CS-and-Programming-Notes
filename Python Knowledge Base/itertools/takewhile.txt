@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-20T23:26:14-04:00
+
+====== takewhile ======
+Created Tuesday 20 October 2020
+
+pretty cool way to get all values <, >, etc., while the condition is true:
+
+{{.\pasted_image.png}}

@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-21T09:04:03-05:00
+
+====== Get Slice - Arrays.copyOfRange ======
+Created Monday 21 February 2022
+
+To get a slice of an array, such as **myArr[3:6]**, or **myArr.slice(3, 6)**, in Java you use:
+
+int[] myNewArray = Arrays.copyOfRange(myArr, 3, 6);

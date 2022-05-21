@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-08T21:01:23-04:00
+
+====== Before and After Hooks ======
+Created Wednesday 08 September 2021
+
+For one time setup / teardown:
+	**beforeAll: **run before all tests start **once**
+	**afterAll: **run after all tests finish **once**
+	
+For things that should run before **every** test:
+	**beforeEach:** run before **each** test starts
+	**afterEach: **run after **each** test finishes
+	
+
+**NOTE:** All of these can be put outside of any **describe / test** function, at the beginning of a file.
+

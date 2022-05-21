@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-03-19T21:58:44-04:00
+
+====== Find By Size ======
+Created Saturday 19 March 2022
+
+find . -size +5G
+	**finds all files in the pwd that are >= 5 Gigabytes**
+	
+find . -size -100M
+	**finds all files in the pwd that are <= 100 Megabytes**
+	

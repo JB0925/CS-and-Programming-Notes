@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-17T14:30:18-04:00
+
+====== GREATEST and LEAST ======
+Created Monday 17 May 2021
+
+**GREATEST** takes a list of values and determines which one is the greatest.
+
+**Example:**
+	**SELECT GREATEST(weight * 2, 30)**
+	**FROM products;**
+
+
+
+**LEAST** takes a list of values and determines which one is the least.
+
+**Example:**
+	**SELECT LEAST(price * 0.5, 300)**
+	**FROM products;**

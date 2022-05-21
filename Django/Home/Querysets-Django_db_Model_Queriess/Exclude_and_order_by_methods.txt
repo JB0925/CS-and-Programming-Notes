@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-03T13:54:24-05:00
+
+====== Exclude and order by methods ======
+Created Wednesday 03 March 2021
+
+**Exclude:**
+You can exclude results from your 'QuerySet by using the **exclude** method.
+
+**Example:**
+	**User.objects.filter(username__startswith='J').exclude(username__endswith='e')**
+		- will return all User objects whose username attribute begins with J, but exclude all whose username attribute end with e.
+		{{.\pasted_image.png}}
+		- I was the only one in the DB. My name starts with j, but also ends with e, hence the empty queryset.
+		**Without the exclude clause:**
+			{{.\pasted_image001.png}}
+
+
+
+
+**Order By:**
+	- basic sorting of objects
+	- default is ascending; can get descending with "-"
+	{{.\pasted_image002.png}}
+	The ordering is thrown off by the four digit number, but the idea is correct.
+	

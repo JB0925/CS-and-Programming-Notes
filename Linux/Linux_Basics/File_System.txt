@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-13T15:04:09-05:00
+
+====== File System ======
+Created Wednesday 13 January 2021
+
+**Common Directory Names:**
+	"**/bin**" - this is the directory that contains all of the basic commands needed to start and use a minimal system.
+	
+	"**/sbin**" - this directory contains executable commands (also known as **binaries**) for the super user / root user
+			- root user is the administrator, and has more powers than a regular user
+	
+	"**/home**" - this directory contains all of the user directories (i.e. "/home/jesse)
+	
+	"**/root**" - the home directory of the root user / super user / administrator
+	
+	"**/etc**" - this directory contains configuration files; stands for Editable Text Configuration
+	
+	"**/lib**" - this directory stores software libraries required for the executables in "**/bin** and "**/sbin**.
+	
+	"**/tmp**" - a directory for temporary files ....not a good place to save for long term storage...it is emptied every time you restart your computer
+	
+	"**/var**" - contains various files used by the OS including databases, email boxes, and history. Much of what has happened on the system can be found in "**/var/logs**.
+	
+	"**/usr**" - acronym for **Unix System Resources**, it contains subfolders that are used to extend system operations
+			- for example, **"/usr/bin** has executables (**binaries**) that are not already present in "**/bin**, and therefore are not essential to a minimal system
+			- same as above for "**/user/lib**
+			
+	"**/dev**" - files that directly or indirectly correspond to a physical device
+			**Examples:**
+				- "/dev/printer
+				- "/dev/memory
+				- "/dev/networkcard
+				
+
+

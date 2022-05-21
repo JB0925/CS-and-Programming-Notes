@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-03-19T22:32:36-04:00
+
+====== Find All Empty Files ======
+Created Saturday 19 March 2022
+
+find . -empty -type f
+	**finds all empty files in the pwd**
+
+find . -empty -type d
+	**finds all empty directories in the pwd**
+	

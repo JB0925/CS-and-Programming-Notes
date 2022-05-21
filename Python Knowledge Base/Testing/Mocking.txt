@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-29T22:38:30-04:00
+
+====== Mocking ======
+Created Wednesday 29 July 2020
+
+In testing, mocking is creating objects that simulate the behavior of real objects.
+
+{{.\pasted_image.png}}
+
+In the picture, they are not calling tweepy.API's get feature; they are mocking it using their own data.

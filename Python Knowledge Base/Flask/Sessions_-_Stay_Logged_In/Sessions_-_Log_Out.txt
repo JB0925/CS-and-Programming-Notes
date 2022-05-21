@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-30T23:40:17-04:00
+
+====== Sessions - Log Out ======
+Created Friday 30 October 2020
+
+Step 1):	**Create a new page via a Python function, call it "logout":**
+{{.\pasted_image.png}}
+			**pop/delete the user from the session**
+			**redirect the user to the login page**
+			
+			
+Step 2):	**Add functionality to the login page:**
+				**in the else: block, check to see if the user is in the session.**
+					**if so, redirect them to the user page					# if this is true, it means the user is already logged in**
+				**use the login.html page to create the login page**
+{{.\pasted_image001.png}}# new functionality to check if the user is in the session data
+
+
+
+

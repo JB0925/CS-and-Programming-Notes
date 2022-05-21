@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-20T01:09:13-04:00
+
+====== Export a Default AND Extras ======
+Created Sunday 20 June 2021
+
+**Exporting:**
+{{~/Desktop/ScreenShots/Export Default and Extras.png}}
+
+**Importing:**
+{{~/Desktop/ScreenShots/Import a Default and Extras.png}}
+

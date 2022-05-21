@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-13T22:18:36-04:00
+
+====== Combinations with replacement ======
+Created Tuesday 13 October 2020
+
+Return r length subsequences of elements from the input iterable allowing individual elements to be repeated more than once.
+
+The combination tuples are emitted in lexicographic ordering according to the order of the input iterable. So, if the input iterable is sorted, the combination tuples will be produced in sorted order.
+
+Elements are treated as unique based on their position, not on their value. So if the input elements are unique, the generated combinations will also be unique.
+
+**Examples:**
+	{{.\pasted_image.png}}
+	
+
+**Biggest difference between this and itertools.permutations(), is that CWR allows duplicates i.e. "AA" or ("bob", "bob"), and PERMUTATIONS does not.**
+

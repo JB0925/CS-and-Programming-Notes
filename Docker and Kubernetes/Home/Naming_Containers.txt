@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-10T09:52:41-05:00
+
+====== Naming Containers ======
+Created Wednesday 10 March 2021
+
+Start a container, then run **docker ps.**
+
+You will see a random name under the **NAMES** column with **docker ps**
+
+
+**How to Name Your Docker Container:**
+		**docker run --name your_name_here -d -p 8080:port_number CONTAINER_INSTANCE**
+
+
+
+Go back and run **docker ps** and you should see the running container's information, this time with the name you gave it.
+
+You can now use this name to start and stop containers.
+

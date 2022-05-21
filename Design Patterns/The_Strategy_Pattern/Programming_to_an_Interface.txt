@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-17T21:05:09-05:00
+
+====== Programming to an Interface ======
+Created Thursday 17 February 2022
+
+Lets say you have a Superclass called **Duck**. All ducks may have a common method or two, but not all ducks are exactly alike.
+
+Rather than jam all ducks into one class, we can create **interfaces** for the things that vary, and then create **separate classes** that implement those interfaces. This allows those **separate classes **to be reusable and interchangable.
+
+**Example:**
+
+interface FlyBehavior {
+	void fly();
+}
+
+interface QuackBehavior {
+	void quack();
+}
+
+
+public class FlyWithWings implements **FlyBehavior {**
+	public void fly() {
+		System,out.println("I'm flying.");
+	}
+}
+
+
+public class FlyNoWay implements **FlyBehavior {**
+	public void fly() {
+		System.out.println("I can't fly.");
+	}
+}
+
+
+public class Quack implements **QuackBehavior {**
+	public void quack() {
+		System.out.println("Quack.");
+	}
+}
+
+
+public class Squeak implements **QuackBehavior **{
+	public void quack() {
+		System.out.println("Squeak");
+	}
+}

@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-09T23:00:08-05:00
+
+====== Change Dock Side ======
+Created Thursday 09 December 2021
+
+When you open up CDT, click the three dots in the top right corner. 
+
+From there, you can toggle the dock side.
+
+The default is the one furthest to the right.
+

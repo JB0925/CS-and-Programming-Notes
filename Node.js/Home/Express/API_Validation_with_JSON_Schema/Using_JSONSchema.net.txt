@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-29T20:09:37-04:00
+
+====== Using JSONSchema.net ======
+Created Wednesday 29 September 2021
+
+You can use **jsonschema.net** to create a JSON Schema for you.
+
+All you need to do is type in an example of what the JSON that will be submitted should look like, and then click **submit**. **jsonschema.net** will generate a JSON Schema for you.
+
+You can go in and make edits, too.
+
+You can make certain elements required:
+
+1). Click "Edit"
+{{~/Desktop/ScreenShots/JSON Schema Edit Button.png}}
+
+2). Scroll down to the individual properties and click edit. From there, scroll down and click the **eye** next to "required" to make the property required. Then click **save**.

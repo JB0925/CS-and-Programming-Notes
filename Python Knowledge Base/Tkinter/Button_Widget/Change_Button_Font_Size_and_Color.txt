@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-14T22:13:42-04:00
+
+====== Change Button Font Size and Color ======
+Created Wednesday 14 October 2020
+
+{{.\pasted_image.png}}
+
+https://pythonexamples.org/python-tkinter-button-change-font/
+
+**You can also pass color strings into "bg" and "fg" instead of Hex values:   (bg='black', fg='white')**

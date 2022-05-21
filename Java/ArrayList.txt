@@ -1,0 +1,99 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-21T10:27:02-05:00
+
+====== ArrayList ======
+Created Monday 21 February 2022
+
+**NOTE:** An Array List cannot be used with primitive types. See **Autoboxing and Unboxing **for a way around that.
+
+An [[ArrayList]]  is a resizable array, that works much more like a Python or JS list.
+
+**Instantiation:**
+	public ArrayList<String> groceryList = new ArrayList<String>();
+		**// [[ArrayList]] is a class, which explains the ();**
+		
+
+**Add to Array List:**
+	public void addItem(String item) {
+		**groceryList.add(item);**
+	}
+	
+
+**Add at Particular Index:**
+	public void addItem(String item) {
+		**groceryList.add(2, item);**
+	}
+
+
+**Add All Elements of One AL to Another:**
+	**groceryList.addAll(otherGroceryList);**
+	
+
+**Add All Elements of One AL to Another at a Given Index:**
+	**groceryList.addAll(3, otherGroceryList);**
+		// adds the entire list to the first list, starting at index 3
+
+**Get Size of Array List:**
+	**groceryList.size();**
+		// returns length of Array List
+
+
+**Print Items in List:**
+	public void printGroceryList(int num) {
+		**groceryList.get(num);**
+		
+		// returns the item at that index
+	}
+	
+
+**Update Item in List:**
+	**groceryList.set(index, newItem);**
+	
+
+
+**Remove an Item at an Index:**
+	String itemToRemove = **groceryList.get(index);**
+	
+	**groceryList.remove(index);**
+
+
+**Remove an Item by Actual Item:**
+	**groceryList.remove("bananas");;**
+	
+
+
+**Check if Item is in Array List:**
+	**groceryList.contains(item);**
+		// returns a boolean
+
+
+**Find the Index of an Array List Item:**
+	**groceryList.indexOf(item);**
+		returns the index or -1
+
+
+**Get a Slice of an AL:**
+ArrayList<String> al2 = new ArrayList<String>(**al.subList(1, 4)**);
+	**// creates a new List starting with item 1, and ending after we get item 3.**
+	
+
+**Get the Last Occuring Index of an Item in an AL:**
+	ArrayList<Integer> myArr = new ArrayList<>();
+		**// [1,3,1,5,3]**
+	myArr.lastIndexOf(3);
+		**// returns 4**
+
+
+**Clone an ArrayList - (Shallow Copy):**
+	ArrayList<String> **oldArr** = new ArrayList<String>();
+	ArrayList<String> **newArr** = (ArrayList<String>)**oldArr.clone();**
+
+
+**Clear an ArrayList: **
+	myList.clear();
+	
+
+**Check to see if List is Empty:**
+	myList.isEmpty();
+	

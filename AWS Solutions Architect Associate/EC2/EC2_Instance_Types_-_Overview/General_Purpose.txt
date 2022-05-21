@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T11:44:26-05:00
+
+====== General Purpose ======
+Created Sunday 09 January 2022
+
+The **General Purpose** Instance Type is:
+	- Great for a diversity of workloads, such as web servers or code repos
+	
+	- It is a balance between:
+		- Compute
+		- Memory
+		- Networking
+	
+	The **t2.micro** is a General Purpose EC2 instance.
+	

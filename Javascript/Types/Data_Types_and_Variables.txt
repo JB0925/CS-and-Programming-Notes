@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-16T12:04:54-04:00
+
+====== Data Types and Variables ======
+Created Tuesday 16 March 2021
+
+**There are 7 different data types you can use in Javascript:**
+	- undefined, null, boolean, string, symbol, number, and object
+		- **undefined: **a variable that hasn't been set to anything yet
+		- **null**: like **None** in Python
+		- **boolean**: True or False
+		- **symbol:** immutable primitive value that is unique
+		- **number: **a number
+		- **object: **can store key-value pairs
+		
+
+
+**How to declare a variable:**
+	- You can use **var** keyword, i.e. **var myName = "Jesse"**
+		- after this initial declaration, you can change the variable to something else
+	
+	- You can use **let **keyword, i.e. **let myName = "Jesse"**
+	
+	- You can use **const**, as in **const pi = 3.14**
+	
+	
+	**Var can be used throughout your whole program.**
+	
+	**"let" can only be used within the scope of where you declared it.**
+	
+	**"const" is a variable that you cannot change.**
+	

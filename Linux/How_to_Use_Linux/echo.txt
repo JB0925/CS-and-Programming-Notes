@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-12T11:46:39-05:00
+
+====== echo ======
+Created Thursday 12 November 2020
+
+will print or "echo" back whatever you type in after echo:
+		**echo "hi there"**
+		//returns "hi there"//
+
+
+
+echo can echo your $PATH environment variable:
+		**echo $PATH**
+		//returns a long PATH variable//
+		
+
+use **which **command to find the file that is executed for any given program name:
+		**which echo**
+			//returns  "[[/usr/bin/echo"]]//
+
+
+**echo $0: **displays the name of the shell you are using to interpret the commands
+{{.\pasted_image.png}}
+
+
+
+
+
+

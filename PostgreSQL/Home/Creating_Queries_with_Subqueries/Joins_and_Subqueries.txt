@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-04T21:28:25-04:00
+
+====== Joins and Subqueries ======
+Created Tuesday 04 May 2021
+
+{{~/Desktop/ScreenShots/JOIN with Subquery.png}}
+
+The above gets the first name from the users table, and narrows the query down by looking for users who ordered a product that had a product id of 3.

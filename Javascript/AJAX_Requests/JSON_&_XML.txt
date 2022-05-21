@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-21T14:41:13-04:00
+
+====== JSON & XML ======
+Created Wednesday 21 April 2021
+
+**XML** is very similar to JSON, except that it styles its data in an HTML format.
+
+**Example:**
+	<name>
+		<first>Jesse</first>
+		<last>Brink</last>
+	</name>
+	<email>jesse@yahoo.com</email>
+	
+	
+	The data is pulled out of the tags, and the tags (usually) aren't valid HTML tags.
+	
+	
+
+**JSON:**
+	- it is NOT 'JavaScript, but it is really close
+	

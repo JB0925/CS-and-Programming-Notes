@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-13T23:16:26-04:00
+
+====== Testing React Forms ======
+Created Wednesday 13 October 2021
+
+To test typing in form inputs, we can use **fireEvent.change**
+
+**NOTE:** When testing forms, it is usually a good idea to **render** the form's **parent** component, and then select elements of the form from that parent. Especially if the parent doesn't receive props, etc.
+
+**Example:**
+	import React from "react";
+	import { render, fireEvent } from "@testing-library/react";
+	import ShoppingList from "./ShoppingList";
+	
+	test("it should add a new item", () => {
+		const { queryByText, getByLabelText } = render(<ShoppingList />);
+		const input = getByLabelText("Product");
+		const btn = queryByText("Add Item");
+		
+		**// chocolate milk should NOT be in the document**
+		expect(queryByText("Product Name: chocolate milk").not.toBeInTheDocument();
+		
+		**// Fill out the form and submit it**
+		fireEvent.change(input), { target: {value: "Chocolate Milk" } });
+		fireEvent.click(btn);
+		
+		**// But now it should!**
+		expect(queryByText("Product Name: chocolate milk").**toBeInTheDocument**();
+	});

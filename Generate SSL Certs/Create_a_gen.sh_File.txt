@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-03-11T16:50:17-05:00
+
+====== Create a gen.sh File ======
+Created Friday 11 March 2022
+
+This file can be used to automate the creation of new certs and keys.
+
+**Example of file:**
+	**NOTE:** No dash after the forward slashes
+	**NOTE: **You will still be prompted for a password, but it will skip the other steps
+
+rm *.pem
+
+openssl req -x509 -newkey rsa:4096 -days 365 -keyout ca-key.pem -out ca-cert.pem -subj "C=US/ ST=Virginia/L=Locust Grove/O=None/OU=None/ CN=*.mysite.com/emailAddress=[[jbrink0925@gmail.com"]]
+
+echo "CA's self-signed certificate"
+
+openssl x509 -in ca-cert.pem -noout -text

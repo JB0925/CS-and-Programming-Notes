@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-27T01:20:09-04:00
+
+====== deque ======
+Created Monday 27 July 2020
+
+A deque is a list-like object from the collections module. It is extremely flexible. Below will be a link to the Python standard library page explaining a deque's methods.
+
+Here are some of them:
+
+//create a deque://
+	 x = deque()    or x = deque(maxlen=int).....will set the deque to take a maximum amount of items
+
+x.append(11).....will append an item to the right end of the deque
+
+x.appendleft(45)......appends the item to the left end of the deque
+
+x.pop().....pops off the last item on the right side of the deque, allows you to use the item
+
+x.popleft()....pops the item off the left side
+
+x.insert(index, value).....allows you to insert a value at an index of your choice
+
+x.remove(value).....removes one instance of a value
+
+x,count(value)......counts the number of occurrences of a value in the deque
+
+x.extend([3, 9, 12]).....appends multiple items to the right end of the deque
+
+x.extendleft([3, 9, 12]).....appends multiple items to the left end of the deque
+
+x.reverse()....reverses the deque
+
+x.rotate(int value).....rotates the deque a certain number to the right....a negative int will rotate it that number to the left
+
+
+Python standard library page on deques:
+
+https://docs.python.org/3/library/collections.html?highlight=deque#collections.deque
+

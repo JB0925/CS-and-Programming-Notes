@@ -1,0 +1,60 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-15T12:04:29-05:00
+
+====== less  cat less, and more - see more or less of long files ======
+Created Friday 15 January 2021
+
+typing the command **cat "/etc/services **will output a long list of all the services on the system, with a brief description of them
+
+to see only a portion at a time, use the "**|**" (pipe) and the **less** or **more** commands
+
+**Examples:**
+	**cat "/etc/services | more**
+		returns a truncated version of the file's contents. Press enter to see one more line at a time from the file.
+		Press spacebar to see one page at a time.
+
+
+To exit, you can use **q** or **Ctrl-C**.
+
+
+
+**How to Use Less:**
+	- using the command **cat "/etc/services | less** will return something that looks very similar to what the **more** command did above, but with **less** you can use arrows to scroll, and you cannot do that with **more**
+       
+	   - the letter **j** can be used to scroll down one line at a time
+	- the letter **k** can be used to scroll up one line at a time
+	- the **spacebar** allows you to scroll one page at a time
+	- lowercase **g** will take you to the beginning of a document
+	- uppercase **G** will take you to the end of a document
+	- lowercase **b** will let you scroll one page backward
+	- uppercase **N** will print line numbers along with the rest of the output
+
+
+**Using more or less on Other Files in Your File System:**
+	- simply typing **more filename.txt** or **less thatfile.py** will also display the contents of your file
+	- this is similar to **cat** **filename.txt**
+
+
+
+**Using Less to Search:**
+	when viewing a long list of files or directories, using **less** can be helpful, but it can also be helpful because it will allow you to search for information
+	
+	use **ls "/usr/bin | less** to get all of the files and directories inside of "/usr/bin".
+	- this will allow to nicely scroll up and down as before, but it also allows you to **search**
+	
+	**Less Search Commands:**
+		Forward Search - **/ search terms		(**search ahead of your cursor's current position)
+		Backward Search - **? search terms		(**search behind your cursor's current position)
+		
+		Get More Matches (if any) - **lowercase n**
+		Go Back to Previous Matches - **uppercase N**
+		
+
+
+**Using Less and Getting Line Numbers and Other Statistics:**
+	using the commands **ls "/usr/bin | less -NM** will return the same nicely formatted, scrollable list as above, but this time with **Line Numbers**
+	
+
+
+

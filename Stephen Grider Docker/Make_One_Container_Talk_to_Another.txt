@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-20T00:21:50-05:00
+
+====== Make One Container Talk to Another ======
+Created Thursday 20 January 2022
+
+If you are using Mongo DB as a database and it asks you to put in an IP address, you can use **the name of the "service" **for your Mongo DB in the docker-compose.yml file. 
+
+**Example:**
+
+.connect("mongodb://username:password@**serviceName**:27017/?authSource=admin")

@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-28T00:15:50-04:00
+
+====== beforeAll ======
+Created Friday 28 May 2021
+
+**beforeAll** is like **beforeEach**, except that it runs the code inside of its block **only one time** , which is before any test has run.
+
+This is often used to create a **testing database**, so that you don't have to use your production database, and potentially damage what you have stored in it.
+
+**Syntax:**
+	**beforeAll(() => {**
+		**console.log('hey!!!'**
+	**});**
+	
+	The above would run **hey!!!** one time before any tests had run.

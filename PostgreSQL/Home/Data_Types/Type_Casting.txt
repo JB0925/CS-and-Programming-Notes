@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-19T13:45:19-04:00
+
+====== Type Casting ======
+Created Wednesday 19 May 2021
+
+Say you want to do a query and you want an integer, but the column is full of strings that are numbers.
+
+You can type cast in your query to get the values you need:
+
+**Syntax:**
+	**SELECT (item to select::TYPE) FROM table;**
+
+**Examples:**
+	Get an integer from a string:
+	{{~/Desktop/ScreenShots/PSQL- Type Cast to INT.png}}
+
+
+	Get a string from an integer:
+		**SELECT (price::VARCHAR) FROM products;**
+		
+
+There are many more ways to use this.
+

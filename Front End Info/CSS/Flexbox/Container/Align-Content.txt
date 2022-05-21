@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-05T21:12:06-04:00
+
+====== Align-Content ======
+Created Wednesday 05 May 2021
+
+Defines how space is distributed **between rows** along the **cross-axis.**
+
+**align-content: flex-start;**
+	- aligns all of the content along the start of the cross axis
+
+
+**align-contnet: flex-end;**
+	- aligns the content along the end of the cross axis
+
+
+**align-content: center;**
+	- aligns the content along the center of the cross-axis.
+	

@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-05-16T22:56:24-04:00
+
+====== DFS and BFS on Graphs - Strongly Connected Components ======
+Created Monday 16 May 2022
+
+{{~/Desktop/ScreenShots/Strongly Connected Components.png}}
+
+**Strongly Connected Components **are subsets of a graph in which there is a path to any node in the subset from any other node in the subset.
+
+**Maximal Strongly Connected Components **are SCCs in which no other nodes can be added to the subset while still retaining the property where any node is reachable from any other node within the subset.
+
+**Examples:**
+	- the subset 0 → 2 → 1 is a **MSSC**, because no other nodes can be added that can reach every other node in the subset
+		- for example, if you tried to add 3, any of the nodes in [0, 2, 1] can all reach 3, but there is **no path** from 3 to any other node in the subset [0, 2, 1]
+		
+	- both [3] and [4] are called **trivial MSSCs**, because they are only composed of themselves.
+		- why isn't 3 → 4 considered an **SSC**? Because while there is a path from 3 to 4, there is no path from 4 to 3.
+

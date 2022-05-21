@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-30T15:50:20-04:00
+
+====== ON DELETE CASCADE ======
+Created Tuesday 30 March 2021
+
+**ON DELETE CASCADE **is often used when we want to delete all information when a user is deleted.
+
+To use ON DELETE CASCADE, you add it to the Foreign Key declaration when creating the table.
+
+**Example:**
+
+CREATE TABLE photos (
+	id BIGSERIAL PRIMARY KEY NOT NULL,
+	url VARCHAR(100) NOT NULL UNIQUE,
+	user_id INTEGER REFERENCES users(id) **ON DELETE CASCADE**
+);

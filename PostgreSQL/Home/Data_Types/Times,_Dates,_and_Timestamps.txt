@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-19T13:56:39-04:00
+
+====== Times, Dates, and Timestamps ======
+Created Wednesday 19 May 2021
+
+DATE can be passed in as a string on a table:
+	**DATE('1982-02-06')**
+	**SELECT ('NOV-20-1980'::DATE);**
+	**SELECT ('NOV 20 1980'::DATE);**
+	**SELECT ('NOV 20, 1980'::DATE);**
+	**SELECT ('1980 NOV 20'::DATE);**
+	**SELECT ('1980 November 20'::DATE);**
+
+
+TIME:
+	**SELECT ('01:23'::TIME);**
+		- returns 01:23:00
+	**SELECT ('01:23 PM'::TIME);**
+		- converts to 24hr time automatically as 13:23:00
+
+
+TIME with TIME ZONE:
+	**SELECT ('01:23:23 AM EST'::TIME WITH TIME ZONE);**
+		- returns **01:23:23-05:00	**The "-05:00" means 5 hours behind GMT.
+	
+	**SELECT ('01:23:23 AM z'::TIME WITH TIME ZONE);  - utc time zone**
+		- returns **01:23:23+00:00**
+		
+
+TIMESTAMP WITH TIME ZONE:
+	**SELECT ('NOV-20-1980 1:23 AM PST'::TIMESTAMP WITH TIME ZONE);**
+		- returns **1980-11-20 02:23:00-07  **again, last part "**-07**" is UTC offset, so 7 hours behind UTC.
+

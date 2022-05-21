@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-05T10:00:50-05:00
+
+====== br Elements ======
+Created Friday 05 February 2021
+
+**What is <br>?:**
+	- a **<br>** tag represents a line break
+	- no closing tag, and nothing goes inside of it
+	

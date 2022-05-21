@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-08T22:05:25-04:00
+
+====== Bind on Callbacks ======
+Created Tuesday 08 June 2021
+
+If we want to use a class or object method as a callback, we cannot just pass in **myClass.doStuff** as the callback, because once the function / event listener, etc. is called, the **this** will be interpreted as the window.
+
+Instead, we need to use **myClass.doStuff.bind(myClass);**
+	That will work properly.
+	
+
+Two images below is another example of how we can avoid using more verbose if / else if / else conditionals by using **bind:**
+
+{{~/Desktop/ScreenShots/Bind in Callbacks.png}}
+
+Here we are choosing what to do based on what the id is. We have to write a separate function, **handleClick, **to do it. 
+
+Below, we see how to simplify it, by using **bind** in our callback. 
+
+**NOTE:** In this example, we don't care about the value of **this**, as it doesn't affect us. We **do care** about passing in different args to the **bind** call, particularly the **msg** variable that **popUp()** takes.
+
+{{~/Desktop/ScreenShots/Easier Way to Do Bind in Callbacks.png}}
+
+Here, we ignore the **this** value, because we don't need it. We set the **msg** parameter to do different string for each button event listener.
+

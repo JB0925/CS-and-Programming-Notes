@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-15T09:26:48-05:00
+
+====== Units-Percentages, EMS, REMS ======
+Created Monday 15 February 2021
+
+**EM's:**
+	- **em's **are relative units
+	- with font-size, **1em** == the font size of the parent
+	- **2em's** == 2x the font size of the parent, etc.
+
+
+
+**Example:**
+	<article>
+		<h2>This is an h2</h2>
+	</article>
+
+
+
+**article {**
+	**font-size: 30px;**
+**}**
+
+
+**h2 {**
+	**font-size: 2em;**
+**}**
+
+
+The above would set the font-size of the h2 element to twice the article's 30px, so it would have a font-size of 60px. 
+
+
+**With properties other than font-size, ems are equivalent to the element's font size. So if you say that an element has a font-size of 5em, be careful of using ems in setting other properties. **
+
+**Ems** are good to use when you want to keep things proportional to the growing font size of an element. It will keep the growth proportional to whatever you changed it's parent's font size to.
+
+**Ems **are **NOT** good to use when you have something that is nested 2-3 times. This is because each **em** gets its size from its parent. Then, if every time the parent is greater or less than **1em** from ITS parent, the font size of the child will continue to get smaller or larger.
+

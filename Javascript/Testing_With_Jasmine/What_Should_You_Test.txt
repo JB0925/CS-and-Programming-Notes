@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-28T12:33:18-04:00
+
+====== What Should You Test ======
+Created Friday 28 May 2021
+
+Test every function in at least one way.
+Think about edge cases.
+	- what if the list is empty?
+	- what about non-integer numbers?
+	- what about negative numbers?
+	- etc.,
+	
+	
+Try to write code that is easier to test!
+
+Don't mix logic and UI in a single function.
+

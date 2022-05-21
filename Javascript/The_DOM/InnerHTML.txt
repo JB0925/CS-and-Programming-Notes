@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-17T13:48:15-04:00
+
+====== InnerHTML ======
+Created Saturday 17 April 2021
+
+Inner HTML is similar to 'innerText and textContent in that it will get all of the text between HTML tags, but it will **also get all of the tags and attributes as well.**
+
+innerHTML can also be used to insert new HTML into a document.
+
+**Example:**
+	let h1 = document.querySelector('h1')
+	**h1.innerHTML**
+		- returns all of the tags, attributes, and text from the selected h1 tag
+	
+	**h1.innerHTML = '<h1 class="my_new_class">Hi and hello!!!!!</h1>**
+		- sets the text and html for that tag to whatever is passed in.
+

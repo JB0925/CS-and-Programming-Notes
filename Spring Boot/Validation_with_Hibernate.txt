@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-21T22:27:13-05:00
+
+====== Validation with Hibernate ======
+Created Monday 21 February 2022
+
+1). Go to start.spring.io, click Add Dependencies, and search for "validate". Choose it, and click "Explore"
+
+2). Search for the dependency with "spring-boot-starter-validation", copy it, and add it to your pom.xml
+
+3). In your Entity (db table representation), above the **class fields**, you can add validations:
+	**Example:**
+		@NotBlank(message = "Please fill in field")
+		private String departmentName;
+	
+	**NOTE: **You can add more than one.
+	
+
+4). In your Controllers, any time that you accept data from the request body, you have to add the Valid annotation before it:
+	**public void createNewDepartment(@Valid @RequestBody Department department) {**
+		// do stuff
+	}
+	

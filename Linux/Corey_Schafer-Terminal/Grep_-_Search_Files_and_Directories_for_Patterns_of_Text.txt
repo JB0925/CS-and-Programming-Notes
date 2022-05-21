@@ -1,0 +1,102 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-03T15:02:08-05:00
+
+====== Grep - Search Files and Directories for Patterns of Text ======
+Created Thursday 03 December 2020
+
+**Grep = Global Regular Expression Print**
+
+**Search a File for a particular text pattern:**
+	**grep "text here" file.txt**
+		results will be displayed if they are found, else it will jump to the next line
+		**sample results:**
+			text here
+			text hereafter
+			{{.\pasted_image003.png}}	# returns ALL matches, even if not exact
+
+	**grep -w "text here" file.txt**
+		results will only be exact matches to what is in quotations
+		**sample results:**
+			text here
+			{{.\pasted_image004.png}}
+	
+	**grep -wi "text here" file.txt**
+		results are still the exact phrase, but case insensitive
+		**sample results:**
+			text here
+			Text Here
+			{{.\pasted_image005.png}}
+	
+	**grep -win "text here" file.txt**
+		results are still the case insensitive exact phrase, this time with the line number added.
+		**sample results:**
+			51:text here
+			413:Text Here
+			{{.\pasted_image006.png}}
+			
+	**grep -win -B 4 "text here" file.txt**
+		results are the case insensitive exact phrase, with the number lines, plus the **four lines prior to** (**-B 4)** the line where the exact phrase was found. **4 can be changed to any number.**
+		{{.\pasted_image007.png}}
+		
+		**NOTE: doing "-A 4" instead of "-B 4" will return the four lines that follow the match instead of the four lines before the match.**
+		
+		**NOTE 2: doing "-C 4" will return the four lines before AND after the match**
+		
+		
+**Search Entire Directories for Text:**
+		**grep -win "hello" [[./*]]**
+			returns exact, case insensitive matches with their line numbers, for any files that contain the word **hello**
+			{{.\pasted_image008.png}}
+			
+		
+		**Search for Different Types of Files Within a Directory:**
+			#good for excluding subdirectories from searches, if so desired
+			**grep -win "hello" [[./*.txt]]**
+				returns ONLY the text files in the current directory that have **hello** in them
+				{{.\pasted_image009.png}}
+
+
+**Recursive Search for a Text:**
+		**grep -winr "hello" [[./*]]**
+				returns a set of recursive search results with exact matches, case insensitive, and line numbers added
+				**NOTE: recursive searches can take a long time if there are many files or directories**
+				{{.\pasted_image010.png}}
+				
+
+**Only Return Filenames with Matches:**
+		**grep -wirl "hello" .**
+			returns recursive search results (**r**) that are exact matches (**w**) and are case insensitive (**i**), but only the filenames themselves (**l**)
+			{{.\pasted_image011.png}}
+
+
+**Return Filenames with the Number of Matches in the File:**
+		**grep -wirc "hello" .**
+			return recursive search results that are exact matches, case insensitive, but only the filenames themselves and how many times the match occurs in the file.
+			{{.\pasted_image.png}}
+			{{.\pasted_image001.png}}			#**6 == the number of times "num" appears in "Bite_280.py"**
+			
+
+**Use "|" and "history" to search Git:**
+		**history | grep "git commit"**
+		{{.\pasted_image002.png}}
+
+
+**Use "|" to further narrow your search:**
+		**history | grep "git commit" | grep "23"**
+		{{.\pasted_image012.png}}
+		
+		**IMPORTANT: The "|" character allows you to narrow, or focus, your search.**
+		
+		
+
+**Grep with Regex:**
+	**grep "...-...-...." file.txt**
+		uses a regex to search for text, in this case a phone number
+		{{.\pasted_image013.png}}
+		
+	
+	**How to Use Python Regexes in the Terminal With Grep:**
+		**grep -P "\d{3}-\d{3}-\d{4}" file.txt or [[./*]]**
+			returns the results of the search using regex. The **-P** allows you to use regex as you would in Python to do the search.
+

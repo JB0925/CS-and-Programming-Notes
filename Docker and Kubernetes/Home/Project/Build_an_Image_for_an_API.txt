@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-12T15:34:12-05:00
+
+====== Build an Image for an API ======
+Created Friday 12 March 2021
+
+Pick up at **1:19:40**

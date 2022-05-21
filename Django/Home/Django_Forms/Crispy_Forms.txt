@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-25T11:23:38-05:00
+
+====== Crispy Forms ======
+Created Thursday 25 February 2021
+
+Step 1). In your venv, install **django-crispy-forms**
+
+Step 2). In **settings.py**, add '**crispy_forms',   **in **INSTALLED_APPS**, and add **CRISPY_TEMPLATE_PACK = 'bootstrap4'** at the end of the same file.
+
+Step 3). Put the required Bootstrap CDN and JS links in the **base.html** page. Make sure it is for the version of Bootstrap that you are using.
+
+Step 4). After your forms are made in **forms.py**, when you go to render them on another page, use:
+{{.\pasted_image.png}}
+
+Step 5). The HTML template for a basic crispy form:
+{{.\pasted_image001.png}}
+
+The above is all it takes to render a nice looking form with Crispy Forms. The button at the bottom takes a basic Bootstrap button class.
+
+
+**If you want your form to use different classes, find out what those classes are and do something like this:**
+{{.\pasted_image002.png}}
+
+More info here:
+
+https://simpleisbetterthancomplex.com/tutorial/2018/08/13/how-to-use-bootstrap-4-forms-with-django.html
+

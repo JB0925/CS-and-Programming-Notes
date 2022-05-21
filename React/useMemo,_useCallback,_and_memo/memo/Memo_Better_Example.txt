@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-01T00:45:28-05:00
+
+====== Memo Better Example ======
+Created Saturday 01 January 2022
+
+**React.memo** is another way to improve performance. Sometimes, you will have a function that takes no props, but gets rerendered because it's parent gets rerendered. This can have an effect on performance. To avoid this, we can wrap our component in **React.memo**. 
+
+**React.memo **essentially says that we **only rerender a component IF ITS PROPS CHANGE.**
+
+So, even if the parent re-renders, a component wrapped in **React.memo** WILL NOT rerender UNLESS its props change.
+
+**See the very last line on this page to see how easy it is to use React.memo!**
+
+import React, { useContext } from "react";
+import DispatchContext from "./dispatchContext";
+import { removeMeme } from "./actions";
+import "./Meme.css";
+
+function Meme({ topText, botText, url, id }) {
+  const dispatch = useContext(DispatchContext);
+  const remove = () => dispatch(removeMeme(id));
+
+  return (
+	<div id="foo" className="Meme">
+	  <div className="container">
+		<span className="text-t">{topText}</span>
+		<img src={url} alt="a meme" />
+		<span className="text-b">{botText}</span>
+		<button onClick={remove}>
+		  DELETE
+		</button>
+	  </div>
+	</div>
+  );
+}
+
+**export default React.memo(Meme);**

@@ -1,0 +1,104 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-03T10:30:09-05:00
+
+====== Using the Find Command ======
+Created Thursday 03 December 2020
+
+**find .**
+	will find all the files in the current directory. Returns a list of all of the files in that directory.
+	Also searches through the subdirectories.
+
+**find dirname_here**
+	will find all of the files in a particular directory that you specify
+
+**find . -type d**
+	will find only the subdirectories in the current directory; NO files		#**.** means pwd
+
+**find . -type f**
+	will find ONLY the files in the current directory; NO subdirectories
+	
+**find . -type f -name "filename.txt"**
+	will return the path to the file, if the file exists.
+
+**find . -type f -name "test*"**
+	will return any files in the present working directory that begin with **test**
+	**NOTE: "-name" is case sensitive.**
+	**NOTE: "-iname" is NOT case sensitive.**
+	
+**find . -type f -mmin -10**
+	returns all files that were modified less than 10 minutes ago
+	**find . -type f -mmin +10**
+	returns all files that were modified more than 10 minutes ago
+	
+
+**find . -type f -mmin +1 -mmin -5**
+	returns all files that were modified **MORE** than one minute ago, but **LESS** than 5 minutes ago.
+	
+	
+**find . -type f -mtime -20	|    find . -type f -mtime +20**
+	returns all files that were modified less than 20 days ago | more than 20 days ago
+	**instead of mmin | mtime, you could also use "amin | atime"   or "cmin | ctime"**
+
+
+**find . -size +5M**
+	returns all files that are greater than 5 Megabytes in size	**M == Megabytes**
+	**NOTE same syntax, but use "k" for kilobytes and "G" for Gigabytes**
+
+
+**find . -empty**
+	returns a list of all EMPTY files in the directory
+	
+**find . -perm 777**
+	returns a list of files, if any, where the user has read, write, and execute permissions for the file.
+	
+
+
+**Change Permissions of a List of Files That Have r/w/x Permissions:**
+	**find Website-Demo -exec chown superuser:www-data { } \:				#** \: could also be +
+	
+	the above finds the Website-Demo directory, and uses the **-exec** (execute) command on **chown** (change owner), and sets the new owner to **superuser** and the group to **www-data**
+	curly brackets are placeholders
+	end the command in either **\: ** or **+ **(just personal preference)
+	
+	
+**Change Permissions of a List of Folders That Have r/w/x Permissions:**
+	**find dirname -type d -exec chmod 775 { } +**
+		1). **find dirname -** find the directory, if it exists
+		2). **-type d** - specifies that we are looking for directories, not files
+		3). **-exec chmod 775 - **once you find the folder, execute (**-exec**) the **chmod** command on it, with the code of **775. (775**
+			means the owner has full read / write / execute / search permissions on the directory, and any other user has read / execute / search permissions).
+		4). include the **placeholder token { } **to capture the results, and either a **\: **or **+ **end the command
+		
+
+**More Changing File Permissions with Multiple Commands:**
+	**664 = Owner** can read and write, but not execute. **Group **can read and write, but not execute. **Others **can read, but not write or execute.
+	
+	**find dirname -type f -exec chmod 664 { } +**
+	
+
+
+**Delete All Image Files That End With .jpeg:**
+	**find . -type f -name *.jpeg**
+	
+	**find . -type f -name *.jpeg -maxdepth = 1				**#these commands find the files, which is helpful for double 													  checking so that you don't delete something permanently that you
+																	  may need again one day
+	
+	1). **find . -type f -name *.jpeg**
+		find all files in the current directory that end in .jpeg
+	2). **-maxdepth = 1**
+		search only in the pwd
+		
+	**changing the maxdepth tells the command how many directories back to search, i.e. "-maxdepth 3" says to search back through the current directory and its two parent directories**
+	
+	
+	
+	//**Actually Delete the Files:**//
+		**find . -type f -name "*.py" maxdepth 1 -exec rm { } +**
+		1). find the files in the present working directory that have a **.py** ending, only searching the pwd **(maxdepth 1)**
+		2). **-exec rm { } +	**executes the remove command (**rm)** on the above found files, uses the **{ }** as a placeholder to store the results, and ends the command with a +
+	
+
+**Search for Information in a Case Insensitive Way:**
+	- **find . -type f -iname "something*" **
+

@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T13:31:00-05:00
+
+====== Monkey Patching with jest.fn ======
+Created Sunday 09 January 2022
+
+We can also use **jest.fn **to give us more control with our mocks.
+
+**Example:**
+
+const originalGetWinner = utils.getWinner;
+**utils.getWinner = jest.fn((p1, p2) => p1);**
+
+expect(utils.getWinner).toHaveBeenCalledTimes(2);
+expect(utils.getWinner).toHaveBeenCalledWith("me", "you");
+expect(utils.getWinner).toHaveBeenNthCalledWith(
+  1,
+  "me",
+  "you"
+);
+
+expect(utils.getWinner).toHaveBeenNthCalledWith(
+  2,
+  "me",
+  "you"
+);
+
+
+**Using Jest mocks allow us to make sure that our functions are being called correctly.**

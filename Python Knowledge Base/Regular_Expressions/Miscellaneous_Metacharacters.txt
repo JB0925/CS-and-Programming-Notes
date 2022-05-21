@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-19T12:28:14-05:00
+
+====== Miscellaneous Metacharacters ======
+Created Thursday 19 November 2020
+
+**?#	Specifies a comment inside of a regex statement.**
+
+**Example:**
+	re.search(r'bar(?#This is a comment) *baz', 'foo bar baz qux')
+			**matches = 'bar baz'**
+			
+

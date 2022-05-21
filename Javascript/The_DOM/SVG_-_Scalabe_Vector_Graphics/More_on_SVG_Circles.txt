@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-26T21:18:18-04:00
+
+====== More on SVG Circles ======
+Created Monday 26 April 2021
+
+The middle of an SVG circle is called the **fill**.
+
+The border of an SVG circle is called the **stroke**.
+
+{{~/Desktop/ScreenShots/Updated SVG Circle.png}}
+
+Above is an update as to what our circle will look like with these attributes.
+
+
+**Adding in "stroke-dasharray":**
+
+	**HTML:**
+	{{~/Desktop/ScreenShots/Stroke-Dasharray.png}}
+	
+	**In-Browser:**
+	{{~/Desktop/ScreenShots/Dashed SVG Circle.png}}
+	
+**NOTE: **You can pass in two numbers to **stroke-dasharray**. The first is the length of each dash. The second is the distance between dashes. **Passing in one number will set both properties.**
+
+**stroke-dasharray="10 5"** means 10 pixel long dashes, with 5 pixel spaces inbetween.
+
+
+**Circle Perimeter:**
+
+We can find the perimeter of our circle with **2 * Math.PI * r**, so for our circle that would be **2 * Math.PI * 90 = 565.47....**
+
+From there, we can manipulate how much of the circle gets a border, i.e. **565 * .5 = 282.74...**
+
+So if we want half of the circle to have a border, we can use pass in **282.74** to **stroke-dasharray**.
+
+
+**NOTE: **Circle borders ALWAYS start on the right side at the middle edge of the circle.
+
+
+**STROKE-DASHOFFSET:**
+	Using **stroke-dashoffset **gives an extra cushion of space to your **stroke-dasharray** setting. So if our circle is about **565px** in perimeter, and we set **stroke-dasharray="560"**, there will be a **5px** gap in our circle. 
+	
+	With **stroke-dashoffset**, this will widen that gap to whatever you set it to.
+	
+	**We will use stroke-dasharray and stroke-dashoffset** to complete the animation of the circle.
+	
+	
+
+
+

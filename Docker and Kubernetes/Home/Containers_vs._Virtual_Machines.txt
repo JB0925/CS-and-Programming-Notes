@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-08T12:26:12-05:00
+
+====== Containers vs. Virtual Machines ======
+Created Monday 08 March 2021
+
+**Containers:**
+	- Containers are an **abstraction** at the app layer that packages **code** and **dependencies** together. Multiple containers can run on the same machine and share the OS kernel with other containers, each running as isolated processes in user space.
+	
+
+**Virtual Machines (VMs):**
+	- VM's are an abstraction of physical hardware turning one ** server** into **many servers**. The hypervisor allows multiple VMs to run on a single machine. Each VM includes a full copy of an operating system, the application, necessary binaries and libraries - taking up 10's of GB's of memory. VMs can also be slow to boot.
+
+
+
+**Benefits of Containers over VMs:**
+	- you can run a container in seconds instead of minutes
+	- uses less disk space and less memory because it uses less resources (**no OS**)
+	- does not need a full OS
+	- Deployment
+	- Testing
+	

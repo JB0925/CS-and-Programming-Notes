@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-31T00:48:58-05:00
+
+====== Code Splitting ======
+Created Friday 31 December 2021
+
+**Code Splitting** refers to the idea of **lazy loading** code, which means to only load the code when it is needed. This can give a big performance boost when dealing with components that use libraries with a ton of code, etc.
+
+To lazy load code in React, you need three things:
+1). Whatever code you are loading must be exported as a component
+2). You must use **React.lazy** instead of **import Component from "./component";**
+3). You must use **React.Suspense** with a **fallback ** component that will take the place of the component while it loads if it is too slow.
+
+**Example With Notes:**
+
+// Code splitting
+// http://localhost:3000/isolated/exercise/01.js
+
+import * as React from 'react'
+**// Notice we are NOT doing an "import Globe from "../globe";**
+
+function App() {
+  const [showGlobe, setShowGlobe] = React.useState(false)
+  **// We load the code for the Globe component here, which means it will only load when it is needed.**
+  **const Globe = React.lazy(() => import("../globe"));**
+
+  return (
+	<div
+	  style={{
+		display: 'flex',
+		alignItems: 'center',
+		flexDirection: 'column',
+		justifyContent: 'center',
+		height: '100%',
+		padding: '2rem',
+	  }}
+	>
+	  <label style={{marginBottom: '1rem'}}>
+		<input
+		  type="checkbox"
+		  checked={showGlobe}
+		  onChange={e => setShowGlobe(e.target.checked)}
+		/>
+		{' show globe'}
+	  </label>
+	  <div style={{width: 400, height: 400}}>
+		  **// Here we use Suspense to "suspend" our code. We use a fallback to take the  place of the the Globe component while it loads.**
+		<React.Suspense fallback={<div>...loading</div>}>
+		   {showGlobe ? <Globe /> : null}
+		</React.Suspense>
+	  </div>
+	</div>
+  )
+}
+
+export default App

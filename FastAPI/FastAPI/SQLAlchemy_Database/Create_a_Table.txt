@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-07T22:05:20-04:00
+
+====== Create a Table ======
+Created Wednesday 07 April 2021
+
+**Create a Normal Table:**
+{{.\pasted_image.png}}
+
+**NOTE:** Be careful with declaring things "unique". Think it through and make sure that's what you want to do, or else you may have to drop the entire table in psql and start over.
+
+**Index** is used when you may have to query using that particular column often.
+
+**NOTE: **When you use **autoincrement=True**
+
+
+**Create a Table With a Foreign Key Constraint:**
+{{.\pasted_image001.png}}
+
+Almost exactly the same, but the **user_id** links the event with the user who created it.
+**NOTE: **The **sa.ForeignKey('users.id')** references the actual TABLE name that can be found in **psql.**
+		 The **user = orm.relation('User')** is a reference to the actual **User** CLASS that you create with Python.
+

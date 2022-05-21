@@ -1,0 +1,56 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-26T22:01:52-05:00
+
+====== Logging ======
+Created Saturday 26 December 2020
+
+**How to Log Data with the Logging Module:**
+
+{{.\pasted_image.png}}
+{{.\pasted_image001.png}}
+
+**Step 1). **
+		import logging
+		
+**Step 2). **
+		initalize the logger with **logger = logging.getLogger('somenamehere')**
+		
+**Step 3). **
+		set the level of the logger. **If events below the level occur, the logging notifications will not occur.** 
+					**logging.basicConfig(level=logging.INFO)**
+**Step 4).**
+		solve your problem. In this case, summing all the even numbers in a list.
+
+**Step 5).**
+		create your logging event and message (**logger.info(your string input here)**
+		return the value from the function
+
+**Step 6). **
+		if you are trying to catch exceptions, except a certain kind of error (**except "TypeError as t:**)
+
+**Step 7).**
+		create your logging exception message and reraise the exception:
+				**logger.exception('your message here')**
+				**raise**
+
+
+
+**NOTE: basicConfig()** can take other arguments as well, such as:
+					**filename**
+					**filemode**
+					**format**
+					
+
+**Types of Logging Messages in Order of Precedence (highest precedence at bottom):**
+{{.\pasted_image002.png}}
+
+**again, if you set level to INFO, any debug messages will not appear. Messages above INFO will appear.**
+
+
+**NOTE: if you pass in a filename to basicConfig(), it will not write to the console; rather it will write to the file.**
+		**the default mode is 'a', or append, meaning the file will not be truncated.**
+		
+https://realpython.com/python-logging/
+
+

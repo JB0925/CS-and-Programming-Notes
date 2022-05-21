@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-08T15:39:02-05:00
+
+====== How to Run a Container ======
+Created Monday 08 March 2021
+
+**Remember, a CONTAINER is a running INSTANCE of an image.**
+
+
+**To Run a Container From an Image:**
+	- type **docker run [[nginx:latest]]**
+	- **syntax = docker run [[REPOSITORY:TAG]]**
+	
+	- when you type the above in and press ENTER, it will do nothing for quite awhile. It is just waiting.
+	-**To ensure that your container is running or at least loading:**
+		- in a new terminal, type **docker container ls**
+		- look for your instance amongst the short list provided
+	
+	
+	**Many times, typing the above will cause the run/load container process to stall. **
+	
+	Hit **ctrl + C.**
+	Type **docker container ls**
+	
+	Run **docker run -d [[nginx:latest]]**
+		- process is no longer hanging; will give you an ID
+		
+	Run **docker container ls** again, and you can see that everything is running correctly.
+	
+	
+	
+	**BEST WAY TO CHECK TO SEE WHAT CONTAINERS ARE RUNNING:**
+		- **docker ps**
+

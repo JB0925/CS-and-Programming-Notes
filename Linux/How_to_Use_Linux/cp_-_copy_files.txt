@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-12T12:11:10-05:00
+
+====== cp - copy files ======
+Created Thursday 12 November 2020
+
+copy files with **cp**
+
+
+takes two paths (absolute paths) -> path you want to copy from, to the path you want to copy to
+
+**Example:**
+	**cp dotfiles.md [[../foo.md]]				**#created a copy of "dotfiles.md" in the previous directory named "foo.md"
+	
+	**cp path/to/dotfiles.md path/to/foo.md		**#creates a copy of "dotfiles.md" in the directory listed in the second argument, named "foo.md"
+	
+	
+**pick up at 25:39**
+

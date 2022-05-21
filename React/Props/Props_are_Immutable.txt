@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-18T22:09:40-04:00
+
+====== Props are Immutable ======
+Created Friday 18 June 2021
+
+In React, props are immutable, which means they can't be changed.
+
+Your data can definitely change, but you don't manually change it.
+
+In other words, **props are "read-only"**.
+
+**Example:**
+
+class Hello extends React.Component {
+	render() {
+		**this.props.from = "Bob";**
+		return (
+			<div>
+				<h1>Hello {this.props.to} from {this.props.from}
+			</div>
+		)
+	}
+}
+
+**The above will NOT work**, because you are trying to write a prop, and props are read-only.
+

@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-18T01:05:21-04:00
+
+====== Creating Elements ======
+Created Sunday 18 April 2021
+
+const newh2 = document,.createElement('h1')
+	- creates an empty h1 tag
+
+
+newh2.innertext = 'Why are you like this?';
+newh2.classList.add('special');
+	- gives the new element a class of **special** and the text "Why are you like this?"
+	
+
+**How Do We Add it to the DOM?:**
+	const div = document,.querySelector('.mydiv');
+	
+	div.appendChild(newh2)
+		- we selected the particular div we wanted to work with, and then we added the new element we created
+	
+	**NOTE: **using **appendChild** assigns the new element to the end of the parent element.
+	
+	
+
+

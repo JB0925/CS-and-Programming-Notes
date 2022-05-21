@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-15T09:00:16-05:00
+
+====== realpath - get the absolute filepath to a file ======
+Created Friday 15 January 2021
+
+Use **realpath** with a file name to find its absolute path
+
+{{.\pasted_image.png}}
+

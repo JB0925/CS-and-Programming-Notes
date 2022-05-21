@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-05-06T23:28:55-04:00
+
+====== Bloom Filters ======
+Created Friday 06 May 2022
+
+**Bloom Filters** are a special kind of **set** data structure that is based on hashing.
+
+There are two main operations in a Bloom Filter:
+	1). Insertion
+	2). Lookup
+	
+**How it works:**
+	- Choose a number of bits
+	- Make a **bit-list **(the Bloom Filter table) that has the size of the above number of bits, set each place in the list to **False or 0**
+	
+	- Choose a number of random hash functions to use
+	- Create a list of the above number of random hash functions
+	
+	**To Insert:    (pretend it's a word we are inserting)**
+		- for hash_function in hash_function_family:
+			index = hash_function(word)
+			**bit-list[index] = 1**
+	
+	**To Look up the Word:**
+		- for hash_function in hash_function_family:
+			index = hash_function(word)
+			if bit-list[index] ! = 1:
+				return False
+		
+		return True
+

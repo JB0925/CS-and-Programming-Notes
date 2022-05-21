@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-28T01:22:54-05:00
+
+====== Use Exit Codes to Conditionally Execute Commands ======
+Created Saturday 28 November 2020
+
+Below is a picture of what will happen if we use the **true** command (**return code 0**) with bitwise operators "&&"(**and**) and "| |"(**or**), as well as a semicolon:
+
+{{.\pasted_image.png}}

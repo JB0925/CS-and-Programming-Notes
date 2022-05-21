@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-26T13:02:07-05:00
+
+====== Comparable Interface ======
+Created Saturday 26 February 2022
+
+You can use the comparable interface like so:
+
+Really useful for comparing Strings
+
+private class Seat implements **Comparable<Seat> {**
+	
+	**@Override**
+	public int compareTo(Seat seat) {
+		return this.seatNumber.**compareToIgnoreCase(seat.getSeatNumber());**
+	}	
+}
+
+**// returns < 0 if the left item is less than**
+**// returns 0 if they are equal.**
+**// returns > 0 if the left item is greater than**

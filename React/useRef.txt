@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-16T00:39:41-04:00
+
+====== useRef ======
+Created Saturday 16 October 2021
+
+**useRef** works like a global variable, but it is not. 
+
+It works similarly to Flask's **g**.
+
+It returns a **mutable object **whose lone key is **current.**
+
+The value of current is set to whatever is passed into the initial call to **useRef.**
+
+That value can also be updated.
+
+**NOTE: **Changing the value of this object does not change state.
+
+
+**Where Would We Use useRef:**
+	- to access an underlying DOM element
+	- to set up or clear out timers, intervals, etc.
+	
+
+

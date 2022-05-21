@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-18T00:07:21-05:00
+
+====== Example ======
+Created Friday 18 February 2022
+
+public abstract class PizzaStore {
+	abstract Pizza createPizza(String item);
+	
+	public Pizza orderPizza(String type) {
+		**// the "createPizza(type); method**
+		**// comes from our simple factory**
+		Pizza pizza = createPizza(type);
+		System.out.println("Making a " + pizza.getName());
+		
+		pizza.prepare();
+		pizza.bake();
+		pizza.cut();
+		pizza.box();
+	}
+}
+
+
+**NOTE:** Remember, **each store** will have to implement the **createPizza** method, and each can create its own method based on its needs.

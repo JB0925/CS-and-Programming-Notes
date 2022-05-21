@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-07T21:45:01-05:00
+
+====== Dividing Integers ======
+Created Monday 07 February 2022
+
+Say you had the following variables:
+
+int num1 = 5 / 2;
+float num2 = 5f / 2f;
+double num3 = 5d / 2d;
+
+System.out.println(num1);
+	returns 2
+
+System.out.println(num2, num3);
+	returns 2.5
+	
+
+**Lesson: **Ints are not precise for things like division; use floats / doubles instead

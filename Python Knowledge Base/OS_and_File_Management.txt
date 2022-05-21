@@ -1,0 +1,101 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-31T10:08:45-04:00
+
+====== OS and File Management ======
+Created Friday 31 July 2020
+
+https://www.geeksforgeeks.org/python-os-path-join-method/
+
+With OS you can:
+	1). Navigate the file system
+	2). Get file information
+	3). Look up and change the environment variables
+	4). Move files around
+	5). And more
+	
+**print(dir(os))**......gives all of the methods available to you within OS....there are a ton!
+
+Current Working Directory:
+		**print(os.getcwd())**....prints out the current working directory
+					**C:\Users\superuser\.vscode\python_files**
+
+Change Directory:
+		**os.chdir('directory_string') **changes the current directory to the string passed into it, as long as it is a valid directory
+
+		**os.chdir('C:\Users\superuser\Desktop')**
+		**print(os.getcwd()) = C:\Users\superuser\Desktop**
+
+Listing files and folders:
+		**os.listdir()).....**by default, will list the files and folders in the current working directory. You can pass a path into it, and it will give you the files and folders in that directory.
+
+		**print(os.listdir())**
+
+Making folders:
+		**os.mkdir('folder_name')**.....creates a new folder in the current directory
+
+		**os.makedirs('folder/nested_folder_one/nested_folder_two')**.....can create deeper nested files....**os.mkdir()** can't do that.
+		
+Deleting folders:
+		**os.rmdir('folder_name')**.....removes a folder in the current directory
+		**os.removedirs('folder/nested1/nested2')**.....can remove several folders nested within a parent folder
+		**print(os.listdir()).....**['folder1', 'folder2', 'folder3'] would become ['folder1', 'folder3']....or whatever file name you passed in
+		
+Renaming files and folders:
+		**os.rename('text.txt', 'demo.txt')**
+		
+Find information about a file or folder:
+		print(**os.stat('demo.txt'))**
+		**will give a lot of information related to the file.**
+		**can treat it as an object:**
+			**print(os.stat('demo.txt').st_size)....would only give the size of the file/folder**
+			**print(os.stat('demo.txt').st_mtime).....returns a unix timestamp....to turn into datetime**
+			
+
+Find information about the directory tree:
+		**os.walk() = a generator that yields a tuple of 3 values as it goes through the directory tree.**
+		1). directory path
+		2). directories within the path
+		3). files within the path
+		**for dirpath, dirnames, filenames in os.walk(pass in os.getcwd() or any other path you want):**
+			**print('Current Path:', dirpath)**
+			**print('Directories:', dirnames**
+			**print('Files:', filenames)**
+			**print()**
+		
+		The above returns everything that is within the directory passed into it.
+		
+Getting the environment for a part of a path:
+		**print(os.environ.get('HOME'))**
+		gives the path to the directory passed into it
+		
+
+Joining file paths:
+		**file_path = os.path.join(os.environ.get('HOME'), 'text.txt')**
+		
+
+Basenames and Directory names:
+	print(**os.path.basename('/tmp/text.txt')) = text.txt....the base of the path**
+	print(**os.path.dirname('/tmp/text.txt')) = [[/tmp....]] the directory name**
+	print(**os.path.split('/tmp/text.txt')) = [[/tmp,]] text.txt.....both**
+	
+Check to see if a path exists:
+	print(**os.path.exists('/tmp/text.txt') = False, because tmp is not a real directory**
+
+Check to see if something is a directoy:
+	print(**os.path.isdir('/tmp/text.txt') = False, not a directory**
+	print(**os.path.isfile('movie_metadata.csv.txt') = True, real file on my computer**
+	
+Split the root of the path and the extension:
+	print(**os.path.splitext('/tmp/text.txt') = ('/tmp/text', '.txt')**
+	
+Everything available in os.path:
+	print(**dir(os.path)) = returns all methods available in os.path**
+
+
+
+
+
+
+
+

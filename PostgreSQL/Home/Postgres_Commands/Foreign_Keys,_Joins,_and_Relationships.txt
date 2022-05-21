@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-05T12:18:59-05:00
+
+====== Foreign Keys, Joins, and Relationships ======
+Created Friday 05 March 2021
+
+Foreign keys allow us to connect members of one table to members of another table.
+
+Here we have the **person** table:
+{{.\pasted_image.png}}
+
+And here is the **car** table:
+{{.\pasted_image001.png}}
+
+We are going to add a column with a FOREIGN KEY to the **person** table, to connect a person with a car. The column will be called **car_id.**
+
+**Syntax:**
+	**car_id BIGINT REFERENCES car(id), UNIQUE (car_id)**
+	
+	In order to create a table with the statement above, you need to
+	{{.\pasted_image002.png}}
+	
+
+**Set a Value for the "car_id" FOREIGN KEY:**
+	- **UPDATE person2 SET car_id = 1 WHERE id = 1;**
+		- this means that whoever has the id of 1, their car id is also 1
+		
+	- If we were to run the statement:
+		**UPDATE person2 SET car_id = 1 WHERE id = 2;**
+			- we would get an error about duplicate values.
+			- This is because we specified the "car_id" as UNIQUE
+

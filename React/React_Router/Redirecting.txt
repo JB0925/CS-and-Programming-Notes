@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-19T21:38:01-04:00
+
+====== Redirecting ======
+Created Tuesday 19 October 2021
+
+There are two main ways to redirect.
+
+One is through the **Redirect** component from react-router-dom
+
+The other is the **useHistory** object.

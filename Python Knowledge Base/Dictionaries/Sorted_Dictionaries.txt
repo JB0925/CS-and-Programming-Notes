@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-27T21:20:15-04:00
+
+====== Sorted Dictionaries ======
+Created Sunday 27 September 2020
+
+Use **sorted() **to sort a dictionary by a particular aspect:
+
+**To sort by dictionary values:**
+	**- **return sorted(dict.items(), **key=lambda x: x[1]**)
+	- this will sort in **ascending** order
+	- to sort in **descending** order (**biggest values first)**, add **reverse=True** after the key
+
+
+**To sort by dictionary keys:**
+	- return sorted(dict.items()).....again, this will sort in **ascending **order....**reverse=True** if you want to sort in descending order
+	
+	
+
+**Alternate method that does not preserve the actual dictionary:**
+	- [print(key, value) for (key, value) in sorted(orders.items(), key=lambda x: x[1])]
+	- this list comprehension will do the same thing, which you can then manipulate as needed
+	- can remove the print statement if not needed
+	
+https://careerkarma.com/blog/python-sort-a-dictionary-by-value/#:~:text=To%20sort%20a%20dictionary%20by%20value%20in%20Python%20you%20can,Dictionaries%20are%20unordered%20data%20structures.
+
+
+

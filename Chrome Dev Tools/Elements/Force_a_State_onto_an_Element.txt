@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-10T12:53:04-05:00
+
+====== Force a State onto an Element ======
+Created Friday 10 December 2021
+
+Click the element, and CTRL + click it.
+
+Look until you see **force state**
+
+Once you do, click to force the state that you want it to be in (i.e. hover, active, etc.)
+
+Repeat the process to turn that back off.

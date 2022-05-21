@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-02T22:03:35-04:00
+
+====== Operator.itemgetter ======
+Created Sunday 02 August 2020
+
+calling operator.itemgetter allows you to get multiple items from a dict, list, etc.:
+
+
+{{.\pasted_image.png}}

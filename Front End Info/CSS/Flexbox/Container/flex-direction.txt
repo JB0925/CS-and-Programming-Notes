@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-04T23:43:56-04:00
+
+====== flex-direction ======
+Created Tuesday 04 May 2021
+
+A flexbox container has a **flex-direction** property.
+It is set to **row** by default.
+
+{{~/Desktop/ScreenShots/flex-direction: unset.png}}
+
+Above is the standard flexbox layout, **without flex-direction set.**
+
+
+**flex-direction: row-reverse;**
+	This is what happens when we set the **container class **to **row-reverse**
+
+{{~/Desktop/ScreenShots/flex-direction: row-reverse;.png}}
+
+Content goes from **right to left** under **row-reverse. **This is across the main axis.
+
+
+**flex-direction: column;**
+
+Setting the **flex-direction** to **column** will stack the content vertically:
+
+{{~/Desktop/ScreenShots/flex-direction: column.png}}
+
+
+**NOTE: **Setting the **flex-direction** to **column** will change the main axis to the **vertical axis.**
+
+
+
+**flex-direction: column-reverse;**
+	- does the same as **column**, it just reverses it
+	
+
+
+
+

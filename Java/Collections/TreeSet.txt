@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-26T21:14:50-05:00
+
+====== TreeSet ======
+Created Saturday 26 February 2022
+
+A TreeSet is another type of set that implements the Set interface.
+
+It is much slower than the HashSet, but sorts all elements added to it in ascending order.
+
+**Example:**
+	TreeSet<String> myTreeSet = new TreeSet<String>();
+	
+	
+Again, all of the methods that are available on the Set interface are also available here.
+

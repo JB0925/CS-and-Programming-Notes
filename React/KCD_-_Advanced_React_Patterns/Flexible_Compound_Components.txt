@@ -1,0 +1,75 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-16T22:13:52-05:00
+
+====== Flexible Compound Components ======
+Created Thursday 16 December 2021
+
+The Flexible Compound Component is often a better choice than the "standard" compound component.
+
+The only difference is the use of **createContext.**
+
+Again, we will be creating a custom hook to consume the context, called **useToggler**.
+
+
+**Example:**
+
+import * as React from 'react'
+import {Switch} from '../switch'
+
+**// create Context**
+const ToggleContext = React.createContext();
+
+
+
+function Toggle({children}) {
+  const [on, setOn] = React.useState(false)
+  const toggle = () => setOn(!on)
+  
+  **// return the Context provider with the value and the children nested inside**
+  const value = { on, toggle };
+  return <ToggleContext.Provider value={value}>{children}</ToggleContext.Provider>
+}
+
+**// A custom hook used to get the context in all other components.**
+function useToggler() {
+  const context = React.useContext(ToggleContext);
+  if (!context) {
+	throw new Error("Context not found!");
+  };
+  return context;
+};
+
+**// the children still come from props as, in this case, they are strings passed between the components i.e. <ToggleOn>This button is on.<ToggleOn />**
+function ToggleOn({children}) {
+  const { on  } = useToggler();
+  return on ? children : null
+}
+
+**// same as above**
+function ToggleOff({children}) {
+  const { on } = useToggler();
+  return on ? null : children
+}
+
+**// same as above**
+function ToggleButton({...props}) {
+  const { on, toggle } = useToggler();
+  return <Switch on={on} onClick={toggle} {...props} />
+}
+
+function App() {
+  return (
+	<div>
+	  <Toggle>
+		<ToggleOn>The button is on</ToggleOn>
+		<ToggleOff>The button is off</ToggleOff>
+		<div>
+		  <ToggleButton />
+		</div>
+	  </Toggle>
+	</div>
+  )
+}
+
+export default App

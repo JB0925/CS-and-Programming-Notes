@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-11T12:38:50-04:00
+
+====== When to Use Middleware ======
+Created Saturday 11 September 2021
+
+You would use middleware when:
+	- you want to log information about every request
+	
+	- you need to add a current user for every request (i.e. **g** in Flask)
+	
+	- you need to ensure that users are authenticated
+	
+	- you need to ensure that a user is authorized to access an endpoint.

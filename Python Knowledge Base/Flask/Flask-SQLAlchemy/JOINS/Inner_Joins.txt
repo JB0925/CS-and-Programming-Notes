@@ -1,0 +1,47 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-22T23:22:20-04:00
+
+====== Inner Joins ======
+Created Thursday 22 July 2021
+
+When you add a relationship to your db Model, it works well on the surface, but it actually causes many queries to happen behind the scenes instead of just the one that you wrote.
+
+Joins are a way to avoid this.
+
+**Examples:**
+	class Employee(db.Model):
+		id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+		name = db.Column(db.String, nullable=False, unique=True)
+		state = db.Column(db.String, nullable=False)
+		dept_code = db.Column(db.Integer, db.foreign_key(deparments.id))
+	
+	class Department(db.Model):
+		id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+		dept_name = db.Column(db.String, nullable=False, unique=True)
+		phone = db.Column(db.String, unique=True)
+	
+	
+	**The Queries:**
+		**Simple Inner Join:**
+				emps = (db.session.query(Employee.name,
+											Department.dept_name,
+												  Department.phone)
+			.join(Department).all())
+			
+			**This saves the info as a list of tuples, which we can then use tuple unpacking on.**
+			
+			It works because the **Employee** class has a **foreign key** relationship to the **Department** class
+			
+			**NOTE: **Never leave off the **join** part, or else you get a cross join, where everything in one table is matched with everything in the other table.
+			
+		
+		**Simple Join to get Employee and Department objects:**
+			emps = (db.session.query(Employee, Department)
+						.join(Department).all())
+			
+			Instead of getting back a list of tuples from specified columns that were queried, we get back a list of tuples of objects, which we can then call for Employee.name, etc.
+
+
+
+

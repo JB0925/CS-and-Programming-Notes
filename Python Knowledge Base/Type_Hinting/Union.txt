@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-12T20:48:29-04:00
+
+====== Union ======
+Created Sunday 12 September 2021
+
+**Union** indicates that the type of a variable could be multiple different kinds of types.
+
+**Example:**
+	def dispense_snack(user_input: str) -> Union[HotDog, Pretzel]:
+	
+	**This tells other devs that the return value could be a `HotDog instance or a Pretzel instance.**
+
+
+**Why Use Union?:**
+	- good, clear communication
+	- typecheckers are aware of Union and will recognize it
+	
+
+**Where is Union Useful?:**
+	- handling types that are determined based on user input
+	- handling error return types, but with more information (a string or error code)
+	- Handling different kinds of user input
+	
+	- Being able to return different types if needed
+	
+	- Any case where you may have more than one type of value represented
+	

@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T22:32:38-04:00
+
+====== Importing a File ======
+Created Monday 06 September 2021
+
+All imports use the **require** keyword.
+
+To import a local project file, specify a **relative path** to the file
+
+**Examples:**
+	const usefulStuff = require("./usefulStuff");
+	
+	const results = usefulStuff.add(2, 3);
+	
+	console.log(results);
+	
+
+**NOTE:** you don't need to include the file extension for **.js** and **.json** files.
+
+
+
+

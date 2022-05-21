@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-31T23:37:43-05:00
+
+====== Installing New Packages in Venvs ======
+Created Sunday 31 January 2021
+
+**The Basic Pattern:**
+	- install new packages using **pipenv**
+	- activate them with **pipenv shell**
+	- exit with **exit**
+	

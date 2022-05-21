@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-04T19:26:27-04:00
+
+====== Append Path of App for Testing ======
+Created Sunday 04 July 2021
+
+if unittest cannot find your app, use this:
+
+import os
+import sys
+topdir = os.path.join(os.path.dirname('__file`__), '..')
+sys.path.append(topdir)
+from app import app

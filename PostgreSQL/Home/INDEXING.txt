@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-13T00:11:06-04:00
+
+====== INDEXING ======
+Created Tuesday 13 July 2021
+
+An **index** can be placed on a column to speed up querying.
+
+When a column with an index is queried, the query executes in **O(log n)** time instead of **O(n).**
+
+**The difference:**
+	Say you have 1,000,000 entries into your database.
+	
+	**Query using a column with an index:**
+		takes 20 actions
+	
+	**Query without an index:**
+		takes up to 1,000,000 actions
+
+
+**PRIMARY KEYS (**primarily the **id** column in a table), are **indexed** by default.
+
+
+**Why not use an index on every column?**
+	- When you create an index, it creates a tree data structure of that column's data that is used to speed up the query. This ends up taking up a good amount of space.
+	
+	- INSERT and UPDATE also become expensive, because data in the regular table **AND** the tree structure
+	
+	
+	

@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-31T20:56:00-04:00
+
+====== GET Examples ======
+Created Saturday 31 July 2021
+
+In these examples, we are using a Car model.
+
+**Example: Get All Cars:**
+	**NOTE: **Remember, **serialize_cars** was created because we can't "jsonify" a SQLAlchemy Car object, so we created a json-like dict of the object instead.
+
+@app.route('/cars')
+def get_cars():
+	all_cars = Car.query.all()
+	all_cars = [serialize_cars(car) for car in all_cars]
+	  return jsonify(cars=all_cars)
+
+**The above responds with all of the cars in the db in JSON format.**

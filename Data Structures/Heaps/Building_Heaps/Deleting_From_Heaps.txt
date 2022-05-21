@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-28T23:59:52-04:00
+
+====== Deleting From Heaps ======
+Created Monday 28 September 2020
+
+**Deleting From the Root Node:**
+	- **3 step process:**
+		1). Delete the Root Node
+		2). Replace it with the Node furthest to the RIGHT
+		3). "Heapify"....compare the parent Nodes with their child Nodes and, if swaps are necessary, make those swaps.
+
+**Example: In the picture below, steps 1 and two have been completed (100 is gone, 76 (furthest right) is now the Root Node)**
+
+{{.\pasted_image.png}}
+
+**Final after Step 3:   90 and 76 have been swapped**
+
+{{.\pasted_image001.png}}
+
+
+

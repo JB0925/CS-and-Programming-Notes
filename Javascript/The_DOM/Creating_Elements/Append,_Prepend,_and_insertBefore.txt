@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-18T01:25:34-04:00
+
+====== Append, Prepend, and insertBefore ======
+Created Sunday 18 April 2021
+
+See **appendChild** on the previous page for more information on usage.
+
+
+**insertBefore:**
+	let old = document.querySelector('li.todo'); **#an li with the class of "todo"**
+	let new = document.createElement('h1');
+	let parent = document.querySelector('ul');
+	parent.insertChild(new, old);
+		- this is saying to insert the new element before the old one.
+		
+
+**insertAdjacent:**
+	see https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
+
+
+
+**Append:**
+	- allows you to insert more than one new element at once
+	parent.append(newElement, maybeAnotherNewElement)
+		- tacks on the new element(s) to the parent
+
+
+**Prepend:**
+	- same syntax as **append**, just placed at the beginning of the parent element instead of the end
+	
+	
+	**NOTE: append and prepend** don't work in Internet Explorer
+
+
+
+
+

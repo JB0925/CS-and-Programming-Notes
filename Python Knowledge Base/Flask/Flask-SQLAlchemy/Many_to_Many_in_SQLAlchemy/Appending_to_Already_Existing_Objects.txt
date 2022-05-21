@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-25T23:06:30-04:00
+
+====== Appending to Already Existing Objects ======
+Created Sunday 25 July 2021
+
+A very useful feature of a SQLAlchemy many to many relationship is the ability to append to an object, which then creates a new record in the **through** table without having to create the objects yourself.
+
+**Examples:**
+{{~/Desktop/ScreenShots/SQLAlchemy Append via Relationship.png}}
+
+**NOTE: **Notice the **posts** relationship. Calling **mytag.posts** will get me all related post objects via the **join table **called **PostTag.**
+
+Super useful!
+
+Even better, we can add new posts without even having to call db.session...
+
+**Example:**
+	mytag = Tag.query.get(1)
+	mytag.posts
+		-returns a list of Post objects
+	mytag.posts.append(Post(title='Hey', content='How are you?',
+								created_at=datetime.now(), user_id=7))
+	
+	**This automatically adds all of the necessary information to the Post and `PostTag table, and is now available any time I query this tag via the ".posts" attribute!**
+	

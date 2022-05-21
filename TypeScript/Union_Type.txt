@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T19:43:12-05:00
+
+====== Union Type ======
+Created Sunday 12 December 2021
+
+**Union** type is basically saying that the value can be either X or Y, or even X or Y or Z, etc.
+
+**Example:**
+	const combine(input1: **number | string, etc..**)
+
+
+**NOTE: **You may need to do runtime type checks with **if** checks, etc., sometimes when you use the **Union** type.
+

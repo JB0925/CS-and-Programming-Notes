@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-27T01:23:05-05:00
+
+====== Clone a Repo ======
+Created Friday 27 November 2020
+
+to clone a repo, run:
+
+**git clone repo_url destination folder**
+
+
+**Example:**
+	git clone http://github.com/sgsgsw C:/Users/superuser
+	
+
+**Example2:**
+	git clone http://github.com/somerepo .			#the "." means send it to the current directory
+	

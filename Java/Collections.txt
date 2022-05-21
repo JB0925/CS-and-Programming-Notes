@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-26T08:31:00-05:00
+
+====== Collections ======
+Created Saturday 26 February 2022
+
+**Types of Collections Interfaces:**
+	- Set
+		- also [[SortedSet]] 
+	
+	- List
+	- Queue
+	- Deque
+	
+	- Map
+		- also [[SortedMap]] 
+		
+
+**What does this mean?**
+	- It means that each Class that implements these interfaces will have all of the methods from that interface, so they are often interchangeable. **NOTE:** This only applies to the classes that implement these interfaces on the **same** level. For instance, `TreeSet implements `SortedSet, so you could not replace [[HashSet]] (which implements Set) with `TreeSet.
+	
+	**NOTE:** That does NOT mean that they are all the same, as we know classes can implement other methods not found in the interface.
+	

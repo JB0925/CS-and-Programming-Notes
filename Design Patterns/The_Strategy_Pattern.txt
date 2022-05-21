@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-17T21:03:34-05:00
+
+====== The Strategy Pattern ======
+Created Thursday 17 February 2022
+
+The strategy pattern allows us to do two things:
+
+1). Separate the things that vary between similar, but different types of objects.
+
+2). Encapsulate those things that vary and make them reusable.
+
+Instead of **INHERITING** behavior, we are now **COMPOSING** it.
+
+A duck is **composed** with a flybehavior and a quackbehavior.
+
+**Definition:** This pattern defines a family of algorithms, encapsulates each one (**classes that implement an interface**), and makes them interchangeable. This lets the algorithm vary independently from clients that use it.

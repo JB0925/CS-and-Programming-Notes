@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T13:50:59-05:00
+
+====== Destroying Infrastructure ======
+Created Saturday 08 January 2022
+
+We have seen how to create and modify an EC2 instance on AWS with Terraform, but how do we destroy it?
+
+**Reasons to Destroy:**
+	- you may want to reduce your security exposure
+	- you may want to reduce costs
+	- you may want to get rid of short-lived environments like build and testing environments
+
+**NOTE:** This command terminates all the resources specified in your TF state. It **does not** destroy resources that are running elsewhere and are not managed by your current TF project.
+
+**NOTE:** You will see **- resource "aws_instance" "app_server" {...**
+
+The minus sign in front means that a resource is being destroyed.
+
+**NOTE:** When you use **terraform destroy**, TF will determine the order in which to destroy the resources. This is done in order to respect dependencies.
+
+	
+	

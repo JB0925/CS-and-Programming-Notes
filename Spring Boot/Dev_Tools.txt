@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-19T22:42:22-05:00
+
+====== Dev Tools ======
+Created Saturday 19 February 2022
+
+Auto Restart Server Tool:
+
+1). Go to **start.spring.io**
+
+2). Click add dependencies and type in "devtools"
+
+3). Add Spring Boot DevTools
+
+4). Click **Explore**
+
+5). Scroll til you find the **<dependency>** tag with Spring Boot DevTools in it, then copy it.
+
+6). Paste it into your **pom.xml** file.

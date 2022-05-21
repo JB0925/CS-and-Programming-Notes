@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-11T22:37:56-05:00
+
+====== The Need for Nginx ======
+Created Tuesday 11 January 2022
+
+We need Nginx for this project in order to transmit data and user interactions from the browser to the **react server**, and also transmit data and user interactions from the browser to the **express server. **Also, we need it to be able to pass around the data between the two.
+
+In our code, the **server routes **are things like **/values/current, /values/data**, etc.
+
+Our client side code has routes like **/api/values/current, etc.** So, the client is expecting different routes than the server is offering at present.
+
+**Nginx Handles This:**
+	- Nginx will look at the request and, if it has **/api** in the pathname, it will route that over to the server. If it doesn't have `/api, it will route it to the client.
+	
+	- Nginx is acting as a go between to handle requests to both the server and client
+	
+	- **This is a way to get around having to use two different ports**
+	
+	- **Nginx is handling all of the routing for our app**
+	
+	- furthermore, since our backend routes don't have an **"/api" **on them, **Nginx** will remove the **"/api"** before sending the request to the server, which means we only need to worry about Nginx handling that aspect, and not express, react, etc.
+	
+	

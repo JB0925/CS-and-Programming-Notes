@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-25T00:42:29-04:00
+
+====== Min-Width ======
+Created Friday 25 June 2021
+
+**min-width** does the opposite of **max-width.**
+
+Min-width says, "no matter what, never let my element get smaller than **{number}px**".
+
+Min-width is generally not used as often, because as screens shrink, we often want our elements to adapt to the screen.
+
+If we set **min-width** and our screen shrinks, we often get side-scrolling.
+
+

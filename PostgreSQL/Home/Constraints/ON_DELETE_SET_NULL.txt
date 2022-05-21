@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-31T00:17:51-04:00
+
+====== ON DELETE SET NULL ======
+Created Wednesday 31 March 2021
+
+**Example:**
+
+CREATE TABLE photos (
+	id BIGSERIAL PRIMARY KEY NOT NULL,
+	url VARCHAR(100) NOT NULL UNIQUE,
+	user_id INTEGER REFERENCES users(id) **ON DELETE SET NULL**
+);
+
+With **ON DELETE CASCADE**, if you delete the entry that a foreign key is related to, it will also delete the foreign key entry.
+
+With **ON DELETE SET NULL**, you can delete the entry the foreign key is related to, but the foreign key entry's foreign key column is set to **NULL**.

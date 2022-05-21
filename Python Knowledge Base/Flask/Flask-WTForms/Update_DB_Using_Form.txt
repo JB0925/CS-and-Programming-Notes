@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-27T00:20:24-04:00
+
+====== Update DB Using Form ======
+Created Tuesday 27 July 2021
+**NOTE:** By passing in **obj=my_db_data_object**, we give access to the defaults from the object.
+
+
+**Example:**
+	**The Form:**
+		class UserForm(FlaskForm):
+		"""Form for adding/editing friend."""
+
+			name = StringField("Name",
+					   validators=[InputRequired()])
+			email = StringField("Email Address",
+						validators=[Optional(), Email()])
+	
+	
+	**The Route:**
+		@app.route("/users/<int:uid>/edit", methods=["GET", "POST"])
+		def edit_user(uid):
+		"""Show user edit form and handle edit."""
+
+			user = User.query.get_or_404(uid)
+			form = UserForm(**obj=user**)
+
+			if form.validate_on_submit():
+				user.name = form.name.data
+				user.email = form.email.data
+				db.session.commit()
+				flash(f"User {uid} updated!")
+				return redirect(f"/users/{uid}/edit")
+
+			else:
+			return render_template("user_form.html", form=form)
+	
+
+
+

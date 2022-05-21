@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-21T13:57:53-04:00
+
+====== Final Example ======
+Created Wednesday 21 April 2021
+
+Here's how we get the button to move to the right using Promises
+
+{{~/Desktop/ScreenShots/Final JS Promises Example.png}}
+
+The top part is the adjusted function that now returns the promise.
+
+The bottom part is the method chaining with **then** and **catch**.

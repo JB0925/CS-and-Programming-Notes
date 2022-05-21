@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-14T09:24:44-04:00
+
+====== Arguments Keyword and Rest ======
+Created Wednesday 14 April 2021
+
+'JavaScript has an **arguments** keyword that can be used within functions. It creates an array-like structure that can be looped through, but is otherwise fairly hard to use.
+
+**Example:**
+	def myFunc (name, date, photo, comment) {
+	   for (arg of **arguments**) {
+		  console.log(arg)
+	   }
+	};
+
+
+The above example would print out every one of the arguments passed in to **myFunc()**, collected together in an array-like structure called **arguments**.
+
+
+
+**A better way to do this is with the Rest method.**
+
+**Example:**
+	function myFunc (...details) {
+	   for (detail of details) {
+		  if (detail.includes('2') {
+			 console.log(detail)
+		  }
+		   }
+		 };
+
+
+
+**Example 2:**
+	function myFunc (first, last, ...details) { etc.,
+	
+	
+	In this example, the first and last parameters will NOT be part of your array, They will be their own separate arguments.
+	

@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-31T02:06:16-05:00
+
+====== The To Method ======
+Created Friday 31 December 2021
+
+The **to** method is an animation that takes your element **to** some other state.
+
+It takes two parameters:
+	1). The element to animate:
+		".text", "#box", etc.
+		
+		For React:
+			myRef.current
+    
+	2). An object defining what you want to do to the element:
+	{y: 50, duration: 1}
+	**remember, -y moves up, and vice versa**
+	
+
+**Examples:**
+
+	gsap.to(".text", { y: 50, duration: 1 });
+	
+	gsap.to(".text", { y: 50, opacity: 0, duration: 1 });
+	
+	
+	

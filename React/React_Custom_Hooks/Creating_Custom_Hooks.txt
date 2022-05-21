@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-16T21:00:54-04:00
+
+====== Creating Custom Hooks ======
+Created Saturday 16 October 2021
+
+When making custom hooks, you generally want to make a **hooks** folder, i.e. **src/hooks**.
+
+Each of your custom hooks should start with **use**.
+

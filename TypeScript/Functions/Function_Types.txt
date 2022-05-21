@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T21:19:58-05:00
+
+====== Function Types ======
+Created Sunday 12 December 2021
+
+Function types are types that describe a function.
+
+**Example:**
+
+const add = (n1: number, n2: number): number => {
+  return n1 + n2;
+};
+
+const printStuff = (): void => {
+  console.log("yes");
+};
+
+**let combineValues: (first: number, second: number) => number;**
+
+The bolded above says that the variable **combineValues** will have the type of **Function**, it will take two arguments, each having a type of number, and it will return a number.
+
+**combineValues = add;**
+	- typescript will not complain here
+
+**combineValues = printStuff**;
+	- typescript will complain because **printStuff** does not meet the typing definition given to **combineValues.**
+	

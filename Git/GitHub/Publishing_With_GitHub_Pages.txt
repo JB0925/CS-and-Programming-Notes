@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-26T21:13:20-04:00
+
+====== Publishing With GitHub Pages ======
+Created Wednesday 26 May 2021
+
+1). The file MUST be a static file (i.e., not link to any other pages - no backend logic, etc.
+
+2). You MUST have your HTML in a file called **index.html**.
+
+
+
+**How to Set It Up:**
+	- go to the repository that you want to show in Github Pages
+	
+	- Click Settings and scroll towards the bottom.
+	
+	- click to publish your work to github pages, and make sure you choose '**/root **as the directory.
+	
+	- wait approximately 1 minute, and then click the link!

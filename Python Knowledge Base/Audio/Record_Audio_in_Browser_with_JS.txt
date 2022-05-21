@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-30T20:50:15-04:00
+
+====== Record Audio in Browser with JS ======
+Created Friday 30 July 2021
+
+const record = document.querySelector('.record');
+
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+	console.log('getUserMedia supported.');
+	navigator.mediaDevices.getUserMedia (
+	   // constraints - only audio needed for this app
+	   {
+		  audio: true
+	   })
+ 
+	   // Success callback
+	   .then(function(stream) {
+		const mediaRecorder = new MediaRecorder(stream);
+		record.addEventListener('click', () => {
+			mediaRecorder.start();
+			console.log(mediaRecorder.state);
+			console.log("recorder started");
+			record.style.background = "red";
+			record.style.color = "black";
+			setTimeout(() => {
+				mediaRecorder.stop()
+			},4000)
+		}) 
+            
+		let chunks = [];
+    
+		mediaRecorder.addEventListener('dataavailable', e => {
+			chunks.push(e.data);
+		});
+
+		mediaRecorder.addEventListener('stop', () => {
+			record.style.background = 'gray'
+			record.style.color = 'white'
+			const blob = new Blob(chunks, { 'type' : 'audio/wav; codecs=MS_PCM' });
+			data = new FormData();
+			data.append('audio', blob, 'sound.wav')
+			chunks = [];
+			return axios.post('/', data,
+			{headers: {'Content-Type': 'multipart/form-data'}})
+		})
+	})
+ 
+	   // Error callback
+	   .catch(function(err) {
+		  console.log('The following getUserMedia error occurred: ' + err);
+	   }
+	);
+ } else {
+	console.log('getUserMedia not supported on your browser!');
+ }

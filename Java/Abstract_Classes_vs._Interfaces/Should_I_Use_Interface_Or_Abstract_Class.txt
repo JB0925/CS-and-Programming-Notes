@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-23T09:32:26-05:00
+
+====== Should I Use Interface Or Abstract Class ======
+Created Wednesday 23 February 2022
+
+Think back to the idea of **separate the things that change and pull them out.**
+
+For instance, all animals could have a breathe method. Or an eat method.
+
+But, in the case of a Bird, a bird could easily extend an Animal class. However, there are some things about birds that differ from bird to bird, such as flying. And then, there are also other animals that do not fly that are also birds. 
+
+In those cases, it is best to create an interface, and then perhaps a secondary class, and finally, in your main class, give the object the functionality from the class that implements the interface.
+
+See the Design Patterns notebook, specifically the Strategy pattern, for examples.

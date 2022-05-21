@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T14:48:54-05:00
+
+====== Core Types Diagram ======
+Created Sunday 12 December 2021
+
+{{~/Desktop/ScreenShots/TypeScript Core Types.png}}

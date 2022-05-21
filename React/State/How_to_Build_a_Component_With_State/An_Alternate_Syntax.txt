@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-25T22:19:30-04:00
+
+====== An Alternate Syntax ======
+Created Friday 25 June 2021
+
+import React, { Component } from "react";
+
+class Game extends Component {
+	state = {
+		score: 0,
+		gameOver: false
+	};
+	render() {
+		return (
+			<div>
+				<h1>Score: {this.state.score}</h1>
+			</div>
+		)
+	}
+}
+
+You can use the above **alternate syntax** to create **state**.
+
+This is technically not valid JS, but Babel is translating it into valid JS.
+
+This is only enabled via a plugin from Babel, and Create-react-app has this plugin built into it.
+

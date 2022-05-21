@@ -1,0 +1,161 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-26T19:13:37-05:00
+
+====== State Reducers ======
+Created Sunday 26 December 2021
+
+**State Reducers** are all about the concept of **inversion of control.**
+
+This means you give some control over your function, hook, component, etc., to the users and allow them to customize it in some way. 
+
+Some examples of **inversion of control** are the **map** and **filter** array methods. Both of them allow the user to pass in a callback to create a new array based on whatever happens in the callback function.
+
+We have seen how prop getters can be an effective way of sharing **DEFAULT** props, as well as passing in any **new** props and **potentially composing them together** (see **Prop Collections - > Prop Getters**) with the **callAll **method, but what if we have a **DEFAULT reducer** that we can use, but want to give other developers the option to use a **CUSTOM reducer **if they had other thoughts about how to use a function or hook (i.e. **inversion of control**).
+
+**Example:**
+
+// State Reducer
+// http://localhost:3000/isolated/exercise/05.js
+
+import * as React from 'react'
+import {Switch} from '../switch'
+
+**// Again, this is the function that allows us to compose DEFAULT props **
+**// and CUSTOM props together. It takes an unlimited amount of functions and, **
+**// for those functions, an unlimited amount of args and, if the function exists, **
+**// calls the function with its args**
+const callAll = (...fns) => (...args) => fns.forEach(fn => fn?.(...args))
+
+**// The default reducer function to use with useReducer **
+function toggleReducer(state, {type, initialState}) {
+  switch (type) {
+	case 'toggle': {
+	  return {on: !state.on}
+	}
+	case 'reset': {
+	  return initialState
+	}
+	default: {
+	  throw new Error(`Unsupported type: ${type}`)
+	}
+  }
+}
+
+**// Here, we allow the developer to pass in a CUSTOM reducer**
+**// if they don't, it will default to the "toggleReducer" defined above**
+function useToggle({initialOn = false, reducer = toggleReducer} = {}) {
+  const {current: initialState} = React.useRef({on: initialOn})
+  
+  **// Passing in the reducer from the function signature. It could be a**
+  **// CUSTOM one, but if not, it will be the default "toggleReducer"**
+  const [state, dispatch] = React.useReducer(reducer, initialState)
+  const {on} = state
+  
+  **// Creating functions that call the "dispatch" from useReducer**
+  **// toggle() will conditionally toggle the "on" prop passed to the <Switch>**
+  **// reset() will set "on" to false, and reset the click count to 0**
+  const toggle = () => dispatch({type: 'toggle'})
+  const reset = () => dispatch({type: 'reset', initialState})
+  
+  **// A prop getter...returning the default props of "aria-pressed" and an onClick**
+  **// that calls a CUSTOM onClick (if passed in) along with the toggle() from above**
+  **// as well as any other custom passed in props**
+  function getTogglerProps({onClick, ...props} = {}) {
+	return {
+	  'aria-pressed': on,
+	  onClick: callAll(onClick, toggle),
+	  ...props,
+	}
+  }
+  
+  **// Another prop getter...returning an onClick that calls reset() from above,**
+  **// but also calls a CUSTOM onClick if it is passed in**
+  **// Also, like all prop getters, returns any other CUSTOM props passed in**
+  function getResetterProps({onClick, ...props} = {}) {
+	return {
+	  onClick: callAll(onClick, reset),
+	  ...props,
+	}
+  }
+
+  return {
+	on,
+	reset,
+	toggle,
+	getTogglerProps,
+	getResetterProps,
+  }
+}
+
+function App() {
+  const [timesClicked, setTimesClicked] = React.useState(0)
+  const clickedTooMuch = timesClicked >= 4
+  
+  **// This is the CUSTOM reducer that will be passed into useToggle**
+  function toggleStateReducer(state, action) {
+	switch (action.type) {
+	  case 'toggle': {
+			**// if clickedTooMuch is true, leave state as is by just returning the current state of "on: false"**
+		if (clickedTooMuch) {
+		  return {on: state.on}
+		}
+		**// otherwise, set "on" to whatever it is currently not**
+		return {on: !state.on}
+	  }
+	  **// set on to false**
+	  case 'reset': {
+		return {on: false}
+	  }
+	  default: {
+		throw new Error(`Unsupported type: ${action.type}`)
+	  }
+	}
+  }
+  
+  **// toggleStateReducer is passed in HERE**
+  const {on, getTogglerProps, getResetterProps} = useToggle({
+	reducer: toggleStateReducer,
+  })
+
+  return (
+	<div>
+	  <Switch
+		  **// prop getter...returning all of the default props from "getTogglerProps,**
+		  **// but also passing in new ones, including a CUSTOM onClick that**
+		  **// updates the "timesClicked" state**
+		{...getTogglerProps({
+		  disabled: clickedTooMuch,
+		  on: on,
+		  onClick: () => setTimesClicked(count => count + 1),
+		})}
+	  />
+	  
+	  **// if clickedTooMuch, we return a div with the "you clicked too much **
+	  **// message**
+	  **// or, if timesClicked > 0, we return a div with the current count**
+	  **// if neither of the above, we return null**
+	  {clickedTooMuch ? (
+		<div data-testid="notice">
+		  Whoa, you clicked too much!
+		  <br />
+		</div>
+	  ) : timesClicked > 0 ? (
+		<div data-testid="click-count">Click count: {timesClicked}</div>
+	  ) : null}
+	  **// spreading getResetterProps as the props for the button**
+	  **// which calls reset(), but we are also passing in a CUSTOM onClick**
+	  **// so that will be passed into the callAll() along with reset()**
+	  <button {...getResetterProps({onClick: () => setTimesClicked(0)})}>
+		Reset
+	  </button>
+	</div>
+  )
+}
+
+export default App
+
+/*
+eslint
+  no-unused-vars: "off",
+*/

@@ -1,0 +1,47 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-19T23:22:14-04:00
+
+====== Testing in React Router ======
+Created Tuesday 19 October 2021
+
+Components rendered by Router are harder to test than other components because they may rely on Router hooks that we will have to mock, such as **useParams** or **useHistory**, etc.
+
+One of the biggest issues is that any time we use a **<Link />** component, it has to be wrapped in a Router (usually a <BrowserRouter></BrowserRouter>)
+
+To get around this, we mock a router with **Memory Router.**
+
+**Smoke Test with React Router:**
+
+import { **MemoryRouter } **from "react-router-dom";
+
+test("it renders the Nav component", () => {
+	<MemoryRouter>
+		render(<Nav />);
+	</MemoryRouter>
+});
+
+
+
+**Testing More Complicated Logic:**
+	- To get around the issue of having a BrowserRouter component in App.js, you can just import BR into **index.js** and wrap the ReactDOM.render(<App />... line like this:
+	
+		import { BrowserRouter } from "react-router-dom";
+		
+		ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.querySelector("#root"));
+	
+	**initialEntries: **a starting point for where you want your app to start at in your test. Pass in an array with a starting route, as shown below. You can pass in more than one if you want to.
+
+	**Writing the Test:**
+		test("render something...", () => {
+			const { getByText } = render((
+				<MemoryRouter initialEntries={["/routeIwantToGoTo"}>
+					<App />
+				</MemoryRouter>
+			));
+			expect(getByText("someString").toBeInTheDocument();
+			const link = getByText("Contact");
+			fireEvent.click(link);
+			expect(getByText("SomethingContactSomething...").toBeInTheDocument();
+		});
+

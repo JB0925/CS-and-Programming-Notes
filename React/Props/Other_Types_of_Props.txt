@@ -1,0 +1,47 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-18T23:08:59-04:00
+
+====== Other Types of Props ======
+Created Friday 18 June 2021
+
+We've seen how we can embed **props** that are string:
+	**<User name="Jane" title="CEO"/>**
+	
+	To do that, we just enclose the string in quotes like normal.
+	
+
+For other types, such as Numbers, arrays, etc., we **surround them with curly braces { }.**
+
+	**<User name="Jane" salary={ 100000 }**
+		**hobbies={ ['bridge', 'reading', 'tea'] }/>**
+		
+	Note how the Number type and the array type are surrounded with the curly braces.
+
+
+**Booleans:**
+	To add a boolean, you can do the same thing:
+		**isFunny={true}**
+			
+			OR
+		**isFunny**
+		
+	If you just pass it in by itself, it will evaluate to **true**. If you want it to be **false**, then you will have to manually pass that in.
+	
+
+**Example of Non-String Props:**
+{{~/Desktop/ScreenShots/Props that aren't strings.png}}
+
+Here we can see that we passed in the **num** prop in curly braces, so we could pass it the number 5.
+
+**How We Use It:**
+{{~/Desktop/ScreenShots/Using Non-String Props.png}}
+
+Here we set the variable **bangs** to an exclamation point that repeats **this.props.num** times.
+
+We then pass it into the **h1** that we are returning.
+
+Since, in **index.js (our App component)**, we made bangs = 5, it will put 5 exclamation points after **this.props.from**.
+
+
+

@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-20T01:17:25-04:00
+
+====== Create a Pie Chart ======
+Created Saturday 20 March 2021
+
+**See the page on creating a linear plot for information on imports and how to change aspects of the plot..**
+
+
+{{.\pasted_image.png}}
+
+Same thing with [[StringIO.]] It isn't necessary if you just plan to show the plot.
+
+Almost the same as the linear graph, except we don't use pandas. We pass the data straight into **plt.pie**
+**autopct** = a way to format the data as percentage values
+**shadow** = adds a small shadow to the pie
+
+
+https://matplotlib.org/stable/tutorials/introductory/sample_plots.html
+https://dev.to/shanelee/how-to-visualise-multiple-stocks-with-matplotlib-4050
+
+**Also, look up Bite Academy: Visualizing Time Series Data of Stock Prices**
+https://mpltest2.readthedocs.io/en/stable/gallery/pyplots/dollar_ticks.html
+https://stackoverflow.com/questions/23080960/pie-chart-labels-are-overlapping-for-same-values/23082679
+
+https://www.kite.com/python/answers/how-to-clear-a-plot-in-matplotlib-in-python#
+
+

@@ -1,0 +1,62 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-21T13:37:01-05:00
+
+====== LinkedList ======
+Created Monday 21 February 2022
+
+A Linked List is declared similarly to an Array List.
+
+**Declare:**
+	LinkedList<String> myLinkedList = new LinkedList<String>();
+	
+
+**Add to a Linked List:**
+	myLinkedList.add(newItem);
+	
+	**NOTE:** If given an index, it will allow you to insert at that index, similar to Python's .insert() method.
+		**myLinkedList.add(2, newItem);**
+
+
+**Get Next Value in Linked List:**
+	myLinkedList.next();
+
+
+**Check if the current item has a Next value:**
+	myLinkedList.hasNext();
+	
+
+**Print Each Item in a Linked List:**
+	Iterator<String> iterator = LinkedList.listIterator();
+	
+	while (iterator.hasNext()) {
+		Sout(iterator.next());
+	}
+	
+
+**Delete From a Linked List:**
+	myLinkedList.remove(index);
+	
+	
+**Compare Values in a Linked List:**
+	ListIterator<String> stringListIterator = linkedList.listIterator();
+	
+	while (stringListIterator.hasNext()) {
+		int comparison = stringListIterator.next().compareTo(otherItem);
+		
+		if (comparison == 0) {
+			// they are the same
+			**return false;**
+		} else if (comparison > 0) {
+			// new Item should go here
+			**stringListIterator.previous();**
+			**stringListIterator.add(newItem);**
+			return true;
+		}
+	}
+	
+	**stringListIterator.add(newItem);**
+		If we got that far, we need to add the item to the end of our list.
+	
+	If the comparison is < 0, nothing needs to be done.
+	

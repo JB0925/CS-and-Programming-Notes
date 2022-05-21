@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-10T23:56:04-05:00
+
+====== CSS Specificity ======
+Created Wednesday 10 February 2021
+
+Specificity deals with which style takes precedence over other styles.
+
+**In general:**
+	- if you have more than one **stylesheet**, whichever stylesheet that is linked last will take precedence for any conflicting elements or classes, etc.
+	- **elements / pseudo elements** are worth **1**, **classes / pseudo classes / attributes **(like **href**, etc.) are worth **10**, and **ids** are worth **100**
+	- even with that said, if you have **20 elements**, they still lose out to **one class**
+	- **Inline styles** are **NOT** advisable, but they are more specific than any of the other 3.
+	- Finally, anything marked with **!important** is the absolute most specific
+	- Again, **DO NOT** use **inline styles or !important** unless absolutely necessary
+
+
+**Examples:**
+{{.\pasted_image.png}}		**In this example, we have a class + element + pseudo class (score=21) in our first example, whereas in the second one, there is only a pseudo class and an element (score=11). The top grouping wins out.**
+
+{{.\pasted_image001.png}}
+**In this example, we have one element selector VS two element selectors. The example on the right wins out, and all <p> elements within a <section> element will be TEAL.**
+
+
+{{.\pasted_image002.png}}
+**Meaning:** all **<a>** elements that are nested in a **<nav>** element that has a **class** of **active.**
+**Specificity Score: **1 class, 2 elements = **12**
+
+
+
+

@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-28T12:12:25-04:00
+
+====== Unit vs. Integration Testing ======
+Created Friday 28 May 2021
+
+**Unit Tests:**
+	- narrow in scope
+	- going to verify that a small piece of code (maybe a function) does what it is supposed to do
+	- they are simple and cheap / easy to write
+	- work well with **pure functions** that do not have side effects
+	- **example: **verify that a single function returns an expected value based on an argument
+
+**Integration Test:**
+	- broader in scope
+	- verifies that multiple modules / functions work well together
+	- more complex and costly to maintain
+	- **example: **verify the dependencies between functions are working together to produce an expected value
+	

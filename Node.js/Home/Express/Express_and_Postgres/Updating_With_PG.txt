@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-16T08:09:06-04:00
+
+====== Updating With PG ======
+Created Thursday 16 September 2021
+
+**Example:**
+
+router.patch("/:id", async(req, res, next) {
+	try {
+		const { name, type } = req.body;
+		const results = db.query(
+			`UPDATE users
+			 SET name=$1, type=$2
+			 WHERE id = $3
+			 RETURNING id, name, type`,
+			[name, type, req.params.id]
+		);
+		return res.json(result.rows[0]);
+	
+	} catch(err) {
+		return next(err);
+	};
+});

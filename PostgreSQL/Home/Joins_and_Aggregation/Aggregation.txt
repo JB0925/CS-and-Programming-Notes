@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-31T00:46:34-04:00
+
+====== Aggregation ======
+Created Wednesday 31 March 2021
+
+Aggregation is used to find the most, the least, the average, the best, the worst, the biggest, the first, the last, etc.
+
+{{.\pasted_image.png}}

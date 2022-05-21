@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-19T22:47:23-04:00
+
+====== Creating Relationships ======
+Created Monday 19 July 2021
+
+{{~/Desktop/ScreenShots/SQLAlchemy Relationships.png}}
+
+Here, I've created the SQLALchemy model **Post**. **Post** has 5 columns. Then, at the bottom, it has a **relationship**, which is **NOT** a column. It links it to the user and automatically gets all data related to the user that has the same user id as the **user_id** column that is a Foreign Key.
+
+So, if I run a query like **post = Post.query.get(5)**, as in I wanted the POST with the id of 5.
+
+If I then called **post.users**, I would get the information from the user table for the user whom the post belongs to. This is available to us with the foreign key relationship.

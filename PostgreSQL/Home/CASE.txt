@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-17T14:36:17-04:00
+
+====== CASE ======
+Created Monday 17 May 2021
+
+**CASE** is a conditional keyword.
+
+For example, if you wanted to say something along the lines of:
+	**if price > 600:**
+		return 'high'
+	**elif price < 600 and price > 300:**
+		return 'medium'
+	**else:**
+		return 'cheap'
+		
+You could use CASE.
+
+
+**Example:**
+	**SELECT**
+		name, 
+		price, 
+		**CASE**
+			**WHEN **price > 600 **THEN **'high'
+			**WHEN **price > 300 **THEN **'medium'
+			**ELSE **'cheap'
+		**END**
+	**FROM **products;
+	
+	- this will return a column with the name of every item, the price of the item, and then a column telling us whether the item is high, medium, or cheap.
+	
+
+**NOTE:** If **ELSE** is not used (**only WHEN clauses**), if none of the conditions are satisfied, then the default value is **NULL**.
+

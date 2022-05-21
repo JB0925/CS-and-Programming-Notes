@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-28T09:27:56-05:00
+
+====== Conversions From Array to List ======
+Created Monday 28 February 2022
+
+**Convert Array of Strings to List:**
+	String myStr = "hello, world";
+	String[] myStrArray = myStr.split(", ");
+	**List<String> myList = Arrays.asList(myStrArray);**
+
+
+**Convert Array of Strings Using Collections:**
+		String[] geeks = {"Rahul", "Utkarsh",
+						 "Shubham", "Neelam"};
+ 
+		List<String> al = new ArrayList<String>();
+ 
+		// adding elements of array to arrayList.
+		Collections.addAll(al, geeks);
+ 
+		System.out.println(al);
+
+
+**Convert Array of Ints to List:**
+	int[] myIntArray = new int[] {1,2,3,4,5};
+	
+		**// JDK 8+**
+	**List<Integer> INTS = Arrays.stream(myIntArray).boxed().collect(Collectors.toList());**
+	
+	
+		**// JDK 16+**
+	**List<Integer> list = Arrays.stream(ints).boxed().t**oList();
+	

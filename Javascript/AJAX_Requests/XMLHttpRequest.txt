@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-21T14:53:59-04:00
+
+====== XMLHttpRequest ======
+Created Wednesday 21 April 2021
+
+Using '**XMLHttpRequest** was the original way of sending requests via 'JavaScript.
+
+It does not support Promises, so a lot of callbacks are made.,
+
+There is weird capitalization involved.
+
+The syntax is clunky and difficult to remember.
+
+
+**Example:**
+
+**const myReq = new `XMLHttpRequest()**
+
+**myReq.onload = function () {**
+	**const data = JSON.parse(myReq.responseText);**
+	**console.log(data);**
+**};**
+**myReq.onerror = function(err) {**
+	**console.log('ERROR!', err);**
+**};**
+**myReq.open('get', 'https://icanhazdadjoke.com/', true);***
+**myReq.setRequestHeader('accept', 'application/json');**
+**myReq.send()**
+
+
+1). Create a new request object
+
+2). Provide a success and a failure callback
+
+3). with **myReq.open**, we make a get request, and tell it where to send the request to.
+
+4). We pass into the request header the type of data to expect / accept
+
+5). Send the request.
+
+
+
+**SAME REQUEST, THIS TIME WITH addEventListener:**
+
+{{~/Desktop/ScreenShots/XMLHttpRequest with addEventListener.png}}
+The covered up line says **const data = JSON.parse(neqReq.responseText);**
+
+

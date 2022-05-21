@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-13T22:39:23-05:00
+
+====== WTForms ======
+Created Saturday 13 February 2021
+
+{{.\pasted_image.png}}
+{{.\pasted_image003.png}}
+
+**NOTE: **You don't need **form.**
+
+**WTForms Examples:**
+{{.\pasted_image001.png}}
+
+**NOTE: render_kw** allows you to put a placeholder in the form's input box. It is NOT part of the **validators**.
+
+
+**How to render the WTForms info into a template:**
+
+**NOTE**: These are snippets; not entire files.
+**NOTE2:** **Be sure to include the form's "csrf_token()" in the HTML if you want to validate the form.**
+
+{{.\pasted_image002.png}}
+
+**NOTES:** the **class_="div forms"** is the CSS class used to style it
+						notice the **form.csrf_token()** right below the form declaration
+						it is most likely easier to just create an actual HTML button rather than use the '**SubmitField** from WTForms. This is due to styling issues.
+

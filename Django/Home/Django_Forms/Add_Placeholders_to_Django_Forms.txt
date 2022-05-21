@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-20T01:47:46-04:00
+
+====== Add Placeholders to Django Forms ======
+Created Saturday 20 March 2021
+
+{{.\pasted_image.png}}
+
+**NOTE: If you make a change to a model and have to put in a default, set the default to '' and the placeholder will still show. **

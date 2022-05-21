@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-09T22:52:56-04:00
+
+====== Properties ======
+Created Sunday 09 August 2020
+
+Properties allow you to call a function like you would call an instance attribute;
+
+**@property**
+**    def base_python_versions(self):**
+**        """Return a list of all basepython across the ini file"""**
+**        lst = []**
+**        for section in self.parser.sections():**
+**            for k, v in self.parser.items(section):**
+**                if k == 'basepython':**
+**                    if v not in lst:**
+**                        lst.append(v)**
+        
+**        return sorted(lst)**
+
+
+t = ToxIniParser(somefile)
+print(t.base_python_versions)
+
+**notice no () call after 'versions'**
+
+
+Good video on properties by Corey Schafer:
+
+	https://www.youtube.com/watch?v=jCzT9XFZ5bw
+	
+	
+An elegant way to define computed attributes in Python is by using the property decorator.
+These are attributes that are not actually stored, but computed on demand.
+In the example below, we use it to see if a promotion has expired, calling the "expired" property on the object:
+
+{{.\pasted_image.png}}
+

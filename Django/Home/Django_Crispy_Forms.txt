@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-27T21:52:43-05:00
+
+====== Django Crispy Forms ======
+Created Saturday 27 February 2021
+
+Here is a simple guide on a really simple thing to plug into a Django app for nice looking forms. It is called crispy forms. The link walks you through the process:
+
+https://simpleisbetterthancomplex.com/tutorial/2018/08/13/how-to-use-bootstrap-4-forms-with-django.html

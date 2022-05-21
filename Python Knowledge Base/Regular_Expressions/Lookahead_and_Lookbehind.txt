@@ -1,0 +1,70 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-10T15:54:06-05:00
+
+====== Lookahead and Lookbehind ======
+Created Tuesday 10 November 2020
+
+Positive Lookbehind:
+		in the example above, after the "?P<groupname>" section, I used a **Positive Lookbehind: (?P<from>(?<=<From: )[^\n]+)**
+		so, after the group name, I used more parentheses to delineate the **Positive Lookbehind.** This means that for whatever regex that is written after it, **whatever is in the Positive Lookbehind** must come directly before it.
+				so, **(?<=From: )[^\n]+) **means that "**From: " **must come directly before the "any non-newline characters" portion that is being searched, which really narrows it down to the only section that has "**From: **" and makes the search much easier.
+
+
+**Positive Lookahead:**
+	(**?=**<regex_here>)			**?=**
+	
+**Negative Lookahead:**
+	(**?!**<regex_here>)			**?!**
+	
+**Positive Lookbehind:**
+	(**?<=**<regex_here>)			**?<=**
+	
+**Negative Lookbehind:**
+	(?<!--regex_here-->)			**?<!**
+	
+	
+
+**Positive Lookahead Examples:**
+
+1).	**re.search(r'foo(?=[a-z])', 'foobar')**					#says that whatever comes after "foo" has to be a lowercase letter
+			matches "foo"
+	
+	**re.search(r'foo(?=[a-z])', 'foo123')				#**no match because what comes directly after "foo" isn't a lowercase letter
+			matches None
+	
+	NOTE:	The captured match will not include anything matched in the lookahead/lookbehind expression itself
+
+
+**Negative Lookahead Examples:**
+
+2).	**re.search(r'foo(?![a-z])', 'foobar')					**#says that in order for this to match, whatever comes after foo must not be a lowercase
+			matches None								letter
+	
+	**re.search(r'foo(?![a-z])', 'foo123')					**#returns "foo" because lookahead says what comes after foo musn't be a lowercase 
+			matches "foo"								letter, and it isn't; it's a digit
+
+
+**Positive Lookbehind Examples:**
+
+3).	**re.search(r'(?<=foo)bar', 'foobar')				**#says that whatever comes immediately behind "bar" must be "foo" in order for it to
+			matches "bar"								match
+	
+	  **re.search(r'(?<=qux)bar', 'foobar')				**#matches None because what comes right before bar is not equal to "qux"
+
+
+**Negative Lookbehind Examples:**
+
+4).	**re.search(r'(?<!foo)bar', 'foobar')					#**matches None because whatever comes directly before "bar" must not match "foo"
+			matches None
+	
+	**re.search(r'(?<!qux)bar', 'foobar')					 **#matches "bar" because what comes immediately before "bar" isn't "qux"
+			matches "bar"
+
+**NOTE: **Lookbehinds must be given a fixed length search string. 
+				ok = **re.search(r'(?<=[a-z]{3})polis', 'metropolis')		**#ok because you are searching for 3 chars, not an indeterminate number
+				
+				not ok = **re.search(r'(?<=[a-z]+)polis', 'metropolis')	#**the lookbehind assertion could go on forever, so it will not work
+
+
+

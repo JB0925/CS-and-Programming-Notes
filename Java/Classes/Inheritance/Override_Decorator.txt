@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-18T23:37:01-05:00
+
+====== Override Decorator ======
+Created Friday 18 February 2022
+
+You can use the **@Override** decorator to write a more specific implementation of a method from a superclass.
+
+In the subclass below, we override the **eat() **method in the subclass dog.
+
+**Example:**
+
+public class Animal {
+	private String name;
+	private double weight;
+	
+	public Animal(String name, double weight) {
+		this.name = name;
+		this.weight = weight;
+	}
+	
+	public String eat() {
+		return "I have to eat food."
+	}
+}
+
+
+**// Inheritance**
+
+public class Dog extends Animal {
+	private int legs;
+	private int teeth;
+	
+	public Dog(String name, double weight, int legs, int teeth) {
+		super(name, weight);
+		this.legs = legs;
+		this.teeth = teeth;
+	}
+	
+	**@Override **
+	public String eat() {
+		return "I eat by chewing my food with my " + this.teeth + " teeth."
+	}
+}

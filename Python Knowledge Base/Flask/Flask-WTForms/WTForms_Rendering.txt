@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-26T21:23:41-04:00
+
+====== WTForms Rendering ======
+Created Monday 26 July 2021
+
+WTForms comes with a built in CSRF **(Cross Site Request Forgery)** Token that is a security measure.
+
+Run the following (including first two lines) to prevent **CSRF Token** from being printed inside your form. The CSRF token will still be active; those two words will not be on screen.
+
+This is also how you render the form in a Jinja Template.
+
+**NOTE:** The `**SubmitField** class turns gives a button a label, which is not usually wanted. To keep it from getting rendered, we use the **if** statement under the initial **for** loop. We use **field.label.text** to access the text of the label itself.
+
+**Another option would be to just leave off the `SubmitField and place an HTML button inside the form itself...**
+
+{{~/Desktop/ScreenShots/Flask-WTF Form Rendering.png}}
+

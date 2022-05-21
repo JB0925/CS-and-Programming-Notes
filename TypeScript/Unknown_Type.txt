@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T22:00:28-05:00
+
+====== Unknown Type ======
+Created Sunday 12 December 2021
+
+The **unknown** type is similar to the **any** type, but is not as flexible. The **any** type basically disables any type checking from typescript.
+
+**Unknown is like saying: "I don't know what type this variable will be, but I know what I want to do with it..."**
+
+With **unknown**, let's say you have the following scenario:
+
+	let userInput: **unknown**;
+	let userName: **string**;
+
+	userInput = 5;
+	userInput = "Max";
+
+	**// typescript doesn't yell about the above because the userInput type is "unknown"**
+
+	**userName = userInput;**
+
+	**// typescript will yell about this, because it doesn't want a type "unknown" assigned to a type "string"**
+
+
+**How to Make It Work:**
+
+	- do a check first:
+	
+	if (typeof userInput === "string") {
+	  userName = userInput;
+	};

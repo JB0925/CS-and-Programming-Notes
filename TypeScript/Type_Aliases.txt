@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T20:47:12-05:00
+
+====== Type Aliases ======
+Created Sunday 12 December 2021
+
+**Type Aliases** are a way to give a specific type a name, often as a way to shorten what needs to be typed when using a type that will be used more than once.
+
+They are usually declared at the top of the file.
+
+**Example:**
+
+  type Combinable = number | string;
+  
+  type ConversionOptions = "as-number" | "as-text";
+
+
+  function combine(
+	input1: Combinable,
+	input2: Combinable,
+	resultConversion: ConversionOptions
+  )

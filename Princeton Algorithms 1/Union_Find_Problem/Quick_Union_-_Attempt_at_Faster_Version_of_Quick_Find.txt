@@ -1,0 +1,84 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-17T22:05:18-05:00
+
+====== Quick Union - Attempt at Faster Version of Quick Find ======
+Created Thursday 17 December 2020
+**Implementation of a New Quick Union Method:**
+{{.\pasted_image001.png}}
+From this, we see that we are still using the array of ints sized N.
+To use this approach, the **id[i]** is the **parent** of **i. **You keep going until **id[i]** and **i **are the same. Once they are the same, this is known as the **root.**
+	**To see how this works, see below:**
+
+
+{{.\pasted_image.png}}
+What is the root of **3** and **7**?
+	Root of 3: start at **i = 3**. **id[3]** = 5, **id[5]** = 2, **id[2]** = 6, and **id[6]** = 6. 
+		So, 3 - 5 - 2 - **__6__**
+		We know to stop at 6, because **id[6]** is **__6__**.
+	
+	Root of 7: start at **i = 7**. **id[7] **= 1, **id[1]** = 9, **id[9]** = 5, **id[5]** = 2, **id[2]** = 6, **id[6]** = 6.
+		So, 7 - 1 - 9 - 5 - 2 - **__6__**
+		Again, we know to stop at 6, because **id[6]** is **__6__**.
+
+What is the root of **2** and **8?**
+	Root of 2: start at **i = 2**. **id[2] = **6, **id[6] = 6.**
+		So, 2 - **__6__**
+		Again, we know to stop at 6 because **id[6]** is **__6__** and **i** is 6	#root
+	
+	Root of 8: start at **i = 8. id[8] **= 0, **id[0]** = 0.
+		So, 8 - **__0__**
+		Again, we know to stop at 0 because **id[0] = **0 and **i **= 0	#root
+		
+
+**New Quick Find:**
+	{{.\pasted_image002.png}}
+	for **quick find** (**connected**), we now check to see if **p** and **q** have the same root:
+		**connected(3, 5)**
+			root of 3: **i** **= 3, id[3]** = 4, **id[4]** = 9, **id[9]** = 9
+				so 3 - 4 - **__9__**
+			
+			root of 5: **i = 5, id[5] **= 6, **id[6] **= 6
+				so 5 - **__6__**
+				
+			**root of 3 = 9, root of 5 = 6, so 3 and 5 are NOT CONNECTED**
+
+
+**New Quick Union:**
+	To connect **p** and **q**, set **p's root** to the **root of q.**
+	In the example above, to perform **union(9, 6)** we just set **id[9]** to **6.**
+		So now, 6 is the root of 5, as it was before, but now **6** is the **root** of 9, 2, 4, and 3 as well.
+		
+		
+**Visual of New Quick Union:**
+	{{.\pasted_image004.png}}	#before the union
+
+	{{.\pasted_image005.png}}
+	**notice they are now connected because we changed the __root__ of p(4), to match the __root__ of q(3). **
+	The __root__ of **3 **is 3, so we set the __root__ of 4 (**id[4]**) equal to 3.
+	
+	
+	
+**New Quick Union Code:**
+{{.\pasted_image007.png}}
+**Understanding the Java Code:**
+	Step 1:
+		Create the array and populate it
+	
+	Step 2 - root():
+		chase the parent pointers until you find the root **See top above.**
+		run while loop that says "**while i is not equal to id[i], i = id[i]**" 
+		once the condition is met, break out of the loop and return **i**
+	
+	Step 3 - connected() (**Find**):
+		check to see if **p** and **q** have the same __root__ by calling the __root()__ method on each of **p** and **q**.
+		returns True if they are equal, False if not
+	
+	Step 4 - union() (__new union method__):
+		create two variables, **i** and **j**, and set them equal to the __root__ value of each int
+		set **id[i]** equal to the second one (**j**), just like before
+		
+
+**This algorithm is better, but is still not optimal. The Find method, by calling __root()__, could call up to N array accesses on each of "p" and "q".**
+
+**Next, we will learn how to improve upon this iteration of the algorithm.**

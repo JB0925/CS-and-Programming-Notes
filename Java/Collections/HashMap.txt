@@ -1,0 +1,74 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-26T21:59:03-05:00
+
+====== HashMap ======
+Created Saturday 26 February 2022
+
+A HashMap is like a Python dict, a JS object, etc. Key : Value pairs. Like the others, most operations are O(1) and there is no guarantee that things will be ordered the same way in which they were entered.
+
+**Initializing:**
+	HashMap<String, Integer> hmap = new HashMap<String, Integer>();
+	
+**clear();**
+	- empties the entire Map
+
+**clone();**
+	- creates a shallow copy of the original Map
+	
+**containsKey(Object key);**
+	- returns true if key is present within the Map
+
+**containsValue(Object value);**
+	- returns true if value is present within the Map
+
+**get(Object key);**
+	- returns the value associated with the key param, and null if it is not found
+	
+**isEmpty();**
+	- returns true if the Map is empty
+
+**keySet();**
+	- returns a Set of the Map's keys
+
+**values();**
+	- returns a Collection of the Map's values
+
+**put(Key k, Value v);**
+	- inserts the key into the Map and associates the value with the key
+
+**size();**
+	- returns the length, or number of k:v pairs in the Map
+
+**remove(Object key);**
+	- removes the key value pair for the specified key
+	
+**putAll(Map map);**
+	- Copies all the elements of one map to the map that is calling **putAll();**
+	
+
+**Iterate through a HashMap:**
+
+Iterator iterator = hmap.entrySet().iterator();
+	while (iterator.hasNext()) {
+		Map.Entry me2 = (Map.Entry) iterator.next();
+	   }
+
+
+
+**Sort By Key:**
+	// put the HashMap into a TreeMap 
+**Map<Integer, String> map = new TreeMap<Integer, String>(hmap);** 
+		 System.out.println("After Sorting:");
+			// turn the Map into a Set
+		 **Set set2 = map.entrySet();**
+		 Iterator iterator2 = set2.iterator();
+		 while(iterator2.hasNext()) {
+			  Map.Entry me2 = (Map.Entry)iterator2.next();
+			  System.out.print(me2.getKey() + ": ");
+			  System.out.println(me2.getValue());
+
+
+
+
+

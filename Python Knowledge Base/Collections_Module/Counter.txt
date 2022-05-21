@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-28T14:16:19-04:00
+
+====== Counter ======
+Created Tuesday 28 July 2020
+
+from collections import Counter
+
+var = Counter(lst)
+
+This will return a dictionary with the count of every item in the list or whatever data structure you feed into it. 
+
+
+**Update method:**
+
+	with Counter(), you can use the .update() method to update a particular value as you are iterating through a loop.
+	
+	It is similar to a regular dictionary, where you can say **x.setdefault(key, value), x[key] += 1**
+	
+	When using it with a defaultdict, you can combine several things together. 
+	
+	**EXAMPLE:**
+		characters = defaultdict(Counter)
+		
+		for row in reader:
+			characters[row['Character']].**update**({row['Episode']: len(row['Line'].split())})
+			
+	**EXAMPLE TWO(without update()):**
+		characters = defaultdict(lambda: Counter())
+		for row in reader:
+			characters[row['Character']][row['Episode']] += len(row['Line'].split())
+			
+	The code above takes a character and, for every different episode, it adds an episode entry to the Counter. Then, each time through the loop, it adds to the value of **characters[row['Character']][row['Episode']]**
+
+

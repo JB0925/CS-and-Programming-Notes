@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-13T00:35:22-04:00
+
+====== Depth First Search ======
+Created Thursday 13 August 2020
+
+Depth First Search is an algorithm used to iterate over the cells of a grid, and then check up, down, left, and right for a particular item. Example below:
+
+**def count(grid):**
+	**if not grid:**
+		**return 0**
+		
+	**count = 0**
+	**for i in range(len(grid)):**
+		**for j in range(len(grid[0])):**
+			**if grid[i][j] == 1:**
+				**count += 1**
+				**dfs(grid, i, j)**
+	**return count**
+	
+	
+**def dfs(grid, row, col):**
+
+	**dirs = [[-1, 0], [0, 1], [0, -1], [1, 0]]**
+	**grid[row][col] = "#"**
+	
+	**for dir in dirs:**
+		**nr, nc = row + dir[0], col + dir[1]**
+		**if nr >= 0 and nc >= 0 and nr < len(grid) and nc < len(grid[0]):**
+			**if grid[nr][nc] = 1:**
+				**dfs(grid, nr, nc)**
+				
+
+

@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-08T13:06:09-04:00
+
+====== Write Multiple Sheets to Excel ======
+Created Thursday 08 October 2020
+
+import pandas as pd
+
+**writer = pd.ExcelWriter('filename.xlsx')**
+
+**df1.to_excel(writer, sheet_name='sheet1')**
+**df2.to_excel(writer, sheet_name='sheet2')**
+
+**writer.save()**
+
+
+https://xlsxwriter.readthedocs.io/example_pandas_multiple.html 
+
+NOTE: in the link above, you don't need to specify your engine; there is a default

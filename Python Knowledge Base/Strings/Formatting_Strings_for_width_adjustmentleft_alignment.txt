@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-04T14:51:18-05:00
+
+====== Formatting Strings for width adjustmentleft alignment ======
+Created Wednesday 04 November 2020
+
+Use **str.format()**
+
+**Example:**
+
+**print('{0}). {1:<11} {2}'.format(i, name, country))**
+
+
+i = counter variable
+name = dict key
+country = dict value

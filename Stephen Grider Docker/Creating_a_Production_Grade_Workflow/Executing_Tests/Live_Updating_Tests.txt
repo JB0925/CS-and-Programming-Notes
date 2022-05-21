@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T22:54:41-05:00
+
+====== Live Updating Tests ======
+Created Sunday 09 January 2022
+
+Say you run a container from a Dockerfile.dev created image:
+	**docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app image_id**
+	
+To run live updating tests, run in another terminal:
+	**docker exec -it image_id npm run test**
+	

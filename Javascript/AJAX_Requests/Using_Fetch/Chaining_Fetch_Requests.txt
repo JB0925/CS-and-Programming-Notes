@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-21T23:30:54-04:00
+
+====== Chaining Fetch Requests ======
+Created Wednesday 21 April 2021
+
+Step 1 - Check to see if the response is ok. If not, throw the error. If it is,  **return** response.json().
+
+Step 2: un-nest the second **then** method
+{{~/Desktop/ScreenShots/Fetch Chaining 1.png}}
+
+
+**Making Multiple Requests:**
+	You can make multiple requests because what is being returned via Fetch is a Promise. So, if you make a request and that returns you another endpoint, you can chain it with **then**. **Here's an example:**
+
+{{~/Desktop/ScreenShots/Fetch Chaining 2.png}}
+
+
+Here, we make an initial request with Fetch, and we return a JSON response. 
+
+From there, it points to another endpoint, so we run another fetch request on that and return the Promise.
+
+From that Promise, we return the JSON data for the SECOND endpoint.
+
+Then finally, we print that data out.

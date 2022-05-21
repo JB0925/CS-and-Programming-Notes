@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-06T22:58:13-04:00
+
+====== Return many items from a Dictionary in a Particular Format ======
+Created Thursday 06 August 2020
+
+Sometimes, when you try to return items from a dictionary in a certain format, it will only return one item, even though you know the dictionary is more populated. To get around this:
+
+1). create an empty string
+2). loop through the dict, list, etc. and, for every loop, set the empty string += the format from the dictionary **plus a new line.**
+
+This will make it so that each formatted string is returned on its own line.
+
+Example:
+
+	**@classmethod**
+	**    def zoo(cls):**
+	**        string = ''**
+	**        for name, num in Animal.names.items():**
+	**            string += '{}. {}\n'.format(num, name.title())**
+	**        return string**

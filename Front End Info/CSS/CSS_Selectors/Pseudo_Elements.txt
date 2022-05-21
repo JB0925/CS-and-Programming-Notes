@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-10T23:55:49-05:00
+
+====== Pseudo Elements ======
+Created Wednesday 10 February 2021
+
+**Here are a few examples of Pseudo Elements and explanations of what they do:**
+
+{{.\pasted_image.png}}
+
+**1st Example:**
+	- the first example changes the first letter of every **h2** to have a font size of **50 pixels**
+
+**2nd Example:**
+	- the second example takes the first line of every **p** element and turns it purple
+
+**3rd Example:**
+	- the third example says that when you move your mouse over any **p** element, the text where your mouse is gets **highlighted**
+	
+
+

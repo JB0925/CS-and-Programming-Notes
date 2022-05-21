@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-16T14:42:44-04:00
+
+====== Connect Postgres to SQLAlchemy ======
+Created Friday 16 July 2021
+
+**pip install psycopg2-binary**
+**pip install flask-sqlalchemy**
+
+from flask-sqlalchemy import SQLAlchemy
+
+app = Flask(__`name__')
+db = SQLAlchemy()
+
+def connect_db(app):
+	db.app = app
+	db.init_app(app)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://jessebrink:MusicMaster@0.0.0.0:5432/db_name_here'
+app.config['SECRET_KEY'] = 'hahahhaha'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_ECHO'] = True
+
+connect_db(app)
+
+
+class User(db.Model):
+
+	`__tablename__ = 'users'
+	
+	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+	name = db.Column(db.String(50), nullable=False)
+	email = db.Column(db.String(50), nullable=False, unique=True)
+
+
+db.create_all()
+

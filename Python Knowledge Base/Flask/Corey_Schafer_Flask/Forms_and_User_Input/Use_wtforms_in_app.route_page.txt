@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-30T12:33:48-05:00
+
+====== Use wtforms in app.route page ======
+Created Monday 30 November 2020
+
+Once the forms have been imported, create new routes that use the forms, or use the forms in an existing route:
+
+
+**@app.route('/register')**
+**def register():**
+	**form = RegistrationForm()**
+	**return render_template('register.html', form=form, title='Register')**
+	
+
+**@app.route('/login')**
+**def login():**
+	**form = LoginForm()**
+	**return render_template('login.html', form=form, title='Log In')**
+
+
+create a register.html page and a login.html page
+
+**register.html:**
+
+{{.\pasted_image002.png}}
+{{.\pasted_image003.png}}
+{{.\pasted_image004.png}}
+{{.\pasted_image005.png}}
+

@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-29T12:56:00-04:00
+
+====== Using Map and Filter Together ======
+Created Saturday 29 May 2021
+
+We know filter filters out items from an array based on some condition, and we know that **map** applies some piece of logic to every element of an array.
+
+In JS (and even in Python), we often see these used together.
+
+**Example:**
+	Let's pretend we have a DOM, and we want to access all inputs that are checkboxes:
+	
+	**const allCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]'));**
+	
+	**NOTE: **Without **Array.from()** wrapped around it, this is a NodeList, NOT an array, even though they are similar. To turn it into an array, we can use **Array.from()**
+	
+	
+	
+	**Let's Use ".filter" to get only the checkboxes that are checked:**
+	
+	const checked = allCheckboxes**.filter(item) => {**
+		return item.checked === true;
+			**OR**
+		return item.checked
+	**});**
+	
+	
+	**Now, Let's Use Our Knowledge of Parent / Child Relationships to Get the innerText From All Parents of "Checked":**
+	
+	const relatedText = **checked.map((box) => {**
+		**return box.parentElement.innerText;**
+	**});**
+	
+	
+	The above usage of **map** and **filter** would filter out all checkboxes that haven't been checked, and then create another array to give us the innerText attribute from each checkbox' parent element.
+	
+
+

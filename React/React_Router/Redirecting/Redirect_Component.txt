@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-19T21:39:23-04:00
+
+====== Redirect Component ======
+Created Tuesday 19 October 2021
+
+The Redirect component is simple to use:
+
+**Example:**
+	import { Route, Redirect } from "react-router-dom";
+      
+	<Switch>
+		<Route exact path="/">
+			<Home />
+		</Route>
+		<Route exact path="/food/new">
+			<NewFood />
+		</Route>
+		<Route exact path="/food/:name">
+			<Food />
+		</Route>
+		**<Redirect to="/" />**
+	</Switch>
+
+By including the **Redirect** component, we have a simple way to say "if the requested route matches none of the routes we've written, redirect the user.
+
+**NOTE: **we can also use **Redirect** inside of a component, sort of like this:
+	const isAdmin = Math.random() > 0.5;
+	
+	return isAdmin ? <h1>Hello, Admin</h1> : **<Redirect to="/" />**
+

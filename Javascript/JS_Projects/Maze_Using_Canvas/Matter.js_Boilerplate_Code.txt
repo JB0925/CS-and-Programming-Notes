@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-03T21:20:08-04:00
+
+====== Matter.js Boilerplate Code ======
+Created Monday 03 May 2021
+
+{{~/Desktop/ScreenShots/Matter Library Basics.png}}
+
+The first thing to do is to be sure to enter the script tag from **cdn.js**, located on the **"Using Matter.js"** page in this same folder.
+
+2). Use destructuring to pull out the **Engine, Render, Runner, World, and Bodies** classes from **Matter.js**
+
+3). Create the **engine.**
+
+4). Create the **world** by destructuring the **engine.**
+
+5). Create the **render object.**
+	- parameters are:
+		1). Set **element** to **document.body**
+		2). Set the engine to the **engine **instance we already created.
+		3). Set the **height** and **width** options inside of an **options** object
+
+6). Call **Render.run()** on the **render** instance created in step 5.
+
+7). Call **Runner.run()** by passing in the **Runner.create()** method and the **engine** instance
+
+8). Create a shape using the **Bodies** class. Here we created a rectangle with **Bodies.rectangle()**. The passed in values of 200 and 200 tell where to put the element on the canvas, and the 50 and 50 are the height and width of the rectangle object.
+	- **isStatic set to true, **makes it so the Bodies object does not move**. Without it set to true, the object would fall through the canvas, out of the viewport.**
+
+9). Call **World.add()**, and pass in the **world** instance and the **shape** object.
+
+**NOTE: **All of the above creates a **canvas** element in HTML, which you can see by pulling up Dev Tools and inspecting the HTML.
+
+

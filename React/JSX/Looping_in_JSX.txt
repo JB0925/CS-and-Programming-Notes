@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-19T01:09:41-04:00
+
+====== Looping in JSX ======
+Created Saturday 19 June 2021
+
+The **most common** way to loop in JSX is to use **map**.
+
+**Example:**
+	class Messages extends React.Component {
+		render() {
+			const messages = [
+				{id: 1, msg: 'Greetings'},
+				{id: 2, msg: 'Goodbye!'}
+			]
+			return (
+				<ul>
+					**{ messages.map(m => <li>{m.msg}</li>) } **
+				</ul>
+			)
+		}
+	}
+	
+	**NOTES: **Notice how the **enitre** map statement is enclosed in curly braces, and then, inside the arrow function, we create the **li**. Finally, we close the curly brace.
+
+
+**Another Example:**
+{{~/Desktop/ScreenShots/Looping in JSX.png}}
+
+Here we created the **myMessages** array, then passed it in as props to the call to **Loops**.
+
+**How we use it:**
+{{~/Desktop/ScreenShots/Looping in JSX Part 2.png}}
+
+Here, we **destructure** props, and use **map** to loop through the array.
+
+
+**Another Way to Do What's Directly Above:**
+{{~/Desktop/ScreenShots/Another Way to Handle Looping in JSX.png}}
+
+Here, we destructed again, but we did the **map** function right after we destructured.
+
+Then, we pass the **array of <li>'s** in curly braces between the **<ul>**.
+

@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-31T12:22:27-04:00
+
+====== Accessing State - useSelector ======
+Created Sunday 31 October 2021
+
+To access state with Redux, use useSelector
+
+**import { useSelector } from "react-redux";**
+
+const Counter = () => {
+	**const count = useSelector(store => store.count);**
+	// doing this allows us to access the "count" key from the Redux store.
+};

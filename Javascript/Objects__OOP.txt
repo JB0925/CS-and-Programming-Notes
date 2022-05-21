@@ -1,0 +1,62 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-19T13:59:27-04:00
+
+====== Objects  OOP ======
+Created Friday 19 March 2021
+
+**Continue scrolling for more information.**
+**NOTE: You can start with an empty object and add to it, either by using dot notation or bracket notation.**
+
+**Example:**
+	var ourDog = {
+	   "name": "Lainey",
+	   "legs": 4
+	   "tails": 1,
+	   "friends": ["everything!"]
+	};
+	
+**NOTE: All number keys get stored as STRINGS.**
+		**When using bracket notation, you can pass in "someObject[100], but it also turns the 100 into a string,**
+
+**To access the object attributes, use dot notation, just like in Python.**
+		ourDog.name; = 'Lainey'
+		ourDog.legs; = 4
+		etc., 
+		
+
+**Or you could also use bracket notation ([  ]) (You have to use bracket notation if there is whitespace within the attribute name.):**
+		ourDog['name'];
+			returns 'Lainey'
+		
+		ourDog['legs'];
+			returns 4
+
+
+
+**You can also use dot notation to update object attributes:**
+		ourDog.legs = 2;
+
+
+
+
+**Add new properties to an Object:**
+	You can use either bracket or dot notation to create a new property for an object.
+	
+	**1).**
+		ourDog.bark = true
+
+	**2). **ourDog['bark'] = true
+	
+
+
+**Delete properties from an Object:**
+	Use the **delete** keyword to delete a property from an Object.
+	**Example:**
+		**delete** ourDog.bark;
+	
+	
+	if you then ran **console.log(ourDog.bark);**, you would either get an error, "undefined" or "null" returned.
+	
+	
+	

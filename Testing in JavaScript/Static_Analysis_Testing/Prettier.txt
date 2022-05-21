@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T19:44:20-05:00
+
+====== Prettier ======
+Created Sunday 09 January 2022
+
+To use prettier:
+	**npm install --save-dev prettier**
+	
+To run prettier:
+	**npx prettier dirname/filename.js**
+	- outputs what it **would** look like
+
+To actually save it in your file:
+	**npx prettier dirname/filename.js --write**
+	- actually changes your file to look like the output from the command above
+
+
+

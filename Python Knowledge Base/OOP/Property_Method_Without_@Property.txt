@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-17T22:14:20-05:00
+
+====== Property Method Without @Property ======
+Created Tuesday 17 November 2020
+
+to create a property method in a class without using the "@property" decorator:
+		**x = property(get, set, delete)**
+		really, you only need the get and set methods
+
+**Example:**
+		class Foo:
+			def __init__(self, score = 0):
+				self.score = score
+			
+			def get_score(self):
+				return self.score
+			
+			def set_score(self, new_score):
+				if new_score < self.score:
+					raise [[ValueError]] ('Score cannot be lower than the previous score')
+				
+				self.score = new_score
+			
+			amount = property(get_score, set_score)
+		
+		
+		n = Foo()
+		n.amount = 10
+		n.amount = 15
+		n.amount = 4
+			**ValueError:**
+				**Score cannot be lower than the previous score**
+

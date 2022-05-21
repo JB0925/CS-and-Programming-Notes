@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T20:45:25-05:00
+
+====== AWS Availability Zoes ======
+Created Saturday 08 January 2022
+
+Each region has many availability zones.
+	- There are usually 3
+	- minimum is 2
+	- max is 6
+	
+
+Each Availability Zone is one or more discrete data centers with redundant power, networking, and connectivity
+
+They are separate from each other, so that they are isolated from disasters.
+
+They are connected with high bandwidth and low latency networking.
+

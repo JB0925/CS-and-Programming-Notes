@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-28T23:38:15-04:00
+
+====== Callback Functions ======
+Created Sunday 28 March 2021
+
+A callback function is a function that is **passed in as an argument** to another function.
+
+**Example:**
+	function callBackFunction(func) {
+		func()
+		func()
+	}
+	
+	#this is the callback
+	function laugh() {
+		return 'hahahahaha'
+	}
+	
+	
+	#the calling of the function
+	console.log(callBackFunction(laugh));
+		returns "hahahahaha"
+				 "hahahahaha"
+
+
+**Example Two:**
+	In JavaScript, there is the **setTimeout()** function which, when called, will set a request to time out after so many seconds, and call a function once the time limit has been reached.
+	
+	function timesUp() {
+		return alert("Sorry, time's up!!!")
+	}
+	
+	
+	**setTimeout(timesUp, 5000)**
+		returns a response to the browser after 5 seconds (**5000 milliseconds**), in this case, it makes the alert window pop up in the browser saying "Sorry, time's up!!!"
+	
+	
+	
+**NOTE: It can also be an inline (lambda) function, similar to how you'd save a function in a variable.**
+	setTimeout(function() {
+		return alert('gogogogogo')
+	}, 5000);
+
+
+**These are really useful when using JS in the browser.**
+
+

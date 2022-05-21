@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-16T12:00:55-04:00
+
+====== How to Write Javascript Comments ======
+Created Tuesday 16 March 2021
+
+**Inline comment:	/ / **your comment here
+	**Example:**
+		**var number = 5;  **/ / in-line comment
+
+
+**Multi-line comment:**
+	**Example:**
+		**/ * This is a**
+		**multi-line comment. * /**
+

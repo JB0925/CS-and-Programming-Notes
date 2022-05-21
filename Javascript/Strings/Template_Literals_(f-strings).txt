@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-24T01:01:12-04:00
+
+====== Template Literals (f-strings) ======
+Created Wednesday 24 March 2021
+
+Just like f-strings in Python, you can pass in **number** values, etc., to format into a string.
+
+**NOTE: **You **HAVE TO **use backticks to surround your string. The backtick is on the tilde key.
+
+The syntax is **${var_name or expression}**
+
+**Example:**
+	let myNum = 8;
+	console.log(`My daughter is **${myNum}** years old.`)
+		returns **My daughter is 8 years old.**
+

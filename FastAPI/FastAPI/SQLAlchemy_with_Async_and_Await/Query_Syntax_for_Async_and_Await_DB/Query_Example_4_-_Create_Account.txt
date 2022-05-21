@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-08T01:38:43-04:00
+
+====== Query Example 4 - Create Account ======
+Created Thursday 08 April 2021
+**from sqlalchemy.future import select**
+**from remind_me.data import db_session**
+**from sqlalchemy import func**
+**from remind me.services import user_service**
+
+**Create an Account/Save User to DB via Async:**
+	
+	**async** def create_account(name, email, password) -> User:
+		user = User()
+		user.email = email
+		user.name = name
+		user.hashed_password = crypto.hash(password, rounds=172_434)
+		
+		**async** **with db_session.create_async_session() as session:**
+			session,add(user)
+			**await **session.commit()
+		
+		return user
+	
+	
+	**async** def register():
+		vm = RegisterViewModel(request)
+		**await** vm.load()
+		
+		if vm.error:
+			return vm.to_dict()
+		
+		account = **await** user_service.create_account(vm.name, vm.email, vm.password)
+		
+		etc.
+
+
+**Remember, any time you use an ASYNC / AWAIT method in another method, you HAVE TO make the function that calls the method ASYNC and the variable that uses the method is "await var definition here"**
+
+
+
+

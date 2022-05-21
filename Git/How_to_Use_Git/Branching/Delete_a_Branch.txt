@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-11T15:06:02-05:00
+
+====== Delete a Branch ======
+Created Wednesday 11 November 2020
+
+if you have used a branch and you will no longer use it again:
+
+		**git branch -d name_of_branch**
+

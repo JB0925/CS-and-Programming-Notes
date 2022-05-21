@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T22:37:15-04:00
+
+====== Destructuring Imports ======
+Created Monday 06 September 2021
+
+When importing an object, it is possible to destructure into variables:
+
+**const { add, User } = require('./usefulStuff);**
+
+**const results = add(2, 3);**
+
+**console.log(results);**

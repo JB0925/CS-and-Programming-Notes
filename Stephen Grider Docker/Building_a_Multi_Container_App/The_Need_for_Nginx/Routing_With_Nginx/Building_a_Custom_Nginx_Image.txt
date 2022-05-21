@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-12T08:59:15-05:00
+
+====== Building a Custom Nginx Image ======
+Created Wednesday 12 January 2022
+

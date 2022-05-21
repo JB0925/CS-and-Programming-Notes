@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-10T23:44:22-04:00
+
+====== grid-template-rows ======
+Created Monday 10 May 2021
+
+**grid-template-rows** sets the **height** of the rows
+
+{{~/Desktop/ScreenShots/Grid-Rows-and-Columns.png}}
+
+The above has the following settings:
+	- **grid-template-columns: 100px 100px 100px**
+	- **grid-template-rows: 50px 50px**
+	
+	So, three rows and two columns.
+

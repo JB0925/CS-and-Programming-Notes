@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-12T11:07:28-05:00
+
+====== How to Use Linux ======
+Created Thursday 12 November 2020
+

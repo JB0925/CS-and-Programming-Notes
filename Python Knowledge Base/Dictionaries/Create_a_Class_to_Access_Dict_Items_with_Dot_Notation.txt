@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-30T23:16:16-05:00
+
+====== Create a Class to Access Dict Items with Dot Notation ======
+Created Saturday 30 January 2021
+
+**The long way:**
+	- use dunder getattr, as well as several other methods, to be able to set, update, delete, search your dictionary via dot notation, or like an attribute.
+	- two shorter ways will follow this picture:
+
+{{.\pasted_image.png}}{{.\pasted_image001.png}}
+
+
+**Creating the same dict with only three methods:**
+{{.\pasted_image002.png}}
+
+**Creating the same dict with just an init method....:**
+{{.\pasted_image003.png}}
+
+**Helpful Link:**
+
+https://stackoverflow.com/questions/2352181/how-to-use-a-dot-to-access-members-of-dictionary
+

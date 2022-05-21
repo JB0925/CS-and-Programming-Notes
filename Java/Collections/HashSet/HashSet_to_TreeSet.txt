@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-26T19:45:31-05:00
+
+====== HashSet to TreeSet ======
+Created Saturday 26 February 2022
+
+**Example:**
+
+HashSet<String> myHashSet = new HashSet<String>();
+myHashSet.add("hi");
+myHashSet.add("hello");
+
+**Set<String>  treeSet = new TreeSet<String>(myHashSet);**

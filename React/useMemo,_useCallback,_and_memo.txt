@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-07T23:16:37-05:00
+
+====== memo  useMemo  useCallback ======
+Created Tuesday 07 December 2021
+
+React has three APIs for memoization / caching.
+
+They are **memo, useMemo, useCallback**
+
+React caching / memoization strategies only have a cache / memo size of 1. 
+
+**They only keep around the most recent value.**
+

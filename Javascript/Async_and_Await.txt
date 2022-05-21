@@ -1,0 +1,47 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-23T10:05:29-04:00
+
+====== Async and Await ======
+Created Friday 23 April 2021
+
+**The Async Keyword:**
+	- **Async** functions always return a Promise
+	- If the function returns a value, the Promise will be resolved with that value (like we've seen before)
+	- If the function throws an exception, then the Promise will be rejected.
+	
+
+
+**Async Functions Return a Promise:**
+	- this makes it easy to chain them together if desired
+
+	**Example:**
+	
+	{{~/Desktop/ScreenShots/Async Function Chaining.png}}
+	
+	Here, the **async** function is being callled and, since it returns a Promise, it is able to be chained with **.then** to something else.
+	
+	**NOTE:** Since **greet** returns a value, it **returns a resolved Promise.**
+	
+	
+	
+	**What About Functions that Don't Have a Resolved Promise?:**
+		- to handle a **rejected Promise**, we throw an error with the **throw new Error('string here')** syntax.
+		
+		{{~/Desktop/ScreenShots/Async resolve and reject.png}}
+
+
+
+
+**A Way to Write the Same Function Without Async...just for practice:**
+
+function add(x, y) {
+	return new Promise((resolve, reject) {
+		if (typeof x !== 'number' || typeof y !== 'number') {
+			reject('Arguments must be numbers!');
+		};
+		resolve(x + y);
+	});
+};
+
+

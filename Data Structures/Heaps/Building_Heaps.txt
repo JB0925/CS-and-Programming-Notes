@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-28T23:50:38-04:00
+
+====== Building Heaps ======
+Created Monday 28 September 2020
+
+To build a heap from an array, begin with the 0 index digit as the root node, then add the 1 index to the left of the root node.
+
+From there, you may recursively swap out nodes based on the criteria of your heap.
+
+**In a max heap, if a lower Node is greater than a higher Node, you just swap out the greater Node for the lesser Node**
+
+**Example Prior to Swapping:  45 is greater than 4, so we will need to swap 45 and 4**
+
+{{.\pasted_image.png}}
+
+**Example after swapping:  45 and 4 are swapped**
+
+{{.\pasted_image001.png}}
+
+**Final Max Heap after swapping out smaller Nodes:  NOTICE THE ROOT IS NO LONGER 90**
+
+{{.\pasted_image002.png}}
+
+
+

@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-14T21:51:50-04:00
+
+====== How to Pick a Key ======
+Created Wednesday 14 July 2021
+
+- The best way is to pick a string that uniquely identifies the item amongst its siblings
+- Most often, you would use IDs from your data as keys (**think unique database IDs, etc.**)
+
+When you don't have a stable ID (**again, think database IDs**), you can use the iteration ID (**the "i" in (for let i = 0;...)**)
+	**Example:**
+		let nums = this.state.nums.map((num, index) => {
+			<NumberItem key={index} value={num} onClick={this.remove}/>
+		});
+	
+	**NOTE:** This will only work if your data does not need to change. If your data needs to change (something gets added or removed, etc.), then don't use it.
+	
+	Another good way to get these ids to be unique is to use libraries such as **shortId **and **uuid**
+	
+	
+	

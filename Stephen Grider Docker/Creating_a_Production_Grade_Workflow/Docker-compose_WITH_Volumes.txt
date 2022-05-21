@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T01:29:19-05:00
+
+====== Docker-compose WITH Volumes ======
+Created Sunday 09 January 2022
+
+We have already seen how to write a docker-compose.yml file. Here's how we create that file using a **Dockerfile.dev** file AND **volumes.**
+
+**Example:**
+
+version: '3.7'
+services: 
+	react-app:
+		build:
+			**context: .**
+			**dockerfile: Dockerfile.dev**
+		ports:
+		  - "3000:3000"
+	  **volumes:**
+		- /app/node_modules
+		- .:/app
+		
+
+**NOTES:** Remember, since we deleted the **node_modules** folder, we are telling our **docker-compose.yml** file that we want it to look in the container's **app** directory for the **node_modules** folder.
+
+Also, just like port mapping, we are saying "map our PWD to the app directory within the container.
+
+This makes it so the code will update on the fly without having to rebuild the image every time we make a change.
+

@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-19T23:47:27-04:00
+
+====== NOT Queries ======
+Created Monday 19 July 2021
+
+Employee.query.filter( db.not_(Employee.state.in_(['CA', 'OR'])) )
+
+Employee.query.filter( ~ Employee.state.in_(['CA', 'OR']) )

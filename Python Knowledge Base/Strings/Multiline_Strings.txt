@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-09T22:58:49-04:00
+
+====== Multiline Strings ======
+Created Sunday 09 August 2020
+
+Use """ to make a multiline string:
+
+
+{{.\pasted_image.png}}

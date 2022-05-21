@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-22T23:40:38-04:00
+
+====== How To Create Directories ======
+Created Thursday 22 October 2020			**NOTE: CONTINUED ON MAIN PAGE OF THIS SUBPAGE WITH **
+												   **CREATING MULTIPLE DIRS**
+
+{{.\pasted_image.png}}
+{{.\pasted_image001.png}}
+{{.\pasted_image002.png}}
+
+
+**SEE THE REAL PYTHON HEADER PAGE FOR INFO ON HOW TO CREATE MORE THAN ONE DIRECTORY**
+
+
+

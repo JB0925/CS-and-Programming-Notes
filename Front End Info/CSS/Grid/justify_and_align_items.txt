@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-12T12:03:18-04:00
+
+====== justify and align items ======
+Created Wednesday 12 May 2021
+
+**justify-items: start, center, end**
+	- **tries** to sqeeze the content to the specified location **on the row / horizontal axis.**
+
+
+**align-items: start center, end**
+	- same as above, but tries to squeeze them in on the **column / vertical axis**
+	

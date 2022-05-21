@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-31T02:05:57-05:00
+
+====== The From Method ======
+Created Friday 31 December 2021
+

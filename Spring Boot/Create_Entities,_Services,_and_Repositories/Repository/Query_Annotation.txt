@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-21T22:18:29-05:00
+
+====== Query Annotation ======
+Created Monday 21 February 2022
+
+To pass a more complex query than what you can find on the Spring Jpa Docs, you can use the Query annotation:
+
+**Example:**
+
+@Query("select * FROM cars JOIN cars_owners ON cars.owner_id = cars_owners.owner_id JOIN owners ON owners.id = cars_owners.owner_id WHERE cars.owner_id = ?1)
+**public Car findByOwnerId(Long ownerId);**

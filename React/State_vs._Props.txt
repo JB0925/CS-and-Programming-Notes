@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-30T11:55:27-04:00
+
+====== State vs. Props ======
+Created Wednesday 30 June 2021
+
+State and Props are the two most important concepts in React, after knowing what a Component is.
+
+**Compare and Contrast:**
+
+**State:**
+	- is an object
+	- is mutable
+	- stores changing component data
+
+**Props:**
+	- is an object
+	- is immutable
+	- stores component configuration
+	
+
+A common pattern that we will see again and again is a stateful parent component passing down its state values as props to stateless child components.
+
+
+

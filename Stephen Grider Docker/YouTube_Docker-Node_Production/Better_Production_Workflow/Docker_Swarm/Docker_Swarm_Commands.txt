@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-28T16:53:37-05:00
+
+====== Docker Swarm Commands ======
+Created Friday 28 January 2022
+
+docker node ls
+	- lists out all of the nodes present in the Docker Swarm
+
+
+docker stack ls
+	- lists out all of the current stacks
+	
+docker stack ps myapp
+	- lists out all of the tasks that are running

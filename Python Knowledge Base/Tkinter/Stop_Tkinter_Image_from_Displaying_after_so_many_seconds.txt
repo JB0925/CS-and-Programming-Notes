@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-10T22:30:48-05:00
+
+====== Stop Tkinter Image from Displaying after so many seconds ======
+Created Tuesday 10 November 2020
+
+name.after(5_000, name.destroy)
+
+this will kill the image after 5 seconds
+
+https://www.geeksforgeeks.org/python-after-method-in-tkinter/

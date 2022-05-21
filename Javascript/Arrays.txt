@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-18T09:57:00-04:00
+
+====== Arrays ======
+Created Thursday 18 March 2021
+
+Equivalent to a Python list.
+
+**Example:**
+	**var ourArray = ['John', 23];**
+	**var myArray = [ ];**
+	
+	In the first example, the array is created and data is stored in it.
+	In the second example, an empty array is declared, but not populated.
+	

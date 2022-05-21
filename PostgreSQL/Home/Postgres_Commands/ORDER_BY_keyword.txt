@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-02T23:00:59-05:00
+
+====== ORDER BY keyword ======
+Created Tuesday 02 March 2021
+
+ORDER BY gets our information, and orders it by ascending or descending order
+Default for ORDER BY is ASCENDING order
+**Can use ORDER BY with dates, numbers, and strings**
+
+**ASC** = ascending, **DESC** = descending
+
+**SELECT * FROM table_name ORDER BY col_name;**
+	- orders all people in the table alphabetically by their country of birth; default is ASCENDING
+	- people who were born in a country starting with A will be first, etc.
+	- can add **ASC** to the end, but it is default
+
+
+**SELECT * FROM table_name ORDER BY col_name DESC;**
+	- same as above, but descending this time
+
+
+Can also use two or more columns to sort:
+	**SELECT * FROM table_name ORDER BY id, email DESC;**
+		- returns all rows and columns in table, sorted by id and email, and in descending order
+
+
+
+

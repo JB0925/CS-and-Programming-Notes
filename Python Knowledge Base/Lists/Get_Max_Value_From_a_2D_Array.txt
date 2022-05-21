@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-02T23:43:48-05:00
+
+====== Get Max Value From a 2D Array ======
+Created Saturday 02 January 2021
+
+myList = [[5,7,1,4], [9,12,17,13], [0,1,2,3]]
+
+print(max(max(x) for x in myList))
+
+https://stackoverflow.com/questions/40701961/finding-the-max-value-in-a-two-dimensional-array
+

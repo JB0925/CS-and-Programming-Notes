@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T14:34:50-05:00
+
+====== Why Create Outputs ======
+Created Saturday 08 January 2022
+
+You can create outputs if you need to connect your TF project(s) with other parts of your infrastructure, or with other TF projects.

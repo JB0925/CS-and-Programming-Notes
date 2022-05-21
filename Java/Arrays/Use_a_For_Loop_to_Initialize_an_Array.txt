@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-21T08:55:13-05:00
+
+====== Use a For Loop to Initialize an Array ======
+Created Monday 21 February 2022
+
+**Example:**
+
+int[] myIntArray = new int[10];
+
+for (int i = 0; i < myIntArray.length; i++) {
+	myIntArray[i] = i * 10;
+}

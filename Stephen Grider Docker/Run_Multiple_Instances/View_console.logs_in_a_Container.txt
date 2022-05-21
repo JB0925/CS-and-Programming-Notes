@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-25T23:40:28-05:00
+
+====== View console.logs in a Container ======
+Created Tuesday 25 January 2022
+
+to view console.logs within a container:
+	**docker logs container_name -f**
+	
+The above command will let you view all of the console.logs in a detatched container
+

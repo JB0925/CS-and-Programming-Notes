@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-05-07T14:06:26-04:00
+
+====== Count-Min Sketch ======
+Created Saturday 07 May 2022
+
+A **Count-Min Sketch** is essentially using a hash table to approximate a count of some type of object or multiple objects.
+
+Think of this as what you do when you want to get the count of each word in a text document; you place all of their keys and values into a dictionary or object, and keep a running total.
+
+It is also pretty much the same as using **collections.Counter** in Python.
+
+
+**The Difference:**
+	- Because of the fact that there may be collisions, and **count-min sketches** do NOT try to handle collisions, the **counts are only approximate.**
+	
+	- You would not use a **count-min sketch** if you needed to know the EXACT count of something.

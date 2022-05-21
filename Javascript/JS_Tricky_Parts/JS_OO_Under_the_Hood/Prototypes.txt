@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-19T01:00:29-05:00
+
+====== Prototypes ======
+Created Wednesday 19 January 2022
+
+A prototype is an object, and when you add functions onto a class or function, they get added to the prototype.
+
+It is **BEST** to define methods on the **prototype** and not the individual instance. 
+
+Remember, the **instance** is linked to the parent by linking the instance to the parent's **prototype.**
+
+**Example:**
+
+function Dog(name, age) {
+	this.name = name
+	this.age = age
+	eat() => console.log("nom nom");
+}
+
+const ringo = new Dog("ringo", 10);
+
+Dog.prototype.bark = function() {
+	return `${this.name} says WOOOOFFF!!!!`
+}
+
+**console.log(ringo)**
+	- this would give us {name: "ringo", age: 10, eat: f()}
+
+
+**HOWEVER**, on the **prototype for Dog** there is now a bark method. Even though this method isn't shown on the **ringo** instance, we can still call **ringo.bark()**, because there is a link between **ringo** and the **Dog prototype**.
+
+
+**IMPORTANT:**
+	Functions defined on the **prototype **will always be equal when comparing between **instances**. So,
+		**ringo.bark === harry.bark**
+			- true
+			
+	**BUT**
+	
+	Functions defined inside of the function itself will **NOT** be equal from instance to instance. So,
+		**ringo.eat === harry.eat**
+			- false
+

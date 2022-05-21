@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-19T23:40:38-05:00
+
+====== Create Entities, Services, and Repositories ======
+Created Saturday 19 February 2022
+
+You should create entity, service, and repository packages that live under the Main package name
+

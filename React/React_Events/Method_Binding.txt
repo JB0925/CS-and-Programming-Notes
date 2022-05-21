@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-14T14:07:10-04:00
+
+====== Method Binding ======
+Created Wednesday 14 July 2021
+
+In React, if you don't bind your methods, the **this** keyword will register as undefined.
+
+The two best ways to do this are:
+
+1). 
+	 class App extends Component {
+	  constructor(props) {
+		  super(props)
+		  this.state = {
+			  numWords: 15,
+			  isValid: false
+		  }
+		  **this.handleClick = this.handleClick.bind(this);**
+	  };
+	 };
+
+
+2). An "experimental" version that works well:
+
+	 class App extends Component {
+	   constructor(props) {
+		   super(props);
+		   this.state = {
+				numWords = 15,
+				isValid: false
+		   }
+	   }
+	   
+	   **handleClick = () => {**
+		  **do stuff here;**
+	   **};**
+	 }

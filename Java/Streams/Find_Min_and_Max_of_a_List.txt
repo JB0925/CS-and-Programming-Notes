@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-24T00:19:11-04:00
+
+====== Find Min and Max of a List ======
+Created Sunday 24 April 2022
+
+**Examples:**
+
+**min:**
+
+List<Integer> nums = List.of(1,2,3,21,7,38,123);
+int **min** = numbers.stream().min((o1, o2) -> o1.compareTo(02).get();
+
+List<Integer> nums = List.of(1,2,3,21,7,38,123);
+int **min** = numbers.stream().min(Integer::compareTo).get();
+
+List<Integer> nums = List.of(1,2,3,21,7,38,123);
+int min = numbers.stream().min(Comparator.naturalOrder()).get();
+
+
+**max:**
+
+See above, but use **max** instead of **min**.

@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-19T23:48:18-04:00
+
+====== GROUP BY, ORDER BY, OFFSET, LIMIT Queries ======
+Created Monday 19 July 2021
+
+q = Employee.query
+
+q.group_by('state')
+
+q.group_by('state').having(db.func.count(Employee.id) > 2)
+
+q.order_by('state')
+
+q.offset(10)
+
+q.limit(10)

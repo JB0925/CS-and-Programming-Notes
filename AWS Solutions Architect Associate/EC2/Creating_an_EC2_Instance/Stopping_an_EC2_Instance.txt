@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T11:27:21-05:00
+
+====== Stopping an EC2 Instance ======
+Created Sunday 09 January 2022
+
+To stop an EC2 instance, from the **Instances** dashboard, you can either click **control + click** on the **name** or **instance_id**, then scroll down to **stop instance**
+	OR
+You can click **Instance state** at the top and then click **stop instance**
+
+
+

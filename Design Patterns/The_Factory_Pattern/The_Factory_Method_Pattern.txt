@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-17T23:55:57-05:00
+
+====== The Factory Method Pattern ======
+Created Thursday 17 February 2022
+
+Our last example works well, but let's say we have two pizza stores, and they offer different products (NY Style Pizza, and Chicago PIzza). You would have to make two different factories to solve a very similar problem, which leads to code duplication.
+
+**Definition:**
+	The Factory Method pattern defines an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.

@@ -1,0 +1,46 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-16T17:33:23-04:00
+
+====== querySelector and querySelectorAll ======
+Created Friday 16 April 2021
+
+querySelector and querySelectorAll are very versatile ways to select elements from the browser. 
+
+**querySelector** will return the first of whatever is passed into it, or null.
+
+**querySelectorAll** will, as the name says, return all of the items that have whatever is passed into it.
+
+**NOTE: **If you use **querySelectorAll**, you have to do a **for..of** loop in order to manipulate each element. **querySelectorAll** returns an array-like object, but you **CANNOT** use array methods like push, pop, etc.
+
+
+**Three Ways To Use Them:**
+	1). **Search by element name:**
+		const myEl = document.querySelector('span')
+			- will return an object of the first span it comes across
+	
+	
+	2). **Search by ID:**
+		const myEl = document.querySelectorAll('beans')
+			- will return an array-like structure with the element that has an ID of "beans"
+			
+			**NOTE:** Remember, ID's are only supposed to be used once in HTML, so there should not be more than one result.
+	
+	3). **Search by CSS Class:**
+		const myEl = document.querySelector('.special');
+			- will return the first element in the document with a class of "special".
+			
+			- **NOTE:** you can get more specific here, as in "**section.ul.li.special"**
+				"A list item that's nested in an unordered list, which is nested in a section, and the list item itself has a class of "special"
+				
+
+**Chaining Selectors:**
+	**Example:**
+		- **const form = document.querySelector('form');**
+		- **const button = form.querySelector('button');**
+	
+	**NOTE: **Notice how we selected the button using **form**.querySelector() instead of **document**.querySelector().
+				 **Why is this Useful?**
+			- This can make it easier to select particular elements. Say you have three buttons on the page, but only one form. 
+				- You know that the only button that will be selected will be the one inside of the form, because you selected the form, then used **form.**querySelector();
+

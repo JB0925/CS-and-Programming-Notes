@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-29T12:15:08-04:00
+
+====== How It Works ======
+Created Wednesday 29 September 2021
+
+const **jsonschema** = require("jsonschema");
+const **bookSchema** = require("../schemas/bookSchema.json");
+
+**NOTE:** before all of this, you need to **copy / paste** over the schema you created from **jsonschema.net**, create a new folder, and save a file in it called **bookSchema** (in this case). Also, be sure to save the file as **bookSchema.json**, NOT **js.**
+
+router.post("/", async(req, res, next) => {
+	const result = **jsonschema.validate(**req.body, **bookSchema**);
+	
+	**if (!result.valid) {**
+		let listOfErrors = result.errors.map(err => err.stack);
+		
+		let error = new ExpressError(listOfErrors, 400)
+		
+		return next(error);
+	**};**
+	
+	// **If we get here, we know there were no errors.**
+	
+	const **{ book } = req.body;**
+	return res.json(book);
+	}
+});

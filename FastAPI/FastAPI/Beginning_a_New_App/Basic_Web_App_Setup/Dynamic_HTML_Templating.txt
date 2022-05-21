@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-02T23:03:23-04:00
+
+====== Dynamic HTML Templating ======
+Created Friday 02 April 2021
+
+to make a fastapi function return HTML instead of JSON, use **fastapi.responses.HTMLResponse(your content here).**
+
+**Basic Example:**
+{{.\pasted_image.png}}

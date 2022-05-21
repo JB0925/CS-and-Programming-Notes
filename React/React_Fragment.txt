@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-09T22:57:36-04:00
+
+====== React Fragment ======
+Created Saturday 09 October 2021
+
+in a typical React component, you need to return ONE element, and then that element may have children.
+
+To get around this in Create-React-App, we can use **React Fragment. **React Fragment is like a wrapper or dummy element that wraps around what would normally be several child components.
+
+**NOTE: **You can put in **React.Fragment** inside the opening and closing tags, but you can also leave them empty, like below.
+
+**Example:**
+	const Book = props => {
+		return (
+			**<>**
+				<h1>Stuff</h1>
+				<p>more stuff</p>
+			**</>**
+		)
+	}

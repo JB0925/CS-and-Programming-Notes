@@ -1,0 +1,42 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-19T14:11:08-04:00
+
+====== Intervals ======
+Created Wednesday 19 May 2021
+
+Think of an interval as a duration of time.
+
+**1 Day **== 1 day
+
+**1 D** == 1 day
+
+**1 D 1 M 1 S** == 1 day 1 minute 1 second
+
+
+**Examples:**
+	**SELECT ('1 D 20 H 30 M 45 S'::INTERVAL);**
+		- returns **1 day 20:30:45**
+		
+	Subtraction of INTERVALS:
+		**SELECT ('1 D 20 H 30 M 45'::INTERVAL) - ('1 D'::INTERVAL);**
+			- returns **20:30:45**
+			
+	
+	Subtract a TIMESTAMP WITH TIME ZONE - INTERVAL:
+		{{~/Desktop/ScreenShots/TIMESTAMP WITH TIME ZONE - INTERVAL.png}}
+		
+		Returned a date and time exactly one day less than the timestamp.
+		
+		
+	Find the Amount of days between two dates:
+	{{~/Desktop/ScreenShots/Subtract Timestamps to Find # of Days.png}}
+	
+	- returned the amount of days between the two timestamps.
+	
+	
+	
+	Find the difference between two timestamps with different times and in different time zones:
+	{{~/Desktop/ScreenShots/Timestamp Subtraction with Different Times, Time Zones, etc..png}}
+	
+	

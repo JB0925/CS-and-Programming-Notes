@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-04T21:40:14-04:00
+
+====== Zfill ======
+Created Friday 04 September 2020
+
+Use Zfill to fill in zeros before a digit:
+
+{{.\pasted_image.png}}

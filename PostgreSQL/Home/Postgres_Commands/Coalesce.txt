@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-03T21:03:49-05:00
+
+====== Coalesce ======
+Created Wednesday 03 March 2021
+
+**Coalesce** allows us to have a default value in case the first value is not present.
+
+**Example:**
+	**SELECT COALESCE (null, null, 1) AS number;**
+		- will return a default value in case the other values are NULL
+	
+	{{.\pasted_image.png}}
+		- will return email if it is not null, otherwise it will return first_name in a temporary column named **var**
+	
+	
+	{{.\pasted_image001.png}}
+		- will return email if email, else 'Email not provided'
+
+
+

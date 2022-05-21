@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-04T01:19:44-05:00
+
+====== Memoize the Context Value ======
+Created Tuesday 04 January 2022
+
+When using useContext, any time some aspect of the state changes, even if it doesn't affect a particular component, **every component that subscribes to the context is re-rendered, even if they are wrapped in a call to React.memo.**
+
+We can cut down on this by wrapping the value passed into the Context Provider in a call to React.useMemo.
+
+**Example:**
+
+function AppProvider({children}) {
+  const [state, dispatch] = React.useReducer(appReducer, {
+	dogName: '',
+	grid: initialGrid,
+  })
+  **// 🐨 memoize this value with React.useMemo**
+  const value = React.useMemo(() => [state, dispatch],[state]);
+  return (
+	<AppStateContext.Provider value={value}>
+	  {children}
+	</AppStateContext.Provider>
+  )
+}

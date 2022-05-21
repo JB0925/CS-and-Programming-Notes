@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-18T01:38:21-05:00
+
+====== Change a Number from Base 10 to Any Other Base and Vice Versa ======
+Created Monday 18 January 2021
+
+**How to change a number from any base to base 10:**
+	**NOTE: **In this example, the base is 62, but that could be changed to anything else.
+	{{.\pasted_image.png}}
+
+
+**How to change a number from base 10 to any other base:**
+	{{.\pasted_image001.png}}
+
+
+https://stackoverflow.com/questions/4946696/a-python-code-to-convert-a-number-from-any-base-to-the-base-of-10-giving-errors
+last answer on page
+

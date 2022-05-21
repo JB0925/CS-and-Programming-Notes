@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-08T13:15:01-04:00
+
+====== Create DataFrame from List of Dictionaries ======
+Created Thursday 08 October 2020
+
+Sometimes, you are trying to create a Data Frame from user entered data, and there may be several items that are all related. One easy way to store all of this so that it very smoothly creates a Pandas Data Frame is to save it as a list of dicts that updates each time "**.append()**" is called. Here is example code:
+
+
+**update = []**
+**    for k, v in inventory.items():**
+**        for value in v:**
+**            update.append({'Room':k.title(), 'Item':value[0].strip(), 'Amount':int(value[1])})**
+
+**df = pd.Data|Frame(update)**
+
+
+The code above will create a neatly formatted Data Frame using the dict keys in the list as **Column** or **Series** names.
+
+
+https://stackoverflow.com/questions/20638006/convert-list-of-dictionaries-to-a-pandas-dataframe 
+

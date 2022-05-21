@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-10T23:27:03-05:00
+
+====== history - a history of all of your used commands ======
+Created Sunday 10 January 2021
+
+the command **history** gives a long history of all of the commands you have typed
+
+You can scroll through each command in the history by using the **UP** and **DOWN** arrows

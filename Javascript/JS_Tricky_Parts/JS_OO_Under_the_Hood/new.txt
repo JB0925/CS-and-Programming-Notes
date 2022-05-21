@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-19T01:00:19-05:00
+
+====== new ======
+Created Wednesday 19 January 2022
+
+The keyword **new:**
+	1). Creates an empty JS object.
+	2). Sets the keyword **this** to be that object.
+	3). Returns the object: **return this**
+	4). Creates a link to the object's prototype.
+	
+Every fn has a property on it called **prototype**.
+
+The prototype has a property called **constructor**, which points back to the function.
+
+The **constructor** points back to the same function that it was created in.
+

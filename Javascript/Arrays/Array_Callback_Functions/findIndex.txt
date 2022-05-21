@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-30T14:42:50-04:00
+
+====== findIndex ======
+Created Sunday 30 May 2021
+
+findIndex is a method that will return the index of the **first** item that matches the criteria passed into the callback.
+
+If there is no match, it will return -1.
+
+
+**Example:**
+	let myArray = [2,4,6,8,10];
+	
+	let idx = myArray.findIndex(item = > (item > 5 && item < 7));
+		- **This would return "2", since 6 is the first item that matches "item > 5 && item < 7"**
+
+	let idx = myArray.findIndex(item = > (item % 2 === 1));
+		- **This would return -1, since there is no "odd" number in the array.**
+

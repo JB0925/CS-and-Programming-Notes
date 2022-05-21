@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-11T12:44:56-04:00
+
+====== Use middleware in a Route ======
+Created Saturday 11 September 2021
+
+**middleware.js**
+	const `ExpressError = require("./expressError");
+	
+	const logger = (req, res, next) => {
+		console.log(`Sending ${req.method} request to ${req.path}.`)
+		return **next()**;
+	}
+
+	const onlyAllowElie = (req, res, next) => {
+		try {
+			if (req.params.name === "Elie") {
+				return next();
+			} else {
+				throw new ExpressError("Unauthorized", 401);
+			}
+		} catch(err) {
+			return **next(err)**;
+		}
+	}
+	
+	module.exports = { logger, onlyAllowElie };
+	
+
+**Using the middleware in a route:**
+	We saw how to use middleware to apply to every route, with **app.use(middleware.logger);**
+	
+	Here's how to use it in a route:
+	
+	**Example:**
+	
+	app.get("/hello/:name",
+			**middleware.onlyAllowElie**,
+			(req, res, next) => {
+				return res.send("Hello " + req.params.name);
+			}
+		);
+	 
+	

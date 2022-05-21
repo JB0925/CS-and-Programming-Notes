@@ -1,0 +1,65 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-02T23:42:23-05:00
+
+====== Create, Copy, Move, Rename, and Delete Files and Directories ======
+Created Wednesday 02 December 2020
+
+**mkdir dirname**
+	creates a new, empty directory at the path specified. If you are in a subdirectory, it will create a directory inside of the subdirectory
+
+**touch filename.extension**
+	creates a new file at the path specified. If no path is specified, it creates the file in the present working directory. 
+	
+
+**cp text.txt path/to/file**
+	copies the content of the first file to the new file. New file does not have to have the same name. If desired, use a full path to copy the file to a different directory.
+
+
+**mv text.txt original_file.txt**
+	the **mv** command will move a file AND rename it if so desired. If you only want to rename it, don't use any paths (stay in same directory). If you want to move it to a new directory, you need to specify a path for the second file. If the first file is not in your current path, you will need to specify a path for that as well
+	
+	**Only want to move the file?**
+		**mv text.txt path/to/new_directory**
+		
+	**Want to move and rename the file?**
+		**mv text.txt . . / orig_file.txt**
+		this moves the **text.txt** file back one directory and renames it to **orig_file.txt**
+		
+
+**rm filename.txt**
+	removes the file, provided you are in the correct path. 
+	**NOTE: once you remove from the terminal, there is no going back. There is no "Trash Can" to recover from.**
+	
+
+**Copy One Directory Over to Another:**
+		1). make sure the directory being copied to exists.
+				If it doesn't, then **mkdir new_dir_name**
+		
+		2). run **cp -R dirname new_dir_name**
+		
+
+**Rename a Directory:**
+	**mv "TestDir "OrigDir**
+	renames the first directory as the second directory
+	
+
+**Move a Directory:**
+	**mv dirname path/to/dirname **
+	if **dirname** is kept the same, it will just move **dirname **to the path specified in the second argument
+	
+	
+**Move and Rename a Directory:**
+	**cd dirname**
+	**mv dirname path/to/new_dir_name**
+	
+
+**Remove a Directory:**
+	**rm -R dirname**
+	
+
+**Force a Directory to be Deleted:**
+	if you try to delete a directory and you get error messages, but you really want to delete it, you can run **rm -rf dirname**
+	the **f** means "force delete"
+	
+	

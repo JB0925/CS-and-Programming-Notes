@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-18T00:24:23-04:00
+
+====== getComputedStyle ======
+Created Sunday 18 April 2021
+
+getComputedStyle is used to get the information from the CSS stylesheet regarding the item in question.
+
+**Example:**
+	const li = document.querySelector('li');
+	
+	const styles = getComputedStyle(li)
+		- returns a large list of the styles applied to the selected <li>, most of which are default styles that the browser applies.
+		
+		**NOTE:** These are the **currently computed** styles, meaning that if you add something like **h1:hover**, etc., the values will change to reflect the **current  conditions** if you are hovering over the element at the moment.
+
+

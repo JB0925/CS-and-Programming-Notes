@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-20T23:26:22-04:00
+
+====== The Doubly Linked List ======
+Created Sunday 20 September 2020
+
+**Doubly Linked List:**
+	- sequential access data structure which stores data in the form of Nodes
+		- **important: **with a Doubly Linked List, you can traverse both **FORWARDS** and **BACKWARDS**, which is unlike a Linked List
+	
+	- a Doubly Linked List has Nodes:
+		- each Node has 1). data, 2). a forward pointer, 3). a backwards pointer
+		- this differs from a Linked List, where it only has a forward pointer
+		
+		{{.\pasted_image.png}}
+	
+	
+		
+		
+
+

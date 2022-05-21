@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-29T11:54:03-04:00
+
+====== Git Log ======
+Created Thursday 29 October 2020
+
+Git Log shows you the history of the commits that you have made up to the current point:
+{{.\pasted_image.png}}
+
+The commit messages for the repo are shown in order, with the word "commit" first, then the SHA "Secure Hashing Algorithm"

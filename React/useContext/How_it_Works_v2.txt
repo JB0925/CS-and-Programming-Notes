@@ -1,0 +1,61 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-09T13:29:08-05:00
+
+====== How it Works v2 ======
+Created Thursday 09 December 2021
+
+1). Create context with React.createContext();
+
+2). Create a Provider and a value object. Wrap it around all props via { ...props }
+
+3). Subscribe to it in the nested components via **useContext**
+
+4). Use the needed values as necessary.
+
+
+**Example:**
+
+import React, { useState, useContext } from "react";
+
+**const AppContext = React.createContext(defaultValue if wanted);**
+
+const CountProvider = props => {
+  const [count, setCount] = useState(0);
+  const [otherVal, setOtherVal = useState("abc");
+
+  const myFunc = () => 7 + 8;
+  const value = { count, setCount, otherVal, setOtherVal, myFunc };
+  
+  return <**AppContext.Provider value={value} {...props}></AppContext.Provider>**
+};  
+
+
+function CountDisplay() {
+  // 🐨 get the count from useContext with the CountContext
+  **const { count } = React.useContext(AppContext); destructure the value obj**
+  return <div>{`The current count is ${count}`}</div>
+}
+
+function Counter() {
+  // 🐨 get the setCount from useContext with the CountContext
+  **const { setCount } = React.useContext(AppContext); // see above**
+  const increment = () => setCount(c => c + 1)
+  return <button onClick={increment}>Increment count</button>
+}
+
+function App() {
+  return (
+	<div>
+	      
+		**// we don't need to call it like a traditional fn to use it...also, the props are**
+			**// the nested components inside of it.**
+
+		**<CountProvider>    **
+			<CountDisplay />
+			<Counter />
+		**</CountProvider >**
+      
+	</div>
+  )
+}

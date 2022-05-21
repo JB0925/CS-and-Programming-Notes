@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-03T23:51:22-05:00
+
+====== Manual Image Generation with Docker Commit ======
+Created Monday 03 January 2022
+
+**NOTE: **This is not a common practice.
+
+We typically create an image and then run a container from it.
+
+If we want, we can also take a container, and manually generate an image from it.
+
+**Step 1).** Start up a container in interactive mode using **docker run -it image_name sh**
+
+**Step 2).** In a new terminal window, run the commands:
+	**docker ps => get id**
+	
+	**docker commit -c 'CMD ["redis-server"]' id_from_previous_step**
+	
+	doing the above will give you an id for a new image
+	
+	**docker run new_image_id**
+	
+	This starts up the new image with the default command

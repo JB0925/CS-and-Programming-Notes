@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-03T00:47:36-04:00
+
+====== Jinja2 Loop Counter ======
+Created Saturday 03 July 2021
+
+In jinja2, if you need access to the loop index, i.e. **for i in range(len(list))**, you can use **loop.index**
+
+**loop.index** begins at 1
+
+If you want a zero based index, you can use **loop.index0**
+

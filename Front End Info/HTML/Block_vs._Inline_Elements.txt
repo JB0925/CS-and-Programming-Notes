@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-05T09:59:30-05:00
+
+====== Block vs. Inline Elements ======
+Created Friday 05 February 2021
+
+**Block Elements: **things like **<h1>, <h2>, <p>**
+	- they take up a whole "block" of space
+	
+
+**Inline Elements**: things like **<a>**
+	- they share the space with other elements
+	
+	
+**What is a <div>?:**
+	- a **<div>** is a content divider that takes up an entire block (**Block Element**)
+	- it takes up an entire block, and forces other content above or below it
+	- allow us to group content together and style it all at once
+
+
+**What is a <span>?:**
+	- a **<span>** is an inline element, used to single out a single, generic element that we wish to style later
+	

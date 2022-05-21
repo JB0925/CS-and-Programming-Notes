@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-16T12:34:53-04:00
+
+====== Case Sensitivity in Variables ======
+Created Tuesday 16 March 2021
+
+Variable and function names in Javascript, just like Python, **ARE case sensitive.**
+
+Variable declaration is similar to class declaration in Python, in that variables are in camel case, i.e. **var myNameHere;**
+

@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-18T11:20:12-05:00
+
+====== Class Variables ======
+Created Friday 18 February 2022
+
+Variables within a class that can be access by any methods within the class. **NOT** the same as variables instantiated from within a method.
+
+They are also known as **fields**.
+
+We typically make these fields **private** in order to encapsulate them.
+
+

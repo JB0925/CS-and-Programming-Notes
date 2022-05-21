@@ -1,0 +1,93 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-22T00:22:23-04:00
+
+====== Handling Multiple Inputs ======
+Created Thursday 22 July 2021
+
+When making a form with multiple inputs, you also add their information to **state.**
+
+**Example:**
+	class `MultiForm extends Component {
+		constructor(props) {
+			super(props)
+			this.state = {
+				username: '',
+				email: '',
+				password: ''
+			}
+			this.handleSubmit = this.handleSubmit.bind(this);
+			this.handleChange = this.handleChange.bind(this);
+		}
+		
+		handleChange(evt) {
+			this.setState({username: evt.target.value})
+		}
+		
+		handleSubmit(evt) {
+			evt.preventDefault();
+			this.setState({username: ''})
+		}
+		
+		render() {
+			return (
+				<div>
+					<form onSubmit={this.handleSubmit}>
+						<input type='text' value={this.state.username}
+								onChange={this.handleChange}/>
+						<input type="email" placeholder="Email" 				   value={this.state.email} onChange={}/>
+						<input type="password" placeholder="password"
+							value={this.state.password} onChange={}/>
+						<button type="submit">Submit</button>
+					</form>
+				</div>
+			)
+		}
+	}
+	
+	**So what's the problem?**
+		- the problem lies in the fact that each input needs its own version of **handleChange**. Currently, **handleChange** only updates the state of the username.
+	
+	**How do we solve it?**
+		- the obvious solution would be to make each input have its own **handleChange** method, but this is a lot of extra code, that is almost completely duplicated.
+		
+		Instead, we can use **computed property names** to update multiple inputs in one **handleChange** method.
+		
+			**Aside - Computed Property Names Review:**
+				let first = "name";
+				let person = {
+					[first]: "Jesse"
+				}
+		
+		**What it looks like:**
+			handleChange(evt) {
+				this.setState({
+					[evt.target.name]: evt.target.value
+				})
+				
+		
+		**How to Make it Work?:**
+			give every **input** a **name** attribute, set exactly to whatever we called it in **this.,state**
+			
+			Then, do the above under **What it Looks Like.**
+			
+			**Example:**
+				**Setting Initial Form State**
+				const [formData, setFormData] = useState({
+					name: "",
+					password: "",
+					email: ""
+				});
+			
+			**Example of handleChange:**
+				const handleChange = evt => {
+					const { name, value } = evt.target;
+					**setFormData({**
+						**...formData,**
+						**[name]: value**
+					**});**
+				};
+			
+			When you do this, **React decides** the correct value to update based on the **evt.target.name**
+			}
+

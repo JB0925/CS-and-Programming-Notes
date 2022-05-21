@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-12T11:56:43-05:00
+
+====== pwd - Present Working Directory ======
+Created Thursday 12 November 2020
+
+get the name of the Present Working Directory by calling **pwd**

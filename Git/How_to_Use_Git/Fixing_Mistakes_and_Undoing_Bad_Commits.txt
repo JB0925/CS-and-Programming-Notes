@@ -1,0 +1,86 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-28T22:32:11-05:00
+
+====== Fixing Mistakes and Undoing Bad Commits ======
+Created Saturday 28 November 2020
+
+**Undo saved changes prior to commiting to Git:**
+One way to fix mistakes or undo code mistakes is **git checkout filename.py**
+
+if you run the above command, it will remove it from the prestaging area (i.e. it won't be ready to be added anymore), and if you reload the file, it will remove the changes you made from the last save up until the **git checkout filename.py** command
+
+
+**Added Bad/Wrong Git Commit Message, Fix Message:**
+	run **git commit --amend -m "new correct message here"**
+		This will erase the previous message and add the new message in its place
+		**This also changes the hash number, and thus changes the Git History**
+		**We only want to change the Git History when we are the ONLY ones who have ever had access to the changes we have made**
+		
+		**NOTE: **if you've pushed this to [[GitHub]] for others to see, you **DO NOT** want to use this fix
+
+
+**Left Off Files That You Meant to Commit in the Previous Commit:**
+	run **git commit --amend**
+	This brings up an interactive text in the terminal
+	{{.\pasted_image.png}}
+	This gives you the option to change the commit message if you want to
+	
+	run **git log --stat** , which will now show your new file added into the commit
+	**NOTE: This also changes the Git History, and the above advice still applies (ONLY use this method if you are not pushing this for others to use/see.)**
+	
+
+**Made Commits on Wrong Branch:**
+	Let's say you meant to make several commits on a "working" branch, but instead you made them on the **master** branch.
+	**Goal:**
+		1). move previous commits to a different branch
+		2). restore the state of the master branch to where it was before the erroneous commits
+	
+	Use **git cherrypick** to create a new commit based off of the original commit (original = same SHA hash)
+	
+	**How to Use git cherrypick:**
+		1). **git log**, grab first 6 or 7 characters of the commit you want to cherrypick
+		2). **git checkout branch_you_meant_to_commit_to**
+		3). on the branch that does not have the commit, run **git cherry-pick hash_number_here**
+		
+		Doing this brings the commit from master to the other branch, **but it still exists on master**
+	
+	**How to Remove the Commit From Master:**
+		1). **git checkout master**
+		2). **git reset (3 different kinds; git reset soft, git reset mixed(default), git reset hard)**
+		
+		3). run **git reset --soft** **hash # here** to get rid of the erroneous commit
+				also keeps the changes in the staging area (ready to commit)
+		     
+			 run **git reset hash # here** to run **git reset --mixed	**this also gets rid of the erroneous commit
+				this option keeps the changes, but **does not **keep them in the staging area (**need to git add the files again)**
+
+			 **git reset hard** also resets the previous commit, but it also resets tracked files to the state they were in at the commit specified by the hash. It leaves untracked files alone
+
+
+
+**Accidentally Removed Files You Needed:**
+	use **git reflog**		this will show each of the last several git commands you've used in order from newest to oldest
+		1). grab the hash of the action before you did a **git reset**
+		2). call **git checkout hash # here**
+		3). call **git log** and see that your changes have been restored
+				you are currently in **detached HEAD state, which means you aren't on any branch**
+		4). call **git branch backup** to create a new branch that will be used to save your changes
+		5). merge this branch with master 
+		
+		**NOTE: This only works for a limited period of time (maybe 30 days?)**
+
+
+**Undo Commits or Changes Without Changing the Git History:**
+		use **git revert**
+		**git revert** does not undo the previous commits, rather, it makes new commits on top of those commits that undo the changes made in the commits, but keeps the **git history** intact because it never changes the hash of the previous commits
+		
+		run **git log** to get the hash number of the commit you want to revert
+		run **git revert hash # here**
+			this reverts the files to their previous state, but **does not** undo the previous commits, and thus does NOT change the Git History
+			this creates a new
+
+
+	
+	
+	

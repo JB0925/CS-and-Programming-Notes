@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-05-15T21:50:27-04:00
+
+====== DFS and BFS on Graphs ======
+Created Sunday 15 May 2022
+
+The picture below represents a simple directed graph.
+{{~/Desktop/ScreenShots/DFS and BFS on Directed Graph.png}}
+
+**DFS Walkthrough:**
+	- DFS, or Depth First Search, means literally to go from your starting node, as deep as you can, and then recurse back up until you find another node from your starting node.
+	
+	- In a DFS on the graph above, we would start at 0 and then work, in ascending order, until we go as far as we can.
+	
+	- In DFS, the edges that belong to the DFS tree would be:
+		- 0 -> 1
+		- 1 -> 2
+		- 2 -> 3
+		- 3 -> 4
+		- 4 -> 5
+		- 0 -> 6
+		
+	- Why not 2 -> 4, or 2 → 5, or 6 → 3?
+		- because in DFS, we go as deep as we can before we recurse, and we DO NOT revisit nodes.
+		- **3** has already been visited from **2**
+		- because we visit a node and then keep going deeper INSTEAD of immediately visiting all of its children, **2** visits **3**, then instead of visiting **2's** other edges (4 and 5), **we look at 3** and see that **3** shares an edge with **4**, and then **4** shares an edge with **5**
+		
+		- likewise, 6 → 3 DOES NOT belong to the DFS even though 6 has an edge to 3, **because 3 has ALREADY been visited from 2.**
+		
+
+**BFS Walkthrough:**
+	- In a BFS, when we visit a new node, we then **visit ALL of its children**. We also again DO NOT revisit nodes that have already been visited.
+	
+	- In BFS, the edges that would belong to the BFS tree from the graph above would be:
+		- 0 → 1
+		- 0 → 6
+		- 1 → 2
+		- 6 → 3
+		**NOTE:** The next node up is 2. 2 has an edge to 3. However, 3 has ALREADY been visited from 6, so 2 → 3 is NOT an edge in the BFS tree.
+		
+		- 2 → 4
+		- 2 → 5
+

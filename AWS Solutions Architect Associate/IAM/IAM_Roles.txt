@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T23:46:23-05:00
+
+====== IAM Roles ======
+Created Saturday 08 January 2022
+
+Some AWS services will need to perform actions for us
+
+To do so, we will assign permissions to AWS services with IAM Roles.
+
+**Common Roles:**
+	- EC2 Instance Roles
+	- Lambda Function Roles
+	- Roles for CloudFormation

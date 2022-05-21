@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-26T22:21:28-05:00
+
+====== Set Env Vars in Production ======
+Created Wednesday 26 January 2022
+
+In our docker-compose.dev.yml file, we just laid out our environment variables in the open. 
+
+This is, of course, bad practice.
+
+In our **docker-compose.prod.yml** file, we will keep the **environment** key, but replace the values with **${value}**. 
+
+We can then go into our Ubuntu server and set the environment variables there, and Docker will know to pull the environment variables from the server.
+
+**Old:**
+	environment:
+		- MONGO_USER=jesse
+
+**New:**
+	environment:
+		- MONGO_USER=${MONGO_USER}
+
+
+**On the Ubuntu Server:**
+	Two Options:
+		1). **export SESSION_SECRET="secret"., etc.**
+		
+		2). Create a **.env** file on the Ubuntu server and put the variables in there.
+			- then, find the **.profile** file in the home directory and write the following:
+			
+		**set -o allexport; source /home/ubuntu.env; set +o allexport**
+		
+		If all else fails, just put .env file in .gitignore and put .env file in root directory.
+

@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-13T12:20:26-04:00
+
+====== Intersections ======
+Created Tuesday 13 April 2021
+
+The purpose of the **INTERSECT** keyword is to once again have two queries, and this time find **the common rows in BOTH queries.**
+
+Essentially, it's the opposite of **UNION**.
+
+It returns the rows that are found in both queries.
+
+
+**Example:**
+	(
+	   SELECT *
+	   FROM products
+	   ORDER BY price DESC
+	   LIMIT 4
+	)
+	INTERSECT
+	(
+	   SELECT *
+	   FROM products
+	   ORDER BY price / weight DESC
+	   LIMIT 4
+	);
+
+
+
+**INTERSECT ALL:**
+	Finds rows that are common to both queries. Will return duplicates, as long as there are multiples in one query or the other, **NOT** one result in one query and one result in the other.
+	
+
+

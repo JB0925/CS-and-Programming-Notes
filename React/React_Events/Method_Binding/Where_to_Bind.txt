@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-14T20:55:00-04:00
+
+====== Where to Bind ======
+Created Wednesday 14 July 2021
+
+- It's always better to bind higher up, preferably in the constructor
+- **if you need a parameter, pass it to the CHILD as a prop, then BIND in the PARENT and the CHILD**
+- avoid inline arrow functions and binding if possible
+
+- **ONLY** need to bind in the **constructor**

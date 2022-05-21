@@ -1,0 +1,67 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-26T22:43:13-04:00
+
+====== Pandas ======
+Created Wednesday 26 August 2020
+
+Open/Download a CSV file from the internet:
+		**import requests**
+		**response = requests.get(url)**
+		**with open(new_file.csv) as f:**
+			**f.write(response.content)**
+			
+Create [[DataFrame]] from CSV file:
+		**df = pd.read_csv(filepath)**
+		
+Create [[DataFrame]] from scratch:
+		**data = {'first col name':['first val', 'second val'...],**
+				**'second col name':['first val', 'second val'...]}**
+				
+		**df = pd.DataFrame(data, columns= ['1st col name', '2nd col name'...], index= [1,2,3,4])  .....index is optional**
+		
+
+Get info from DataFrame:
+		**df.shape.......prints number of rows and columns**
+		**df.info()........prints amount of rows, columns, col names, etc.**
+		
+
+Ways to access elements in a DataFrame:
+		**df['col_name'] or df.col_name......both give all items in the column....can use indexing after the name if needed**
+		
+		**df.loc[0:2, 'Data':'Data_Values'].....this example will give the info for rows 0 and 1, for the columns from Data through Data_Values (INCLUSIVE).....if you use a slice, no brackets.**
+		
+		**df.loc0,1], ['Data', 'Data_Values'.......this example also accesses rows zero and one, but only the columns Data and Data_Values. No slicing with the brackets.**
+		
+		**df.loc[start:end].....gives info for all columns from starting index through end (INCLUSIVE)**
+		
+		**df.iloc[[1,3], 2] or df.iloc[1:3, 2]....index based searching.....first example will give info for row 1 and row 3, at column 2. Second example gives info for rows 1 through 3 (INCLUSIVE), for column 2. Again, no inner brackets if slicing.**
+		
+		**df['name'].value_counts()  or df.name.value_counts()........works as a Counter or a counting dictionary (i.e. setdefault to 0, then += 1)**
+		
+		
+Set column name as index:
+		**df.set_index('col_name')......can pass in other things as well.**
+		**.set_index does not permanently modify the data....unless...**
+		
+		**df.set_index('col_name', inplace=True)....does permanently modify the data**
+		
+		**df.index.......gives the names of the indices**
+		
+		if you change the index, you can run    **df.loc['new_index_name']** and it will give you back all the information for that row
+		
+		can also run  **df.loc['new_index_name', 'col_name']** and get the specific value of that column for that particular row
+		
+		if you change the index, you can no longer use number based indexing......but you can if you use **df.iloc[0]**
+		
+		**df.reset_index(inplace=True)**......permanently reverts the indicies again
+		
+
+Set column name as index when reading in file in beginning:
+		**df = pd.read_csv(filename, index_col= 'whatever name')**
+
+Get mathematical info about numeric columns:
+		**df.describe()**
+		
+
+

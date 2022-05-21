@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-24T08:44:27-04:00
+
+====== Authorization Middleware ======
+Created Friday 24 September 2021
+
+This middleware requires a user. If no user is found, it throws a 401 error.
+
+const ensureLoggedIn = (req, res, next) => {
+	if (!req.user) {
+		const err = new ExpressError("Unauthorized", 401);
+		return next(err);
+	} else {
+		return next();
+	}
+}
+
+
+**This middleware ensures that the user is an admin:**
+
+**NOTE: **This is a simplified version designed to show how you could write middleware to perform similar functionality.
+
+const ensureAdmin = (req, res, next) => {
+	if (!req.user || req.user.username !== "admin") {
+		const err = new ExpressError("Unauthorized", 401);
+		return next(err);
+	} else {
+		return next();
+	}
+}

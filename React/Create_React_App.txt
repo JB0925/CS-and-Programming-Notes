@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-19T23:16:23-04:00
+
+====== Create React App ======
+Created Saturday 19 June 2021
+
+**Create React App **is a template, of sorts, that gives you an initial layout to get you started quickly.
+
+It sets it up so that your JS files are run through Babel automatically.
+
+We can also use modern JS features and idioms.
+
+Makes testing and deployment much easier.

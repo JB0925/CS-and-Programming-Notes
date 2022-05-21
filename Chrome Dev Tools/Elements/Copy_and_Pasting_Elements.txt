@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-10T12:48:51-05:00
+
+====== Copy and Pasting Elements ======
+Created Friday 10 December 2021
+
+To copy and paste an element:
+
+1). Select the element.
+
+2). CTRL + click it, and click **copy -> copy element**
+
+
+**To Paste:**
+
+1). Click the container in which you want to place the new element.
+
+2). CTRL + click it, and then click **paste**.

@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-25T10:21:13-04:00
+
+====== Map ======
+Created Monday 25 April 2022
+
+Map works just as it does in JS or Python, and the syntax is almost identical to JS.
+
+**NOTE: **If you are writing a lambda inside of map that will be more than one line, you do need to enclose it in curly brackets.
+
+**Example #1:**
+
+int[] nums = new int[] {1,2,3,4,5};
+List<Integer> newNums = Arrays.stream(nums)
+								   .boxed()
+								 .map(n -> n * 2)
+								 .collect(Collectors.toList());
+
+**// returns [2, 4, 6, 8, 10];**
+
+
+
+**Example #2:**
+
+List<Person> people = List.of(person1, person2, person3);
+
+List<PersonDTO> dtos = people.stream()
+							.map(p -> {
+								PersonDTO personDTO = new 
+								PersonDTO(p.getId(), p.getName(),
+								p.getAge());
+								
+								return personDTO;
+							});
+
+**// returns a new List of three PersonDTO objects.**
+

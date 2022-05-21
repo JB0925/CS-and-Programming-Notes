@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-20T12:00:15-04:00
+
+====== Case 2 ======
+Created Monday 20 September 2021
+
+**Modifying Existing Types**
+
+In an earlier example, the **NutritionInfo **class essentially worked as a dictionary, but what if we wanted to give it an "alias" functionality. 
+
+Sometimes, food can be called by different names in different places. Here, we say "arugula". In Europe, some countries call it "Rocket".
+
+**We Could Subclass a Dict in our NutritionInfo Class...but there's a problem:**
+	class NutritionInfo(dict):
+		def __getitem__(self, key):
+			try:
+				return super().__getitem__(key)
+			
+			except KeyError:
+				pass
+			
+			for alias in get_aliases(key):
+				try:
+					return super().__getitem__(alias)
+				
+				except KeyError:
+					pass
+			
+			raise KeyError(f"Could not find {key} or any of its aliases.")
+			
+
+
+**On the surface this works well. But usually with a dict, to avoid KeyErrors, we use the .get() method. **
+
+Here, calling the .get() method would **never** look through the aliases, and instead would either return None, or whatever the second arg to .get() is if the first key is not found.
+
+
+

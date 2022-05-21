@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-04T14:06:08-04:00
+
+====== Unittest ======
+Created Sunday 04 July 2021
+
+Unittest is the built in module for testing in Python.
+
+To use unittest:
+	**from unittest import 'TestCase**
+	**from my_file import my_func**
+	
+	class Test_Math('TestCase):
+		
+		def test_my_func(self):
+			self.assertEqual(my_func(9,3), 12)
+		
+		def test_my_func_not_equal(self):
+			self.assertFalse(my_func(9,4), 7)
+

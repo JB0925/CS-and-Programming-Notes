@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T14:47:43-05:00
+
+====== Use Eslint Default Configuration ======
+Created Sunday 09 January 2022
+
+Eslint comes with its own recommended configurations. You can use them by using the **extends keyword**. See below. Once you do that, you can get rid of any other rules that may be redundant.
+
+{
+	"parserOptions": {
+	  "ecmaVersion": 2019,
+	  "sourceType": "module",
+	  "ecmaFeatures": {
+		  "jsx": true  **// if using React**
+	  }
+	},
+	  **"extends": ["eslint:recommended"],**
+	"rules": {
+		"strict": ["error", "never"],
+	},
+	"env": {
+	  "browser": true
+	 }
+}

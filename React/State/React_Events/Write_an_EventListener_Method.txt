@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-30T01:41:27-04:00
+
+====== Write an EventListener Method ======
+Created Wednesday 30 June 2021
+
+{{~/Desktop/ScreenShots/React - Binding a Method to an Event.png}}
+
+Here, we wrote our normal React component with a constructor to set up **state.**
+
+We create the **handleClick** function, and pass it in to the **button** in our **return **statement.
+
+**In the constructor**, we **bind** the **handleClick** to **this** to set the context for the **handleClick** method. 
+
+We will need to do this going forward.
+
+
+**An Alternative to Bind:**
+	- you can forego the **bind** call; just do two things:
+	
+	1). Drop the constructor:
+			**state = {**
+				// stuff here
+			**}**
+	
+	2). Define the callback as an **arrow function**:
+			**handleClick = e => {**
+				**this.setState({clicked: true});**
+			**}**
+	
+	
+	Doing these two things automatically sets the context of the method, so that a bind call is not necessary.
+	

@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-05-16T23:35:15-04:00
+
+====== DFS Algorithm to Find and Print MSCCs ======
+Created Monday 16 May 2022
+
+1). Do a DFS on the entire graph.
+	- get the **start time **and **finish time** of every node
+		- review **DFS and BFS on Graphs: DFS and BFS - Discovery and Finish Times **for more
+		- keep a running list of the nodes in **descending order of finish times (highest finish time first)**
+2). Do a DFS on the reversed graph (the graph transposed).
+	- do this by iterating through the adjacency list and reversing the edges
+	- do the DFS **in the descending order of finish times**
+		- 
+

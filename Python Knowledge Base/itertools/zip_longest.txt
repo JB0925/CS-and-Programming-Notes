@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-12T22:22:16-04:00
+
+====== zip longest ======
+Created Monday 12 October 2020
+
+if you have a list with 7 names, 5 countries, and 5 booleans, calling **zip()** on them will only zip the items for the first five names. It will exclude the last two, because there is nothing else to zip them with. 
+
+To avoid this, use **itertools.zip_longest()**
+By adding the **fillvalue='-'**, you fill in a placeholder for any missing values, which allows the other names to get zipped as well.
+
+import itertools
+
+names = 'Tim Bob Julian Carmen Sofia Mike Kim Andre'.split()
+locations = 'DE ES AUS NL BR US'.split()
+confirmed = [False, True, True, False, True]
+
+
+def get_attendees():
+	**for participant in itertools.zip_longest(names, locations, confirmed, fillvalue='-'):**
+		print(participant)
+
+
+if __name__ == '__main__':
+	get_attendees()
+
+
+**('Tim', 'DE', False)**
+**('Bob', 'ES', True)**
+**('Julian', 'AUS', True)**
+**('Carmen', 'NL', False)**
+**('Sofia', 'BR', True)**
+**('Mike', 'US', '-')**
+**('Kim', '-', '-')**
+**('Andre', '-', '-')**

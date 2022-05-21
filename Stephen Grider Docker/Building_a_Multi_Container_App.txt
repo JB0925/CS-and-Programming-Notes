@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-10T21:29:13-05:00
+
+====== Building a Multi Container App ======
+Created Monday 10 January 2022
+
+In this app, we have a React frontend, an Express backend, and a Worker process.
+
+We are going to create **Dockerfile.dev**'s for each of them.
+
+We are trying to make it so that if a change is made to the code base, that we don't have to rebuild all images.
+
+**Basic Flow:**
+	- copy over package.json
+	- run **npm install**
+	- copy over everything else
+	- create a **docker-compose** file that sets up a **volume** to share files amongst each other
+	
+**Our Directories:**
+	- **client**
+	- **server**
+	- **worker**
+	
+
+

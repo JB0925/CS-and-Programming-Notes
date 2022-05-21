@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-19T14:34:26-04:00
+
+====== Manipulating Complex Objects ======
+Created Friday 19 March 2021
+
+Just like in Python, you can have complex objects. 
+
+For example, a variable could be a list of objects in brackets.
+
+
+
+**You access these object values the same way you do a JSON object (because that's what it is, essentially).**
+
+**Example:**
+	var myPlants = [
+	{
+		   "type": "flowers",
+		 "list": [
+		   "rose",
+		   "tulip",
+		   "dandelion"
+		]
+	},
+	{
+		 "type": "trees",
+		 "list" : [
+				 "fir",
+				 "pine",
+				 "birch"
+			 ]
+		}
+	   ];
+
+
+**So, if you wanted to get the second tree from the "trees" section, you'd do the following:**
+	var myTree = myPlants[1].list[1];
+	console.log(myTree)
+		returns "pine"
+

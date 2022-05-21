@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-16T15:46:41-04:00
+
+====== Escape Sequences in Strings ======
+Created Tuesday 16 March 2021
+
+**What can you escape out of in a string?**
+
+**\' - single quote**
+
+\" - **double quote**
+
+\\ - **backslash**
+
+\n - **newline**
+
+\r - **carriage return**
+
+\t - **tab**
+
+\b - **backspace**
+
+\f - **form feed**

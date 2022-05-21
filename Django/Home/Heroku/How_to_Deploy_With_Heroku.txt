@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-02T22:16:36-05:00
+
+====== How to Deploy With Heroku ======
+Created Tuesday 02 February 2021
+
+1). Create a new app on Heroku
+	- from the command line, run **heroku create**
+	- it will give your app a random name that you can change later
+
+2). disable the collection of static files 
+	- from the command line, run:	{{.\pasted_image.png}}
+
+3). push the code up to Heroku
+	- from the command line, run **git push heroku master**
+
+4). start the Heroku server so the app is live
+	- from the command line, run **heroku 'ps:scale web=1**
+
+5). visit the app on Heroku's provided URL
+	- from the command line, run **heroku open**
+		**NOTE: this may not open, but give you a URL to visit instead**
+

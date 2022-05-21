@@ -1,0 +1,68 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-13T09:26:33-04:00
+
+====== Consumer ======
+Created Wednesday 13 April 2022
+
+Say we want to create a Customer class inside of our Main class, then call a **greetCustomer** function.
+
+**NOTES:**
+	- scroll all the way down when looking at this.
+	- **Consumer** takes **ONE** argument and returns **nothing**
+	- Unlike **Function **or **BiFunction**, functions created with **Consumer** use **accept(arg), **i.e. **myFunction.accept("Joe");**
+
+
+**The "Traditional" Way of Doing It:**
+public class Main {
+	public static void main(String[] args) {
+		 Customer customer = new Customer("Maria", "99999");
+		 **greetCustomer(customer);**
+	}
+
+	static void greetCustomer(Customer customer) {
+		System.out.println(
+			"Name: " + customer.name + " Phone: " + customer.phoneNumber
+		)
+	}
+
+
+
+	**public class Customer {**
+	   private final String name;
+	   private final String phoneNumber;
+	
+		 public Customer(String name, String, phoneNumber) {
+		   this.name = name;
+		   this.phoneNumber = phoneNumber;
+		 }
+	}
+}
+
+
+
+
+**Using Functional Programming to do the Same Thing:**
+
+**import java.util.function.Consumer;**
+
+public class Main {
+	public static void main(String[] args) {
+		 Customer customer = new Customer("Maria", "99999");
+		 **greetCustomer.accept(customer);**
+	}
+
+      
+	  **static Consumer<Customer> greetCustomerConsumer = customer -> System.out.println("Name: " + customer.name +  " Phone: " + customer.phoneNumber);**
+
+
+	**public class Customer {**
+	   private final String name;
+	   private final String phoneNumber;
+	
+		 public Customer(String name, String, phoneNumber) {
+		   this.name = name;
+		   this.phoneNumber = phoneNumber;
+		 }
+	}
+}

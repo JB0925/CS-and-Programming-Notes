@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-02T02:10:57-05:00
+
+====== How to Use scrollTrigger ======
+Created Sunday 02 January 2022
+
+ScrollTrigger is a tool that makes your animations wait until the user has scrolled into view.
+
+Once you have installed gsap you have access to the **scrollTrigger** function. 
+
+**How to Import It:**
+	import { gsap, Bounce } from "gsap";
+	import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+	
+**Before you go to use it:**
+	gsap.registerPlugin(ScrollTrigger);
+	
+
+gsap.fromTo(pic2Ref.current, { y: -window.innerHeight, visibility: "hidden" }, { y: 0, visibility: "visible", duration: 1, **scrollTrigger: ".photos"**}, "<20%");
+
+
+In the above, we use scrollTrigger to say "make this animation wait until the element with the class name "photos" comes into view.

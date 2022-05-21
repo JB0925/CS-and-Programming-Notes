@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-15T12:18:20-04:00
+
+====== Shorthand Syntax for Methods ======
+Created Thursday 15 April 2021
+
+The shorthand syntax for creating a method inside of an object is similar, but just a little bit different than traditional method syntax. To use the shorthand syntax, you will **omit** two things:
+	1). There is **no colon ":" used.**
+	
+	2). There is no **function keyword used.**
+	
+
+
+**Example:**
+
+	{{~/Desktop/Screen Shot 2021-04-15 at 12.24.45 PM.png}}
+
+const orders = {
+	amtPaid: 30,
+	tip: 6,
+	**tipPercentage() {**
+		**return this.tip / this.amtPaid * 100;**
+	**}**
+};
+

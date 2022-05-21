@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-03-11T17:16:51-05:00
+
+====== Use CA (Step1) PK ======
+Created Friday 11 March 2022
+
+**NOTE:** This is step 3 in the process.
+
+**Command:**
+
+openssl x509 -req -in server-req.pem -days 60 -CA ca-cert.pem -CAkey ca-key.pem -CAcreateserial -out server-cert.pem **-extfile server-ext.cnf**
+
+**NOTE:** Only do the bolded part if you actually created that file.
+
+Next, it will ask you for the password for the encrypted **ca-key.pem** file.
+
+Running this generates a **ca-cert.srl** file, which is the **serial number** that the server needs to authenticate.

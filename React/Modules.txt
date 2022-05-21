@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-20T00:31:08-04:00
+
+====== Modules ======
+Created Sunday 20 June 2021
+
+1). Any time you want to use a component, function, etc., that is in another file, you need to add:
+	**export default functionNameHere**
+
+
+2). Then, **in the file you want to import it into**, you need to add:
+	**import functionName from "./filename"**
+
+3). Any time you want to import a **module**, you write:
+	**import functionName from "module"**
+	
+	**NOTE:** You can give your function name an alias, so instead of:
+		**import help from "./helpers"**
+	
+	You can write:
+		**import h from "./helpers"**
+	
+	If you do this, whenever you call the function, you need to refer to it with whatever alias you gave it.
+
+
+**Exporting a function:**
+{{~/Desktop/ScreenShots/React - export a function.png}}
+
+**Importing the same function:**
+{{~/Desktop/ScreenShots/React - Import a Function.png}}
+
+See the bottom of the imports, then see where we **console.log()** our function.
+
+
+

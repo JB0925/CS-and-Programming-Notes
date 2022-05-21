@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-14T10:21:47-04:00
+
+====== Spread, Rest, and Destructuring ======
+Created Wednesday 14 April 2021
+
+We use **destructuring** to unpack arrays and objects.
+
+

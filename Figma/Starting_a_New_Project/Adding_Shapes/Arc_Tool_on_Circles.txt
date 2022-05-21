@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-09T21:33:28-04:00
+
+====== Arc Tool on Circles ======
+Created Monday 09 August 2021
+
+Create a Circle using the shape tool.
+
+Then, hover over it. A single dot will appear. Click the dot to change the **sweep of the circle**.
+
+Inside of that, another dot will appear, which will take out the middle of the circle to a degree which you set.

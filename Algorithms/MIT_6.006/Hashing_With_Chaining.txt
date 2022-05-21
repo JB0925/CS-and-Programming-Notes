@@ -1,0 +1,76 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-29T12:05:46-05:00
+
+====== Hashing With Chaining ======
+Created Friday 29 January 2021
+
+**Python Dictionaries:**
+	- an Abstract Data Type
+	- each item has a key
+	- can insert, delete, or search for a key
+
+
+**Why use a Dictionary?**
+	- they are fast and easy to use
+	- they are used in databases (some databases use hashing, and some use BST's instead)
+	- used in internet login applications to save user information
+	- compilers and interpreters
+	- network routers: looking up local IP addresses that are connected to it
+	- searching in a string (a substring search)
+
+
+**Simple Approach to Hashing: Direct Access Table:**
+	- store items into an array indexed by key
+	{{.\pasted_image002.png}}
+	In the picture above, this shows the keys as the array indices. So, **dict[2] == 'Hi'**, because the key is 2, and the value is Hi.
+	**Problems with this model:**
+		- keys may not be integers all the time
+		- uses a lot of memory (**if you have a lot of keys, you need one slot of memory for each key**)
+		
+	**What if your keys aren't integers?**
+		- **Use Prehashing**
+			- maps your keys to non-negative integers
+			- in theory, keys are finite and discrete (like a string of bits)
+			- **in Python**, **hash(x)** is the prehash of x.
+				- sometimes, on a few occasions, some objects have the same hash (**hash('\0B') == hash('\0\0C')**)
+				- ideally, the **hash(x) should only == hash(y) when x and y ARE THE SAME**
+				- we **REALLY** don't want the prehash to change value...otherwise we won't be able to find our objects
+	
+	**What is the solution to the memory usage problem?**
+		- **Hashing**
+			- reduce the number of all keys (ints) down to a reasonable size **m** for a hash table
+			{{.\pasted_image003.png}}
+			**The above is mapping keys to a Hash Table. **
+			It is **inputting** keys from the "keyspace" into the **hash function()**, and the **output of the function** is the key to the hash table, and tells where to store the data when that key is called.
+			
+			**NOTE: The hashing function maps ALL of the keys in the "keyspace" to an index in the Hash Table.**
+			
+			**ONE PROBLEM....**
+				- The size of the Hash Table is quite a bit smaller than the size of the pool of possible keys, so there will eventually be a collision where two keys get mapped to the same index in the Hash Table
+					- **Example:**
+						- **h(key i) == h(key j), but key i '!= key j**
+					
+					- **So how do we deal with all of the possible collisions? CHAINING**
+			
+			
+			**WHAT IS CHAINING?**
+				- Chaining allows us to deal with collisions
+				**The Idea Behind Chaining:**
+					- if you have multiple items that fall under one key, store them as a list in the Hash Table
+					{{.\pasted_image004.png}}
+					Here, K1 and K2 have the same Hash, so we store both of their values in a list under the same Hash Table index
+					**The worst case would be that all of the keys have the same hash, and all of the values get stored in one gigantic list under the same Hash (O(n)), but that usually does not happen because of randomization.**
+					
+			
+			**What is Simple Uniform Hashing?**
+				- **NOTE: this is an assumption used for analysis. The assumption is actually false.**
+				- The assumption states that each key is equally likely to be hashed to any slot of the table, independent of where other keys are hashed
+				
+				**The Analysis:**
+					- what is the expected length of a chain for **n** keys in the table, and **m** slots
+						- it is **n / m **
+						- as long as **the size of the table **stays the same, **n** can change and we will still have **O(1)** insert, delete, search times for a dict/mapping, etc.
+
+
+

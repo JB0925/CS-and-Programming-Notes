@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-03T01:32:24-04:00
+
+====== Heap Use Cases ======
+Created Saturday 03 October 2020
+
+**Heaps – Implementation and Use Case:**
+	- Heaps are most commonly used in implementing HeapSort
+	- HeapSort is a sorting algorithm that takes in a list of elements, builds them into a min or max heap, and then removes the Root Node continuously to make a sorted list.
+
+	**Priority Queues:** 
+	- An advanced Data Structure your computer uses to designate tasks and assign computer power based on how urgent the matter is

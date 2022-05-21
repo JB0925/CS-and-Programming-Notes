@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T21:08:59-05:00
+
+====== AWS Points of Presence ======
+Created Saturday 08 January 2022
+
+Amazon has 216 Points of Presence (205 Edge locations and 11 Regional Caches) in 84 cities across 42 countries.
+
+Content is delivered to end users with lower latency.
+

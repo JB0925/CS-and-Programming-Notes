@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-02T00:48:43-04:00
+
+====== componentDidMount ======
+Created Monday 02 August 2021
+
+`**componentDidMount()** runs immediately **after the FIRST render** of a component. It will NOT run again on subsequent renders.
+
+**Why Use It?**
+	- use it when you are fetching data from an API
+	- use it when you need something to happen as soon as the page is loaded
+
+
+**Example:**
+	class Timer extends Component {
+		constructor(props) {
+			super(props)
+			this.state = {quote: ""}
+		}
+		
+		`**componentDidMount() {**
+			axios.get(url).then(res => {
+				setTimeout(() => {
+					this.setState({quote: res.data});
+				}.bind(this), 3000);
+			});
+		**}**
+	}
+	
+
+**Explanation:**
+	- we create the class and the constructor, and initialize state.
+	- then we create `**componentDidMount** and, inside of it, we make a GET request and chain the Promise to create a setTimeout that basically says "hey, after **three** seconds, change the **state** to the result of this GET request.

@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-04T14:19:19-05:00
+
+====== How to Add a Primary Key ======
+Created Thursday 04 March 2021
+
+**ALTER TABLE table_name ADD PRIMARY KEY (id);**
+	- **NOTE:** This will not work if more than one object has the same id
+
+
+**Id is just for example. You can pass in more column names to PRIMARY KEY and have more than one column act as primary key if you want / need to.**
+

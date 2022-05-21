@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-20T23:10:09-04:00
+
+====== The Linked List ======
+Created Sunday 20 September 2020
+
+{{.\pasted_image.png}}
+
+{{.\pasted_image001.png}}
+
+{{.\pasted_image002.png}}
+
+{{.\pasted_image004.png}}
+
+

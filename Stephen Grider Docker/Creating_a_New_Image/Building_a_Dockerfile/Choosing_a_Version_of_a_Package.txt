@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-04T19:37:24-05:00
+
+====== Choosing a Version of a Package ======
+Created Tuesday 04 January 2022
+
+By going to **hub.docker.com**, and clicking **explore**, you can find a specific image that you might need.
+
+For example, say we need **Node.js**, if you need version **17.3**, in your Dockerfile you can write:
+
+FROM node:17.3

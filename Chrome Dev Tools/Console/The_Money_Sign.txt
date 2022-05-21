@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-10T22:41:32-05:00
+
+====== The Money Sign ======
+Created Friday 10 December 2021
+
+$_ will give you the last value you computed in the console.
+
+$0 will give you the last thing you computed, $1 will give you the next to last thing you computed, etc.
+
+**This can be useful by selecting an item, typing "$0" in the console, and pressing enter. This will isolate the element in the console and allow you to inspect it in isolation from the other elements.**
+
+The circle with a line through it (like Ghost Busters) will clear the console.

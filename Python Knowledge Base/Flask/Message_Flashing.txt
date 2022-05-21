@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-31T01:53:07-04:00
+
+====== Message Flashing ======
+Created Saturday 31 October 2020
+
+Message Flashing is showing some kind of information from the previous page when something happens on the GUI. 
+
+**Example:**
+	You login and, on the user page, a message comes up "logged in successfully!"
+	You logout and, a message pops up "thank you; please visit again soon..."
+	
+
+**from flask import flash**
+
+Step 1):
+
+**in Flask, decide which page you want to flash the message on. We will use the logout page:**
+	**We use a conditional to only display the message if a user was previously logged in.**
+	
+{{.\pasted_image001.png}}
+
+
+Step 2):     **update the html to print the messages to the screen. We will do this on the login screen, since the logout screen redirects the user to the login screen:**
+
+{{.\pasted_image003.png}}
+
+
+
+
+
+
+

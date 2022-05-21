@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-14T15:07:43-04:00
+
+====== Button Widget ======
+Created Wednesday 14 October 2020
+
+The button widget adds buttons to the screen:
+
+**here is an example of 3 methods used to create buttons using the Tkinter button widget:**
+
+def add_button(self, value):
+		return Button(self.master, text=value, width=9, command = lambda: self.do_math(str(value)))....**when this method is called on a string object, it turns it into a Tkinter.Button() object.....notice the command....very important because it tells button pushes what to do. **
+
+**This method is called on each string object in the method "create_button" below.**
+
+
+
+	def create_button(self):
+		buttons = '7 8 9 + 4 5 6 - 1 2 3 * C 0 = /'.split()
+		row1, row2, row3, row4 = [], [], [], []
+		rows = [row1, row2, row3, row4]
+        
+		**i = 0**										# i is being used as a way to index "buttons" 								
+		for row in rows:								   list
+			for j in range(4):
+				if len(row) < 4:
+					**new = self.add_button(buttons[i])			**#creating a Button class object, and adding it to the appropriate row of buttons.
+**                    row.append(new)**
+				i += 1
+        
+		return rows
+
+
+	def display_buttons(self):						**#Called in "__init__" method of class, because it displays buttons**
+		**i = 1									**#**i = row, j = column**
+		for row in self.create_button():
+			j = 0
+			for button in row:
+				**button.grid(row=i, column=j, columnspan=1)		#take the button object we just created and assign it a row, column, and**
+				j += 1										  **columnspan. Remember, in this example, row starts at 1 because**
+			i += 1											  **"self.equation" Entry method object starts at row 0 and goes all the way**
+																		**across.**
+																		
+
+
+**To create a Button, call "var = Button(master, text, width, and some command to make it do something)....in this case the command comes from the "self.do_math" method.**
+
+**Then, call .grid() on the object and pass in the appropriate row, column, and columnspan arguments.**
+

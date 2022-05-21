@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-08T15:45:50-05:00
+
+====== Common Text Properties ======
+Created Monday 08 February 2021
+

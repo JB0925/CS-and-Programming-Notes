@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-03T22:50:29-05:00
+
+====== Explanation ======
+Created Monday 03 January 2022
+
+FROM alpine
+	- alpine is the base image
+	- this is akin to installing an OS
+	- we can use the alpine OS to install and run redis
+
+COPY [[./]] [[./]]
+	- Copy any necessary files (like package.json) from the local PWD to the PWD in the container
+
+RUN apk add --update redis
+	- an instruction as to what dependency to install
+	- this command is one that we can run on alpine, as alpine comes with this package manager preinstalled on it
+	- when this command is run, it creates a temporary container so that it can run the command
+
+CMD ["redis-server"]
+	- the command to run once all dependencies are installed
+	- **NOTE:** If you have a command with two separate words, such as "npm start", you have to use a comma to separate the parts of the command

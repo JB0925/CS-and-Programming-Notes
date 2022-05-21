@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-05T11:48:50-05:00
+
+====== On Conflict and Do Nothing ======
+Created Friday 05 March 2021
+
+**ON CONFLICT** is similar to error handling in Python. With the ON CONFLICT keyword, we are using it like an **except** block in Python, to catch errors.
+
+
+**Example:**
+	**INSERT INTO car (make, model, price)**
+	**VALUES('Ford', 'Escape', '$11,026')**
+	**ON CONFLICT (model) DO NOTHING;**
+	
+	
+The example is saying to try to insert the above values into the table called **car**. However, if there is a conflict because there is already a car in the table of the same model, then do nothing. 
+
+**This is often used with a PRIMARY KEY, such as id, where there cannot be any conflicts, or columns that have a constraint.**
+
+**NOTE: ON CONFLICT** does **NOT** work with columns that are not UNIQUE.
+
+

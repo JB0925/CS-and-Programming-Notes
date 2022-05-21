@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-02T20:21:55-05:00
+
+====== Get min, 1st quarter, mean, 3rd quarter, and max values ======
+Created Tuesday 02 February 2021
+
+See the first answer in the link below for an algorithm on how to get the 5 quartile values of a list:
+
+https://stackoverflow.com/questions/61415029/how-to-get-the-1st-and-3rd-quartile-of-a-list-of-sorted-numbers-without-modules
+

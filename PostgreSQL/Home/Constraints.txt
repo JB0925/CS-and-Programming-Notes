@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-30T14:27:18-04:00
+
+====== Constraints ======
+Created Tuesday 30 March 2021
+
+When you use a FOREIGN KEY constraint, Postgres will not let you save a foreign key that doesn't make sense. For example, if you have a picture, and four users whom the picture could belong to, Postgres **will not** allow you to save the picture with a **user_id** foreign key of 9999.** Postgres knows that there is no user with an id of 9999, and knows that this doesn't make sense.**
+
+**Deleting Data That Has a Foreign Key Attached:**
+	There are different Options Available:
+		- ON DELETE RESTRICT ---> Throw an error			#default option
+		- ON DELETE NO ACTION ---> Throw an error
+		- ON DELETE CASCADE ---> Delete all photos associated with the Foreign Key
+		- ON DELETE SET NULL ---> Set the **user_id** of the photo to NULL
+		- ON DELETE SET DEFAULT ---> Set the **user_id** of the photo to a default value, if one is given
+
+
+

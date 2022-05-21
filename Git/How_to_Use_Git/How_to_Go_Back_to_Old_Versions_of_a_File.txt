@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-01T23:22:21-05:00
+
+====== How to Go Back to Old Versions of a File ======
+Created Sunday 01 November 2020
+
+To restore a file from its last known commit:
+		**git checkout HEAD filename.py**
+		
+
+To go back to an older version of the file:
+		**git log**
+			will show all commits and their SHA numbers
+		**git checkout (SHA number here with no parens) filename.py**
+			in VSCode, this will automatically update your file to match whatever version it was when it was saved with that SHA number
+
+https://opensource.com/life/16/7/how-restore-older-file-versions-git

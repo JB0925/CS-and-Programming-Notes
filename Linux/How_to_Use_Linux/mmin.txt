@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-03T11:59:16-05:00
+
+====== mmin ======
+Created Thursday 03 December 2020
+
+**mmin - 10**
+
+the above can be used in conjunction with other commmands to find out what happened in the last ten minutes
+
+**Example:**
+
+**find . -type f -mmin -10**
+	returns a list of the files that were modified in the last ten minutes

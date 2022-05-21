@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T23:51:15-05:00
+
+====== How To ======
+Created Saturday 08 January 2022
+
+In the IAM dashboard, under **users** on the left, click **Roles.**
+
+Click **Create role**
+
+**Common Uses for Roles:**
+	- EC2s
+	- Lambda (allow lambda fns to call AWS on your behalf)
+	
+
+**To Add to EC2:**
+	- Click on EC2
+	- In the bottom right, click on **Next:Permissions**
+	
+
+From there, you can either add / search for existing policies to add to the role, or you can create custom policies to add to the role.
+
+
+

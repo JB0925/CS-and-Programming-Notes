@@ -1,0 +1,66 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-12T23:18:02-04:00
+
+====== accumulate function ======
+Created Monday 12 October 2020
+
+The **accumulate()** function calculates running totals on iterable objects. 
+
+**accumulate()** takes a few potential parameters:
+	**def accumulate(iterable, func=almost anything, *, initial=None):**
+	
+	The **default** function in **accumulate()** is **add.**
+	
+Here are a few examples of how you can use **accumulate()**, and what it will return:
+		 accumulate([1,2,3,4,5]) --> 1 3 6 10 15....**keeps a running addition total**
+		# accumulate([1,2,3,4,5], initial=100) --> 100 101 103 106 110 115.......**i.e start at 100, then keep a running total for each item in the list**
+		# accumulate([1,2,3,4,5], operator.mul) --> 1 2 6 24 120.........**keeps a running multiplication total**
+	
+	**More examples:**
+		>>> data = [3, 4, 6, 2, 1, 9, 0, 7, 5, 8]
+		>>> list(accumulate(data, operator.mul))     **#** **running product**
+		[3, 12, 72, 144, 144, 1296, 0, 0, 0, 0]
+		>>> list(accumulate(data, max))              **# running maximum**
+		[3, 4, 6, 6, 6, 9, 9, 9, 9, 9]
+		
+		# Amortize a 5% loan of 1000 with 4 annual payments of 90
+		>>> cashflows = [1000, -90, -90, -90, -90]
+		>>> list(accumulate(cashflows, lambda bal, pmt: bal*1.05 + pmt))......**bal= 1000, pmt= -90**
+		[1000, 960.0, 918.0, 873.9000000000001, 827.5950000000001]
+
+
+https://docs.python.org/3/library/itertools.html
+
+Scroll down to itertools functions and look for **accumulate()**
+
+
+
+**One last example: Calculate a running mean in two different ways:**
+
+from itertools import accumulate
+
+
+def running_mean_old(sequence):
+	"""Calculate the running mean of the sequence passed in,
+	   returns a sequence of same length with the averages.
+	   You can assume all items in sequence are numeric."""
+	if not sequence:
+		return []
+
+	total = 0
+	running_mean = []
+
+	for i, num in enumerate(sequence, 1):
+		total += num
+		mean = round(total/i, 2)
+		running_mean.append(mean)
+
+	return running_mean
+
+
+def running_mean(sequence):
+	"""Same functionality as above but using itertools.accumulate
+	   and turning it into a generator"""
+	for i, num in enumerate(accumulate(sequence), 1):
+		yield round(num/i, 2)

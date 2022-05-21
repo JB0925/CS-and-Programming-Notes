@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-15T09:02:08-04:00
+
+====== SQL Injection Solution ======
+Created Wednesday 15 September 2021
+
+**NOTE:** Most ORM's already take care of this for you, so it won't be an issue.
+
+However, with **pg**, we need to handle it manually.
+
+
+**Solution: Parameterized Queries:**
+
+router.get("/good-search",
+	async function(req, res, next) {
+   try {
+	const type = req.query.type;
+	const results = await db.query(
+		`SELECT id, name, type
+		 FROM users
+		 WHERE **type=$1`, [type]);**
+	
+	return res.json(results.rows);
+	}
+	catch(err) {
+	return next(err);
+	}
+});
+
+In the **SQL Statement**, you will represent variables as **$1, $2, etc.**
+
+You can have as many as you want.
+
+For the **second** argument to **db.query**, you will pass an array of values that is **1-indexed** instead of 0 indexed.
+
+**$1** evaluates to the first array element
+

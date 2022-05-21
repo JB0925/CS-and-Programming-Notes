@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-05T10:01:25-05:00
+
+====== Semantic Elements ======
+Created Friday 05 February 2021
+
+**What are semantic elements?**
+	- they are elements that give a particular meaning to a piece of HTML
+	- instead of constantly using divs to create blocks of content, you can use tags such as **<nav>, <main>, <header>, <footer>, etc.**
+	- these tags give meaning to each block, so that someone inspecting the code knows what they represent
+	- it makes your code more accessible to people who are using screenreaders (**i.e. people with disabilities**)
+	

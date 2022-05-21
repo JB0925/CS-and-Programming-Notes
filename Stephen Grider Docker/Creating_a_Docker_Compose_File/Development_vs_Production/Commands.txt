@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-16T19:32:10-05:00
+
+====== Commands ======
+Created Sunday 16 January 2022
+
+To run two docker-compose files at once, use:
+
+**docker-compose -f docker-compose.yml -f docker-compose.dev/prod.yml up -d --build**
+
+**NOTES:**
+	- dev/prod ....choose which one you need
+	- -d. .....detatched mode
+	- --build .....build your images again...only needed if there are changes.

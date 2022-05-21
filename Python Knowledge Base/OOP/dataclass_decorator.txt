@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-07T23:18:00-04:00
+
+====== dataclass decorator ======
+Created Friday 07 August 2020
+
+a dataclass first needs to be imported:
+
+	**from dataclasses import dataclass**
+	
+Then, you need to use the dataclass decorator:
+
+	**@dataclass**
+	class Whatever:
+	
+
+The dataclass is powerful because it works just like any other class, except it's extremely easy to set up and takes care of the **__init__, __repr__, and __eq__ **methods for the user. From there, you can create new methods within the dataclass and use "**self" **just as you would in a normal class to refer to the class attributes.
+
+Example:
+
+	**@dataclass**
+	**class Bite:**
+		**number: int**
+		**title: str**
+		**level: str = 'somestring'**
+		
+		**def __post_init__(self):**
+			**do stuff with class attributes here like title case, capitalize, etc. using self.var**
+			
+
+The **__post_init__** method allows you to manipulate class attributes just as you would in any other class, using self.var.
+
+
+
+
+

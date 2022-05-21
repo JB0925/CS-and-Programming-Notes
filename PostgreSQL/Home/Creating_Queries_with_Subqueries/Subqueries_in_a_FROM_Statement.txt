@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-04T12:18:06-04:00
+
+====== Subqueries in a FROM Statement ======
+Created Tuesday 04 May 2021
+
+**NOTE: **A Subquery inside of a FROM can be anything, as long as it is **compatible with the Outer Subquery.**
+
+{{~/Desktop/ScreenShots/FROM Subquery.png}}
+
+Here, I selected the rows that had an id greater than or equal to 30.
+
+
+**Remember, a subquery has to be able to be ran on its own. If you can't, then you can't use it as a Subquery.**
+
+**NOTE: **Anytime you run a subquery in a FROM clause, you HAVE TO use an alias or else it won't work.
+
+{{~/Desktop/ScreenShots/FROM Subquery #1.png}}
+
+In the above example, we are asking for the **name** column from **products**, but then we are asking for a "made up" column that we are sourcing from the FROM subquery. **NOTE:** You have to include any extra columns from your SELECT clause in the FROM subquery as well (**i.e. name**)
+
+{{~/Desktop/ScreenShots/FROM Subquery Example 3.png}}
+
+**Here, we are selecting the "price" column, and also the made up "price_weight_ratio" column. Notice how both were included in the FROM subquery. Also, be sure to give your FROM subquery a name, i.e. "AS my_table;"**
+
+
+
+**Using a Subquery Inside of a FROM Clause to Find the Average Number of Orders:**
+
+{{~/Desktop/ScreenShots/FROM Subquery #5.png}}
+
+**Here we take the max order id and divide it by the max user id to find the average amount of orders.**

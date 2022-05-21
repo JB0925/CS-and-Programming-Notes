@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-07T12:43:23-05:00
+
+====== Another Simple Example ======
+Created Tuesday 07 December 2021
+
+const countReducer = (oldCount, newCount) => newCount;
+const [count, setCount] = React.useReducer(countReducer, initialCount);
+
+**NOTES:** Above, we have our reducer function **countReducer**, which takes the current count and then the updated state, and **returns the new state**.
+
+
+const increment = () => setCount(count + step);
+return <button onClick={increment}>{count}</button>
+
+**NOTES: **the **Increment function calls count and makes sure that our "new" value for the reducer function is set to "count + step", which step is currently 1.**
+
+**Logic Map:**
+
+	- reducer function takes oldState and newState, and returns newState
+	- call useReducer and get back a statelike object and an updater function
+	
+	- call the updater function and pass it the value of current state (**count**) + step.
+	
+	- this gets passed to the Reducer function, and it returns the updated state.
+	
+	

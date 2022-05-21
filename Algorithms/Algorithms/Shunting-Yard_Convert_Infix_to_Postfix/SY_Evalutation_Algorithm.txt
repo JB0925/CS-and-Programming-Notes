@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-28T23:21:06-05:00
+
+====== SY Evalutation Algorithm ======
+Created Monday 28 December 2020
+
+{{.\pasted_image.png}}
+
+**Step 1:**
+	create an empty stack, and iterate through the postfix expression
+	
+**Step 2:**
+	if the token is a digit,
+		push to the stack
+	else:
+		if the token is not whitespace, 
+			a = s.pop()
+			b = s.pop()
+			whatever the next operator is, perform the math and push the result onto the stack
+	
+	at the end, there will be one item on the stack: the total
+	
+	pop it and return it
+	

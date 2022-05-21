@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-09T22:10:28-04:00
+
+====== Using Grid Layout ======
+Created Monday 09 August 2021
+
+In the top left, click on the actual frame
+
+Then, go over to the right and click the **plus sign** on **layout grid.**
+
+Click on the 9 dots in a square, then click the word **grid**
+
+From there, choose **column, row, etc.**
+

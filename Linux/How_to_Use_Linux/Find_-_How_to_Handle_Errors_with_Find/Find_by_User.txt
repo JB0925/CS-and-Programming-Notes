@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-03-19T22:31:44-04:00
+
+====== Find by User ======
+Created Saturday 19 March 2022
+
+**Find -user <username>**
+	Finds all files created / owned by the person with that username

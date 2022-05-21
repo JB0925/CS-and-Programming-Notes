@@ -1,0 +1,92 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-15T09:15:51-05:00
+
+====== Single Number ======
+Created Tuesday 15 February 2022
+
+Given an array where every number except one has a duplicate, find that one number.
+
+**Example:**
+	[4,1,2,1,2]
+	
+	
+**Solution 1: O(n) Time and Space**
+
+**Hash Table**
+
+def singleNumber(self, nums: List[int]) -> int:
+		if len(nums) == 1:
+			return nums[0]
+        
+		counter = {}
+		singleNum = None
+        
+		for num in nums:
+			if not counter.get(num):
+				singleNum = num
+				counter[num] = 1
+			else:
+				counter[num] += 1
+        
+		for k, v in counter.items():
+			if v == 1:
+				return k
+
+
+
+**Solution 2: O(n) Time and Space**
+
+**List Operations**
+
+def singleNumber(self, nums):
+		"""
+		:type nums: List[int]
+		:rtype: int
+		"""
+		no_duplicate_list = []
+		for i in nums:
+			if i not in no_duplicate_list:
+				no_duplicate_list.append(i)
+			else:
+				no_duplicate_list.remove(i)
+		return no_duplicate_list.pop()
+
+
+**Solution 3: O(n) Time and Space**
+
+**Math**
+
+def singleNumber(self, nums):
+		"""
+		:type nums: List[int]
+		:rtype: int
+		"""
+		return 2 * sum(set(nums)) - sum(nums)
+
+
+
+**Solution 4: O(n) Time, O(1) Space**
+
+**Bitwise Operations**
+
+**Explanation:**
+
+Concept
+
+If we take XOR of zero and some bit, it will return that bit
+a \oplus 0 = aa⊕0=a
+If we take XOR of two same bits, it will return 0
+a \oplus a = 0a⊕a=0
+a \oplus b \oplus a = (a \oplus a) \oplus b = 0 \oplus b = ba⊕b⊕a=(a⊕a)⊕b=0⊕b=b
+So we can XOR all bits together to find the unique number.
+
+def singleNumber(self, nums):
+		"""
+		:type nums: List[int]
+		:rtype: int
+		"""
+		a = 0
+		for i in nums:
+			a ^= i
+		return a

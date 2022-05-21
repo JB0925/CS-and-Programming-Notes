@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-23T14:56:26-04:00
+
+====== Conclusion ======
+Created Wednesday 23 September 2020
+
+- Dictionaries are a very useful data structure when it comes to Computer Science for a few reasons:
+	1). The option for a non numerical index
+	2). The flexibility when it comes to making keys (can be just about anything)
+	3). The speed which comes with the **Hash Table Implementation**
+	
+	

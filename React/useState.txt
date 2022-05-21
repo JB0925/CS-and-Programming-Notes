@@ -1,0 +1,82 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-10T13:54:20-04:00
+
+====== useState ======
+Created Sunday 10 October 2021
+
+With function based React, state is accessed and managed with **useState**.
+
+**useState** returns an array with two items:
+	1). the actual item to be manipulated
+	2). A method to be used in a callback to update State. You DON'T write a function; you just use whatever you called it in a callback.
+
+
+**How to import useState:**
+	import React, { useState } from "react";
+
+
+**Example of useState:**
+	const [mood, setMood] = **useState("happy");**
+	
+	In this example, the initial **mood** variable is set to **happy**.
+	We set the initial state of **mood** to be **happy**.
+	
+	**useState** takes ONE argument, which is whatever you'd like the initial state to be.
+	
+
+**NOTE:** Always set state **inside** the component.
+
+**NOTE #2:** You **cannot** call **useState** in loops or conditionals.
+
+**NOTE #3:** When updating state that relies on whatever the previous state was (**i.e. a total, count, etc.**), it is **best practice** to pass in a callback function to update it.
+
+**How to Update State:**
+	const Person = () => {
+		// setting initial state
+		**const [mood, setMood] = useState("happy");**
+		
+		return (
+			<>
+				<div> Your mood is {mood} </div>
+				**// using setMood to update State**
+				<button onClick={() => **setMood("excited")**}> Change! </button>
+			</>
+		)
+	}
+
+**Another Example:**
+	const Counter = () => {
+		// setting initial state
+		**const [count, setCount] = useState(100);**
+		
+		return (
+			<>
+				<div> Your count is {count} </div>
+				**// using setMood to update State ...count + 1**
+				<button onClick={() => **setCount(c => c + 1)**}> Change! </button>
+			</>
+		)
+	}
+	
+
+
+**Another Example:**
+	const Counter = () => {
+		// setting initial state
+		**const [count, setCount] = useState([100,200,300,400]);**
+		**const idx = Math.floor(Math.random() * count.length);**
+		**const newVal = 17;**
+		
+		**const updateCount = (newVal) => {**
+			**setCount(c => [...c.slice(0, idx), newVal, c.slice(idx + 1)]);**
+		**}**
+		return (
+			<>
+				<div> Your count is {count} </div>
+				**// using setMood to update State ...count + 1**
+				<button onClick={() => **updateCount(newVal)**}> Change! </button>
+			</>
+		)
+	}
+

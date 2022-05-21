@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-20T00:05:03-04:00
+
+====== Start Dev Server in CRA ======
+Created Sunday 20 June 2021
+
+Run **npm start** to start the development server that goes with CRA.
+

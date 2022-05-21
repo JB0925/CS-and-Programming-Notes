@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-26T14:37:53-04:00
+
+====== Fixing Merge Conflicts ======
+Created Wednesday 26 May 2021
+
+Git typically uses a **fast-forward **merge
+	- this is when Git can easily tell when the commits happened and order them chronologically
+	
+
+However, it is very common to have different commits happen at different times on two branches
+
+**If the commits are not chronological, a recursive merge is necessary.**
+
+
+
+**Merge Conflicts:**
+	- are when changes are committed to the same file from two different branches
+	- if two devs are working on the same file, the code often won't sync up properly
+	
+	**Example:**
+		git checkout - b new_branch
+		echo my text > new.txt
+		git add . && git commit -m "make file new.txt"
+		
+		git checkout master
+		echo other text > new.txt
+		git add. && git commit -m "add to new.txt"
+		
+		git merge new_branch
+			- **here, there will be an issue, because there is a version of "new.txt" on "new_branch" that doesn't match with what "master" already has.**
+			- git does not know how to determine which version of the text inside of **new.txt** that you want to keep
+		
+		
+		Now, we are in the middle of an uncompleted merge.
+		Git is waiting for you to choose which version you want to keep.
+		**Once you decide, you will have to commit the content again.**
+		
+		If we **cat second.txt**, we would see:
+			//other text//
+			= = = = = = =
+			my text
+			> > > > > > > new_branch
+			
+			
+			
+			To fix the conflict, you just delete the line you don't want, **as well as the = = = and > > > lines.**
+			
+		
+		However, you still need to commit. But, because you are in the middle of a merge, we can't **make a commit.**
+		
+		To fix this, we run:
+			**git add . && git commit -m "fix merge conflict"**
+			
+			
+

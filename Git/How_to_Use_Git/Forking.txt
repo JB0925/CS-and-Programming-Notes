@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-12T10:51:21-05:00
+
+====== Forking ======
+Created Thursday 12 November 2020
+
+Forking is like cloning, but you have access to make changes to the codebase when forking.
+
+To Fork, go to "GitHub" and choose fork. 
+
+When asked "Where should we fork PROJECT NAME?"
+		**choose your user account**
+

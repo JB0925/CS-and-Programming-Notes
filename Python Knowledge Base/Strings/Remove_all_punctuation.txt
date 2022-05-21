@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T21:01:47-04:00
+
+====== Remove all punctuation ======
+Created Tuesday 27 October 2020
+
+**import string**
+
+s = s.translate(str.maketrans("  '' "''," '' " '', string.punctuation))
+
+
+**NOTE: The quotes inside of the double quotes are two single quotes with no space between them.**

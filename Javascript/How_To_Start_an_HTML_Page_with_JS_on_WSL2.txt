@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-24T15:01:20-04:00
+
+====== How To Start an HTML Page with JS on WSL2 ======
+Created Wednesday 24 March 2021
+
+Create an **app.js** file.
+
+Create an **index.html** file in the same directory (for now) as the **app.js** file.
+
+Save everything and, from either the terminal OR the VSCode window, run **wslview index.html** or whatever your html file name is.
+
+**NOTE:** to see any JS, Ctrl+Shift+i and click **console**
+

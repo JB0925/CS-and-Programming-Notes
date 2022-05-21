@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-01T01:10:41-05:00
+
+====== URLPattern ======
+Created Monday 01 February 2021
+
+{{.\pasted_image.png}}
+
+
+On the first line, we imported **path** to power our **URLPattern**
+On the next line, we imported our **views** from the **views.py** file, and specifically imported the **homePageView** function that we created
+
+
+
+Our **URLPattern "path"** object has three parts:
+	- a reference to the Regex ' '
+	- a reference to our **view** called **homePageView**
+	- an optional named **URLPattern** called '**home'**
+	
+	**This means that if the user calls the homepage represented by the empty string ' ', Django should use the view called homePageView.**
+

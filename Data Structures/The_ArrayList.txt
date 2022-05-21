@@ -1,0 +1,73 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-16T00:22:12-04:00
+
+====== The ArrayList ======
+Created Wednesday 16 September 2020
+
+**ArrayList**: can be thought of as a growing array.
+
+The size of an array is final, but the size of an ArrayList is dynamic
+
+- an Array List is backed by an array in memory
+	- this means that it has a lot of similar functionality to an array
+	
+**Initializing an Array List:**
+	- in Python, an array and an Array List are combined together to create the List.
+	- the List takes some functionality from both arrays and Array Lists
+	
+	- in **Java ....ArrayList<Integer>arrayList = new ArrayList<Integer>();**
+	- in **C# ......ArrayList arrayList = new ArrayList();**
+	- integer in parentheses at end will set the Array List size, default is 10, which can be dynamically increased
+	
+
+**Array List Functionality:**
+	- beefier, more powerful than an Array
+	- because it belongs to the prebuilt arrayList "class", which means it has prebuilt functions we can use
+	- types of functions it has depends on the language
+
+
+**6 Common Array List Methods:**
+1). Add Method
+2). Remove Method
+3). Get Method
+4). Set Method
+5). Clear Method
+6). toArray Method
+
+
+**Add Method:**
+	- two different types:
+		1). takes an object parameter **Add(Object) ....**appends to the first open index of the arrayList...useful for when you don't care what index the item has
+		2). takes an object and an index: **Add(Object, Index) **.....can be used to order object in a certain way. If the index slot is already filled, it moves everything down one spot (**O(n)**), and inserts the object into the specified index
+		**exampleAList.add(3,2); ......**NOT Python
+		
+**Remove Method:**
+	- two different types:
+		1). **Remove(Index)**.....removes the object at the index you provide, returns it to user
+		2). **Remove(Object)**....removes the first instance of the object passed into the arrayList, if present
+			example: **exampleAList.remove(new integer(5));   **returns True if the value was present, False if not
+
+**Get Method:			exampleAList.get(index)**
+	- same as referencing an index for an array
+	- example:
+		**exampleAList.get(2) **.....would return whatever object is stored at index 2
+	- the index points to the spot in memory where an object is stored, and then calls what is stored at that spot in memory
+		
+**Set Method:			exampleAList.get(index, object);**
+	- how we **replace** elements in an arrayList
+	- example:
+		**exampleAList.set(3, 'cookie'); **....sets index 3 in exampleAList to "cookie"
+		
+**Clear Method:		exampleAList.clear();**
+	- clears the entire arrayList, takes no parameters
+	-very simple to understand
+	
+**toArray Method:		Object convertedExample[ ] = exampleAList.toArray();**
+	- used to convert an arrayList to an Array
+	- takes no arguments
+	- converts the arrayList into an array. Must be set equal to the creation of a new array: **Object convertedExample[ ] = exampleAList.toArray();**
+	- creates an Array of objects
+	
+
+	

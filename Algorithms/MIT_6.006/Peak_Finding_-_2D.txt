@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-30T00:43:30-05:00
+
+====== Peak Finding - 2D ======
+Created Wednesday 30 December 2020
+
+**This is known as the Greedy Ascent algorithm**
+
+The algorithm runs on a 2D grid, picks a starting point, and traverses in a direction
+
+If the number is greater than the number to its left or right (depending on which direction you choose), you keep going until you find 
+a smaller number or until you reach an end corner
+
+If you go as far left or right as you can on a row, you continue up/down, again until you find a number less than the current number
+
+
+**Binary Search Version:**
+	**j = m // 2 (middle column)**
+	Find a 1D peak at a[i][j]
+	Use **(i,j) **as a start to find a 1D peak on row **i**
+	
+	**THIS ALGORITHM WILL NOT WORK**
+	
+	**This is because a 2D peak may not exist on row i**
+	
+
+
+**Recursive Version That Works!:**
+	pick middle column (**j = m // 2)**
+	Find the global maximum on column j at a[i][j]
+	Compare a[i][j-1], a[i][j], a[i][j+1]
+	pick left columns if a[i][j-1] > a[i][j]
+	pick right columns if a[i][j+1] > a[i][j]
+	
+	if a[i][j-1] < = a[i][j] >= a[i][j+1]:
+		return a[i][j]
+	
+	solve the new problem with 1/2 the number of columns
+	
+	If there is only a single column left, find the global maximum and return it (**base case**)
+	
+
+{{.\pasted_image.png}}
+
+
+	
+	
+	

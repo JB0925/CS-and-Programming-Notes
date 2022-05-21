@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-27T20:46:51-04:00
+
+====== Conditionals in Pandas ======
+Created Thursday 27 August 2020
+
+**df.last OR df['last'] == 'Doe'** .......will return a Boolean True/False response for each row in the DataFrame.
+
+**filt = df.last == 'Doe'** ........set the above to a variable
+
+**print(df[filt])**.......prints out the complete rows that matched the filtered query
+
+can also use    **print(df[df['last'] == 'Doe'])**
+
+can also use    **print(df.loc[filt])**.....where "filt" is equal to the above "filt"
+
+Can also do    **print(df.loc[filt, 'email'])**.....this will return only the email column portion for each row that matches the "filt" criteria above
+
+												**& and | (and, or) operators in Pandas**
+												
+You cannot use the built in "and" and "or" operators used in Python with Pandas. 
+You can expand your searches using **&** and **| **for "and" and "or".
+
+**df.loc[df['last'] == 'Doe' & df['first'] == 'John']**          OR       **filt = df.loc[df['last'] == 'Doe' & df['first'] == 'John']**  .........narrowing search with two conditions.
+
+
+OR example:
+
+**filt = df['last'] == 'Schafer' | df['first'] == 'John'** 
+**print(df.loc[filt, 'email'])**....will return the email column for anything that matches the above conditional
+
+**print(df.loc[-filt, 'email'])** ......will return the opposite of the initial search query. This is because of the "-" symbol in front of the first variable.
+
+
+Filter using a list:
+
+**countries = ['Germany', 'USA', 'England']**
+**filt = df['Country'].isin(countries)**
+**print(df.loc[filt, 'email'])** .......will return only respondents who are from the countries in the initial list, and it will provide the email data from their row.
+
+**filt = df['LanguageWorkedWith'].str.contains('Python', na=False)**
+**print(df.loc[filt])**.......will print all information for anyone with Python anywhere in the LWW column. STR.CONTAINS is a way around stripping, splitting, etc.   na = not available. Set to false, it will not return ones whose LWW is NaN.
+
+
+
+
+

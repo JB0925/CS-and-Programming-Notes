@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-23T12:24:06-04:00
+
+====== The Await Keyword ======
+Created Friday 23 April 2021
+
+We can only use the await keyword inside of a function declared with async.
+
+**await** pauses the execution of the function, and waits for a Promise to be resolved.
+
+
+**Example:**
+	**async** function getPlanets() {
+		const res = **await** axios.get('https://swapi.dev/api/planets');
+		console.log(res.data)
+	};
+	
+	
+	In a normal function, this would require the use of **.then** and **.catch**, because Axios returns a promise, then we would tell our code what to do with what it returned. The console.log statement would run before the request was completed. **This would result in an error, because "res.data" isn't returned to us yet.**
+	
+	Here, the **await** keyword tells us to pause until Axios has brought back the data. 
+	
+	So Axios brings the data back and we wait to print the data out because of the **await** keyword.
+
+
+**Another Example:**
+{{~/Desktop/ScreenShots/Movie Example Async and Await.png}}
+
+Here, we are making the **event** an **async** function so that we can **await** the Axios call to the API. **This basically pauses our code until the Promise that Axios returns has been fulfilled and THEN we will print the list of movies.**
+

@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-16T21:22:41-05:00
+
+====== Creating a Named Volume ======
+Created Sunday 16 January 2022
+
+For something like a database, when you bring down a container and you run **docker-compose down -v**, you are deleting the volume associated with that container.
+
+This makes it so that the data saved, read, etc., does **NOT** persist once the container is brought down.
+
+To get around this, we can add **volumes** to our service in the **docker-compose.yml** file, **BUT** we should make them **named volumes** so that we don't accidentally delete them.
+
+**Example:**
+
+volumes:
+	- **mongo-db:/data/db**

@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-16T15:21:30-04:00
+
+====== The Queue - Time Complexity Equations ======
+Created Wednesday 16 September 2020
+
+**1). Accessing:  O(n)**
+
+**2). Searching:  O(n)**
+
+**3). Inserting:    O(1)**
+
+**4). Deleting:     O(1)**
+
+
+**What is a Queue Used For?:**
+	- queues are used for job scheduling on your computer
+	- used in printing (whose docs get printed first)
+	- modern cameras
+

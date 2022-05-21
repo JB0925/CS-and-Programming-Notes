@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-08T20:23:22-04:00
+
+====== Use Describe to Group Tests ======
+Created Wednesday 08 September 2021
+
+If you have related tests, and want to group them, you can use **describe.**
+
+
+**Example:**
+	function add(x, y) {
+		return x + y;
+	}
+	
+	module.exports = { add };
+	
+	
+	
+	**test file:**
+	
+	const { add } = require("./add");
+	
+	describe("add function", function() {
+		test("return sum", function() {
+			let sum = add(2,3);
+			expect(sum).toEqual(5);
+		});
+		
+		test("return with neg nums", function() {
+			let sum = add(-2, 3);
+			expect(sum).toEqual(1);
+		});
+	};
+	

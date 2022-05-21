@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-05-15T22:31:46-04:00
+
+====== DFS Topological Sorting ======
+Created Sunday 15 May 2022
+
+In a Directed Acyclical Graph, where the vertices are "tasks", and each one is dependent on the one before it, we need to sort it in order of their dependencies.
+	**Example - Making Tea:**
+		- v1 = get cup
+		- v2 = get kettle
+		- v3 = put teabags in cup
+		- v4 = put water in cup
+		- v5 = heat water
+		- v6 = pour water in kettle
+	
+	A topological sort of the above "graph" would lead us to:
+		v2 → v6 → v5 → v1 → v4 → v3
+		
+	or:
+		- get kettle
+		- pour water in kettle
+		- heat water
+		- get cup
+		- put water in cup
+		- put teabags in cup
+
+
+**NOTE:** If a graph has a cycle, there is no way to do a Topological Sort with a graph that has a cycle, because one of the steps will keep recurring.
+
+
+**Topological Sort - Steps:**
+	1). Do a DFS on the graph:
+	
+	n = node
+	res = []
+	visited = {}
+	
+	visited[n] = True
+	res.append(n)
+	for neighbor in self.adj_list[n]:
+		if not visited.get(neighbor):
+			dfs(neighbor)
+			
+	
+	2). Sort the nodes in descending order according to their finish times.
+	
+	

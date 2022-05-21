@@ -1,0 +1,42 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-09T22:18:49-04:00
+
+====== Configparser and ini files ======
+Created Sunday 09 August 2020
+
+Configparser allows you to parse ini files, or initialization files, in python:
+
+	**import configparser**
+
+
+	**parser = configparser.ConfigParser()**
+
+
+	**parser.read(ini file)**
+
+Access the section names:
+	**lst = [name for name in parser.sections()]**
+	
+Access the items within each section:
+
+	**for section in parser.sections():**
+		**for k, v in parser.items(section):**
+			**print(k, v)**
+
+list of methods for ConfigParser():
+
+	https://www.tutorialspoint.com/configuration-file-parser-in-python-configparser
+
+more good info / sample code for ConfigParser():
+
+	https://pymotw.com/2/ConfigParser/
+
+
+
+Ini File: initialization files that run when you start a process on your computer.
+
+**To create a readable ini file, save it as ANSI.**
+
+
+

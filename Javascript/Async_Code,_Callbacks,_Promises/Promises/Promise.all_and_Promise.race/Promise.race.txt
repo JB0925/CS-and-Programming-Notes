@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-03T14:35:20-04:00
+
+====== Promise.race ======
+Created Friday 03 September 2021
+
+**Promise.race** also accepts an array of promises and returns a new Promise
+
+Unlike **Promise.all**, the new Promise will resolve or reject as soon as one Promise in the array resolves or rejects (like a race, aka which one will "win"?)
+
+The syntax will work essentially the same way as **Promise.all**, except for the fact that **Promise.race** will return one Promise instead of one array of several promises.

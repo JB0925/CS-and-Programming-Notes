@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-06T20:36:14-05:00
+
+====== Inner Joins ======
+Created Saturday 06 March 2021
+
+**Inner joins **combine whatever is common in two tables that have a FOREIGN KEY relationship.
+
+**NOTE: Instead of saying ON, you can use USING, if two tables have the same column name. **
+**Example:**
+	- **SELECT * FROM person3 JOIN car3 USING (car_uid);**
+	{{.\pasted_image002.png}}
+
+**SELECT * FROM person2 JOIN car2 ON person2.car_id = car2.id;**
+	- returns a table of all results where the person id is equal to the car id
+
+{{.\pasted_image.png}}
+
+
+**How to select specific columns from both tables:**
+	- pretty much the same as above, except after the SELECT statement, reference column names with dot notation i.e. **person2.first_name**, etc.
+	
+	{{.\pasted_image001.png}}
+

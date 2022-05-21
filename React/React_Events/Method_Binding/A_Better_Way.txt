@@ -1,0 +1,75 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-14T14:42:40-04:00
+
+====== A Better Way ======
+Created Wednesday 14 July 2021
+
+Passing Functions to Child Components:
+
+- a very common pattern in React
+- the idea is that children are often **not stateful**, but need to tell their parents to change state
+
+
+**How it Works:**
+	- a parent component defines a function
+	- the function is passed to a child component as a prop
+	- the child component invokes the prop
+	- the parent function is called, usually setting new state
+	- the parent component is re-rendered along with its children
+	- **NOTE:** it is a good idea, when naming the **handle** function in the **child** component, to follow the pattern of **add / handleAdd, remove / handleRemove**
+
+
+**Example:**
+	class `**NumberItem **extends Component {
+		constructor(props) {
+			super(props)
+			**this.handleRemove = this.handleRemove.bind(this);**
+		}
+		
+		**handleRemove(evt) {**
+			**this.props.remove(this.props.value)**
+		**}**
+		
+		render() {
+			return (
+				<li>
+					{**this.props.value**}
+					<button **onClick={this.props.handleRemove}**>X</button>
+				</li>
+			)
+		}
+	}
+	
+	class **`NumberList** extends Component {
+		constructor(props) {
+			super(props)
+			this.state = {
+				nums: [1, 2, 3, 4, 5]
+			};
+			this.remove = this.remove.bind(this);
+			
+			remove(num) {
+				this.setState(st => {
+					nums: st.nums.filter(n => n !== num)
+				})
+			}
+			
+			render() {
+				let nums = this.state.nums.map(n => {
+					<NumberItem value={n} onClick={this.remove}/>
+				)};
+				return (
+					<div>
+						<h1>First Number List</h1>
+						<ul>{nums}</ul>
+					</div>
+				)
+			}
+		}
+	}
+	
+
+
+
+

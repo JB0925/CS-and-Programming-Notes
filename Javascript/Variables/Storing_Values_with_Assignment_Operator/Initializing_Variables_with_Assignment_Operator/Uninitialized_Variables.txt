@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-16T12:23:18-04:00
+
+====== Uninitialized Variables ======
+Created Tuesday 16 March 2021
+
+**Initialize your variables by using the = sign**
+	var a = 9;
+	var b = "I am a"
+	
+
+**You can add strings together:**
+	**b = b + " String!"**
+	
+	Console.log(b) would return the sentence **"I am a String!"**
+	

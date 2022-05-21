@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-07T00:43:31-05:00
+
+====== Size of Primitive Types and Width ======
+Created Monday 07 February 2022
+
+A **byte **occupies 8 bites and has a **width** of 8.
+
+A **short** occupies 16 bites and has a **width** of 16,
+
+An **int **occupies 32 bites and has a **width** of 32,
+
+A **long** occupies 64 bites and has a **width** of 64.

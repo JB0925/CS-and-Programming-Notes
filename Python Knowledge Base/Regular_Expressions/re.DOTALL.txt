@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-10T15:54:34-05:00
+
+====== re.DOTALL ======
+Created Tuesday 10 November 2020
+
+re.DOTALL:
+		In regex, "." typically means any character except for "\n". So, if there is a \n in a string, the regex you wrote won't look past the \n.
+		However, with the **re.DOTALL** flag, it will include the "\n" and allow it to look past it.
+
+

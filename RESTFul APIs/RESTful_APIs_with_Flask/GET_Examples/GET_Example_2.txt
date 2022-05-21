@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-31T20:59:02-04:00
+
+====== GET Example 2 ======
+Created Saturday 31 July 2021
+
+Same idea as previously, but this allows us to get data for **one** car:
+
+@app.route('/cars/<id>')
+def get_car(id):
+	car = Car.query.get(id)
+	if car:
+		return jsonify(car=serialize_cars(car))
+	return '<h1>Sorry, that car could not be found!</h1>'

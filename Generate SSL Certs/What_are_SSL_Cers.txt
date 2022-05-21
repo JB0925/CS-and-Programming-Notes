@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-03-11T16:45:08-05:00
+
+====== What are SSL Cers ======
+Created Friday 11 March 2022
+
+SSL certs allow for transfer of data over a secure connection.
+
+You can use the Mac's built in openssl library to generate it.
+
+It has two parts:
+	- key
+	- cert
+	
+**How to Generate the Key and Cert with RSA:**
+
+openssl req -x509 -newkey rsa:4096 -days 365 -keyout ca-key.pem -out ca-cert.pem
+	- You will be asked to answer questions regarding your country, state, ciry, organization, email address
+
+
+**NOTE:** The key is encrypted; the cert is not. It is only base-64 encoded and it can be read in plain text with the following command:
+
+**openssl x509 -in ca-cert.pem -noout -text**
+

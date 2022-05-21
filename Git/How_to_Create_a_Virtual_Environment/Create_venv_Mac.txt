@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-28T21:17:28-04:00
+
+====== Create venv Mac ======
+Created Monday 28 June 2021
+
+mkdir my_dir && cd my_dir
+**python3 -m venv venv**
+
+Activate It:
+	**source venv/bin/activate**
+
+Deactivate It:
+	**deactivate**
+	
+.gitignore it:
+	**venv/**
+
+Write Requirements:
+	**pip3 freeze > requirements.txt**
+
+Install Requirements from Cloned Package:
+	**pip3 install -r requirements.txt**
+	

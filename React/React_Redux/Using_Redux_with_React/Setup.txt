@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-31T01:20:59-04:00
+
+====== Setup ======
+Created Sunday 31 October 2021
+
+To install React Redux:
+	**npm install react-redux    AND      npm install redux**
+
+
+**Steps:**
+	1). You need to wrap your App component in a top-level component called **<Provider /> **
+	
+	2). You need a **reducer** function
+
+
+**The Provider:**
+	- the Provider accepts a prop of a Redux store
+	- usually we wrap the Provider around the app component in index.js, similarly to how we do it with BrowserRouter. 
+	
+
+**Example:**
+	**index.js**
+	import { Provider } from "react-redux";
+	import myReducer from "./myReducerFile"
+	import { createStore } from "redux";
+	
+	const store = createStore(myReducer);
+	
+	ReactDOM.render(
+		<Provider store={store}>
+			<App /> 
+		</Provider>
+	);
+	
+	
+	
+	
+	

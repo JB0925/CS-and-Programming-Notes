@@ -1,0 +1,173 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-28T00:43:20-05:00
+
+====== Control Props ======
+Created Tuesday 28 December 2021
+
+Control props allow a user of your component the chance to set state from within your component as normal, but also **from outside of your component.**
+
+**VERY IMPORTANT:**
+	- A **controlled component TAKES props from its PARENT, which it uses to **
+	  **update the state of the PARENT**
+	
+	- An **uncontrolled component** has and manages its own state **LOCALLY /     INTERNALLY. **It **DOES NOT NEED** the props that a controlled component would, because it gets them from within.
+	
+
+**Example: Extending the useToggle Hook to Include Control Props**
+
+import * as React from 'react'
+import {Switch} from '../switch'
+
+**// Remember, this is the function that takes several functions and then later, calls**
+**// each function (if it exists) with all of its args.**
+const callAll = (...fns) => (...args) => fns.forEach(fn => fn?.(...args))
+
+const actionTypes = {
+  toggle: 'toggle',
+  reset: 'reset',
+}
+
+**// The main reducer function**
+function toggleReducer(state, {type, initialState}) {
+  switch (type) {
+	case actionTypes.toggle: {
+	  return {on: !state.on}
+	}
+	case actionTypes.reset: {
+	  return initialState
+	}
+	default: {
+	  throw new Error(`Unsupported type: ${type}`)
+	}
+  }
+}
+
+**// Our useToggle hook now takes a reducer fn that defaults to the above "toggleReducer", but it also takes an "onChange" prop and a "controlledOn" prop. If the "on" prop is passed, we know it is being managed by its PARENT. IF NOT, we know it is being managed by the REDUCER passed into useToggle.**
+function useToggle({
+  initialOn = false,
+  reducer = toggleReducer,
+  onChange,
+  on: controlledOn
+} = {}) {
+  const {current: initialState} = React.useRef({on: initialOn})
+  const [state, dispatch] = React.useReducer(reducer, initialState)
+  
+  **// a variable used to determine if the "on" prop, aliased to "controlledOn" has been passed**
+  const onIsControlled = controlledOn != null;
+  
+  **// get the actual "on" value. If "onIsControlled" (being managed by PARENT)**
+  **// it will be the "on" value from the PARENT as a prop. If it is NOT controlled, **
+  **// it will get its "on" value from the state / reducer, and does NOT NEED an**
+  **// "on" prop.**
+  const on = onIsControlled ? controlledOn : state.on;
+
+  **// We only want to call "dispatch" if the component is NOT being managed / controlled by its PARENT, because "dispatch" manages LOCAL state. Following that, we call the onChange (if it exists)**
+
+  **NOTE: the line "reducer({ ...state, on}, action) is NOT updating any state actually. For that we'd need the "dispatch" function. What it IS doing, is telling the onChange function what the state should be.**
+  const dispatchWithOnChange = (action) => {
+	if (!onIsControlled) {
+	  dispatch(action);
+	};
+	onChange?.(reducer({ ...state, on}, action), action);
+  }; 
+
+  **// toggle() and reset() now come from "dispatchWithOnChange", as "dispatchWithOnChange" now determines how state gets updated, based on whether or not the component is CONTROLLED by the PARENT.**
+  const toggle = () => dispatchWithOnChange({type: actionTypes.toggle})
+  const reset = () => dispatchWithOnChange({type: actionTypes.reset, initialState})
+  
+  **// Remember, our "getTogglerProps" allows us to compose functions together, such as the onClick. It also returns some default props, as well as any props a user passes in. SAME FOR reset().**
+  function getTogglerProps({onClick, ...props} = {}) {
+	return {
+	  'aria-pressed': on,
+	  onClick: callAll(onClick, toggle),
+	  ...props,
+	}
+  }
+
+  function getResetterProps({onClick, ...props} = {}) {
+	return {
+	  onClick: callAll(onClick, reset),
+	  ...props,
+	}
+  }
+
+  return {
+	on,
+	reset,
+	toggle,
+	getTogglerProps,
+	getResetterProps,
+  }
+}
+
+function Toggle({on: controlledOn, onChange}) {
+  const {on, getTogglerProps} = useToggle({on: controlledOn, onChange})
+  const props = getTogglerProps({on})
+  return <Switch {...props} />
+}
+
+function App() {
+  **// These are used to GET and SET the state for two CONTROLLED Toggles, as **
+  **// they are being managed by their PARENT and being passed extra props.**
+  const [bothOn, setBothOn] = React.useState(false)
+  const [timesClicked, setTimesClicked] = React.useState(0)
+  
+  **// if we call toggle() and the click count is at four, we are simply returning**
+  function handleToggleChange(state, action) {
+	if (action.type === actionTypes.toggle && timesClicked > 4) {
+	  return
+	}
+	**// otherwise, set state in the App for the CONTROLLED components**
+	setBothOn(state.on)
+	setTimesClicked(c => c + 1)
+  }
+
+  function handleResetClick() {
+	setBothOn(false)
+	setTimesClicked(0)
+  }
+
+  return (
+	<div>
+	  <div>
+		  **// These two are controlled. You can tell because they are getting props**
+		 **// used to update their state.**
+		<Toggle on={bothOn} onChange={handleToggleChange} />
+		<Toggle on={bothOn} onChange={handleToggleChange} />
+	  </div>
+	  {timesClicked > 4 ? (
+		<div data-testid="notice">
+		  Whoa, you clicked too much!
+		  <br />
+		</div>
+	  ) : (
+		<div data-testid="click-count">Click count: {timesClicked}</div>
+	  )}
+	  <button onClick={handleResetClick}>Reset</button>
+	  <hr />
+	  <div>
+		<div>Uncontrolled Toggle:</div>
+		**// This Toggle is managed locally by the Reducer / dispatch.**
+		**// You can tell because it DOES NOT have the "on: controlledOn" **
+		**// prop.**
+		<Toggle
+		  onChange={(...args) =>
+			console.info('Uncontrolled Toggle onChange', ...args)
+		  }
+		/>
+	  </div>
+	</div>
+  )
+}
+
+export default App
+// we're adding the Toggle export for tests
+export {Toggle}
+
+/*
+eslint
+  no-unused-vars: "off",
+*/
+
+

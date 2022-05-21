@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-26T00:21:10-04:00
+
+====== The REM Unit ======
+Created Saturday 26 June 2021
+
+REM stands for **root em**, and is based off of the default size of the HTML element, which is typically 16px.
+
+**Example:**
+	<div class="first">
+		<h1>Hi</h1>
+	</div>
+	
+	.first {
+		font-size: 1.5rem;
+	}
+	
+	.first h1 {
+		font-size: 1.2rem;
+	}
+	
+	
+	This makes it so that the cascading aspect of using ems is no in effect.
+	
+	1.5rem = 150% of the HTML element's font-size, which is 16px.
+		16 + 8  = 24
+	
+	1.2rem = 120% of the HTML tag, so they stay independent of each other.
+	
+	
+	

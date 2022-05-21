@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-07T23:29:45-05:00
+
+====== add trailing data with ljust ======
+Created Thursday 07 January 2021
+
+x = 15
+y = 225
+y = y.ljust(3, '0')
+x = x.ljust(3, '0')
+print(x, y)
+
+150, 225
+
+**NOTE: the first argument in ljust says how long the final string should be, NOT how many extra characters to add**
+
+
+
+https://stackoverflow.com/questions/34688196/how-to-add-trailing-zeroes-to-an-integer

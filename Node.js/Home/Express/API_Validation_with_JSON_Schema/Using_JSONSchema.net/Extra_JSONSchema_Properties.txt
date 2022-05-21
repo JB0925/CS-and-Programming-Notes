@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-29T20:57:32-04:00
+
+====== Extra JSONSchema Properties ======
+Created Wednesday 29 September 2021
+
+There are extra properties that you can add to a JSON Schema:
+
+In the schema itself, these get included in each individual property's information.
+
+**multipleOf: **allows you to require a parameter to be a multiple of some number
+	- multipleOf: 10
+		- 20 OK
+		- 23 ...not a multiple of 10
+
+
+**range:**
+	you can specify a range of numbers with the following keywords:
+		 **minimum: **x **>= **
+		 
+		 **exclusiveMinimum: **x >
+		
+		 **maximum: **x <=
+		
+		 **exclusiveMaximum: **x <
+
+
+**length:**
+	you can specify lengths with the keywords **minLength** and **maxLength**
+	
+**formats:**
+	you can add the keyword **format** to the property's schema and specify that certain properties must fit a certain format.
+	
+	available formats:
+		**date-time**
+		**time**
+		**date**
+		**email**
+		**hostname**
+		**idn-hostname**
+		**ipv4**
+		**ipv6**
+		**url**
+		**url-reference**
+		**iri**
+		**iri-reference**
+		**regex**
+

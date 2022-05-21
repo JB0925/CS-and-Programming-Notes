@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-31T17:21:53-04:00
+
+====== Create Dict Using Iterable ======
+Created Friday 31 July 2020
+
+{{.\pasted_image.png}}
+
+
+In the beginning, **nodes** is a list where **'abcd:22' **is just one item in the list.
+
+To create a dictionary:
+
+	**nodes_dict = dict(node.split(':') for node in nodes)**
+	
+It would return:
+
+	**{'abcd': '22', 'efgh': '80', 'ijkl': '443'}**
+	

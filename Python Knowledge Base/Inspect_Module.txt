@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-14T21:23:21-05:00
+
+====== Inspect Module ======
+Created Thursday 14 January 2021
+
+{{.\pasted_image.png}}
+
+The inspect module, and **inspect.getmembers / inspect.isclass**, is useful for getting information about classes and modules in general.
+
+A class name would be like '**Formatter'**
+Class info would be like **<class 'Formatter'>**
+
+
+https://www.journaldev.com/19946/python-inspect-module

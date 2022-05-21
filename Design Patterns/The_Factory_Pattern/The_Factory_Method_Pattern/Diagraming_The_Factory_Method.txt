@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-17T23:59:39-05:00
+
+====== Diagraming The Factory Method ======
+Created Thursday 17 February 2022
+
+First, we will now make the PizzaStore an abstract class, that any other Franchises will extend. It will have two methods:
+	**PizzaStore **
+		createPizza();  **// will be abstract**
+		orderPizza();
+	
+	This code can be shared by any store.
+	
+
+Next, we will have classes to subclass the PizzaStore. They will both have the createPizza() method used in the PizzaStore.
+	**ChicagoStylePizzaStore**
+		createPizza();
+	
+	**NYStylePizzaStore**
+		createPizza();
+	
+	
+	**NOTE:** Because **createPizza** is abstract, each pizza store can implement their own createPizza method, which lets them choose what types of pizzas to make.
+	
+	
+	

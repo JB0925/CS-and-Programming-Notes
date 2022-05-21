@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-16T12:10:31-05:00
+
+====== Opacity and Alpha Channel ======
+Created Tuesday 16 February 2021
+
+Both **Opacity** and **Alpha Channel** deal with transparency.
+
+
+**Alpha Channel:**
+	- rgb(0, 209, 112, 0.5)
+			**R   G    B    Alpha**
+
+
+The **Alpha Channel **value goes from 0 to 1, NOT 0-255.
+It governs how see through the item is. It **will not** change the text color of an item.
+
+**Syntax:**
+	**rgba(255, 255, 255, 1)**
+		...would make the area white (aka not transparent at all)
+	
+	**rgba(255, 255, 255, 0)**
+		...would render no change to the object
+	
+	**rgba(255, 255, 255, 0.6)**
+		...would begin to create a see through area
+
+
+
+
+**Opacity:**
+	- opacity govers an item's transparency, including its contents
+	

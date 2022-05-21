@@ -1,0 +1,51 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-02T01:23:35-05:00
+
+====== Abstraction ======
+Created Wednesday 02 February 2022
+
+Abstraction involves reducing complexity in our classes by hiding away unnecessary details.
+
+**Example:**
+
+public class MailService {
+	public void sendEmail() {
+		connect();
+		authenticate();
+		disconnect();
+	}
+	
+	public void connect() {
+		System.out.println("Connect");
+	}
+	
+	public void disconnect() {
+		System.out.println("Disconnect");
+	  }
+
+	  public void authenticate() {
+		System.out.println("Authenticate");
+	  }
+}
+
+
+**Here's the thing...:**
+
+When you type **var mailService = new MailService();**
+
+**mailService. **
+	- here, you will get the **connect, disconnect, **and **authenticate** methods, even though you don't need all of those other methods. They are just implementation details.
+	
+
+**So how do you get around it?**
+	- you get around it by making those methods private
+	
+	- if you were to type **mailService.** again, you'd only see the **sendEmail** method
+	
+	- furthermore, now that the other methods are private, the only place that the code would break if you changed one of the methods would be in the method that directly calls that method.
+	
+	So, if you have a **class Main** that calls **mailService.sendEmail()**, this would not break the main class, because the Main class cannot see or access that **connect()** method.
+	
+	
+	

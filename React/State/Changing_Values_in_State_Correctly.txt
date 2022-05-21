@@ -1,0 +1,64 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-25T22:41:23-04:00
+
+====== Changing Values in State Correctly ======
+Created Friday 25 June 2021
+
+What you see in the bold below, while technically possible, is a big no-no.
+
+**See below for how it's done:**
+
+	class Battleship extends Component {
+		constructor(props) {
+			super(props)
+			this.state = {
+				player: 'Whiskey',
+				score: 0
+			};
+			**this.state.score = 5;**
+		};
+		render() {
+			return (
+				<div>
+					<h1>Battleship Game</h1>
+					<img src={myImg} alt="image"/>
+				</div>
+			);
+		}
+	}
+	
+
+
+**How Do We Change State in React?:**
+
+	**this.setState()** is the built in React method for changing a component's state.
+	
+	- it takes an object describing how the state should change
+	
+	- **patches** the **state object** - keys that you didn't specify don't change
+	
+	
+	There are a couple ways you can do it; here is the first:
+		- **this.setState({ playerName: 'John', score: 0 });**
+	
+	And the second:
+		- **this.setState((num1, num2) => {**
+			**return someStuff here;**
+		});
+		
+		**NOTE: **You cannot use this method **inside** of the **constructor**.
+
+
+**How Does It Work?:**
+	State changes are done asynchronously
+		- the component state will **eventually** update, but maybe not right away
+		
+		- React controls when the state will actually change. This is done for performance reasons.
+		
+		- This matters because **a component re-renders when the state changes at all.**
+		
+		
+
+
+

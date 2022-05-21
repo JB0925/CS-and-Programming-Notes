@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-17T17:18:11-04:00
+
+====== useAxios - example ======
+Created Sunday 17 October 2021
+
+**NOTE:** useAxios is combined in this example with useLocalStorage from the previous example.
+
+**Explanation: **This was a multipurpose example. We will skip the useLocalStorage part. First, we set the url depending on the name parameter given to **addCard. **Then, we make a call to Axios. We create a **newCard** using one of our **formatCard** helper functions, and then we set state. Finally, we have a remove cards method which is used to return state to the starting status.
+
+{{~/Desktop/ScreenShots/React - useAxios hook.png}}

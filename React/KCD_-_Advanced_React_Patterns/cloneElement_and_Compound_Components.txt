@@ -1,0 +1,62 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-16T12:29:41-05:00
+
+====== cloneElement and Compound Components ======
+Created Thursday 16 December 2021
+
+**cloneElement and Compound Components are a way to share state from one component to a child component that DOES NOT take any props.**
+
+Note that this is different than using a **Context Provider **and passing down props from a higher order component to each lower level one. **These components are nested within a component as the higher order function is created.**
+
+
+**Example:**
+
+import * as React from 'react'
+import {Switch} from '../switch'
+
+**// the main Component that wraps the others**
+function Toggle({ children }) {
+  const [on, setOn] = React.useState(false)  **// create state and a state updating fn**
+  const toggle = () => setOn(!on)
+
+  **// This is how we make these components compound and able to share props without actually having to pass them in. **
+
+  **return React.Children.map(children, child => {**
+	  if (typeof child.type === "string") return child;  
+	**return React.cloneElement(child, { on, toggle });**
+**  })**
+
+	  above, we check **"Is the child a DOM element?" **If so, we return it. If not, we call **cloneElement**.
+}
+
+// 🐨 Flesh out each of these components
+
+// Accepts `on` and `children` props and returns `children` if `on` is true
+ **// in this case, "children" is the phrase "The button is on."**
+const ToggleOn = ({ on, children }) => (on ? children : null);
+
+// Accepts `on` and `children` props and returns `children` if `on` is false
+**// in this case, "children" is the phrase "The button is off."**
+const ToggleOff = ({ on, children }) => (on ? null : children);
+
+// Accepts `on` and `toggle` props and returns the <Switch /> with those props.
+const ToggleButton = ({ on, toggle }) => <Switch on={on} onClick={toggle} />;
+
+function App() {
+  return (
+	<div>
+	  **// Here we wrap the Toggle component around the other three components.**
+	  **Because we called "React.Children.map" and returned a clone of each child with the props passed in, there is no need to share props inside of each component i.e. "on={on}", etc. The <span> DOES NOT get cloned because it is a string.**
+
+	  **<Toggle>**
+		<ToggleOn>The button is on</ToggleOn>
+		<ToggleOff>The button is off</ToggleOff>
+		**<span>Hello</span>**
+		<ToggleButton />
+	  **</Toggle>**
+	</div>
+  )
+}
+
+export default App

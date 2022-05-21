@@ -1,0 +1,64 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-06T22:52:05-05:00
+
+====== How to Use the cURL command ======
+Created Sunday 06 December 2020
+
+The **cURL** command allows us to query URLs from the command line:
+	- make typical requests
+	- post form data
+	- authenticate users
+	- save responses to files
+
+Among other things, it is useful when testing REST API's, etc.
+
+**1). Simple cURL command:										#note: do NOT use quotes on websites**
+	**curl "**https://mdbootstrap.com/docs/jquery/forms/radio-button/"
+		- returns all of the html, scripts, formatting, etc. for the web page
+
+**2). cURL command on API or something that returns a json response:**
+	**curl "**https://mdbootstrap.com/docs/jquery/forms/radio-button/"
+		- will return the contents of the JSON file
+		{{.\pasted_image.png}}
+		
+**3). cURL command to return contents of response and the response header:		# -i includes header and content**
+	**curl -i "website here"**
+		- returns the header with information about the response type AND the content
+		{{.\pasted_image001.png}}
+
+**4). cURL to Post, Update, or Delete information from a web page:**
+	**curl -d "first=Corey&last=Schafer" website here**
+		- returns **You sent a POST request**
+		- returns a dictionary with **{'last': u'Schafer', 'first': u'Corey'}**
+			//i.e. the TYPE of request AND the DATA you posted//
+			{{.\pasted_image002.png}}
+
+	**update data:**
+		**curl -X PUT -d "first=Corey&last=Smith" website here**
+			- returns **You sent a PUT request**
+			- returns the same dictionary as above, except with the last name set to **Smith**
+			{{.\pasted_image003.png}}
+			
+	**delete data:**
+		**curl -X DELETE website here**
+			- returns **You sent a DELETE request**
+			{{.\pasted_image004.png}}
+
+
+**5). Make a request to a site that requires authentication:**
+	**curl -u "username:password website here**
+		- returns access to the site
+		{{.\pasted_image005.png}}
+		
+
+**6). Download a File:**
+	**curl -o test.txt	website here**
+		- downloads the specified file
+		{{.\pasted_image006.png}}
+		
+		{{.\pasted_image007.png}}
+		# notice how I named the file "bird.jpg" instead of downloading it as the name it has on the website
+
+
+

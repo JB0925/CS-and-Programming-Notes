@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-02T15:34:55-04:00
+
+====== Spread in a Function ======
+Created Friday 02 April 2021
+
+Spread in a function call is represented by 3 dots (ellipses),  and is used to expand an iterable into a list of arguments
+
+**Example: Pass a list into Math.max() to find the biggest number**
+
+	let nums = [9,1,10,3,2];
+	let most = Math.max(...nums);
+
+
+**Example 2: With Strings**
+	let words = ['simple', 'cup', 'computer', 'diagram'];
+	
+	function giveMeFour(a, b, c, d) {
+		return a, b, c, d
+	};
+	
+	**console.log(giveMeFour(words));** 		#this will not work
+	
+	**console.log(giveMeFour(...words)); 	#**this works perectly

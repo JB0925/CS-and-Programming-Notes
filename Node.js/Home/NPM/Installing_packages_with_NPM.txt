@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T21:41:50-04:00
+
+====== Installing packages with NPM ======
+Created Monday 06 September 2021
+
+in the root project directory, simply type:
+
+**npm install packageName**
+
+**Example:**
+	npm install axios
+
+
+This does two things:
+	1). Adds the latest version of axios to dependencies object in **package.json**
+	
+	2). Installs the package in the local **node-modules** folder
+
+
+**NOTE: **Always commit **package.json** to Git.
+	

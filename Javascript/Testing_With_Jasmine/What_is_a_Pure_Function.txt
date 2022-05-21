@@ -1,0 +1,46 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-28T12:22:44-04:00
+
+====== What is a Pure Function ======
+Created Friday 28 May 2021
+
+A common thought in JS is to create functions that are **pure**
+
+A **pure function** is a function that DOES NOT have side effects on external variables.
+
+
+**Example of a Non-Pure Function:**
+	function append(arr, val) {
+		arr.push(val);
+	}
+	
+	
+	When this function is called, you are passing in an array from outside of the function.
+	Therefore, you are creating a "**side effect**" on an external variable (the array).
+	This means that **append** is not a **pure function.**
+
+
+
+**Example of a Pure Function:**
+	function appendPure(arr, val) {
+		return [...arr, val]
+	}
+	
+	
+	When this function is called, you still pass in an outside array, but you **are no longer**
+	**mutating that array.** 
+	Instead, you return a brand new array with all of the values from the passed in array, plus the new value.
+	This causes no side effects on the passed in array, and thus, the **appendPure** function is a **pure function.**
+	
+
+
+**Pure Functions **are often easier to test, and those tests are easier to maintain.
+
+Not all code is able to be written as pure functions, so we use a combination of **unit testing **and **integration testing**
+
+
+
+
+
+

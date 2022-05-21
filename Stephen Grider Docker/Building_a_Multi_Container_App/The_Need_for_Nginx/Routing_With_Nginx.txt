@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-11T23:55:58-05:00
+
+====== Routing With Nginx ======
+Created Tuesday 11 January 2022
+
+We will create a file called **default.conf** to give Nginx a set of routing rules.
+
+	- **default.conf** adds configuration rules to Nginx
+	
+	- remember, if our route starts with **"/api"**, we will tell Nginx to route it to the server, and anything else will be routed to the client.
+	
+	- Nginx will learn that the client is listening on **port 3000**, and the **server** on **port 5000**.
+	
+	- **Nginx will be listening on port 80.**
+

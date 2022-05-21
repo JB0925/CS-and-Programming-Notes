@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-25T10:29:15-04:00
+
+====== Join ======
+Created Thursday 25 March 2021
+
+**let myLst = ['D', 'O', 'O', 'R'];**
+console.log(myLst);
+	**returns "D, O, O, R"**
+	
+	The **separator** for join is a **comma** by default, but this can be changed, i.e. **myLst.join('$')** would join all letters in the array by a dollar sign.
+

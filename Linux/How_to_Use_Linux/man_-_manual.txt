@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-12T12:12:26-05:00
+
+====== man - manual ======
+Created Thursday 12 November 2020
+
+**man command_name_here**
+
+
+lists out a help manual for the given command
+
+
+to exit, you need to press the **q** key
+

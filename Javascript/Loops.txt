@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-26T15:28:40-04:00
+
+====== Loops ======
+Created Friday 26 March 2021
+
+**for (let i = 0; i < string.length; i++) {**
+	**console.log("hello");**
+**}**
+
+
+**for (let i = 50; i >= 0; i-=5) {					**# how to loop by counting down
+	**console.log('hello');**
+**}						**
+

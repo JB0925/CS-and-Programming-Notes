@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T14:06:08-05:00
+
+====== Defining Input Variables ======
+Created Saturday 08 January 2022
+
+So far, our configuration files have all used hard coded values. TF configurations can include variables to make your config file more dynamic and flexible.
+
+**1). **Create a file called **variables.tf**, and include a block that defines a new instance_name:
+
+variable "instance_name" {
+  description = "Value of the Name tag for the EC2 instance"
+  type        = string
+  default     = "ExampleAppServerInstance"
+}
+
+
+**2). **In **main.tf**, update the **aws_instance** resource block to use the new variable. The **instance_name** variable block will default to its default value, which is **ExampleAppServerInstance**.
+
+
+resource "aws_instance" "app_server" {   
+   ami           = "ami-08d70e59c07c61a3a"   
+   instance_type = "t2.micro"
+
+   tags = {    
+	  Name = var.instance_name   
+   } 
+}
+
+
+**3).** Apply the configuration using **terraform apply.**
+
+**4). **Now, as a learning tool, apply again, this time overriding the default instance_name by passing in **terraform apply -var "instance_name=YetAnotherName"**

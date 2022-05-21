@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-28T22:31:25-04:00
+
+====== One to One ======
+Created Sunday 28 March 2021
+
+**Examples of One-to-One Relationships:**
+{{.\pasted_image.png}}
+
+A boat has one captain, and a captain has one boat.
+
+A capitol has one state or country, and a state/country has one capitol.
+
+

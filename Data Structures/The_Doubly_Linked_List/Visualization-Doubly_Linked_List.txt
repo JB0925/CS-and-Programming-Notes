@@ -1,0 +1,89 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-20T23:33:02-04:00
+
+====== Visualization-Doubly Linked List ======
+Created Sunday 20 September 2020
+
+**"NEXT" - **the pointer of the Node that points to the next object in the list
+**"PREVIOUS" - **the pointer of the Node that points to the previous object in the list
+
+Doubly Linked List – Continued
+**Visualization:**
+**Head Node:** will at first point with both previous and next pointers to a Null value   (no value before it to point to, and nothing after as of yet.)
+
+**Tail Node:** add one more Node to the head, and the Head’s “NEXT” pointer will point to the Tail Node, while the Tail Node’s “PREVIOUS” pointer will point to the Head Node. The Tail Node’s NEXT pointer will point to Null, as there is nothing after the Tail Node to point to.
+
+Add another Node, and it’s previous pointer will point to the old tail, while the old Tail’s NEXT pointer will point to the New Tail Node, etc.
+
+{{.\pasted_image.png}}
+
+
+
+**Adding and Removing From a Doubly Linked List:**
+
+{{.\pasted_image001.png}}
+
+**Add to the Head of a Doubly Linked List:** 
+
+**if New Node == New Head:**
+	- set the New Node’s “NEXT” to point to the current head, and set the New Node’s “PREVIOUS” to point to Null Value.
+	- Take the CURRENT Head’s “PREVIOUS” and point it back towards the New Node
+
+
+{{.\pasted_image002.png}}
+
+
+**Remove a Node From the Head of the DLL:**
+	- To remove the CURRENT head, point it’s “NEXT” pointer to a Null value instead of the second Node
+	- Set the second Node’s “PREVIOUS” pointer to Null as well
+	
+	
+**Inserting into the middle of a Doubly Linked List:**
+	**1).** Set the new node’s “PREVIOUS” to point to the Node previous to where you want to insert at.
+	**2).** Set the new Node’s “NEXT” to point to the position after the one you are inserting at.
+	**3).** Set the NEXT of the Node prior to where you are inserting to point to the New Node, and the PREVIOUS of the Node immediately after where you are inserting to point back to the New Node.
+
+	**Set the New Node’s NEXT to point to the Node after it, and it’s PREVIOUS to point to the Node before it.**
+	
+
+{{.\pasted_image003.png}}
+
+	**Set the front node’s NEXT to point to the middle Node (new one) and set the end Node’s PREVIOUS to point to the middle Node (new one)**
+	
+{{.\pasted_image004.png}}
+
+
+
+**Removing a Node From a Doubly Linked List:**
+	**Front Node = node on left**
+	**Middle Node = new Node we are inserting or deleting**
+	**End Node = node on right**
+
+	- Set the FRONT NODE’s NEXT to point to the END NODE
+
+	- Set the END NODE’s PREVIOUS to point to the FRONT NODE
+
+	- Set both pointers of the MIDDLE NODE (one we are removing) to NULL
+	
+
+{{.\pasted_image005.png}}
+
+
+**Adding to the Tail of a Doubly Linked List:**
+	- set the NEXT pointer of the current Tail Node to point to the New Tail Node
+	- set the PREVIOUS pointer of the New Tail Node to point to the current Tail Node
+	- set the NEXT pointer of the New Tail Node to NULL
+	
+{{.\pasted_image006.png}}
+
+
+**Removing From the Tail of a Doubly Linked List:**
+	- Point the Current Tail’s PREVIOUS pointer to NULL
+	- Point the New Tails’s NEXT to NULL
+	
+{{.\pasted_image007.png}}
+
+
+**Key to remember that you only need to program the pseudocode for each Data Structure once, then you can use it over and over forever.**
+

@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-02T14:24:53-05:00
+
+====== Postgres Commands ======
+Created Tuesday 02 March 2021
+
+\**? - **shows help on backslash commands
+\**h** - while inside the "database prompt (**searchresults=#**), running \**h** will pull up a long list of SQL commands
+\**l - **will list all the databases, owners, etc., that are available for us
+
+from the **postgres@superuser** terminal prompt (**sudo -i -u postgres**), running **psql --help** will pull up a list of help options for inside the PostgreSQL interactive terminal.
+
+**View all tables in a database:**
+	- \d or \dt
+	{{.\pasted_image.png}}
+
+**View Table Schema:**
+	- **\d table_name				**#gives all column names, data types, etc.
+	{{.\pasted_image001.png}}
+
+
+
+
+

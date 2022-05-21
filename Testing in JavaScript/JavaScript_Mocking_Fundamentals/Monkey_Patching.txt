@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T13:18:51-05:00
+
+====== Monkey Patching ======
+Created Sunday 09 January 2022
+
+Monkey patching deals with taking a known function that may be playing a part in a higher order function, and making that function always return the way you want it to for testing purposes.
+
+**Example:**
+
+const assert = require("assert");
+const thumbWar = require("../thumb-war");
+const utils = require("../utils");
+
+**const originalGetWinner = utils.getWinner**
+**utils.getWinner = (p1, p2) => p1;**
+
+const winner = thumbWar("me", "you");
+assert.strictEqual(winner, "me");
+
+**utils.getWinner - originalGetWinner;**
+
+
+Our original **getWinner** function is mocked to always return **p1**, because the original function always returns a winner randomly.
+
+At the end, we clean up by resetting **getWinner** back to **originalGetWinner**, meaning the original function.

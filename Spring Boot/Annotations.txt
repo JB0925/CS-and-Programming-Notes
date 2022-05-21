@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-20T22:26:00-05:00
+
+====== Annotations ======
+Created Sunday 20 February 2022
+
+Annotations are the decorators that are placed over top of classes, variables, etc.
+
+**@Autowired - **you place this above the name of a class to let Spring instantiate for you at runtime. Dependency Injection / Inversion of Control.
+
+**@PathVariable("nameOfVar") Type varName - **placed inside of a RESTful route's namespace, it transforms a route parameter into the type of variable that comes after the annotation
+
+**@RequestBody - **when placed inside of a RESTful route's name space, it transforms the incoming request body (POST / PUT request) into a particular object:
+
+**Example:**
+	public Department saveDepartment(@RequestBody Department department) {}
+	
+	**// the request body gets transformed into a Department object**
+	
+
+
+@GetMapping , @PostMapping, etc. - each one will take a route endpoint in the form of **("/departments")**, and denotes whether the route is a GET request, POST request, etc. Each one goes right above a class method inside of a class that has the @RestController decorator
+
+
+@RestController - denotes that this is a group of RESTful API routes.
+

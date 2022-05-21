@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-04T21:37:11-05:00
+
+====== Rebuilding Containers ======
+Created Tuesday 04 January 2022
+
+Say you make a change to your app code. You then start up a container, and the output is the same as what it was previously.
+
+Why?
+
+Remember, an image takes a snapshot of your current code / setup. So, if your updated code doesn't match this snapshot, it won't be seen within the image.
+
+So how can we rebuild our image WITHOUT having to do unnecessary things like reinstall packages, etc.? **NOTE: **If you add a dependency in your code, then you obviously can't skip this step.
+
+To do this, you run the COPY command twice.
+
+Once BEFORE the RUN command, and once AFTER.
+
+**Example:**
+	COPY ./package.json ./ 
+	RUN npm install
+	COPY ./ ./ 
+	
+**This means that we want to ONLY copy over the package.json at first, and THEN after running npm install, copy over the rest.**
+
+**This also means that "npm install" won't run again UNLESS there was a change made to package.json.**
+
+
+

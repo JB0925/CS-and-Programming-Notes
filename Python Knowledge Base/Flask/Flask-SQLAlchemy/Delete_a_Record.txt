@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-17T21:50:52-04:00
+
+====== Delete a Record ======
+Created Saturday 17 July 2021
+
+my_obj = User.query.get(1)
+db.session.delete(my_obj)
+db.session.commit()
+
+OR
+
+User.query.filter_by(id=1).delete()
+db.session.commit()
+
+
+If you want to undo a delete **BEFORE** you've committed it, you can do:
+	**db.session.rollback()**
+
+

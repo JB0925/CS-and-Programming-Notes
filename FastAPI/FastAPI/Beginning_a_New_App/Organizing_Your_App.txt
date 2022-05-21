@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-03T20:34:01-04:00
+
+====== Organizing Your App ======
+Created Saturday 03 April 2021
+
+A couple of good things to do to organize your app:
+
+	1). inside the directory with the **init** file and the **main.py** file, create a **views** directory. Inside of it, create **.py** files that are subcategories of the functions you will write. Examples may include **views/home.py** for homepage related material, **views/account.py** for login/logout/register related material. **Inside of these files, place any functions that are related to the file's theme in the file. Also, include any imports (i.e. templates, fastapi, etc.)**
+	
+	2). Inside of the initial **templates** directory, create new directories **with the same name as the files in the "views" folder**. Begin to populate them with your templates (**i.e. place "base.pt"**) in home.py.
+		**NOTE: If using chameleon for templating, you can change ".html" to ".pt"**
+	
+	3). Now that you've taken out all of the functions out of **main.py**, you can use that file as a sort of **configuration file**. Import all of the files from the **views** directory. The following is a good start:
+	{{.\pasted_image.png}}
+		{{.\pasted_image001.png}} 
+
+
+

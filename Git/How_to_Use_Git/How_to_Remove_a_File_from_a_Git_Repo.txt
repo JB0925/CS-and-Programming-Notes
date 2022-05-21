@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-14T22:49:20-05:00
+
+====== How to Remove a File from a Git Repo ======
+Created Saturday 14 November 2020
+
+to remove a file from a Git repo **and** from the file system:
+		**git rm filename.py**
+		**git commit -m "removed filename.py"**
+
+
+to remove a file from only the Git repo itself:
+		**git rm --cached filename.py**
+		**git commit -m "removed filename.py"**
+		
+
+
+https://stackoverflow.com/questions/2047465/how-can-i-delete-a-file-from-a-git-repository

@@ -1,0 +1,92 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-13T22:02:21-04:00
+
+====== Permutations ======
+Created Tuesday 13 October 2020
+
+Return successive r length permutations of elements in the iterable.
+
+If r is not specified or is None, then r defaults to the length of the iterable and all possible full-length permutations are generated.
+
+The permutation tuples are emitted in lexicographic ordering according to the order of the input iterable. So, if the input iterable is sorted, the combination tuples will be produced in sorted order.
+
+Elements are treated as unique based on their position, not on their value. So if the input elements are unique, there will be no repeat values in each permutation.
+
+**Examples:**
+
+	{{.\pasted_image.png}}
+	
+
+**Using Permutations to Get all possible permutations of a draw, then finding all words in a dictionary that can be made from each:**
+	from itertools import permutations
+	import os
+	import urllib.request
+	
+	# PREWORK
+	TMP = os.getenv("TMP", "/tmp")
+	DICT = 'dictionary.txt'
+	DICTIONARY = os.path.join(TMP, DICT)
+	urllib.request.urlretrieve(
+		f'https://bites-data.s3.us-east-2.amazonaws.com/{DICT}',
+		DICTIONARY
+	)
+	
+	with open(DICTIONARY) as f:
+		dictionary = set([word.strip().lower() for word in f.read().split()])
+	
+	
+	def get_possible_dict_words(draw):
+		"""Get all possible words from a draw (list of letters) which are
+		   valid dictionary words. Use _get_permutations_draw and provided
+		   dictionary"""
+		valid_words = []
+		letter_count = 0
+		draw = _get_permutations_draw(draw)
+	
+		for word in dictionary:
+			word_no_repeats = set(list(word))
+			for letter in word:
+				if letter in draw[0] and letter in word_no_repeats:
+					letter_count += 1
+					word_no_repeats.remove(letter)
+	        
+			if letter_count == len(word):
+				valid_words.append(word)
+			letter_count = 0
+	                    
+		return valid_words
+	
+	
+	def _get_permutations_draw(draw):
+		"""Helper to get all permutations of a draw (list of letters), hint:
+		   use itertools.permutations (order of letters matters)"""
+		return [''.join(word).lower().strip() for word in permutations(draw) if len(word) == len(draw)]
+	    
+	
+	
+	x = 'A T R F'.split()
+	print(get_possible_dict_words(x))
+	
+	
+**How to get ALL possible permutations from a hand of seven (or however many) letters, ALL meaning all permutations of one letter, all permutations of two letters from the hand, etc.:**
+
+**def _get_permutations_draw(draw):**
+	"""Helper to get all permutations of a draw (list of letters), hint:
+	   use itertools.permutations (order of letters matters)"""
+	**for i in range(1, 8):**
+**        yield from itertools.permutations(draw, i)**
+
+
+**How to turn those permutations into words, then return the INTERSECTION of the set of the words from the permutations, and the set of the words from the dictionary:**
+
+def get_possible_dict_words(draw):
+	"""Get all possible words from a draw (list of letters) which are
+	   valid dictionary words. Use _get_permutations_draw and provided
+	   dictionary"""
+	permutations = [''.join(word).lower()
+					for word in _get_permutations_draw(draw)]
+	**return set(permutations) & set(dictionary)**
+
+The "**&**" operator will return the **INTERSECTION** of both, meaning it will return elements that are common to both sets.
+

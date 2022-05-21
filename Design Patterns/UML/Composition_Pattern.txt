@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-04T00:15:50-05:00
+
+====== Composition Pattern ======
+Created Friday 04 February 2022
+
+{{~/Desktop/ScreenShots/Composition Pattern.png}}
+
+This is known as the **composition** pattern. It has a **diamond** at the top, and an arrow pointing downward.
+
+This means that the Shape class is composed of the Size class.
+
+**Java Syntax:**
+
+public class Shape {
+	private Size size;
+}

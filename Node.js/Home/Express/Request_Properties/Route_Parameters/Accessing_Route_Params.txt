@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-10T08:59:10-04:00
+
+====== Accessing Route Params ======
+Created Friday 10 September 2021
+
+**Example:**
+	app.get('/cookies/**:language**'/**:name**, (req, res) => {
+		res.send(`${**req.params.language**}, ${req.params.name}!` )
+	});
+
+
+**How do we access the "language" parameter?**
+
+the **request** provides a **params** object, which we can then use to call **request.params.language**

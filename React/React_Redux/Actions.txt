@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-29T21:57:36-04:00
+
+====== Actions ======
+Created Friday 29 October 2021
+
+**Action **is the second parameter given in the **reducer** function.
+
+Reducer functions are never called directly; instead we fire off an **action**, which gets intercepted and processed by a **reducer**.
+
+Actions are simple instructions that tell **reducer functions** how to handle and modify state.
+
+**Actions** are objects that have a "**type**" key.
+
+**action.type**'s value is, by convention, an upper snake case string, i.e. "HELLO_THERE"
+
+The action is passed into the **dispatch** function, i.e. **store.dispatch({ type: "INCREMENT" });**
+
+
+**Other action keys:**
+	- actions can have other keys. A common one to have is the **payload** key, which can be anything you want, and can be used when the action is dispatched.

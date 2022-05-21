@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-03T22:12:07-05:00
+
+====== Building a Dockerfile ======
+Created Monday 03 January 2022
+
+Writing a Dockerfile is like being given a computer with OS and being told to install Chrome.
+
+**NOTE: **You cannot assume that the base image has whatever package manager you need to install your dependencies. For example, if you use alpine, alpine does not come with anything, so you either need to:
+	1). pick a different base image that already has that package manager. You can search at **hub.docker.com**
+	2). run a command to install whatever package manager you need.
+
+1 # Use an existing docker image as a base
+**2 FROM alpine**
+3
+4# Copy the package.json from one place to the PWD in the container
+**5 COPY ./package.json ./** 
+6 # Download and install a dependency
+**7 RUN apk add --update redis**
+8 # Copy all the other files
+9 **COPY ./ ./ **
+10 # Tell the image what to do when it starts as a
+11 # container
+12 CMD ["redis-server"]
+
+After building your Dockerfile, go to your terminal,
+make sure you are in the correct directory, and run:
+	**docker build .**
+		- gives back an id
+	**docker run id**
+	

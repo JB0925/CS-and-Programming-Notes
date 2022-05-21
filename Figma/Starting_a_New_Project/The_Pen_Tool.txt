@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-09T21:02:58-04:00
+
+====== The Pen Tool ======
+Created Monday 09 August 2021
+
+Use the pen tool (looks like a pen) to draw shapes / vectors.
+
+Hold **shift** to be able to keep the line straight.
+
+Afterward, you can go over to **fill**, **stroke, effects** to alter the way the shapes look.
+

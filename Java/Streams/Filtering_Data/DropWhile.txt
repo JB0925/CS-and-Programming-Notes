@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-25T09:12:03-04:00
+
+====== DropWhile ======
+Created Monday 25 April 2022
+
+DropWhile is the Opposite of TakeWhile. 
+
+
+Both are ways to filter Data.
+
+Remember, TW takes any item that meets the condition in the predicate **until** the condition is found not to be true.
+
+
+**DropWhile** does the opposite. It **DOES NOT** take anything that meets the condition in the predicate **until** the **first time** that the condition is found to not be true. Once that happens, it takes everything else.
+
+
+**Example:**
+
+int[] nums = new int[] {2,4,6,8,9,10,12};
+
+int[] newNums = Arrays.stream(nums)
+						.boxed()
+						.dropWhile(n -> n % 2 == 0)
+						.collect(Collectors.toList());
+						
+
+**Return Value of Above:**
+	// **{9, 10, 12}**
+	
+Remember, it drops all the ones that meet the condition **UNTIL** the condition is no longer met. Then it takes everything else.
+

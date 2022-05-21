@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T13:37:56-05:00
+
+====== Changing Infrastructure ======
+Created Saturday 08 January 2022
+
+As you change TF configurations, TF builds an execution plan that only modifies what is necessary to reach your desired state.
+
+In production, it is a good idea to use Git to manage the config files, and store state in a remote backend like TF Cloud or TF Enterprise.
+

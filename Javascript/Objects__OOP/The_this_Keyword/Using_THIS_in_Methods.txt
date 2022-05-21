@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-15T22:11:29-04:00
+
+====== Using THIS in Methods ======
+Created Thursday 15 April 2021
+
+{{~/Desktop/Screen Shot 2021-04-15 at 10.19.43 PM.png}}
+
+The above shows how we can use the THIS keyword in an object method. In this method, THIS refers to any properties of the object itself. It is similar to "self" in Python.
+
+**NOTE: **You can use **destructuring **to make it so that you don't have to type **this** over and over again.
+
+	allInfo() {
+		const [first_name, last_name_, age_] = this;
+		console.log(`${first_name} ${last_name_}, aged ${age_}')
+	}
+
+**NOTE: Don't use arrow functions inside of objects to create methods. THIS** in an arrow function references the global window, NOT the object.
+
+
+**NOTE 2: **If you are calling a "standard library" function inside of an object method, it is ok to use an arrow function. That THIS will still reference the object.
+
+**Example:**
+	start () {
+		setInterval( () => {
+			console.log(this.otherMethod()
+		}, 3000)
+	}
+	

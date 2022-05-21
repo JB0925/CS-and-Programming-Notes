@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-27T22:44:50-05:00
+
+====== Badges, Alerts, and Button Groups ======
+Created Saturday 27 February 2021
+
+**Badges:**
+	- can be used in buttons, spans, etc. 
+	- **class="badge badge-primary" ** or some other Bootstrap color
+	- **class="badge badge-pill badge-danger"** or any other Bootstrap color...gives a rounded border radius to the badge
+
+
+**Button Group:**
+	- can be used when a user would need to pick one option, i.e. in place of a radio button
+	{{.\pasted_image.png}}
+	- removes the margin that would be between the buttons if the **btn-group** was not used
+	- radius is only gives to the outside four corners, not to every button
+
+
+**Alerts:**
+	{{.\pasted_image001.png}}
+	
+	{{.\pasted_image002.png}}
+	- the first is a simple way to make an alert; the second picture shows how to make it dismissable
+
+

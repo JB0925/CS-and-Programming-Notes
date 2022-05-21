@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-25T10:21:24-04:00
+
+====== Reduce ======
+Created Monday 25 April 2022
+
+Reduce is used to attain one result from a sequence of items.
+
+**Example:**
+	- you have an array of numbers, and you want to find their sum
+	
+	int[] nums = new int[] {1,2,3,4,5};
+	
+	int sum = Arrays.stream(nums)
+					 .boxed()
+					 .reduce(0, Integer::sum);
+			**// returns 15**
+	
+	
+	
+	- you have the same array and want to find the product of all numbers in the array.
+	
+	int[] nums = new int[] {1,2,3,4,5};
+	
+	int product = Arrays.stream(nums)
+						.boxed()
+						.reduce(1, (a, b) -> a * b);
+						
+				**// returns 120**
+

@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-06T09:46:04-05:00
+
+====== Docker Compose Commands ======
+Created Thursday 06 January 2022
+
+The **first** time you build an image(s) using docker-compose, you would run:
+	**docker-compose up --build**
+
+
+Following that, you would just run:
+	**docker-compose up**
+
+
+Use **docker-compose down -v** to bring down a container and delete unneeded volumes
+
+	
+	

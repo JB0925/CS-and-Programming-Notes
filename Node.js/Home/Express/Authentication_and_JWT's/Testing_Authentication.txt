@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-24T08:57:57-04:00
+
+====== Testing Authentication ======
+Created Friday 24 September 2021
+
+Before each request, create test users and device tokens,
+
+Store the tokens in global users that can be used across tests.
+
+**beforeEach example:**
+
+let testUserToken;
+let testAdminToken;
+
+beforeEach(async() => {
+	const hashedPw = await bcrypt.hash(
+		"secret, BCRYPT_WORK_FACTOR
+	);
+	
+	await db.query(
+		`INSERT INTO users
+		 VALUES
+		 ('test', $1`),
+		 [hashedPw]
+	);
+	
+	await db.query(
+		`INSERT INTO users
+		 VALUES
+		 ('admin', $1)`,
+		 [hashedPw]
+	);
+	
+	const testUser = { username: "test" };
+	const testAdmin = { username: "admin" };
+	testUserToken = jwt.sign(testUser, SECRET_KEY);
+	testAdminToken = jwt.sign(testAdmin, SECRET_KEY);
+});

@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-23T23:53:43-04:00
+
+====== Form Instances - How to access only User data ======
+Created Tuesday 23 March 2021
+
+When passing in data from a form, if you need to access a specifc User's data and ONLY that User, you can pass an instance to the form instance created on request.POST:
+
+**Example:**
+{{.\pasted_image.png}}
+
+{{.\pasted_image001.png}}
+
+
+This will ensure that you are only accessing that user's instance of a specific database field, and won't update all other user's records. Of course, this particular table is tied to a user by a foreign key as well.

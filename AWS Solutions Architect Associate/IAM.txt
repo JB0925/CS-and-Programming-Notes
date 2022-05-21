@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T21:31:35-05:00
+
+====== IAM ======
+Created Saturday 08 January 2022
+
+When you first log in, you are the **root user**. It is not a good idea to access services, etc., as the **root user** for security reasons.
+
+Instead, click on create user and add a user.
+
+Click on  **custom password**, enter a password, and click **next steps.**
+
+
+Next you will create a group. Call your group **admin**, and give it the **policy** called **AdministratorAccess. **
+
+Click **create group** and then, in the bottom right, click on **Next:Tags.**
+
+
+Change the **account alias** in the right hand side dashboard. Make it something readable and memorable. You can use it to sign in later.

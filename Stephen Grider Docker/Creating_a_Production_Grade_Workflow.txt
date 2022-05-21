@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T01:01:25-05:00
+
+====== Creating a Production Grade Workflow ======
+Created Saturday 08 January 2022
+
+A **production grade workflow** is the idea of:
+	development -> testing -> deployment
+
+For this, we will:
+	- create an app and push it to a github branch called "feature"
+	
+	- create a PR to merge with master
+	
+	- run Travis CI to test the code and, if it passes, merge into master
+	
+	- Travis CI will then test it again and, if it passes, push it into production
+	
+	- It will be pushed to AWS Elastic Beanstalk
+	
+	- The cycle starts over again
+	

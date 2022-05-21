@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-08T01:09:40-04:00
+
+====== The Link Component ======
+Created Sunday 08 August 2021
+
+In a Navbar, if you have anchor tags with an href, any time that they are clicked it will refresh the entire page. In Client Side routing, that is not what we want.
+
+To get around this, we can use the **Link** Component:
+
+1). Instead of an href, it takes a prop called **to**
+
+2). Clicking a Link Component does not refresh the page; it gets intercepted by JS, and Client Side Routing is done.
+
+**NOTE: **These are great for anchor tags on any part of the page, but anchor tags in the Navbar actually have a special component called **`NavLink**. Learn more on next page.
+
+**Example:**
+	import { Route, Switch, Link } from "react-router-dom"
+	
+	class App extends Component {
+		render() {
+			return (
+				<div className="App">
+					<nav>
+						<ul>
+							**<Link to="/route1">Route 1</Link>**
+							**<Link to="/route2">Route 2</Link>**
+						</ul>
+					</nav>
+				</div>
+			)
+		}
+	}

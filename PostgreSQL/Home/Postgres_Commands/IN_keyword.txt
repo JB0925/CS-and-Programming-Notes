@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-03T14:20:27-05:00
+
+====== IN keyword ======
+Created Wednesday 03 March 2021
+
+The **IN **keyword takes an array of values to search, and returns a query matching those values.
+
+**Example:**
+	You could write:
+		- SELECT * FROM person WHERE country_of_birth = 'China'
+		OR country_of_birth = 'France' OR country_of birth = 'Brazil';
+	
+	
+	**With IN, you can write:**
+		- SELECT * FROM person
+		WHERE country_of_birth **IN** ('China', 'France', 'Brazil');
+	
+	
+	**Both queries will return the same things.**
+	
+	{{.\pasted_image.png}}
+	
+
+
+
+

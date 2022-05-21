@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-30T15:08:55-04:00
+
+====== Dictionary to JSON ======
+Created Thursday 30 July 2020
+
+To convert a dictionary to JSON:
+
+**def nt2json(nt):**
+**    for item in nt:**
+**        dictitem = json.dumps(nt._asdict(), default= _my_converter)**
+**    return dictitem**
+
+
+So, we are using the "**var._asdict()" **to dump a dictionary into a JSON formatted file. 
+
+
+Also, note the "(**default= some_function)" **portion of the line. This allows any datetime objects to be converted to strings, so that they will format into a JSON file. **Also covered in the JSON section of this notebook.**
+
+
+Alternatively, if you have a list of dicts:
+		**x = json.dumps(lst_name)**
+

@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-31T00:46:26-04:00
+
+====== Joins ======
+Created Wednesday 31 March 2021
+
+Joins are typically used when you are trying to find information related to multiple tables.
+**NOTES:**
+	- table order between FROM and JOIN frequently makes a difference
+	- we must give context if column names collide (i.e SELECT car.id, person.id, etc.)
+	- tables can be renamed with AS
+		- after the FROM and before the JOIN you can use AS my_table, and the reference everything from that table by my_table.id
+		- you can even leave off the AS (i.e. **SELECT * FROM photos p**)
+		{{.\pasted_image001.png}}
+	- more than one kind of JOIN (LEFT JOIN, RIGHT JOIN, etc.)
+
+{{.\pasted_image.png}}

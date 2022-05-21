@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-09T20:48:21-04:00
+
+====== Adding Shapes ======
+Created Monday 09 August 2021
+
+By clicking the **square** in the top left corner (right beside the #), you can add shapes into your screen.
+

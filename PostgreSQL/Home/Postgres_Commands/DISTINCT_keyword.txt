@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-02T23:11:51-05:00
+
+====== DISTINCT keyword ======
+Created Tuesday 02 March 2021
+
+**DISTINCT** is a way to get unique data and information from a table.
+
+**SELECT country_of_birth FROM person ORDER BY country_of_birth;**
+	- will return the country of birth for every person, many of which will be the same
+
+
+**How to Use DISTINCT to Get Unique Values:**
+	- **SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth;**
+		- this will give only unique countries of birth, so a lot less values overall
+
+
+Can be used for almost any column where you want to find unique values
+
+

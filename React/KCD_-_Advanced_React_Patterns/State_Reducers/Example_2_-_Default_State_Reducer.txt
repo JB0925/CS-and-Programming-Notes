@@ -1,0 +1,65 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-26T22:38:44-05:00
+
+====== Example 2 - Default State Reducer ======
+Created Sunday 26 December 2021
+
+We have seen how giving the user an OPTION to use their own custom reducer function can be a way to make a component flexible and customizable, but if the reducer is not simple, it might be a challenge to tell them to create their own reducer from scratch. 
+
+If we want to avoid this, we can use a part of the DEFAULT reducer **"toggleReducer"**, but also use a CUSTOM reducer to handle any custom actions that might be different than what is in the **toggleReducer**.
+
+The **KEY **is to import the **toggleReducer** into the component where it will be used, so it is available if needed.
+
+**Example:**
+	We will use the exact same App component, but we will **change our CUSTOM reducer to use the DEFAULT reducer UNLESS the action type is "toggle"**
+	
+	Look to the **State Reducers** page for a detailed explanation of what is happening in the App component if needed
+	
+
+function App() {
+  const [timesClicked, setTimesClicked] = React.useState(0)
+  const clickedTooMuch = timesClicked >= 4
+  
+  **// the CUSTOM reducer function that will get passed into useReducer**
+  **// here, we are just returning the DEFAULT reducer "toggleReducer" and**
+  **// all of its actions UNLESS the type is "toggle" AND clickedTooMuch === true**
+  **// if BOTH of those things are true, we handle ONLY THAT action differently**
+  **// from what is in the "toggleReducer"**
+  function toggleStateReducer(state, action) {
+	if (action.type === 'toggle' && clickedTooMuch) {
+	  return {on: state.on}
+	}
+	return toggleReducer(state, action)
+  }
+
+  const {on, getTogglerProps, getResetterProps} = useToggle({
+	reducer: toggleStateReducer,
+  })
+
+  return (
+	<div>
+	  <Switch
+		{...getTogglerProps({
+		  disabled: clickedTooMuch,
+		  on: on,
+		  onClick: () => setTimesClicked(count => count + 1),
+		})}
+	  />
+	  {clickedTooMuch ? (
+		<div data-testid="notice">
+		  Whoa, you clicked too much!
+		  <br />
+		</div>
+	  ) : timesClicked > 0 ? (
+		<div data-testid="click-count">Click count: {timesClicked}</div>
+	  ) : null}
+	  <button {...getResetterProps({onClick: () => setTimesClicked(0)})}>
+		Reset
+	  </button>
+	</div>
+  )
+}
+
+export default App
+

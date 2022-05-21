@@ -1,0 +1,86 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-20T00:20:41-04:00
+
+====== The Match Route Prop ======
+Created Friday 20 August 2021
+
+====== URL Parameters ======
+Created Friday 20 August 2021
+
+**Setup Example:**
+
+import React, { Component } from 'react';
+import './Food.css';
+
+class Food extends Component {
+	render() {
+		const url = "[[https://www.unsplash.com/1600x900/?{this.props.name}"|https://www.unsplash.com/1600x900/?{**this.props.name**}"]];
+		return (
+			<div className="Food">
+				<h1>I like to eat {this.props.name}</h1>
+				<img src={url} alt={this.props.name}/>
+			</div>
+		)
+	}
+}
+export default Food;
+
+
+**The App Component:**
+
+import React, { Component } from 'react';
+import Food from './Food';
+import './App.css';
+
+class App extends Component {
+	render() {
+		return (
+			<div className="App">
+				<Food name="Kale"/>
+				<Food name="banana"/>
+			</div>
+		)
+	}
+}
+
+**You could wrap each of these in a "Route" component**, but you would potentially have to do that hundreds of times, depending on how many food choices you had.
+
+
+Instead, you can use **one** Route component, and set a URL variable to pick up the name of the food:
+
+**<Route exact path="/food/:name" render={() => <Food name=""/>}/>**
+
+Notice, though, that the **name** prop of the **Food** component is empty...
+
+How do we access the name passed in to the URL?
+**We use a variable in the callback inside of "render".**
+
+**let routeProps;**
+**const name = this.props.match.params.name;**
+<Route exact path="/food/:name" render={(**routeProps**) => <Food name={**name**}/>}/>
+
+
+You could also do it **inline:**
+<Route exact path="/food/:name" render={(**routeProps**) => <Food name={**routeProps.match.props.name**}/>}/>
+
+
+Or like **this:**
+<Route exact path="/food/:name" **component**={}/>}[[/>]]
+
+
+Need to add **extra params?:**
+<Route exact path="/food/:name" **render**={routeParams => <Food authenticated={true} {...routeParams}/>}[[/>]]
+
+**NOTE: **In the <Route/> itself, don't forget the **":"** in front of the actual route variable.
+
+
+
+
+
+
+
+
+
+
+

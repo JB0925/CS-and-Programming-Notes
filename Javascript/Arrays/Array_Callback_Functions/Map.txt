@@ -1,0 +1,47 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-29T15:26:34-04:00
+
+====== Map ======
+Created Monday 29 March 2021
+
+**Map** creates a new array with the results of calling a callback on every element in the original array.
+
+**Example:**
+	let names = ['james', 'steve', 'sarah', 'leah'];
+	let caps = names.map(function(x) {
+		return x.toUpperCase();
+	})
+	
+	**The "names" array remains the same.**
+	**The "caps" declaration creates a new array from names, based on the results of the function passed in to names.**
+	
+	So, **caps = ['JAMES', 'STEVE', 'SARAH', 'LEAH']**
+
+
+
+**Example 2:**
+	let numbers = [20, 21, 22, 23, 24, 25];
+	const numDetails = numbers.map(function(num) {
+		 return {
+		  value: num,
+		  isEven: n % 2 === 0;
+		 }
+	};
+	
+	
+	**console.log(numDetails);**
+		returns an array of objects:
+				[
+					{value: 20,
+					  isEven: true},
+					{value: 21,
+					  isEven: false},
+				];    **etc, etc.**
+				
+				
+**ON AN OBJECT:**
+	books.map(function(book) {
+		return book.title.toUpperCase()
+	})				
+

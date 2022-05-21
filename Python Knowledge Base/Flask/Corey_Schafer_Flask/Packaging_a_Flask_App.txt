@@ -1,0 +1,51 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-05T01:11:15-05:00
+
+====== Packaging a Flask App ======
+Created Saturday 05 December 2020
+
+**To create a package, you need to create a "__init__" file.**
+
+
+**Step 1:**
+	create a new directory **within** the main project directory with the **SAME NAME** as the **MAIN PROJECT FILE.**
+
+**Step 2:**
+	create the "**__init__.py" **file **within** the new directory
+	
+**Step 3:**
+	move all of the files and directories in the **main project directory** **EXCEPT** the **MAIN PROJECT FILE** into the **new directory.**
+	
+**Step 4:**
+	copy / paste, then cut **all** imports and initial app info **from** the **MAIN PROJECT FILE** and paste them into the "__init__" file.
+
+**Step 5:**
+	in the **new_directory**, create a file called **routes.py** to put all the routes from the **MAIN PROJECT FILE** in.
+
+**Step 6:**
+	copy all routes from **MAIN PROJECT FILE, **cut them out of the **MAIN PROJECT FILE** and paste them into the **routes.py** file in the **new directory**.
+
+**Step 7:**
+	rename the **MAIN PROJECT FILE** to **run.py** to represent its new purpose.
+	
+**Step 8:**
+	at the top of the **new** **"run.py"** file, write **from flaskblog import app**
+
+**Step 9:**
+	clean up your imports
+		move the **routes** imports to the routes file (**render_template, url_for, flash, etc.)** Keep the **from flask import Flask **in **"__init__.py"**
+		move all **form imports** to the **routes.py** file as well.
+		
+		in **routes.py**, type "**from flaskblog import app"**
+		also in **routes.py, **for the forms and Database imports, import from the **package** name:
+			**from flaskblog.forms import RegistrationForm, [[LoginForm]]**
+			**from flaskblog.models import User, Post**
+
+**Step 10:**
+	go back to the **"__init__"** file and, **UNDER (at the bottom) the "app" var, **type "**from flaskblog import routes"**
+	
+	
+**File Structure of the Package:**
+{{.\pasted_image.png}}
+

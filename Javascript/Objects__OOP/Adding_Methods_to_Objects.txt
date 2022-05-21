@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-14T23:44:54-04:00
+
+====== Adding Methods to Objects ======
+Created Wednesday 14 April 2021
+
+This is like adding methods to Python classes, but it looks different.
+
+**Example:**
+{{~/Desktop/Screen Shot 2021-04-14 at 11.45.45 PM.png}}
+
+Note that the property name comes first and, just like a regular object, we need a comma after each method declaration.

@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-25T23:53:33-04:00
+
+====== Create a Select Field in Your Form ======
+Created Thursday 25 March 2021
+
+{{.\pasted_image.png}}
+
+To create a select field, just pass in a list or tuple of tuples of all the possible values (pay attention to first comment), and then choose **forms.Select** for the type of widget. In the args, pass in the list of tuples.
+
+https://stackoverflow.com/questions/40885866/how-to-use-forms-choicefield-inside-modelform/40888783
+

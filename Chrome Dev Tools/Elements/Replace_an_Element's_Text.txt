@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-10T12:39:14-05:00
+
+====== Replace an Element's Text ======
+Created Friday 10 December 2021
+
+click the inner text of the element, erase it, type in new info, and press enter.
+
+**NOTE: This is NOT a permanent change.**
+
+**NOTE 2: **You can also add classes, ids, and other attributes in the same way.
+

@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-21T23:25:36-04:00
+
+====== React Forms ======
+Created Wednesday 21 July 2021
+
+HTML form elements work a little differently than other DOM elements in React
+
+**Form elements naturally keep internal state**
+
+**It's a good idea to:**
+	- have a JS function that **handles form submission**
+	- has access to the data the user entered
+
+The technique to make the above work is called **controlled components**
+
+
+

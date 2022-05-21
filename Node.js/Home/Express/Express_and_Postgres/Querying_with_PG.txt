@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-15T08:45:45-04:00
+
+====== Querying with PG ======
+Created Wednesday 15 September 2021
+
+In JS, **using a database** is an **async** activity, which means we need to make functions and routes that utilize a database to be **async** as well.
+
+
+**Example:**
+	const express = require("express");
+	const app = express();
+	const `ExpressError = require("./expressError);
+	const router = new express.Router();
+	const db = require("./db");
+	
+	router.get("/all", **async function**(req, res, next) {
+		try {
+			const results = **await** db.query(
+				`
+				  SELECT id, name
+				  FROM users
+				  `
+			);
+		
+		  return res.json(results.rows);
+		} catch (err) {
+			  return next(err);
+		  }
+	});
+	
+	
+
+Here, we make sure to use **async / await** in our route first and foremost. Then, we use **db.query**, and write an actual SQL query to get information from the **users** database. We use a **try / catch** block to handle potential errors (maybe the table doesn't exist, etc.)
+
+
+

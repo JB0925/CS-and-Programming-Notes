@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-10T10:50:18-05:00
+
+====== Docker Volumes ======
+Created Wednesday 10 March 2021
+
+Docker volumes allows us to share data / files and folders **between host** and **container**, and also **between containers.**
+
+
+Essentially, whatever you add to the **host (**local machine), it will also show up inside of the **container** when using **Docker Volumes.**
+
+
+**How to share between Host and Container:**
+		- go to **hub.docker.com' **and search for **nginx** (or whatever image you want)
+		- find **more info** on your image of choice
+				- **docker run --name some_nginx_container -v [[/some/content:/usr/share/nginx/html]] [[:ro]] -d nginx**
+				
+				Breaking down the above command:
+					- **docker run --name some-nginx**: naming the container
+					- **-v**: The volumes
+					- '/**some/content:/usr/share/nginx/html**: the directory to put content in so that it will get stored in the container
+						- **NOTE: **This information is taken directly from **hub.docker.com/_image_name**. The above is the actual directory where the content goes when using an nginx container.
+						- **NOTE2:** **some/content** is keywords for the **content** you want to share from your machine to the docker volume. The real values would be the path to your file(s).
+					- **[[:ro]]**    read-only
+					- -d detached mode
+					- **nginx**: name of image
+

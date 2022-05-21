@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-26T20:54:19-05:00
+
+====== Erase the Contents of a File ======
+Created Thursday 26 November 2020
+
+Use **file.truncate(0)** to completely erase the contents of an existing file:
+
+**NOTE: Use 'r+' or 'w+' to ensure you have read and write access to the file.**
+
+In the example below, I created a file that would be overwritten every time new data was added or changes were made, so to avoid duplication, I added each line of the file to a list, then used **file.truncate(0)** to erase the file.
+
+{{.\pasted_image.png}}
+
+**The code above:**
+
+1). with open....**open the file in read/write mode**
+
+2). create a **reader** object to read in the lines from the file
+
+3). loop through each line and add it to the list of lines
+
+4). truncate/erase the file to add new data without duplications. **The list in line 4** **serves as a sort of "record keeper" that acts to add the lines back later.**
+
+https://www.kite.com/python/answers/how-to-erase-the-file-contents-of-a-text-file-in-python

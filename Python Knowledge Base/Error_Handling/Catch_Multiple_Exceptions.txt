@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-24T23:35:08-05:00
+
+====== Catch Multiple Exceptions ======
+Created Sunday 24 January 2021
+
+How to catch multiple **specific** exceptions:
+
+{{.\pasted_image.png}}
+
+**NOTE: **Notice the parentheses around the **'ZeroDivisionError** and the '**TypeError**. Inside of that block, specific cases are handled.
+
+
+https://stackoverflow.com/questions/6470428/catch-multiple-exceptions-in-one-line-except-block
+
+First answer in link

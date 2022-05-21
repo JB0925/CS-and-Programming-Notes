@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-02T12:23:51-04:00
+
+====== Default Parameters ======
+Created Friday 02 April 2021
+
+Just like in Python, you can declare default args for a function. You can do this with strings, arrays, objects, etc.
+Just like in Python, non-default parameters have to go last. You will also need to use keywords to specify what you are passing in when you call the function if there is more than one default parameter.
+
+**Example:**
+	function myFunc(a, b=1) {
+		return a * a + b
+	};
+
+
+function sentence(person, greeting='Hi', punctuation='!') {
+	return `${greeting}, ${person}, how are you?${punctuation}`
+};
+
+**Call the function and change parameters:**
+	sentence('layla', '!')		#trying to change the punctuation parameter, but keep the greeting the same. JS doesn't understand this. 
+								#you have to give all of the parameters keywords, i.e. (person='layla', greeting='Hi', punctuation='?')
+

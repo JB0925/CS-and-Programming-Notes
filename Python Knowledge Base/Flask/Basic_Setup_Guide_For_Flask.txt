@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-13T22:39:09-05:00
+
+====== Basic Setup Guide For Flask ======
+Created Saturday 13 February 2021
+

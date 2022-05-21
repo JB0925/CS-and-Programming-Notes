@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-01T00:52:13-05:00
+
+====== Using Memo and useCallback Together ======
+Created Saturday 01 January 2022
+
+If you pass down a function to a child component, say, to set state in the parent, **then that child component will STILL re-render, even if it is wrapped in React.memo.**
+
+So how do we avoid that? We wrap the function we are passing as a prop in a **useCallback.**
+
+By wrapping **reset **below in **useCallback**, this makes it so that **reset** never changes **unless "setCount" changes**, which won't happen because it comes from useState.
+
+**Example:**
+
+const Parent = () => {
+  const [count, setCount] = useState(0);
+  const reset = **useCallback(**() => {
+	setCount(count => 0);
+  }, **[setCount]);**
+
+  return (
+	  <>
+	  <p>{count}</p>
+	  <Child **updateState={reset} **/>
+	</>
+  );
+};
+
+
+const Child = ({ updateState }) => {
+  return <button onClick={updateState} type="submit">Submit</button>;
+};
+
+**export default React.memo(Child);**

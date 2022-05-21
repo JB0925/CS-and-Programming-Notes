@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-05T12:14:35-05:00
+
+====== How to Use Semantic Elements ======
+Created Friday 05 February 2021
+
+{{.\pasted_image.png}}
+
+**Main tag:**
+	- refers to the main body of a page, does NOT include things that are repeated on multiple pages such as a navbar, search form, etc.
+	{{.\pasted_image001.png}}
+	- small snippet, but the **main** tag goes right inside the body, and the closing tag goes right before the closing **body** tag. Includes everything relevant to ONLY THAT PAGE.
+	
+
+**Nav tag:**
+	- refers to all navigation links
+	- can be in more than one place on a page
+	{{.\pasted_image002.png}}
+
+
+**Section tag:**
+	- refers to a section of text (maybe divided by chunks with h2 tags)
+	- does not change the look of the section
+
+
+**Article tag:**
+	- refers to any self contained piece that could be reused or redistributed on other websites
+	{{.\pasted_image003.png}}
+	- not pictured: closing article tag for the opening article tag
+
+
+**Aside tag:**
+	- refers to anything that is not part of the main body of the page (sort of like a caption)
+	{{.\pasted_image004.png}}
+
+
+**Figure tag:**
+	- the figure tag allows you to add captions to your images with the **<figcaption>** tag
+	{{.\pasted_image005.png}}
+	

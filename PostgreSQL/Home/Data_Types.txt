@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-18T14:19:37-04:00
+
+====== Data Types ======
+Created Tuesday 18 May 2021
+
+These are some of the different data types we have available to us that we can use in a table column:
+
+**Numbers, Currency, Binary**
+**Date/Time, Character, JSON**
+**Geometric, Range, Arrays**
+**Boolean, XML, UUID**
+
+
+**Four Most Important Types:**
+	- Numbers
+	- Date/Time
+	- Character
+	- Boolean

@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-16T00:11:04-04:00
+
+====== Arrays as a Data Structure ======
+Created Wednesday 16 September 2020
+
+**Four Big O() Scoring Categories:  **1). Accessing, 2). Searching, 3). Inserting, 4). Deleting
+
+**Accessing an Array = O(1) .....**1 step, constant time
+**Searching an Array = O(n) **.....n = however many elements are in the array
+**Inserting into an Array = O(n)**
+**Deleting from an Array = O(n)**
+
+**Pros and Cons:**
+
+**Pros:**
+	- good for storing similar contiguous data
+	- O(1) accessing power
+	- Very basic and easy to learn
+	
+**Cons:**
+	- Size of the array cannot be changed once initialized
+	- Inserting and Deleting are not efficient
+	- Can be wasting storage space
+	
+
+

@@ -1,0 +1,77 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-09T09:47:53-05:00
+
+====== Opposite Example ======
+Created Thursday 09 December 2021
+
+Here is an example where we create the useCallback function inside of **useAsync** and then return the function as part of an array. It is the opposite of our first example:
+
+function asyncReducer(state, action) {
+  switch (action.type) {
+	case 'pending': {
+	  return {status: 'pending', data: null, error: null}
+	}
+	case 'resolved': {
+	  return {status: 'resolved', data: action.data, error: null}
+	}
+	case 'rejected': {
+	  return {status: 'rejected', data: null, error: action.error}
+	}
+	default: {
+	  throw new Error(`Unhandled action type: ${action.type}`)
+	}
+  }
+}
+
+**// this time, we don't need an asyncCallback function, as we create and return it here.**
+function useAsync (initialState) {
+  const [state, dispatch] = React.useReducer(asyncReducer, {
+	status: 'idle',
+	data: null,
+	error: null,
+	...initialState
+  })
+
+  **// here, we create the useCallback "run" function. This function never really      needs to update, because it not dependent on anything else, so we give it an    empty dependency array. **
+  const run = React.useCallback(promise => {
+	dispatch({type: 'pending'})
+	promise.then(
+	  data => {
+		dispatch({type: 'resolved', data})
+	  },
+	  error => {
+		dispatch({type: 'rejected', error})
+	  },
+	)
+  },[]);
+ 
+  return [state, run];  **// return the state AND the run function that will handle all of the async data.**
+};
+
+
+function PokemonInfo({pokemonName}) {
+  const [state, run] = useAsync({ status: pokemonName ? 'pending' : 'idle' });
+  **// above, we initialize state and create and get back the "run" function by calling "useAsync".**
+  
+  React.useEffect(() => {
+	  **// before, this logic went IN the useCallback function. Now, we just call the memoized function each time the "pokemonName" or the "run" function changes.**
+	if (!pokemonName) return;
+	return run(fetchPokemon(pokemonName));
+  }, [pokemonName, run]);
+
+  const {status, data, error} = state
+
+  switch (status) {
+	case 'idle':
+	  return <span>Submit a pokemon</span>
+	case 'pending':
+	  return <PokemonInfoFallback name={pokemonName} />
+	case 'rejected':
+	  throw error
+	case 'resolved':
+	  return <PokemonDataView pokemon={data} />
+	default:
+	  throw new Error('This should be impossible')
+  }
+}

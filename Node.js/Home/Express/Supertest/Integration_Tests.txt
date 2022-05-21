@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-11T20:41:30-04:00
+
+====== Integration Tests ======
+Created Saturday 11 September 2021
+
+Integration tests help us to:
+	- make sure all the parts work together
+	- are essential to have along with unit tests
+	- are more involved than unit tests
+
+
+**Supertest:**
+	- Supertest is a library for testing Express applications
+	- we will use it for integration tests
+	
+	- Like Unittest in Python, we can use it to make requests against the app in tests
+	
+	**Docs: **github.com/visionmedia/supertest
+	
+	

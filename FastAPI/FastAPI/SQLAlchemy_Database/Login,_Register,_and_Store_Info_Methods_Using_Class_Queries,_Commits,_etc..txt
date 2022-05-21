@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-07T23:13:33-04:00
+
+====== Login, Register, and Store Info Methods Using Class Queries, Commits, etc. ======
+Created Wednesday 07 April 2021
+
+**Imports:**
+{{..\Login,_Register,_and_Store_Info_Methods_Using_Class_Queries,_Commits,_etc\pasted_image.png}}
+
+
+**Register: Create a User, store in DB, and close the session**
+{{..\Login,_Register,_and_Store_Info_Methods_Using_Class_Queries,_Commits,_etc\pasted_image001.png}} 
+#**create_session() comes from "db_session.py"**
+#**crypto.hash - hashing the password for storage (from passlib)**
+
+
+**Login: Login a User and Checking to see if password = = the hashed password**
+{{..\Login,_Register,_and_Store_Info_Methods_Using_Class_Queries,_Commits,_etc\pasted_image003.png}}
+# create a session
+# query to see if the user is in the db **(note: for the above query to be effective, the "name" column has to have a UNIQUE constraint**
+# handle the cases where the user comes back as None
+# verify that the password entered matches the hashed password. If it does, return the user. If not, return None.
+#close out the session.
+
+
+**Store Events:**
+{{..\Login,_Register,_and_Store_Info_Methods_Using_Class_Queries,_Commits,_etc\pasted_image004.png}}
+# create a session
+# query to get the logged in user **(used to create the "user_id" foreign key later)**
+# create the event instance and save each passed in argument to the new Events instance
+# add to the db and commit
+# close the session out

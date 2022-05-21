@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-19T23:02:03-04:00
+
+====== One to Many Queries ======
+Created Sunday 19 September 2021
+
+Node-pg is essentially raw SQL, so you have options here:
+
+1). Use a join
+2). Make two separate queries and add the results of one of the queries to the object returned from the other.
+
+**NOTE:** The most optimized solution would be to make two queries without async/await wrap them in an array, and call **Promise.all** on them.
+
+
+**Example:**
+{{~/Desktop/ScreenShots/One to Many-Express.js.png}}
+
+**Explained:**
+	**userRes**: getting the user info from a query.
+	**messagesRes**: getting the messages from a separate table, where the messages have the user's id
+	**user**: creating an object to return; taken from the **userRes** query
+	**user.messages = messagesRes.rows;** adding the messages to the user object

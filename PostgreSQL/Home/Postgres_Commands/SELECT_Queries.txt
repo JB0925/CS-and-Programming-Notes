@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-02T22:54:09-05:00
+
+====== SELECT Queries ======
+Created Tuesday 02 March 2021
+
+**SELECT * FROM table_name;**
+	- gives all rows and columns from the table
+
+
+**SELECT column_name FROM table_name;**
+	- gives data from all rows for ONLY that column
+
+
+**SELECT first_col, second_col FROM table_name;**
+	- gives data for more than one column for ALL rows
+
+
+**SELECT nullable_col FROM table_name;**
+	- gives data from that nullable column for ALL rows; rows that don't have that value will just have a blank space
+	{{.\pasted_image.png}}
+
+
+
+

@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-07T21:16:34-05:00
+
+====== Floating Point Numbers ======
+Created Monday 07 February 2022
+
+There are two types that represent floating point numbers:
+
+1). float
+	- single precision number
+	Range: 1.4E-45, 3.4028235E38
+
+2). double
+	- double precision number
+	Range: 4.9E-324, 1.7976931348623157E308
+
+**NOTE:** It is good practice to put an "f" after a float, and a "d" after a double to make it clear which what you are using, AND because **double** is the assumed floating point number.
+
+**NOTE:** If you have **float myNum = 5.25**, you will get an error. The JVM assumes that all floating point numbers are **doubles** unless given the "f" at the end.
+
+
+**Precision** refers to the format and amount of space occupied by the type.
+
+**Single Precision** occupies 32 bits, and has a width of 32.
+
+**Double Precision** occupies 64 bits, and has a width of 64.

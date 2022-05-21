@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-08T01:20:17-04:00
+
+====== Query Example 2 - Get User by Id ======
+Created Thursday 08 April 2021
+**from sqlalchemy.future import select**
+**from remind_me.data import db_session**
+**from sqlalchemy import func**
+**from remind me.services import user_service**
+
+**A Query to Find a User by Their Id:**
+	
+	**async** get_user_by_id(user_id: int) -> Optional[User]:
+		**async with db_session.create_async_session() as session:**
+			query = **select(User).filter(User.id == user_id)**
+			result = **await** session.execute(query)
+			return result.**scalar_one_or_none()			**#returns the user and, if there is no user, return None
+	
+	**async** def my func_that_uses_the_async_func():
+		total = 0
+		user = **await** user_service.get_user_by_id(2)
+		return user
+	
+	
+	**async** home_view():
+		my_var = **await** my_func_that_uses_the_async_func()
+		
+

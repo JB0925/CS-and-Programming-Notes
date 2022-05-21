@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-20T01:55:43-04:00
+
+====== How to Save Certain Subsets of Data to More than One User, but Keep Accounts Separate ======
+Created Saturday 20 March 2021
+
+To assign the coin "icon" to Joe, and "icon" to Tim, but Joe has 150 and Tim has 3,000 and sells 450, pass an instance into the form POST request. See below:
+
+{{.\pasted_image.png}}
+
+Doing the above ensures that only Joe's data gets changed when Joe is logged in, and only Tim's data gets changed when he is logged in. Of course, to make this work, you have to set up a **1-to-many** relationship (FOREIGN KEY) in the model.
+
+{{.\pasted_image001.png}}
+
+Remember to make your decimal fields editable, and remember that you have to convert them all to floats.
+
+https://stackoverflow.com/questions/61954177/django-charfield-with-unique-true-update-error-instance-with-this-name-already

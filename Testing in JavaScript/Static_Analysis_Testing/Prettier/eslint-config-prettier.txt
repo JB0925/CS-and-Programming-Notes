@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T21:02:36-05:00
+
+====== eslint-config-prettier ======
+Created Sunday 09 January 2022
+
+Run the command below to install and help avoid situations where **eslint** and **prettier** might clash:
+	**npm install --save-dev eslint-config-prettier**
+
+
+Next, in the **.eslintrc** file, in the **"extends"** key that we added, after **"eslint:recommended"**, add in **"eslint-config-prettier"**
+
+Now, any clashes that there might've been with eslint and prettier should be resolved.
+

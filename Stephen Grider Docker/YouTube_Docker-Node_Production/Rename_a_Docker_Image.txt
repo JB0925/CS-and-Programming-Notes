@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-27T23:02:54-05:00
+
+====== Rename a Docker Image ======
+Created Thursday 27 January 2022
+
+	- log in to hub dot docker dot com and click **create repository**
+	- Give it a name and make it public
+	
+	- in prod environment, run **docker login** and provide relevant data
+	
+	- copy username/repo_name from Dockerhub
+	
+	- get current image name by running **docker image ls**
+	
+	- in prod server, **rename** the image you want to push by running
+	- **docker image tag current_image_name newname**
+	
+	
+	- push to Dockerhub with **docker push new_image_name**

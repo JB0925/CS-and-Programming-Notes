@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-09T22:37:55-04:00
+
+====== Remove Duplicates from Nested List ======
+Created Sunday 09 August 2020
+1:
+
+	**lst = [[1,2], [1, 3], [2, 4, 6]]**
+	**del_lst = [1, 2]**
+	**new = [x for x in lst if x ! = del_lst]**
+	
+	
+2:
+	**new = [ ]**
+	**for item in lst:**
+		**for x in item:**
+			**if x ! = 'somechar':**
+				**new.append(x)**
+
+
+3:
+	**from functools import partial **
+	**from operator import ne**
+	**res = list(filter(partial(ne, del_list), test_list))**
+	
+	first, we create a list
+	then, we filter out items using filter and partial
+	ne = not equal to
+	(ne, del_lst), test_list)) = make a new list from the items in test list, but make it a partial list by keeping items in test list that are NOT in del_lst
+	
+	
+https://www.geeksforgeeks.org/python-remove-all-occurrences-in-nested-list/
+

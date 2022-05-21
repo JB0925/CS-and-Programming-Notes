@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-04T01:15:44-04:00
+
+====== Viewmodels with Services ======
+Created Sunday 04 April 2021
+
+Services are like helper functions that return data to the viewmodels:
+
+**Update Viewmodels, now with Services:**
+{{.\pasted_image.png}}
+
+The red are the services, aka helper methods.
+
+
+**Services page skeleton:**
+{{.\pasted_image001.png}}

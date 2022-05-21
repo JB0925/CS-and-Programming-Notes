@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-19T23:02:23-05:00
+
+====== Static Files ======
+Created Thursday 19 November 2020
+
+To add static files, or files that don't change (CSS, images, JavaScript, etc.), when you create your main app.py file, and your template folder for all of your html files, then create another folder in the same directory called "**static**"
+
+**How to Load a Static File:**
+
+<html>
+<head>
+	<title>{% block title %} {% endblock %}</title>
+	#**if you want to use bootstrap, put your bootstrap link here above the custom css link#**
+	**<link rel="stylesheet" type="text/css" href= "**{{ url_for('static', filename="style.css")}}**">     **{{.\pasted_image.png}}
+</head>
+<body>
+	{% block content %}
+	{% endblock %}
+</body>
+</html>
+

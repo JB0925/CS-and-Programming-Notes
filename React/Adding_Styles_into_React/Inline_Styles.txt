@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-19T23:00:26-04:00
+
+====== Inline Styles ======
+Created Saturday 19 June 2021
+
+{{~/Desktop/ScreenShots/Add Style Tag to React Component.png}}
+
+Here, you can see that we took away the **className** attribute, and we added an inline style.
+
+To do that, we set **style={colors}**
+
+Above, we created the **colors** object, that we passed into our div.

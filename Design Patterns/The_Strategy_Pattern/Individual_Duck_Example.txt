@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-17T21:23:16-05:00
+
+====== Individual Duck Example ======
+Created Thursday 17 February 2022
+
+**NOTE: **Because these ducks will extend the duck class, a few things are true:
+	1). They will need to instantiate one of the FlyBehavior and QuackBehavior classes.
+	
+	2). They will need to implement a **display()** method.
+	
+	3). They all inherit the **swim()** method as is.
+
+public class MallardDuck extends Duck {
+	**// instantiating a new MallardDuck **
+	**// from within the class instead of **
+	**// passing it into another method**
+	
+	public MallardDuck() {
+		**// recall that the Duck class had **
+		**// two vars called flyBehavior and**
+		**// quackBehavior**
+		quackBehavior = new Quack();
+		flyBehavior = new FlyWithWings(); 
+	}
+	
+	public void display() {
+		System.out.println("I'm a real Mallard duck.");
+	}
+}

@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-09T23:17:36-04:00
+
+====== Pandas Data Types ======
+Created Wednesday 09 September 2020
+
+**Pandas DType		When to Use		Conversion**
+object				Text				.astype('str')
+datetime64			Date and Time		pd.to_datetime()
+Int64/Float64			Number			pd.to_numeric()

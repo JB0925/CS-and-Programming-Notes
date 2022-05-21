@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-20T12:29:17-04:00
+
+====== Making a Modified Set ======
+Created Monday 20 September 2021
+
+Lets say we want to use a **set**, but we also want to be able to look for our **alias** again in the set. So if we type in "Rocket" in mySet, it would return True, because Arugula is in the set.
+
+**Example:**
+import collections
+
+class AliasedIngredients(collections.abc.Set):
+	def __init__(self, ingredients: set[str]):
+		self.ingredients = ingredients
+	
+	def __contains__(self, value: str):
+		return value in self.ingredients or any(alias in self.ingredients for alias in get_aliases(value))
+	
+	def __iter__(self):
+		return iter(self.ingredients)
+	
+	def __len__(self):
+		return len(self.ingredients)
+
+ag = AliasedIngredients({"arugula", "rosemary", "sage"})
+
+print("arugula" in ag)
+	True
+	
+print("rocket" in ag)
+	True
+
+print(list(ag | AliasedIngredients({"garlic"}))
+	["rosemary", "arugula", "sage", "garlic"]
+	

@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-07T23:11:12-05:00
+
+====== Convert JSON to CSV ======
+Created Thursday 07 January 2021
+
+**Imports:**
+{{.\pasted_image.png}}
+
+**NOTE:**
+	imported csv to create a writer object and write to file, imported json to open the json file, imported "JSONDecodeError" to use with error handling in case of bad JSON data
+
+
+{{.\pasted_image001.png}}
+
+**1). **establish the csv file to write to
+
+**2). **try to load the json file and, if it doesn't work, except the "JSONDecodeError", print the exception message, and reraise the exception
+	**NOTE:**
+		if this was a file, you would have to open the file i.e. with open(file) as f:
+																reader = json.loads(f.read())
+
+**3). **Use the **count** variable to only write the dict keys as headers one time
+
+**4). **Iterate through the list of dicts (in this case), write the keys (headers) once (**if count == 0:)** 
+
+**5).** Write the values for each row
+
+**NOTE the use of the csv.DictWriter to easily write a dict to a CSV.**
+
+
+https://stackoverflow.com/questions/47857154/how-to-read-json-object-in-python      #first answer
+
+csv DictWriter: https://stackoverflow.com/questions/10373247/how-do-i-write-a-python-dictionary-to-a-csv-file
+
+
+

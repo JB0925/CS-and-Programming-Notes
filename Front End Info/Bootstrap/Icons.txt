@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-28T23:37:52-05:00
+
+====== Icons ======
+Created Sunday 28 February 2021
+
+Go to the bootstrap icons page, and click an icon. There you will find the HTML needed to create the icon.
+
+The HTML element is an <svg>, and there is a ton of information within the tag. The information describes the paths that we are seeing when we look at the icon.
+
+
+The general way that they would be used, is within a button, or maybe a badge, etc.
+
+
+**Syntax:**
+	- <button type="submit" class="btn btn-primary">Trash **insert giant <svg> tag here**</button>
+	- This would make a button with the text "Trash", followed by a small trash can inside of the button and beside the button text.
+
+
+One area where this is used commonly is in an input field. The icon shows up beside the input, almost as an example of what to do, and then the input field.
+
+
+Check out **Font Awesome** for many more great looking icons. 
+

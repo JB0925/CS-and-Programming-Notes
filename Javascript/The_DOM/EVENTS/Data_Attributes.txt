@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-24T15:32:23-04:00
+
+====== Data Attributes ======
+Created Monday 24 May 2021
+
+When creating elements and HTML pages, we will often want to add some metadata or additional information about elements.
+
+We don't necessarily want the user to see it, so we hide it in **data attributes.**
+
+**What is a Data attribute?**
+	-**Data attributes **are custom attributes we can put on elements.
+	- They all begin with **data-**and then anything you like.
+	- They are easily readable in JS and CSS.
+	
+	
+
+**Example:**
+	<body>
+		<ul id="cars">
+			<li **data-model**="model 3" **data-year**="2014">Tesla</option>
+			<li **data-model**="crv" **data-year**="2017">Honda</option>
+		</ul>
+		<script src="app.js"></script>
+	</body>
+	
+	
+	All that a user can see, is "Tesla" or "Honda", but we can get the information from the **data attributes** in CSS or JS.
+	
+
+
+**So How Do We Get the Information Out?**
+	- const ul = document.querySelector('#cars');
+	- ul.addEventListener('click', (e) => {
+		**console.log(e.target.getAttribute('data-year'));**
+	});
+	
+	
+	We select the **ul**, then we add an event listener to it. 
+	Any time the ul is clicked, we call **getAttribute** on **e.target** and console.log the information.
+
+

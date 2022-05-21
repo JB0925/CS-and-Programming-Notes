@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-22T22:12:34-04:00
+
+====== Axios ======
+Created Thursday 22 April 2021
+
+Axios is not a built in library, to use it you have to include a script tag at the bottom of the body with an external link.
+
+Axios works in the browser, and with server side things like Node.js
+
+**Script link to place at bottom of body:**
+	`<script src="https://unpkg.com/axios/dist/axios.min.js"></script>`
+
+
+
+**With Axios, you don't need to parse the JSON you receive, like you have to do with Fetch. It's done for you.**
+
+{{~/Desktop/ScreenShots/Axios.get Example.png}}
+
+The above takes care of all of the parsing for you.
+
+**Adding a catch like below will then A). do the parsing, and B). automatically check the status code so that you don't have to do a manual check.**
+
+{{~/Desktop/ScreenShots/Axios Catch.png}}

@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-18T23:26:58-04:00
+
+====== Adding Events ======
+Created Sunday 18 April 2021
+
+There are 3 ways to add events, and the first two are not recommened to use:
+
+1). inline
+
+2). In your "app.js" file, selecting an element and writing "element.onclick(info here)" or "element.onmouseover(info here)"
+
+3). **The Recommended Way:**
+	**const btn = document.querySelector('button');**
+	
+	**btn.addEventListener('mouseover', function() {**
+		**btn.innerHTML = 'MY TEXT GOES HERE!'**
+	**});**
+	
+	
+	**btn.addEventListener('mouseout', function() {**
+		**btn.innerHTML = 'SOME OTHER TEXT HERE.';**
+	**});**
+
+
+Using the third method allows us to do multiple events on the same element. Either of the first two only allow us to do one event per element. You can add more than one in your JS file with method #2, but the DOM will only read the last one.

@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-26T20:48:53-05:00
+
+====== Create an Empty File ======
+Created Thursday 26 November 2020
+
+If a filename does not already exist, you can create an empty version of the file ahead of time:
+**import os**
+
+**filename = 'C:/Users/superuser/Bites/Bite_42.py'**
+
+**if not os.path.exists(filename):**
+	**with open(filename, 'w'): pass**
+	
+
+An alternative as os.mknod(filename), but on Linux or Mac you need to have root permissions.
+
+https://stackoverflow.com/questions/35807605/create-a-file-if-it-doesnt-exist
+

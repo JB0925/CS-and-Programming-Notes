@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-18T17:38:27-04:00
+
+====== How to Set Up a Map ======
+Created Wednesday 18 August 2021
+
+Go to https://developers.google.com/maps/documentation/javascript
+
+Scroll down til you see the "example".
+
+From there, you can cut and paste your example into your code. The example looks much like the Mapquest.js example.
+
+Scroll Down to the Example
+
+**Things You'll Need:**
+1). Script tags in the head and body of the HTML doc
+
+2). a div (or similar) in the body with an **id** of "**map**".
+
+3). CSS defined for the div mentioned above. Need to set a defined height and width.
+
+4). The JS to create the map. Remember, the "center" would be where the starting coordinates go.

@@ -1,0 +1,54 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-30T19:11:21-04:00
+
+====== Building a Counter w Redux ======
+Created Saturday 30 October 2021
+
+**Setting Up Redux and the Reducer Function:**
+
+const INITIAL_STATE = { count: 0 };
+
+function rootReducer(state = INITIAL_STATE, action) {
+  switch (action.type) {
+	case "INCREMENT":
+	  return { ...state, count: state.count + 1 };
+
+	case "DECREMENT":
+	  return { ...state, count: state.count - 1 };
+
+	default:
+	  return state;
+  }
+}
+
+const store = Redux.createStore(rootReducer);
+
+1). First, we declare the initial state.
+
+2). Then, we create the **reducer** function, which takes an initial state, and an action that is called indirectly by the reducer.
+
+3). We don't have to, but it is often easier to use a **switch** statement in the reducer function since there will possibly be multiple options.
+
+4). We create the **store** with **Redux.createStore(reducerFuncHere); **
+
+
+From there, in **vanilla JS**, we use **addEventListeners. **It may look something like this:
+
+window.onload = function() {
+  const counterElement = document.querySelector("h1");
+
+  document.querySelector("#increment")
+	  .addEventListener("click", function () {
+		store.dispatch({ type: "INCREMENT" });
+		const currentCount = store.getState().count;
+		counterElement.innerText = currentCount;
+  });
+
+  document.querySelector("#decrement")
+	  .addEventListener("click", function () {
+		store.dispatch({ type: "DECREMENT" });
+		const currentCount = store.getState().count;
+		counterElement.innerText = currentCount;
+  });
+}

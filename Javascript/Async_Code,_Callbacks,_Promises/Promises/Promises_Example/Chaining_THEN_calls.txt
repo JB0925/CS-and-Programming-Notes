@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-21T10:35:26-04:00
+
+====== Chaining THEN calls ======
+Created Wednesday 21 April 2021
+
+A better, cleaner way to chain **then** and **catch** calls for Promises is in the picture below. It works because:
+
+1). the value being **returned** in the **then** clause **is a Promise itself.**
+	- it won't work if the return value of the **then** clause is not a Promise
+	- remember, it's easy to wrap a Promise in a function
+
+2). There is ONE **catch** call that serves for ALL of the potential **then** calls. 
+
+
+{{~/Desktop/ScreenShots/Chaining THEN Methods - JS Promises.png}}

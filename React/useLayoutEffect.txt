@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-09T22:12:52-05:00
+
+====== useLayoutEffect ======
+Created Thursday 09 December 2021
+
+useLayoutEffect works the same way as useEffect, and is written the exact same way.
+
+The difference is that **useEffect** is **async**, whereas **useLayoutEffect** is **synchronous**.
+
+Almost every time, you will want to use **useEffect**. 
+
+**You want to use "useLayoutEffect" when whatever you are doing is directly affecting some aspect of the DOM. This includes things like styles, heights, adding or removing elements, etc.**
+
+Example:
+
+**// setting the Ref's current.scrollTop to current.scrollHeight inside of "useLayoutEffect" makes it look smoother and much less jumpy.**
+
+function MessagesDisplay({messages}) {
+  const containerRef = React.useRef()
+  
+  **React.useLayoutEffect(() => {**
+	**containerRef.current.scrollTop = containerRef.current.scrollHeight**
+**  })**
+
+  return (
+	<div ref={containerRef} role="log">
+	  {messages.map((message, index, array) => (
+		<div key={message.id}>
+		  <strong>{message.author}</strong>: <span>{message.content}</span>
+		  {array.length - 1 === index ? null : <hr />}
+		</div>
+	  ))}
+	</div>
+  )
+}

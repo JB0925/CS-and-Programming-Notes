@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-29T11:20:33-04:00
+
+====== Add New File to Repo ======
+Created Thursday 29 October 2020
+
+**Add a New File:**
+
+	first, create a new file
+	
+	run **git status** again, and it will say there are "untracked files"
+
+
+**Track a file and make sure it's under version control:**
+	git add filename.here					#adds the new file to the staging area
+	git status							#says "changes to be committed" and lists the new file that was just added
+	
+	**NOTE: **you can add more than one file with **git add** at a time
+	**Example:**
+		git add hello.py myexample.py
+
+
+

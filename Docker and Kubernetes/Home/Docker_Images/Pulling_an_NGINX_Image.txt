@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-08T15:28:25-05:00
+
+====== Pulling an NGINX Image ======
+Created Monday 08 March 2021
+
+Go to **hub.docker.com** and you can see a list of all the public images available
+
+**Docker Hub is a registry.**
+
+A registry is a place where you can download **images**.
+
+In a registry, search for the image that you want (NGINX)
+
+In the terminal, type **docker pull nginx**
+	- this will down
+	- load the file
+
+
+**How to See What Images you Have Saved Locally:**
+	- type **docker images**
+		- this brings up the headers **REPOSITORY			TAG			IMAGE ID			CREATED			SIZE**
+		- with the related info**	       nginx				latest			 98ebf73aba75		3 days ago			109MB**
+

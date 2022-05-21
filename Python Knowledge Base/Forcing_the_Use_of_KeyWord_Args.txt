@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-26T20:41:28-05:00
+
+====== Forcing the Use of KeyWord Args ======
+Created Thursday 26 November 2020
+
+**In Python, if you define a function like this:**
+
+def get_profile(name='jesse', profession='teacher):
+	return f'{name} is a {profession}'
+	
+
+**Then you can call the function like this:**
+
+print(get_profile('bob'))	**or** print(get_profile('terry', 'bricklayer'))
+
+
+**But if you define the function with the "args" asterisk:**
+
+def get_profile(***, name='jesse', profession='teacher'):**
+	return f'{name} is a {profession}'
+	
+
+**Then calling the function like this:**
+
+print(get_profile('writer'))
+
+**Will raise a TypeError. You are forcing the use of keyword arguments, and only the number of keyword arguments that are already in the function (in this case, two).**
+
+**The proper way to call the above function is:**
+
+print(get_profile(name='bob', profession='writer'))
+
+https://www.vegardstikbakke.com/python-keyword-only/
+

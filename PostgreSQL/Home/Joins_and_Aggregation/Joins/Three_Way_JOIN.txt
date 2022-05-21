@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-31T23:22:56-04:00
+
+====== Three Way JOIN ======
+Created Wednesday 31 March 2021
+
+Say you want to SELECT contents, url, username where all have the same user id. In order to do this, you'd have to do a three way JOIN.
+
+**Example:**
+	SELECT contents, url, username
+	FROM comments
+	JOIN photos ON comments.user_id = photos.user_id
+	JOIN users ON users.id = comments.user_id AND users.id = photos.user_id;
+{{.\pasted_image.png}}

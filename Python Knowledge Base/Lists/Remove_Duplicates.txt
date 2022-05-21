@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-09T22:27:23-04:00
+
+====== Remove Duplicates ======
+Created Sunday 09 August 2020
+
+1:
+
+	**lst = []**
+	**for i in somelist:**
+		**if i not in lst:**
+			**lst.append(i)**
+			
+
+2:
+
+	**lst = []**
+	**[lst.append(x) for x in somelist if x not in lst]**
+	
+	
+3:
+
+	**lst = list(set(lst))**
+	
+	
+https://www.geeksforgeeks.org/python-ways-to-remove-duplicates-from-list/
+

@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-26T13:23:58-04:00
+
+====== Command Substitution ======
+Created Wednesday 26 May 2021
+
+Inside of double quotes, you can use command substitution, kind of like how you'd use Python f-strings or JS string template literals.
+
+**NOTES:**
+	- you have to use **parentheses**
+	- your **parentheses** are preceded by a **$**
+	- this will only work if you surround everything with **DOUBLE QUOTES " ", not single quotes ' '**
+	
+
+**Example:**
+	- **echo "today is $(date +"%m-%d-%Y")"**
+		returns **today is 05-26-2021**
+
+
+
+
+
+**Another Syntax:**
+	**echo `date`**
+		returns **Wed 26 May 2021 2:35:07 PM EDT**
+

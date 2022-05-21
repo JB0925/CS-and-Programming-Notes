@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-29T11:45:46-04:00
+
+====== Hoisting ======
+Created Monday 29 March 2021
+
+When JS is running your code, it is taking all of your variables and treating them as being declared at the top of the page, then assigned later.
+
+**Example:**
+	console.log(animal);
+	var animal = 'Tapir';
+	
+	**You would think this would throw an error saying that there is no variable animal, since animal is declared after the console.log() statement.**
+	
+	However, what happens when JS runs the code is, essentially, this:
+		**var animal;**
+		...
+		...
+		**console.log(animal);**
+			returns **undefined**
+		**animal = 'Tapir';**
+	
+	So it is treating it as though animal was already declared earlier in the program.
+	
+
+To avoid this, declare and initialize your variables **BEFORE** using them.
+
+**NOTE: **Just like in block scope, where you can access a variable declared with **var (inside a function)** outside of a function, but you **can't do that with "let" and "const", HOISTING works the same way. **Only **var** will allow for this behavior.
+
+
+
+
+

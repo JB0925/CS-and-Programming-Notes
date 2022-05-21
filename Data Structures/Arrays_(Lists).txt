@@ -1,0 +1,58 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-13T01:17:11-04:00
+
+====== Arrays (Lists) ======
+Created Sunday 13 September 2020
+
+- list of similar values
+- can be used to store anything
+- store values of the same type
+
+- items in an array are called **elements**
+- the collection of elements is called an **array**
+
+An array usually has 3 attributes:
+	- **A name**
+	- **A type**
+	- **A size**
+	
+
+**Name: **name for the array, used to reference it and interact with it
+
+**Parallel Arrays:**
+	- two or more arrays that:
+		- Contain the same number of elements
+		- Have corresponding values in the same position (array1[0] is related to array2[0])
+	
+	- Parallel Arrays are great for storing different types of data about the same entity
+	
+	
+**Type:**
+	- what type of information is stored or will be stored
+	- an array has to hold all the same type of information
+	
+	
+**Size:**
+	- a set integer that is fixed upon creation of the array
+		- represents the **total amount of elements** that are able to be stored in the array
+		- cannot be changed
+
+**Indexes:**
+	- start at 0
+	- use arrayname[5] to get the 5th element of the array
+	- access the last element of an array of size 10 = arrayname[9] or arrayname[-1]
+	
+**Replacing Elements:**
+	- arrayname[9] = 11 .....take the 9th element of the array, and replace it with the number 11
+	
+
+**Two Dimensional Arrays:**
+	- an array with an array **at each index** is known as a 2-dimensional array
+	
+**Referencing an Element in a 2-D Array:**
+	- array = [[1,3,5], [5,7,9 ]]   
+	- array[1][2] = 9     (2nd element of index 1)
+
+
+

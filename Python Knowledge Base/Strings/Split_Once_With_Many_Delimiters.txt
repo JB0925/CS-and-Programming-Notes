@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-29T22:55:07-05:00
+
+====== Split Once With Many Delimiters ======
+Created Tuesday 29 December 2020
+
+{{.\pasted_image.png}}
+
+**Step by Step:**
+
+**1). **create a list of characters to split by if **separators=None**
+
+**2). **if there aren't separators, check to see if any items from **chars** are in **text** and, if they are....
+
+**3). **loop through the **chars **list and **split** the text by the **char** with a **maxsplit=1**, then **join** it with a random separator
+		finally, return the **split text**, split at the random separator
+		
+**4). ** if **Step 2** is not **True, **just return the text as given, **split by whitespace, with a maxsplit=1**
+
+**5). BUT**, if there are **separators**, perform the same loop that we did above in **Step 3** with the alternate separators, **splitting on the separator and joining by the random character** each time through the loop, and finally **returning the text, split by the random character.**
+

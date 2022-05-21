@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-13T23:28:06-05:00
+
+====== Creating Templates and a Base Template ======
+Created Saturday 13 February 2021
+
+**Example of a Base Template:**
+
+**The Base Template:**
+	- the base template is just a shell that will contain anything you want to persist across pages, as well as have an area for content to be rendered
+
+{{.\pasted_image.png}}
+
+In this example, there is a navbar that I want to persist across all pages
+Then, we add the block for content.and close off the block
+
+
+
+**Template that inherits from the base template:**
+
+{{.\pasted_image001.png}}
+
+Notice the **{% extends 'layout.html' %}** that is used to extend the base template.
+Then, notice how the content block is opened at the beginning of the body
+The content block is closed at the end of the body, but can be opened and closed anywhere in the HTML
+
+The example below shows how to use the **Login()** form within the template:
+{{.\pasted_image002.png}}
+

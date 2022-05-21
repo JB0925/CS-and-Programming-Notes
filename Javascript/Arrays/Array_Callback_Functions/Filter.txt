@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-30T12:01:04-04:00
+
+====== Filter ======
+Created Tuesday 30 March 2021
+
+Whereas map takes a function, and applies it to every value in an array, creating a new array with those values while maintaining the old array, **filter takes a function that basically decides if something is True or False. If it is True, then whatever value is making it True will end up in a new array. **Same as before, the original array is not changed.
+
+
+**Example:**
+	let nums = [1,2,3,4,5];
+	let evens = nums.filter(n => n % 2 === 0);
+	console.log(evens);
+		returns **[2, 4]**
+
+
+**Example 2: Using Map and Filter**
+	let doubled = nums.map(x => (
+		x * 10
+	);
+	console.log(doubled);
+		returns **[10, 20, 30, 40, 50]**
+	
+	
+	let onlyOdds = doubled.filter(n => (
+		n.toString()[0] % 2 === 1
+	));
+	console.log(onlyOdds);
+		returns **[10, 30, 50]**
+
+
+

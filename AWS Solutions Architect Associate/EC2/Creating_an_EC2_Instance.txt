@@ -1,0 +1,70 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T10:52:51-05:00
+
+====== Creating an EC2 Instance ======
+Created Sunday 09 January 2022
+
+We will walk through how to create an EC2 instance from the AWS Dashboard.
+
+First, search **ec2**, and click the result when it comes up.
+
+Next, in the bar on the left, click on **instances** and then, in the top right of the page, click on **Launch Instances.**
+
+
+**Step 1). Select an AMI**
+	- AMI = Amazon Machine Image
+	- you have multiple choices here: quickstart, "my ami's", community ami's, etc.
+	
+	- click on the ami you want to select it and click the **next: instance type** button.
+
+
+**Step 2). Select an Instance Type**
+	- t2.micro is on the free tier
+	
+
+**Step 3). Configure Instance Details**
+	- scroll to the bottom where it says **User data**. This is where we can enter in the **bootstrap script** which will only run once at time of initial start.
+	
+	**Example Script:**
+	
+#!/bin/bash
+# Use this for your user data (script from top to bottom)
+# install httpd (Linux 2 version)
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo "<h1>Hello World from $(hostname -f)</h1>" > [[/var/www/html/index.html]]
+
+
+The above will launch a web server on our EC2 instance. You could do the same thing by putting this script in a file and then uploading the file into the **User data** section as well.
+
+
+**Step 4: Add Storage:**
+	- Leave the **Delete on Termination** checkbox checked, as it means that when we terminate our instance, it will also terminate the memory disc.
+	
+**Step 5: Add Tags:**
+	- You can give your instances tags if you wish. Tags, again, are key : value pairs that work much like dictionaries or JS objects.
+	
+**Step 6: Configure Security Group:**
+	- In the lower left, click **Add Rule**, and click **HTTP **and set the Port-Range to 80
+	
+
+**Step 7: Review and Launch:**
+	- if you don't already have SSH keys, download them and then store them in the **.aws** directory
+	
+	
+**Step 8: Inspect Your Instance:**
+	- Click on **Instances** on the left sidebar and it will show you the instances you have running
+	- From there, click on the **Instance Id**
+	- If you started a web process, copy the **Public IPv4 Address** and open it up in browser. You'll be able to see anything you to see that was specified in the **EC2 User data **bootstrap file
+	
+	- You can also click **connect** and it will take you to a terminal window associated with the instance
+	
+	**NOTE: **Any time you stop an instance, then restart it, the **Public IPv4 Address** will change, which means you'll need to copy over the new address to view your web page, etc.
+	
+	
+	
+
+

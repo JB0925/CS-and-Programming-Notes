@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-09T21:01:29-04:00
+
+====== Add Border Radius ======
+Created Monday 09 August 2021
+
+Click the corner of your shape, then click on one of the little circles and pull it in or our to get the desired effect.

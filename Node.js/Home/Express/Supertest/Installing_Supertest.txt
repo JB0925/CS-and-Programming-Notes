@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-11T20:44:27-04:00
+
+====== Installing Supertest ======
+Created Saturday 11 September 2021
+
+run **npm i --save-dev supertest**

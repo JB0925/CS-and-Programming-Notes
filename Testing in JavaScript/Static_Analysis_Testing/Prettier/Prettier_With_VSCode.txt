@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T20:48:17-05:00
+
+====== Prettier With VSCode ======
+Created Sunday 09 January 2022
+
+Open settings.json and add:
+	**"editor.defaultFormatter": "esbenp.prettier-vscode",**
+	
+	**"editor.formatOnSave": true**

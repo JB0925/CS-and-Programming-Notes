@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-19T23:06:22-04:00
+
+====== Return a Tuple From a Query ======
+Created Monday 19 July 2021
+
+**Example:**
+	all_users = **db.session.query(User.id, User.last_name).all(()**
+	joe
+	This will return a list of tuples, such as [(1, 'Joey'), (2, 'Mark')], etc.

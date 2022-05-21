@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-28T23:52:45-05:00
+
+====== Other Bootstrap Utilities ======
+Created Sunday 28 February 2021
+
+Checkout Bootstrap Utilities section in the docs. Many useful properties like being able to adjust border, border color, radius, height, padding, margin, etc.
+
+Check out **shadow**
+
+Check out **card**
+
+Check out **carousel **for image slideshows, etc.
+
+Check out **spinners**
+

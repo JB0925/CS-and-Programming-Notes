@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-20T10:01:21-04:00
+
+====== Brace Expansion ======
+Created Thursday 20 May 2021
+
+**Examples:**
+	**touch myfile{1,2,3}.txt**
+		- will create three new files, called file1.txt, file2.txt, etc.
+	
+	Say you need to create 30 files, etc. You can provide a range of numbers, letters, etc. and still create them all at once:
+	**touch myfile{1..31}.txt**
+		- will create **myfile1.txt, myfile2.txt, ...myfile31.txt**
+	
+	You can provide a **skip count** value as well:
+		**touch myfile{1..12..3).txt**
+			- means make files called **myfile{}.txt**, starting with 1, ending with 12, but **skip counting by 3.**
+			- returns **myfile1.txt, myfile4.txt, myfile7.txt, myfile10.txt**
+	
+	**echo {Z..A}**
+		- returns **Z Y X...C B A**
+		
+	
+	
+	**Make Multiple Directories at Once:**
+		**mkdir -p static/{css,js,img}**
+		- creates a directory called **static**, and inside of it, creates **static/css, static/js, static/img**
+		
+		
+		**mkdir -p {Mon,Tue,Wed}/{Breakfast,Lunch,Dinner}**
+		- creates three directories called **Mon, Tue, **and **Wed**, and inside of each, it places three more directories called **Breakfast, Lunch, **and **Dinner**
+		
+	
+	
+	**Nested Curly Braces:**
+		**echo {x,y{1..5},z}**
+		- prints out **x y1 y2 y3 y4 y5 z**
+		
+		
+		**echo {Mon,Tue{1..5}{AM,PM},Wed}**
+		- prints out **Mon Tue1AM Tue1PM Tue2AM Tue2PM...Wed**
+

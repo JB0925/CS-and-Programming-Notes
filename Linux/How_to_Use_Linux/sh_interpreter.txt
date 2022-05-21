@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-13T14:32:08-05:00
+
+====== sh interpreter ======
+Created Friday 13 November 2020
+
+if you call **sh filename **it will make it so that a program executes, when maybe you didn't have those file permissions otherwise

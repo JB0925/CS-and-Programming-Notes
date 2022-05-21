@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-23T21:04:25-05:00
+
+====== How to access an Individual User ======
+Created Tuesday 23 February 2021
+
+**from django.contrib.auth.models import User**
+
+user = User.objects.get(username='bob')
+
+**Usage:**
+	- if user.email == 'bob'@'gmail.com':
+		do_stuff()
+
+
+Usage is a generalized example to show that you can treat it like any other object from a class that you might make.
+
+
+**NOTE:	**to avoid raising an exception, instead of** .get()** you can use **User.objects.filter(username='bob')[0]**
+
+https://stackoverflow.com/questions/16572569/queryset-object-has-no-attribute-id-django
+https://docs.djangoproject.com/en/3.1/ref/contrib/auth/
+

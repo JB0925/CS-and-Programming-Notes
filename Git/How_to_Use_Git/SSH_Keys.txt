@@ -1,0 +1,55 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-05T15:29:05-05:00
+
+====== SSH Keys ======
+Created Thursday 05 November 2020
+
+**SSH keys are used to pull from and push to GitHub. It is a way for "GitHub" to authenticate that you are who you say you are.**
+
+
+code:
+
+	**~ ssh-keygen -t rsa -b 4096 -C "jbrink0925@gmail.com"**
+	
+	Enter the file in which to save the key: **give the file a name, or accept the default name**
+	
+	Enter passphrase: (can leave empty)
+	
+	Enter passphrase again:
+	
+	**Your identification has been saved in {filename}.**
+	**Your public key has been saved in {filename}.**
+	
+	**The key's fingerprint is:		some SHA256 info**
+	**The key's randomart image is:	some picture**
+
+
+search for your key:
+	**ls | grep filename**
+	
+	should return two results:
+		**filename**
+		**filename.pub    (public key)**
+		
+		print out the public key:
+			**cat filename.pub**
+			
+		copy/paste it.
+		
+		go to {GitHub} and find **SSH and GPG Keys.**
+		
+		click add SSH key, add your key
+
+
+**Page referenced below is a {GitHub} help page, located under "Generating a new SSH key and adding it to the ssh agent"**
+
+Add SSH key to SSH-agent from terminal:
+	**eval "$(ssh-agent -s)"**
+	> **Agent pid 59566**
+	
+	copy the info from step 2
+	
+	
+	
+	

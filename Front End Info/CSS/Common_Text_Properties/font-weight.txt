@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-10T13:44:26-05:00
+
+====== font-weight ======
+Created Wednesday 10 February 2021
+
+**Font-weight** is how we control the boldness, or lightness, of a piece of text.
+
+Typically, **400** is the normal **font-weight**, whereas **700** is **bold. **Anything less than 400 would be considered light.
+**NOTE:** not every font has every available weight to choose from. If you try to use a font-weight that is not availble to a particular font, your browser will use the next closest font-weight available.

@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-03T21:35:26-04:00
+
+====== Template Inheritance ======
+Created Saturday 03 April 2021
+
+With Chameleon, template inheritance is a little different.
+**NOTE:** To use this, poetry add **git+https://path/to/mckennedys/fastapi-chameleon#main**
+			**See the bottom to see how to use this with different view models.**
+
+1). In the templates folder, create a **shared** directory. In this directory, create a file called **base.pt**
+
+2). The basic idea is the same as using Jinja. Put everything in the base file that you want your other pages to inherit. Leave a space for the other pages to include content. In your other html/pt files, create your content. Here is what it should look like:
+{{.\pasted_image.png}}
+
+Everything above the red circled area will be inherited from all of the other pages. **NOTE: **Pay close attention to how we include a section for other HTML pages to inherit from, namely the **two div attributes circled in red.**
+
+
+**Examples of How the Actual Content Pages Should Look:**
+	Home page
+	{{.\pasted_image001.png}}
+	
+	**NOTE: **The top div tag actually loads the base template. The second div tag allows for new content to be added on this specific page. 
+			**These two div tags will need to go on any page that inherits from the base file.**
+	
+	
+	About Page
+	{{.\pasted_image002.png}}
+	
+	Same idea, just slightly different content in the inner div.
+	
+
+
+**Importing Your Templates Into Your Views**
+{{.\pasted_image003.png}}
+
+1). Be sure to import **template** from **fastapi_chameleon**
+
+2). Be sure to use the **router = fastapi.APIRouter()** class and decorate each function to be able to use it in the **main.py** file
+
+3). To use the HTML template you created, you need to use the **@template()** decorator from **fastapi_chameleon**
+	- **if you name your HTML file with the SAME NAME as the view function, you can leave the @template() decorator empty**
+	- otherwise, you'll need to pass in ('**/path/to/file.pt**')
+

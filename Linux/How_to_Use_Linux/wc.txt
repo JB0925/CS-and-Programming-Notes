@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-15T23:49:19-04:00
+
+====== wc ======
+Created Saturday 15 May 2021
+
+Word Count
+
+**wc <filename>**
+	- returns **<# of lines> <# of words> <# of bytes>**
+
+
+**wc -l <filename>**
+	- returns only the number of lines in the file
+
+
+**wc -w <filename>**
+	- returns only the number of words in the file
+
+
+**wc -c <filename>**
+	- returns only the number of bytes
+	

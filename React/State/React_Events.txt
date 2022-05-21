@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-30T00:39:09-04:00
+
+====== React Events ======
+Created Wednesday 30 June 2021
+
+**State** most commonly changes in response to some event, typically caused by the user.
+
+In **React**, every JSX element has built in attributes representing every kind of browser event.
+
+They are all camel-cased (**onClick**), and take callbacks as event listeners.
+
+**Example:**
+	<button **onClick**=(function(e) { alert('Hello World!'); })>
+		Click Me!
+	</button>
+	
+	{{~/Desktop/ScreenShots/React onClick Event.png}}
+	
+	**NOTE:** Functions are not typically written inline, but they can be, as shown above.
+	
+	
+	

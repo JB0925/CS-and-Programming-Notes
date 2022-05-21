@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-05T21:50:34-05:00
+
+====== Table Colspan and Rowspan ======
+Created Friday 05 February 2021
+

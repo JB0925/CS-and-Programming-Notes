@@ -1,0 +1,83 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-08T13:24:15-04:00
+
+====== Dunder Methods ======
+Created Thursday 08 October 2020
+
+**The following is a class full of dunder methods: What I learned is that, each time you call "<, >, >=, +, -, etc.", you are really calling the dunder method of the class for that object. The class instances at the bottom have some examples of how this class uses 'c - 2' instead of calling c.__ sub __(2). **
+
+**Enter and Exit methods create a context manager. More on those to come!**
+
+from functools import total_ordering
+
+@total_ordering
+class Account:
+
+	def __init__(self, name, start_balance=0):
+		self.name = name
+		self.start_balance = start_balance
+		self._transactions = []
+
+	@property
+	def balance(self):
+		return self.start_balance + sum(self._transactions)
+
+	def __len__(self):
+		return len(self._transactions)
+    
+	def __lt__(self, other):
+		return self.balance < other.balance
+    
+	def __eq__(self, other):
+		return self.balance == other.balance
+    
+	def __gt__(self, other):
+		return self.balance > other.balance
+    
+	def __ge__(self, other):
+		return self.balance >= other.balance
+    
+	def __le__(self, other):
+		return self.balance <= other.balance
+    
+	def __str__(self):
+		return f'{self.name} account - balance: {self.balance}'
+    
+	def __add__(self,other):								**#So if "__add__()" gets called by way of "c + 4", this will add a tx to the tx list,**
+		if isinstance(other, (int, float)):					     **which also changes the balance @property method. **
+			self._transactions.append(other)
+		else:
+			raise ValueError ('Sorry, please enter an int.')
+    
+	def __sub__(self,other):								**#Same as "__add__()" above; notice the " - other" being appended to subtract**
+		if isinstance(other, (int, float)):						**from the balance**
+			self._transactions.append(-other)
+		else:
+			raise ValueError ('Sorry, please enter an int.')
+    
+	def __getitem__(self, n:int):
+		try:
+			return self._transactions[n]
+        
+		except IndexError:
+			raise IndexError ('There is nothing at that index position.')
+    
+	def __enter__(self):
+		return self
+
+    
+	def __exit__(self, exc_type, exc_value, exc_traceback):
+		if self.balance < 0:
+			self._transactions.pop()
+        
+    
+c = Account('checking')
+s = Account('savings', 100)
+
+print(c.balance)
+print(s.balance)
+print(c.__len__())
+with c as f:
+	c - 2
+print(c.balance)

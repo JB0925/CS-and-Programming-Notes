@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-05T21:50:17-05:00
+
+====== Table Sections ======
+Created Friday 05 February 2021
+
+To create a table, start with the **table** tag.
+
+Add headers to your table by using the **tr** tag, and then inside of that, using the **th** tag
+
+Create extra rows and populate under each header by using the **tr** tag, and then inside of that, the **td** tag
+
+Create a table header with **thead. Thead** normally goes around the headers. In the picture below, that is the first set of **tr** tags.
+
+{{.\pasted_image.png}}		Now with header and body tags:		{{.\pasted_image001.png}}
+

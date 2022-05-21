@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-28T21:05:03-04:00
+
+====== repr ======
+Created Tuesday 28 July 2020
+
+Have an object that's too long to print out and view? A class repr with the same problem?
+
+Use reprlib.repr to shorten it by replacing the rest with ellipses!
+
+Best thing is that it's a drop in replacement for the standard repr, so no need to change any of your existing code.
+
+{{.\pasted_image.png}}

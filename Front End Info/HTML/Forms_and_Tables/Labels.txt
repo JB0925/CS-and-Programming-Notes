@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-05T21:51:23-05:00
+
+====== Labels ======
+Created Friday 05 February 2021
+
+The **label** element denotes that there is a direct connection between some form of input and some piece of text
+
+{{.\pasted_image.png}}
+
+By using the **label** element, we can make it so that not only the checkbox itself is clickable, but hovering over the words and clicking them will also click the checkbox.
+
+In the example above, the **id** attribute in the **input **element is directly associated with the **label** element's **for** attribute.
+
+Only **ONE** element per page should have a given **id**. (**i.e. no more "basketball" id's on the page above**)
+
+**NOTE: **To break up the inputs into more than one line, use **<p>** tags on each **label / input** combination.
+

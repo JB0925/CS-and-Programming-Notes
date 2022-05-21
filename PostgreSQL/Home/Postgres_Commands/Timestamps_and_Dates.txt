@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-04T12:12:16-05:00
+
+====== Timestamps and Dates ======
+Created Thursday 04 March 2021
+
+**SELECT NOW();**
+	- returns date, time, and timezone info
+	
+
+**SELECT NOW()::DATE;**
+	- returns only the date
+
+
+**SELECT NOW()::TIME;**
+	- returns only the time
+
+
+**SELECT NOW() - INTERVAL '1 YEAR';**
+	- returns the date and time one year ago
+	- can also use DAYS, MONTHS, WEEKS
+	
+
+**SELECT (NOW() + INTERVAL '3 WEEKS')::DATE;**
+	- returns only the date from the given statement
+	

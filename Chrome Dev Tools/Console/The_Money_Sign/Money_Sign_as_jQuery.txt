@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-10T22:42:22-05:00
+
+====== Money Sign as jQuery ======
+Created Friday 10 December 2021
+
+You can select elements with the money sign, just as if you were using jQuery.
+
+$('h2').style.color = "red";
+
+This will turn the h2's (if present) color to red.
+
+**Just as with jQuery, you can select by class name or id as well.**
+

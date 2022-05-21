@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-02T22:24:48-04:00
+
+====== Reading and Writing Cookies in Flask ======
+Created Friday 02 July 2021
+
+**To Read:**
+	request.cookies.get('my_item')
+
+
+**To Write:**
+	html = render_template('home.html, keywords here)
+	
+	  response = make_response(html)
+	
+	response.set_cookie(my_item_here)
+	

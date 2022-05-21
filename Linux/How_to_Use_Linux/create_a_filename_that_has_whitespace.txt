@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-15T09:40:22-05:00
+
+====== create a filename that has whitespace ======
+Created Friday 15 January 2021
+
+~$ **my file** will create two different files, one called "my" and another called "file"
+
+~$ **my\ file** will create one file called "my file"
+
+
+another option is to use touch and single quotes i.e. : **touch 'my file'**
+
+
+
+
+This works the same way with removing / rm: 	either use the \ character or single quotes.

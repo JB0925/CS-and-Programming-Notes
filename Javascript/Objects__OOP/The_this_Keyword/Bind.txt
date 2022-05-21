@@ -1,0 +1,51 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-08T21:53:27-04:00
+
+====== Bind ======
+Created Tuesday 08 June 2021
+
+**Bind is very much like call, except it creates its own new function, and from then on you can call that function and the value of this will already be set.**
+
+	let cat = {
+		name: 'Harvey',
+		meow: function() {
+			return `${**this.name**} says meow!`
+		},
+		
+		play: function(...toys) {
+			for (let toy of toys) {
+				console.log(`${**this.name** plays with a ${toy}`);
+			};
+		}
+	};
+
+	  let dog = {name: "Steve"};
+
+		let message = cat.meow.bind(cat);
+		**message();**
+			**returns "Harvey says meow!"**
+	
+	Same as before, we can also call it on an object that doesn't even have the method:
+		let message = cat.meow.bind(dog);
+			**message();**
+				**returns "Steve says meow!"**
+	
+	
+	
+	**We can pass it default args with a "bind" call:**
+		let playfulDog = cat.play.bind(**dog, 'bone', rope');**
+		playfulDog();
+			**returns:	"Steve plays with a bone.**
+						**Steve plays with a rope."**
+						
+		
+		Even once we have passed in default args, we can always pass in others later. So above, we set our default args to **bone** and **rope**.
+		
+		We can call **message** again, and add in new args. It will console.log all of the default args, and all of the new args.
+		
+		**message('chew toy');**
+			**returns	"Steve plays with a bone.**
+					**Steve plays with a rope.**
+							**Steve plays with a chew toy."**
+

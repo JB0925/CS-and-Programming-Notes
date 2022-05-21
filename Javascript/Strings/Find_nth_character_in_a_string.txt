@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-17T09:59:00-04:00
+
+====== Find nth character in a string ======
+Created Wednesday 17 March 2021
+
+To find the nth character in a string, just use the index.
+
+**Example:**
+	You want the 7th character in a string.
+		**console.log(myString[6])**
+

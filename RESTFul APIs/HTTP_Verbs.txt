@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-30T23:02:39-04:00
+
+====== HTTP Verbs ======
+Created Friday 30 July 2021
+
+GET:
+	- a search, getting information from the server
+
+POST:
+	- sending information to the server that will involve a database, logging in, etc.
+	
+PUT:
+	- updates an entire resource, such as a Reddit post, an Instagram photo, etc.
+
+PATCH:
+	- updating a PART of a resource, such as upvoting or downvoting a post on Reddit (not updating the title, post itself, etc.)
+
+DELETE:
+	- delete a resource, such as deleting an entire reddit post.

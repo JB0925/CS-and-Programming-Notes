@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-09T23:42:20-04:00
+
+====== Async and Await ======
+Created Friday 09 April 2021
+
+Async and await make apps much more scalable.
+
+When you use async and await, you are running code, but also doing other things while you are waiting for that code to return.
+
+**A Basic Async Method:**
+{{file:///var/folders/j3/_t3lnk4s6qj4626wqs10dzf40000gn/T/TemporaryItems/NSIRD_screencaptureui_f0yNMG/Screen%20Shot%202021-04-09%20at%2011.44.05%20PM.png}}
+
+**NOTE: in order to use this method, you have to add "httpx" to your requirements**
+
+
+
+Async and await are built on the ASGI server, as a WSGI server is not capable of working with async and await.
+

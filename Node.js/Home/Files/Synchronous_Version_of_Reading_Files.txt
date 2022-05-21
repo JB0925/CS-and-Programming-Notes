@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T23:18:51-04:00
+
+====== Synchronous Version of Reading Files ======
+Created Monday 06 September 2021
+
+**const fs = require('fs');**
+
+**try {**
+  // store the read file contents
+  **var contents = fs.readFileSync('myFile.txt', 'utf8');**
+**  console.log(`file contents are "${contents}"`);**
+**} catch (error) {**
+  // errors thrown by fs will be caught here
+  **console.error(error);**
+  // kill the process and tell the shell it errored
+  **process.exit(1);**
+**}**

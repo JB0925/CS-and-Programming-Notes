@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-06T22:37:41-04:00
+
+====== Creating a Login and Logout System With Cookies ======
+Created Tuesday 06 April 2021
+
+**Code for creating a login with cookies and a logout:**
+{{.\pasted_image.png}}
+{{.\pasted_image001.png}}
+
+
+**In the Base Viewmodel:**
+{{.\pasted_image002.png}}
+
+
+**In the View Itself:**
+{{.\pasted_image003.png}}
+
+
+{{.\pasted_image004.png}}

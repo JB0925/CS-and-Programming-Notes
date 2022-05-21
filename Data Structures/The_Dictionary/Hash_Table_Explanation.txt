@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-23T00:25:38-04:00
+
+====== Hash Table Explanation ======
+Created Wednesday 23 September 2020
+
+**Dictionary Time Complexity Equations:**
+	**Hash Table Mini-Lesson:**
+
+{{.\pasted_image001.png}}	<------ this does not work!
+
+An index based dictionary does not work because of the fact that if a dictionary was array-based, (i.e. the keys would correspond to a numerical index), it would only work if the dictionary was not too large. **If you had 1 billion indices, and 1 billion keys, but only 10 values....you'd have 9,999,990 "Nil" values taking up space in memory and serving no other purpose.**
+
+**Enter the Hash Table:**
+	- Hash tables are fundamentally a way to store dictionary style (k:v) information in such a way that we're able to cut down the amount of **nil values** while also allowing for the information to be stored in a way that is **easily accessible**.
+	
+	- In an **array based** structure, you'd have to have **an index for every key**, 0 - 1,000,000,000.....even if there were only ten keys with values. (**meaning all other values would be "nil")**
+	
+	- with a **hash table**, if you only have ten keys but they go to 1,000,000,000....you only need 10 indices (keys)....one for each value that you have.
+	
+	{{.\pasted_image002.png}}   <----- this will work much better than the above.
+	
+
+**Hash Functions:**
+	- A **Hash Function** will take all the keys for a given dictionary and **strategically map** them to certain index locations in an array so that they can be **retrieved easily**
+	
+	- The goal of a **good hashing function** is to take in a key and **reliably **place it somewhere in the table so that it can be **accessed later** by the computer
+	
+	- **example of a good Hash Function:**
+		- to get the index for the above table, the hash function could:
+			- take the key, divide it by itself, then multiply the result by the number of digits in the key minus 1
+			- so **(1,000,000 // 1,000,000) * (7-1) = 6**
+		
+		- by doing the above, we have consolidated the 10 keys from the above table ranging from 1 - 1 billion into ten index slots instead of 1 billion with 9,999,990 "nil" values
+		
+	- by using the hash function, if you plug the KEY back into the hash function (**i.e. 1,000,000), **it will give you the index where the key is stored at, and thus is an easy way to look up the value associated with the key.
+	
+
+**Dictionaries are built upon these Hash Tables, and the keys in the KEY/VALUE pairs are stored in memory IN these Hash Tables at indexes which are determined by a Hash Function.**
+
+
+What happens when we run two different dictionary keys into a hash function, and the computer tells us to store them at the same index location?
+						**example:    **'Steven'       'Sean'........put both keys through the **Hash Function**, and the computer tells us to store both keys at the **ninth index location** of the hash table. **This is called a Hash Collision.**
+
+						**Hash Collisions can be solved in 1 of 2 ways:**
+							- **Open Addressing: **put the key in some other index location separate from the one returned to us by the hash function
+							- open addressing can lead to some problems in accessing the information in a dictionary later on
+							
+							- **Closed Addressing: **uses Linked Lists to chain together keys which result in the same hash value
+							
+							//example of Closed Addressing:	   Linked List @ index 9//
+								{{.\pasted_image003.png}}
+								
+
+
+

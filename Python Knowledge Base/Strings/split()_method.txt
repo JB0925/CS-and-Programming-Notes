@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-26T22:35:32-04:00
+
+====== split() method ======
+Created Sunday 26 July 2020
+
+https://www.geeksforgeeks.org/python-string-split/
+
+
+This will break a string into two or more strings, given a separator.
+
+Example:
+
+**For word in words:**
+	 **word = word.split('.')**
+
+So if word = 'code.html', after the code word = ['code', 'html']

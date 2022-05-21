@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-26T00:06:32-04:00
+
+====== Heaps ======
+Created Saturday 26 September 2020
+
+**Heaps – Introduction:**
+	- Think back to Binary Search Tree:
+		- Each Node can have no more than 2 Children Max
+		- Child to the left has a value <= the Parent Node
+		- Child to the right has a value >= the Parent Node
+		 - No two Nodes can contain the same value
+
+**A Heap:**
+	- A Heap is a special Tree where all Parent Nodes **compare** to their Child Nodes in some way by being **more** or **less** extreme
+	- They will be either **greater than** or **less than** their Child Nodes
+	- Whether the Parent is greater or less than its Child Nodes **determines where the data is stored**
+	- It is usually dependent on the Parent Node’s value
+
+
+**Min-Heaps:**
+	 - A **Min-Heap** is a Tree where the value of the **Root Node** is less than every one of its Child Nodes
+	- This **must be true recursively** for all other Parent Nodes in the Tree (they must all always be less than their children).
+	
+
+{{.\pasted_image.png}}
+
+
+**Max-Heaps:**
+	- Exact opposite of Min-Heaps. Value at the root must be **greater** than the values of each of its Child Nodes
+	- Same **must be true recursively throughout the Tree. Example below:**
+	
+{{.\pasted_image001.png}}
+
+
+**Heaps are extremely easy to insert or remove from, given the way they are structured (min or max heap)**
+

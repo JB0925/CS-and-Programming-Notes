@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-06T23:28:28-04:00
+
+====== Adjacency List vs Adjacency Matrix ======
+Created Friday 06 August 2021
+
+**Adjacency List						Adjacency Matrix**
+	- Can take up less space					- Can take up more space in sparse graphs
+	in sparse graphs						because you have to hold space (**0's**) for 
+													future potential connections
+	- Faster to iterate over all					
+	edges								- Slower to iterate over all nodes, because 
+													there are more "empty" spaces, with 0s 
+	- Can be slower to lookup 				present
+	a specific edge							
+	-									- Can be faster to look up a specific edge

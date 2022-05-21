@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-30T00:38:37-05:00
+
+====== Peak Finding - 1D ======
+Created Wednesday 30 December 2020
+
+A peak is defined as where a[n-1] < a[n] >= a[n+1]
+
+In the case where a[n] is the corner of an array, if a[n] is greater than it's neighbor (either to the right or left, depending on which corner), it is also a peak
+
+This is a **recursive, divide and conquer algorithm**
+
+**def peak_find(a):**
+	if len(a) > 2:
+		mid = len(a) // 2
+		left = a[:mid]
+		right = a[mid:]
+		
+		if a[mid] < a[mid-1]:
+			return peak_find(left)
+		
+		elif a[mid] < a[mid+1]:
+			return peak_find(right)
+		
+		else:
+			return a[mid]
+	
+	if len(a) == 2:
+		return max(a[0], a[1])
+	
+	return 'no peak'
+	

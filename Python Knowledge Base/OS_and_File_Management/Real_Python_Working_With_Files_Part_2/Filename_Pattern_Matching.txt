@@ -1,0 +1,68 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-21T12:29:01-04:00
+
+====== Filename Pattern Matching ======
+Created Wednesday 21 October 2020
+
+Once you get a list of files in a directory with either **os.listdir()**, **os.scandir()**, or **pathlib.Path().iterdir()**, you can then find files that match your criteria:
+
+**Four Methods You Can Use for Pattern Matching:**
+	1). **endswith()** and **startswith()** **string** module methods
+	2). **fnmatch.fnmatch()**
+	3). **glob.glob()**
+	4). **pathlib.Path.glob()**
+	
+
+**1). Using String Methods**
+	**Example:**
+	import os
+	
+	for name in os.listdir('some_directory'):
+		if name.endswith('.txt'):
+			print(name)
+
+**This would return a large list of file names that are text documents.**
+
+
+**2) fnmatch.fnmatch() Example:**
+	import os
+	import fnmatch
+	
+	for name in os.listdir('some_directory'):
+		if fnmatch.fnmatch(name, '*.txt'):
+			print(name)
+
+**This would return the same as above.**
+
+
+**3). glob.glob() Example:**
+	is a lot like fnmatch.fnmatch()
+	
+	import glob
+	glob.glob('*.py')
+	
+**Would return a list of all the files you have that are .py files.**
+
+	**Another Example:**
+		import glob
+		for name in glob.glob('*[0-9]*.txt'):
+			print(name)
+
+**Would print the name of every .txt file that had a 0-9 digit in the title.**
+
+
+**Using glob.glob() to do file pattern matching:**
+
+{{.\pasted_image.png}}
+
+{{.\pasted_image001.png}}
+
+
+{{.\pasted_image002.png}}
+
+
+{{.\pasted_image003.png}}
+
+
+

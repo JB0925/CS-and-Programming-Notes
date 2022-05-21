@@ -1,0 +1,47 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-20T08:09:51-04:00
+
+====== Typing and Data Collections ======
+Created Monday 20 September 2021
+
+From here on, collections refers to data structures such as lists, tuples, sets, and dictionaries.
+
+
+**Rule #1:** You should try as best as you can to make these types of collections contain **one** type. Or, for a dictionary, all keys are one type, and all values are one type (could be the same type as the keys, or different).
+
+	List[int], Dict[str, int], etc.
+	
+
+**Rule #2:** There will obviously be exceptions to this rule, especially when working with things like JSON data and API calls. For this, you can use `**TypedDict.**
+
+	from typing import `TypedDict
+
+**Example:**
+	class Range(`TypedDict):
+		min: float
+		max: float
+		
+	class NutritionInformation(`TypedDict):
+		value: int
+		unit: str
+		confidenceRange95Percent: **Range**
+		standardDeviation: float
+	
+	class RecipeNutritionInformation(`TypedDict):
+		recipes_used: int
+		calories: `**NutritionInformation**
+		fat: **NutritionInformation**
+		protein: **NutritionInformation **
+		carbs: **NutritionInformation **
+	
+	**nutrition_information: RecipeNutritionInformation = get_nutrition_from_spoonacular(recipe_name)**
+	
+
+**NOTES:** Here, the last two lines are setting a variable and making it equal to an API call to the Spoonacular API. **Because this data will be heterogenous**, we have created custom classes that inherit from TypedDict. 
+	Before, if a developer wanted to know what **nutrition_information["fat"]** would return, they would have to either print it out, or read through the API docs. 
+	
+	Now, they can easily see that **nutrition_information["fat"]** will return a **value**, which will be an int, a **unit**, which will be a str, **confidenceRange95Percent**, which will be **Range**, and a **standardDeviation**, which will be a float.
+	
+	What's **Range**? A developer only has to look above to see that it will have two attributes, **min**, and **max**, both of which are floats.
+	

@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-17T00:21:17-04:00
+
+====== Convert List of JSON Files to Dicts ======
+Created Monday 17 August 2020
+
+**Files = list of JSON Files**
+
+def get_movie_data(files: list) -> list:
+	"""Parse movie json files into a list of dicts"""
+	**lst = []**
+**    for file in files:**
+**        c = json.load(open(file))**
+**        lst.append(c)**
+**    return lst**

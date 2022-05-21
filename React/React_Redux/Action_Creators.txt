@@ -1,0 +1,46 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-11-01T13:58:30-04:00
+
+====== Action Creators ======
+Created Monday 01 November 2021
+
+With **Action Creators**, you are moving all of the logic behind an **action type** into a separate file, importing them into where you need them, and then calling them as below:
+
+**NOTE: **When using **action creators** in onClicks, etc., you have to **call** the action **creator function**. See below for example.
+
+**Extended Example:**
+	reduxActionTypes.js
+		export const ADD = "ADD";
+		export const REMOVE = "REMOVE";
+	
+	
+	actionCreators.js
+	**import { ADD, REMOVE } from "./reduxActionTypes"**
+	
+		const add = () => {
+			return {
+				type: ADD
+			}
+		};
+		
+		const remove = () => {
+			return {
+				type: REMOVE
+			}
+		};
+		
+		**export { add, remove };**
+	
+	
+	MyComponent.js
+	import { add, remove } from "./actionCreators"
+	
+	const addNum = () => dispatch(add());
+	
+	return (
+		<>
+			<button onClick={addNum}>Submit</button> 
+		</>
+	);
+

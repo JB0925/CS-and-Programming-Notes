@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-26T23:50:59-04:00
+
+====== Add Placeholder to Form Inputs ======
+Created Monday 26 July 2021
+
+**Example:**
+	name = StringField('Snack Name', validators=[`DataRequired('please fill out this field')], **render_kw={'placeholder': 'Enter Snack Name'}**)
+	
+
+Doing the above will put a placeholder in your form input.
+

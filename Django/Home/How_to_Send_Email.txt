@@ -1,0 +1,63 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-09T10:07:05-05:00
+
+====== How to Send Email ======
+Created Tuesday 09 March 2021
+
+1). Sign up for an account at SendGrid.
+	- on the Sendgrid homepage, clikc "Try for free"
+	- enter in your username, password, email address to create a free account
+	- **make sure that the email you use for Sendgrid IS NOT the same as the Django superuser email (maybe use "jessebrink@gmail.com")**
+	- complete the "Tell Us About Yourself" section
+		- for "Company Website", maybe use the "musical-instrument-search.herokuapp.com/search" as the URL.
+	- Click **Get Started**
+	
+	
+	- On Sendgrid's welcome screen, you will have 3 ways to choose from to send an email. Choose the one that says "**Integrate using our Web API or SMTP relay." **
+	- Click the **Start** button that is beside the above
+	{{.\pasted_image.png}}
+	
+	- On the next section, where you choose from **Web API** and **SMTP Relay**, choose **SMTP Relay.**
+	{{.\pasted_image001.png}}
+	
+	- optional: check your email and verify your account for the **Verify My Account** banner to go away at the top of the screen.
+	
+	- click **Choose** under **SMTP Relay**
+	
+	
+	
+	- After finishing the above, under **Create an API Key**, enter a name for your first API key. Maybe **search**?
+	- Click on **Create key**
+	{{.\pasted_image003.png}}{{.\pasted_image004.png}}
+	
+	**NOTE: **Even though you create an API key, you don't have to use it. You can still use **SMTP.**
+	
+	
+
+**WHAT TO DO IN DJANGO SETTINGS.PY:**
+	- 1). vi project/settings.py
+		- update the email backend to use SMTP
+		{{.\pasted_image005.png}}
+	
+	2). {{.\pasted_image006.png}}
+			- **DEFAULT_FROM_EMAIL** needs to be the email account you used with **Sendgrid**
+			 for **EMAIL_HOST_USER **and **EMAIL_HOST_PASSWORD**, use config and store those in a **.env** file
+			- make sure to update the **.env .example** file to include the new environment variable examples.
+	
+	
+	3). Run the local server **python manage.py runserver**
+	
+	
+	4). Go back to Sendgrid **Integreate using our Web API or SMTP Relay** page, and select the checkbox next to **"I've updated my settings.**
+		- click on **Next: verify integration**
+		
+	
+	5). After clicking the above in #5, go to the signup page and create a new user. When you click confirm / sign up, you will get an error that basically says you haven't completed **Single Sender Verification** with **Sendgrid.**
+		- you will need to follow **Sendgrid's instructions on how to verify an email account**
+		
+	6). After completing step 5, kill the local server and restart it. Try to sign up a new user, and you should get an email at the address that you just verified.
+	
+	7). Lastly, go back to **Sendgrid**, click on **Verify Integration**
+			- eventually it will pop up with "it worked"
+

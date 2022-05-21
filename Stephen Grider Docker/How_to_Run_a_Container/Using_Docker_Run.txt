@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-02T01:51:06-05:00
+
+====== Using Docker Run ======
+Created Sunday 02 January 2022
+
+**First**, make sure you have a **Dockerfile**.
+
+**Next**, if this is your first time running this container, you need to **build and tag** the Docker image:
+	**docker build -t image_name:dev .**
+	
+	DONT FORGET THE PERIOD AT THE END
+	
+
+**Next, **again, if it's your first time running this image:
+docker run \
+	-it \
+	--rm \
+	-v ${PWD}:/app \
+	-v /app/node_modules \
+	-p 3001:3000 \
+	-e CHOKIDAR_USEPOLLING=true \
+	**image_name**:dev
+
+
+**What Those Options Do:**
+	-it: Starts the container in **interactive mode**,   which is necessary for React apps
+	
+	--rm: removes the container and volumes upon exit
+	
+	-v: mounts the code into the container at **/app**
+	
+	-p: the first number exposes that port to other users for intercommunication, and the second number exposes that port to the host
+	
+	-e: enables a polling mechanism so that hot reloading will work
+	
+**Already Ran This Image?**
+	- you can just run **docker run image_name**
+	

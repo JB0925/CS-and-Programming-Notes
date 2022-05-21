@@ -1,0 +1,46 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-29T12:20:32-04:00
+
+====== forEach ======
+Created Monday 29 March 2021
+
+**Example:**
+	let numbers = [20,21,22,23,24,25,26,27];
+	
+	**numbers.forEach(function(n) {**
+		**return n * n**
+	})
+	
+	
+	**OR**
+	
+	
+	function printTriple(n) {
+		console.log(n * 3)
+	}
+	
+	
+	**numbers.forEach(printTriple)**
+	
+	
+**ON AN OBJECT:**
+	books.forEach(function(book) {
+		console.log(book.title.toUpperCase())
+	})
+	
+
+
+**USING THE INDEX:**
+	function myFunc(arr, num, idx) {
+		if (num % idx === 0) {
+			arr[idx] = num * 5;
+		} else {
+			  arr[idx] = 0;
+		}
+		return arr
+	}
+	
+	
+	**numbers.forEach(myFunc, idx);**
+	

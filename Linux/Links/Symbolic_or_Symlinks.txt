@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-02T11:57:49-04:00
+
+====== Symbolic or Symlinks ======
+Created Thursday 02 September 2021
+
+**Syntax:**
+	- **ln -s path/to/file.txt new_file.txt**
+	
+
+**Notes:**
+	- moving or deleting the parent will cut the ties with the linked file
+	- if you delete the original, the linked file will no longer exist
+	

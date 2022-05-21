@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-10T23:55:10-05:00
+
+====== Attribute Selector ======
+Created Wednesday 10 February 2021
+
+**Attribute Selector:**
+	- Select all of a type of element where a certain attribute meets a certain condition
+	
+
+**Example:**
+	- **input[type="text"]  {**
+		 **width: 300px;**
+		** color: yellow;**
+	  **}**
+	
+
+
+**Explanation:**
+	- the above example selects all **<input>** elements that have a **type** attribute that is set to **text, **and sets those **<input>** elements to have a width of 300px, and the color yellow
+	
+
+
+**Another Example:**
+	- **section[class="post"] {**
+		**color: blue;**
+	**}**
+	
+	

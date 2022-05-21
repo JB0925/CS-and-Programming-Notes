@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T13:40:32-05:00
+
+====== Core Types ======
+Created Sunday 12 December 2021
+
+**number: **1, 5.3, -10, etc.
+
+**string: ** "hi", 'hi', `hi`
+
+**boolean: **true or false
+
+**object: { }**
+
+**Array: [1,2,3]**
+
+**Tuple: [1,2] = a fixed length and fixed type Array**
+	- tuples are represented with **[number, string]**
+
+**Enum: **enum{ NEW, OLD }
+	- Enums are enumerated global constant identifiers
+	
+	
+

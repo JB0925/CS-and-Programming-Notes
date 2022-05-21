@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-16T22:30:48-04:00
+
+====== Testing Delete ======
+Created Thursday 16 September 2021
+
+describe("DELETE /cats/:id", function() {
+  test("Deletes a single a cat", async function() {
+	const response = await request(app)
+	  .delete(`/cats/${testCat.id}`);
+	expect(response.statusCode).toEqual(200);
+	expect(response.body).toEqual({ message: "Cat deleted" });
+  });
+});

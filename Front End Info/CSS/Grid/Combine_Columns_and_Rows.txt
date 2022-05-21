@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-10T23:59:36-04:00
+
+====== Combine Columns and Rows ======
+Created Monday 10 May 2021
+
+The picture below shows 
+	- **grid-template-columns: 100px auto; (2 columns)**
+	- **grid-template-rows: 50px 50px 200px;**
+	
+	{{~/Desktop/ScreenShots/Mixing Rows and Columns.png}}
+	
+	The first column (green), is set to be 100px wide (**grid-template-columns**), and the second column (red and blue) are set to **auto**.
+	
+	The first and second row are each **50px**, while the third one has a **height** of **200px**
+	
+
+{{~/Desktop/ScreenShots/Grid-Rows-and-Columns.png}}
+
+The above has the following settings:
+	- **grid-template-columns: 100px 100px 100px**
+	- **grid-template-rows: 50px 50px**
+	
+	So, three rows and two columns.
+	
+
+
+

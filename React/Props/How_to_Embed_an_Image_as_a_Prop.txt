@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-18T23:33:43-04:00
+
+====== How to Embed an Image as a Prop ======
+Created Friday 18 June 2021
+
+To embed an image, the process is almost the same:
+
+**Passing the Prop Into the App Component:**
+{{~/Desktop/ScreenShots/Props-Passing in an Image.png}}
+
+Here we can see how the **img** prop is passed into the call to the **Hello **component.
+
+**Using the Image in the Hello Component:**
+{{~/Desktop/ScreenShots/Using Image Prop in Hello Component.png}}
+
+Here, we embed the image in a div, and **set the image src to "this.props.img".** 
+
+Again, notice how it is surrounded in curly braces.
+

@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-02T22:21:43-04:00
+
+====== Accessing Data with the Request Variable ======
+Created Friday 02 July 2021
+
+**To access data from a GET request:**
+	request.args
+
+
+**To access form data from a POST request:**
+	request.form
+
+
+**To access cookies:**
+	request.cookies
+
+
+**All of these are accessed like a dict, and have the same methods (keys, values, items, get, etc.)**
+

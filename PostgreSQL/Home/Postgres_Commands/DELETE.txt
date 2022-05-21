@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-04T14:23:30-05:00
+
+====== DELETE ======
+Created Thursday 04 March 2021
+
+**DELETE FROM table_name WHERE column_val = specific_val;**
+	- generic example of deleting from a table
+
+
+**DELETE FROM person WHERE id = 1;**
+	- anyone in the table called **person **with an **id** of 1 will be deleted
+	
+
+**DELETE FROM person WHERE gender = 'Female' AND country_of_birth = 'England';**
+	- will delete all females from England that are currently in the table
+
+**BE CAREFUL** when deleting. A DELETE statement such as:
+		**DELETE FROM person WHERE gender = 'Male';**
+			- would delete all males from the table
+			- think before pressing enter
+
+
+It is usually a good idea to delete based on a primary key, if you are trying to delete a single object.
+
+**NEVER run DELETE FROM table_name;**
+	- it will delete the entire table
+
+
+
+

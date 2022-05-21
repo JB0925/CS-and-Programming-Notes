@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-02T00:13:06-05:00
+
+====== Encapsulation ======
+Created Wednesday 02 February 2022
+
+Encapsulation is the idea of keeping variables and the internal state of a class, hidden from being accessed inside of other methods.
+
+**Example of Non-Encapsulation:**
+
+**public class Main {**
+	**public static void main(String[] args) {**
+		var account = new Account();
+		**account.balance = -1;**
+	}
+}
+
+What if we weren't supposed to have a class with a negative balance, as we see on the last line above the brackets?
+
+Encapsulation is about disallowing other classes or functions to be able to access or change the internal variables of a class.

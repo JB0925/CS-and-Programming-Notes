@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-01T22:29:21-05:00
+
+====== Template URL Links ======
+Created Monday 01 February 2021
+
+Similar to **Flask**, **Django** has **template tags** that look like this:		**{% template tag here %}**
+
+To add URLs to our templates, we can use **{% url 'home' %}	**or** 	{% url 'about' %}**
+
+Either of these work because we added the **class-based views** to the **views** page
+
+**Example:**
+	{{.\pasted_image.png}}
+	
+	And here is the 'home.html' template:
+		{{.\pasted_image001.png}}
+		
+	**NOTE: **Look at the block content / endblock content in the first picture. There is nothing between it, because it is to be filled by what goes on the pages that inherit from it (**see the second picture inside of the block content / endblock content tags**)
+	
+	
+	

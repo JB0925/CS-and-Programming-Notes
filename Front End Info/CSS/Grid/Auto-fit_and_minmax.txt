@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-11T15:43:24-04:00
+
+====== Auto-fit and minmax ======
+Created Tuesday 11 May 2021
+
+We have already seen how we can use fraction units, and it will make the grid content responsive, but what if we want the content to actually add more or less columns, depending on the size of the container at the time?
+
+**Use auto-fit:**
+	**grid-template-columns: repeat(auto-fit, 100px);**
+	**grid-template-rows: repeat(2, 100px);**
+	
+	This will ensure that, as the container grows and / or shrinks, that new elements are added to or taken away from the container.
+	
+**Auto-fit on a small screen gives us four columns:**
+{{~/Desktop/ScreenShots/Auto-Fit Small Screen.png}}
+
+
+
+**Autofit on a medium screen:**
+{{~/Desktop/ScreenShots/Auto-Fit Medium Screen.png}}
+
+
+
+**Autofit on a large screen:**
+{{~/Desktop/ScreenShots/Auto-Fit Large Screen.png}}
+
+
+
+**Each time the container grew in size by 100px, the grid grew to accomodate it using Auto-fit.**
+
+
+**minmax:**
+	- syntax: **grid-template-columns: repeat(autofit, minmax(100px, 1fr);**
+	- minmax tells the page to make the divs start out at 100px, and then, until space allows, stretch them to 1fr. Once there is another 100px available, one of the other divs will join on the same line, and all the other divs will be 100px again.
+
+
+**grid-auto-rows:**
+	- syntax: **grid-auto-rows: 100px;**
+	- This ensures that, as space shrinks and divs are forced into new rows, that those new rows are also 100px as well, instead of only being as tall as their content.
+	
+	**NOTE: **when this is set, you can get rid of **grid-template-rows **altogether, and your rows will automatically grow to each be 100px as the divs get forced into new rows.
+	
+	

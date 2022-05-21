@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-13T22:00:13-04:00
+
+====== Difflib.get close matches ======
+Created Tuesday 13 October 2020
+
+**from difflib import get_close_matches()**
+
+This will return all "close enough" matches in a data structure:
+
+{{.\pasted_image.png}}

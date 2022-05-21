@@ -1,0 +1,66 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-23T22:42:04-04:00
+
+====== localStorage and sessionStorage ======
+Created Sunday 23 May 2021
+
+**localStorage** allows us to store items in the browser, sort of like a built in database.
+
+You would never store important information here, such as credit card numbers, passwords, usernames, etc., but it can be good depending on what the type of information is.
+	**Example:**
+		- a high score for a game
+		- a list of non-sensitive information
+		
+
+**NOTE: **"Primitives" are simple strings, numbers, and boolean values.
+
+
+**sessionStorage **does the same thing, but it does not persist once you close the browser window. 
+The methods for **sessionStorage** are also the same and are written the same.
+
+
+**Saving "Primitives" in localStorage / sessionStorage:**
+	- **localStorage.setItem("mykey", string item)			NOTE: **"String item" can be a raw string enclosed in quotes, or a variable that stores a string.
+																		 It can also be a number, as those will be converted to strings as well.
+
+
+**Reading "Primitives" in localStorage / sessionStorage:**
+	- **localStorage.getItem("someString");**
+	
+
+**Check the Length of localStorage:**
+	- **localStorage.length;**
+	- **NOTE: **There will usually be more than one thing in localStorage. To get the length of that object, you will have to parse the object, then call **myObject.length**
+				  on it. More on that to come.
+
+
+**Saving Longer Objects (arrays, objects) in localStorage / sessionStorage:**
+	- **let myObject = JSON.Stringify(myArray);**
+	- **localStorage.setItem("myKey", myObject);**
+
+
+**Reading Longer Objects (arrays, objects) in localStorage / sessionStorage:**
+	- **let mySavedObject = localStorage.getItem("myKey");**
+	- **JSON.parse(mySavedObject);**
+	
+	Remember, everything in localStorage gets turned into a string. To turn arrays and objects back into themselves (instead of a string), use JSON.parse(), and use JSON.Stringify() to encode the item.
+	
+	
+**Looping Through localStorage:**
+	**for (let item in localStorage) {**
+		**console.log(item);**
+	**};**
+	
+	**NOTE: **This will not necessarily get you the particular object that you want from localStorage. See below to get one object out of localStorage.
+	
+	
+**Iterate Through One Item in localStorage:**
+	**let newObj = JSON.parse(localStorage.getItem("myArray"));**
+	**for (let object of newObj) {**
+		**console.log(object);**
+	**};**
+	
+	**NOTE: **Use **in** instead of **of** if the object is an object instead of an array.
+	
+	

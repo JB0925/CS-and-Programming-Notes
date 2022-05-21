@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-20T12:15:17-04:00
+
+====== NOT NULL ======
+Created Thursday 20 May 2021
+
+**NOT NULL:**
+	- makes sure that a NULL value can't be entered into the table
+	- this can be set when creating a table, i.e.:
+		**CREATE TABLE products (**
+			id SERIAL PRIMARY KEY,
+			name VARCHAR(40) NOT NULL,
+			age INTEGER NOT NULL
+		);
+		
+	- this can also be set after the fact, AS LONG AS there are no NULL values in the table in the column you are trying to set it for. If there are, you will have to DELETE or UPDATE those records.
+	
+	- **ALTER TABLE products ALTER COLUMN price SET NOT NULL;**
+		- sets a column to have the NOT NULL constraint after the table has already been created

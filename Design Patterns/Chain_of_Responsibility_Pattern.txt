@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-27T09:01:39-04:00
+
+====== Chain of Responsibility Pattern ======
+Created Wednesday 27 April 2022
+
+The chain of responsibility pattern deals with the idea of many different methods, each dependent upon successful completion of the previous method, being wrapped into one class method.
+
+**Example:**
+	- Say we have an **[[HttpRequest]]** class. For our Http Request, we need:
+		- authentication
+		- compression
+		- logging
+		
+	- Then we have a **`WebServer **class. The Web Server class takes in an Http Request
+	  and processes it, going through three steps: **authentication, compression**, and **logging**
+	
+	- if **authentication** is successful, we move on to **compression**
+	- if that is successful, we move on to **logging**
+	- if **ANY** are **NOT** successful, we break the chain
+	
+	
+	1). We **don't** want all of these to be methods written in the `HttpRequest class; that would violate the **Single Responsibility Principle**.
+
+	2). We also **don't **want to instantiate **new** objects of an **Authenticate** class, etc., in our `**HttpRequest** class, because then it would be tightly coupled.
+	
+	3). So we do a few things:
+		- create an Abstract class [[/.]] Interface, called **Handler**
+		- create **Authenticator, Logger, **and **Compressor** classes that extend / implement the **abstract class **/ **interface**
+		
+		- Now, the `**WebServer** class is no longer tightly coupled to the implementation of the **Authenticator class**, etc.
+		- Instead, it relies on the **Handler **class / interface
+			- This makes it easily extensible, because you can always go and add another **"handler"** to the chain, the chain being **Auth, Compressor, Logging** currently. 
+			
+			- The `**WebServer** class will not break and is not totally dependent on any of those three necessarily; it relies on the handler and its **handle()** method to call on the next method in the **chain of responsibility**.
+	
+	
+	4). **NOTES ON THE HANDLER:**
+		- The **Handler** is an abstract class / interface that has one method: **handle()**
+		- The **Handler **also has one **Field**: **next**.
+			- **"next"** is a reference to the next **Handler instance** in the chain, and with it we can call **next.handle()**.
+

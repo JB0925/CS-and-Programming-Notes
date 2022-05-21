@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-26T14:43:00-05:00
+
+====== Buttons ======
+Created Friday 26 February 2021
+
+All Bootstrap buttons involve the class **btn** and then a variation such as **btn-primary** or **btn-danger**, etc.
+
+You can use the **btn btn-type** class on anchor tags, inputs, etc.
+
+There is also a **btn btn-type-primary**, etc., class where you can have a button appear as an outline with the border being the **primary** color or which ever color you choose. **When you hover over them it fills in with color.**
+
+You can change the size with something like **btn btn-lg** to make a large button, etc.
+
+You can make block buttons with **btn btn-block.**
+
+You can make disabled buttons as well.
+
+
+

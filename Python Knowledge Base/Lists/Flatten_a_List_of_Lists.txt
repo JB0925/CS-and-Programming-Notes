@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-24T12:34:57-05:00
+
+====== Flatten a List of Lists ======
+Created Tuesday 24 November 2020
+
+There are a few approaches:
+
+"**LoL" = [[1,2], [3], [4,5], [6,7,8]]**
+
+1). **sum("LoL", [ ])**
+		returns **[1,2,3,4,5,6,7,8]**
+		
+
+***more intuitive***
+2). **import itertools**
+	 **list(itertools.chain(*"LoL"))**
+		returns **[1,2,3,4,5,6,7,8]**
+
+
+3). For more deeply nested lists, you will need to use recursion:
+		**def flatten(lol):**
+			nums = [ ]
+			for item in lol:
+				if isinstance(item, list) or isinstance(item, tuple):
+					nums += flatten(item)
+				else:
+					nums.append(item)
+			
+			return nums
+

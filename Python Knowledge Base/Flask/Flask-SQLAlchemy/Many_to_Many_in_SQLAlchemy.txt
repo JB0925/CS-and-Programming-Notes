@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-22T23:54:24-04:00
+
+====== Many to Many in SQLAlchemy ======
+Created Thursday 22 July 2021
+
+**Examples:**
+	class Employee(db.Model):
+		id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+		name = db.Column(db.String, nullable=False, unique=True)
+		state = db.Column(db.String, nullable=False)
+		dept_code = db.Column(db.Integer, db.foreign_key(deparments.id))
+
+	class Projects(db.Model):
+		proj_code = db.Column(db.String, primary_key=True)
+		proj_name = db.Column(db.String, nullable=False, unique=True)
+	
+	class EmployeeProjects(db.Model):
+		emp_id = db.Column(db.Integer, primary_key=True, db.foreign_key(Employee.id))
+		
+		proj_code = db.Column(db.String, primary_key=True, db.foreign_key(Projects.proj_code))
+		
+		role = db.Column(db.String)
+
+	   **NOTE:** The double primary key in `**EmployeeProjects** ensures that we will only see **one employee** with **any specific project** one time. In other words, **Joe - server - auditor** and **Joe - car - design** is fine, but **Joe - server - auditor **and **Joe - server - coder** is not ok and won't be accepted.
+
+

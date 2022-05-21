@@ -1,0 +1,61 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-22T14:23:57-04:00
+
+====== String Methods ======
+Created Monday 22 March 2021
+
+**NOTE: **Method chaining is an option in JavaScript.
+
+**toUpperCase():**
+	string = 'it's hot outside'
+	**string.toUpperCase()**
+		- returns '**IT'S HOT OUTSIDE'**
+		- **DOES NOT **change the original variable "**string**"
+
+
+**toLowerCase():**
+	string = 'it's hot outside'
+	  **string.toLowerCase()**
+		- returns **'it's hot outside'**
+		- **DOES NOT **change the original variable **"string"**
+		
+
+**NOTE: **To set these variables to any of the string methods, it needs to be declared, i.e. **string = string.toUpperCase();**
+
+
+
+**trim():**
+	string = '        it is hot outside           '
+	**string.trim()**
+		- returns **'it is hot outside'**
+		- removes leading and trailing whitespace
+		**DOES NOT** permanently alter the variable
+	
+	**Example of method chaining:**
+		- **string.trim().toUpperCase()**
+			- returns **'IT IS HOT OUTSIDE'**
+
+
+**indexOf(string):**
+	str = 'catdog'
+	**str.indexOf('cat')**
+		-returns 0
+	**str.indexOf('dog')**
+		- returns 3
+	
+	**indexOf returns the start index of a particular substring.**
+	
+	**In the case where the substring isn't in the larger string, it returns "-1".**
+	
+	**NOTE:** In the case where there are two or more of the substrings present, it will **ONLY **tell you the position of the **FIRST **instance of the substring.
+	
+	**NOTE: indexOf** is **case-sensitive**
+			i.e. **"Baseball".indexOf('b')**
+					- returns **4** because the first 'b' is uppercase
+
+
+
+
+
+

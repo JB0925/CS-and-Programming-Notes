@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-03T21:29:48-05:00
+
+====== NULLIF with COALESCE ======
+Created Wednesday 03 March 2021
+
+**COALESCE** + **NULLIF** works as a sort of try / except / else block where if one value throws an error, it will be caught and return the second value.
+
+{{.\pasted_image.png}}

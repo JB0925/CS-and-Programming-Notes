@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-09T11:10:59-05:00
+
+====== Hook to Only Make AJAX calls if the Component is Mounted ======
+Created Thursday 09 December 2021
+
+**Both of these would go inside of the Component to be created itself, though they could of course be abstracted into a different file, etc.**
+
+const useMountedState = () => {
+	const isMounted = React.useRef(false);
+	
+	React.useEffect(() => {
+	  isMounted.current = true;      **// setting the ref.current to true on mount**
+	  return () => {
+		isMounted.current = false;   **// cleanup function, sets ref.current to false**
+	  };
+	},[]);
+
+	return React.useCallback(isMounted.current, []) **return a memoized version of isMounted.current**
+  }
+
+  const currentlyMounted = useMountedState();     **// calling useMountedState();**
+  
+  React.useEffect(() => {
+	  **// if it's not BOTH mounted AND we have a pokemonName. just return early.**
+	  **// otherwise, return async function call**
+	if (!pokemonName && !currentlyMounted) return;
+	return run(fetchPokemon(pokemonName));
+  }, [pokemonName, run]);
+
+	 **// remember, "run" is just the async function that we turned into a "useCallback" function. It simply sets the state via "dispatch" if the call was successful, and sets the state's error info if unsuccessful.**

@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-25T11:38:09-05:00
+
+====== How to Redirect Allauth Logout Page to Anywhere Else ======
+Created Thursday 25 February 2021
+
+The Django Allauth logout.html has some templating logic that looks like:
+
+{% if redirect_field_value %}
+<input type="hidden" name="{{redirect_field_name}}" value="{{redirect_field_value}}">
+<button type="submit">{% trans 'Sign Out' %}</button>
+{% endif %}
+
+
+If you aren't using the redirect_field attribute, then remove the "if/else" logic, and change **{{redirect_field_name}} to {{ 'next' }} **and the **value** parameter to **{% url 'your_url_here' %}**
+
+Leave the button, submit, and it will take you to your new URL, provided that the url value you passed in exists.
+

@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T21:45:08-04:00
+
+====== Reinstalling packages after cloning ======
+Created Monday 06 September 2021
+
+If you clone a repo and need to install its dependencies, just run:
+	**npm install**
+	
+Without any arguments, **npm install** uses the **dependencies** object in **package.json**
+
+
+

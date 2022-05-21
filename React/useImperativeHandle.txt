@@ -1,0 +1,89 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-11T14:31:15-05:00
+
+====== useImperativeHandle ======
+Created Saturday 11 December 2021
+
+**useImperativeHandle Example:**
+
+useImperativeHandle allows us to pass refs to nested components and still get access to those refs within the parent component.To use **useImperativeHandle**, you'll also need to use **forwardRef**.
+
+**// Creating a "MessagesDisplay" component using "forwardRef".**
+	**// note that "ref" isn't part of the "props" object.**
+	
+const MessagesDisplay = React.forwardRef(function MessagesDisplay({messages}, **ref**) {
+  **// creating a ref inside of this component and using "useLayoutEffect" to synchronously scroll to the bottom for a much smoother effect.**
+
+  const containerRef = React.useRef()
+  React.useLayoutEffect(() => {
+	scrollToBottom()
+  })
+
+  **// establishing the scrollToTop and Bottom fns that will be used in the App component**
+  function scrollToTop() {
+	containerRef.current.scrollTop = 0
+  }
+  function scrollToBottom() {
+	containerRef.current.scrollTop = containerRef.current.scrollHeight
+  }
+
+  **// calling "useImperativeHandle" on the ref that gets PASSED IN, NOT the ref initialized inside of this component. Returning a callback that returns the scroll functions.**
+
+  React.useImperativeHandle(ref, () => {
+	return {
+	  scrollToTop, scrollToBottom
+	};
+  });
+
+  return (
+	<div **ref={containerRef}** role="log">
+	  {messages.map((message, index, array) => (
+		<div key={message.id}>
+		  <strong>{message.author}</strong>: <span>{message.content}</span>
+		  {array.length - 1 === index ? null : <hr />}
+		</div>
+	  ))}
+	</div>
+  )
+})
+
+**// Here is where the "useImperativeHandle" comes into play**
+
+function App() {
+  **const messageDisplayRef = React.useRef()**
+  const [messages, setMessages] = React.useState(allMessages.slice(0, 8))
+  const addMessage = () =>
+	messages.length < allMessages.length
+	  ? setMessages(allMessages.slice(0, messages.length + 1))
+	  : null
+  const removeMessage = () =>
+	messages.length > 0
+	  ? setMessages(allMessages.slice(0, messages.length - 1))
+	  : null
+  
+  **// Because in the return fn, we are passing the messageDisplayRef ref to "MessagesDisplay", it gains access to ALL of the functions, etc., that the `MessagesDisplay component gave in "useImperativeHandle". See directly below.**  
+
+  **const scrollToTop = () => messageDisplayRef.current.scrollToTop()**
+**  const scrollToBottom = () => messageDisplayRef.current.scrollToBottom()**
+
+  return (
+	<div className="messaging-app">
+	  <div style={{display: 'flex', justifyContent: 'space-between'}}>
+		<button onClick={addMessage}>add message</button>
+		<button onClick={removeMessage}>remove message</button>
+	  </div>
+	  <hr />
+	  <div>
+		<button **onClick={scrollToTop}**>scroll to top</button>
+	  </div>
+	
+	  **// forwardin the ref from THIS component to the `MessagesDisplay component**
+	
+	  <**MessagesDisplay ref={messageDisplayRef}** messages={messages} />
+	  <div>
+		<button **onClick={scrollToBottom}**>scroll to bottom</button>
+	  </div>
+	</div>
+  )
+}

@@ -1,0 +1,42 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-05T23:30:53-04:00
+
+====== Sets ======
+Created Saturday 05 June 2021
+
+Sets are much like they are in Python, just not as robust.
+They still only save unique values.
+
+**Create a New Set:**
+	let mySet = new Set();
+
+
+**Set Methods:**
+	**mySet.add(value or iterable);**
+		adds a new value to a set
+	
+	**mySet.has(value)l**
+		checks to see if a value is in a set
+	
+	**mySet.size;**
+		returns the length of the Set
+	
+	**mySet.clear();**
+		wipes out the entire Set
+	
+	**mySet.delete(value);**
+		removes one value from a Set
+
+
+**Iteration Methods:**
+	**mySet.keys();**
+		returns an array like object that can be looped over, but is not an array
+	
+	**mySet.values();**
+		same as above
+	
+	**mySet.entries();**
+		returns an array-like object that contains an array of **[value, value]** for each value in the Set.
+
+

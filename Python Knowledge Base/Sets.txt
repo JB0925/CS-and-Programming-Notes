@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-02T22:07:56-04:00
+
+====== Sets ======
+Created Sunday 02 August 2020
+
+Set Comprehension:
+
+Remove duplicate names and title case them in one statement with a set comprehension:
+
+{{.\pasted_image.png}}

@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-24T00:45:57-04:00
+
+====== Conventions and Good Style ======
+Created Thursday 24 June 2021
+
+1). Each React component goes in a separate file.
+	**src/Car.js **is for the **Car** component
+	**src/House.js** is for the **House** component, etc.
+	
+	Name of both **component** and **file** are **capitalized.**
+	
+
+2). **All** components **extend** **"Component" **(imported from React)
+	- each component is **exported** as the **default object**
+	
+	**Example:**
+		**import React, { Component } from 'react';**
+		
+		**class App extends Component {**
+			stuff here;
+		**};**
+		
+		**export default App;**
+
+
+	**NOTE: **The above is a little bit **different** from what we learned in the beginning.
+	
+
+
+3). The pre-created **skeleton** assumes the top object is **App** in **App.js**.
+	- it is best to keep this intact
+	
+	
+
+
+

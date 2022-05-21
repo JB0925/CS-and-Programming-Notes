@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-31T13:18:51-04:00
+
+====== RESTful Route Responses ======
+Created Saturday 31 July 2021
+
+**GET/snacks**
+	- returns **200 OK** with JSON describing snacks
+
+**GET/snacks/id**
+	- returns **200 OK** with JSON describing single snack
+
+**POST/snacks**
+	- returns **201 CREATED** with JSON of new snack
+
+**PUT or PATCH/snacks/id**
+	- returns **200 OK**, with JSON describing updated snack
+
+**DELETE**
+	- returns **200 OK** with JSON describing success
+
+
+
+

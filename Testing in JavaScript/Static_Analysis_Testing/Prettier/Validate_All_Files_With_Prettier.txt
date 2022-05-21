@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T21:11:40-05:00
+
+====== Validate All Files With Prettier ======
+Created Sunday 09 January 2022
+
+One good key to use in your **scripts** key in **package.json** is:
+	"validate": "npm run lint && npm run build"
+	
+For **prettier**, you can add the **"check-format"** key, as well as a **prettier** key:
+
+**"check-format": "prettier --ignore-path .gitignore --list-different \"**/*.+(js|json)\""**
+
+**Example:**
+
+"scripts": {
+	"bunch of other keys..."
+	**"prettier"**: **"prettier --ignore-path .gitignore \"**/***.+(js|json)\""**
+	**"format": "npm run prettier — --write",**
+	**"check-format": npm run prettier — --list-different,**
+	"validate": "npm run check-format && npm run lint && npm run build"
+}
+

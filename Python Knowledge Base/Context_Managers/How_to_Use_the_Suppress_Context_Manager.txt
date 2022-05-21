@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-25T21:16:32-04:00
+
+====== How to Use the Suppress Context Manager ======
+Created Sunday 25 October 2020
+
+**Example Code Using Try/Except Blocks for Error Handling:**
+
+{{.\pasted_image.png}}
+
+
+**Example Code Using "suppress" from "contextlib":**
+
+**from contextlib import suppress**
+
+{{.\pasted_image001.png}}
+
+The "suppress" context manager gives a much neater, easier to read way to handle errors. The reason the "TypeError" comes first is that it is the first try/except block written in the code.
+
+https://docs.python.org/3/library/contextlib.html

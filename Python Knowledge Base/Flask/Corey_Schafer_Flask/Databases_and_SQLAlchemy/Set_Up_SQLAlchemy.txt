@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-02T14:42:19-05:00
+
+====== Set Up SQLAlchemy ======
+Created Wednesday 02 December 2020
+
+**from flask-SQLAlchemy import SQLAlchemy**
+
+after the import:
+
+	**Step 1:**
+		add another method to the app.config:
+			{{.\pasted_image.png}}
+	
+	**Step 2:**
+		create an instance of the SQLAlchemy class:
+			{{.\pasted_image001.png}}
+	
+	**Step 3:**
+		create classes/SQLAlchemy tables:
+			{{.\pasted_image002.png}}
+			{{.\pasted_image003.png}}
+	
+	**Step 4:**
+		create the database by writing **db.create_all()** before **app.run(debug=True)**
+		
+		
+	**NOTE: **alternatively, you can create the database from the command line (Windows):
+			**In the project directory**
+			call **python**
+			call **from flaskblog.py import db**
+			call **db.create_all()**
+			
+			if no errors are given, it should be running successfully.
+

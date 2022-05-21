@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-14T14:11:57-04:00
+
+====== Method Binding with Arguments ======
+Created Wednesday 14 July 2021
+
+How to pass arguments to methods that need to be bound:
+
+**Starter Code:**
+
+class App extends Component {
+	  constructor(props) {
+		  super(props)
+		  this.state = {
+			  color: 'cyan'
+		  }
+		  **this.handleClick = this.handleClick.bind(this);**
+	  };
+	  
+	  **changeColor(newColor) {**
+		this.setState({color: newColor})
+	  **}**
+	
+	  render() {
+		return (
+			<div className="ButtonList" style={{backgroundColor: this.state.color}}
+				<button style={colorObj} onClick={**this.changeColor.bind(this, arg)**}
+			</div>
+		);
+	  };
+ };
+
+
+`ChangeColor was bound, and the arg was passed in alongside **this.**
+
+The other way to do it would be with an arrow function, like this:
+		**onClick={() => this.changeColor(c)}**
+

@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-21T14:11:52-04:00
+
+====== Searching a BST ======
+Created Wednesday 21 July 2021
+
+**Pseudocode:**
+	1). Designate a node to be the "current node". This is always the root node at the beginning of the algorithm.
+	
+	2). If **current node** == value we are searching for, return it.
+	
+	3). If the value we are looking for is **less than** the current node's value, we search **current node's LEFT **subtree.
+	
+	4). If **cur.val < search.val**, we search **cur's RIGHT subtree.**
+	

@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-02T21:58:27-04:00
+
+====== What is React ======
+Created Wednesday 02 June 2021
+
+React is a front-end framework / library that allows us to make reusable components such as buttons, lists, etc., by combining JS, HTML, and usually CSS.
+

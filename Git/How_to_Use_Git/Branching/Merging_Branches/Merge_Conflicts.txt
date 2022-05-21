@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-11T15:07:13-05:00
+
+====== Merge Conflicts ======
+Created Wednesday 11 November 2020
+
+Merge Conflicts occur when you are writing and committing code to the Master branch on your side, other people are doing the same on their side on a different branch than you, and the Master branch is getting updated from all different places
+
+Sometimes Git doesn't know what you want to keep, what you want to delete, etc., so it has to be done manually:
+
+
+**Example:**
+
+git checkout -b quick_test
+
+git status
+
+**#situation where your Master Branch and a side branch both have a line 2 of the same file. How does Git/GitHub know which one to accept?**
+

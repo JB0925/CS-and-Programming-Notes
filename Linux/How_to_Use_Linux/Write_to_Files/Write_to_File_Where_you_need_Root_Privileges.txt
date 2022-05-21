@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-13T20:36:26-05:00
+
+====== Write to File Where you need Root Privileges ======
+Created Friday 13 November 2020
+
+if you are in another directory and want to create a new file or append to an existing file:
+		
+		create and write:
+			**echo text I want to write here | sudo tee [[/path/to/file]]**
+			
+		append to file:
+			**echo text I want to write here | sudo tee -a [[/path/to/file]]**
+			
+
+https://blogs.oracle.com/joshis/sudo-echo-does-not-work-together-in-ubuntu-another-waste-of-time-issue
+

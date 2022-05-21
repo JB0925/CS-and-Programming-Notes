@@ -1,0 +1,56 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-20T01:17:15-04:00
+
+====== Create a Linear Plot ======
+Created Saturday 20 March 2021
+
+**Imports Needed:**
+	{{.\pasted_image.png}}
+	{{.\pasted_image001.png}}
+	
+
+**How to modify aspects of the plot:**
+	{{.\pasted_image002.png}}
+	
+	**for more info, look into "plt.rcParams"**
+
+
+Of course, we will need data. Use your own data, user generated data, an API, or use the following to get price chart data:
+	**import pandas_datareader**
+	**from datetime import datetime**
+	**import pandas_datareader.data as web**
+	
+	You will need data for the x and y axes.
+	
+**The code framework:**
+{{.\pasted_image003.png}}
+
+For this graph, I had to pass in a coin name, a currency, and a number of days. This was for my data source, and was not needed directly for the chart itself.
+
+**cg = **My data source, the [[CoinGecko]] API
+**chart = **the method from the Coin Geck API class, pulling data from the "prices" key
+**imgdata = **a way to temporarily save the chart drawing
+**prices** = a dict to gather the data and pass it into pandas
+
+**df =** a pandas method to create a Dataframe from a dict. **Using "orient='index' **and **columns=['Price']** was to tell pandas to use the prices as the pandas Series, or the column, and to use the keys (**time**) as the row ids
+
+**plot** = calling the Price column to plot and passing in the label, **figsize (size of the entire chart object)**, chart title
+
+**fmt, ticker, plot.yaxis.set_major_formatter(ticker)** were the ways to convert the prices into traditional money amounts with dollar signs.
+**plt.xlabel, plt.ylabel = **giving the x and y axes a label
+
+**plt.legend() = **gives the chart a legend
+
+**plt.savefig(imgdata, format='svg')** = a way to temporarily save the chart, with **imgdata** being where to save the chart, and **format **the type of file to save it as
+
+**imgdata.seek(0)** = access the first item saved in **imgdata**
+**data = imgdata.getvalue()** = actually get the already drawn chart
+
+**plt.cla()** = clears the plot so that a new one can be used
+
+Instead of **return data**, we could call **plt.show()** to show the plot instead of save it. If that is the case, everything to do with StringIO is not necessary.
+
+
+
+

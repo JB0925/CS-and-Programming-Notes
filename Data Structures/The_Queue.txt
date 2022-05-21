@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-16T14:55:35-04:00
+
+====== The Queue ======
+Created Wednesday 16 September 2020
+
+**The Queue:**
+	- A sequential access data structure that follows the **FIFO** method, or First In First Out
+	- Stacks and Queues are similar
+	- think of a cafeteria line....first kid in line is always the first one out
+	- first element added will be the first to be removed
+	- **stack = add AND remove elements from the top or head**
+	- **queue = add elements to the back, remove elements from the front/top or head**
+	
+**Queue Methods:**
+	1). Enqueue Method
+	2). Dequeue Method
+	3). Peek Method
+	4). Contains Method
+	
+**Enqueue Method: 			Enqueue(object)**
+	- adds elements to the tail of the queue
+	- add another element, and the first item in becomes the head of the queue, while the one just added becomes the tail
+	
+**Dequeue Method:			Dequeue(), returns the removed element back to the user/programmer**
+	- removes elements from the head of the queue
+
+**Peek Method:				Peek(), returns the first object WITHOUT removing it**
+	- let's you look at the top element of the queue without removing it
+
+**Contains Method:			Contains(object), returns boolean**
+	- returns whether or not the queue contains the given object
+	
+	

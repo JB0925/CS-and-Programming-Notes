@@ -1,0 +1,42 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-10T11:25:34-05:00
+
+====== Share Volumes Between Host and Container ======
+Created Wednesday 10 March 2021
+
+**Inside of whichever directory you choose (maybe [[/home/jesse]]), create a directory (let's call it "website")**
+
+Inside of that subdirectory, create a file called **index.html**
+
+Create the **index.html **file, then open up Docker Desktop.
+
+In Docker, start a **container** and **mount the "website" directory to the container.**
+
+
+**In the terminal**, cd into the subdirectory "**website**".
+
+
+Once there, run **docker run --name website -v $(pwd) -d -p 8080:80 nginx **to start the container
+	- the **nginx** is totally dependent upon the container name
+
+
+Then run **docker run --name YOUR_NAME_HERE -v $(path/to/files):info/on/docker/on/where/to share/files:ro -d -p 8080:80 IMAGE NAME HERE**
+
+
+**Refresh Your localhost and you will be serving your files from Docker.**
+
+
+This is called **mounting** your files and directories to Docker.
+
+
+Run **docker exec -it CONTAINER_NAME bash **
+	- **it = interactive mode**
+	- running this command puts you inside of the Docker container
+	- inside of the container, if you **ls** into the path where you mounted your files and directories onto the container, you will be able to see your files and materials
+	- **You cannot create files inside of the container, as it is a read-only system**
+	- To make it so that you can also write files, remove the '**:ro **from your call to run the container as a volume
+	- You can also create files inside of the container that will show up in your file system's folders
+	
+
+

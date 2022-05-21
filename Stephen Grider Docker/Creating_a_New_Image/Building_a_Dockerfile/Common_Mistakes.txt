@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-04T21:00:54-05:00
+
+====== Common Mistakes ======
+Created Tuesday 04 January 2022
+
+**1).** If your base image doesn't have the package manager you need, go to **hub.docker.com** and choose one that does
+
+**2). **Forgetting to copy the files so that the base image knows where they are.
+	COPY [[./]] [[./]]
+	
+	**NOTE: **Do this before the RUN command
+
+**3).** Forgetting to add a WORKDIR
+	WORKDIR /usr/app
+	
+**4). **Forgetting to map the port you want to connect to when running the image:
+	docker run -p 5000:5000 myimage:latest
+	

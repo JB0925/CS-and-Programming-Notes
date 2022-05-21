@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-02T23:17:57-05:00
+
+====== WHERE clause and AND ======
+Created Tuesday 02 March 2021
+
+The WHERE clause is a conditional statement
+
+**Example:**
+	**SELECT * FROM person WHERE gender = 'Female';**
+		- returns only the rows and columns of people whose gender is female
+	
+	
+	**How to Use Multiple Conditions:**
+		**SELECT * FROM person WHERE gender = 'Female' AND country_of_birth = 'China';**
+			- returns all rows and columns for people with gender = Female and country of birth = China
+	
+	
+	Can also add in other statements, such as ORDER BY:
+		**SELECT * FROM person WHERE gender = 'Female' AND country_of_birth = 'China' ORDER BY first_name;**
+			- returns the same as directly above, except they will be sorted by first name
+	
+	
+	Can have more than one clause in the AND statement using ( ):
+		**SELECT * FROM person WHERE gender = 'Female' AND (country_of_birth = 'China' OR country_of_birth = 'Russia') ORDER BY first_name;**
+			- see above, this time plus Russia
+
+
+	You can also have Mathematical Clauses in your WHERE statement
+		**SELECT * FROM car WHERE price / miles > 500;**
+

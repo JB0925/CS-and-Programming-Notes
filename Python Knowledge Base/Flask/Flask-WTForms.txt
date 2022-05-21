@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-12T12:20:58-05:00
+
+====== Flask-WTForms ======
+Created Friday 12 February 2021
+
+**pip install flask-login**
+**pip install flask-wtf**
+**pip install email_validator**
+
+**NOTE:** To use this, you MUST have **app.config['SECRET_KEY'] = 'mykeyhere'** set in **app.py**
+
+
+{{.\pasted_image.png}}
+
+**Other wtforms fields:**
+	- '**BooleanField, (DateField,DatetimeField), DecimalField, FileField, MultipleFileField, FloatField, IntegerField, RadioField, 'PasswordField**
+
+**wtforms.validators validators that can be passed in:**
+{{.\pasted_image001.png}}
+
+
+
+**Registration Page Example:**
+{{.\pasted_image002.png}}
+
+
+**NOTE: To use validate_on_submit()**, you must include {{ formname.csrf_token() }}
+

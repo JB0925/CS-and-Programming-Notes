@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-03-27T19:10:54-04:00
+
+====== Cycle Detection ======
+Created Sunday 27 March 2022
+
+A cycle is when some value is seen again while looping through items, causing an endless loop.
+
+**Floyd's Cycle Finding Algorithm**
+	- is an algorithm used to detect cycles
+
+**Example:**
+
+public boolean hasCycle(ListNode head) {
+	if (head == null) {
+		return false;
+	}
+	
+	ListNode slow = head;
+	ListNode fast = head.next;
+	
+	**// eventually, if there is no cycle, the Node**
+	**// that is "ahead" should be null**
+	while (slow ≠ fast) {
+		if (fast == null || fast.next == null) {
+			return false;    **// no cycle detected**
+		}
+		
+		**// To keep fast one ahead of slow, **
+		**// we have to increase "fast" by two,**
+		**// while increasing "slow" by one**
+		slow = slow.next;
+		fast = fast.next.next;
+	}
+	
+	**// If we reach here, we have broken out of the loop because fast == slow, meaning that we have cycled around.**
+	return true;
+}
+
+

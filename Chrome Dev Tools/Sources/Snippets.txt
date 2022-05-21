@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-10T23:58:12-05:00
+
+====== Snippets ======
+Created Friday 10 December 2021
+
+To access snippets, click the » in the top left corner of the **sources** tab.
+
+Scroll down to **snippets**, and click it, then click "new snippet".
+
+From there, enter what you want in the editor.
+
+Click CMD + S to save
+
+Click CMD + Enter to run

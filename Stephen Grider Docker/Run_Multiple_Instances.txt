@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-25T23:34:09-05:00
+
+====== Run Multiple Instances ======
+Created Tuesday 25 January 2022
+
+To run multiple instances of an app with docker-compose:
+
+**docker-compose up -d --scale image_name=#of instances to run**

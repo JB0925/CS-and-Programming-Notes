@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-25T09:53:41-04:00
+
+====== findAny ======
+Created Monday 25 April 2022
+
+The **findAny** method is the exact same thing as the **findFirst** method, except for the fact that it doesn't find the first instance of the number. 
+
+In most cases, it is best to use **findFirst**.
+
+See findFirst for an example of how to use findAny.

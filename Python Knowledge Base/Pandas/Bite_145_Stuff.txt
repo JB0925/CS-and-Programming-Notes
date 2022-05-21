@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-30T21:55:03-04:00
+
+====== Bite 145 Stuff ======
+Created Sunday 30 August 2020
+
+**import pandas as pd**
+
+**URL = "https://bites-data.s3.us-east-2.amazonaws.com/weather-ann-arbor.csv"
+
+df = pd.read_csv(URL, parse_dates=['Date'])
+df.rename(columns={'Data_Value': 'Value'}, inplace=True)
+df.sort_values('Date', inplace=True)
+df.Value /= 10
+df['the_day'] = df.Date.dt.strftime("%m-%d")** # pull the month-day out
+
+# we want to throw away all the 02-29 entries
+# df.the_day == "02-29" returns a Boolean series, called a mask
+# the ~ inverts the mask, so we only choose entrys that aren't 02-29
+df = df[ ~ (df.the_day == "02-29")]
+
+# pretty confident that this is good now :)
+
+df.sort_values(by=['Date', 'Value'], inplace=True)
+
+mask = df.Date.dt.year == 2015
+
+df2015 = df[mask]
+
+record = df[~mask]
+
+# For the 2015 data, extract any points (highs and lows), for which the 
+# ten year record (2005-2014) record high or record low was broken in 
+# 2015.

@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-21T23:45:52-04:00
+
+====== dateutil.rrule ======
+Created Monday 21 September 2020
+
+awesome date/datetime module that allows you to do so many things!
+
+**Example: **given a start date, return the next 100 **weekdays **(no weekends)....very simple with dateutil.rrule and its supported methods
+
+**from datetime import date**
+
+**from dateutil.rrule import rrule, DAILY, MO, TU, WE, TH, FR**
+
+TODAY = date(year=2018, month=11, day=29)
+
+
+def get_hundred_weekdays(start_date=TODAY):
+	"""Return a list of hundred date objects starting from
+	   start_date up till 100 weekdays later, so +100 days
+	   skipping Saturdays and Sundays"""
+	**date_range = rrule(DAILY, count=100,**
+**                       byweekday=(MO, TU, WE, TH, FR),**
+**                       dtstart=start_date)**
+**    return [dt.date() for dt in date_range]**
+
+
+helpful pages: https://dateutil.readthedocs.io/en/stable/examples.html
+
+https://stackoverflow.com/questions/54517136/i-want-to-get-all-dates-exclude-weekends-between-two-dates-in-python
+
+last link, about 2/3 way down the page

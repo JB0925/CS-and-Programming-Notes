@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-28T23:44:54-04:00
+
+====== Higher Order Functions (Function Factories) ======
+Created Sunday 28 March 2021
+
+You can create a function inside of a function, give both a parameter, assign the parent function to a variable, and then call the "variable" with the argument for the inside function.
+
+
+**Example:**
+	function inBetween(a, b) {
+		function number(c) {
+			return c >= a && c <= b
+		}
+	}
+
+let number = inBetween(0, 10);
+
+console.log(number(5));
+	returns true
+
+console.log(number(15));
+	returns false
+	

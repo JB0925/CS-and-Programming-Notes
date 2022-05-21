@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-17T14:06:23-04:00
+
+====== parentElement, nextSibling, children, previousSibling ======
+Created Saturday 17 April 2021
+
+These methods are used to get information about an element's next or previous sibling element, their parent element, or their children.
+
+<html>
+	<body>
+		<div>
+			<ul>
+				<li>Number 1</li>
+				<li>Number 2</li>
+				<li>Number 3</li>
+			</ul>
+		</div>
+	</body>
+</html>
+
+
+**Examples using the above HTML:**
+	- let ul = document.querySelector('ul');
+	- let li = document.querySelector('li'); **returns the first <li>**
+	
+	**ul.parentElement**
+		- returns information about the **<div>**
+	
+	**ul.parentElement.parentElement**
+		- returns information about ul's parent's parent, i.e. **<body>**
+	
+	**ul.children**
+		- reuturns information about all **<li>** tags
+	
+	**li.nextSibling**
+		- returns information about the **second <li> tag**
+	
+	**li.previousSibling**
+		- returns null, since there is no previous sibling for the first li tag
+
+
+

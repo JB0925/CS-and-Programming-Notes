@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-16T15:44:41-04:00
+
+====== getElementsByTagName ======
+Created Friday 16 April 2021
+
+Returns an array like structure with all elements that include the passed in string.
+
+**Example:**
+	document.getElementsById('input')
+		might return **[input, input, input]**, or similar
+	
+	
+	if returned, you can reference the elements by index, i.e.:
+		**const lst = document.getElementsById('input');**
+		
+		**console.log(lst[0]) - will print the first item in the array like structure**
+		
+		you can also **get the length of the array like structure by calling ".length" on it.**
+		
+		However, you MAY NOT use ANY other array methods
+

@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-11T12:36:01-04:00
+
+====== Middleware ======
+Created Saturday 11 September 2021
+
+**Middleware** is code that runs **in the middle of** the request / response cycle.
+
+In Express, middleware are functions that get access to the **req **and **res** objects and can also call the **next** function.
+
+**express.json()** is an example of middleware.
+The **404** and **global error** handlers are examples of middleware.
+
+It allows you to separate your code into more logical groupings and provide more robust error handling.

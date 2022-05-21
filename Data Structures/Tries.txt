@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-25T23:58:34-04:00
+
+====== Tries ======
+Created Friday 25 September 2020
+
+**Tries:**
+	- A **Trie** is a special Tree with **restrictions**
+	- It is a **Tree-like Data Structure** whose **Nodes store letters of an alphabet in the form of characters**
+	- We can **carefully construct this Tree of Characters** in a way that **allows us to quickly retrieve words in the form of Strings by traversing down a Path of the Trie in a certain way**
+	
+
+**Trie – Visualization:**
+	- Starts like a regular Tree, with a Root Node, but in this case the Root Node is empty
+	- Also stored in the Root Node is an array containing a set of references. At first, these references all point to Null, but can be slowly filled with references to other Nodes.
+	- First Child Node will have a letter as the Data in the Node, then references pointing to a new letter if **“D + new_letter” are the beginning letters of any new word.**
+	- **So D will have a reference to “A”, because “Da” is the start of many English words (Dad, Dark, Date, etc.)**
+	- **D will not have a reference to “b” because there are no English words where the first two letters are “Db”.**
+	- The Node will go through the entire alphabet doing the same thing (no reference to C because no “Dc” words, same for “Dd”, “De” will have a reference, because there are words that begin with “De”.
+	- **The process will repeat for all of the New Child Nodes, but will ONLY have references to letters that combine with the Node and its Parent Node to continue to build words. See below the picture:**
+	
+	
+	{{.\pasted_image.png}}
+	
+
+	**From the picture above, A would have references to B, D, Y, etc., because those letters combined with the Parent Node of A (D), continue to make words. **
+	**There would be NO reference to A coming FROM A, because “Daa” is not a word/beginning of a word.**
+	**See Below:**
+	
+	{{.\pasted_image001.png}}
+	
+	
+	**Pros of this Approach:** Depending on the Path you take down the Trie, you can create multiple words from many choices of Strings.
+	
+	**Cons of this Approach:**  How does the computer know that you’ve reached the end of your desired word, and you don’t want to continue down the path? **Use a flag. Perhaps use a “.” as a flag.**
+	
+	**Tries – Use Cases in Real Life:**
+		**1).** Spell-check
+		**2).** Auto-complete
+	Big programs like iOS or Google Docs don’t just store Tries with a few words, or even all the words that begin with a certain letter…..they usually store the entire English Dictionary.
+	
+	Using the Trie in a Spell-Check or Auto-Complete program is a process of elimination. If you type S, it will start down that branch of the Trie, and ignore the other 25 branches.
+	Then, if you type a “u” to make “Su”, another 95% of possible solutions get deleted.
+	With each extra letter, the Trie gets narrowed down.
+	
+	
+
+

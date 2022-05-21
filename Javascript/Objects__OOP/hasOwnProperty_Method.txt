@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-19T14:31:38-04:00
+
+====== hasOwnProperty Method ======
+Created Friday 19 March 2021
+
+Every object has a **hasOwnProperty(property_name)** method.
+
+It is a boolean construct.
+
+
+**Usage:**
+	**console.log(myObj.hasOwnProperty("property_name"));**
+		returns **true** if it does have that attribute, and **false** if not.
+

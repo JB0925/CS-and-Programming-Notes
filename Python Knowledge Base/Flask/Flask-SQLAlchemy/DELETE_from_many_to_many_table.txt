@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-24T00:09:24-04:00
+
+====== DELETE from many to many table ======
+Created Saturday 24 July 2021
+
+This covers how to delete from an association table with a composite primary key (more than one PK), and more than one foreign key.
+
+First, you should have no relationships on the association table.
+
+Second, add **ondelete="CASCADE"** to the foreign key portion of the column definition.
+
+**Example:**
+	- We want to delete a tag, but we can't because of related items in an association table, UNLESS we do the above:
+	
+	NOTE how both keys in `PostTag have **ondelete="CASCADE"** in them, and there are no relationships defined in `PostTag.
+	
+	{{~/Desktop/ScreenShots/SQLAlchemy many-to-many delete.png}}

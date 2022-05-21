@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-05T21:26:05-04:00
+
+====== Flex ======
+Created Wednesday 05 May 2021
+
+**Flex** determines how an element wll grow to fit the available space in a container.
+
+**Flex** is shorthand for three different properties: **flex-grow, flex-shrink, **and** flex-basis**
+
+**Flex-basis:**
+	- specifying the ideal size of an item BEFORE its placed into the container.
+	- can use **px**, **%**, etc. to set the **flex-basis**
+	- **example of align-self (**div one is aligned to the start of the cross-axis) and **flex-basis** (div two is set to 50% of the **main-axis**)
+	- if **display: flex;** in the container, the **main-axis** is the vertical axis, and the item would now have a **height** that is 50% of the **main-axis**
+	
+	
+	
+{{~/Desktop/ScreenShots/Flex Rules.png}}
+

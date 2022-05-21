@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-11-01T13:20:58-04:00
+
+====== Action Types ======
+Created Monday 01 November 2021
+
+For the **type** key in the **action** that gets passed into the reducer, it is common to separate them out into their own file as constant, and then import them. This gives us:
+
+1). Better autocomplete
+2). If something gets typed incorrectly, you will recieve a "not defined" error, rather than failing silently.
+
+**Example:**
+
+reduxActionTypes.js
+
+**export const ADD = "ADD";**
+**export const REMOVE = "REMOVE";**
+**export const UPDATE = "UPDATE";**

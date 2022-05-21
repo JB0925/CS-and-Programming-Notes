@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-16T22:11:11-04:00
+
+====== Testing Create ======
+Created Thursday 16 September 2021
+
+describe("POST `/cats", () => {
+	test("Does the POST route create a new cat?", async() => {
+		const resp = await request(app).post(`/cats`)
+		.send({
+			name: "Ezra"
+		});
+		
+		expect(resp.statusCode).toBe(201);
+		expect(resp.body).toEqual({
+			cat: {id: expect.any(Number), name: "Ezra"
+		});
+	});
+});

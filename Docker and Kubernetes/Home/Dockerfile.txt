@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-11T12:27:04-05:00
+
+====== Dockerfile ======
+Created Thursday 11 March 2021
+
+**How to Build Your Own Images:**
+	- so far we've been downloading images, and then creating containers from them
+	**Dockerfile** allows us to create our own images by listing out the steps to follow to create an image
+		- a series of steps that define how your image is built
+	
+	Once set up, you can build images just from following the steps in the Dockerfile.
+	
+	Make a Google search for the Dockerfile 
+
+
+
+Every Dockerfile has the **FROM** keyword, the **RUN **command, the **CMD** command, **LABEL, EXPOSE**, etc.
+

@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-15T08:58:57-04:00
+
+====== useEffect to Call API on Initial Render ======
+Created Friday 15 October 2021
+
+Often, we will want to make a call to an external API on the initial render of the page.
+
+This is easily done with **useEffect:**
+
+**Example:**
+	import React, { useState, useEffect } from "react";
+	import axios from "axios";
+	
+	const ProfileViewer = () => {
+		const [profile, setProfile] = useState(null);
+		
+		**useEffect**(() => {
+			async function fetchUser() {
+				const userResult = await axios.get(
+					"https://api.github.com/users/elie");
+				setProfile(userResult.data);
+			};
+			fetchUser();
+		}, [ ]);
+	};

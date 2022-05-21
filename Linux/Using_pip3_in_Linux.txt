@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-31T22:48:06-05:00
+
+====== Using pip3 in Linux ======
+Created Sunday 31 January 2021
+
+**pip3 install package_name**
+
+
+**NOTE best practice is to use:**
+	- **sudo pip3 install package_name**
+	
+	if you forget and get a warning message about it not being included on PATH:
+		- **pip3 uninstall package_name**
+		- **sudo pip3 install package_name**
+
+
+https://stackoverflow.com/questions/31133050/virtualenv-command-not-found
+

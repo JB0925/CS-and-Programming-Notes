@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-23T15:35:49-04:00
+
+====== Using Multiple Awaits ======
+Created Friday 23 April 2021
+
+Remember, the **async **and **await** keywords return a Promise by definition.
+
+Because of this, when we use **async** and **await, **we do not have to use **.then** to chain methods together. Chaining **async** and **await** together is as simple as writing **await my code here**, followed by the next function call, etc.
+
+**Example:**
+{{~/Desktop/ScreenShots/Chaining Async and Await Calls.png}}
+
+Instead of many **then** clauses, we just use **await** in front of each call to move the button across the page.
+
+To catch any errors, we move **catch** to the called function at the bottom and use it in a standard way.

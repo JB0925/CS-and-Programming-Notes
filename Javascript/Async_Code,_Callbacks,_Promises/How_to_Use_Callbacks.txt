@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-20T22:02:48-04:00
+
+====== How to Use Callbacks ======
+Created Tuesday 20 April 2021
+
+Say you have written code to use **setTimeout()** to move a button 100px to the right every second. It works great, but you want to put it in a function. Doing in a **for** loop will not work:
+
+{{~/Desktop/Screen Shot 2021-04-20 at 10.32.29 PM.png}}
+
+
+**Instead, you have to pass in a CALLBACK:**
+
+Below is the function AND the callbacks being passed in:
+
+{{~/Desktop/Screen Shot 2021-04-20 at 11.26.20 PM.png}}
+
+The top is the function with some checks for the document boundary that basically say "if the distance I want to move is beyond the right edge of the document, then stop."
+
+At the bottom are the callback functions being passed in.
+
+
+**The way that most traditional JS callbacks are written, is that they have two functions passed in - a SUCCESS callback, and a FAIL callback. Here is what that looks like:**
+
+{{~/Desktop/Screen Shot 2021-04-20 at 11.47.22 PM.png}}
+
+At the top is the function. **Notice in the function declaration, the addition of "onSuccess" and "onFailure", and then how they are used/placed in the function.**
+
+Then, notice how ugly and hard to read the callbacks are now with both the success and failure callbacks passed in.
+
+**FORTUNATELY, WE CAN USE PROMISES INSTEAD OF THIS UGLY MESS!**

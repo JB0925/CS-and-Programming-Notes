@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-05-06T23:15:33-04:00
+
+====== Collisions ======
+Created Friday 06 May 2022
+
+Collisions occur when a **hash_value** occurs more than once within a hash table.
+
+For example:
+	key = "hi"
+	value = "hello"
+	hashed_key = hash(key)       # pretend this is the number 2
+	**hash_table[hashed_key] = value**
+	
+	Great!    ....but then.....
+	
+	key ="yo"
+	value = "sup"
+	hashed_key = hash(key)	    # pretend this is also 2
+	**hash_table[hashed_key] = val.....wait a second.....**
+	
+
+You can see that there is already a value there, and we don't necessarily just want to kick out the already existing key : value pair.
+
+**So How Do We Handle Collisions Like Above?**
+
+**NOTE:**
+	- Hash functions are designed to try to minimize the amount of collisions that occur, but in the event that they do....
+
+1). Chaining
+	- if a slot in the hash table only has one value, then we just insert it. **If there is a collision, then the "value" becomes essentially a list of tuples, where the first item is the key, and the second is the value.**
+		key ="hi"
+		value = "hello"
+		hashed_key = hash(key)
+		hash_table[hashed_key] = [("hi", "hello"), ("yo", "sup")]
+		
+		We then have to iterate through the small list, checking to see if the key is present, and then returning the value.
+		
+
+2). Open Address Hashing
+	- Open Address Hashing involves creating a very large hash table and then, developing a plan to find the next available open space. This process is known as **probing**.
+		**Examples of Probing:**
+			- hashed_key = hash(key)
+			- oops, our slot is taken
+			- let's go to "hashed_key + 1"
+				- oh, that's taken, too? let's try "hashed_key + 2"
+				- etc.
+			
+			**In this example, when looking up a key, if we get to an empty space,** **this tells us that the key is NOT present in the table.**
+			
+			The above means that when **DELETING** keys and values, that it is important to not completely delete the key and value, but rather leave some kind of **placeholder **in its place, to let us know to keep searching, instead of thinking that this slot was never occupied.
+			
+			
+		**Another Example of Probing:**
+			- Same idea as above, but instead of "hash, hash + 1, hash + 2", etc. you might use "hash, hash ** 2, hash ** 4", etc. as the probing sequence.
+

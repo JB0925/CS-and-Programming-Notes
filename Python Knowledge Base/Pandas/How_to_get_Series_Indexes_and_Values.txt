@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-20T00:09:43-05:00
+
+====== How to get Series Indexes and Values ======
+Created Wednesday 20 January 2021
+
+To get all the indexes in a Series:
+	**return Series.index**
+
+To get all of the values in a Series:
+	**return Series.values**
+
+To get even indexed items:
+	**return Series.iloc[::2]**
+
+To get odd indexed items:
+	**return Series.iloc[1::2]**
+	

@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-10T21:53:43-04:00
+
+====== Debugging Express ======
+Created Friday 10 September 2021
+
+Using the flag **--inspect-brk** will stop your code at the first line
+
+To not stop at the first line in Express, use:
+	**nodemon --inspect**
+	
+	Again, open **chrome://inspect** to pull it up in Chrome Debugger

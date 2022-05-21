@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-14T21:31:55-05:00
+
+====== Array of Class Objects ======
+Created Monday 14 February 2022
+
+**Example:**
+
+Student[] arr = new Student[10];

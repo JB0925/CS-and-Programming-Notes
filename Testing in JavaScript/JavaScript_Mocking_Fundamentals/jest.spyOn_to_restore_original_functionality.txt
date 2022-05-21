@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T13:40:06-05:00
+
+====== jest.spyOn to restore original functionality ======
+Created Sunday 09 January 2022
+
+We can also mock functions with **jest.spyOn**
+
+**jest.spyOn** is nice because it gives us a way to clean up / restore our functions easily.
+
+**Example:**
+	const utils = require("../utils");
+
+	**jest.spyOn(utils, "getWinner");**
+	**utils.getWinner.mockImplementation((p1, p2) => p1);**
+	
+	const winner = thumbWar("Ken Wheeler", "Kent C. Dodds");
+	
+	expect(winner).toBe("Kent C. Dodds");
+	**expect(utils.getWinner.mock.calls).toEqual([**
+		**["Ken Wheeler", "Kent C. Dodds"],**
+		**["Ken Wheeler", "Kent C. Dodds"]**
+	]);
+
+
+	   **// CLEANUP**
+	**utils.getWinner.mockRestore();**

@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-09T20:52:36-04:00
+
+====== Error Handling and Status Codes ======
+Created Friday 09 April 2021
+
+{{file:///var/folders/j3/_t3lnk4s6qj4626wqs10dzf40000gn/T/TemporaryItems/NSIRD_screencaptureui_sYS7rN/Screen%20Shot%202021-04-09%20at%208.53.44%20PM.png}}
+
+
+# To further validate user input **and, more importantly, not crash the server**, use the **fastapi.Response** object to return a message and a status code to the user
+
+**To return the message as "application/json" instead of just a string:**
+
+{{file:///var/folders/j3/_t3lnk4s6qj4626wqs10dzf40000gn/T/TemporaryItems/NSIRD_screencaptureui_rPh0kh/Screen%20Shot%202021-04-09%20at%209.17.25%20PM.png}}
+
+
+
+**Or, even better:**
+
+{{file:///var/folders/j3/_t3lnk4s6qj4626wqs10dzf40000gn/T/TemporaryItems/NSIRD_screencaptureui_BhRtto/Screen%20Shot%202021-04-09%20at%2010.20.32%20PM.png}}
+
+# here, we just pass in a dict and it automatically converts it to JSON.

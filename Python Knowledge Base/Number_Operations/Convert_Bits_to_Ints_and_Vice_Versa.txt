@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-16T20:29:30-05:00
+
+====== Convert Bits to Ints and Vice Versa ======
+Created Wednesday 16 December 2020
+
+Convert an int to bits:
+	{{.\pasted_image.png}}
+		returns **101110		**#the [2:] index takes off a leading "**0b**" from it.
+		
+Add an amount of leading zeros to the above:
+	{{.\pasted_image001.png}}
+		returns:
+			{{.\pasted_image002.png}}
+	
+	**NOTE: **the zfill was needed in an Advent Of Code problem for Day 14 2020, when I had to convert a base 10 number to bits, then compare each digit to a **bitmask** that was 36 digits long. So **zfill** is not necessary, but it was extremely helpful here.
+
+
+**NOTE:**
+	**bin()** takes an **int**, and converts it to a **string**. It takes no other arguments other than the **int**.
+	
+
+
+
+Convert bits to an int:
+	{{.\pasted_image003.png}}
+		returns: **46**, which was the original int that we passed to **bin()**...which is what we expected.
+		
+**Helpful Links:**
+	https://stackoverflow.com/questions/8928240/convert-base-2-binary-number-string-to-int
+	https://stackoverflow.com/questions/10411085/converting-integer-to-binary-in-python
+	

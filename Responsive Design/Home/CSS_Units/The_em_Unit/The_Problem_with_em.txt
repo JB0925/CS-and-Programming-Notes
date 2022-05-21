@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-25T01:03:43-04:00
+
+====== The Problem with em ======
+Created Friday 25 June 2021
+
+**em's** are very convenient for some things, 
+
+**but...**
+
+When used for **font-size**, it has a cascading effect.
+
+**Example:**
+
+.container {
+	font-size: 20px;
+}
+
+.section-one {
+	font-size: 2em;
+}
+
+ul {
+	font-size: 1.5em;
+}
+
+li {
+	font-size: 1.5em;
+}
+
+
+Let's pretend that **.container** is the parent, **.section-one** is in the container, **ul** is in **.section-one** and, of course, **li** is in the **ul.**
+
+
+**.container - 20px**
+**.section-one** - **40px **(2em)
+**ul - 60px** (1.5em)
+**li - 90px **(1.5em)
+
+
+Our font sizes are basically using each other as parent's, and we get to **90px** very quickly.
+

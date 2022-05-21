@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-17T10:03:25-04:00
+
+====== Find the Last Character in a String ======
+Created Wednesday 17 March 2021
+
+Finding the last character in a string is similar to Python, but you can't use the -1 index.
+
+To find the last character, you use the **.length** attribute.
+
+
+**Example:**
+	var lastChar = myString[**myString.length -1**]
+	
+	Again, we use **length - 1** because of the zero based indexing.
+	
+	
+	To find the 3rd to last letter, you just change to [**myString.length - 3**], etc.
+	
+	

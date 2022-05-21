@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T21:46:40-05:00
+
+====== Typecasting a Callback ======
+Created Sunday 12 December 2021
+
+**Example:**
+
+function add(
+  n1: number,
+  n2: number,
+  callback: (num: number) => void
+) {
+  const result = n1 + n2;
+  callback(result);
+};
+
+
+add(7,9, (result) => {
+  console.log(result);
+});

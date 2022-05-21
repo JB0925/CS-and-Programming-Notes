@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-03T23:34:26-05:00
+
+====== Building and Tagging an Image ======
+Created Monday 03 January 2022
+
+When you build an image, you can give it a name by **tagging** it. 
+
+The convention, when tagging your images, is:
+
+**docker build -t yourDockerID/project_name:latest**
+
+When you go to run the image and create a container, you don't have to add the **:latest** part. You can if you want, but if you leave it off, it will just run the latest version of the image anyway.

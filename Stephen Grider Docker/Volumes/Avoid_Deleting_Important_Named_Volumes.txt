@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-16T21:53:12-05:00
+
+====== Avoid Deleting Important Named Volumes ======
+Created Sunday 16 January 2022
+
+So you have created your named volume in your **docker-compose.yml** file. This was done in order to persist data in your database. 
+
+However, **we can no longer run "docker-compose down -v"** because this would **delete** all of the data in our database, because it is stored in a volume.
+
+So how do we get rid of unneeded volumes without deleting the named ones that are important to us?
+
+**1). Start your container with docker-compose up -d    Use whatever other flags you need.**
+
+**2)**. In the container, run **docker volume prune**. It will delete any volumes that are not currently being used, which is what we want. It **WILL NOT** delete the **named** ones for our application because they are currently being used.

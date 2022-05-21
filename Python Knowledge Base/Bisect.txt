@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-16T23:47:44-04:00
+
+====== Bisect ======
+Created Friday 16 October 2020
+
+**Insert items into a list in sorted order:**
+
+
+{{.\pasted_image.png}}

@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-16T22:53:09-04:00
+
+====== Detecting Collisions in Matter.js ======
+Created Sunday 16 May 2021
+
+const {Engine, Render, Runner, World, Bodies, Body, **Events**} = Matter;
+
+
+To detect when one shape runs into another in Matter.js, we need to add the **Events** object to our deconstructed Matter object.
+
+Then, we need to give labels to the object that we want to detect the collision with. We will give a label to our **ball** and our **goal.**
+
+{{~/Desktop/ScreenShots/Add Labels to Matter.js Objects.png}}
+
+
+
+
+{{~/Desktop/ScreenShots/Collision Detection in Matter.js.png}}
+
+Above, we've added a method from the **Events** class, called **on**. 
+
+When we console.log(event), we see there is an array called **pairs** inside of it. Pairs "self destructs" after evey collision, but we can access it with **event.pairs**.
+
+From there, we call **forEach** on the **event.pairs** array.
+When there is a collision, the **collision object** has a **bodyA** and a **bodyB** attribute. 
+
+So then, we just check if **bodyA** or **bodyB** have the label of **'goal'** that we gave to our goal object above. If it is, we console.log() "**you won!!!"**

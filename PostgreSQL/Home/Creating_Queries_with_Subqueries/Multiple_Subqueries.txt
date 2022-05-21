@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-05T09:39:03-04:00
+
+====== Multiple Subqueries ======
+Created Wednesday 05 May 2021
+
+**Example:**
+{{~/Desktop/ScreenShots/Multiple Subqueries.png}}
+
+
+**NOTE:** Most of this is totally unnecessary, but was used as an exercise to practice using subqueries.
+
+**Explanation:**
+	- We are selecting the **name** and the **price. NOTE:** SELECT clause subqueries can only have one column involved, so if you want more than one, they have to be on the outside.
+	
+	- We are running a Subquery on the products table to ONLY select the name and price columns.
+	
+	- We run a subquery in the WHERE clause to get the AVG price, and then filter by saying ONLY items with a price GREATER THAN the average price.

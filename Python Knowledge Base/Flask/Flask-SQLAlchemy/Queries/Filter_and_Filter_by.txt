@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-17T20:19:34-04:00
+
+====== Filter and Filter by ======
+Created Saturday 17 July 2021
+
+For querying, **filter_by** accepts keyword arguments:
+	dog = Pet.query.filter_by(species='dog').all()
+	
+
+**Filter** is more versatile, and can use different types of expressions:
+	my_dog = Pet.query.filter(Pet.species == 'dog', Pet.hunger > 50).first()
+	

@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-19T23:41:30-04:00
+
+====== Installing Create React App ======
+Created Saturday 19 June 2021
+
+**First Way:**
+	In the terminal, run:
+		**npx create-react-app myApp**
+
+
+**Second Way:**
+	Since node is installed globally, we can just run:
+		**create-react-app myApp**
+
+
+**Third Way:**
+	Install CRA globally with:
+		**npm install -g create-react-app**
+		
+	After this, we can just run **create-react-app myApp **on its own
+	
+
+
+

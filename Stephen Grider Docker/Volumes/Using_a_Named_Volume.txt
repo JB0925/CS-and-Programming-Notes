@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-16T21:41:14-05:00
+
+====== Using a Named Volume ======
+Created Sunday 16 January 2022
+
+If you use a **named volume** in a **docker-compose.yml** file, you must pass in an extra **volumes** block that is inline with **services**
+
+**Example:        See Bottom**
+
+version: "3.7"
+services:
+  node-app:
+	build: .
+	ports:
+	  - "3000:3000"
+	environment:
+	  - PORT=3000
+  mongodb:
+	image: "mongo:latest"
+	environment:
+	  - MONGO_INITDB_ROOT_USERNAME=hahaha
+	  - MONGO_INITDB_ROOT_PASSWORD=password
+	**volumes:**
+	**  - mongo-db:/data/db       named as           "mongo-db"**
+
+**volumes: **
+**  mongo-db:**

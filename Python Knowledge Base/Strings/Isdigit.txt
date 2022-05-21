@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-31T10:06:00-04:00
+
+====== Isdigit ======
+Created Friday 31 July 2020
+
+using **str.isdigit()**
+
+you can use **str.isdigit() **to determine if a string is a digit, and then manipulate them if needed:
+
+{{.\pasted_image.png}}

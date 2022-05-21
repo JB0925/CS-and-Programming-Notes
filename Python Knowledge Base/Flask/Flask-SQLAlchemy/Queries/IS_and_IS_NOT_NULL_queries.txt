@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-19T23:41:33-04:00
+
+====== IS and IS NOT NULL queries ======
+Created Monday 19 July 2021
+
+**IS:**
+	**Employee.query.filter(Employee.state == None)**
+		OR
+	**Employee.query.filter(Employee.state.is_(None))**
+	
+
+
+**IS NOT:**
+	**Employee.query.filter(Employee.state != None)**
+		OR
+  	**Employee.query.filter(Employee.state.isnot(None))**
+

@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-08T23:24:42-04:00
+
+====== Selection Sort - Time and Space Complexity ======
+Created Thursday 08 October 2020
+
+**Time Complexity in any case(best, average, worst): O(n**2).....**this is because of two FOR loops, one nested inside another
+
+Also, even if the list is already in sorted order (best case scenario), the computer will still cycle through each position in the list, comparing each value to the next.
+
+**Space Complexity in Worst Case Scenario: O(1)**.....this is because it is an in place algorithm, meaning it does not use extra/auxillary memory
+
+Selection sort is a simple algorithm.
+
+Bucket sort, Heap sort, and Quicksort are complicated algorithms.
+
+**Selection Sort doesn't get much use in practical Computer Science applications.**
+
+That said, it is **NOT **useless:
+	- good for use on small lists, where you need to save memory in your program
+	- often found on job applications or exams
+	

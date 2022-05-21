@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-19T22:31:42-05:00
+
+====== Restful Route Mapping ======
+Created Saturday 19 February 2022
+
+Spring Boot has several RESTful route mappings, and all of the major ones:
+	@GetMapping
+	@PostMapping
+	@DeleteMapping
+	@PutMapping
+	@PatchMapping 
+
+
+These are all used as decorators over top of class methods inside of a controller.
+
+
+

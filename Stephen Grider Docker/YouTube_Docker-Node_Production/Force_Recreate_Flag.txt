@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-27T22:26:42-05:00
+
+====== Force Recreate Flag ======
+Created Thursday 27 January 2022
+
+Say you want to rebuild a container, even if no changes were made to your production code.
+
+You can do so with:
+
+**docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --force-recreate --no-deps node-app**
+
+This will rebuild the **node-app** service, even if no changes were made, **and** will **NOT** rebuild any dependencies of the **node-app** service **(depends_on)**.

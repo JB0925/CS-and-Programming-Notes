@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-19T23:00:59-04:00
+
+====== Chaining Queries ======
+Created Monday 19 July 2021
+
+new_employees = Employee.query.filter(Employee.id > 1)
+just_cali = new_employees.query.filter(Employee.state == 'CA')
+
+**Remember, we need to call one of the following on it:**
+	- .all()
+	- .first()
+	- .last()
+	- .one()
+	, etc.
+	
+
+**just_cali.all()** will return a list of employees whose id is greater than 1, and who live in California.
+
+
+

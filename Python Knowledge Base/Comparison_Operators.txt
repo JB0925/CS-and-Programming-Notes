@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-10T00:08:49-04:00
+
+====== Comparison Operators ======
+Created Monday 10 August 2020
+
+In Python, you can chain comparison operators:
+
+{{.\pasted_image.png}}

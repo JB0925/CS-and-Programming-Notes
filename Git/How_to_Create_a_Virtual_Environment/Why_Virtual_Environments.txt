@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-30T11:50:00-04:00
+
+====== Why Virtual Environments ======
+Created Friday 30 October 2020
+
+A virtual environment allows you to create environments for each project and not have the dependencies of one project affect three other projects.
+
+**Example:**
+	I am making a website with Django 2.0, but all my other websites are made with Django 1.0. If I upgrade to 2.0, this will break all of the sites I made with 1.0. 
+	
+	But if each project has its own virtual environment, I can install different Versions of Django based on my needs for that project alone. 
+	
+
+**When you create a Virtual Environment, you have to pip install anything you may need in that environment, because what you have pip installed locally does NOT carry over to the Venv.**
+

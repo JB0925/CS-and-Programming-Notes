@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-31T17:18:50-04:00
+
+====== Python Version Check ======
+Created Friday 31 July 2020
+
+Determine what version of Python you are using from the command line, and at runtime:
+
+{{.\pasted_image.png}}

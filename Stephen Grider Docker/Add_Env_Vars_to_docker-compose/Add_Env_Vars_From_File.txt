@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-16T09:29:21-05:00
+
+====== Add Env Vars From File ======
+Created Sunday 16 January 2022
+
+Say you have a **.env** file in your root directory.
+
+You need to add those vars to your **docker run** command. How do you do it?
+
+Add the **--env-file** flag.
+
+**Example:**
+
+**docker run -p 3000:4000 -v $(pwd):/app -v /app/node_modules --env-file ./.env jbrink0925/mine**

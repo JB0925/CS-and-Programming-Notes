@@ -1,0 +1,68 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-11T23:20:26-05:00
+
+====== useDebugValue ======
+Created Saturday 11 December 2021
+
+**How to use "useDebugValue" to give a nice label to a statement of your choice:**
+
+In this example, we will use **window.matchMedia(query here)** to adjust elements in our DOM, specifically a div. When a matchMedia query becomes true, state updates, and the div is given a different color.
+
+Our **useMedia** custom hook takes two props: a query i.e. '**( max-width: 900px )' and an initialState value, which is defaulted to false.**
+
+In React Dev Tools, instead of looking like this: **Media:**
+
+It will now look like this: **Media: ('max-width: 900 => false)**
+
+
+**useMedia Custom Hook:**
+
+
+import * as React from 'react'
+
+function useMedia(query, initialState = false) {
+  const [state, setState] = React.useState(initialState)
+  
+  **// In React Dev Tools, this gives each "useMedia" hook that is used a nice "label" that allows you to easily see the query and the state, without having to click through each hook.**
+
+  **React.useDebugValue(`\`${query})\` => ${state}`);**
+
+  React.useEffect(() => {
+	let mounted = true
+	const mql = window.matchMedia(query)
+	function **onChange()** {
+	  if (!mounted) {
+		return
+	  }
+	  **// if the matchMedia found no matches, mql.matches will be falsy. Otherwise, it will be truthy.**
+	  setState(Boolean(mql.matches))
+	}
+
+	mql.addListener(onChange)
+	setState(mql.matches) **// same as before. It matches.length === 0, state gets set to false. Otherwise, true.**
+ 
+	  **// cleaning up after the useEffect function**
+	return () => {
+	  mounted = false
+	  mql.removeListener(onChange)
+	}
+  }, [query])     **// This runs again any time the query changes.**
+
+  return state
+}
+
+function Box() {
+  const isBig = useMedia('(min-width: 1000px)')
+  const isMedium = useMedia('(max-width: 999px) and (min-width: 700px)')
+  const isSmall = useMedia('(max-width: 699px)')
+  const color = isBig ? 'green' : isMedium ? 'yellow' : isSmall ? 'red' : null
+
+  return <div style={{width: 200, height: 200, backgroundColor: color}} />
+}
+
+function App() {
+  return <Box />
+}
+
+export default App

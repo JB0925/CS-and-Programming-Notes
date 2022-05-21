@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-25T20:49:20-04:00
+
+====== Initializing State ======
+Created Friday 25 June 2021
+
+**React Concepts:**
+	- **Components:**
+		- building block of React
+		- combines logic (**JS**) and presentation (**JSX**)
+	
+	**- Props:**
+		- data passed to components (or found via defaults)
+		- immutable; component cannot change / write its own props
+		
+	**- State:**
+		- internal data specific to a component
+		- data that changes over time
+		
+	
+	**NOTE:** If something doesn't change, you'll most likely make it a **prop** instead of **state.**
+	
+
+
+In **React**, **state** is an **instance attribute on a component.**
+
+It is **ALWAYS** called **state.**
+
+It is a simple JS object.
+
+If you want your component to have state, it cannot be a function (must be a class).
+
+**State** should be **initialized **as soon as the component is created.
+
+

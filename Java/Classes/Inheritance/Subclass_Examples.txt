@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-18T23:21:52-05:00
+
+====== Subclass Examples ======
+Created Friday 18 February 2022
+
+The Dog class gets all of the methods and attributes that the Animal class has, but is also allowed to have its own attributes (**legs, teeth**) and methods (**bark()**).
+
+Notice the use of the **super()** call to initialize the constructor from **Animal**.
+
+{{~/Desktop/ScreenShots/Java Subclass.png}}

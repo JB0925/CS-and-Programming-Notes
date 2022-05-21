@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-11T12:53:44-04:00
+
+====== Using External Middleware ======
+Created Saturday 11 September 2021
+
+Using external middleware is a three step process:
+	- install it 
+		**npm install morgan**
+	
+	- require it
+		**const morgan = require("morgan");**
+	
+	- use it
+		**app.use(morgan("dev"));**
+
+
+After doing this with **morgan**, take a look at your terminal and you will see detailed information about the request, etc.
+

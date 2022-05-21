@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-11T12:33:43-04:00
+
+====== Use Routes in App.js ======
+Created Saturday 11 September 2021
+
+const userRoutes = require("./routes");
+const express = require("express");
+
+const app = express();
+app.use(express.json());
+**app.use("/users", userRoutes);**
+	- this line puts the prefix **users** before each of our routes, which is why we didn't add it in **routes.js**
+	
+

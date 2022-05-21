@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-24T23:52:18-04:00
+
+====== CSS Units ======
+Created Thursday 24 June 2021
+
+**Absolute Units:**
+	- Pixels (px): always the same size
+	- pt, cm, mm, in, etc.
+		- you should not really use these (pt, cm, mm, in) unless you are designing your page for a print style
+		
+
+
+**Percentages:**
+	- mainly used for widths
+	- relative to their parent (except on height, where it can get weird)
+	
+
+**Relative Units:**
+	- two types:
+		- relative to font-size
+			-**em** and **rem**
+		- relative to the viewport
+			- **vw, vh, **(weird ones: **vmin, vmax**)
+

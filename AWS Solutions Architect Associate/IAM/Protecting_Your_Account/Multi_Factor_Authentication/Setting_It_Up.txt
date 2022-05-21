@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T23:09:11-05:00
+
+====== Setting It Up ======
+Created Saturday 08 January 2022
+
+In the dashboard, click your username, then click **security credentials.**
+
+Scroll down, and click **Assign MFA Device.**
+
+Click **virtual MFA** and then click **show QR code.**
+
+Scan it with Google Authenticatior, then enter the six digit code twice.

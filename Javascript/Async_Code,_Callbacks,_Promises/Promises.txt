@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-20T23:51:17-04:00
+
+====== Promises ======
+Created Tuesday 20 April 2021
+
+Promises are a much better, much easier to read and write, way of writing callback functions. Instead of every success call being followed up with a failure catch, you use many success calls, followed up with one **.catch** failure call. 
+
+**Promises are a pattern for writing async code.**
+
+**Promises are objects representing the eventual completion or failure of async code / operations.**
+
+**You attach callbacks to "promises" instead of passing callbacks into a function.**
+
+
+Creating a Promise takes two functions: a **resolve** function and a **reject** function;
+{{~/Desktop/Screen Shot 2021-04-21 at 9.27.34 AM.png}}
+
+Above is the syntax for creating a **Promise.**
+
+
+**Promise Statuses:**
+	In the above Promise constructor, if I write nothing where the function goes (empty line), the Promise object will return with a status of **"pending"**.
+	
+	If I pass in **resolve()**, the Promise object will return a status of **"resolved"**.
+	
+	If I pass in **reject()**m the Promise object will return a status of **"rejected"**.
+	
+
+**The ".then" and ".catch" Methods:**
+	Every promise has a **.then** method that gets run if the Promise object gets resolved.
+	
+	It also has a **.catch** method that gets run if the Promise gets rejected.
+	
+	Both **then** and **catch** take a function, and you can do whatever you'd like inside of that function.
+	
+	**NOTE: In the Promise, BOTH the resolve and reject function can take arguments, that can then be accessed via the THEN and CATCH functions.**
+	
+	
+	
+	
+	
+

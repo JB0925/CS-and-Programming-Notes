@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-31T13:14:19-04:00
+
+====== Creating RESTful Routes ======
+Created Saturday 31 July 2021
+
+**An Example of RESTful routing:**
+
+**GET - `www.baseurl.com/api/snacks	**request all snacks
+
+**GET - www.baseurl.com/api/snacks/id	**request a particular snack
+
+**POST - **www.baseurl.com/api/snacks	also used to create a snack
+
+**PUT / PATCH - **www.baseurl.com/snacks/id	also used to update
+
+**DELETE - **www.baseurl.com/snacks/id	also used to delete a snack
+
+
+So, the URLs and endpoints themselves are always similar; it's the HTTP methods that change, for the most part.

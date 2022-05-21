@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-02T23:36:41-05:00
+
+====== Limit, Offset, and Fetch ======
+Created Tuesday 02 March 2021
+
+Limit is used to select a certain number of results.
+Offset basically says "give me all the results after this point
+Can use offset and limit together
+
+
+
+**Example:**
+	**SELECT * FROM person LIMIT 10;**
+		- returns the first 10 results
+	
+	**SELECT * FROM person OFFSET 5;**
+		- returns all results starting from the 6th result, all the way to the end
+	
+	**SELECT * FROM person OFFSET 5 LIMIT 5;**
+		- returns results starting at index 6 (OFFSET) and going through index 10 (LIMIT 5)
+		
+	
+	**FETCH** does the same thing as LIMIT, but is the "official" way of doing it
+		**SELECT * FROM person OFFSET 5 FETCH FIRST 5 ROWS ONLY;**
+			- returns results starting from index 6, and gets the first five rows starting after row 5
+			- if you wanted to use ORDER BY in this query, it would go after the table name
+
+

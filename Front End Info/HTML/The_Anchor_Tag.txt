@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-03T23:52:04-05:00
+
+====== The Anchor Tag ======
+Created Wednesday 03 February 2021
+
+The anchor tag, or **<a></a>**, is used to create a hyperlink.
+
+Every anchor tag needs an **attribute** that goes inside of it called **href**. The attribute points to an external website.
+
+In VSCode, **a + TAB** will automatically create the **a** tag with the **href** attribute
+
+**Example:**
+	**<a href="http://www.google. com">Link to Google</a>***
+	**NOTE:** You must include the **http://www.** portion inside of the **href**
+	**NOTE2: **To link to another html page you've created:
+		**- <a href="about.html">About Page</a>**
+	**NOTE3: **You can even put **anchor tags** inside of a **<p>** tag to link to a specific word
+
+**Attributes:**
+	- go inside of a tag
+	- **href** is an attribute
+
+
+

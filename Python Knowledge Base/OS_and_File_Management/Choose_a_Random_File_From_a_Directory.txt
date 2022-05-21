@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-08T23:57:35-05:00
+
+====== Choose a Random File From a Directory ======
+Created Sunday 08 November 2020
+
+**folder = 'C:/Users/superuser/Music_Flash_Cards/chromatic_note_cards'**
+**filename = random.choice(os.listdir(folder))**
+note = os.path.splitext(filename)[0]                #get the note name from the flash card
+    
+img = Image.open(os.path.join(folder, filename))        **#joining the file with the folder to create a full path string**
+photo = ImageTk.PhotoImage(img)                 
+
+
+https://stackoverflow.com/questions/701402/best-way-to-choose-a-random-file-from-a-directory
+
+

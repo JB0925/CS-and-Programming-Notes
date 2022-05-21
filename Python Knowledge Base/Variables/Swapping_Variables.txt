@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-30T14:57:55-04:00
+
+====== Swapping Variables ======
+Created Thursday 30 July 2020
+
+You can swap two variables easily in one line of code:
+
+{{.\pasted_image.png}}

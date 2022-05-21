@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-20T15:24:07-04:00
+
+====== The Call Stack ======
+Created Tuesday 20 April 2021
+
+The call stack is the mechanism that the JS interpreter uses to keep track of its place in a script that calls multiple functions.
+
+How JS "knows" what function is currently being run and what functions are called from within that function, etc.
+
+
+**How it Works:**
+	- when a script calls a function, that function is added to the top of the call stack
+	- any functions that are called by that function are placed on top of it, and are run before the "main" function
+	- when the interpreter is finished, it takes the function off the stack, and it resumes execution based on where it left off
+	
+
+
+**How to See the Call Stack in Chrome Dev Tools:**
+	- in Dev Tools, go to Sources
+	- open your code in the Sources tab and click on the line number of the function you want to add a breakpoint to.
+	

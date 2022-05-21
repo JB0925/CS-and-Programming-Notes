@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-05T21:52:17-05:00
+
+====== Form Validations ======
+Created Friday 05 February 2021
+
+Form Validations = things like "Your password must have one uppercase letter, one lowercase letter, one number, and one special character..."
+
+Form Validations let a user know that what they are typing in is not good enough or incorrect.
+
+These messages are shown using JavaScript.
+
+**When creating a form and asking for input, you can use the "required" attribute to ensure that people have to fill out that question on the form.**
+
+By doing this and clicking the submit button with empty values, the form will not submit and will instead pull up an error message saying "please fill out this form"
+{{.\pasted_image.png}}
+If you set the input's **type** attribute to "**email**", and make it required, it will also check for things like missing "@" symbols, etc.
+
+You can also add a **minlength** and **maxlength** attribute to the input tag:
+{{.\pasted_image001.png}}
+
+
+**Min and Max:**
+	- used to validate that a number you enter is within a range of numbers
+
+
+**Patterns:**
+	- you can use **Regex** to create patterns to match a password with, i.e. if the password does not fit within the pattern, it will not be valid and the system will give you an error message
+	

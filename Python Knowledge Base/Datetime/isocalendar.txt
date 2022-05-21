@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-24T21:29:37-04:00
+
+====== isocalendar ======
+Created Thursday 24 September 2020
+
+Datetime objects have an isocalendar attribute:
+
+time = datetime.datetime(2016, 4, 27, 17, 22, 38)
+
+calendar = time.isocalendar()
+
+print(calendar)
+
+**The above will return a 3-tuple (ISO year, ISO week number, ISO week day)**
+
+They can be accessed just like any other tuple.
+
+For example:
+
+	weeks = time.isocalendar()[1]
+	print(weeks)
+	
+	**returns only the number of weeks into the year that the datetime object is in currently. See picture below.**
+
+
+{{.\pasted_image.png}}
+

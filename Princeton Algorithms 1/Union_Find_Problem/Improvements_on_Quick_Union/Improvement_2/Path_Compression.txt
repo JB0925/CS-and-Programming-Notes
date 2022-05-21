@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-20T01:23:14-05:00
+
+====== Path Compression ======
+Created Sunday 20 December 2020
+
+**As you traverse a tree from a root, you pass through all or many of the other nodes from the root**
+
+**So, you can set each node to point to the root.**
+
+{{.\pasted_image.png}}
+
+instead of initializing each to point to itself initially, while you loop through to set the ids, set the id to be equal to the id of the current id[i] in the loop.

@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-28T14:37:11-04:00
+
+====== Passing Parameters in as Endpoints to an Axios Request ======
+Created Wednesday 28 April 2021
+
+If you are using an API and the api requests things such as an API key, and other parameters in the URL, you can pass those in as an object, instead of just adding them to the end of your request URL:
+
+**Example:**
+
+{{~/Desktop/ScreenShots/Axios API Parameters.png}}
+
+The correct way to use your API key and query the API for the above link is:
+
+**http://www.omdbapi.com/?apikey=dd3a22c&s=avengers**
+
+However, by passing in an **object**, with **another object** inside of it called **params**, Axios uses these automatically and formats the URL for you.
+

@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T15:05:40-05:00
+
+====== Run Eslint with Npm Scripts ======
+Created Sunday 09 January 2022
+
+In your **package.json**, under **scripts**, add:
+	**"lint": "eslint ."**
+
+**NOTE: **When you do this, be sure to add an **.eslintignore** file. You can copy your **.gitignore** file. This way, if you ever run **npm run build**, it will ignore anything in the **dist** file.
+
+**NOTE: **Instead of the above, you can do:
+"scripts": {
+	"build": "babel src --out-dir dist",
+	"**lint": "eslint --ignore-path .gitignore ."**
+}
+
+**Example:**
+
+"scripts": {
+	"build": "babel src --out-dir dist",
+	"**lint": "eslint ."**
+}
+
+**Now, in your terminal, you can run "npm run lint"**
+

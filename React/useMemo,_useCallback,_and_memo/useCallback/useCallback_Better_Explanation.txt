@@ -1,0 +1,53 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-01T00:17:24-05:00
+
+====== useCallback Better Explanation ======
+Created Saturday 01 January 2022
+
+Here is a common scenario: **A function called inside of a useEffect that depends on PROPS and / or STATE.**
+
+**Example:**
+
+function NumberFactMissingDep({
+  baseUrl = "http://numbersapi.com/", initialNum = 42
+}) {
+  const [num, setNum] = useState(initialNum);
+  const [fact, setFact] = useState("");
+  async function **getFact**(newNum) {
+	let response = await axios.get(`${baseUrl}${newNum}?json`);
+	setNum(newNum);
+	setFact(response.data.text);
+  }
+
+  useEffect(() => { getFact(initialNum) }, []);
+
+
+**The Problem:**
+	Because **getFact** relies on state (**setNum, setFact**), it should be **listed in the dependency array** of useEffect...which means that Effect runs every time **getFact** changes. The problem is, technically, **getFact **changes on every render.....which would lead to an infinite loop if **getFact** was in the dependency array.
+	
+**The Solution:**
+	By using **useCallback**, we can memoize that function. This means that you can pass **getFact** to the useEffect as a dependency, and **it will not rerender** UNLESS some aspect of the actual code changes. So as long as a "==" comparison is true, the useEffect will not run again. If something about **getFact** changes, then it will run again.
+	
+
+**Solution Example:**
+
+function NumberFactUseCallback({
+  baseUrl = "http://numbersapi.com/", initialNum = 42
+}) {
+  const [num, setNum] = useState(initialNum);
+  const [fact, setFact] = useState("");
+  **const getFact = useCallback(async newNum => {**
+	**let response = await axios.get(`${baseUrl}${newNum}?json`);**
+	**setNum(newNum);**
+	**setFact(response.data.text);**
+**  }, [baseUrl]);**
+
+  useEffect(() => { **getFact(initialNum)**; }, [initialNum, **getFact]**);
+}
+
+
+**Explanation:** useCallback is written exactly like useEffect, **except it is memoizing a callback function**. So, we write **getFact** just as we would normally, except we **wrap it in a useCallback**. At the end, we pass in a dependency array. In this particular case, we are saying **"only recreate 'getFact' when the 'baseUrl' changes"**.
+
+Finally, we pass **getFact** into the dependency array of useEffect and there is no more issue.
+

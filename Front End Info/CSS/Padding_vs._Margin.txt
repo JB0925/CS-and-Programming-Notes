@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-11T11:52:13-05:00
+
+====== Padding vs. Margin ======
+Created Thursday 11 February 2021
+
+**Padding **is the amount of space between the content of an element and its own border.
+
+**Margin **is the amount of space between an element and the overall border
+
+In CSS, you can specify both a **class/element/hook's** padding and margin properties using **clockwise notation**, which is as follows:
+	**top, right, bottom, left**
+
+
+So, **margin: 20px 10px 10px 20px;** means to set the **top and left** margins to 20 pixels, but the **right and bottom** margins to 10 pixels.
+
+
+

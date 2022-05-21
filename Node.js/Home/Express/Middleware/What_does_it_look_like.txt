@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-11T12:40:16-04:00
+
+====== What does it look like ======
+Created Saturday 11 September 2021
+
+**middleware.js**
+	const logger = (req, res, next) => {
+		console.log(`Sending ${req.method} request to ${req.path}.`)
+		return **next()**;
+	}
+	
+
+**NOTE:** You need to have **next()** because, if you don't, you won't make it to the next route.
+
+**NOTE2:** In this case, we will never pass args to **next()**
+

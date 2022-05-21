@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-09T22:22:29-04:00
+
+====== Text Align ======
+Created Monday 09 August 2021
+
+If your text is just in the main frame, you can select the text, then select the left, right, etc., buttons to align the text.
+
+If you put the text inside of a shape and select them both by clicking and dragging over them, it will align the text inside of that shape.

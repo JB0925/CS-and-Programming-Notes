@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-30T14:59:11-04:00
+
+====== dict to namedtuple ======
+Created Thursday 30 July 2020
+
+If you have a a dictionary, and you want to place each key in the dictionary into a namedtuple, here's an easy way to do it:
+
+**blog = dict(name='PyBites',**
+**            founders=('Julian', 'Bob'),**
+**            started=datetime(year=2016, month=12, day=19),**
+**            tags=['Python', 'Code Challenges', 'Learn by Doing'],**
+**            location='Spain/Australia',**
+**            site='https://pybit.es')****
+
+# define namedtuple here
+**Blog = namedtuple('Blog', blog.keys())**
+
+
+**def dict2nt(dict_):**
+**    return Blog(**dict_)**
+
+So you can just use "**dict.keys()" **as the values in the namedtuple, then set Blog(or whatever you call your namedtuple) = to "**NamedTuple(**dict_)**
+
+So, **"var = NamedTuple(**dict_)**
+
+The "**" means kwargs, or all of the keys/values in the dictionary.
+
+https://aprakash.wordpress.com/2019/04/05/named-tuple-to-json-python/#:~:text=To%20convert%20these%20named%20tuple,names%20to%20their%20corresponding%20values.
+
+

@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-26T11:40:47-04:00
+
+====== How to Get Rid of a Git Repo ======
+Created Wednesday 26 May 2021
+
+Let's say you are in a Git repo locally, and you want to get rid of the repo, but NOT the local files and directories that Git is tracking.
+
+To do this, type:
+	**rm -rf .git**
+	
+	Doing the above will get rid of the local git repo that is tracking the files, but not the files and directories themselves. You can go back and add git tracking at any point.

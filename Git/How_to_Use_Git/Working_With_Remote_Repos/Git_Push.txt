@@ -1,0 +1,46 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-09T12:15:49-05:00
+
+====== Git Push ======
+Created Monday 09 November 2020
+
+**NOTE: ALWAYS "git pull" first**
+
+
+to push to an already existing on "GitHub" repo:
+	
+	**git remote add origin "https://......"**
+		sets the remote
+	**git remote -v**
+		verifies the remote URL
+	
+	make sure everything is added/committed and up-to-date locally....
+	
+	**git push origin master (master == branch name)**
+	
+	
+
+to create a "GitHub" repo from Git:
+	
+	**create a file locally and cd to it/add it to Git**
+		sets up an initial Git commit for the folder
+	**go to "GitHub" and start a new repository**
+		sets the repo up in "GitHub"
+	**copy the "https://...." link from the "GitHub" repo**
+		get link that will establish connection
+	**git remote add origin https://......**
+		adding a connection between Git and the "GitHub" repo
+	
+	**git remote -v**
+		will show any remote repositories connected to the local repo
+	**git push origin master**
+		pushes all files to the master branch of the destination address
+	
+	**CAN DO LAST STEP DIFFERENTLY!**
+	
+	to use **git push** instead of **git push origin master:**
+		**git push -u origin master**
+			from now on, all you would need to type to push to the "GitHub" repo is **git push**
+
+https://stackoverflow.com/questions/4181861/message-src-refspec-master-does-not-match-any-when-pushing-commits-in-git

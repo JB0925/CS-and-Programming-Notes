@@ -1,0 +1,53 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-16T12:11:01-05:00
+
+{{~/Desktop/ScreenShots/Sequential Async Requests.png}}{{~/Desktop/ScreenShots/Sequential Async Requests.png}}====== CSS Transitions ======
+Created Tuesday 16 February 2021
+
+Transitions allow us to animate the property of one property value to another property value
+
+take this class, and the pseudo class that is grouped with it:
+{{.\pasted_image.png}}
+
+In the div that inherits from this class, no transitions have taken place, but there are changes happening to the div **immediately**.
+
+But we can **transition** between them more gracefully if we want to by adding **transition: 1s; **to the circle class
+{{.\pasted_image001.png}}
+
+
+
+With **transition**, you can specify **property name, duration, timing function, **and **delay**.
+
+
+**Property Name - Syntax:**
+{{.\pasted_image002.png}}
+
+
+if you add another number after the **3s**, it is a delay
+
+You can also specify **all** if you want to apply the transition to all elements in the class.
+
+
+
+**Transitions Timing Function:**
+	- tells how much time it will take for the action to complete
+	{{.\pasted_image003.png}}
+	
+Another way to use this is to specify **transition-timing-fuction **under transition. This can make some really cool effects happen.
+
+{{.\pasted_image004.png}}
+
+
+You can also **forego** the **transition-timing-function** selector and declare all in the **transition selector:**
+{{.\pasted_image005.png}}
+
+Again, the syntax goes **property name, duration, timing function, delay.**
+
+Definitely select the property names at least; don't just say **all**.
+
+
+
+You can also modify more than one property at a time by using a comma:
+{{.\pasted_image006.png}}
+

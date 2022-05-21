@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-31T21:11:09-04:00
+
+====== PUT and PATCH Example ======
+Created Saturday 31 July 2021
+
+Remember, **PUT** updates the **entire** resource.
+
+**PATCH** updates part or several parts of a resource.
+
+
+Many times, you will want to use **PATCH** because you can't update a primary key, and **PUT **updates the entire resource.
+
+**Example:**
+@app.route('/cars/<id>', methods=['PATCH'])
+def update_car(id):
+	car = Car.query.get(id)
+	if car:
+		car.make = request.json.get('make', car.make)
+		car.model = request.json.get('model', car.model)
+		car.price = request.json.get('price', car.price)
+		db.session.commit()
+		return jsonify(car=serialize_cars(car))
+	return jsonify({'car': 'not found'})
+
+
+**Explanation:**
+	1). we create the route, same as the GET by id route, but this time with the PATCH method.
+	2). We run a query for the car.
+	3) If we find the car:
+		- we run **request.json.get** on each field, and set the default to what the car already has. **This is because, in case the user only updates ONE field, the others won't get set to None.**
+	
+	4). We commit to the database
+	5). We return a JSON response of the updated car.
+	6). If no car was found, we return a simple JSON response letting the user know.
+	

@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-08T09:34:32-05:00
+
+====== Code for Build Max Heap ======
+Created Friday 08 January 2021
+
+**def build_max_heap(A):**
+	for i in range(len(A)//2-1, -1, -1):
+		max_heapify(A, i)
+

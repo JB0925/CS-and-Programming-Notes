@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-18T02:05:22-05:00
+
+====== Foolproof Way to Exit a Program ======
+Created Monday 18 January 2021
+
+**If you are caught in a process that you can't get out of:**
+	- open another terminal
+	- use command **htop** to see all the running processes
+	- scroll down until you find the process that you can't exit
+	- once there, press **F9**
+	- scroll down to **SIGKILL (number 9)** and press Enter
+	- This kills the process in the other window

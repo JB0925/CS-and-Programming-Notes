@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-04T22:16:55-05:00
+
+====== How to check constraints CHECK ======
+Created Thursday 04 March 2021
+
+If you want to add a constraint to a table after you've created it, you can use the following:
+Say we wanted to add a gender constraint to make sure that the genders were either male or female
+
+**ALTER TABLE table_name ADD CONSTRAINT constraint_name CHECK(gender = 'Male' OR gender = 'Female');**
+
+	**NOTE: **If you try to run this with people that have a gender other than male or female, you will get an error and you will need to delete those people before running it again. After that, no one will be allowed to be add that doesn't have a gender of male or female
+
+
+
+This can also be done at the time of table creation, i.e.:
+
+CREATE TABLE people (
+	id SERIAL PRIMARY KEY,
+	  name VARCHAR(100) NOT NULL,
+	  email VARCHAR(255) UNIQUE NOT NULL,
+	  gender CHECK(gender = 'male' OR 'female')
+)
+

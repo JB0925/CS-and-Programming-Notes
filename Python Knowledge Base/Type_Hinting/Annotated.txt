@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-12T21:31:22-04:00
+
+====== Annotated ======
+Created Sunday 12 September 2021
+
+**Annotated** types are more informational, and cannot, as of yet, be typechecked.
+
+It is often best to use a short string to let developers know more about the type.
+
+**Example:**
+	from typing import Annotated
+	
+	x: **Annotated[int, """Between 3 and 5"""]**
+
+
+
+

@@ -1,0 +1,47 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-07T21:24:39-05:00
+
+====== Use UUIDS as PRIMARY KEY ======
+Created Sunday 07 March 2021
+
+**Example Using Initial Table Setup:**
+	CREATE TABLE person (
+		id UUID NOT NULL PRIMARY KEY,
+		first_name VARCHAR(100) NOT NULL,
+		last_name VARCHAR(100) NOT NULL,
+		gender VARCHAR(50) NOT NULL,
+		email VARCHAR(150),
+		date_of_birth DATE NOT NULL,
+		car_uid UUID REFERENCES car(car_uid),
+		UNIQUE(car_uid),
+		UNIQUE(email)
+	);
+	
+
+**Remember, you must install the UUID extension. See parent page for how to do that.**
+
+
+From here on, the **person_uid** column is no longer autoincremented because it is no longer a BIGSERIAL.
+
+This means that we have to include it every time we INSERT INTO a table.
+
+To actually insert the value, you just call the UUID function of choice, for example, **uuid_generate_v4()**
+
+
+**Example INSERT:**
+	INSERT INTO person (**person_uid**, name, age)
+	VALUES (**uuid_generate_v4(), **'Joe', 52);
+	
+
+**How to Assign a car_uid (FOREIGN KEY) to the person table:**
+	- You basically find the UUID of the car you want, and run an UPDATE command on the person table, setting **car_uid = 'ghjsdfeqwr' WHERE car_uid = 'sidshwerewrsehng'**
+	{{.\pasted_image.png}}
+
+	1). Find the car UUID
+	2). Copy it and set the **car_uid** from the **person3** table to it
+	3). To know who to assign it to, use a WHERE statement and use the **person_uid** column as the identifier
+	
+	
+		
+

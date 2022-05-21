@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-07T22:55:51-04:00
+
+====== Global Init, Create Session, and Initial Setup ======
+Created Wednesday 07 April 2021
+
+1). **Create a model_base file, i.e. modelbase.py:**
+	{{.\pasted_image.png}} #this is the base that all SQLAlchemy classes will inherit from
+
+
+2). **Create an _all_models.py file:**
+	{{.\pasted_image001.png}}  #this is the whole file
+
+
+3). **Create a db_session.py file:**
+	**Imports:**
+		{{.\pasted_image002.png}}
+		#Session - used to create a Session every time the app runs
+		#config - used to get the connection string from the .env file
+		#SqlAlchemyBase - used to create the tables and engine, and start the models upon the app running
+		
+	**global_init():**
+		**NOTE:** If you are using sqlite3, you'd need a directory to put the file that is created in
+		{{.\pasted_image003.png}}
+		#create the engine, let the Base class see all models and create the tables
+	
+	**create_session():**
+		{{.\pasted_image004.png}}
+		# create a new session each time the app begins
+		
+

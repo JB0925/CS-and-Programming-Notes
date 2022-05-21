@@ -1,0 +1,76 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-27T11:49:02-04:00
+
+====== Basic Pytest and Getting Complete Coverage ======
+Created Thursday 27 May 2021
+
+**import pytest**
+
+NOTE: pytest has to be pip installed
+
+
+**Let's look at this code:**
+	def fib(n):
+		if n < 0:
+			raise 'ValueError
+		elif n in (0, 1):
+			return n
+		else:
+			return(fib(n-1) + fib(n-2))
+			
+
+
+**How can we write tests that get complete coverage, or as close as possible, for the Fibonacci function above?**
+
+	We have **four** basic cases:
+		1) n is less than 0    -    should raise 'ValueError
+		2). n is 0   -    should return 0
+		3). n is 1   -    should return 1
+		4). n > 1, and we execute **fib(n-1) + fib(n-2)** on it
+		
+		
+	A test for n = 0:
+		**def test_zero_fib():**
+			**assert fib(0) == 0**
+			
+		
+		Here, we handle case #2, where n = 0. It should return 0, and it does.
+	
+	
+	A test for n = 1:
+		**def test_one_fib():**
+			**assert fib(1) == 1**
+		
+		
+		Same as above. Indeed, **fib(1)** gives us 1 back.
+		
+	
+	A test for bigger numbers:
+		**@pytest.mark.parametrize('number, expected', [**
+				**(9, 34),**
+				**(10, 55),**
+				**(11, 89)**
+		**])**
+		**def test_bigger_values(number, expected):**
+			**assert fib(number) == expected**
+
+
+		Notice the use of the decorator **@pytest.mark.parametrize**
+			- the first argument is one big string, where the parameters are separated by a comma
+			- the second is a list of tuples, where **tuple[0]** is the "number" and **tuple[1]** is the "expected"
+			
+			Pytest iterates through that grouping to assert each statement in **test_bigger_values()**.
+			
+	
+	
+	A test for negative numbers:
+		**def test_negative_fib():**
+			**with pytest.raises(ValueError) as v:**
+				**fib(-1)**
+				
+		
+		Note how we DID NOT have to pass in any "if / else" logic to it. It will raise a value error if it meets the conditions laid out in **fib()**.
+		
+
+

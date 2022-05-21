@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-07T20:44:21-05:00
+
+====== Universally Unique Identifier or UUID ======
+Created Sunday 07 March 2021
+
+The UUID is globally unique, which means that collisions are virtually impossible.
+
+To use UUID, you have to install it from **pg_available_extensions.**
+
+**NOTE: **IF NOT EXISTS means that if whatever it is does not exist, then do the preceeding command, and do it only once.
+
+**How to Install:**
+	- **CREATE EXTENSION IF NOT EXISTS "uuid-ossp";**
+		- creates the extension
+		- **NOTE: **Must use double quotes around the extension name.
+
+
+**How to View Available Extension Functions:**
+	- **\df** will show all available extensions
+	{{.\pasted_image.png}}
+	
+
+
+**You can invoke a uuid function with a query:**
+	- **SELECT uuid_generate_v4;**
+		- this will return randomly generated uuids, because that is what UUID V4 does (see online to view what the other functions do)
+		- this is very useful for PRIMARY KEY generation
+		{{.\pasted_image001.png}}
+

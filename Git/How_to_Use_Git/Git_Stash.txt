@@ -1,0 +1,61 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-27T13:30:10-05:00
+
+====== Git Stash ======
+Created Sunday 27 December 2020
+
+Git stash is useful for when you aren't quite ready to commit your changes, but you need to switch branches or maybe even reset to a previous version.
+
+Think of it as a "temporary save"
+
+{{.\pasted_image.png}}
+above, we created a new branch and worked on our Add function. **But what if we need to switch to our master branch for something?**
+
+**git stash save "worked on add function"**
+	once you do this, the changes revert, **but NOT for good.			#see example below**
+	type git diff and you will see NO differences
+	type **git status** and you will see **working tree clean; nothing to commit**
+
+
+**git stash list**
+	returns a list of everything you have stashed/temporarily saved
+
+{{.\pasted_image001.png}}
+
+**Two Ways to Bring Back Saved Work:**
+
+1). **git stash apply stash@{0}			**#the **stash@{0}** part comes from when you type **git stash list** (see example below)
+		this **takes** the changes from the stash and applies them, but **does NOT** get rid of the stash. Your work is still temporarily saved.
+		{{.\pasted_image003.png}}{{.\pasted_image004.png}} #add function is restored
+		
+		 if you want to, **git checkout - - .** resets you back to where you were
+		
+2). **git stash pop**
+		this applies the changes, just like **git stash apply stash@{0}**
+		however, it **drops, or gets rid of, the stash**
+		{{.\pasted_image005.png}}
+		
+		run **git stash list** again, and there will be nothing there
+		
+
+**Get Rid of a Stash:**
+	**git stash drop stash@{0}	(first part of "git stash list")**
+	
+	
+**Get Rid of ALL Stashes:**
+	**git stash clear**
+		clears all stashes and returns the file to its state prior to any of the git stashes
+		
+		
+		
+**Usage Example:**
+	say you don't realize it, but you are working on the master branch and didn't mean to
+	instead of undoing a bunch of work, you can do:
+		**git stash save "message here"**
+		**git checkout correct_branch**
+		**git stash pop	**#applies all the changes made on "master" to this branch
+		
+		finally, add and commit changes on the new branch as you normally would
+		
+

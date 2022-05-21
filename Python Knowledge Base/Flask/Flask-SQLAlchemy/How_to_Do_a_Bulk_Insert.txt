@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-16T14:53:58-04:00
+
+====== How to Do a Bulk Insert ======
+Created Friday 16 July 2021
+
+You can do a **bulk insert **into SQLAlchemy using lists of the attributes needed to create a model Object.
+
+class User(db.Model):
+
+	`__tablename__ = 'users'
+	
+	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+	name = db.Column(db.String(50), nullable=False)
+	email = db.Column(db.String(50), nullable=False, unique=True)
+
+names = ['one', 'two', 'three', 'four']
+emails = ['sfgs', 'ghiw', 'dsfkhgds', 'sdhgds']
+
+my_bulk_insert = [User(name=n, email=s) for n, s in zip(names, emails)]
+
+**db.session.add_all(pets)**
+db.session.commit()

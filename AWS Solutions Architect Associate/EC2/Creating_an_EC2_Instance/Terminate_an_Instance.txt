@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T11:30:29-05:00
+
+====== Terminate an Instance ======
+Created Sunday 09 January 2022
+
+It is common when, you don't need an instance anymore, to back up data, and then terminate the instance.
+
+In the **instances** dashboard, you can click **instance state**, then scroll to the bottom to **Terminate instance** in order to be able to terminate an instance.
+

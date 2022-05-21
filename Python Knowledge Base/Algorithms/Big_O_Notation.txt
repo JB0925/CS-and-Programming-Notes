@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-11T21:27:46-04:00
+
+====== Big O Notation ======
+Created Tuesday 11 August 2020
+
+Can compare algorithms based on the amount of memory they use, and the time it takes to run them
+
+Can't only rely on time to run, because not all computers are the same.
+
+**Big O: way to compare the number of assignments each different algorithm makes**
+
+Example:
+
+	for x in range(n+1), the assignment is the n+1 part. So if n = 3, that loop has 4 assignments. As numbers grow, the "1" doesn't play a big factor.
+	
+**Big O notation describes how quickly runtime will grow relative to the input as the input gets arbitrarily large.**
+
+In an algorithm, the constant variables are never the limiting factor, it usually a non constant variable.
+
+Example:
+
+	**return 45*n**3 + 20*n**2 + 19**
+	answer = 47019
+	**so we know 19 is not the limiting factor. 20*10**2 = 2000. 45*10**3 = 45000+, so that part of the equation is the limiting factor. **
+	In actuality, it's not the 45 that is the limiting factor, its the n**3. **The algorithm has an order of n**3, or O(n**3).**
+	
+	
+Big O Complexity Charts:
+
+{{.\pasted_image001.png}}
+{{.\pasted_image002.png}}
+**Try to stay away from algos that have quadratic, cubic, or exponential behaviors!**
+
+
+
+
+
+

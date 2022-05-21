@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-02T20:15:39-05:00
+
+====== Convert Hours, Minutes, Seconds into Total Seconds ======
+Created Tuesday 02 February 2021
+
+time = '00:56:14'
+
+hour, minutes, seconds = time.split(':')
+
+total_seconds = int(hour) * 3600 + int(minutes) * 60 + seconds
+
+
+https://stackoverflow.com/questions/6402812/how-to-convert-an-hmmss-time-string-to-seconds-in-python

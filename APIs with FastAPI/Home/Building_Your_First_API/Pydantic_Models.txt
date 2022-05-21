@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-10T00:26:12-04:00
+
+====== Pydantic Models ======
+Created Saturday 10 April 2021
+
+You could use a regular class for data validation, but this would require a lot of manual validation. 
+
+By using Pydantic Models, which are very much like **dataclasses**, you declare and define the parameters, and Pydantic's 'BaseModel takes care of the rest.
+
+**Example:**
+	from pydantic import 'BaseModel
+	from typing import List, Optional
+	
+	class Order(BaseModel):
+		item_id: int
+		created_date: datetime.datetime
+		price: float
+		pages_visited: Optional[List[int]] = [ ]
+
+With just that simple constructor and definition, all of the data validation is built in for us.
+
+
+
+**Using a Pydantic Model in a route with Type Hinting in a GET request:**
+
+		{{file:///var/folders/j3/_t3lnk4s6qj4626wqs10dzf40000gn/T/TemporaryItems/NSIRD_screencaptureui_QnLrqh/Screen%20Shot%202021-04-10%20at%209.04.31%20PM.png}}
+
+# all Pydantic models inherit from the 'BaseModel class (**from pydantic import 'BaseModel**)
+# declaration of the class with type hinting **(city: str, state: Optional[str] = None, country: str = 'US')**
+# create the constructor of the **weather** function
+	- **NOTE:** Pydantic models expect to be used on POST requests, and will **NOT** work with GET requests **UNLESS** we use **Depends()** from **typing**
+	- the **units** var is passed in as an Optional[str]  with a default of **metric**
+
+

@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T14:02:47-05:00
+
+====== Shared Mock Directory ======
+Created Sunday 09 January 2022
+
+Instead of passing in:
+	**jest.mock("axios", () => {**
+		return {
+			getWinner: jest.fn((p1, p2) => p1)
+		}
+	**});**
+	
+	
+You can create a module **outside** of your test directory. Jest will automatically pick up this directory.
+	`**__mocks__**
+	
+In that directory, create files that have the **name of the module you are trying to mock.**
+
+In this case, we are mocking **utils.js**, so our file would be in **`__mocks__/utils.js**
+
+In that file, you can simply mock out the methods you want:
+	**module.exports = {**
+		getWinner: jest.fn((p1, p2) => p1)
+	}
+	
+
+Finally, in your test file, you can just call **jest.mock("myModule");**

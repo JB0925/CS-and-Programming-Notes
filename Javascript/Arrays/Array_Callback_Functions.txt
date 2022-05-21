@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-29T12:16:30-04:00
+
+====== Array Callback Functions ======
+Created Monday 29 March 2021
+
+Arrays have many callback functions, such as **forEach()**. Just like a regular callback, you pass in a function as an argument and it will apply that function to every element in the array.
+
+Some examples of **Array Callback Functions:**
+	- forEach()
+	- map()
+	- filter()
+	- find()
+	- reduce()
+	- some()
+	- every()

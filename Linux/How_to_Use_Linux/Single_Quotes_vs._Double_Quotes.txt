@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-26T14:17:56-04:00
+
+====== Single Quotes vs. Double Quotes ======
+Created Wednesday 26 May 2021
+
+If we wrap text in **double quotes**, the shell will respect spacing given to text between the quotes, and will ignore special characters except for:
+	- **$**
+	- **\**
+	- **`     (the backtick, or what you use for string template literals in JS)**
+	
+
+- Pathname and brace expansion, as well as word splitting, will be ignored inside of double quotes
+
+- Inside of **double quotes**, command substitution and arithmetic expansion are still performed because dollar signs still have meaning
+
+**Some Examples:**
+	- **echo hello					there**
+	returns **hello there**
+	
+	- **echo "hello					there"**
+	returns **hello					there**
+	
+	- **echo "hello					there{1,2,3}"**
+	returns **hello					there{1,2,3}**
+	- **echo hello					there{1,2,3}**
+	returns **hello					there1 there2 there3**
+	
+
+
+
+**Single Quotes:**
+	- single quotes suppress all forms of substitution
+	
+	**Example:**
+		- in double quotes:
+			**echo "today is				$(date +"%m-%d-%Y")"**
+				returns **today is				05-26-2021**
+		
+		- in single quotes, it returns:
+			**today is						      $(date)**
+

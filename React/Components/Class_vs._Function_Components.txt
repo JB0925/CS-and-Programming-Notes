@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-02T22:29:19-04:00
+
+====== Class vs. Function Components ======
+Created Wednesday 02 June 2021
+
+**Class Components:**
+	- This is the traditional React component
+	- Here, you write logic in a JS class to make a component
+	- **a Class component** must include a **render()** method
+
+
+**Function Components:**
+	- they are a standard JS function
+	- not as powerful as a Class component, but are now more powerful due to **React hooks.**
+
+
+
+**Similarities and Differences:**
+	- Both can accept **props** and render content
+	- Function components did not used to be able to use important features like:
+		- state
+		- lifecycle methods
+	
+	- since the introduction of **hooks**, we can now write full-featured function components
+	
+	

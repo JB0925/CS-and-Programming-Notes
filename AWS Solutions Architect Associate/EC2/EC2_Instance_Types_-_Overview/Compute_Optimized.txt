@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T11:46:47-05:00
+
+====== Compute Optimized ======
+Created Sunday 09 January 2022
+
+**Compute Optimized** instance types are great for compute-intensive tasks that require high performance processors, such as:
+	- Batch processing workloads
+	- Media transcoding
+	- High performance Web Servers
+	- High performance computing
+	- Scientific Modeling & machine learning
+	- Dedicated gaming servers
+	
+**NOTE: **All of the **compute optimized **EC2 instance types have the **"c"** name, such as **c5.4xlarge**, etc.
+

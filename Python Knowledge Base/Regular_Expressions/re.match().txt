@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-30T20:48:32-04:00
+
+====== re.match() ======
+Created Friday 30 October 2020
+
+match a string with a regular expression:
+
+key = "PB-U8N435EH-PG65PW87-IXPWQG5T-898XSZI4"
+
+return re.match(r'^PB-[A-Z0-9]{8}(?:-[A-Z0-9]{8}){3}$', key)
+
+**So it is asking us to match:**
+
+		1). **PB, "-", and a group of uppercase letters and digits 0-9 totaling 8 characters**
+		
+		2). **a string that ends in 3 groups of "- and 8 uppercase letters/digits 0-9**
+		
+		3). it is asking us to match it with the key, passed in as an argument to the function
+
+**NOTE: re.match** will only match if the pattern is found at the start of the string. If you have a larger string with patterns inside of the string, use **re.search()** instead

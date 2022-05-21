@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T23:24:18-04:00
+
+====== Synchronous File Writng ======
+Created Monday 06 September 2021
+
+const fs = require('fs');
+
+const content = "PUT THIS IN THE FILE";
+
+try {
+	fs.writeFileSync('./files/output.txt', content);
+	console.log('wrote to file');
+} catch(error) {
+	console.error('write failed');
+	process.exit(1);
+};

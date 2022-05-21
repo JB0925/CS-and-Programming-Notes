@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-19T22:07:36-05:00
+
+====== Matrix Multiplication and Operator Overloading ======
+Created Thursday 19 November 2020
+
+Numpy offers an easy way to do matrix multiplication, but it was worth it for me to implement my own method as well for learning purposes:
+
+The operator for this is **@. **You can also use **@=** if you want to modify the item in place
+
+There are three special methods that need to be implemented to perform different operations with matrix multiplication:
+			**"__matmul__", "__rmatmul__", "__imatmul__"**
+			1). matrix multiplication
+			2). reversed matrix multiplication (if one isn't a member of the created class)
+			3). implements the **@=** method, much like "**x += 6"**
+
+
+**Formula for Matrix Multiplication:**
+
+{{.\pasted_image.png}}
+
+{{.\pasted_image001.png}}
+{{.\pasted_image002.png}}
+{{.\pasted_image003.png}}
+
+**self.values_list, left_list, right_list **are all used to gather up the items create from the matrix multiplication
+
+set left = self.values
+
+check to see if right is another Matrix object. If it is, right = other.values. If it isn't, right = other (a plain list).
+
+Then, use a "faux" nested for loop to append two items to the left list, and two items to the right list.
+		**I call this "faux" because it really isn't iterating through all of the rows in the matrix; it's going through the first one and using "i" and "j" as index values to specify values to perform calculations with. **
+		
+		Then call "**break"**
+
+create the self.values_list by making another list of lists of the left and right lists, and then return a Matrix object of the self.values_list
+
+
+**"__rmatmul__":**
+	used if the left operator is not a member of the Matrix class, and basically turns the equation around so that the left object becomes the right object.
+	
+
+"**__imatmul__**":
+	used to modify the object in place, or add **+=, *=, -=, or [[/=]] **like functionality to the matrix multiplication
+	**m @= m2** basically means to set Matrix object m equal to the value of m @m2
+
+

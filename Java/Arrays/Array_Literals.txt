@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-14T21:20:25-05:00
+
+====== Array Literals ======
+Created Monday 14 February 2022
+
+When you know the size AND the contents of the array ahead of time, you can declare it with an array literal:
+
+**Example:**
+
+int[] intArray = new int[]{1,2,3,4,5};

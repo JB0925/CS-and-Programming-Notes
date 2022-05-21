@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-12T09:27:38-05:00
+
+====== Undoing Things in Git (git reset) ======
+Created Thursday 12 November 2020
+
+You can undo stages (**git add)** and commits **(git commit)**
+
+
+
+to undo a staged file:
+	**git reset 			#**will unstage all files listed
+				**OR**
+	**git reset filename.py	**# will only unstage that file
+	
+	
+
+to undo a commit:
+	**git reset HEAD~1**
+			HEAD means "last commit"
+			~1 means "go back one commit further than the current HEAD" or "reset so that the HEAD before the current HEAD is the new HEAD"
+
+
+to undo several commits:
+	**git reset --hard SHA goes here**
+	
+	NOTE: This command will uncommit, but also undo, the work done and the only work that will show is work up to the last commit after the command.
+	
+
+
+
+

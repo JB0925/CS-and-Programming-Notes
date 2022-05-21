@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-26T11:51:35-04:00
+
+====== tee ======
+Created Wednesday 26 May 2021
+
+**tee** creates a new file and **redirects stdout, which can be useful with a "pipe" command:**
+
+**Example:**
+	{{~/Desktop/ScreenShots/tee command.png}}
+	
+	
+	This command send **numbers.txt** to **stdin**, and used a "**pipe**" to send that to a file created with **tee**. 
+	That file is called **sorted_numbers.txt**. **tee** also sends the **stdout** from **sorted_numbers.txt** to the **sort -nr** command.
+	The output is all of the numbers in **numbers.txt** are now sorted, but the files do not have their numbers sorted.

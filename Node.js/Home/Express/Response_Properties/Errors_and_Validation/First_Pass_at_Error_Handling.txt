@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-10T21:21:12-04:00
+
+====== First Pass at Error Handling ======
+Created Friday 10 September 2021
+
+The easiest way to let Express know about an error is just to throw an error:
+
+**Example:**
+	app.get('/users/:username', (req, res) => {
+		const user = USERS.find(u => u.username === req.params.username);
+		
+		if (!user) **throw** "Not Found!";
+		
+		return res.send({user});
+	});
+	
+	
+**Issues with doing it this way:**
+
+1). Can't easily see the stack trace.
+
+2). Can't easily attach a status code.
+
+

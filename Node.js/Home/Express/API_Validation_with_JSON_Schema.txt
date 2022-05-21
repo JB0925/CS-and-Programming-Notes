@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-29T12:08:57-04:00
+
+====== API Validation with JSON Schema ======
+Created Wednesday 29 September 2021
+
+**Things to Remember:**
+	1). Every time you add a new field to your API, be sure to update your schema.
+	
+	2). You may want different schemas for **updating** and **creating**, etc.
+
+We can add rich validation to a JSON API with a tool called JSONSchema. 
+
+To play around with it, you can go to jsonschema.net and login with Github. 
+
+A JSON Schema lays out a detailed explanation for every key in our JSON object and the **values** that it is supposed to take in.
+
+
+If we **npm install jsonschema**, we can add this validation to our API.
+
+Doing so takes out a lot of the manual checks that we would typically have to do to validate data.
+

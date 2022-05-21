@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-28T00:00:28-04:00
+
+====== Clean Up or Roll Back After Testing ======
+Created Friday 28 May 2021
+
+Many times, after testing, we need to clean up after our tests.
+	- maybe we used a DB and we want to remove data that we committed
+	- maybe we added fake users to our DB, etc.
+	
+
+**Jasmine** has a function called **afterEach **that, after each test gets run, will fire. You provide the code:
+	**afterEach(function() {**
+		**input.value = '';**
+		**DELETE FROM myTable**
+		**WHERE id = 1;**
+	});
+	
+	So, after each test ran, the **afterEach** code would run and perform the operations inside of the code block.
+	

@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-11-01T15:11:25-04:00
+
+====== Use Redux w React Router ======
+Created Monday 01 November 2021
+
+This is very simple:
+
+**Example:**
+	ReactDOM.render(
+	**<Provider store={someval}>**
+		**<BrowserRouter>**
+			**<App />**
+		**</BrowserRouter>**
+	**</Provider>**
+	,document.getElementById("root"));
+
+So just make sure that your Provider is wrapping first, then the BrowserRouter, then the App component.

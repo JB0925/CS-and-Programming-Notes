@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-16T14:25:16-04:00
+
+====== Compound Assignment with Augmented Addition ======
+Created Tuesday 16 March 2021
+
+Javascript has the same **"+=" syntax** to say that a variable is equal to **itself +/-/*/ another number**
+	a = 5
+	a += 12
+	a
+	17

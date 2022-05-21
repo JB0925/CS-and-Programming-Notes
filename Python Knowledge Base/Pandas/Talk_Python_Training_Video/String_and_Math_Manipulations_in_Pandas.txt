@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-09T23:36:04-04:00
+
+====== String and Math Manipulations in Pandas ======
+Created Wednesday 09 September 2020
+
+**df['company'].str.upper() **....same as regular string.upper, but have to pass the "str" in
+
+**df['company'].str.len() **.....gives the length of the string in each column
+
+
+can use standard math functions with pandas:
+
+**df['extended_amount'] * .9** .....will return the column value * .9
+
+can also do: **df['extended_amount'].mul(.9) **.....mul = multiplication
+
+**df['new_price'] = 1.05 * df['price']**
+**df['new_extended_amount'] = df['new_price'] * df['quantity']**
+**df[['extended_amount', 'new_extended_amount']].sum() **....returns the sum of the two columns

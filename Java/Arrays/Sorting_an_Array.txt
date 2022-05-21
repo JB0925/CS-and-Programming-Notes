@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-21T09:10:14-05:00
+
+====== Sorting an Array ======
+Created Monday 21 February 2022
+
+To sort an array, you can call the **.sort()** method.
+
+**Example:**
+	int[] myArr = new int[5] {3,1,5,4,2};
+	Arrays.sort(myArr);
+		**// returns {1,2,3,4,5}**
+	
+	
+	**Sort a Subset of the Elements:**
+	
+	Arrays.sort(myArr, 1, 4);
+		**// returns {3,1,4,5,2}**
+		
+		
+	
+	**Reverse Sort an Array:**
+	
+	**NOTE:** This does NOT work with primitive types.
+      
+	  Integer[] myArr = new Integer[5] {1,2,3,4,5};
+	Arrays.sort(myArr, Collections.reverseOrder());
+	

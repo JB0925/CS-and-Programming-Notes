@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-07T23:42:47-05:00
+
+====== Max Heapify Example ======
+Created Thursday 07 January 2021
+
+{{.\pasted_image.png}}
+
+**A[2] **does not fit the definition of a max heap, so we need to change that by using Max_heapify()
+
+
+
+{{.\pasted_image001.png}}
+
+After the first call to Max_heapify(), **A[2]** is switched with the largest of its children (**A[4])**, but the same problem still exists, so we make a recursive call to Max_heapify(A, 4)
+
+
+
+{{.\pasted_image002.png}}
+
+**A[4] **is again switched with the largest of its children and, this time, the max heap requirements are satisfied, so no more calls are made
+

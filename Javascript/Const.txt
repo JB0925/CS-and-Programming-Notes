@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-26T09:57:28-04:00
+
+====== Const ======
+Created Friday 26 March 2021
+
+**Const **is a variable declaration method that allows you to declare a constant variable that should not change. 
+
+If your variable is an array,  **You can modify the contents of const by using push, unshift, shift, etc.**
+
+**You cannot set the entire array = a new array, because that would be changing the REFERENCE to the original array, and that is not allowed with an array that has been declared using the const method.**

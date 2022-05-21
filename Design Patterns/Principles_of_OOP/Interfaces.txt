@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-01T00:24:18-05:00
+
+====== Interfaces ======
+Created Tuesday 01 February 2022
+
+An interface is a contract that specifies the capabilities that a class should provide.
+
+For example, you could have a **Chef** interface, and then individual classes that would be required to **implement the methods on the Chef interface. **
+
+What this does, is it makes it so that the "Tom" class has all the methods of the Chef interface, but then he has his own methods as well. 
+
+This is making our classes more customizable, in that if "Tom" gets updated, it does not mean that all the other Chef instances would have to be updated like they would if **Chef** got changed.

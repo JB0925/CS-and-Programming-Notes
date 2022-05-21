@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-31T23:36:50-04:00
+
+====== idxmin and idxmax ======
+Created Monday 31 August 2020
+
+I used this to create a dataframe of the min and max values of each group in the data (i.e. 01-01, 01-02, etc.)
+
+**record_lows = record.loc[record.groupby('the_day').Value.idxmin()]**
+**record_highs = record.loc[record.groupby('the_day').Value.idxmax()]**
+
+I grouped by the day of the year, then pulled the min and max values for all stations, for all years based on the particular month-day combination.
+
+
+https://stackoverflow.com/questions/42181022/selecting-the-first-row-of-a-sorted-group-from-pandas-data-frame
+
+Third answer down.

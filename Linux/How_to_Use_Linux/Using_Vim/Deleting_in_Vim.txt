@@ -1,0 +1,55 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-31T21:29:20-05:00
+
+====== Deleting in Vim ======
+Created Sunday 31 January 2021
+
+https://phoenixnap.com/kb/how-to-delete-line-vim
+
+**NOTE: Exit INSERT mode in order to try these.**
+
+
+**Delete a single line:**
+	- move the cursor to the line you want to delete
+	- type **dd** or **D**
+
+
+**Delete a single word:**
+	- move the cursor to the start of the word you want to remove
+	- type **dw**
+	
+
+**Delete multiple lines:**
+	- move the cursor to the start of the first line you want to remove
+	- use one of the following two commands:
+		- **[#]dd**
+		- **d[#]d**
+		**NOTE: replace "#" with the number of lines to delete**
+
+
+**Delete a range of lines:**
+	- **:num1,num2d**
+	**NOTE: num1 and num2 are the first and last lines you want to delete. So, if you want to delete lines 4,5,6,7...run :4,7d**
+
+
+**Delete all lines:**
+	- **:%d**
+
+
+**Delete from current line to End of File:**
+	- make sure the cursor is at the start of the first line you want to remove
+	- run **:.,$d**
+
+
+**Delete from current line to Beginning of File:**
+	- make sure the cursor is at the start of the first line you want to remove
+	- **dgg**
+
+
+**Delete all blank lines:**
+	- **:g/^$/d**
+
+
+Check the link above to see two more methods (how to delete lines with / without a specific word)
+

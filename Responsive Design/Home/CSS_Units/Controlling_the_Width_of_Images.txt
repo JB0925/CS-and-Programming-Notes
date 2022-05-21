@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-25T00:08:31-04:00
+
+====== Controlling the Width of Images ======
+Created Friday 25 June 2021
+
+When an image is loaded, it is technically an **inline** element, and it's width defaults to its natural size, unless we change it.
+
+To make an image fill its container, set its **width** to **100%.**
+

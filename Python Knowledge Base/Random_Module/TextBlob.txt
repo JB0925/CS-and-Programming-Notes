@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-24T15:35:02-05:00
+
+====== TextBlob ======
+Created Tuesday 24 November 2020
+
+**Get a tweet's sentiment in Python using the textblob library:**
+
+**from textblob import [[TextBlob]]**
+
+tweets = ('I am happy with the book', 'this is awful', 'Python is object oriented', 'Python is awesome')
+
+for tw in tweets:
+	**tw, TextBlob(tw).sentiment**
+		returns a namedtuple Sentiment(polarity, subjectivity)
+		ex:
+			**(**'I was happy with the book', **Sentiment(polarity=0.8, subjectivity=1.0)**)
+					**tw							TextBlob(tw).sentiment**
+

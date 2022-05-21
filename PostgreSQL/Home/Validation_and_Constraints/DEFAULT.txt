@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-20T12:20:16-04:00
+
+====== DEFAULT ======
+Created Thursday 20 May 2021
+
+**DEFAULT:**
+	- maybe we don't know what a value is, but we don't want it to be NULL. Set it to **DEFAULT**.
+	- this can be set when creating a table, i.e.:
+		**CREATE TABLE products (**
+			id SERIAL PRIMARY KEY,
+			name VARCHAR(40) NOT NULL UNIQUE,
+			age INTEGER NOT NULL **DEFAULT 18**
+		);
+		
+	- this can also be set after the fact, AS LONG AS there are NO duplicate values in the table in the column you are trying to set it for. If there are, you will have to DELETE or UPDATE those records.
+	
+	- **ALTER TABLE products ALTER COLUMN age SET DEFAULT 18;**
+		- sets a column to have the DEFAULT constraint on the **age** column after the table has already been created

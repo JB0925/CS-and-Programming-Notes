@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-25T21:07:59-05:00
+
+====== Load Balancing with Nginx ======
+Created Tuesday 25 January 2022
+
+**Load Balancing:**
+	- the idea of having more than one instance of an application running to be able to handle increased traffic.
+	
+	- we can run multiple instances of a container with the following:
+		**docker-compose up -d --scale container_name=2**
+	
+**With Docker:**
+	- We will use **nginx** as a load balancer to route traffic to more than one instance of our app.
+	
+
+**Nginx Default.conf:**
+
+server {
+	listen 80;
+
+	location /api {
+		proxy_set_header X-Rea-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+		proxy_set_header Host $http_host;
+		proxy_set_header X-NginX-Proxy true;
+		proxy_pass http://node-app:3000;
+		proxy_redirect off;
+	}
+}

@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-28T10:40:36-04:00
+
+====== Create several files in one ZipFile Object ======
+Created Wednesday 28 April 2021
+
+You can iterate through a list of files, create a '**ZipFile object,** and save those files to zip file.
+
+**Example:**
+
+{{~/Desktop/ScreenShots/ZipFile Objects.png}}

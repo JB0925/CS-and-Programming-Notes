@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-02T00:25:37-05:00
+
+====== JS Encapsulation - Closures ======
+Created Wednesday 02 February 2022
+
+In JavaScript, you can use encapsulation with closures.
+
+**Example:**
+
+const person = {
+	let count = 0;
+	
+	return {
+		walk: () => {
+			console.log("I'm walking");
+		}
+		
+		sayHello: () => {
+			console.log("Hello!!!");
+		}
+		
+		click: () => {
+			count += 1
+		}
+	}
+}
+
+const joe = createPerson();
+
+joe.click();
+joe.sayHello();
+	// "Hello!!!"
+
+

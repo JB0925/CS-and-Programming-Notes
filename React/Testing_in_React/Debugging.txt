@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-11T15:59:06-04:00
+
+====== Debugging ======
+Created Monday 11 October 2021
+
+**render** provides a **debug** method that can be destructured out of it and used to debug tests.
+
+**Example:**
+	const { debug } = render(<Counter />);
+	**debug();**   // see the structure of the component
+	
+	fireEvent.click(getByText("Add"));
+	**debug();**   // see how the structure has changed
+
+
+**Debugging Tests:**
+	To set break points, edit your package.JSON:
+	
+	"scripts": {
+		// ...keep other things and add this
+		"test:debug": "react-scripts --inspect-brk test --runInBand"
+	};
+	
+	
+	**Next**, add the **debug()** line in the test or component you want to test
+	**Finally**, run **npm run test:debug** and you will be able to use the Chrome debugger to inspect.
+	
+	**Visit** chrome://inspect to debug in Chrome.

@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-17T00:02:32-05:00
+
+====== String to Double ======
+Created Thursday 17 February 2022
+
+**Example:**
+
+	Double myDouble = Double.parseDouble(str);
+
+**NOTE:**
+	- This will not work on a string such as "2019.125y"
+	

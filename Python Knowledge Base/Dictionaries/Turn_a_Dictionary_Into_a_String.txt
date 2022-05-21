@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-02T20:13:07-05:00
+
+====== Turn a Dictionary Into a String ======
+Created Tuesday 02 February 2021
+
+If you have a very nested dictionary (maybe JSON), an easy way to check if something is in the dictionary is to convert it to a string.
+
+**Example:**
+	- if 'my_string in str(dict):
+		return True
+	return False
+
+
+https://www.geeksforgeeks.org/python-convert-dictionary-object-into-string/
+
+
+

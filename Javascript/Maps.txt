@@ -1,0 +1,62 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-05T22:31:55-04:00
+
+====== Maps ======
+Created Saturday 05 June 2021
+
+Maps are almost exactly like objects, but there are a few differences:
+
+1). Any data type can be a key:
+	**const obj = {true: 'hello', 1: 'one'};**
+	
+	Remember, an object will convert **ALL **keys to strings, so now **true** would be converted to **"true"**.
+
+2). You cannot overwrite a key in a Map object.
+
+
+**How to Create a Map:**
+	let myMap = new Map();
+	
+
+**Map Methods:**
+	**myMap.set(key, value);**
+		puts a new key : value pair into the Map
+		**NOTE: **You can chain these.
+	
+	**myMap.get(key);**
+		this is how we look up a key in a Map. If the key is not in the Map, it returns undefined.
+	
+	**myMap.has(key);**
+		checks to see if a key is contained in the Map
+	
+	**myMap.delete(key);**
+		deletes a single key : value pair from a Map
+	
+	**myMap.clear();**
+		clears the entire Map so that it is empty
+	
+	**myMap.size;**
+		gives the length of the Map, or how many keys are in it (same as **.length** for arrays)
+
+**How to Access All Keys, All Values, and All Keys and Values Together:**
+
+**NOTE: **All of these are iterables and can be used in a **for...of** loop.
+
+	**myMap.keys()**
+		returns an array-like object with all of the keys that are in the Map. 
+		To turn it into an actual Map:
+			1). Spread: **[...myMap.keys()];**
+			2). Array.from(myMap);
+	
+	
+	**myMap.values();**
+		same as **.keys()**, except this time it contains the values themselves.
+	
+	
+	**myMap.entries();**
+		How to iterate through **.entries():**
+			**for (let [key, value] of myMap.entries()) {**
+				**console.log(key, value)**
+			**}**
+

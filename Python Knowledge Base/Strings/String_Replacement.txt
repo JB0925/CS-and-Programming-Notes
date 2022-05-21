@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-28T10:08:08-04:00
+
+====== String Replacement ======
+Created Wednesday 28 October 2020
+
+if you have a long string of text, and a list of replacements to make within that text, it would make sense to use **re.sub()** to make these replacements. 
+
+**re.sub()** will work, but in a loop, each call to re.sub will get overwritten.
+
+
+
+An easier way to make this work is the following:
+
+{{.\pasted_image.png}}
+
+here, self.extra is a list, and self.txt is the text being passed in to clean up. When done this way, it replaces anything that has the list item in it with an empty space, and **does not** write over it.

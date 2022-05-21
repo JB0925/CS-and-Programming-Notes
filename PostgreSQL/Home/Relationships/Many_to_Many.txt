@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-28T22:31:39-04:00
+
+====== Many to Many ======
+Created Sunday 28 March 2021
+
+**Examples of Many-to-Many Relationships:**
+{{.\pasted_image.png}}
+
+
+Students have many different classes, not all are the same. Classes have many different students, not all are the same.
+
+Movies have many different actors and actresses; not all are the same. Actors and actresses are in many different movies, not all of which are the same.

@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-14T10:22:39-04:00
+
+====== Destructuring Arrays ======
+Created Wednesday 14 April 2021
+
+**Example:**
+	const raceResults = [
+		'name1',
+		'name2', 
+		'name3',
+		'name4'
+	];
+	
+	
+	**const [gold, silver, bronze] = raceResults;**
+	
+		The above will create a new variable called **gold** and set it equal to **name1**, **silver**, set equal to name2, **bronze**, set equal to name3.
+		This **DOES NOT** create a list of new vars; they are free to be used anywhere without being called by index.
+
+	
+	**How to Select Values in an Array with Destructuring:**
+		**const [gold, , , fourth_place] = raceResults;**
+		
+		To do this, we use the two empty commas seen in the list. This tells JS to skp over indices 1 and 2, and grab index 3 (**fourth item**).
+		**gold === 'name1'**
+		**fourth_place === 'name4'**
+		
+	
+	**Combine Destructuring with Rest:**
+		
+		let nums = [1,2,3,4,5];
+		**const [first, , ..otherNums] = nums;**
+		
+		This would skip over the **number 2** (not index 2) in the **nums** array and would return:
+			**first = 1**
+			**array = [3,4,5]**
+

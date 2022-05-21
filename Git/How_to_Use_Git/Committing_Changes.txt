@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-29T11:24:56-04:00
+
+====== Committing Changes ======
+Created Thursday 29 October 2020
+
+**When you commit changes, you are telling Git to make a snapshot of this state in the repo.**
+
+To do so, type:
+		**git commit -m "your message here"**
+
+Check git status again:
+		**on branch master**
+		**nothing to commit, working directory clean**
+		
+		**NOTE**: if you don't enter a message, it will bring you to an editor where you can open a file and add a message above all the "#"'d lines.
+				 to get out of that editor, do the following:
+										**press Esc several times**
+										type **":q!" and press Enter**
+
+**NOTE:**
+	**If you have a file you've previously committed, and you make a change, you DO NOT have to "git add" the file again. **
+	
+	**Instead, you can do "git commit -am "your commit message here"**
+	
+	**NOTE:	ONLY DO THIS WITH FILES THAT HAVE BEEN PREVIOUSLY COMMITTED**

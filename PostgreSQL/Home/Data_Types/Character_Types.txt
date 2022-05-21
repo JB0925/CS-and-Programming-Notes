@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-19T13:20:15-04:00
+
+====== Character Types ======
+Created Wednesday 19 May 2021
+
+**CHAR(5) - **Store some characters, length will always be 5, even if PG/psql has to insert 5 empty spaces
+			Useful for when you want a column to be EXACTLY a certain number of characters
+
+**VARCHAR - **Store any length of string.
+
+**VARCHAR(40) - **Store a string up to 40 characters, but automatically remove unused characters. 
+				   Useful for setting a cap on the amount of characters one can use.
+
+**TEXT - **Store any length of string.
+

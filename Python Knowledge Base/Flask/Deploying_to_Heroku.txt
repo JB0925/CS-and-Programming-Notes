@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-09T23:11:22-04:00
+
+====== Deploying to Heroku ======
+Created Monday 09 August 2021
+
+Step 1).
+	- make sure to **pip install gunicorn**
+
+Step 2).
+	- make sure to **pip freeze > requirements.txt**
+
+Step 3).
+	- Create the Procfile
+		- make sure to add **"web: gunicorn app:app" **to it
+
+Step 4).
+	- if you need a specific version of Python, you need to add a file called **runtime.txt**
+		- in it, add **"python-3.7.2"**
+
+Step 5).
+	- Once you have everything, **git push heroku master**
+
+
+**Debug:**
+	- heroku logs --tail
+	
+
+**Set Environment Variables:**
+	heroku config`:set SECRET_KEY=mysecretkey FLASK_ENV=production
+	
+	heroku config **allows us to see all ENV variables**
+
+
+**Add Postgres Database:**
+	- heroku addons`:create heroku postgresql`:hobby-dev
+	
+	**Make Sure You Connect to the Correct DB**
+	- import os
+
+	  app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
+	'DATABASE_URL', 'postgres:///flask-heroku')
+	
+	- **alternatively, just set the DB URL in the .env file to "postgres:///flask-heroku"**
+	
+	
+	
+	

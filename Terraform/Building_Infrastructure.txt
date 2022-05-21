@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-07T19:56:49-05:00
+
+====== Building Infrastructure ======
+Created Friday 07 January 2022
+
+1). Create a **main.tf** file.
+
+2). Run **terraform init** in the directory where your files are located.
+	- doing this downloads and install the providers defined in **main.tf**
+	
+3). Run **terraform fmt** to make sure your config files are formatted correctly.
+
+4). Run **terraform validate** to make sure your config files are syntactically valid and internally consistent
+
+5). Run **terraform apply **to apply the configuration
+

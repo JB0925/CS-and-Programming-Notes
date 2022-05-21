@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-13T12:28:58-05:00
+
+====== touch ======
+Created Friday 13 November 2020
+
+Touch can be used to create a new or change the file creation/last saved times if desired.
+
+**Example:**
+	**touch new_file**
+	
+
+More on altering file times to come...
+

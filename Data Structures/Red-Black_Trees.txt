@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-05-08T13:54:09-04:00
+
+====== Red-Black Trees ======
+Created Sunday 08 May 2022
+
+**Red-Black Trees** are self-balancing Binary Search Trees.
+
+The problem with most of the operations in a standard BST is that their Time Complexity depends on the height of the tree. If they are all inserted in **ascending** or **descending** order, then the operations (**search, insert, etc.**) will occur in O(n) time instead of O(log n).
+
+A **red-black tree** allows a user to insert the nodes however they want, while guaranteeing that the tree will self-balance, thus guaranteeing that the time complexity will be O(log n).
+

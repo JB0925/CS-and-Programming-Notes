@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-28T13:44:50-05:00
+
+====== Doctest ======
+Created Monday 28 December 2020
+
+Write tests in your docstrings for your functions.
+
+**import doctest**
+use **doctest.testmod()**
+
+{{.\pasted_image001.png}}

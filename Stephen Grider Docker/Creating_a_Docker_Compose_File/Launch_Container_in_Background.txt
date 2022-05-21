@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-06T10:16:49-05:00
+
+====== Launch Container in Background ======
+Created Thursday 06 January 2022
+
+To use **docker-compose** and launch the container in the background, use:
+	**docker-compose up -d**
+	
+
+To stop a container that is running in the background, use:
+	**docker-compose down**
+	

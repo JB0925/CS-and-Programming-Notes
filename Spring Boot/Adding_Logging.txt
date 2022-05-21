@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-21T22:44:32-05:00
+
+====== Adding Logging ======
+Created Monday 21 February 2022
+
+Spring Boot comes with a built in logger. To use it, inside of the Controller, type the following:
+
+**Instantiating the Logger:**
+
+private final Logger LOGGER = LoggerFactory.getLogger(DepartmentController.class);
+
+
+
+**Using the Logger:**
+
+Inside of your restful routes, right above the call to the service layer, you can write:
+	**LOGGER.info("Whatever you want here.");**

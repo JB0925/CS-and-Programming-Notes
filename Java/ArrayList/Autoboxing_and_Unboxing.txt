@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-21T13:28:16-05:00
+
+====== Autoboxing and Unboxing ======
+Created Monday 21 February 2022
+
+**NOTES:**
+	1). This can also work with other primitive types, such as doubles, etc.
+	
+	2). It is simply a way of temporarily converting a primitive type to a type that is acceptable for an Array List.
+	
+	3). Autobox = convert to acceptable type.
+		 Unbox = convert back to primitive type.
+
+**Example:**
+
+   **// declare the array list**
+`ArrayList<Integer> intArray = new `ArrayList<Integer>();
+
+
+**// Use Integer.valueOf to Autobox the ints**
+
+for (int i = 0; i < 10; i++) {
+	**intArray.add(Integer.valueOf(i));**
+}
+
+
+
+**// Use Integer.intValue() to convert back to int**
+
+for (int i = 0; i < 10; i++) {
+	int newInt = intArray.get(i).intValue();
+	System.out.println(newInt);
+}

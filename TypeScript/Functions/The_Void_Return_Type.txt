@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T21:02:21-05:00
+
+====== The Void Return Type ======
+Created Sunday 12 December 2021
+
+The **void** return type is akin to None in Python.
+
+**Example:**
+
+const printNums = (array: number[ ]): **void** => {
+  console.log(array);
+};
+
+**The method has no return value, so "void" is a valid return type here.**
+
+**IF** there is a return value that returns nothing, i.e. **return undefined, return null, or return**, then you can use
+**undefined **or **null.**
+
+
+**Void** is for when there is **no return statement** at all.

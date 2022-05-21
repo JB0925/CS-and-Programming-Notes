@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-20T12:15:28-04:00
+
+====== How to Modify Sets ======
+Created Monday 20 September 2021
+
+We can make modifications to sets using the **AbstractBaseClass , **which are found in **collections.abc**.
+
+Abstract Base Classes are intended to be subclassed, and require the subclass to implement very specific methods.
+
+You can find a list of required methods / functions to implement by going to the docs for collections.abc
+
+For a **set**, you would need to implement three different methods:
+	1). dunder contains
+		- check for membership (x in mySet)
+	
+	2). dunder iter
+		- make it iterable (for veggie in vegetables:)
+	
+	3). dunder len
+		- get its length
+
+
+**The really cool part?**
+	- Once you define the above methods for **collections.abc.Set, **the other Set methods like **intersection, union, equality, etc. JUST WORK. No further action needed.**
+	

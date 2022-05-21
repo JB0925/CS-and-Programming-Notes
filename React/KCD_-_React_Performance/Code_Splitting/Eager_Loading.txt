@@ -1,0 +1,75 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-31T01:02:15-05:00
+
+====== Eager Loading ======
+Created Friday 31 December 2021
+
+We can also utilize **eager loading** to give a performance boost to our apps.
+
+**Eager loading** refers to loading some code **just before** an event occurs.
+
+This is typically done through the use of **event handlers** such as onClick, onMouseOver, etc.
+
+For instance, in our example below, we will load the code to show the globe when the user **hovers** or **focuses** on the checkbox before clicking.
+
+
+**Example:**
+
+// Code splitting
+// http://localhost:3000/isolated/exercise/01.js
+
+import * as React from 'react'
+**// Notice we are NOT doing an "import Globe from "../globe";**
+
+function App() {
+  const [showGlobe, setShowGlobe] = React.useState(false)
+
+  **NOTE: We can (and probably would) combine the two lines below, like this:**
+	const loadGlobe = () => import("../globe");
+	const Globe = React.lazy(loadGlobe);  
+
+  **// We load the code for the Globe component here, which means it will only load when it is needed.**
+  const Globe = React.lazy(() => import("../globe"));
+  
+  **// We call this function when we hover over the checkbox and it will start loading the Globe component**
+  const loadGlobe = () => {
+	import("../globe");
+  };
+
+  return (
+	<div
+	  style={{
+		display: 'flex',
+		alignItems: 'center',
+		flexDirection: 'column',
+		justifyContent: 'center',
+		height: '100%',
+		padding: '2rem',
+	  }}
+	>
+	  <label 
+		  style={{marginBottom: '1rem'}}
+		  **// Here, we call the "loadGlobe" when the user hovers over the checkbox**
+			**// which starts loading the code for the Globe component**
+		  onMouseOver={loadGlobe}
+		  onFocus={loadGlobe}
+	   >
+		<input
+		  type="checkbox"
+		  checked={showGlobe}
+		  onChange={e => setShowGlobe(e.target.checked)}
+		/>
+		{' show globe'}
+	  </label>
+	  <div style={{width: 400, height: 400}}>
+		  **// Here we use Suspense to "suspend" our code. We use a fallback to take the  place of the the Globe component while it loads.**
+		<React.Suspense fallback={<div>...loading</div>}>
+		   {showGlobe ? <Globe /> : null}
+		</React.Suspense>
+	  </div>
+	</div>
+  )
+}
+
+export default App

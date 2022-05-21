@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-30T11:57:27-04:00
+
+====== Export Package List for a Venv ======
+Created Friday 30 October 2020
+
+create a **requirements.txt** file that has the names of all of the packages and dependencies that you are using in the Virtual Environment, so they can recreate the Venv on their own.
+
+To get all of the packages in your Venv:
+		**pip freeze**
+		
+This will pull up a list of all packages and dependencies you are using, and then you can copy them into a **requirements.txt** file.
+
+
+

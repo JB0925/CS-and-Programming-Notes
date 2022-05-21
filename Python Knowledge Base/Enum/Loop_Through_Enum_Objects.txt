@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-28T22:21:02-05:00
+
+====== Loop Through Enum Objects ======
+Created Monday 28 December 2020
+
+if you have a list of Enum objects, in order to access one at a time in a for loop, call list() on the object:
+
+
+**for i in range(len(numbers)):**
+	**yield Bite(numbers[i], titles[i], list(levels)[i])**

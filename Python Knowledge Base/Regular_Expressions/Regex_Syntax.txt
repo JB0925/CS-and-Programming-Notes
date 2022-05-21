@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-29T01:20:00-04:00
+
+====== Regex Syntax ======
+Created Wednesday 29 July 2020
+
+NOTE: This is NOT Python syntax; just how to use regular expressions to search for strings in text.
+
+
+CoreyMSchafer@gmail.com
+corey.schafer@university.edu
+corey-321-schafer@my-work.net
+
+[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)
+
+[  ] = character set, pass in characters to search
++ = one or more
+
+So [  ]+ = one or more of the characters in the character set
+@ = literal @ symbol, just as you see in the email addresses
+
+. = match any character, so \. = match the period exactly
+com = literal, just as you see in the email addresses
+
+putting "." in the opening character set allows you to search for the "."
+
+(  ) = a group, search for a group of literal strings using the "|" 
+
+"|" = or
+
+So (com|edu|net) = would match the end of any of the above addresses.
+
+Adding the 0-9 in the opening character set allows you to search for numbers as well as the "-" symbol
+
+Also, have to add the "-" in the second character set after the @ symbol. **Remember the "." doesn't need to go in because we search for that with "\."**
+

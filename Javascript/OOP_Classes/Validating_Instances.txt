@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-07T20:56:44-04:00
+
+====== Validating Instances ======
+Created Monday 07 June 2021
+
+**Example:**
+	class `MyClass {
+		constructor(a, b, c) {
+			**let nums = [a,b,c].every(num => Number.isFinite(num) && num >= 0);**
+			**if(!nums) {**
+				**throw new Error ('You must pass in positive numbers!!')**
+			**}**
+			this.a = a;
+			this.b = b;
+			this.c = c;
+		}
+	}
+	
+	
+	If you need to validate the data being passed in, you can check for a condition and throw an error if the condition isn't met. 
+	If you don't do this, you can end up with bad data.
+	
+	If you just say **return**, the instance of the class will be created, but it will be blank...which is not helpful.

@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-19T12:32:29-04:00
+
+====== Switch Statment Multiple Cases for One Answer ======
+Created Friday 19 March 2021
+
+If you have more than one possible input or outcome that should return the same answer for all, you can use switch in this way:
+
+
+	function caseInSwitch(val) {
+	   var answer = '';
+	   switch(val) {
+		 **case 1:**
+**             case 2:**
+**             case 3:**
+		   answer = 'low';
+		   break;
+		**case 4:**
+	**      case 5:**
+	**      case 6:**
+		   answer = 'medium';
+		   break;
+		 }
+		 return answer;
+	   }
+

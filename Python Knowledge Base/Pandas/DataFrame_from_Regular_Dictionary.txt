@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-03T23:01:38-04:00
+
+====== DataFrame from Regular Dictionary ======
+Created Thursday 03 September 2020
+
+if you have a regular dictionary with key value pairs, and want to create a dataframe from it:
+
+	df = pd.DataFrame(dict.items(), columns=['col1', 'col2'])
+	
+	https://stackoverflow.com/questions/18837262/convert-python-dict-into-a-dataframe

@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-17T18:36:53-04:00
+
+====== Supplier ======
+Created Sunday 17 April 2022
+
+A Supplier is a **functional interface** that returns a value. It is very similar to a **getter. **
+
+**Example:**
+	static Supplier<String> getConnURL = () -> 
+		"jdbc://localhost:5432/users";
+

@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-19T21:26:14-05:00
+
+====== Create a 3D Array ======
+Created Saturday 19 December 2020
+
+**from pprint import pprint**
+
+array = **[[['#' for i in range(3)] for j in range(3)] for k in range(3)]**
+
+pprint(array)
+
+{{.\pasted_image.png}}
+
+helpful link:
+
+https://stackoverflow.com/questions/10668341/create-3d-array-using-python
+
+
+
+Create a 3D array with multiple items in multiple ways:
+
+{{.\pasted_image001.png}}
+
+
+**Use itertools.cycle to make the array:**
+
+{{.\pasted_image002.png}}
+
+
+https://stackoverflow.com/questions/65376457/how-can-i-create-a-3d-array-made-of-more-than-one-object-in-python/65376478?noredirect=1#comment115581915_65376478

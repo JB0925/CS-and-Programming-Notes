@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-12T11:35:54-05:00
+
+====== ls - list a directory's contents ======
+Created Thursday 12 November 2020
+
+**ls .. / .. /					(no spaces)			**#lists out the contents of the home directory
+
+
+**ls --help										#**lists all of the potential commands avaliable to you in that directory
+
+
+**ls -l "/dirname" 								#**lists out info about permissions in that directory, etc. 
+drwxr-xr-x 1 jesse jesse 512 Oct  4 23:58 jesse
+
+d = is a directory
+rwx = read, write, execute permissions
+- indicates that the given user does not have permission to do something, so **-xr** means the user does not have permission to write/create new files in that directory
+
+**Write permissions:**
+	in order to write to a file in a directory, you must also have write permissions on the directory the file is in (and any parent directories)
+	
+**execute permissions on a directory:**
+	this means "search" or "are you allowed to enter this directory?"
+	if you want to cd into a directory, you must have the  "execute" permission on the directory, and all of the directory's parent directories
+

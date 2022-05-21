@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-23T23:59:16-04:00
+
+====== Create a Basic Flask App ======
+Created Friday 23 October 2020
+
+1). from flask import Flask, redirect, url_for
+2). create an instance:
+		**app = Flask("__name__", template_folder='template')	#**name without the quotes, template folder= whatever you save template in
+
+**@app.route('/')					**#this is the page route
+3). create a home page:
+		**def home():**
+			**return 'Hello, this is the home page. <h1>HELLO<h1>**
+
+
+4). **@app.route('/<name>')			#**any time you pass something inbetween the brackets, it will add that as an argument when page routing
+	 **def user(name):**
+		**return 'Welcome, ' + name**		# so typing http://127.1.1/5000/Jesse will return a page that says "Welcome, Jesse'
+
+**NOTE:** You can have multiple parameters in the brackets...just be sure to add them as parameters in your view function.
+
+
+5). **@app.route('/admin')**
+	 **def admin():**
+		 **return redirect(url_for('home'))		**# this means the user doesn't have admin permissions, so it will redirect them to the home page
+	
+
+if __name__ == '__main__':
+	**app.run(debug=True)				**# debug=True makes it so that you don't have to re-run it every time you make a change
+	
+
+
+
+

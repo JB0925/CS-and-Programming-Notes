@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-14T22:57:58-05:00
+
+====== Get the Median of Dict Keys ======
+Created Saturday 14 November 2020
+
+	**keys = 0**
+**    values = 0**
+**    for k, v in d.items():**
+**        if type(v) != int:**
+**            raise TypeError**
+**        keys += k * v**
+**        values += v**
+    
+**    return int(keys / values)**

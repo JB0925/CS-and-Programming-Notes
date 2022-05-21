@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-11T00:01:28-05:00
+
+====== Use Sources Tab as an Editor ======
+Created Saturday 11 December 2021
+
+You can use the **sources** tab as an editor, where you can actually save your changes.
+
+Go to the **sources** tab, and click **Filesystem.**
+
+Click "Add Folder to Workspace" and then select the folder that you want to add.
+
+From there, you can edit files and the changes will be reflected in your local environment.
+
+You can add new files.
+
+Save any changes with CMD + S.

@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-10T13:44:38-05:00
+
+====== text-decoration ======
+Created Wednesday 10 February 2021
+
+Controls things such as **lines over, lines under, lines through, etc.**
+
+{{.\pasted_image.png}}
+The above example shows that you can put a line over all **h1** headings, but that you can also make that line blue if you choose to.
+
+You can add other options to it, like **wavy:**
+
+{{.\pasted_image001.png}}		{{.\pasted_image002.png}}
+
+
+You can use **text-decoration** from **anchor** tags (links) if you wanted to, by setting **text-decoration: none;** in your CSS stylesheet under **a**.
+
+
+

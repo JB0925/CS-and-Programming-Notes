@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-03T00:34:20-05:00
+
+====== Executing Commands in Running Containers ======
+Created Monday 03 January 2022
+
+We have seen how to do things like:
+	**docker create busybox echo hello world**
+	
+
+But what if we want to run other commands inside of a running container?
+
+We can run:
+	**docker exec -it container_id <command>**
+	
+	**NOTE:** You can also run **docker run -it image_name <command>**
+		- note that with **exec**, you need to get the container id. With **run**, you need the image id or image name.
+
+The **i** flag means means to make it so that the container accepts STDIN.
+
+The **t** flag makes it so that you get output in a nice looking terminal.	
+
+Of course, we would open up a new terminal window to do this.
+
+So, you could do something like:
+	**docker exec -it 0f567 cat myfile.py**
+
+And it would print out what we wanted to see.
+
+
+
+

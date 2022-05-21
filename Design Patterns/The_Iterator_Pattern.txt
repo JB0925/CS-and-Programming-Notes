@@ -1,0 +1,127 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-25T08:50:04-04:00
+
+====== The Iterator Pattern ======
+Created Monday 25 April 2022
+
+**Overview:**
+	The Iterator pattern is much like the **State Pattern**, in that essentially, we are programming to an interface to be able to handle objects with different methods or objects who methods vary in their functionality.
+	
+	The idea is that, if today I want to use a List to iterate over some objects, but tomorrow I want to do so with an Array, I can do so fairly easily with small changes and no changes to the main calling code.
+	
+
+**Example:**
+
+**1). The Product Class:**
+	- creates a generic product that takes an id and a name. Nothing special here.
+
+**2). The ProductCollection Class:**
+	- Again, nothing special. Is essentially our "History" class from the **Memento** pattern.
+	- It takes no arguments and has a list of Products that starts out as empty.
+	- It has an **add** method, which just adds a Product instance to the list.
+	
+**3). The Iterator Interface:**
+	- Here's where things start to get interesting.
+	- We add an Iterator interface of type T. This means that our iterator can allow for different types.
+	- The Iterator interface has **current, next, **and **hasNext()** methods.
+
+**4). The ProductCollection Class Revisited:**
+	- Inside of the PC class, we create a new class, called **ListIterator**, which implements the **Iterator** interface.
+	- The **ListIterator **class takes one argument: a **ProductCollection **instance.
+	- We implement the methods required by the interface, which essentially check to see if there is a next Product in the list, return the next product in the list, and increase the index that is used to do the aforementioned get and check.
+	
+	- Lastly, we create a new method, **createIterator()**, on the ProductCollection class, which simply returns a new **ListIterator** object.
+	
+	
+
+**The Code:**
+
+We will skip the code for the Product class, since there is nothing special there.
+
+
+**ProductCollection:**
+
+package com.codewithmosh.iterator;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProductCollection {
+  private List<Product> products = new ArrayList<>();
+
+  public void add(Product product) {
+	products.add(product);
+  }
+	
+	**// Method used to generate the new Iterator, of whatever type it may be**
+  public ListIterator createIterator() {
+	return new ListIterator(this);
+  }
+	
+	**// Creating a ListIterator class to handle Iteration. It would be easy to also create an ArrayIterator class to do the same thing, with slightly different methods, and do so without breaking the calling code in Main.**
+  private static class ListIterator implements Iterator<Product> {
+	private final ProductCollection productCollection;
+	private int index = 0;
+
+	private ListIterator(ProductCollection productCollection) {
+	  this.productCollection = productCollection;
+	}
+
+	@Override
+	public boolean hasNext() {
+	  return index < productCollection.products.size();
+	}
+
+	@Override
+	public Product current() {
+	  Product currentProduct = productCollection.products.get(index);
+	  this.next();
+	  return currentProduct;
+	}
+
+	@Override
+	public void next() {
+	  index++;
+	}
+  }
+
+}
+
+
+**The Iterator Interface:**
+
+package com.codewithmosh.iterator;
+
+public interface Iterator<T> {
+	public boolean hasNext();
+	public T current();
+	public void next();
+}
+
+
+**Main:**
+
+package com.codewithmosh;
+
+import com.codewithmosh.iterator.Iterator;
+import com.codewithmosh.iterator.Product;
+import com.codewithmosh.iterator.ProductCollection;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Product p = new Product(1, "a");
+		Product b = new Product(2, "b");
+		Product c = new Product(3, "c");
+		ProductCollection pc = new ProductCollection();
+		pc.add(p);
+		pc.add(b);
+		pc.add(c);
+		Iterator iterator = pc.createIterator();
+
+		while (iterator.hasNext()) {
+			System.out.println(iterator.current());
+		}
+	}
+}

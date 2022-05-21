@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-23T20:50:14-04:00
+
+====== Using Bcrypt ======
+Created Thursday 23 September 2021
+
+Step one: **npm install bcrypt**
+
+Step two: import bcrypt
+	- **const bcrypt = require("bcrypt");**
+
+
+**Bcrypt Methods We Need:**
+	bcrypt.hash(password, work-factor)
+		- 12 is a good work factor
+	
+	bcrypt.compare(password, hashed-pw);
+	
+	**both return a Promise, so use "async / await" to resolve them**
+	
+
+
+

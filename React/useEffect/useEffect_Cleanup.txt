@@ -1,0 +1,65 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-16T00:21:43-04:00
+
+====== useEffect Cleanup ======
+Created Saturday 16 October 2021
+
+You can return a function from **useEffect**.
+
+The function that can be returned from **useEffect** is useful for:
+	- clearing intervals or timers
+	- removing an event listener
+	- unsubscribing
+	- disconnecting from a socket
+
+
+**Example Without useEffect Cleanup:**
+	import React, { useState, **useEffect** } from "react";
+	import Timer from "./Timer";
+	
+	**For example's sake:**
+		const Timer = () => {
+			const [seconds, setSeconds] = useState(0);
+			**useEffect**(() => {
+				const setInterval(() => {
+					setSeconds(seconds => seconds + 1);
+				}, 1000);
+			}, [ ]);
+			
+			return <h1>{ seconds }</h1>
+		};
+	
+	const TimerWrapper = () => {
+		const [timerVisible, setTimerVisible] = useState(true);
+		const toggleTimer = () => {
+			setTimerVisible(!timerVisible);
+		};
+		
+		return (
+			<div>
+				<button onClick={toggleTimer}>Toggle Timer</button>
+				{timerVisible && <Timer />}
+			</div>
+		);
+	};
+	
+	
+	On the surface, this appears to work. The timer does get cleared in the DOM, but the interval is never actually cleared in the code, which ends up setting multiple setIntervals going at once, which can cause a memory leak. **Since the problem lies in the "Timer" component, let's see how to fix it using the return function from useEffect:**
+	
+	
+		const Timer = () => {
+			const [seconds, setSeconds] = useState(0);
+			**useEffect**(() => {
+				**const id** = setInterval(() => {
+					setSeconds(seconds => seconds + 1);
+				}, 1000);
+				
+				**return () => clearInterval(id);**
+			}, [ ]);
+			
+			return <h1>{ seconds }</h1>
+		};
+	
+	By saving the **setInterval** call in a variable and using its id to clear it in the **return function from useEffect**, the interval will actually be cleared **every time** the component re-renders and whenever the component dismounts.
+	

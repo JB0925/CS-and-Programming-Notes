@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-30T21:05:55-04:00
+
+====== Send Form Data to Another Page ======
+Created Wednesday 30 June 2021
+
+Say one page has a form on it, and you want to send the form's data to another page. Here's how to do it:
+
+**The Form:**
+{{~/Desktop/ScreenShots/Flask Re-Route Form Data.png}}
+
+Notice how the action is set to the **URL the data is supposed to go to. **The method is **POST**.
+
+
+**The Routes:**
+{{~/Desktop/ScreenShots/Flask Routes.png}}
+
+Notice that **BOTH** routes accept **GET **and **POST** methods.
+
+In this example, the data is sent from a form on the **home** route **TO** the **story **route.
+
+Then we get **request.form, **and pass it into the template.

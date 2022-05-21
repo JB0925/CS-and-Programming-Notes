@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-16T14:45:19-04:00
+
+====== Stack - Time Complexity Equations ======
+Created Wednesday 16 September 2020
+
+**1). Accessing:  O(n) ......**one of major drawbacks of using stacks
+
+**2). Searching:  O(n)**
+
+**3). Inserting:  O(1)**
+									You only insert on the top and delete from the top, therefore you are only performing one operation when ins/del
+**4). Deleting:  O(1)**
+

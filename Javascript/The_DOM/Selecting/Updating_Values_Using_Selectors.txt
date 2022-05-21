@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-22T20:13:47-04:00
+
+====== Updating Values Using Selectors ======
+Created Saturday 22 May 2021
+
+**Example:**
+	Say I have selected a form inside of my HTML:
+	- **const form = document.querySelector('form');**
+	
+	If I want to update various attributes from that form, I can do so:
+	
+	**form.id = 'cow';**
+
+	This will change the form's id attribute to **cow**.
+	
+	
+
+**Updating Elements with the "Value" Property:**
+
+You can also use the **value** property to update some elements:
+
+A common place that this is done is with a form input:
+	- **const input = document.querySelector('.classinput');**
+	- **input.value = 'why hello there';**
+	
+	When this is used, the text inside of the form input will change to say **why hello there**
+	
+	**NOTE: Value** is a get and set property, which means we can read and write it.
+
+
+**Another Example:**
+	const range = document.querySelector('input[type=range]');
+	**range.value**
+		6
+	**range.value = 8;**
+	
+	**range.value**
+		8
+

@@ -1,0 +1,51 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-03T19:59:27-05:00
+
+====== Max, Min, Sum ======
+Created Wednesday 03 March 2021
+
+**MAX:**
+	**SELECT MAX(price) FROM car;**
+		- would return the maximum car price in the table
+
+
+
+
+
+**MIN:**
+	**SELECT MIN(price) FROM car;**
+		- would return the minimum car price in the table
+
+
+
+
+**AVG:**
+	**SELECT AVG(price) FROM car;**
+		- would return the average car price in the table
+		- can round the average
+			**SELECT ROUND(AVG(price)) FROM car;**
+				- returns the average price rounded to zero decimal places (rounds to nearest whole number)
+
+
+
+**Combining MAX, MIN, and AVG with other queries:**
+	**SELECT make, model, MAX(price) FROM car GROUP BY make, model;**
+		- returns the make, model, and max priced car from the group
+
+
+
+**SUM:**
+	**SELECT SUM(price) FROM car;**
+		- returns the total sum of all car prices in the table
+	
+	**SELECT make, SUM(price) FROM car GROUP BY make ORDER BY SUM(price);**
+		- returns the sum of prices for all cars of a particular make
+
+
+
+
+
+
+
+

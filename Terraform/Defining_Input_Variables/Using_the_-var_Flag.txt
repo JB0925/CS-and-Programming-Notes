@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T14:21:36-05:00
+
+====== Using the -var Flag ======
+Created Saturday 08 January 2022
+
+When typing **terraform apply**, you can override default configurations by using the **-var** flag.
+
+**Example:**
+	terraform apply **-var** "instance_name=YetAnotherName"
+
+
+**NOTE: **Setting variables at the command line does not save their values for future use. 
+

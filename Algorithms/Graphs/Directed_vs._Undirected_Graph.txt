@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-06T23:02:48-04:00
+
+====== Directed vs. Undirected Graph ======
+Created Friday 06 August 2021
+
+**Directed Graph**
+	- usually represented with arrows
+	- connections are **ONE WAY** by default
+	- **Example:**
+		- You follow Kevin Durant on Twitter, and see all of his information, but he doesn't necessarily follow you back
+		- **You have an EDGE in a DIRECTED GRAPH pointing to KD, but he DOESN'T have one pointing to you**
+		- However, KD probably follows **James Harden**, and **James Harden** probably follows KD
+		- They have a two way connection because they made a choice to follow each other
+
+
+**Undirected Graph**
+	- **edges** are usually represented by **straight lines**
+	- the edges are **TWO WAY** connections by DEFAULT
+	- **Example:**
+		- You send Joe from college a **Facebook friend request**, and he accepts
+		- You are now friends with Joe, **but he is also now friends with you**
+		- You will see all of Joe's content on your feed, **and he will see all of yours**
+		
+

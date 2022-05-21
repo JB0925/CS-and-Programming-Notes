@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-18T10:05:44-04:00
+
+====== Use Indices to Modify an Array ======
+Created Thursday 18 March 2021
+
+Unlike strings and just like in Python, arrays are mutable.
+
+**Example:**
+	**var myArray = [76, 24, 32];**
+	**myArray[0] = 45**
+	**console.log(myArray)**
+		returns **[45, 24, 32]**
+		
+
+
+You can also do this with nested array, just like you would in Python.
+	**Example:**
+		**var myArray = 1,2,3], [4,5,6], [7,8,9], [[10,11,12], 13, 14;**
+		**console.log(myArray[3][0][1])**
+			returns 11
+

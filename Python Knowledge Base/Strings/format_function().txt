@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-07T21:40:44-04:00
+
+====== format function() ======
+Created Monday 07 September 2020
+
+If **str = 'The grass is greener on the other {}.'**
+
+And **x = 'side'**
+
+**print(str.format(x)) **....will fill in the brackets with 'side'.
+
+
+HOWEVER:
+	If there is a "key" inside the brackets:
+		
+		**str = 'The grass is greener on the other {word}.'**
+		
+		**x = 'side'**
+		
+		**print(str.format(word=x))** .....so you have to pass in the formatted object as a keyword argument
+		
+
+https://realpython.com/python-formatted-output/
+
+More info about 1/5 way down the page above.
+

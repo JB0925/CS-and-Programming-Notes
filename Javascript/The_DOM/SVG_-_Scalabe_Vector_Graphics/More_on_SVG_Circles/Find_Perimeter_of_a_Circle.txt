@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-26T21:32:57-04:00
+
+====== Find Perimeter of a Circle ======
+Created Monday 26 April 2021
+
+Formula for Perimeter of a circle is: **2 * PI * r**

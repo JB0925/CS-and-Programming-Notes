@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-09T22:58:15-05:00
+
+====== Application ======
+Created Thursday 09 December 2021
+
+The Application tab allows you to look at localStorage, sessionStorage, and more.
+
+To view either one:
+	- click **application tab**
+	- click Local Storage, etc.
+	- click the URL
+	- to the right, you'll see what's in the storage
+
+Click **cookies**, and then the url, to view your **cookies.**

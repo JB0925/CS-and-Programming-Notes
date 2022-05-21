@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-16T19:23:38-05:00
+
+====== Development vs Production ======
+Created Sunday 16 January 2022
+
+It is a good idea to have a **docker-compose.dev.yml** file as well as a **docker-compose.prod.yml **file.
+
+Often, your settings in production will be different than they are in development. A basic example would be:
+
+**1). Setting the NODE_ENV** environment variable to **development** or **production**.
+
+**2).** Using **nodemon** in development in order to see changes reflected without having to rebuild the image, whereas in **production**, using **node index.js** so that any changes are NOT immediately reflected before testing, CI, etc.

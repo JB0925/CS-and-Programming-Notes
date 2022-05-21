@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-24T07:58:29-04:00
+
+====== Verifying the JWT on the Backend ======
+Created Friday 24 September 2021
+
+
+**How to Verify the Token on the Backend:**
+
+The upcoming pattern would likely have to be repeated more than once, as there are often several pages that require authentication.
+
+
+**Using Middleware to Authenticate:**
+
+In **middleware.js:**
+	const authenticate = (req, res, next) => {
+		try {
+			const token = req.body._token;
+			const payload = jwt.verify(token, SECRET_KEY);
+			
+			req.user = payload;
+			return next();
+		} catch (err) {
+			return next()
+		}
+	}
+
+**NOTE:** The above stores the user data on the request for later requests.

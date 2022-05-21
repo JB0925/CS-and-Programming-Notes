@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-03T12:53:38-04:00
+
+====== Using Matter.js ======
+Created Monday 03 May 2021
+
+To include **matter.js** in a project, use the following script tag:
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js" integrity="sha512-3CP+e7z5ieYYTIyvRvV3eGVYR67yXg5V2mWfg8pEJJd2mlh8tG/cnDv5scTmRztEYHTksBlpPOmxFOiMtHfZdQ==" crossorigin="anonymous"></script>
+
+
+**Matter JS Terminology:**
+	**World: **an object that contains all of the things or shapes in our matter app. **The World is the dark canvas.**
+	
+	**Engine: **Reads in the current state of the world from the world object, then calculates changes in positions of all the various shapes
+	
+	**Runner: **Gets the engine and world to work together. Runs about 60 times per second.
+	
+	**Render: **Whenever the engine processes an update, Render looks at the shapes and shows them on-screen
+	
+	**Body: **A shape that we are displaying. Can be a circle, rectangle, oval, etc.
+
+
+**When you use Matter and you pass in a "height" and "width" into the Render.create() call, you are creating an HTML element called a "canvas". If you inspect the HTML, you will see "canvas" instead of div, etc.**
+

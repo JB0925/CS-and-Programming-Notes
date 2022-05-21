@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-07T01:19:39-05:00
+
+====== Generate a CSV with PostgreSQL ======
+Created Sunday 07 March 2021
+
+Use the **\ copy** command (no space)
+
+**Syntax:**
+	**\ copy (SELECT * FROM person2 LEFT JOIN car2 ON person2.car_id = car2.id) TO 'path/to/file.xlsx' DELIMITER ',' CSV HEADER;**
+	
+	
+	**NOTE: **On this computer, need to use **.xlsx** as my file extension.

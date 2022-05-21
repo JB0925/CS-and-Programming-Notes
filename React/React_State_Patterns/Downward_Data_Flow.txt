@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-09T01:06:11-04:00
+
+====== Downward Data Flow ======
+Created Friday 09 July 2021
+
+State should live on the parent.
+
+We want parent components to pass down data from state to child components.
+	**This can be seen in the dice project where "Die" is stateless and gets its data from its parent, RollDice, which does have state.**
+	
+	If State is more centralized to one component, it makes it easier to debug, because where know where state is / is coming from.
+	
+	{{~/Desktop/ScreenShots/React.- Stateful Parent Component.png}}
+	
+	Above is the parent component, and it is stateful.
+	
+	{{~/Desktop/ScreenShots/Stateful Component Render.png}}
+	
+	Above is what the `**RollDie **component renders, which is a stateless, or **dumb**, Die component.
+	
+	{{~/Desktop/ScreenShots/React - Stateless Child Component.png}}
+	
+	Above is the Die component that is being rendered. Very simple, and has no state. The die component is utilizing **props**, NOT **state.**
+	

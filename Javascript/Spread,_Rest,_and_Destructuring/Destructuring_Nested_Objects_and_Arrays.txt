@@ -1,0 +1,56 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-14T13:49:41-04:00
+
+====== Destructuring Nested Objects and Arrays ======
+Created Wednesday 14 April 2021
+
+const results = [{
+	  name: 'Joe',
+	  age: 19
+   },
+   {
+	  name: 'Tim',
+	  age: 25
+   },
+   {
+	  name: 'jerry',
+	  age: 27
+   }
+];
+
+
+**Use Destructuring to Get the "Age" of the Second Object in the Array:**
+
+	const [, {age}] = results;
+
+	Remember, the comma at the very beginning of the array means that we are skipping the first object and getting the value from the second object. If we wanted the value from the third object, we would use two commas.
+
+
+**Another Example:**
+
+const movie = {
+	title: 'The Sandlot',
+	rating: {
+		letter: 'R',
+		reason: 'violence'
+	},
+	year: 1984
+};
+
+**const {rating: {letter, reason}} = movie;**
+console.log(letter);
+	**returns "R"**
+
+console.log(reason);
+	**reason "violence"**
+	
+**NOTE:** There will be no **rating** variable. Only what is inside the inner brackets becomes a variable.
+
+**NOTE:** If you want to rename, you'd do it the same way:
+	**const {rating: {letter, reason: advisory}} = movie;**
+	console.log(advisory);
+		**returns "violence"**
+
+
+	

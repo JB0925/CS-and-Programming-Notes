@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-02T23:48:37-05:00
+
+====== How to Remove Unstaged or Untracked Files ======
+Created Monday 02 November 2020
+
+Command:
+	**git clean -d -n				**#allows you to see which files would be removed
+	
+	**git clean -d -f				**#actually removes the files
+	
+
+Another Option:
+	**git clean -d -i				**#will show the files and directories to remove, and ask you what you want to do with them
+	

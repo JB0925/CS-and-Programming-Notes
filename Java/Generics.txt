@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-23T10:57:57-05:00
+
+====== Generics ======
+Created Wednesday 23 February 2022
+
+Generics allow us to create classes, interfaces, and methods, that allow us to take types as parameters
+
+For instance, if you were to write:
+	`ArrayList myArr = new `ArrayList();
+	
+
+This would be considered valid Java and you wouldn't get any errors if you tried to add different types. This could be a bad thing if, say, you are trying to cast the string "Jesse" to an integer.
+
+If you change the above to:
+	`ArrayList<Integer> myArr = new `ArrayList<Integer>();
+	
+
+You would now get warnings about trying to include the String "Jesse" in the List.
+

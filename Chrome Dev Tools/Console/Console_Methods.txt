@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-10T23:05:48-05:00
+
+====== Console Methods ======
+Created Friday 10 December 2021
+
+**console.log** ... self explanatory
+
+**console.error** ... shows a message that looks like an error was thrown.
+
+**console.warn("msg")** .... shows a warning message
+
+**console.table**([{ "name": "Jesse", "age": 39 }, { "name": "Tim", "age": 15 }])
+	- works best with an array of objects
+
+gives back a table (think of Pandas) with the array data keys as headers, and values as column values
+
+**console.clear()** ...clears the console
+
+**console.group("message")**
+  console.log("hey")
+  console.log("hey")
+**console.groupEnd("message")**
+
+The above logs all of the messages as a group, akin to how we expand an array in the console.
+
+
+**console.time("identifyingMessage")**
+	console.log(function you want to time)
+**console.timeEnd("identifyingMessage")**
+
+The above will print out how much time it takes to run whatever function is passed between **time** and **timeEnd**.
+
+**console.assert( **what is passed in here is true **)**
+	- if it is not true, it will throw a red error message that says "**assertion failed: console.assert**"
+
+
+

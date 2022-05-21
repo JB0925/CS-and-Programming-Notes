@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-19T20:36:05-04:00
+
+====== Switch ======
+Created Tuesday 19 October 2021
+
+By default, Routes are matched **inclusively.**
+
+This means that the Route component will possibly match multiple components, even if **exact** is used in the Route component.
+
+**How to Use Switch:**
+	import { Route, Switch } from "react-router-dom";
+	
+	const App = () => {
+		return (
+			<div className="App">
+				**<Switch>**
+					<Route exact path="/">
+						<Home />
+					</Route>
+					<Route exact path="/food/new">
+						<NewFood />
+					</Route>
+					<Route exact path="/food/:name">
+						<Food />
+					</Route>
+				**</Switch>**
+			</div>
+		);
+	};
+	
+**Explanation:**
+	By using a **Switch** component, we are able to achieve **exclusive** routing, meaning it will only return the **first** match. 
+	
+	For example, the "/food/new" and "/food/:name", if we typed "**/food/new**" into the browser without using a Switch, we would render both the NewFood and the Food components, because of the route parameter in **"/food/:name**" where **name** matches anything.
+	
+	With a Switch, the **order of the routes matters**, so if there are any conflicts, the **most specific** routes need to come first.
+	

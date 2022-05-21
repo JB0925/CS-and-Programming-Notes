@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-11-03T20:50:58-04:00
+
+====== Install Redux-Thunk ======
+Created Wednesday 03 November 2021
+
+npm install redux-thunk
+

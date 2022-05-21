@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-24T01:11:06-05:00
+
+====== Print a Certain Number of Items Per Line ======
+Created Thursday 24 December 2020
+
+{{.\pasted_image.png}}
+
+returns:
+
+{{.\pasted_image001.png}}
+
+
+second answer down:
+
+https://stackoverflow.com/questions/30451252/print-5-items-in-a-row-on-separate-lines-for-a-list

@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-11T09:50:40-04:00
+
+====== Fraction Units and Repeat ======
+Created Tuesday 11 May 2021
+
+**Fraction units** allow for the entire grid to be responsive, because they tell the code to let the items grow as the container grows.
+
+{{~/Desktop/ScreenShots/Introduction to Fraction Units-CSS Grid.png}}
+
+This tells my code to make three columns, each column taking up 1 fraction unit of the space, no matter how big the container grows. 
+
+The rows will still be 50px tall due to the **grid-template-rows** that has been set. Below is the result:
+
+{{~/Desktop/ScreenShots/Fraction Units Part 2 - CSS Grid.png}}
+
+
+
+**Repeat:**
+	- **repeat()** allows us to do the same thing we did above with **grid-template-columns**, just with a different syntax.
+	{{~/Desktop/ScreenShots/Using Repeat - CSS Grid.png}}
+	
+	The above says to make 3 columns, each set to **1fr**. This is the same as the code above, just with a less complicated / shorter syntax.
+	
+	
+	Repeat can also be used with **grid-template-columns** in the same manner / same syntax. Can use pixel vaues as well.
+	
+
+
+**Shorthand for Repeat:**
+	{{~/Desktop/ScreenShots/Repeat Shorthand - CSS Grid.png}}
+	
+	
+	The code directly above will accomplish the same as either of the code snippets above it. 
+	**NOTE:** Remember, **rows** come first, **then columns** when using this shorthand style.
+	
+	
+	

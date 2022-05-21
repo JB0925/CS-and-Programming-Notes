@@ -1,0 +1,85 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-08T13:28:11-04:00
+
+====== Create a Context Manager ======
+Created Thursday 08 October 2020
+
+**You can use a class to create a context manager:    To do so, you have to define a "__enter__" method, and a "__exit__" method:**
+
+**Example:  scroll down to find the "__enter__" and "__exit__" methods.**
+
+from functools import total_ordering
+
+@total_ordering
+class Account:
+
+	def __init__(self, name, start_balance=0):
+		self.name = name
+		self.start_balance = start_balance
+		self._transactions = []
+
+	@property
+	def balance(self):
+		return self.start_balance + sum(self._transactions)
+
+	def __len__(self):
+		return len(self._transactions)
+    
+	def __lt__(self, other):
+		return self.balance < other.balance
+    
+	def __eq__(self, other):
+		return self.balance == other.balance
+    
+	def __gt__(self, other):
+		return self.balance > other.balance
+    
+	def __ge__(self, other):
+		return self.balance >= other.balance
+    
+	def __le__(self, other):
+		return self.balance <= other.balance
+    
+	def __str__(self):
+		return f'{self.name} account - balance: {self.balance}'
+    
+	def __add__(self,other):
+		if isinstance(other, (int, float)):
+			self._transactions.append(other)
+		else:
+			raise ValueError ('Sorry, please enter an int.')
+    
+	def __sub__(self,other):
+		if isinstance(other, (int, float)):
+			self._transactions.append(-other)
+		else:
+			raise ValueError ('Sorry, please enter an int.')
+    
+	def __getitem__(self, n:int):
+		try:
+			return self._transactions[n]
+        
+		except IndexError:
+			raise IndexError ('There is nothing at that index position.')
+    
+	**def __enter__(self):**
+**        return self**
+
+    
+**    def __exit__(self, exc_type, exc_value, exc_traceback):**
+**        if self.balance < 0:**
+**            self._transactions.pop()**
+        
+    
+c = Account('checking')
+s = Account('savings', 100)
+
+print(c.balance)
+print(s.balance)
+print(c.__len__())
+**with c as f:					<--- actual context manager. So once enter and exit have been set, if we look at exit (in this case), we can **
+	**c - 2							see the expected outcome is that if the balance < 0, the context manager will clean it up and roll it**
+print(c.balance)					**back to what it was previously. The call to print(c.balance) returns 0 instead of -2, because of the **
+											**context manager.**
+

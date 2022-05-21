@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-02T23:52:49-05:00
+
+====== Creating Database Models ======
+Created Tuesday 02 February 2021
+
+1). Go to **app_name / models.py** and create a class:
+{{.\pasted_image.png}}
+
+
+2). Activate the model(s).
+	- create a **migrations** file with the **python manage.py makemigrations app_name**
+		- a **migrations** file tracks changes over time, which is useful in debugging
+	- build the database with the **python manage.py migrate app_name** command
+
+3). Register the model(s):
+	- go to **app_name_directory/admin.py** and add the following:
+	{{.\pasted_image002.png}}
+	
+
+**Some Model Fields:**
+
+**models.CharField** – this is how you define text with a limited number of characters.
+**models.TextField** – this is for long text without a limit. Sounds ideal for blog post content, right?
+**models.DateTimeField** – this is a date and time.
+**models.ForeignKey** – this is a link to another model.
+	
+
+**Larger Model Example:**
+{{.\pasted_image001.png}}
+	

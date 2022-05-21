@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-22T12:34:36-04:00
+
+====== The Memento Pattern ======
+Created Friday 22 April 2022
+
+
+**1). The Editor**
+	- takes in the text
+	- has two methods:
+		- createState();
+			- job is to create an [[EditorState]] object, which essentially freezes, or "memoizes" the state of the Editor object at that point in time. 
+		- restore(state);
+			- job is to restore the state of the Editor object by calling on an [[EditorState]] object from a previous time.
+
+**2), The [[EditorState]] **
+	- the [[EditorState]] is essentially a snapshot of the Editor object at a particular moment in time. It saves whatever is in the Editor when **createState();** is called.
+	- it works together with the History object, which is essentially a list of [[EditorState]] objects
+	
+
+**3). The History**
+	- The History object is a list of [[EditorStates]] and, when restore(state); is called, we are calling to the History object to grab a previous [[EditorState]] object, which will then become the current Editor.
+	
+
+
+**Pattern:**
+	- Editor: The "worker", where the text gets edited
+	- EditorState: The saved state, the object that can become the current Editor again. Creating a "memo".
+	- History: A record of saved states. Can be called on to retrieve a previous version of the Editor.
+
+{{~/Desktop/ScreenShots/Memento Pattern.png}}

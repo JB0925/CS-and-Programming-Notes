@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-09T22:30:50-04:00
+
+====== Remove chars within a string ======
+Created Sunday 09 August 2020
+
+.strip() only removes characters from the beginning and end of a string.
+
+To remove characters within a string, use replace():
+
+	**for x in lst:**
+		**if '\n' in x:**
+			**x.replace('\n', '')**
+	**print(lst)**
+	

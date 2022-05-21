@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-31T12:24:33-04:00
+
+====== Updating State - useDispatch ======
+Created Sunday 31 October 2021
+
+To trigger the updating of state using the **reducer**, use useDispatch.
+
+**import { useSelector, useDispatch } from "react-redux";**
+
+const Counter = () => {
+	const count = **useSelector(store => store.count);**
+	const **dispatch** = **useDispatch();**
+	const up = () => dispatch({ type: "INCREMENT" });
+	const down = () => dispatch({ type: "DECREMENT" });
+	
+	return (
+		<div>
+			<h2>The count is: {count}.</h2>
+			<button **onClick={up}**> + </button>
+			<button **onClick={down}**> - </button>
+		</div>
+	);
+}; 
+
+**NOTES: **In this example, we access the count from Redux with **useSelector**. Then we create two functions, "up" and "down", using **dispatch** (remember to initialize **useDispatch** first). Finally, we set the button onClick to be "up" and "down"

@@ -1,0 +1,81 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-20T21:14:20-04:00
+
+====== Making a Lightweight ORM in PG ======
+Created Monday 20 September 2021
+
+A cool way to make an ORMish style way of interacting with Postgres, is to create a class for the type of object your API, etc., is working with. Let's say we had an API about dogs.
+
+We can use **static methods** (ones that aren't connected to an instance, and **don't** need to be instantiated to call) to do all of the typical Postgres CRUD-style applications. **These methods will return an instance of the class itself.**
+
+Then, we can add **regular**, typical instance methods.
+
+**Static Methods:**
+	- getAll().....GET
+	- getItemById().....GET
+	- create().....POST
+
+**Instance Methods:**
+	- remove() .....DELETE
+
+**Example:**
+	class Dog {
+		constructor(id, name, age) {
+			this.id = id;
+			this.name = name;
+			this.age = age;
+		};
+		**static** async getAll() {
+			const results = await db.query(
+				`SELECT id, name, age
+				 FROM dogs`
+			);
+			const dogs = results.rows.map(r => 
+				new Dog(r.id, r.name, r.age));
+			return dogs;
+		};
+		**static **async getDogById(id) {
+			const results = await db.query(
+				`SELECT id, name, age
+				 FROM dogs
+				 WHERE id = $1`,
+				 [id]
+			);
+			const d = results.rows[0]
+			return new Dog(d.id, d.name, d.age);
+		};
+		**static** async create(name, age) {
+			const addition = await db.query(`
+				INSERT INTO dogs
+				(name, age)
+				VALUES
+				($1, $2)
+				RETURNING name, age`, 
+				[name, age]
+			);
+			const dog = addition.rows[0];
+			return new Dog(dog.id, dog.name, dog.age);
+		};
+		//**In the DELETE route, you'd call Dog.getDogById() first to check to see if a dog at that id exists.**
+		async remove() {
+			const results = await db.query(
+				`DELETE FROM dogs
+				 WHERE id = $1', [this.id]
+			);
+		};
+		speak() {
+			console.log("WOOF!!!");
+		};
+	};
+
+In the example, we created a **static** method that serves two purposes:
+	1). Get data from the database.
+	2). Turn the data into instances of the Dog class, which we can then call instance methods on.
+
+Then, we created the method **speak()**. This is an instance method and, once we instantiated the dogs in **getAll()**, we are able to call instance methods on them.
+
+
+
+
+

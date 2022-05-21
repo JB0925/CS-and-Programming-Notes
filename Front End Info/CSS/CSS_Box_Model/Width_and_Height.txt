@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-15T09:21:20-05:00
+
+====== Width and Height ======
+Created Monday 15 February 2021
+
+**The Box Model:**
+	- The box model is the idea that everything in CSS/HTML is just a box, and those boxes have a couple of different properties
+	{{.\pasted_image.png}}
+	
+
+**The width is the distance from side to side of the box.**
+**The height is the distance from bottom to top of the box.**
+
+
+Width and height control the inner **content** box (shown above).
+
+By default, a container, h1, p, etc., all have their width set to be the entirety of the screen (**even if the content doesn't take up the wole screen**). If you use the **width** property, you can narrow how far these spread across the screen.
+
+Same for height, except it will control how tall the element is. 
+

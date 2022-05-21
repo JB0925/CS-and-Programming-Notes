@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-05T22:03:57-04:00
+
+====== RGBHex and HexRGB ======
+Created Wednesday 05 August 2020
+
+code for turning hex values to rgb values:
+
+**def hex2rgb(hex):**
+**        """Class method that converts a hex value into an rgb one"""**
+**        if len(hex) != 7:**
+**                raise ValueError ('That is not a valid rgb value')**
+        
+**        try:**
+**            hex = hex.lstrip('#')**
+**            hlen = len(hex)**
+**            return tuple(int(hex[i:i+hlen//3], 16) for i in range(0, hlen, hlen//3))**
+        
+**        except TypeError:**
+**            raise ValueError ('That is not a valid rgb value.')**
+
+
+code for turning rbg values into hex values:
+
+**def rgb2hex(rgb: tuple):**
+**        """Class method that converts an rgb value into a hex one"""**
+        
+**        for num in rgb:**
+**            if num not in range(0, 256):**
+**                raise ValueError ('That is not a valid rgb value')**
+
+**        try:**
+**            hex = '#{:02x}{:02x}{:02x}'.format(rgb[0], rgb[1], rgb[2])**
+**            return hex.lower()**
+        
+**        except TypeError:**
+**            raise ValueError ('That is not a valid rgb value')**
+
+
+            

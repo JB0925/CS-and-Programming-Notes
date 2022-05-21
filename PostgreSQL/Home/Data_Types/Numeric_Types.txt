@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-18T14:24:04-04:00
+
+====== Numeric Types ======
+Created Tuesday 18 May 2021
+
+
+**NUMBERS WITH NO DECIMAL POINTS:**
+	**smallint: **-32768 to 32767
+	
+	**integer: **-2147583648 to 2174483647
+	
+	**bigint: **-9223372036854775808 to 9223372036854775807
+
+
+**NUMBERS WITH NO DECIMAL POINT, AUTO INCREMENT:**
+	**smallserial: **1 to 32767
+	
+	**serial: **1 to 2147483647
+	
+	**bigserial: **1 to 9223372036854775807
+
+
+**NUMBERS WITH DECIMAL POINTS**
+	**decimal: **131072 digits before the decimal point, 16383 after
+	
+	**numeric: **131072 digits before the decimal point, 16383 after
+	
+	**real: **1E-37 with at least 6 places precision
+	
+	**double precision:** 1E-307 to 1E308 with at least 15 places of precision
+	
+	**float: **Same as real or double precision
+

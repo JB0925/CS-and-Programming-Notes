@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-09T22:34:11-04:00
+
+====== Remove Brackets from List ======
+Created Sunday 09 August 2020
+
+**lst = str(somelist)[1:-1]**
+
+https://www.geeksforgeeks.org/python-remove-square-brackets-from-list/
+

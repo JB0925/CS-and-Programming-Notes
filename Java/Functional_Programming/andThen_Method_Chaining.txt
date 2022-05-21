@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-13T08:44:25-04:00
+
+====== andThen Method Chaining ======
+Created Wednesday 13 April 2022
+
+Let's take our simple example and use the **andThen** method with it:
+
+**import java.util.function.Function;**
+
+static Function<Integer, Integer> add = number -> number + 1;
+
+
+
+**Let's now write ANOTHER function:**
+	static Function<Integer, Integer> mul = number -> number * 10;
+
+
+**What if we want to combine the first function with the "mul" function?**
+
+**Option #1 - The "Normal" Way:**
+	int num = add.apply(2);
+		**// 3**
+	int multiplied = mul.apply(num);
+		**// 30**
+
+
+**Option # 2 - andThen:**
+	Function<Integer, Integer> doTwoThings = add.andThen(mul);
+		**// Now we have combined two functions into one larger function**
+		
+	**Calling the above function:**
+		int myNum = doTwoThings.apply(9);
+			**// 100**
+   
+

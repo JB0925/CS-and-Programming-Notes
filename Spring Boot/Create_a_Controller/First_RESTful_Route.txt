@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-19T22:14:02-05:00
+
+====== First RESTful Route ======
+Created Saturday 19 February 2022
+
+Here we set up a controller, then decorate a method with **@RequestMapping **and add the necessary items to make it our first RESTful route in Spring Boot.
+
+{{~/Desktop/ScreenShots/SpringBoot RESTful Route.png}}
+
+**A Better Way:**
+
+{{~/Desktop/ScreenShots/SpringBoot GetMapping.png}}

@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-18T14:28:55-04:00
+
+====== Comparison Operators with the Equality Operator ======
+Created Thursday 18 March 2021
+
+Just like in Python, two "equals" signs means "**it is the same as" **and one equal sign is for assignment.
+
+
+**StrictEquality:**
+	= = =  (no spaces)
+	
+	In JS, a major difference is that == can mean that **3** == '**3'** is True. In Python, this is not so.
+	
+	However, if we use Strict Equality in JS, it checks for type and behaves much more like Python.
+		**Strict Equality Syntax:**
+			 = = =      (no spaces)
+			
+		In Strict Equality, **3 === '3' **is False, since they are the same value but **ARE NOT** the same type.
+

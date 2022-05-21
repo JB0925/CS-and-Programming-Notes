@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-10T21:20:19-04:00
+
+====== Errors and Validation ======
+Created Friday 10 September 2021
+

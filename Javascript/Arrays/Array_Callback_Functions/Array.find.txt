@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-29T22:34:13-04:00
+
+====== Array.find ======
+Created Monday 29 March 2021
+
+{{.\pasted_image.png}}
+
+**First Example:**
+	setting a variable, **movie**, to a callback function that will iterate through an array and return the **first** instance of the movie that **includes** the string '**Mrs.**'
+		In other words, the **movie** variable will be the name of the **first** movie that includes the string **Mrs.**
+
+
+**Second Example:**
+	**movie2** will be the **first** movie name where the **.find** function finds the movie name where the **Mrs.** string is at index 0.
+	
+
+**On an Object:**
+{{.\pasted_image001.png}}
+
+Here we have an array of objects. Below, we make the **constant** "boy". Boy is equal to the **first** myObject element that myObject finds that has an **age** attribute that is less than 20. 
+
+When we console.log(boy), it returns the second object, where the **name** attribute is 'Tim'.
+

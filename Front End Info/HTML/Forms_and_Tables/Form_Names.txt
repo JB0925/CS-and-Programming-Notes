@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-07T14:42:22-05:00
+
+====== Form Names ======
+Created Sunday 07 February 2021
+
+When you submit a form, the **action** attribute determines where the form data will be sent to.
+
+The **name** attribute determines how the server can access that form data. 
+
+**Example:**
+	- 'w ww.google.com/search/?q=search_term
+	- this says that the form name is **q**
+	
+
+
+You can add a **name attribute** to each input of the form.
+
+{{.\pasted_image.png}}
+
+Above is an example of a form with a name for each **input** element: **username, password, color, num**
+- 
+

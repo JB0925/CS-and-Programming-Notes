@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-17T09:49:24-04:00
+
+====== Find First Character in String ======
+Created Wednesday 17 March 2021
+
+Just like in Python, you can get the first character of a string using bracket notation and indexing:
+
+
+var someVar = 'Hello';
+
+console.log(someVar[1])
+	- **this would return "e"**, **for the letter at index 1 of the word.**

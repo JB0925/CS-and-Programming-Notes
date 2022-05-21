@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-06T20:26:25-05:00
+
+====== Joining Two Tables in a Query ======
+Created Saturday 06 March 2021
+
+The way to make a query where you are looking for something (or things) that are related to an object in another table is to use JOIN and ON.
+
+**Example:**
+	**SELECT make, model FROM car2 a JOIN person2 b ON (a.id = b.car_id);**
+		- returns a table with the make and model of the car that belong to a specific person that has a **car_id** that matches the **id** column of the car from the **car2** table
+
+
+

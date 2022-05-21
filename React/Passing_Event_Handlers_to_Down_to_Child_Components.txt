@@ -1,0 +1,64 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-12T14:08:50-04:00
+
+====== Passing Event Handlers to Down to Child Components ======
+Created Tuesday 12 October 2021
+
+Typically, event handler functions, such as click event handlers, etc., are passed down from Parent to Child components. There are typically two ways to do this:
+
+1). **Parent**
+	 const Counter = () => {
+		const [allNums, setAllNums] = useState([1,2,3,4,5]);
+		const **remove** = num => {
+		setAllNums(allNums.filter(n => n !== num));
+		};
+        
+		return (
+		<div>
+			<NumberObject number={10} remove={remove}
+		</div>
+		);
+	 };
+	
+	**Child**
+	const NumberObject = ({  number, remove }) => {
+		const handleClick = () => {
+			remove(number);
+		};
+		
+		return (
+			<li>
+				<button onClick={**handleClick**}>{number}</button>
+			</li>
+		);
+	};
+	
+
+
+**Second Way:**
+
+
+	 **Parent**
+	 const Counter = () => {
+		const [allNums, setAllNums] = useState([1,2,3,4,5]);
+		const **remove** = num => {
+		setAllNums(allNums.filter(n => n !== num));
+		};
+        
+		return (
+		<div>
+			<NumberObject number={10} **remove={() => remove(number)**}
+		</div>
+		);
+	 };
+	
+	**Child**
+	const NumberObject = props => {
+		return (
+			<li>
+				<button onClick={**props.remove**}>{number}</button>
+			</li>
+		);
+	};
+

@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T13:47:55-05:00
+
+====== Terraform Lingo ======
+Created Saturday 08 January 2022
+
+**AMI - **Amazon Machine Image
+
+**ARN - **Amazon Resource Name

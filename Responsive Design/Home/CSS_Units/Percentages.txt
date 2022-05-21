@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-24T23:58:49-04:00
+
+====== Percentages ======
+Created Thursday 24 June 2021
+
+Generally, when setting widths, you don't want to use pixels.
+
+Pixels are **absolute units** and will always stay the same.
+
+This will cause side-scrolling as screens shrink, because the units (**px**) are not responsive.
+
+
+**Setting a width with percentages will automatically make the container adjust to the screen size.**
+
+**NOTE:** When using **percentages**, the percentage value is **always** relative to the element's **parent**.
+	- so, **width: 50%;** means that it will always be 50% of the width of the element's parent
+	
+	- in many cases, the parent's width will be 100% anyway, but that is not always the case
+

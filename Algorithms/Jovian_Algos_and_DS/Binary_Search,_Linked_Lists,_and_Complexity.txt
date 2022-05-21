@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-31T00:44:14-05:00
+
+====== Binary Search, Linked Lists, and Complexity ======
+Created Sunday 31 January 2021
+
+**Binary Search:**
+	- Alice tells Bob that she wants him to turn over a particular card in as few turns as possible. She has sorted the cards in descending order. How can he do it?
+	{{.\pasted_image.png}}
+	- **Answer: perform a Binary Search on the deck of cards (a Python list)**
+	{{.\pasted_image001.png}}
+	{{.\pasted_image002.png}}
+	
+	

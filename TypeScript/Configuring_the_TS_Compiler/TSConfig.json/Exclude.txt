@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T23:27:02-05:00
+
+====== Exclude ======
+Created Sunday 12 December 2021
+
+If you want to exclude files from being watched / compiled by the **typescript compiler**, you can include them in an **exclude **key.
+
+This key goes in after all of the commented out code, but before the closing curly bracket.
+
+**NOTE: node_modules** is always excluded as a default setting. However, if you do bring in the **exclude** key, you **have to **exclude **node_modules** manually.
+
+**Example:**
+
+"exclude": [
+  "node_modules"   **// important to exclude**
+  "myfile.ts",
+  "otherFile.ts",
+  "*.dev.ts"
+]

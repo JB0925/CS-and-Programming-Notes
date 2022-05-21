@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-04T19:47:28-04:00
+
+====== Conditional Logic With Chameleon ======
+Created Sunday 04 April 2021
+
+If you want your HTML to render differently based on some condition, you can use **tal:condition='your condition here" **as an attribute in the HTML tag.
+
+To make it so that Chameleon knows what "**your condition here**" is, in the Base Viewmodel class, set a class attribute. So if your condition is **"is_logged_in**", in the Base Viewmodel class, set **self.is_logged_in = False**.
+
+**Example:**
+	{{.\pasted_image.png}}
+	
+	NOTE the '**tal:condition in the div attributes for both sides of the if/else combo**

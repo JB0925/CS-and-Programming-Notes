@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-18T22:00:04-05:00
+
+====== Check if a String is Null ======
+Created Friday 18 February 2022
+
+1). if (myString == null) {
+	// do stuff
+}
+
+
+2). if (myString.isEmpty()) {
+	// do stuff
+}

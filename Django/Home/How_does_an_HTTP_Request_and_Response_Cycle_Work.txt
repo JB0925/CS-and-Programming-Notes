@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-01T00:32:24-05:00
+
+====== How does an HTTP Request and Response Cycle Work ======
+Created Monday 01 February 2021
+
+When you type in a URL in Django:
+	- the first thing that happens is a **URLpattern** is found that matches our homepage
+	- the **URLpattern** specifies a **view**, which then determines the content for the page, and then finally a **template** for styling and basic logic
+	- the end result is sent back to the user in the form of an **HTTP response**
+	
+	**Example Flow Chart:**
+		- {{.\pasted_image001.png}}
+		
+		- sometimes, a **Model** is not needed
+	
+	
+	**The Takeaway:**
+		- Django **views** determine **what** is displayed on a page
+		- **URLConfs** determine **where **that information is going
+		- the **model** contains the **content** from the **database**
+		- the **template** provides **styling **for it
+

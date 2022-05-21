@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-07T01:39:45-04:00
+
+====== Including the Router ======
+Created Saturday 07 August 2021
+
+In **Index.js**, the file that we almost never touch:
+	**import { `BrowserRouter } from "react-router-dom";**
+	
+	**ReactDOM.render(**
+		**<BrowserRouter>**
+			**<App/>**
+		**</BrowserRouter>,**
+		**document.getElementById("root")**
+	**);**
+	
+
+
+In **App.js**, we first need to import the **Route** component
+	**import { Route } from "react-router-dom";**
+	
+
+**The App Component Itself:**
+	class App extends Component {
+		render() {
+			return (
+				<div className="App">
+					**<Route path="/dog" component={Dog}/>**
+					**<Route path="/" component={About}/>**
+					**<Route path="/home" component={Home}/>**
+				</div>
+			)
+		}
+	}
+

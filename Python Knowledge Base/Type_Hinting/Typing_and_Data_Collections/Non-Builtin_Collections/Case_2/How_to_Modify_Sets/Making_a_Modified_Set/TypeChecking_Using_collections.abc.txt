@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-20T12:53:49-04:00
+
+====== TypeChecking Using collections.abc ======
+Created Monday 20 September 2021
+
+**Two Examples:**
+	def print_items(items):
+		for item in items:
+			print(item)
+			
+	
+	# the above works well **if** the collection has an **iter** method.
+	
+	
+	def print_items(items: **collections.abc.iterable**):
+		for item in items:
+			print(item)
+	
+	
+	# this lets the user know that the **items** are an Abstract Base Class, and have an **iter** method implemented on them, which allows us to iterate over them.
+	

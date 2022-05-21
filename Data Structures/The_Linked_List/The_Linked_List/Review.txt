@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-20T23:21:05-04:00
+
+====== Review ======
+Created Sunday 20 September 2020
+
+**Review:**
+	- a Linked List is a sequential access linear data structure in which every element is a separate object called a Node, containing TWO parts:
+		- the data
+		- the **reference**, or **pointer**, to the next Node in the List
+		
+		
+		{{.\pasted_image.png}}
+		
+	- **One Big Drawback of a Linked List:**
+		- you can only ever go forward with the pointers, never backwards
+

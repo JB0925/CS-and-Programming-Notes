@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-17T12:06:35-04:00
+
+====== DISTINCT ======
+Created Monday 17 May 2021
+
+To get unique values, use DISTINCT:
+	**SELECT COUNT (DISTINCT department)**
+	**FROM products;**
+	- will return how many unique departments there are in the inventory.
+
+
+To get unique **combinations of values:**
+	**SELECT DISTINCT department, name**
+	**FROM products;**
+	- will return only results where department and name are a unique combination
+
+
+**NOTE: **Query #1 above makes use of the **COUNT** function, but you can only use it if you have **ONE** distinct value you are searching for.

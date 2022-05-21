@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T22:42:30-04:00
+
+====== module.exports ======
+Created Monday 06 September 2021
+
+Normally, **module.exports **is an object, but you can set it to whatever you want:
+
+**Example:**
+
+"example.js"
+
+**module.exports = function() {**
+	**console.log('hi')**
+**}**
+
+
+
+"new.js"
+
+const sayHello = require('./example');
+sayHello();
+// hi

@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-21T20:19:27-05:00
+
+====== Check if Object Field is Null ======
+Created Monday 21 February 2022
+
+To check if an object's field is currently null, you can use:
+
+if (Objects.nonNull(myObject.getFieldICareAbout()) {
+	// do stuff
+}
+
+
+
+**Check if Object Field is not null AND that Field is not blank / empty (Useful in HTTP requests):**
+
+if (Objects.nonNull(myObject.getFieldICareAbout()) && !"".equalsIgnoreCase(myObject.getFieldAgain()) {
+	myOtherObject.doStuff(item);
+}

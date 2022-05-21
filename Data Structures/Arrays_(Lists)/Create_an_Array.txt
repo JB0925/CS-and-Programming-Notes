@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-13T01:26:22-04:00
+
+====== Create an Array ======
+Created Sunday 13 September 2020
+
+**How to create an array:**
+	- populate the array with elements right then and there
+	- set a specific size for the array, then populate it later
+
+**Populate-First Arrays:**
+	- defining and filling an array as soon as you create it is used mainly for when you already
+	  know which values are going to be held within it
+	**Java = **int array[ ] = {1,2,3};
+	**Python = **array = [1,2,3]
+	**C# = **int[ ]array = {1,2,3};
+	
+
+**Populate-Later Arrays:**
+	- creating an array by setting an initial size for our array, but not filling it with any elements
+		- slowly populate it as the programs run
+		- used for **user-entered** information
+		**Java = **int array [ ] = new int[10];
+		**C# = int[ ] array = new int[10];**
+

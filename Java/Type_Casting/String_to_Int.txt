@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-17T00:03:39-05:00
+
+====== String to Int ======
+Created Thursday 17 February 2022
+
+**Example:**
+
+int myInt = Integer.parseInt(myString);
+	**// doesn't work on a char**
+	
+
+
+

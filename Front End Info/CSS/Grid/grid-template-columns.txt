@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-10T23:43:10-04:00
+
+====== grid-template-columns ======
+Created Monday 10 May 2021
+
+This property defines how many columns you want, and the width of each column.
+
+The property **auto** sets that particular column to take up however much space is left over on the screen.
+
+{{~/Desktop/ScreenShots/Grid-Template-Rows.png}}
+
+The above reflects six divs, and setting **grid-template-columns: 100px auto 100px;**

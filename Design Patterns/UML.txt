@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-04T00:00:57-05:00
+
+====== UML ======
+Created Friday 04 February 2022
+
+
+
+
+
+
+
+
+
+
+{{~/Desktop/ScreenShots/Java UML.png}}
+
+**UML** is what is in the box to the left.
+
+**Shape: **The name of the class.
+**[[-positionX:int:]] **the name of a private variable. The **-** at the front lets us know that it is private.
+`**+render():** This shows **render **also has no return value, and therefore it doesn't get  a semicolon at the end.
+

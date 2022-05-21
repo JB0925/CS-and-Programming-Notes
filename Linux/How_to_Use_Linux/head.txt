@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-15T23:47:20-04:00
+
+====== head ======
+Created Saturday 15 May 2021
+
+opposite of **tail**
+	
+	**head <filename>**
+		- returns first 10 lines of a file
+	
+	**head -<number> <filename>**
+		- returns first **<number>** lines of a file
+		
+		**NOTE: Can also be used with "tail"**
+		
+

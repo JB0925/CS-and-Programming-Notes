@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-18T22:23:04-05:00
+
+====== Setting Default Instance Vars ======
+Created Friday 18 February 2022
+
+
+You can use a second constructor to set default instance variables if values aren't passed into the "main" constructor. The constructor in bold below is doing just that. 
+
+**NOTE: **If you use the **default** constructor, the **this(...)** line needs to be the first line in the constructor.
+
+public class Account {
+	private int number;
+	private double balance;
+	private String customerName;
+	
+	**public Account() {**
+		**this(45, 2.50, "Default Name");**
+	**}**
+	
+	public Account(int number, double balance, String customerName) {
+		this.number = number;
+		this.balance = balance;
+		this.customerName = customerName;
+	}
+}

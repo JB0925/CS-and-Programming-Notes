@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-23T22:03:06-04:00
+
+====== Using JWTs ======
+Created Thursday 23 September 2021
+
+1). **npm install jsonwebtoken**
+
+2). **const jwt = require("jsonwebtoken");**
+
+**Creating Tokens:**
+	jwt.sign(payload, secret-key, jwt-options)
+	
+	**Calling the above method returns the token itself.**
+	
+
+
+**Decoding and Verifying Tokens:**
+	jwt.decode(token); // {username: "jane"}
+	
+	jwt.verify(token, SECRET_KEY); // {username: "jane"}
+	
+	jwt.verify(token, "WRONG") // error!
+	

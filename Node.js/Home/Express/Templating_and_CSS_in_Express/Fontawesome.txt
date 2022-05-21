@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-26T23:50:38-04:00
+
+====== Fontawesome ======
+Created Sunday 26 September 2021
+
+For some reason, fontawesome cdn links do not work when using express...possibly because of using static files in another directory. 
+
+However, via npm you can install a **Fontawesome library:**
+	**npm i @fortawesome/fontawesome-free**
+
+
+Then, to use this library, in your app.js, write in:
+
+**app.use(express.static('./node_modules/font-awesome/css'));**
+

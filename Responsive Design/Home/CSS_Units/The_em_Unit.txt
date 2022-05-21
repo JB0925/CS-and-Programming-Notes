@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-25T00:46:40-04:00
+
+====== The em Unit ======
+Created Friday 25 June 2021
+
+**em** is a **relative** unit
+
+It is **relative** to its **parent's** font-size
+
+Font-size is an inherited property, so if you don't set the **parent's font-size**, **em's** will be relative to the body font size, which is **usually 16px**
+
+**NOTE:** When using **1em**, nothing will happen, because **1em** means "**set the font-size to the font-size of the parent element**"
+
+**1.5em** = **150% **of the **font-size** of the **parent.**
+
+**2em** = **200%** of the **font-size** of the **parent.**
+
+And so on...
+
+
+This makes it easy to make it responsive, because if the parent's **font-size **is **18px**, setting:
+
+**ol {**
+	**font-size: 2em;**
+	**}**
+
+
+**p {**
+	**font-size: 4em;**
+**}**
+
+
+Would mean that the **ol **is **always** 200% bigger than the parent, and the **p** tag will always be 400% bigger than the size of the parent.
+

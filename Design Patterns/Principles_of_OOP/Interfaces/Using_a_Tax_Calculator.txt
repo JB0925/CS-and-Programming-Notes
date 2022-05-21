@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-01T00:35:19-05:00
+
+====== Using a Tax Calculator ======
+Created Tuesday 01 February 2022
+
+public class TaxCalculator2019 **implements TaxCalculator {**
+	var balance = 2;
+	public static void calculateTax() {
+		this.balance *= 1.5
+	}
+}
+
+
+public class TaxCalculator2020 **implements TaxCalculator {**
+	var balance = 15;
+	public static void calculateTax() {
+		this.balance *= 3.2
+	}
+}
+
+So here, we make changes to the TaxCalculator2019 class.
+
+We could also have a **TaxCalculator2020** class, but instead of inheriting from **TaxCalculator2019**, and potentially breaking if **TC2019** changes, it just implements the interface, and is independent of **TC2019, **even though they would both have whatever methods are in the **TaxCalculator **interface, 

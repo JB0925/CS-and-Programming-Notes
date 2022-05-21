@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-03T20:42:49-05:00
+
+====== Combine Math with Regular Queries ======
+Created Wednesday 03 March 2021
+
+**Example:**
+	**SELECT make, model, price, price * .10 FROM car;**
+		- returns make, model, price, and an unnamed column which shows the price times 10%
+		
+	{{.\pasted_image.png}}
+		- returns the same as above, except the temporary column is the price - (price * .10), rounded to 2 decimal places
+
+
+
+

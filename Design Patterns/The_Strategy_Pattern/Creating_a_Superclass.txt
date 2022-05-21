@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-17T21:16:44-05:00
+
+====== Creating a Superclass ======
+Created Thursday 17 February 2022
+
+**NOTE:** After creating this class, along with the interfaces and subclasses, we can now begin to create individual instances of different ducks.
+
+public abstract class Duck {
+	**// both of the next two lines will be**
+	**// of type FlyBehavior and QuackBehavior **
+	**// and are instances of one of the classes**
+	**// that implements that interface**
+	FlyBehavior flyBehavior;
+	QuackBehavior quackBehavior;
+	
+	abstract void display();
+	public Duck() { }
+	
+	**// next two methods are wrappers that**
+	**// will call the method from the class**
+	**// instantiated above**
+	public void performFly() {
+		flyBehavior.fly();
+	}
+	
+	public void performQuack() {
+		quackBehavior.quack();
+	}
+	
+	public void swim() {
+		System.out.println("All ducks float!");
+	}
+	
+}

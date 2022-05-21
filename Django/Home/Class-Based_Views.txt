@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-01T20:53:27-05:00
+
+====== Class-Based Views ======
+Created Monday 01 February 2020
+
+You can use **class-based views** to display your templates, instead of having to rewrite new functions that repeat certain things over and over again.
+
+To do this:
+	- go to the **views.py** file in the **project's **main directory:
+			- **code pages/views.py**
+	
+	- Use '**TemplateView **to display your template:
+		- **def 'HomePageView(TemplateView'):**
+			**template_name='home.html'**
+

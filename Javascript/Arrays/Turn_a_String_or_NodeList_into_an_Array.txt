@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-29T14:22:09-04:00
+
+====== Turn a String or NodeList into an Array ======
+Created Saturday 29 May 2021
+
+let allATags = document.querySelectorAll('a');
+
+let arrayOfATags = Array.from(allATags)
+	**returns AN ARRAY **of all the A tags from her garage.
+

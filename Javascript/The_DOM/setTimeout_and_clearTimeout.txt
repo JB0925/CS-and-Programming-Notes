@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-29T00:09:50-04:00
+
+====== setTimeout and clearTimeout ======
+Created Thursday 29 April 2021
+
+How to use **setTimeout** and **clearTimeout** to create a timer of sorts:
+
+{{~/Desktop/ScreenShots/setTimeout and clearTimeout.png}}
+
+In the above code, we select our input element, and we declare a variable, **timeoutId**, as a way to turn **setTimeout** into a timer of sorts.
+
+**NOTE: Every time a setTimeout object is called, it returns an ID. Call it once, it will return 1. Call it again, it will return 2, etc.**
+
+We create an **event** that runs a check to see if there is a **timeoutId**. REMEMBER, **timeoutId** is returned every time the **setTimeout **object is called. 
+
+The first time this function is called, the API will get queried because there is no **timeoutId**. **setTimeout** hasn't been called yet. After that, **every time the user types, the "setTimeout" object will be called, only to be cleared as the user types another key.**
+
+So, if the user types another key before one second has passed, the **setTimeout **object is cleared. **ONLY after 1 second and no more typing, will the "setTimeout" object execute.**
+
+This cuts down greatly on API calls.
+
+Finally, we add an event listener on the input, and call the **onInput** function within it.
+
+**This process is called "Debouncing an Input".**
+

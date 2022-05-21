@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-13T00:50:49-04:00
+
+====== Props ======
+Created Sunday 13 June 2021
+
+**Properties**, or **props**, allow us to make our components more configurable or customizable, and therefore more **reusable.**
+
+Take our **Hello** component for example:
+	- right now it just says "Hello There!"
+	
+	- **we want to make it so that we can say "Hi _____ from _____.**
+	
+	- **Props** allow us to do this, thus making this component much more **reusable.**
+	
+
+**We will make two props: "to"** and **"from".**
+

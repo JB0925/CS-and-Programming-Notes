@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-18T10:15:33-04:00
+
+====== The pop() Method ======
+Created Thursday 18 March 2021
+
+Works just like Python's **.pop()**
+
+Removes the last item from the array and returns it.
+
+**Example:**
+	**var myArray = [1,2,3];**
+		**newNum = myArray.pop();**
+		**console.log(newNum);**
+			returns **3**
+		**console.log(myArray)**
+			returns **[1,2]**
+

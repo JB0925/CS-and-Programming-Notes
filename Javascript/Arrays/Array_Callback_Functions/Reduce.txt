@@ -1,0 +1,84 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-01T08:17:38-04:00
+
+====== Reduce ======
+Created Thursday 01 April 2021
+
+Reduce is a method that takes all values of an array and manipulates them until there is one value left. The first value in a **reduce** function is called the **accumulator**, and the second value is called **currentVal**.
+
+**let nums = [1,2,3,4,5];**
+**let strings = ['fun', 'party', 'highlight', 'reserve'];**
+
+**Example 1: Sum with reduce**
+	let sum = nums.reduce((a,b) => a + b);
+		**returns 15**
+
+
+**Example 2: Find the max**
+	let maximum = nums.reduce((a,b) => {
+		if (a > b) {
+			return a
+		}
+		  return b
+	   });
+
+
+**Example 3: Find the longest string**
+	let maxlength = strings.reduce((a,b) => {
+		if (a.length > b.length) {
+			return a
+		}
+		return b
+	});
+	
+	
+
+**Create a tally counter with reduce:**
+	const votes = ['y', 'y', 'n', 'y', 'y', 'n', 'n', 'y'];
+	const results = votes.reduce((tally, val) => {
+		   if (tally[val]) {
+		  tally[val]++;
+		   } else {
+				  tally[val] = 1;
+		   }
+		return tally
+	  }, {})
+
+
+	OR 
+	
+	const results = votes.reduce((tally, val) => {
+		tally[val] = (tally[val] | | 0) + 1;
+		return tally
+
+
+
+**Working with Objects with reduce:**
+	let books = [
+		{
+			 title: 'This Book',
+			 rating: 3.8
+		},
+		{     title: 'Some Book',
+			 rating: 2.7
+		},
+		{
+			title: 'That Book',
+			rating: 4.3
+		},
+		{
+			title: "The Book",
+			rating: 2.1
+		}
+	];
+	
+	let orderedBooks = books.reduce((a,b) => {
+		let key = Math.floor(b.rating);
+		if (!a[key]) {
+			a[key] = [b];
+		} else {
+			   a[key].push(b);
+		}
+	}, {});
+	

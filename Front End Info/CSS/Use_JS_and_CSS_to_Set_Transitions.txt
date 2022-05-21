@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-05T13:03:40-04:00
+
+====== Use JS and CSS to Set Transitions ======
+Created Saturday 05 June 2021
+
+When you append an element to the DOM, a CSS transition will not work, due to something called browser batching.
+
+**How do we get around this?**
+	We use JS's **setTimeout()**
+	
+**Example:**
+	{{~/Desktop/ScreenShots/JS Transition CSS.png}}		{{~/Desktop/ScreenShots/JS Add Transition Property.png}}
+	
+	The first part above is CSS. In the **.piece** class, you can see we changed the game piece's position to **absolute. **The other rules in the **.piece** class are related to the sizing and box positioning of the piece.
+	
+	Classes **five** through **zero** set the top property of the game piece div. This is done dynamically in the JS. This lets JS know how high to drop the piece from.
+	
+	The **.lower** class is **one of two keys** to getting the transition to work. Here, we set the **top** to **5px** (positioned absolutely relative to its parent). **Then we give the "top" property a "transition" of "top 1.5s".**
+	
+	
+	**In the JS:**
+		Here, we create the game piece, and add the **.piece** class. The **addClass(y)** function takes the row passed in (the **y **value), and returns a string that matches the class names to the left. So, if **5** is passed in, it will add the name **"five"** to the **classList** property, etc.
+		
+		This tells JS how to set the initial top value, which tells the DOM how high to drop the piece from.
+		We add the color class to the piece depending on whether the piece is for player 1 or player2.
+		
+		We then append the chip to the correct **td**, which we have already selected.
+		
+		Finally, we use **setTimeout()**, and a very short duration (**10ms**), to add the **.lower** class. **This is the second key to making this work. **
+		
+		Now, when you click to add a piece, it will drop from the top slot down to where it is supposed to be.
+

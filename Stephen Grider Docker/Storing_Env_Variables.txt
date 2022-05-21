@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-20T00:31:35-05:00
+
+====== Storing Env Variables ======
+Created Thursday 20 January 2022
+
+In the Root directory, create a directory called **config**, and in that directory, create a file called **config.js**
+
+In **config.js:**
+
+module.exports = {
+	MONGO_IP: process.env.MONGO_IP || "mongo",
+	
+	MONGO_PORT: process.env.MONGO_PORT || 27017,
+	
+	MONGO_USER: process.env.MONGO_USER,
+	
+	MONGO_PASSWORD = process.env.MONGO_PASSWORD
+}
+
+**index.js:**
+
+.connect("mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin")

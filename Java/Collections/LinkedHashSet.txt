@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-26T21:09:45-05:00
+
+====== LinkedHashSet ======
+Created Saturday 26 February 2022
+
+A LinkedHashSet is another type of Set that implements the Set interface. Its biggest difference is that it maintains the order of insertion.
+	**Example:**
+		LinkedHashSet<String> myLHSet = new LinkedHashSet<String>();
+		
+
+**NOTE:** Because it implements the Set interface, all of the same methods as the HashSet still apply.
+

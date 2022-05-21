@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-25T00:14:40-04:00
+
+====== Max-Width ======
+Created Friday 25 June 2021
+
+**NOTE: **You can put min-width, max-width, and width in any order you like inside of the css selector. They are different values.
+
+**max-width:**
+	- used to set the maximum size of something 
+	- if the screen gets super large, the element won't continue to grow with it, it will stop growing when the max-width is reached
+
+
+**Examples:**
+{{~/Desktop/ScreenShots/Max-width Example.png}} {{~/Desktop/ScreenShots/max-width css.png}}
+
+	In this example, the screen is shrunk to the smallest size. Both **.first-container** and **.second-container** have a width of **90%** of their parent (**.container**).
+	
+	
+{{~/Desktop/ScreenShots/max-width 2.png}}
+
+	Same thing here, they both have a **width** of **90%, **but **both have grown larger to match the screen / container size**
+	
+	
+
+
+
+{{~/Desktop/ScreenShots/Max-Width final.png}}
+
+
+On this final, example, we can see that the **image** stopped growing as the page got bigger, but the **.first-container **div is still 90% of the width of its parent.
+
+**This is because we set "img {max-width: 800px;}" on our image.** It will never grow to be bigger than 800px.
+
+
+
+

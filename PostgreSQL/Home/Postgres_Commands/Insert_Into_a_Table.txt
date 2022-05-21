@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-02T21:55:00-05:00
+
+====== Insert Into a Table ======
+Created Tuesday 02 March 2021
+
+**How to Insert Records into Tables:**
+	- let's say we want to insert into our table the following information:
+		**id=1, first_name=Anne, last_name=Smith, gender=FEMALE, date_of_birth=09/01/88**
+		
+	**Syntax for an INSERT Statement:**
+		INSERT INTO table_name (
+			first_name,
+			last_name,
+			gender,
+			date_of_birth)
+		VALUES ('Anne', 'Smith', 'FEMALE', DATE '1988-01-09');		#**DATE is yyyy-mm-dd**
+	
+	**NOTE:** Notice after **date_of_birth** we closed parentheses, but did not include the semicolon until after the VALUES statement.
+	
+	**Example INSERT Statement, followed by a query to show that the data was saved:**
+	{{.\pasted_image.png}}
+	
+	**Example With an Email:**
+	{{.\pasted_image001.png}}
+	
+	**NOTE:	**You could just make the INSERT statement on one line, and the VALUES statement on one line.
+

@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-23T00:20:12-04:00
+
+====== How it Works ======
+Created Saturday 23 October 2021
+
+1). Create a file called Context.js or something similar.
+
+2). This is what goes in it:
+	import React from "react";
+	
+	const CountContext = React.createContext();
+	
+	export default CountContext;
+
+3). In your component file:
+	**import CountContext from "./Context";**
+	
+
+4). Use **Context.provider** by wrapping it around whatever you are returning in your component:
+	return (
+		<CountContext.Provider>
+			<div className="myComponent">
+				<h1>Hello<h1>
+			</div>
+		</CountContext.Provider>
+	)
+	
+5). Context.Provider has a **value** prop that allows us to pass around data between multiple components. **You can only pass in ONE thing **to the **value** prop, BUT that one thing can be an object, array, etc., i.e. something to hold more than one data point.
+
+6). Now, **everything **inside of the **Context.Provider** wrapper, including any and all child components, has access to the **value** prop....with a catch....see **Subscribing** for more.

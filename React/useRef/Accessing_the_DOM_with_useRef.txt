@@ -1,0 +1,55 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-16T19:33:17-04:00
+
+====== Accessing the DOM with useRef ======
+Created Saturday 16 October 2021
+
+**Example:**
+
+import React, { useState, useRef, useEffect } from "react";
+
+function Video({
+  src = "https://media.giphy.com/media/KctGIT2JHvVRC7ESeR/giphy.mp4"
+}) {
+  **const video = useRef();**
+  const [speed, setSpeed] = useState(1);
+
+  useEffect(function adjustPlaybackRateOnVideo() {
+	// video.current is the video HTML Element
+	// video elements have a .playbackRate
+	// that allow you to speed up / slow down a video
+	**video.current.playbackRate = speed;**
+  }, [video, speed]);
+
+  return (
+	<div>
+	  <video muted autoPlay loop **ref={video}**>
+		<source src={src} />
+	  </video>
+	  <div>
+		<button onClick={evt => setSpeed(s => s / 2)}>slow</button>
+		<button onClick={evt => setSpeed(s => s * 2)}>fast</button>
+		<p>Current speed: {speed}x</p>
+	  </div>
+	</div>
+  );
+};
+
+
+**Explanation:**
+	In this example, we are trying to access a video element in HTML in order to speed up or slow down the video.
+	
+	1). We set up a useRef variable:
+			**const video = useRef();**
+	
+	2). In our useEffect, which runs every time the video or speed variables are altered, we set the **video.current.playbackRate** **= speed;**
+		Remember, video has a key that is called **current**. In this instance, it also has an attribute **playbackRate** because of what comes next.
+	
+	3). In the HTML, we have this line:
+			**<**video muted audioPlay loop **ref={video}**>
+				<source src={src} />
+			</video>
+			
+		This line sets the **ref** attribute of the video element to be equal to the **video** variable that we created with **useRef. **This means that we can then code out the rest of function using **video.current**.
+

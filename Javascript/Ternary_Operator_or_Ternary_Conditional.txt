@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-25T09:57:24-04:00
+
+====== Ternary Operator or Ternary Conditional ======
+Created Thursday 25 March 2021
+
+A **ternary operator** is an **if / else** statement squeezed into one line of code, though the syntax is very different.
+
+**Example:**
+	Here is a conditional using **if / else **syntax:
+	
+	if (num === 3) {
+	   return "dumb"
+	}
+	else {
+	   return "lucky"
+	}
+
+	**Here's what it would look like with a ternary conditional:**
+		**num === 3 ? return "dumb": return "lucky";**
+
+
+
+**Using a Ternary Operator to assign a Variable:**
+	**Example:**
+		let myVar = someOtherVar === 3 ? "word salad": "more words";
+

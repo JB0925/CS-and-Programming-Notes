@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-20T01:49:44-04:00
+
+====== Send Data from a Form to the Same Page ======
+Created Saturday 20 March 2021
+
+{{.\pasted_image.png}}
+
+By specifiying the **action="#", **you send the data to the same page
+
+
+If you do this, make sure to use **[[HttpResponseRedirect]]** instead of a **render** call
+
+**HttpResponseRedirect('page_name/')**
+
+https://docs.djangoproject.com/en/3.1/topics/forms/
+https://stackoverflow.com/questions/5823580/django-form-resubmitted-upon-refresh
+https://stackoverflow.com/questions/5823464/django-httpresponseredirect

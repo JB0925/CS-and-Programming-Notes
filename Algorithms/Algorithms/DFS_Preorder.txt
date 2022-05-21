@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-26T00:52:29-04:00
+
+====== DFS Preorder ======
+Created Monday 26 July 2021
+
+Again, this version works with a tree.
+
+**Code:**
+{{~/Desktop/ScreenShots/DFS Preorder Traversal.png}}
+
+**Explanation:**
+	- In this function, we define a function inside of the parent function.
+	**- It explores the left half of the tree first**
+	
+	- we initialize an empty array
+	
+	- we then define our function, **traverse**, which takes the **data** array and a **node**, which at first will be the **root** of our tree
+	
+	- in **traverse**, we append the node into data
+	- we check if there is a left node
+		- if so, we call **traverse** on it
+	- we do the same thing on the right
+	
+	- in the outer, parent function, we call traverse on the **data array**, and the **root** we pass in
+	- then we return **data, **a list of tree nodes, sorted by left nodes first, then right half nodes second
+	

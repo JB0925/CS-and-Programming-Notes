@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-03T15:06:30-05:00
+
+====== GROUP BY HAVING ======
+Created Wednesday 03 March 2021
+
+Can use GROUP BY HAVING with ORDER BY:
+
+**HAVING **takes a function COUNT(*)
+
+
+{{.\pasted_image.png}}
+
+The above will return the countries of birth, and the count, from the table...provided that the count for the country is at least 5. They will be ordered alphabetically in ascending order.
+
+Can use >, <, <=, >=, =, etc.
+
+
+**CAN FIND MORE FUNCTIONS BY SEARCHING FOR AGGREGATE FUNCTIONS IN POSTGRES DOCS**
+
+**Pick up at 1:52:11**

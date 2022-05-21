@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-13T09:02:57-05:00
+
+====== Compiler Options ======
+Created Monday 13 December 2021
+
+The "**target**" key in the TSConfig.json file tells Typescript which version of JS that you want to compile to.
+
+
+The **lib** key allows you to adjust which default features that typescript recognizes. **If the "lib" key is commented out, then the defaults that Typescript knows about are everything that is available in the version in the "target" key.**
+
+If you do decide to **uncomment the "lib" key**, make sure to add the following:
+		"lib": [
+		  "dom",
+		  "es6",
+		  "dom.iterable",
+		  "scripthost"
+		]
+
+
+**allowJs** allows you to include Javascript files to typecheck your JS files. There isn't much that can be done, because JS doesn't have the same type choices that TS does, but it will do as much as it can.
+

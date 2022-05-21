@@ -1,0 +1,79 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-07T09:47:31-05:00
+
+====== Heaps and Heap Sort ======
+Created Thursday 07 January 2021
+
+**What is a Priority Queue?:**
+	- a structure that implements a set of elements, each of which is associated with a key.
+	
+	**Operations to Perform on a Priority Queue:**
+		- insert(s, x): -> insert **x** into a set of elements **S**
+		- max(s) -> return the element of **S** with largest key
+		-extract_max(s) -> find the largest element of **S** and remove it from **S**
+		-increase_key(**s, x, k**): increase the value of the key associated with **x**, to the new value **k**
+		
+
+**Heap:**
+	An array visualized as a nearly complete binary tree
+	tree representation of an array
+	
+	**Heap as a Tree:**
+		root of tree:
+			first element, or (i = 1)
+		
+		parent(i) = i/2
+		left_child(i) = 2i
+		right_child(i) = 2i + 1
+		
+		**IMPORTANT = "i" seen above is an index, so the left child of i = 2i, means that the element at index[2*i] will be the left child of i,**
+		**and the right child of i is at the index of [2*i +1]**
+		
+		**THIS HOLDS TRUE THROUGHOUT THE HEAP**
+	
+	
+	**Max Heap:**
+		The key of a node is >= the keys of its children. 
+	
+	**Min Heap:**
+		The key of a node is <= the keys of its children.
+		
+	
+	**Example Max Heap and its Corresponding Array:**
+	{{.\pasted_image.png}}
+	
+	
+	How do we maintain the Max Heap property as we modify it?
+	
+	How do we **build** a Max Heap out of an unsorted array?
+	
+	
+	**Heap Operations:**
+		**build_max_heap - **produces a max heap from an arbitrary/unordered array
+		**max_heapify - **correct a single violation of the heap property in a sub-tree's root.
+		
+		**max_heapify** cannot correct many violations of the max_heap schema at once. If there is one violation somewhere, then max heapify is helpful.
+		
+		**Max Heapify(A, i):**
+			Assume that the trees rooted at left(i) and right(i) are already max heaps
+			
+			**leaves** (nodes with no children) are already Max Heaps
+			
+			**Complexity of Max Heapify: O(log N)**
+
+	
+	
+	**Using Max_Heapify(list, index) to complete Build_Max_Heap():**
+		Convert an array[1-N] into a Max_Heap
+		
+		**Build_Max_Heap(A):**
+			mid = len(A) // 2				#**only iterate through 1:mid because anything n//2 + 1 is a leaf**
+			for i in range(mid, 1, -1):
+				max_heapify(a, i)
+		
+		**Complexity of of Build_Max_Heap: O(n)**
+		
+		
+		**Observe: **Max_Heapify takes **O(1)** for nodes that are one level above the leaves and, in general, O(L) time for nodes that are L levels above the leaves.
+

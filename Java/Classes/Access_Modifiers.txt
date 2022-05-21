@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-18T11:17:15-05:00
+
+====== Access Modifiers ======
+Created Friday 18 February 2022
+
+Public - unrestricted access to the class
+
+Private - no other outside classes can access that class / method
+
+Protected - allows other classes within your package to access the class

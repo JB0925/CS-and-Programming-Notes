@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-12T12:37:06-05:00
+
+====== cat - File Redirection ======
+Created Thursday 12 November 2020
+
+to write to a new (or existing) text file:
+		**echo something here > filename.txt**
+
+
+to append more information to a file:
+		**echo new info here » filename.txt**
+
+to copy the contents of one file from that file to another file:
+		**cat < filename1.txt > filename2.txt				**#erases the second file if something was already there
+		**cat < filename1.txt > > filename2.txt				    **#appends **filename1.txt's** contents to **filename2** (no space between angle brackets)
+
+to see the content of a file:
+		**cat filename.whatever**
+		//will print the file's contents//
+		
+		**OR**
+		
+		**cat < filename.whatever**
+		//same as directly above//
+
+to begin writing to a brand new file:
+	**cat > new_file.txt**
+	
+	this will prompt you with some blank lines so you can enter text.
+	From here, you can write and when you finish, you can press **Ctrl-D**.
+	**OR**, if you are at the beginning of a new line and have not typed anything, you only need to press **Ctrl-D** once.
+	{{.\pasted_image.png}}
+
+

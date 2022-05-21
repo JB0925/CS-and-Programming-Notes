@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-16T21:28:23-05:00
+
+====== Types of Volumes ======
+Created Sunday 16 January 2022
+
+There are three types of volumes:
+
+1). Bind Volume
+	- **.:/app**
+		- pass the local path to the container path
+
+2). Anonymous Volume
+	- `/app/node_modules
+		- no local path is passed, only the container path
+
+3). Named Volume
+	- **mongo-db:/data/db**
+	
+	

@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-12T13:13:31-05:00
+
+====== Root User ======
+Created Thursday 12 November 2020
+
+The Root user has almost all permissions available to them.
+
+You will not normally log in as the root user, because it is too easy to break things.
+
+
+Instead, you will use the command **"sudo"** to "do something as the root user"
+
+
+
+**Example:**
+		**How to change your screen's brightness:**
+		
+		**sudo** find -L [[/sys/class/backlight]] -maxdepth 2 -name '*brightness*'
+		cd [[/sys/class/backlight/thinkpad_screen]]
+		echo 3 | **sudo** tee brightness
+		echo what are you saying | **sudo** tee somefile.txt
+		
+

@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-21T21:59:43-04:00
+
+====== Using Fetch ======
+Created Wednesday 21 April 2021
+
+Fetch is the newer way of making requests.
+
+Fetch supports Promises.
+
+Fetch is NOT supported in Internet Explorer.
+
+
+
+**Fetch Example:**
+{{~/Desktop/ScreenShots/Fetch Example 1.png}}
+
+1). Since **fetch** returns a Promise, we use our **then** and **catch** methods.
+
+2)., The **then **method takes a response, and the **catch** method takes an error.
+
+3). Inside of the **then**, we check to see if the **response code** is ok, If it's not, then we **throw an error**.
+
+4). If the **response code is ok**, then we call **.json().then() **on it.
+
+5). **.then **takes an argument that is the data from the response. Here, we check the name of the returned object, and loop over it to print the names of the planets.
+
+6). Finally, we catch the error if something did not work. **Step 3 and Step 6 (this step)** are linked.

@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-17T11:17:16-05:00
+
+====== Prop Collections ======
+Created Friday 17 December 2021
+
+Using **prop collections** is all about putting all of the props you need into an object, and then spreading that object in the Component that uses those props.
+
+**Example:**
+
+import * as React from 'react'
+import {Switch} from '../switch'
+
+function useToggle() {
+  const [on, setOn] = React.useState(false)
+  const toggle = () => setOn(!on)
+
+  **const togglerProps = { "aria-pressed": on, onClick: toggle };**
+**  return {on, toggle, togglerProps};**
+
+  **// above we created the togglerProps object with an "aria-pressed" label, and an onClick function. We then return on, toggle, and togglerProps**
+}
+
+function App() {
+  **const {on, toggle, togglerProps} = useToggle()**
+  return (
+	<div>
+	**// in the Switch component, the "on" is used, the "ariaLabel" is used, the "onClick" is used, so we just spread the props into the Switch component (see below)).**
+	
+	  <Switch on={on} **{...togglerProps}** />
+	  <hr />
+	  <button aria-label="custom-button" {...togglerProps}> **// same idea here...can use onClick, so get it from togglerProps.**
+		{on ? 'on' : 'off'}  **// setting the text of the button**
+	  </button>
+	</div>
+  )
+}
+
+export default App

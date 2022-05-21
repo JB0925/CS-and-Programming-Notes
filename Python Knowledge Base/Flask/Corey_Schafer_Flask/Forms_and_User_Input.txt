@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-30T12:14:09-05:00
+
+====== Forms and User Input ======
+Created Monday 30 November 2020
+
+Instead of creating HTML forms in the HTML template, you can create another file that goes in the directory with the rest of your project files.
+
+Then, use wtforms  to create Python forms that will translate to HTML.
+
+**Code Example:**
+{{.\pasted_image.png}}	**contains the necessary imports for these forms**
+
+
+{{.\pasted_image001.png}} **creating various lines on the form; validators are always a**
+																						 **list of classes from wtforms. Notice on the Length class that you can specify a range for the string to be in.**
+																						**Email = checks to ensure the passed in email is valid.**
+																						**DataRequired = ensure that the data is given.**
+																						"**EqualTo = will check for equality amongst passwords.**
+																						
+																						**NOTE: how password and confirm_password uses "PasswordField" instead of "StringField"**
+																						
+																						**SubmitField" creates a "submit" button at the end of the form.**
+
+{{.\pasted_image002.png}}			    **a login class/form. Uses the email address as username and the password as, well...the password.**
+**Notice this time the "BooleanField was used to remember that the user was logged in.**
+
+
+
+
+
+To use these new forms import them into your app.py file:
+**from forms.py import RegistrationForm, [[LoginForm]]**
+
+
+**NOTE: each form class has a "validate_on_submit()" method. It is a bool that says wether or not the form data was valid.**
+

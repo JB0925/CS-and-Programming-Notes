@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-20T23:16:39-04:00
+
+====== Uses for Linked Lists ======
+Created Sunday 20 September 2020
+
+Linked Lists can be used in the backing of other data structures
+	- we can use Linked Lists to make Stacks, Queues, etc.
+	
+**Look at article in comments of [[YouTube]] video. See below:**
+
+Examples of Linked Lists:
+	1). **A playlist**....Node contains all the data, and a pointer to the next song in the playlist
+	2). **A photoviewer**....Node contains the image(data)....and a pointer to the next image in the viewer
+
+
+
+https://dev.to/fernandoblima/linked-list-queue-and-stack-data-structure-part-i-1pen

@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-31T17:17:23-04:00
+
+====== 4 Types of JOINS ======
+Created Wednesday 31 March 2021
+
+**INNER JOIN **- this is the standard JOIN that you learn in the beginning. This join WILL NOT return information for any parties where the ON condition is not a match
+
+**LEFT JOIN - **same style of JOIN as above, except that it WILL return all information for the table on the LEFT of the JOIN keyword, whether it has a match in the other table or not.
+
+**RIGHT JOIN **- same as LEFT JOIN, except that it will return all information for the table on the RIGHT of the JOIN keyword, whether it has a match in the other table or not.
+
+**FULL JOIN **- same syntax, except that it returns all results, whether there are matches or not. If there is a match, it will return the selected columns from BOTH tables. If not, it will still return whatever is available from both columns, and leave empty or NULL for the missing values.

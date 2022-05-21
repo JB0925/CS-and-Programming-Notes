@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-12T23:01:54-04:00
+
+====== Final ======
+Created Sunday 12 September 2021
+
+**Final** allows you to set the type of a variable, and then not allow that variable's type to change again
+
+**Example:**
+	**from typing import Final**
+	
+	my_name: Final = "Jesse Brink"
+	

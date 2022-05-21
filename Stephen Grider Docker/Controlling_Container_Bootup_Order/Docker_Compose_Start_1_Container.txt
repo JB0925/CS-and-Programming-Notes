@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-21T00:23:00-05:00
+
+====== Docker Compose Start 1 Container ======
+Created Friday 21 January 2022
+
+docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d **service_name**
+
+Doing this will start the container specified by **service_name**, provided that there is no **depends_on** key.
+
+
+**To start the container by itself, even if there is a "depends_on" key:**
+
+docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --no-deps **service_name**

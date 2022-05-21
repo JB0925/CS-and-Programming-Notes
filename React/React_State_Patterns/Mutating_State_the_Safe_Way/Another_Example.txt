@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-09T00:22:49-04:00
+
+====== Another Example ======
+Created Friday 09 July 2021
+
+Lets say we wanted to add an icon to our **icons** array in state. We get the new icon from an array of icons, and we pick one of them at random.
+const myIcons = [
+	'fairy',
+	'car',
+	'dice',
+	'horse',
+	'football'
+]
+
+
+class Icons extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			icons: ['bone', 'cloud']
+		}
+	}
+	
+	addIcon = () => {
+		let idx = Math.floor(Math.random() * myIcons.length);
+		let newIcon = myIcons[idx];
+		this.setState({icons: [...this.state.icons, newIcon]});
+	}
+}
+
+
+**Another Example of Mutating State: Making a Copy:**
+	const updateObjects = idx => {
+		setObjects(obj => {
+			const copy = [...myArrayOfObjects];
+			copy[idx].x = getRandomNum();
+		  copy[idx].y = getRandomNum();
+			return copy;
+		});
+	}
+

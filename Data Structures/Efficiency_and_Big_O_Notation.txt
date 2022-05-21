@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-12T15:19:39-04:00
+
+====== Efficiency and Big O Notation ======
+Created Saturday 12 September 2020
+
+**Big O Notation:**
+	- a way to basically "Score" a data structure based on four criteria:
+		- accessing elements
+		- inserting an element
+		- deleting an element
+		- searching for an element
+	
+	-can create a "report card" for each data structure based on how efficiently it can do each of the above things
+	-used to tell what it is good at, and what it is bad at
+	
+**Big O Notation Time-Complexity Equation:**
+	-works by inserting the size of the data-set as an integer n, and returning the number of operations that need to be conducted by the computer before the function can finish
+	
+	**N = size of the data structure (# of elements in it)**
+	
+	-always use the worst case scenario, to be prepared for what could happen
+	**O(n), O(n**2), etc. = **the equation that will determine how many steps the computer has to run to perform the operation with that data structure
+	
+	**O(2) = **2 operations the computer has to run....also knows as constant time
+	
+	
+**Efficiency** is not the end all / be all for deciding on which data structure to use.
+**Some **have specific features or quarks that separate them
+
+
+
+

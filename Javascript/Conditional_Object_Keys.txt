@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-30T21:32:08-04:00
+
+====== Conditional Object Keys ======
+Created Friday 30 April 2021
+
+{{~/Desktop/ScreenShots/Conditional Keys For Objects.png}}
+
+You can use **spread** and the AND operator to create a conditional key in your object.
+
+**What does the above code say?**
+	If you have **query.foo**, then your object **should have a KEY called "foo", **and set **query.foo** to that key.
+	
+	OR, if you have **query.bar**, make an entrry in your object where the key is **bar**, and the value is **query.bar**
+
+
+**Another Example:**
+{{~/Desktop/ScreenShots/More Conditional Keys JS.png}}
+
+Here, we've created a function that takes two parameters, both of which are set to null initially. 
+
+We set the API parameters. First, in goes the API key. 
+
+Next, we are saying **if there is a "searchTerm", make the KEY "s" and the VALUE "searchTerm"**
+
+**If there is an "id", make the KEY "i" and make the VALUE "id".**
+
+
+You can also do something like:
+	**...value === 's' && {s:searchTerm}**
+	
+	In this example, you are saying "**if your value is equal to "s", set the KEY to "s" and the VALUE to "searchTerm"**
+
+

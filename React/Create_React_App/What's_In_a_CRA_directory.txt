@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-20T00:13:51-04:00
+
+====== What's In a CRA directory ======
+Created Sunday 20 June 2021
+
+**Node Modules:**
+	Almost 2,000 dependencies. You will never touch these yourself.
+
+
+**Public:**
+	Has the initial **index.html** file for the app.
+	You almost never touch these files.
+	
+**src:**
+	This is where the most work happens.
+	This is where you write your code and work on your components.
+
+
+{{~/Desktop/ScreenShots/What is In the Initial CRA Directory.png}}
+
+
+

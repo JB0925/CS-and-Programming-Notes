@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T23:19:53-04:00
+
+====== Writing Files ======
+Created Monday 06 September 2021
+
+We can write files with:
+	**fs.writeFile(path, data, encoding, callback)**
+	
+**path = **path to file, relative to PWD
+
+**data **= data to output to file (usually some kind of string)
+
+**encoding** = how to write the file
+	- for text, again, almost always **utf8**
+	- for binary, like images, omit this arg
+
+**callback** = a function that takes an **error**
+
+
+**Example:**
+	const fs = require('fs');
+	
+	const content = 'PUT THIS IN THE FILE';
+	
+	fs.writeFile('./files/output.txt', content, "utf8", function(err) {
+		if (err) {
+			console.error(err);
+			process.exit(1);
+		}
+		console.log('wrote to file!');
+	}
+
+
+
+
+
+

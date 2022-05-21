@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-13T23:26:08-05:00
+
+====== Creating a Registration Page ======
+Created Saturday 13 February 2021
+
+{{.\pasted_image.png}}

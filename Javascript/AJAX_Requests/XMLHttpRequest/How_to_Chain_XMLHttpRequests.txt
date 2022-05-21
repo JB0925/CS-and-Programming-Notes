@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-21T21:46:41-04:00
+
+====== How to Chain XMLHttpRequests ======
+Created Wednesday 21 April 2021
+
+Being able to get JSON data from an API is great, but in JS, some of the data returned might be a link to another endpoint. If that is the case, you'd have to restart the request process again and create a brand new request, doubling the code you already wrote.
+
+**THERE IS A BETTER WAY: Fetch**

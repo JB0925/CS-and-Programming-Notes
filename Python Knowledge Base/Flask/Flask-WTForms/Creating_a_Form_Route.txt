@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-27T00:00:55-04:00
+
+====== Creating a Form Route ======
+Created Tuesday 27 July 2021
+
+**Example:**
+	**imports here...**
+	
+	@app.route('/', methods=['GET', 'POST'])
+	def home():
+		form = MyForm()
+		
+		if request.method == 'GET':
+			return render_template('index.html', form=form)
+		
+		if form.validate_on_submit():
+			name = form.name.data
+			price = form.data.price
+			flask(f'Added {name} at ${price}')
+			return redirect(url_for('other'))
+

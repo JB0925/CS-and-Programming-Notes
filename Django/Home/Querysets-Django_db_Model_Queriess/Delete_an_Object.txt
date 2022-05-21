@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-03T14:09:33-05:00
+
+====== Delete an Object ======
+Created Wednesday 03 March 2021
+
+**Example:**
+	**post = Post.objects.get(id=1)**
+	**post.delete()**
+	
+	Capture the result in a variable, then call delete on it.
+	
+	

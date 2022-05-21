@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-23T23:48:21-04:00
+
+====== Parallel vs.. Sequential Requests ======
+Created Friday 23 April 2021
+
+{{~/Desktop/ScreenShots/Sequential Async Requests.png}}
+
+In the above code, each request is getting returned **sequentially**. Request 2 can't start until Request 1 is complete, and so on.
+
+**How to Make the Requests Execute in Parallel:**
+
+{{~/Desktop/ScreenShots/Parallel Await Requests.png}}
+
+
+With the code above, each request executes in **parallel**, or at the same time as the others.
+
+However, the return value is undefined. The console.log statements are running before the requests are finished, thus making the results undefined.
+
+**So How Do We Fix It?**
+
+{{~/Desktop/ScreenShots/Awaiting Parallel Requests.png}}
+
+Now, poke1 is waiting for the prom1 to resolve, which means the console.log statements are waiting as well. In this example, we do get the return values back from the get requests.
+
+
+**We can do this with less lines of code:**
+
+{{~/Desktop/ScreenShots/Promise.all().png}}
+
+This does the same thing as the above. Instead of awaiting each promise individually, we pass in an **array of Promises**, and await them all.

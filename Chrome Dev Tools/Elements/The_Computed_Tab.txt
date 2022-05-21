@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-10T22:09:19-05:00
+
+====== The Computed Tab ======
+Created Friday 10 December 2021
+
+{{~/Desktop/ScreenShots/Box Model Computed Tab.png}}
+
+This tells us that our element has a margin-top of -4.156px
+
+It has a border of 1px on all four sides.
+
+It has padding of 25px on all four sides.
+
+It is 239.516px in width, and 112px in height.

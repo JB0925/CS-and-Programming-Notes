@@ -1,0 +1,118 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-22T11:56:12-04:00
+
+====== Example ======
+Created Thursday 22 July 2021
+
+**Explanation:**
+	- We need to pass the form's state (before we reset it) UP to the parent
+	- On the PARENT component, we create a callback function, let's call it **addItem**
+	- **addItem** looks like this:
+		const addItem = (newItem) => {
+			**setShoppingCartData([**
+				**...ShoppingCartData,**
+				**{ ...newItem, id: uuid() }**
+			]**);**
+		};
+	
+	- we then pass **addItem** to the form component as a prop:
+		<Form addItem={addItem} />
+	
+	- finally, in the **handleSubmit** method of the form, we have:
+		const handleSubmit = evt => {
+			const { name, qty } = formData;
+			**addItem({ ...formData });**
+			setFormData({
+				name: "",
+				qty: ""
+			});
+		};
+		
+	- The above prevents the page from refreshing, sends the form data to the PARENT component to update its state, and clears the inputs.
+
+
+**Child Component:**
+class `ShoppingListForm extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {name: '''', qty: ''''}
+		this.handleChange = this.handleChange.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
+	}
+	
+	handleChange(evt) {
+		this.setState({[evt.target.name]: evt.target.value})
+	}
+
+	**handleSubmit(evt) {								**
+		**evt.preventDefault();**
+		**this.props.addItem(this.state);**
+		**this.setState({name: '', qty: ''})**
+	**}**
+	
+	render() {
+		return (
+			<div>
+				<form **onSubmit={this.handleSubmit}**>				//**takes the addItem method from its parent, that is passed down as a prop**
+					<label htmlFor="name">Name: </label>			  //wraps the **addItem **in a method called **handleSubmit**
+					<input id="name" name="name" 
+							  value={this.state.name}
+							onChange={this.handleChange}/>
+					
+					<label htmlFor="qty">Quantity: </label>
+					<input id="qty" name="qty" 
+							  value={this.state.qty}
+							onChange={this.handleChange}/>
+				</form>
+			</div>
+		)
+	}
+}
+export default `ShoppingListForm;
+
+
+**Parent Component:**
+class `ShoppingList extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			items: [
+				{"name": "Milk", "qty": "2 gallons"},
+				{"name": "Bread", "qty": "2 loaves"}
+			]
+		}
+		this.addItem = this.addItem.bind(this)
+	}
+	
+	**addItem(item) {								//add a new item to the already existing "items" array in state.**
+		**this.setState(st => ({						  // gets its data from the child form on form submit**
+			**items: [...state.items, item]**
+		**}));**
+	**};**
+	
+	renderItems() {
+		return (
+			<ul>
+				{this.state.items.map(item => (
+					<li>
+						{item.name}:{item.qty}
+					</li>
+				))}
+			</ul>
+			</ul>
+		)
+	}
+	
+	render() {
+		return (
+			<div>
+				<h1>Shopping List Items</h1>
+				{this.renderItems()}
+			<ShoppingListForm **addItem={this.addItem}**/> 	**//pass the "addItem" method to the form as a prop; used to update state.**
+			</div>
+			
+		)
+	}
+}
+export default `ShoppingList;

@@ -1,0 +1,51 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-12T01:15:39-04:00
+
+====== Timedelta ======
+Created Saturday 12 September 2020
+
+from datetime import timedelta
+
+Take a datetime.datetime object and add/subtract it from timedelta(**kwargs)
+
+Same as above with a datetime.date object
+
+**from datetime import datetime, timedelta**
+**dt = datetime.now()**
+**td = timedelta(days=4)**
+**# your calculated date**
+**my_date = dt + td**
+
+https://stackoverflow.com/questions/25120621/python-get-date-in-future-x-days-and-hours-left-to-date
+
+Add timedelta objects together:
+**total = timedelta(hours=0, minutes=0, seconds=0)**
+**    for item in timestamps:**
+**        item = datetime.strptime(item, '%M:%S')**
+**        item = timedelta(hours=item.hour, minutes=item.minute, seconds=item.second)**
+**        total += item**
+    
+**    return total**
+
+more timedelta info: https://www.kite.com/python/answers/how-to-convert-a-timedelta-to-days,-hours,-and-minutes-in-python
+
+calculate # of days between two dates:  https://stackoverflow.com/questions/151199/how-to-calculate-number-of-days-between-two-given-dates
+
+
+Formula for finding the amount of days, hours, minutes between two datetime objects:
+
+**PY2_DEATH_DT = datetime(year=2020, month=1, day=1)**
+**BITE_CREATED_DT = datetime.strptime('2018-02-26 23:24:04', '%Y-%m-%d %H:%M:%S')**
+
+**def py2_earth_hours_left(start_date=BITE_CREATED_DT):**
+	"""Return how many hours, rounded to 2 decimals, Python 2 has
+	   left on Planet Earth (calculated from start_date)"""
+	**hours = PY2_DEATH_DT - start_date      .....**latest date - earliest date
+**    return round((hours.total_seconds() * **24**) / (24 * 60 * 60),2)**
+
+In the last line for the above, the unbolded 24 will change depending on if you are trying to get days, hours, or minutes:
+	- **days = don't multiply "hours.total_seconds()" by anything**
+	- **hours = 24**
+	- **minutes = 60 **...instead of the 24
+

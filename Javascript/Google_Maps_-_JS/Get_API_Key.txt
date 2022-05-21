@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-18T17:15:04-04:00
+
+====== Get API Key ======
+Created Wednesday 18 August 2021
+
+console.cloud.google.com/apis/credentials
+
+Do this **AFTER** making your project.
+
+Then follow the directions where it says "Create Credentials"
+

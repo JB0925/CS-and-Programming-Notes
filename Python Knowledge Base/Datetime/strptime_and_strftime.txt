@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-26T22:40:36-04:00
+
+====== strptime and strftime ======
+Created Sunday 26 July 2020
+
+https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
+
+
+Some general behaviors, methods, and formatting for datetime, especially strptime.
+
+
+
+More general info on the code to feed to datetime's strptime:
+
+{{.\pasted_image.png}}
+
+strptime takes a date string and turns it into a datetime object
+			**date_string = '04-09-2020 14:45:32'**
+			**dt = datetime.strptime(date_string, '%m-%d-%Y %H:%M%S')**
+			**print(dt)**
+			**datetime.datetime(4, 9, 2020, 14, 45, 32)**
+
+strftime does the opposite: it takes a datetime object and returns a string. Must use same format as datetime object
+			**date = datetime.datetime(11, 19, 2020)**
+			**dt = date.strftime('%m-%d-%Y')**
+			**print(dt, type(dt))**
+			**'11-19-2020'. type(str)**
+
+use strftime to take a timezone as a string from a datetime object:
+	**time = datetime(2015, 9, 23, 14, 11, tzinfo=True)**
+	**zone = time.strftime('%z')**
+
+

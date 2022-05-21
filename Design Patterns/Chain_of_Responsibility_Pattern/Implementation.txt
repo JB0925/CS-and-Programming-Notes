@@ -1,0 +1,64 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-27T09:17:05-04:00
+
+====== Implementation ======
+Created Wednesday 27 April 2022
+
+**Basic Http Request Class:**
+	- takes a username and password as parameters, with a constructor and getters and setters for each
+	
+**`WebServer** **Class:**
+	- takes a Handler Object in its constructor
+	- has a **handle** method that takes an `**HttpRequest**
+		- calls its Handler object, which calls its handler method to handle the request
+	
+	**Example:**
+	
+	public class `WebServer {
+		private Handler handler;
+		
+		public `WebServer(Handler handler) {
+			this.handler = handler;
+		}
+		
+		public void handle(HttpRequest request) {
+			this.handler.handle(request);
+		}
+	}
+
+**Abstract Class Handler:**
+	- has a field of **next**
+	- has a method called **handle**
+	- has an **abstract method** called **doHandle**
+	- **Authenticator, Compressor, and Logger** need to inherit from it
+	
+	**Example:**
+	
+	public abstract class Handler {
+		private Handler next;
+		
+		public Handler(Handler next) {
+			this.next = next;
+		}
+		
+		public void handle(HttpRequest request) {
+			if (!doHandle(request)) {
+				return;
+			}
+			
+			if (next ! = null) {
+				next.handle(request);
+			}
+		}
+		
+		public abstract boolean doHandle(HttpRequest request);
+	}
+	
+**Authenticator, Compressor, Logger:**
+	- standard classes that implement the logic for what they need to do
+	- all three inherit from **Handler**, so they will all have a **next** field, and they will
+	  - all have a **doHandle** method inherited from the **Handler **class
+		- the **doHandle()** method implements the business logic of each class
+	- all have a **constructor** that takes one parameter: **a Handler next.**
+	

@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-05T21:51:41-05:00
+
+====== Range and Text Areas - Forms ======
+Created Friday 05 February 2021
+
+
+Use the **range** setting of the **type** attribute of the **input** tag to create a slider that goes between a certain range.
+
+**Example:**
+	{{.\pasted_image.png}}
+	
+
+Use the **number** option for the **type **attribute to make a box to enter numbers in. You can set a min and max value, and a **step** value if you'd like. See above. 
+
+**NOTE: **The button in the picture above will not submit anything because it is not connected to a form.
+
+
+
+**Textarea:**
+	- a multiline input where you can type multiple lines of text to explain something, tell a story, etc.
+	**Example:**
+		{{.\pasted_image001.png}}
+		
+		**NOTE:** By adding the **submit** button inside the form, it works as an actual submit button instead of just decoration.
+

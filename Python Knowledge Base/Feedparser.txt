@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-02T20:18:18-05:00
+
+====== Feedparser ======
+Created Tuesday 02 February 2021
+
+Use **feedparser.parse()** to parse an RSS or Atom feed
+
+**Example:**
+
+from feedparser import parse
+
+dict = **parse(some_rss_feed)**
+
+This turns the feed into a dict / json style object
+
+https://www.pythonforbeginners.com/feedparser/using-feedparser-in-python

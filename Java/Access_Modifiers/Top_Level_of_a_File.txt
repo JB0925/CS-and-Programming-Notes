@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-24T12:26:38-05:00
+
+====== Top Level of a File ======
+Created Thursday 24 February 2022
+
+Only classes, interfaces, and enums can exist at the top level of a file.
+
+**Public:** The object is visible to all classes everywhere, whether they are in the same package or have imported the package containing the public class.
+
+**Package-private:** The object is only available within its own package, and is visible to every class within the same package.
+	Package-private is specified by **leaving off ** the "public / private" keyword altogether

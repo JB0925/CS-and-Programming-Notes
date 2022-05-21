@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-06T20:48:22-05:00
+
+====== Left Joins ======
+Created Saturday 06 March 2021
+
+Left Join is just like an Inner Join, except that it will also return the information of the objects that do not have a match as well.
+
+**Example:**
+	The query is almost exactly the same as the Inner Join query
+	**SELECT * FROM person2 LEFT JOIN car2 ON person2.car_id = car2.id;**
+	
+	This is useful for when you want to see which objects have a certain trait, and which ones don't. 
+	Example below:
+	
+	{{.\pasted_image.png}}
+	
+	You can see it also returned the information for Jason, even though he does not own a car.
+	
+
+
+**Further Filtering:**
+	**SELECT * FROM person2 LEFT JOIN car2 ON person2.car_id = car2.id WHERE car2.* IS NULL;**
+		- same query as above, only returns information for people who have no car
+		
+		{{.\pasted_image001.png}}
+

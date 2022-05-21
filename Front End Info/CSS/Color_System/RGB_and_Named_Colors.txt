@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-08T15:45:29-05:00
+
+====== RGB and Named Colors ======
+Created Monday 08 February 2021
+
+**RGB - **
+	- 3 color channels as a tuple(1, 2, 3)
+	- in CSS, you'd write **rgb(173, 20, 219)** to represent a purple color in the **RGB **style
+	
+	

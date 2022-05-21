@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-24T15:45:02-04:00
+
+====== Access All Data Attributes For a Given Element ======
+Created Monday 24 May 2021
+
+To access one **data attribute **at a time, see the page before and the **getAttribute()** call.
+
+However, in our markup on that page, we see that there are two **data attributes per element.**
+
+
+
+How do we get all of these **data attributes** at once?
+
+	- const ul = document.querySelector('#cars');
+	- ul.addEventListener('click', (e) => {
+		**console.log(e.target.getAttribute('data-year'));**
+	});
+
+
+Above is our JS code from the page before. To get all of the **data attributes**, we do the following:
+
+	- const ul = document.querySelector('#cars');
+	- ul.addEventListener('click', (e) => {
+		**console.log(e.target.dataset);**
+	});
+
+
+	This returns something that looks an behaves like an object, so you could do:
+		- **const data = e.target.dataset;**
+		- **console.log(data.year, data.model);**
+		
+
+**Updating Information in the Data Attributes:**
+	- **Data attributes are read / write properties**,. so you can overwrite old information
+	
+	- say we wanted to change the year of each dataset object
+	- **e.target.dataset.year = "2020";**
+	
+	- You can also add **brand new data attributes** on the fly in JS.
+	- **e.target.dataset.sold = "true";**
+	
+	Sold wasn't there before, but it would be the next time the page is refreshed
+

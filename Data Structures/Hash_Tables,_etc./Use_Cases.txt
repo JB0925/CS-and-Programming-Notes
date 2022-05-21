@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-05-06T23:11:06-04:00
+
+====== Use Cases ======
+Created Friday 06 May 2022
+
+**Hash Functions** are used in things such as Python dictionaries, Java maps, JS objects, etc.
+
+**The Basic Idea:**
+	The idea is that a hash function hashes a "key" (turns it into a number), and inserts the "value" into the **hash table** (an array-like structure) at the index of the hash.
+	
+	**Example:**
+		
+		**Insertion**
+		
+		key = "cake"
+		value = "yummy"
+		hashed_key = hash(key)
+		
+		**hash_table[hashed_key] = value**
+		
+		
+		**Lookup**
+		
+		key = "cake"
+		hashed_key = hash(key)
+		**return hash_table[hashed_key]**
+			// "yummy"
+
+

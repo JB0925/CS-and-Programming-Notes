@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-02T00:02:17-04:00
+
+====== df.describe() ======
+Created Wednesday 02 September 2020
+
+**df.describe()** .....gives a summary of the numerical data in the [[DataFrame]] (i.e. min, max, median, average, etc.)

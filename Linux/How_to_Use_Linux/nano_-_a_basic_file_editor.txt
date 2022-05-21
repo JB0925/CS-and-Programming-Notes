@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-13T00:02:04-05:00
+
+====== nano - a basic file editor ======
+Created Wednesday 13 January 2021
+
+to exit, press **^X**
+
+basically a text editor in Linux
+
+
+to save, press **Ctrl + O (write out)**

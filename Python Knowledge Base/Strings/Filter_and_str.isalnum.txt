@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-30T22:33:22-04:00
+
+====== Filter and str.isalnum ======
+Created Thursday 30 July 2020
+
+Easy way to strip all non-alphanumeric characters from a string or list of strings:
+
+**for item in lst:**
+**        new_word = filter(str.isalnum, item)**
+**        final_word = ''.join(new_word)**
+**        lst2.append(final_word)**
+
+
+https://www.kite.com/python/answers/how-to-remove-all-non-alphanumeric-characters-from-a-string-in-python#:~:text=Use%20filter()%20to%20remove,predicate%2C%20iterable)%20with%20str.

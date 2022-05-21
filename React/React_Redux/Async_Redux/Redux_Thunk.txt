@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-11-03T20:48:54-04:00
+
+====== Redux Thunk ======
+Created Wednesday 03 November 2021
+
+Redux Thunk is an action creator like this:
+
+const remove = () => {
+	return {
+		type: "REMOVE",
+	}
+}
+
+The difference is that **Thunk** can dispatch multiple times, and it can dispatch asynchronously.
+

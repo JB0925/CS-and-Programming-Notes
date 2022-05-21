@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-12T15:36:39-04:00
+
+====== 6 Most Common Time Complexity Equations ======
+Created Saturday 12 September 2020
+
+**O(1)**
+**O(n)**
+**O(log n)**
+**O(n log n)**
+**O(n ** 2)**
+**O(2 ** n)**
+
+Best Time Complexity Score = **O(1)**....computer can complete the task in one step
+Next Fastest Time Complexity Score = **O(log n)....**still fast and get more efficient as the size of the data set increases
+	-**Binary Search **or **Bisection Search **algorithm is an example of **O(log n) **efficiency
+	
+Third Fastest Time Complexity Score = **O(n)  **(the last of the "decent" equations)
+
+Fourth Fastest Time Complexity Score = **O(n log n)   **(first relatively bad efficiency score)
+
+Fifth Fastest = **O(n ** 2),   **Sixth Fastest = **O(2 ** n)**....both are very bad in terms of efficiency and are exponential in structure...larger the data set, the more inefficient they become
+
+There is a such thing as **O(n!)**.....very, very, very inefficient
+
+
+
+
+

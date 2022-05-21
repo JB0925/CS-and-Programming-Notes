@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-19T10:04:21-04:00
+
+====== Comparison Operators with the Inequality Operator ======
+Created Friday 19 March 2021
+
+Just like in Python, **"not equal**" is ! =, with no space between the two.
+	- **NOTE: **When the variables are passed in, when using **! =**, types are converted and you are only search to see if the **VALUE** is the same. So in other words, **3 is equal to '3'**, because they both have the same **VALUE**.
+		**Examples:**
+			- **3 ! = '3' is false...........**same value, so they are equal in the eyes of JS
+			- **4 ! = 5 is true**..............not the same values, so they are not equal
+			- 
+
+
+**Strict Inequality:**
+	**Syntax: **if (val **!==** 17) {
+				do stuff
+				 }
+	
+	
+	Again, this does not convert types and checks to make sure the value **AND** the type are the same. 
+		**Examples:**
+			- **3 !== '3' is true**..........remember, the values are the same, but the **TYPES** are not
+			- **'4' !== '4' is false**........exact same **TYPE **and **VALUE**
+
+    
+

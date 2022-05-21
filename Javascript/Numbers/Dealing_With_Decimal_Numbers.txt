@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-16T14:18:12-04:00
+
+====== Dealing With Decimal Numbers ======
+Created Tuesday 16 March 2021
+
+**Create a Decimal or Float with JS:**
+	**var myDecimal = 5.7;**
+	
+	**var myDecimal = 0.009;**
+	
+
+
+
+**How to Multiply Decimal Numbers:**
+	**var product = 2.0 * 2.5;**
+	**console.log(product)**
+		returns 5
+
+
+**How to Divide Dceimals:**
+	**var quotient = 2.0 / 0.3**
+	
+
+**How to Find the Remainder:**
+	var **remainder;**
+	**remainder = 11 % 3;				(same idea as in python)**
+		returns 2                                                   
+
+

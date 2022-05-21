@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-08T14:32:47-05:00
+
+====== Docker Images ======
+Created Monday 08 March 2021
+
+An image is a template for creating an environment of your choice (almost anything).
+
+It is a snapshot. You can create more than one, and point to that version in production (kind of like git).
+
+It has everything your apps need to run.
+	- includes the OS, Software, and Application Code
+	
+	
+**You download an image, and then run a container from it.**
+
+
+**How to see what Images you have:**
+	- **docker image ls**
+
+
+
+

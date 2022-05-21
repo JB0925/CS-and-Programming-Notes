@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-20T00:28:12-05:00
+
+====== Docker Network Commands ======
+Created Thursday 20 January 2022
+
+**Examples:**
+	docker network inspect **container_name / id**
+	
+	- gives you pertinent network data and information about a particular container
+	
+	docker network inspect ls
+	
+	- shows all networks currently available for use
+	

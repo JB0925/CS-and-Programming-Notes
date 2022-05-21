@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-28T09:10:16-05:00
+
+====== String Methods ======
+Created Monday 28 February 2022
+
+**NOTE: **Substring and subSequence methods both take at least a starting index, and both can take an ending index as well.
+
+**NOTE: **compareTo method returns an int that tells you whether or not the String comes before or after the other string. For example,
+	"hello".compareTo("world");   returns -15. This means that hello starts 15 letters in the alphabet before world.
+	**Rules:**
+		- if str1 > str2, it returns a postive int
+		- if str1 < str2, it returns a negative int
+		- if str1 == str2, it returns 0
+	**NOTE:** You will need to handle case checking, as it does not consider "hello" to be the same as "Hello".
+
+{{~/Desktop/ScreenShots/Java String Methods.png}}
+{{~/Desktop/ScreenShots/More Java String Methods.png}}
+{{~/Desktop/ScreenShots/Even More Java String Methods.png}}

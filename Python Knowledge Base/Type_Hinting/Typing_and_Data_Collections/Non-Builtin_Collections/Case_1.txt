@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-20T09:01:45-04:00
+
+====== Case 1 ======
+Created Monday 20 September 2021
+
+For types that are not easily represented by another builtin type, we can use **Generics**. 
+
+Generics says that you don't care what type it is, **but it restricts users from mixing types.**
+
+**Example:**
+	Say we create a directed graph:
+	
+	from collections import defaultdict
+	from typing import Generic, TypeVar
+	
+	**Node = TypeVar("Node")**
+	**Edge = TypeVar("Edge")**
+	
+	class Graph(**Generic[Node, Edge]):**
+		#**the above says it will be of any type, but will use Node and Edge types inside of it.**
+		
+		def __init__(self):
+			self.edges: dict[Node, list[Edge]] = defaultdict(list)
+			
+		def add_relation(self, node: Node, to: Edge):
+			self.edges[node].append(to)
+		
+		def get_relations(self, node: Node) -> list[Edge]:
+			return self.edges[node]
+	
+	
+	Now, I can create instances of the Graph class like so:
+		**cookbook: Graph[Cookbook, Cookbook] = Graph()**
+		
+		or 
+		
+		**cookbook_recipes: Graph[Cookbook, Recipe] = Graph()**
+		
+	
+	Running the **add_relation** method on **cookbook** like this:
+		**cookbook.add_relation(Cookbook("Tanya's Treats"), Cookbook("Fine Cuisine"))**
+		
+	Would type check just fine.
+
+
+	**This would not type check:**
+		**cookbook.add_relation(Cookbook("Tanya's Treats"), Recipe("Spaghetti Carbonara"))**
+	
+	This is because we set the input types on **cookbook** to be **Cookbook** and another **Cookbook** class.
+	

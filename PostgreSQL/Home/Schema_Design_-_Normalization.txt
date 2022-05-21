@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-12T23:53:08-04:00
+
+====== Schema Design - Normalization ======
+Created Monday 12 July 2021
+
+Normalization is a design technique that aims to reduce redundancy and dependency of data.
+
+**Bad Example:**
+	{{~/Desktop/ScreenShots/Bad Normalization #1.png}}
+	
+	Here, you can see we have doubled up data in the color column.
+	
+
+**Above Table Normalized:**
+	{{~/Desktop/ScreenShots/Good Normalization #1.png}}
+	
+	This example is the first example, but normalized. Here, we have a **products** table and a **colors** table. 
+	
+	Then we have a **products_colors** table. In this table, we can see that the first id has a **color_id** foreign key that related it to the color **red** from the **colors** table. and the **first** item (**id #1**) from the **products** table.
+	
+	
+	

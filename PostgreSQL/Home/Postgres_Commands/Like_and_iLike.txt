@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-03T14:42:39-05:00
+
+====== Like and iLike ======
+Created Wednesday 03 March 2021
+
+The LIKE operator is used to match text values against a pattern, using wildcards.
+
+**Here, the "%" character also means "any character".**
+
+**Examples:**
+	**SELECT * FROM table WHERE email LIKE '%.com';**
+		- returns a list of people who have email addresses that match the pattern, in this case email addresses that end in **.com**
+	{{.\pasted_image.png}}
+	The pattern was **'[[anything@bloomberg.com|anything]]**[[anything@bloomberg.com|@bloomberg.com]]', and one result matched the pattern.
+	
+	
+	**Another example to catch regional Google email addresses, like google.uk.co, etc.**
+	{{.\pasted_image001.png}}
+	
+
+
+**ILIKE:**
+	- same as above, only case insensitive
+	**SELECT * FROM person WHERE country_of_birth ILIKE 'p%';**
+		- is a case insensitive search for countries that begin with P
+		
+

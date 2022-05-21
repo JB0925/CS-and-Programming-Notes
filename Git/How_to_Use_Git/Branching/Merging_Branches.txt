@@ -1,0 +1,47 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-29T13:33:52-04:00
+
+====== Merging Branches ======
+Created Thursday 29 October 2020
+
+When you do a merge, Git will create a new commit that combines the top SHA's of two branches if it needs to. 
+If the commits in the other branch are "ahead", based on the top of the current branch, it will do a **fast-forward merge** and place those new commits on this branch.
+
+{{.\pasted_image.png}}
+
+To merge, in the picture above I changed the branch to **master**, then called **git merge my_new_feature, ** which means that I am going to merge the **my_new_feature** branch into the **master **branch.
+
+type in **git log** again, and here's what happens:
+
+{{.\pasted_image001.png}}
+
+The branch is now switched to **master**, but the commit from **my_new_feature** "added code for feature" is not a part of the **master** branch
+
+
+**Git Diff:**
+
+**git diff branch name**
+
+type **git diff** before merging to see the difference between what is saved on one branch vs what is saved on the other branch.
+
+
+It will show:
+	**- the name of the file**
+	- **text in white is common to both branches and hasn't been changed**
+	- **text in dark red is text that is on the other branch, but not on the branch you are currently on**
+	
+
+You can merge with:
+**1). make sure you are on the branch you want to merge into, then:**
+		- **git merge branch_name**
+
+
+
+You could also push the changes on the secondary branch to "GitHub" and then do a PR (Pull Request):
+
+		to push to a branch that doesn't have an upstream, or doesn't have a Git Repo:
+			**git push --set-upstream origin feature-readme-instructions			# — set upstream == -u**
+		
+			
+

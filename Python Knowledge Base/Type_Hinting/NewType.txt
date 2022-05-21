@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-12T21:33:48-04:00
+
+====== NewType ======
+Created Sunday 12 September 2021
+
+`**NewType** allows us to create a new type
+
+This is useful is you are working with a class and there are two instances that could happen:
+
+**Example:**
+	**from typing import `NewType**
+	
+	class HotDog:
+		
+		`ReadyToServeHotDog = `**NewType("ReadyToServeHotDog", `HotDog)**
+		
+		def dispense_to_customer(hot_dog: `ReadyToServeHotDog):
+			# code here
+	
+	
+	**NOTE: **The above code only allows the method **dispense_to_customer** to accept hot dogs of the type **`ReadyToServeHotDog. **This makes it really clear what should be passed into the function.
+	
+	
+	**So How Does One Get a "ReadyToServeHotDog"?**
+		consider the following:
+			**def prepare_for_serving(hot_dog: `HotDog) -> `ReadyToServeHotDog:**
+			
+			# here, we can already see that the function takes in a "normal" instance of the hot dog class, but returns the same instance that is of type `**ReadyToServeHotDog.**
+			
+			assert not hot_dog.is_plated(), "Hot dog should not already be plated."
+			
+			hot_dog.put_on_plate()
+			hot_dog.add_napkins()
+			**return `ReadyToServeHotDog(hot_dog)**
+			
+			# in the last line, we are converting the "normal" instance of **class `HotDog**, into the `**NewType** called `**ReadyToServeHotDog**
+			
+			# this can also be thought of in the same way as:
+				x = "5"
+				x = int(x)
+				
+				**Here, we just casted the string variable "x" to an int. **
+				
+				#We did the same thing above by changing the type of the "normal" hot dog into the new `ReadyToServeHotDog type.
+			
+			
+			# In addition, this is the ONLY way to convert an instance of `HotDog into an instance of `ReadyToServeHotDog. If a developer wants an RTSHD, they'll need to create it using the method **prepare_for_serving()**
+
+
+**NOTE:** Python does not have a way to let other developers know that a hot dog passed into **dispense_to_customer** needs to come from **prepare_for_serving()**, so it is a good idea to leave a comment explaining your intent
+
+**Example:**
+	**from typing import `NewType**
+	# NOTE: Only create `ReadyToServeHotDog using the #"prepare_for_serving" method 
+	

@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-13T00:03:31-04:00
+
+====== Another Example ======
+Created Tuesday 13 July 2021
+
+**Another Bad Example:**
+	{{~/Desktop/ScreenShots/Bad Table Design #2.png}}
+	
+	Here, the **store_location** is completely dependent upon the **store_id.**
+	
+	Instead, we will separate them into more tables:
+	
+	{{~/Desktop/ScreenShots/Example #2 Normalized.png}}
+	
+	We separate them into two tables, one for stores, and one for purchases. They are linked by the **store_id** column that both tables have.
+	
+	

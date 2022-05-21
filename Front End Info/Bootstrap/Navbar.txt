@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-28T22:58:12-05:00
+
+====== Navbar ======
+Created Sunday 28 February 2021
+
+- so much to cover, and not easy to remember it all. Consult the docs!

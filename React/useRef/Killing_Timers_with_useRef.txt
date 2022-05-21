@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-16T19:39:38-04:00
+
+====== Killing Timers with useRef ======
+Created Saturday 16 October 2021
+
+**Example:**
+
+import React, { useState, useEffect, useRef } from "react";
+
+function TimerWithRef() {
+  **const timerId = useRef();**
+  let [count, setCount] = useState(0);
+
+  useEffect(function setCounter() {
+	console.log("EFFECT RAN!");
+	**timerId.current = setInterval(() => {**
+	**  setCount(c => c + 1);**
+	**}, 1000);**
+
+	**return function cleanUpClearTimer() {**
+	**  console.log("Unmount ID", timerId.current);**
+	**  clearInterval(timerId.current);**
+	};
+  }, [timerId]);
+
+  return (
+	<div>
+	  <h1>{count}</h1>
+	  <p>(Timer id is {timerId.current}.)</p>
+	</div>
+  );
+}
+
+
+**Explanation:**
+	1). We create the **timerId** variable with **useRef.**
+	
+	2). In useEffect, we create an interval and we save it to the variable **timerId.current**
+	
+	3). After the main code of useEffect, we return a cleanup function that uses the **timerId.current** to clear the interval:
+		**clearInterval(timerId.current);**
+

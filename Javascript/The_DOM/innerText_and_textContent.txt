@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-17T08:56:10-04:00
+
+====== innerText and textContent ======
+Created Saturday 17 April 2021
+
+Once you have selected an element, i.e. **document.querySelector('#myIdHere')**, you can then use **.innerText** or **.textContent** to get the text that is printed on the screen.
+
+
+The main difference is that **textContent** will return all text, including hidden text, properly formatted, and **innerText **will not.

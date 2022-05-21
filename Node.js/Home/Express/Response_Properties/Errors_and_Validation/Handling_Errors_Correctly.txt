@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-10T21:32:27-04:00
+
+====== Handling Errors Correctly ======
+Created Friday 10 September 2021
+
+1). Set up a custom error class, perhaps in another file.
+
+**Example:**
+	class `ExpressError extends Error {
+		constructor(message, status) {
+			super();
+			this.message = message;
+			this.status = status;
+			console.error(this.stack);
+		}
+	}
+	
+	module.exports = `ExpressError;
+	
+	
+	
+**Handle Errors Correctly:**
+const `ExpressError = require("./ExpressError);
+
+app.get('/users/:username', (req, res, next) => {
+	try {
+		const user = USERS.find(u => u.username === req.params.username);
+		
+		if (!user) **throw new `ExpressError("not found!", 404);**
+		
+		return res.json({ user });
+	} catch (err) {
+		return **next(err);**
+});
+
+
+**NOTES: **All of the logic inside of our routes needs to go in try / catch blocks
+
+If you want to respond with an error, throw a new `**ExpressError**
+
+In the **catch** block, **always** pass the error to **next()**
+

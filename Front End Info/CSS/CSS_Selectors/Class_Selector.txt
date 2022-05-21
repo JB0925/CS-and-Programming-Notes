@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-10T23:53:57-05:00
+
+====== Class Selector ======
+Created Wednesday 10 February 2021
+
+Use the syntax **.class-name-here {**
+							**margin: 40px;**
+					**}**
+
+
+to create a class in CSS. To use the class, assign it in the opening tag of your choice(s).
+
+**Example:**
+	**<button class="class-name-here">**
+
+
+
+**NOTE: **In the HTML element, you **do not** include the **dot.**
+
+
+

@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-01T22:11:13-05:00
+
+====== Create a Pandas Series ======
+Created Tuesday 01 December 2020
+
+**import pandas as pd**
+
+ser = pd.Series(data=[10,20,30,40,50], dtype=int, index=list(range(1,6)), name='xyz')
+
+print(ser)
+
+**returns:**
+	1	10
+	2	20
+	3	30
+	4	40
+	5	50
+	dtype: int32, name: Fred
+	

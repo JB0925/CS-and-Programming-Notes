@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-22T11:50:07-04:00
+
+====== Passing Data up to a Parent Component ======
+Created Thursday 22 July 2021
+
+Typically in React, we have downward data flow, where "smart", stateful parent components pass down data to the simpler child components.
+
+Let's pretend that we have a shopping list that is our parent component.
+
+Then, we have a `ShoppingListForm child component.
+	- We want to pass data to the actual shopping list, so that the shopping list's **state** is updated by the form inputs ech time they change

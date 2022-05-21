@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-22T11:28:23-04:00
+
+====== Refactoring Fetch Chains ======
+Created Thursday 22 April 2021
+
+**Starting Fetch Chains:**
+
+{{~/Desktop/ScreenShots/Refactoring Fetch Starter Code.png}}
+
+
+**Refactoring The Code Above:**
+
+To refactor the code, I've divided it up into four separate functions to go through one by one, and then the entire thing at the end.
+
+{{~/Desktop/ScreenShots/Check Status and Parse.png}}
+
+**checkStatusAndParse** checks to see if the request status is ok, and throws an error if not. If it is ok, it returns a parsed JSON response.
+
+{{~/Desktop/ScreenShots/printPlanets Fetch.png}}
+
+**printPlanets** just prints each planet name, and then returns a Promise with the same data, to pass off to the next function.
+
+{{~/Desktop/ScreenShots/fetchPlanets Fetch Refactoring.png}}
+
+**fetchPlanets** makes another request, this time with a new url returned from the previous Fetch call.
+
+{{~/Desktop/ScreenShots/catchErrors Fetch Refactoring.png}}
+
+**catchErrors **just catches any errors from the other lines in the chain and prints them to the console.
+
+
+
+**Putting It All Together:**
+
+{{~/Desktop/ScreenShots/Refactored Fetch Chain.png}}
+
+**Summary:**
+	1). Fetch the URL
+	2). Check the status and parse it to JSON if the status is ok/200
+	3). Print each planet name and return a Promise.resolve(data).
+	4). Fetch more planet data (page 2 of the data)
+	5). Repeat step 2.
+	6). Repeat step 3.
+	7). Catch any errors.
+	
+	**Much cleaner than the above!**

@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-23T21:02:20-04:00
+
+====== How to Login a User ======
+Created Thursday 23 September 2021
+
+**Example:**
+
+router.post("/login-1", async(req, res, next) => {
+	try {
+		const { username, password } = req.body;
+		const result = await db.query(
+			`SELECT password
+			 FROM users
+			 WHERE username = $1`,
+			 [username]
+		);
+		const user = result.rows[0];
+		if (user) {
+			if (await bcrypt.compare(password, user.password) === true) {
+				return res.json({
+					message: "Logged in!"
+				});
+			}
+		}
+		throw new ExpressError("Invalid username or password", 400);
+		
+	} catch (err) {
+		return next(err);
+	}
+});

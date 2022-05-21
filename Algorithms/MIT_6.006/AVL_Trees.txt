@@ -1,0 +1,136 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-20T10:26:45-05:00
+
+====== AVL Trees ======
+Created Wednesday 20 January 2021
+
+**What is an AVL Tree?:**
+	- an **AVL Tree** is one in which the heights of subtrees are balanced in such a way that each parent's child trees have a height that is equal or no greater than 1 from each other (**so if subtree A has a height of 5, subtree B will have a height of 4, 5, or 6**)
+	
+
+**Tree Height: **the length of the longest path from the root to a leaf
+
+**Node Height: **the length of the longest path from that node to a leaf
+
+**TREE HEIGHT FORMULA:** max(left_child_height, right_child_height) + 1
+
+
+
+**Example: AVL Tree Heights -**
+		{{.\pasted_image.png}}
+
+It is difficult, sometimes impossible, to have trees where the left and right child trees differ by 0.
+
+
+**AVL Trees are Balanced:**
+	- Balanced means that the height is O(lg n)
+	- what would the worst case be?
+		- for every node, make the right side have a height of 1 larger than the left side
+	
+	- **Nh = minimum number of Nodes in an AVL tree of height h.**
+			- to determine **Nh**, use a recursive formula (**start video at 20:32**)
+			**Formula: **1 + Nh-1 + Nh-2
+			
+			This is because the **height** is the longest path from the root to a leaf.
+			The longer subtree (remember, always longer by 1) has a height **h** of h-1, and the smaller subtree has a height **h** of h-2
+			The **1 + **is for the root node
+			So, the formula is: **1 root node + all levels on the right + all levels on the left**
+			
+**NOTE: **If a tree has** ONLY a left child or ONLY a right child, **we say that the** height of the missing child is -1. Very important**
+
+**How to Maintain the AVL Property (all subtrees have a height difference of | 1 | or 0):**
+	- **AVL Insert:**
+		1). Simple BST insert (if self.root is None: self.root = node, else: return self.root.insert(node))
+		2). Fix the AVL property (**how do you do step 2?**)
+		
+		**This Tree has the AVL Property:**
+		{{.\pasted_image001.png}}
+		**The arrows point to which subtree is "heavier" or "higher", and the straight line means that the subtrees are even**
+		It is the **AVL Property** because **each** node's subtrees only differ in **height** by 1 or less.
+		
+		
+		**This Tree DOES NOT have the AVL Property:**
+		{{.\pasted_image002.png}}
+		**This is because, when we added 23, all of the heights change and the AVL property is no longer satisfied.**
+		For instance, **41's** children, **20 and 65**, now have a **height** of **3** and **1**, respectively.
+		**20's** children, **11 and 29** now have a **height** of **0** and **2**, respectively.
+		
+		So what do we do?
+		
+		Well, **29 **is doubly left heavy (**26, 23**)
+		
+		**We will use rotations to fix it:**
+		
+
+**Rotations:**
+	- **left_rotate(x)**
+	{{.\pasted_image003.png}}
+	
+	**This involves pointer changes.** The parent of y was x, now the parent of x is y. The parent of A was X, now the parent of A is still X. The parent of B was Y, and now it is X. The parent of C was Y, and it still is.
+	
+	**All of this happens in O(1) time (simple reassignment)**
+	
+	**It is called a left rotate because the Root moves to the left.**
+	
+	**So how do we get the tree below to respect the AVL Property again? **
+	
+	**Perform a Right_Rotate and Insert 23 - Case 1:**
+	{{.\pasted_image004.png}}
+	In doing a right rotate, **26** would become the child of **20.** **26's right child** would be **29** and **26's left child **would be **23.**
+	This would mean that instead of the right child of 20 having a height of 2, and the left child's height being 0, the right child's height would go back to being 1, and the left child's height is still 0. This satisfies the AVL property.
+	
+	Remember, the parent of X becomes the child of X, and vice versa.
+	So **29** is the parent of **26**, but will be the **right child** of **26** after the right rotation.
+	
+	If X (**26**) had a left child, it will **still be** X's left child. 
+	If X had a right child, it will become the **left child** of **Y.**
+	For example, if **26 had a right child 27, **once the rotation happened, **26 would be the parent of 23 on its left and 29 on its right. So what about 27? 27 will be 29's left child.**
+       
+	   **How the tree looks after the right rotation:**
+	{{.\pasted_image005.png}}
+	
+	In looking at the **heights**, each subtree is once again no greater or less than a difference of 1 in **height** from it's left or right counterpart.
+	**This satisfies the AVL property once again.**
+	
+	
+	**One More Example - Case 2:**
+	- **insert 55 into the tree and satisfy the AVL property**
+	{{.\pasted_image006.png}}
+	**NOTE: heights were not updated for the picture directly above**
+	Notice now that **65** is doubly left heavy, and we want to avoid doubly heavy Nodes.
+	
+	If we do a **right rotation, ** you end up with **50 as the parent**, **65 as the right child (good), and 55 as the....left child (bad/wrong).**
+	If we do a **left rotation on 50**, that ends up swapping **50** and **55.**
+	From there, we end up with the same situation as above with **29, 26, and 23**. So then we can do a right rotation where **55 is the parent, 65 is the right child, and 50 is the left child**. This balances the doubly heavy subtree once again.
+	
+	**IMPORTANT - You may have to do multiple rotations to completely satisfy the AVL Property. Adding a node can change the height of several subtrees at once.**
+
+
+**AVL Insert:**
+1). Simple BST insert (if self.root is None, self.root = node, else: self.root.insert(n))
+2). fix AVL Property
+	- from changed node, up
+	- suppose **x** is the lowest node that is **NOT** AVL
+	- assume **x.right** is higher/heavier
+	- **IF** **x's right child** is right-heavy or balanced:
+		**right_rotate(x)**
+	-**ELSE:**
+		if **x.right** is left heavy or doubly left heavy:
+			**right_rotate(z)**
+			**left_rotate(x)**
+	
+	You could use AVL insert to sort, if you wanted.
+		**AVL Sort:**
+			- Insert n in AVL Tree - **O(n)**
+			- In order traversal = **O(n)**
+			- total time **O(n lg n)**
+			
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-02T22:48:55-04:00
+
+====== toThrow ======
+Created Saturday 02 October 2021
+
+When using **toThrow**, you cannot call a function first, and then call **expect(myFunc.result).toThrow();**
+
+You also cannot do it like this:
+	**expect(myFunc(param1, param2)).toThrow();**
+	
+
+**Easiest Way to Do It:**
+	**expect(() => {**
+		const { setCols, values } = myFunc(data, param);
+	**}).toThrow()**
+	
+	
+**NOTE:** Inside of **toThrow()**, if you have a specific, custom error, you can use that in this way:
+
+	**expect(() => {**
+		const { setCols, values } = myFunc(data, param);
+	**}).toThrow(new BadRequestError("No data");**
+
+
+
+**NOTE:** You can also throw the function into a **try / catch** block and **expect(error.message).toEqual("...");**
+

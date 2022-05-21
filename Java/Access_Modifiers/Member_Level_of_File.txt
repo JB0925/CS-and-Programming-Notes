@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-24T12:36:37-05:00
+
+====== Member Level of File ======
+Created Thursday 24 February 2022
+
+**Member Level** refers to being inside of the class itself, so all the fields, methods, etc.
+
+**Public**: At the member level, it means the same thing that it does  at the top level. a public method or field can be accessed by any class, anywhere.
+
+**Package-private:** Same as Top Level. The method is visible to every class within the same package, but **not** to classes in external packages. Specified by **leaving off the access modifier.**
+
+**private:** The method or field is only visible within the class it is declared. It is not visible anywhere else (including subclasses of its class).
+
+**protected:** the object is visible anywhere in its own package (just like package-private), but also in subclasses, **even if** those subclasses are in another package.

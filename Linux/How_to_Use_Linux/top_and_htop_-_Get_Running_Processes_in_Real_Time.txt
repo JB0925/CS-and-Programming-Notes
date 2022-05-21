@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-12T23:56:07-05:00
+
+====== top and htop - Get Running Processes in Real Time ======
+Created Tuesday 12 January 2021
+
+the **top** command returns a list of all currently running processes in real time
+also gives the amount of CPU usage each process is consuming, and how much memory it is consuming as well
+
+press **q** or **Ctrl+C** to exit back to the command prompt
+

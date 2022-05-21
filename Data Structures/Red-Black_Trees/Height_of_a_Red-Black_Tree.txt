@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-05-08T22:30:05-04:00
+
+====== Height of a Red-Black Tree ======
+Created Sunday 08 May 2022
+
+The height of a **Red-Black Tree** is **ALWAYS **between **log N** and **2 * log N**

@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-09T01:09:40-04:00
+
+====== Order ======
+Created Sunday 09 May 2021
+
+**Order** is used to specify the order in which the items are displayed.
+
+The **default value** for **order** is 0.
+
+So each item has an order of 0 by default.
+
+
+**If you want an item to be ordered first, it MUST have a lower number than the other items. **
+
+**NOTE: You can use negative numbers.**
+
+
+**Example:**
+	- if you have four boxes, and want box #3 to move to the front, you have to either:
+		a). give that box an order of -1
+		b). keep the order for that box unset, and give all other boxes an order of 1.
+

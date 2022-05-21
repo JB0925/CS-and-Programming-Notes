@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-18T11:49:28-04:00
+
+====== How to Avoid CORS Same Origin Error ======
+Created Friday 18 June 2021
+
+Many times, if you try to access an API twice that has teh same domain name, your web browser wont allow it. To get around this, add in an object with **crossDomain : true** or **crossorigin : true** to your Axios GET request.
+
+**Example:**
+
+	await axios.get(``[[https://www.mysite.com/shows/${someShowId}/episodes`,]] **{crossorigin : true})**;
+	
+	Notice, there are no quotes around  anything in the object. 

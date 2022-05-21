@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-12T20:30:52-04:00
+
+====== Optional ======
+Created Sunday 12 September 2021
+
+**from typing import Optional**
+
+Optional is used to say that a variable can be either a certain type of value, or **None**
+	- maybe_a_string: **Optional[str] = "abcdef"**
+	
+	- maybe_a_string2: **Optional[str] = None**
+
+**NOTE:** If a function **can** return None, then you should use **Optional[intended_type]**
+
+
+**Benefits of Optional Types:**
+	- you communicate your intent more clearly
+	- as a developer, if you see **Optional**, then be sure to do some checking for None values
+	
+	- gives you actionable information:
+		- **get back a list w / elements: **ok, you can operate with this data
+		
+		- **get back an empty list:** Hmm, guess no data was available
+		
+		- **get back None:** Ok, an error occurred, let's handle it
+

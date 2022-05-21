@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-09T16:54:33-05:00
+
+====== Color ======
+Created Tuesday 09 February 2021
+
+The **color** property changes the color of the **text**, not the **background.**
+
+The **background-color** property changes the color of the background of the object.
+	- if you change the **background-color** property of something like an **h2**, remember, it changes the background color of that section of the body, which goes across the entire page.
+	- **NOTE: **You can also use the **background** property to change the background color of an element, but it is best to use **background-color** because **background** can do a lot more than just change color.
+

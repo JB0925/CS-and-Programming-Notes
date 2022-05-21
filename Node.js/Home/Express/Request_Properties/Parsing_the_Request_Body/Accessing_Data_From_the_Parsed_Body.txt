@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-10T11:58:28-04:00
+
+====== Accessing Data From the Parsed Body ======
+Created Friday 10 September 2021
+
+**Example:**
+	app.post('api/staff', function(req, res) {
+		return res.send({ fname: req.body.fname });
+	});

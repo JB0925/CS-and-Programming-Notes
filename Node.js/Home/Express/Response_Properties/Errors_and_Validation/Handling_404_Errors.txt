@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-10T21:49:28-04:00
+
+====== Handling 404 Errors ======
+Created Friday 10 September 2021
+
+**NOTE:** This goes after all routes, but **before** the global error handler.
+
+**Example:**
+	app.use((req, res, next) => {
+		const notFoundError = new `ExpressError("Not Found", 404);
+		return **next(notFoundError);**
+	});

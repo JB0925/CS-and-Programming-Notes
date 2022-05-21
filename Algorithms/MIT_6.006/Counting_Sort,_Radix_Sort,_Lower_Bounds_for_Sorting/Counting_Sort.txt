@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-27T13:40:21-05:00
+
+====== Counting Sort ======
+Created Wednesday 27 January 2021
+
+**Linear-time sorting:**
+	(**Integer Sorting)**
+	
+	- so far, we have talked about comparison sorting
+	- assume you are sorting **n** keys, which are all integers
+	- all are within some range **{0, 1,....k-1}**
+	- each fits in a word (RAM space amount)
+	
+	- can do a lot more than comparisons, and this will help us
+	
+	- **for k, when k is not too large, you can sort in linear time**
+
+
+**Counting Sort:**
+	- no comparisons
+	- as the name suggests, you count all of the items
+		[**3,5,7,5,5,3,6]**
+		**n = len([3,5,7,5,5,3,6])**
+		**k = len(Counter([3,5,7,5,5,3,6]))**
+			- two 3's
+			- three 5's
+			- one 6
+			- one 7
+		
+		**Step 1). **Start with an array of **k** lists (in this case **k = 4**)....we will call it A
+		
+		**Step 2). **for j in range(n):
+
+
+
+
+

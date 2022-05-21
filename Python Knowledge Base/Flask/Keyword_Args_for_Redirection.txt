@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-24T00:15:52-04:00
+
+====== Keyword Args for Redirection ======
+Created Saturday 24 October 2020
+
+**@app.route('/admin')**
+	 **def admin():**
+		 **return redirect(url_for('home'))			**#this will redirect to the home page, where no args are passed in
+
+
+
+However, if we were to redirect to the user function:
+
+**@app.route('/<name>')			**
+	 **def user(name):**
+		**return 'Welcome, ' + name**
+
+
+**@app.route('/admin')						**#we don't have a way to pass the "name" parameter to the user page. To account for this, we will
+	 **def admin():								**use a keyword argument
+		 **return redirect(url_for('user, name='Admin!'))		**#so after user, set the name parameter from the user function to "Admin!"
+																			or anything else you want
+
+
+

@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-08T21:14:08-05:00
+
+====== AWS Management Console ======
+Created Saturday 08 January 2022
+
+Click **services** in the top left of the navbar to see all of the AWS services.
+
+The search bar is very helpful for finding services and documentation.
+
+The **global** pulldown in the navbar will typically have a list of regions to choose from. In the case of IAM, it will say **global** because it doesn't require a region.
+
+
+To find which services in which Region:
+	- google the **Region table**
+	- not every service is available in every region, so you have to check.

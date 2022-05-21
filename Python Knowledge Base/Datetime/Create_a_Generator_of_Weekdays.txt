@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-26T22:25:42-05:00
+
+====== Create a Generator of Weekdays ======
+Created Tuesday 26 January 2021
+
+{{.\pasted_image.png}}
+
+This code will return all of a specific day (i.e. all Mondays, all Fridays, etc.) over a specific amount of weeks.

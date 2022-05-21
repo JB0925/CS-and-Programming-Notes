@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-09T15:27:59-05:00
+
+====== Exposing Ports ======
+Created Tuesday 09 March 2021
+
+Running **docker ps** will give you information on the port number that the Container is running on.
+
+We want to map that port number to the container, so that If we use the local server, we can type **[[localhost:8080]]    (80 = port the container is running on**) and it will map to the container
+
+
+**How to map a Container port to local server:**
+	- run **docker run -d -p 8080:80 container_name**
+	- running the above gives us a new long hash value
+	- **NOTE:** The **80** is the container's port, and is subject to change
+	
+	Doing this on a local server will begin running the web server of the container you chose. 
+	
+
+
+**How to Expose Multiple Ports:**
+	- **docker run -d -p 8080:80 -p 3000:80 nginx latest**
+	
+	- running **docker ps** again will show that localhost:3000 maps to port 80 inside of the container, and so does [[localhost:8080]]
+
+
+**PICK UP AT 31:39**
+

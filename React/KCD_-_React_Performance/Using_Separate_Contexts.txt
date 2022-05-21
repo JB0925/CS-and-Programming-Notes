@@ -1,0 +1,65 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-15T20:50:03-05:00
+
+====== Using Separate Contexts ======
+Created Saturday 15 January 2022
+
+Sometimes, you have global state (useReducer and useContext) that manages all components.
+
+Let's say one of those components has a piece of state that only affects it. What happens? **All of the components re-render**. 
+
+We can make it so that the **state needed for that component** goes in a separate context, so that **only that component** is affected, and the other components don't need to update for no reason.
+
+**Example:**
+
+**// These first three functions are standard stuff. Create a reducer function,**
+**// use it in a Context Provider, then create an easy way to access the DogState**
+**// useDogState.**
+
+function dogReducer(state, action) {
+  switch (action.type) {
+	// we're no longer managing the dogName state in our reducer
+	// 💣 remove this case
+	case 'TYPED_IN_DOG_INPUT': {
+	  return {...state, dogName: action.dogName}
+	}
+	default: {
+	  throw new Error(`Unhandled action type: ${action.type}`)
+	}
+  }
+}
+
+function DogProvider(props) {
+  const [state, dispatch] = React.useReducer(dogReducer, {
+	dogName: '',
+  })
+  const value = [state, dispatch]
+  return <DogContext.Provider value={value} {...props} />
+}
+
+function useDogState() {
+  const context = React.useContext(DogContext)
+  if (!context) {
+	throw new Error('useDogState must be used within a DogProvider')
+  }
+  return context
+}
+
+**// Here, we have wrapped the Dog context provider around only the DogNameInput component, as it is the only one that needs it. Finally, we wrap the AppProvider around the Grid component. This way, when the DogNameInput needs to update, the Grid doesn't also have to update for no reason.**
+function App() {
+  const forceRerender = useForceRerender()
+  return (
+	<div className="grid-app">
+	  <button onClick={forceRerender}>force rerender</button>
+	  <div>
+		**<DogProvider>**
+		**  <DogNameInput />**
+		**</DogProvider>**
+		**<AppProvider>**
+		**  <Grid />**
+		**</AppProvider>**
+	  </div>
+	</div>
+  )
+}

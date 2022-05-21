@@ -1,0 +1,68 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-26T14:18:10-05:00
+
+====== Prop Getters ======
+Created Sunday 26 December 2021
+
+A **prop getter** is a function that returns an object filled with "default" props.
+
+The thing that makes it extensible / customizable is that you can pass other props to it and it will return those as well.
+
+**Example:**
+
+import * as React from 'react'
+import {Switch} from '../switch'
+
+**// this is a function that accepts an unlimited amount of functions**
+**// it calls another function with any necessary args**
+**// it checks to see if there is actually a function and, if so, calls each one with the args**
+const callAll = (...fns) => (...args) => fns.forEach(fn => fn?.(...args))
+
+
+**// REMEMBER: the <Switch> component takes the "on" prop and an "onClick"**
+**// prop. Also, the button takes the ORIGINAL onClick AND its own CUSTOM onClick. So how can we share both the ORIGINAL onClick and the CUSTOM onClick, as well as any other needed props?**
+
+function useToggle() {
+  const [on, setOn] = React.useState(false)
+  const toggle = () => setOn(!on)
+  
+  **// we return the "aria-pressed" prop and an "onClick" prop**
+  **// look at the "onClick" though. We destructure the CUSTOM onClick in the signature, then we return OUR onClick as "callAll". REMEMBER, "callAll" takes multiple functions and, if they are passed in, calls each one. So OUR onClick will call THEIR onClick, as well as the "toggle" function to set state.**
+  function getTogglerProps({onClick, ...props} = {}) {
+	return {
+	  'aria-pressed': on,
+	  onClick: callAll(onClick, toggle),
+	  ...props,
+	}
+  }
+
+  return {
+	on,
+	toggle,
+	getTogglerProps,
+  }
+}
+
+function App() {
+  const {on, getTogglerProps} = useToggle()
+  return (
+	<div>
+	  **// Switch needed "on" and "onClick" but so we call "getTogglerProps", but remember, we didn't pass in a CUSTOM onClick, so that will not be called in the "callAll" function. So <Switch> will use the "on" prop and the "onClick", which in this case is just the "toggle" function.**
+	  <Switch {...getTogglerProps({on})} />
+	  <hr />
+	  <button
+		  **// here, we pass in three props. Pay attention to the onClick. Since we entered in a CUSTOM onClick, the "callAll" function will call it AND toggle. This way we get the expected switch on / off functionality, AND the console.log that we want**
+		{...getTogglerProps({
+		  'aria-label': 'custom-button',
+		  onClick: () => console.info('onButtonClick'),
+		  id: 'custom-button-id',
+		})}
+	  >
+		{on ? 'on' : 'off'}
+	  </button>
+	</div>
+  )
+}
+
+export default App

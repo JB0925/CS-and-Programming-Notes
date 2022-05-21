@@ -1,0 +1,128 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-30T22:39:26-04:00
+
+====== Regex in Python ======
+Created Thursday 30 July 2020
+
+Regex notes:
+
+raw string = string preceded by an 'r'...tells Python not to handle a backslash in any special way.
+
+**print(r'\tTab') would print exactly what is between the ' ', instead of tabbing once and printing 'Tab'.**
+
+**re.compile** allows you to put your patterns into a variable and allows you to reuse that pattern to perform multiple searches
+
+**EX:**
+	**pattern = re.compile(r'abc')**
+	**matches = pattern.finditer(string)....where "string" is the string being passed into it. **
+
+The above gives all of the instances of the pattern found in the string passed to it. 
+
+More examples:
+	**re.compile(r'\bHa')   would match the first and second "Ha" in "Ha HaHa" because the first "Ha" has a word boundary at the newline, and the second "Ha" has whitespace as a word boundary.**
+	
+	**re.compile(r'\BHa') would match the last "Ha" in "Ha HaHa" because the only "Ha" that doesn't have a word boundary is the last one(no newline, no whitespace)**
+	
+	**re.compile(r'^Start') would only match strings that had "Start" at the beginning of the string.**
+	
+	**re.compile(r'string$') would only match the passed in string if it was at the end of the string.**
+	
+	
+To match a phone number:
+	  **re.compile(r'\d\d\d.\d\d\d.\d\d\d\d').......would match 321-456-7890 or 321.456.7890, because the dot in the regex means "any character."**
+
+
+To use a regex search in conjunction with a file:
+pattern = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d')
+
+	with open(file, 'r', encoding='utf-8') as f:
+		contents = f.read()
+		matches = pattern.finditer(contents)
+		for match in matches:
+			print(match)
+
+
+To get more specific, you can use a character set:
+	**re.compile(r'\d\d\d[-.]\d\d\d[-.]\d\d\d\d').......would match 321-456-7890 or 321.456.7890, but not 321*456*7890, because the "*" is not in the character set.**
+	
+	**re.compile(r'[89]00[-.]\d\d\d[-.]\d\d\d\d').....would match 800-456-7890 or 900-456-7890, but not 321-456-7890, because 8 and 9 are in the character set, and then we are searching for two literal zeros, followed by a dash or a dot, etc.**
+	
+To match a range of letters/numbers:
+	**re.compile(r'[1-5]') would match any single digits between 1 and 5**
+	**re.compile(r'[a-z]') would match any single letter from a-z.**
+	
+Can also do:
+	**re.compile(r'[a-zA-Z]') allows you to search multiple ranges, and you can expand on that range as well.**
+	
+Caret:
+	**Outside of a character set, ^ matches only when the searched string is at the beginning of a string, but within a character set, [^a-z], matches anything that is NOT what is in the set.**
+	
+	**re.compile(r'[^b]at'), would match cat, sat, pat, but not bat....because ^b in the character set means "not b"**
+	
+	
+Quantifiers:
+	**"*" = 0 or more, "+" = 1 or more, "?" = 0 or 1, {3} = exact number, {3,4} = range of numbers (min, max)**
+	**re.compile(r'\d\d\d[-.]\d\d\d[-.]\d\d\d\d')     using quantifiers would be written as     re.compile(r'\d{3}.\d{3}.\d{4}')**
+
+
+Matching Name Patterns:
+	names = Mr T, Mr. Schafter, Mr. Smith, Ms Davis, Mrs. Robinson
+	**re.compile(r'Mr\.?\s\[A-Z]\w*') ...........+ would not work to match "Mr T, because it would be 1 or more, whereas * means 0 or more**
+	**re.compile(r'M(r|s|rs)\.?\s[A-Z]\w*').......would match all of the names in names**
+	
+	**could have also done.....re.compile(r'(Mr|Ms|Mrs)\.?\s[A-Z]\w*')**
+	
+	
+	emails = CoreyMSchafer@gmail.com, corey.schafer@university.edu, corey-321-schafer@my-work.net
+	
+	**re.compile(r'[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)')**
+	
+Matching URL's:
+	urls = http://www.google.com, https://coreyms.com, https://youtube.com, http://www.nasa.gov
+	
+	**re.compile(r'https?://(www\.)?\w+\.\w+') will match all of the above urls.**
+	
+Matching certain parts of the string:
+	**pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)') **
+	 **subbed_urls = pattern.sub(r'\2\3', urls)**
+	**print(subbed_urls).......would print google.com, coreyms.com, youtube.com, nasa.gov, because you are subbing the 2nd and 3rd pattern for every match in the urls list.**
+	
+
+RE Methods:
+	**.finditer() = **returns match objects, with index information as to where each match was found
+	**.findall() = **will match the pattern, and return every string that matches as a string
+							**IMPORTANT: **if you use groups in your pattern writing, it will only match the groups, not the whole pattern.
+	
+	**,match() =  IS NOT ITERABLE**
+			sentence = "Start a sentence and then bring it to an end."
+			pattern = re.compile(r'Start')
+			matches = pattern.match(sentence)
+			**returns a match object with the index span, and shows the actual match at the end.......no matches returns None**
+			
+			**.match() only searches/matches the beginning of a string.**
+			
+	**.search() = IS ALSO NOT ITERABLE**
+			sentence = "Start a sentence and then bring it to an end."
+			pattern = re.compile(r'sentence')
+			matches = pattern.search(sentence)
+			**returns a match object with the index span, and shows the actual match at the end.......no matches returns None**
+			**CAN USE SEARCH FOR TEXT ANYWHERE WITHIN A STRING**
+			
+			
+Flags:
+	An example of a flag using .match():
+	**,match() =  IS NOT ITERABLE**
+			sentence = "Start a sentence and then bring it to an end."
+			pattern = re.compile(r'Start', re.IGNORECASE or re.I).....**the IGNORECASE/I flag is optional, tells Python to ignore case**
+			matches = pattern.match(sentence)
+			**returns a match object with the index span, and shows the actual match at the end.......no matches returns None**
+			
+		  **.match() only searches/matches the beginning of a string**
+
+
+
+
+
+
+

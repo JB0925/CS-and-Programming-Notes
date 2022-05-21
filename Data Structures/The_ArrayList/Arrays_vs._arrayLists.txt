@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-16T13:27:55-04:00
+
+====== Arrays vs. arrayLists ======
+Created Wednesday 16 September 2020
+
+**Pros are Highlighted in Yellow:**
+
+**Array								arrayList**
+
+1). fixed size							**__dynamic size__**
+
+2). **__can store all types of data__**				can only store objects; not primitives
+
+3). Methods need to be created				**__Methods are created for you__**
+
+4). **__doesn't require a lot of memory__**		requires more memory use and upkeep
+
+
+

@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T22:47:01-04:00
+
+====== Node Callbacks ======
+Created Monday 06 September 2021
+
+Many Node libraries utilize async callbacks by default:
+
+**Example:**
+
+// reading a file
+
+**fs.readFile('myFile.txt', 'utf8'. function(err, data) {**
+	// process file and do stuff with it
+**});**
+
+

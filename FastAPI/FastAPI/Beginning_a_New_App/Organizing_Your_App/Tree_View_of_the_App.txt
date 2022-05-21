@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-06T22:34:49-04:00
+
+====== Tree View of the App ======
+Created Tuesday 06 April 2021
+
+{{.\pasted_image.png}}
+{{.\pasted_image001.png}}
+{{.\pasted_image002.png}}
+
+**NOTE:** Ignore all the pycache stuff.

@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-19T22:43:12-04:00
+
+====== Adding Styles into React ======
+Created Saturday 19 June 2021
+
+1). Create your CSS file, add it in a link tag to the HTML.
+
+2). **It is standard** to add a class that has the same name as your component.
+	So, if your component is called "Machine", in your CSS file, you'd have a class called "**.Machine"**.
+
+3). In your component, where you'd normally have:
+	**<div class="Machine"></div>**
+	
+	In React, it is actually:
+		**<div className="Machine"></div>**
+		
+
+{{~/Desktop/ScreenShots/Add Class to React Component.png}}
+
+Here, you can see where we added **className="Machine"** to the div in the Machine component.
+
+
+

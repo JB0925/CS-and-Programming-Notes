@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-04T23:10:30-05:00
+
+====== Django Admin ======
+Created Thursday 04 February 2021
+
+To use Django admin:
+	**1). **create a "**superuser**" by typing **python manage.py createsuperuser **in the terminal
+	
+	**2). **respond to the prompts for email, password, etc.
+	
+	**3). **update the app's **admin.py** file
+		- **from .models import MODEL_NAME**
+		
+		**admin.site.register(MODEL_NAME)**
+		
+		**NOTE**: if you get a "No Such Table" error, try to exit the server and run **python manage.py makemigrations APP_NAME**, followed by **python manage.py migrate**
+		
+		- add a '**__str__()** method to return the first ~50 or so characters of the post
+
+
+

@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-07T23:22:34-05:00
+
+====== memo ======
+Created Tuesday 07 December 2021
+
+Here is an example of how to use **memo:**
+
+**NOTE:** Remember, React's memo size is 1, so as soon as the component is called again with new props, the previous props that were in the **memo** are now gone.
+
+import { **memo** } from "react";
+
+const MemoizedComponent = memo(MyComponent);
+
+// then, when you render it:
+<MemoComp prop1="a" prop2="b" /> // renders **MyComponent** with **new** elements
+
+// rerender it with the same props:
+<MemoComp prop1="a" prop2="b" /> // renders it with previous elements 
+🤓
+// rerender it again but with different props:
+<MemoComp prop1="a" prop2="c" /> // renders new elements
+
+// rerender it again with the same props as at first:
+<MemoComp prop1="a" prop2="b" /> // renders new elements

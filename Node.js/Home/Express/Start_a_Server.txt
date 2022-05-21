@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-09T23:11:38-04:00
+
+====== Start a Server ======
+Created Thursday 09 September 2021
+
+first, **npm install express**
+
+Then:
+	const express = require('express');
+	
+	const app = express();
+	
+	app.listen(3000, () => {
+		console.log("App on port 3000");
+	});
+
+
+**NOTE: **The server is running, but the app will not do anything except respond with 404s.
+
+**NOTE:** **app.listen** should always be at the bottom of the file.
+

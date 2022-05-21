@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-21T23:02:58-04:00
+
+====== DLL - Time Complexity Equations ======
+Created Monday 21 September 2020
+
+**Doubly Linked Lists – Time Complexity Equations:**
+1). Accessing – O(n)....you may have to go through the whole list in the worst case scenario
+2). Searching – O(n).....same as above
+3). Inserting – O(n) or O(1).....inserting at head or tail is O(1), inserting in middle is O(n)
+4). Deleting – O(n) or O(1)......same as above, this time for deleting
+
+
+{{.\pasted_image.png}}
+
+
+

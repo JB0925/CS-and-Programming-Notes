@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-12T22:32:20-05:00
+
+====== Recompiling a File on Save ======
+Created Sunday 12 December 2021
+
+By running, **tsc app.ts -w**   OR **tsc app.ts --watch**
+
+you can make it so that your file will recompile on save with any new changes.

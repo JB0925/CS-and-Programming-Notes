@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-13T23:37:00-05:00
+
+====== File Tree ======
+Created Saturday 13 February 2021
+
+Basic file setup **minus the things crossed out:**
+{{.\pasted_image.png}}

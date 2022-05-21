@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-11T15:51:06-04:00
+
+====== Testing Events ======
+Created Monday 11 October 2021
+
+React Testing Library provides a **fireEvent** method that you can use to simulate interaction with an app.
+		import { render, fireEvent } from "@testing-library/react";
+
+**Examples of Event Testing with fireEvent:**
+	.fireEvent.click(HTMLElement)
+		Fire a click event
+	.fireEvent.submit(HTMLElement)
+		Fire a submit event
+	.fireEvent.input(HTMLElement)
+		Fire an input event
+		
+
+**Example in Practice:**
+	import React from "react";
+	import { render, fireEvent } from "@testing-library/react";
+	import Counter from "./Counter";
+	
+	it("handles button clicks", function() {
+	  const { getByText } = render(<Counter />);
+	  const h2 = getByText("Current count: 0");
+	
+	  // click on the button - **alternatively you could select the button with **
+							**const btn = getByText("Add") -> fireEvent(btn);**
+	  fireEvent.click(getByText("Add"));
+	
+	  **// is the count different?**
+	  expect(h2).toHaveTextContent("1");
+	  expect(h2).not.toHaveTextContent("0");
+	});
+

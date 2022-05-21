@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-17T10:16:09-04:00
+
+====== Functions ======
+Created Wednesday 17 March 2021
+
+**Basic Function Syntax:**
+	
+	function makeWords(noun, adj, verb, adverb) {
+		**/ / use all the passed in words to make a silly sentence**
+		var result = "";
+		result += "The " + adj + " " + noun + " " + verb + " " + adverb + "."
+		return result;
+	}
+	
+
+sentence = makeWords('dog', 'smart', 'swallowed', 'hastily');
+console.log(sentence)

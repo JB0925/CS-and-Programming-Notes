@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-03T23:20:38-05:00
+
+====== Rebuilding an Image With the Cache ======
+Created Monday 03 January 2022
+
+Let's say you add a new dependency to install into your Dockerfile.
+
+You'll need to rebuild the image with:
+	**docker build .**
+	
+This is necessary to install the new dependencies.
+

@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-05T00:16:38-04:00
+
+====== justify-content ======
+Created Wednesday 05 May 2021
+
+**justify-content** defines how space is distributed between items in the flex container, along the main axis.
+
+
+**justify-content: default**
+	- this is what it would look like with **justify-content **not set at all
+
+{{~/Desktop/ScreenShots/justify-content: default.png}}
+
+
+
+**justify-content: flex-end;**
+
+{{~/Desktop/ScreenShots/justify-content: flex-end.png}}
+	- This pushes all of the content to be flush with the end of the container.
+	
+	**NOTE: justify-content: flex-start;** would do the opposite
+
+
+
+**justify-content: center;**
+	- This centers all of the items
+
+{{~/Desktop/ScreenShots/justify-content: center.png}}
+
+
+
+**justify-content: space-between;**
+	- This takes the whitespace and **evenly distributes it between the items.**
+	
+{{~/Desktop/ScreenShots/justify-content: space-between.png}}
+
+
+
+**justify-content: space-around;**
+	- takes the whitespace and evenly distributes it **around** the items
+
+{{~/Desktop/ScreenShots/justify-content: space-around.png}}
+
+
+
+

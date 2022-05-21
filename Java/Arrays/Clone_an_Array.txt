@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-14T22:02:07-05:00
+
+====== Clone an Array ======
+Created Monday 14 February 2022
+
+Using the **.clone()** method creates a deep copy of an existing array.
+
+**Example:**
+
+int intArray[] = {1,2,3};
+
+int cloneArray[] = intArray.clone();
+
+**NOTE:** Two **single dimensional arrays** are not considered to be equal, as they do not have the same reference in memory.
+
+
+
+**NOTE:** Cloning a 2D array makes a shallow copy,  in that it only creates **one new array, **
+and **each subarray** is a reference to the original **subarray**.

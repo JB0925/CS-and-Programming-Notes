@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-13T22:00:34-04:00
+
+====== Example Form Component ======
+Created Wednesday 13 October 2021
+
+import React, { useState } from "react";
+import "./Form.css";
+
+const Form = () => {
+	const INITIAL_STATE = {
+		name: "",
+		password: "",
+		email: ""
+	}
+	const [formData, setFormData] = useState(INITIAL_STATE);
+	
+	const handleChange = evt => {
+		const { name, value } = evt.target;
+		setFormData({
+			**...formData,**
+			**[name]: value**
+		});
+	};
+	
+	const handleSubmit = evt => {
+		evt.preventDefault();
+		setFormData(INITIAL_STATE);
+		**// could also send the data via an AJAX call, or pass the data up to a "smart" parent component first, etc.**
+		**NOTE: **This is OFTEN where data is passed UP to the parent component to modify its state, usually via a prop that is passed to the form component from the parent.
+		
+		The prop is usually a function that will update the parent's state with the form data.
+	};
+	
+	render (
+		<form onSubmit={handleSubmit}>
+			<label **htmlFor="name"**>Name</label>
+			<input 
+				**id="name"**
+				**type="text"**
+				**placeholder="Enter Your Name"**
+				**value={formData.name}**
+				**onChange={handleChange}**
+			/>
+			<label **htmlFor="email"**>Password</label>
+			<input 
+				**id="email"**
+				**type="text"**
+				**placeholder="Enter Your Email Address"**
+				**value={formData.email}**
+				**onChange={handleChange}**
+		   />
+		   <button>Add Item</button>
+		</form>
+	)
+};

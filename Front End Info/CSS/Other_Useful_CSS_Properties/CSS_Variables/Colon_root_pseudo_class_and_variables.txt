@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-20T13:03:31-05:00
+
+====== Colon root pseudo class and variables ======
+Created Saturday 20 February 2021
+
+Using '**:root **as a CSS selector is like a global variable and any other element or class will have access to any styles inside of root
+{{.\pasted_image.png}}
+
+Here we have the variable **--penguin-belly** set to the value of **pink.**
+
+We can then use that variable in any other element, class, or id declaration in the CSS document.
+
+**Example of the --penguin-belly variable being used globally:**
+{{.\pasted_image001.png}}
+
+Here, the body element is inheriting from the '**:root** pseudo class, and the entire background is now pink. The hex color after the variable is a fall back color.
+
+**NOTE: you can use this variable in other classes and just write it as normal i.e. "--penguin-belly: white;" to overwrite the initial value.**

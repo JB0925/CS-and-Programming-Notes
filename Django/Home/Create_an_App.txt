@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-01T00:15:27-05:00
+
+====== Create an App ======
+Created Monday 01 February 2021
+
+Django distinguishes between **projects** and **apps**. This is why, when you run **django-admin startproject config .**, you are starting a new **project.**
+
+**The project is the overall application, and apps are similar to pages inside the project.**
+
+Another way to look at it, is that **apps** are like functions inside of a regular Python script
+
+
+
+**To Start an App:**
+	- **python manage.py startapp app_name_here**
+	
+	
+When the above command is run, and then you run the **tree** command, you get a folder of your app name, and several files inside of it:
+{{.\pasted_image.png}}				{{.\pasted_image001.png}}
+
+
+**NOTE: Even though our app exists, Django doesn't know about it until we explicitly add it.**
+	- type **vi config/settings.py** 
+	- find the **INSTALLED APPS** list and add your new app name to it:
+		{{.\pasted_image002.png}}
+

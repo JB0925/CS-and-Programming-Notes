@@ -1,0 +1,75 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-23T15:00:53-04:00
+
+====== Trees  Binary Search Tree ======
+Created Wednesday 23 September 2020
+
+The **tree** is an abstract data structure which consists of a series of linked nodes connected together to form a **hierarchical representation** of information
+
+Like a Linked List, but different in that each Node has the option of pointing towards multiple nodes
+
+**Nodes **can be called **Vertices**, and the connections between them can be called **Edges**
+
+
+**Terminology and Visualization:**
+
+	**Vertice- **a certain Node in a Tree
+	**Edge- **A connection between Nodes
+	**Root Node- **the topmost Node of the Tree
+	**Child Node- **Nodes that are connected by an Edge to a Node one level above itself
+	**Parent Node- **any Node that has one or more Child Nodes
+	**Leaf Node- **any Node that does not have any Child Nodes
+	
+	{{.\pasted_image.png}}
+	
+	**10 and 15 share no direct association with 20**
+
+
+
+**Trees – Terminology and Visualization**
+
+	**Properties of the Tree:**
+**Height**-property of the Tree itself; Number of Edges on the longest possible path down towards a Leaf
+
+**Depth-** property of each individual node in the Tree; number of Edges required to get from that particular Node, to the root Node. In the picture below, 30 has a depth of 1 (one edge away from Root Node), but 15 has a depth of 2 (two Edges away from Root Node)
+
+{{.\pasted_image001.png}}	**<--- 3 Edges, so height=3**
+
+**Different Types of Trees:**
+
+Regular Trees are great for storing hierarchical data, but their power can be greatly increased when you start tinkering with how the data is stored in them. 
+**By creating rules and regulations and what type of data can be stored in the Tree and where it can be stored, you can make the Tree more powerful.**
+
+**Types of Trees:**
+1). Binary Search Tree
+2). AVL Tree
+3). Red/Black Tree
+4). N-ary Tree
+
+
+**Binary Search Tree:**
+A Binary Search Tree is a variation on the standard Tree that has 3 restrictions on it to help organize data.
+	**Restriction 1:** A Node can have two Children at MOST
+	**Restriction 2:** For any given Parent Node, the Child Node to the left has a value less than or equal to the parent, and the Child Node to the right has a value greater than or equal to the parent
+	**Restriction 3:** No two Nodes can contain the same value
+
+{{.\pasted_image002.png}}	**<----example of Restriction #2**
+
+**The biggest advantage of Binary Search Trees, is that we can search through them in Logarithmic Time.  (much faster than O(n))**
+
+Process:
+	- Tell the computer to go left if the value we’re searching for is less than the current Node
+	- Tell the computer to go right if the value is greater than the current Node
+	- Binary Search Trees are really popular for storing **large quantities** of data that need to be easily searchable
+		- Also translates to accessing, inserting, and deleting Nodes
+		
+
+**Example of Restriction #2:**
+
+{{.\pasted_image003.png}}	**values >= parent are to the right, <= to the parent are to the left**
+
+
+
+
+

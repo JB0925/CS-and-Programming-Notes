@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-05T01:29:59-04:00
+
+====== Keeping Users Logged In ======
+Created Thursday 05 August 2021
+
+To keep a user logged in, we simply place their **id** in the **session.**
+
+If a route or aspect of a route requires a user to be logged in, we check the session:
+	**if "user_id" in session:**
+	
+To Log Out:
+	session.pop("user_id")
+	
+
+
+**Examples:**
+
+@app.route('/home')
+def home():
+	if "user_id" in session:
+		return render_template('home.html')
+	return redirect(url_for('login'))
+	
+
+@app.route('/logout')
+def logout():
+	if "user_id" not in session:
+		return redirect(url_for("login"))
+	**session.pop("user_id")**
+	return redirect(url_for("login"))
+	

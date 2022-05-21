@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-10T23:15:55-05:00
+
+====== Filter What You See In the Console ======
+Created Friday 10 December 2021
+
+If you click the "**All levels**" tab, you can toggle on / off the error, warn, etc., messages.

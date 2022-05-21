@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-24T01:04:37-04:00
+
+====== parseFloat and parseInt ======
+Created Wednesday 24 March 2021
+
+Just like you can call int() and float() on string numbers in Python, you can call **parseInt **and **parseFloat** on string numbers in JavaScript.
+
+**NOTE: **Calling **parseInt('$99')** will return **NaN, **but calling **parseInt('99 cents')** will return **99.** 
+
+			The function gets all number values up until it runs into a non number, then it stops.
+

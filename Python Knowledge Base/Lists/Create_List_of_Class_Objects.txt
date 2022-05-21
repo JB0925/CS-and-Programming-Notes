@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-11T01:13:36-04:00
+
+====== Create List of Class Objects ======
+Created Sunday 11 October 2020
+
+You can very quickly create a whole list of class objects if you have other lists to use as instance attributes:
+
+
+**names = [list of names]**
+**bites = [list of bites]**
+
+**ninja_list = [Ninja(*ninja) for ninja in zip(names, bites)]**
+**print(ninja_list)**
+
+This will create an entire list of class instances quickly, then print them for you to see.

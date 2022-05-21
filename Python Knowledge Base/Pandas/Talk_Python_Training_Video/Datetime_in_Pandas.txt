@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-09T23:26:28-04:00
+
+====== Datetime in Pandas ======
+Created Wednesday 09 September 2020
+
+if column = datetime[64]
+
+**df['purchase_date'].dt.month**....gives the month, same for .year and .day
+
+**df['purchase_date'].dt.dayofweek**....gives the day of the week as an integer
+
+**df['purchase_date'].dt.quarter**....gives the yearly quarter
+
+**df['purchase_date'].dt.days_in_month**....gives the total number of days in the month
+
+**df['purchase_date'].dt.is_month_end**.....tells you if the day in the date is the end of that month
+
+
+

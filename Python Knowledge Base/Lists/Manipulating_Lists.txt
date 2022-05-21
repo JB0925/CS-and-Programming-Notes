@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-08T13:50:43-04:00
+
+====== Manipulating Lists ======
+Created Saturday 08 August 2020
+
+reverse a list:
+
+	**lst.reverse()   OR lst[::-1]**
+	
+sort a list:
+
+	**lst.sort()  OR lst.sort(reverse=True) ......latter sorts in reverse**
+	
+assign a list without [ ]:
+
+	**l = list(somevar).....prints a list **
+	
+
+return/remove the last letter from the list:
+
+	**lst.pop()......can also add an index if you want a specific item**
+	
+insert a character:
+
+	**lst.insert(index, char)**
+	
+replace an item:
+
+	**lst[index] = 'something'**
+	
+delete an item:
+
+	**del lst[index]**
+	
+
+

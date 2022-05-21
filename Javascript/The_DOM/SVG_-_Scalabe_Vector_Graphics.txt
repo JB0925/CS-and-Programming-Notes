@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-26T20:56:55-04:00
+
+====== SVG - Scalabe Vector Graphics ======
+Created Monday 26 April 2021
+
+SVG's are HTML elements that can be manipulated using Javascript.
+
+**Example:**
+{{~/Desktop/ScreenShots/SVG Example.png}}
+
+This draws a black circle on the screen. The height and width are the size of the box drawn around the circle.
+
+
+SVG's have an X and Y axis. The movement along the axes' starts in the **top left corner**.
+
+X moves from left to right.
+Y moves from top to bottom.
+
+**Anything that we want to show up must fit within the "width" and "height" attributes of the SVG itself.**
+
+Changing the **CX** value will shift the circle to the right. 
+Changing the **CY **value will shift the circle to the bottom of the SVG.
+Changing the **r** value will make the circle significantly larger.
+
+You can show more than one shape inside of an SVG if you want to.

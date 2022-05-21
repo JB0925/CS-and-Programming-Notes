@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-26T22:21:42-05:00
+
+====== Iterators  Create an Iterator ======
+Created Tuesday 26 January 2021
+
+To create an iterator, you must have two methods implemented in your class:
+	1). '__iter__
+	2). '__next__
+
+
+**Sample Code and a Helpful Link:**
+{{.\pasted_image.png}}
+
+https://www.programiz.com/python-programming/iterator
+
+
+

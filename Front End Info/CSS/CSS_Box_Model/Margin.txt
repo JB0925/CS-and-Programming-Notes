@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-15T09:21:10-05:00
+
+====== Margin ======
+Created Monday 15 February 2021
+
+Margin is the space between the border of one object, and the border of another object.
+
+Just like padding, margin has individual selectors, as well as a shorthand method.
+
+**Individual:**
+	- margin-top
+	- margin-bottom
+	- margin-left
+	- margin-right
+
+**Shorthand:**
+	- margin
+	
+
+**Shorthand Examples-All Four Ways:**
+{{.\pasted_image.png}}
+

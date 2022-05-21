@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-23T11:26:45-05:00
+
+====== Creating a Generics Class ======
+Created Wednesday 23 February 2022
+

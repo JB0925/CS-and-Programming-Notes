@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-29T21:41:46-04:00
+
+====== React Redux ======
+Created Friday 29 October 2021
+
+React Redux is a good tool for managing state and passing state around to multiple smaller components, similarly to useContext.
+
+**How to Use It:**
+	To start include the Redux script in a plain HTML file:
+		<script src="https://unpkg.com/redux"></script>
+		
+	
+	Next, create a store:
+		**const initialState = { count: 0 };**
+		**const store = Redux.createStore(initialState);**
+		
+	**NOTE: **The **store** must be passed a **reducer** function.
+
+
+**Reducer Functions:**
+	A reducer function accepts two object:
+		- a state
+		- an action
+	
+	The action is used to prodcue and return new state.
+	
+	**NOTE:** The reducer should always use **pure** functions like map, filter, etc., in the action section.
+	
+	**NOTE 2: createStore** must take an initial state upon instantiation.
+	
+	
+	

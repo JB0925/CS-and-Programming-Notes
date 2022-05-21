@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-16T10:27:15-05:00
+
+====== REMS ======
+Created Tuesday 16 February 2021
+
+Relative to the **root HTML** **element's** font-size, and often easier to work with.
+
+If the root font-size is 20px, 1**rem** is **always 20px**. **2rem **is **always 40px**, etc.
+

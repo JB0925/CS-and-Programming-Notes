@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-19T23:04:36-04:00
+
+====== A More Flexible Way to Query ======
+Created Monday 19 July 2021
+
+instead of running:
+	user = User.query.filter_by(first_name='Tony')
+
+
+we could use:
+	user = db.session.query(User).filter_by(first_name='Tony')
+	
+	This is often more flexible than the above.
+	

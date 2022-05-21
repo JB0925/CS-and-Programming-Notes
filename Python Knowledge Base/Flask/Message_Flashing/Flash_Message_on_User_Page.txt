@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-31T23:35:22-04:00
+
+====== Flash Message on User Page ======
+Created Saturday 31 October 2020
+
+Step 1).	**Create a "user.html" page. Extend the base template to it.**
+Step 2).	**Give the user page a title; call it whatever you want.**
+Step 3).	**Copy over the information used that looks like Python code that is used to display the message.**
+Step 4).	**In Flask, in the "user" function, call "render_template('user.html', user=user)		The user=user is because we passed in a user**
+			**name on the "user.html" page.**
+
+{{.\pasted_image.png}}				{{.\pasted_image001.png}}
+

@@ -1,0 +1,75 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-16T23:45:20-04:00
+
+====== useToggleState - Custom Hooks Example ======
+Created Saturday 16 October 2021
+
+We can create a generic custom hook that can be used to set and update state for ANY **true / false | on / off** style piece of state. This is a better alternative to writing out the same code over and over again.
+
+**Example - the Long Way:**
+	const MoodClicker = () => {
+		const [isHappy, setIsHappy] = useState(true);
+		const [isDarkMode, setIsDarkMode] = useState(false);
+		const toggleMood = () => {
+			setIsHappy(mood => !mood);
+		}
+		
+		const toggleDarkMode = () => {
+			setIsDarkMode(mode => !mode);
+		}
+		
+		return (
+			<div className="MoodClicker">
+				<h1>{isHappy ? 'one' : 'two'}</h1>
+				<button onClick={toggleMood}>Change Mood</button>
+				<button onClick={toggleDarkMode}>Change Mode</button>
+			</div>
+		)
+	}
+
+	
+	So here we have **two functions** to update state, and the functions are almost the exact same thing. We can make these better.
+
+
+**Example - the Better Way:**
+	in **src/hooks/customHooks.js**
+	
+	import React, { useState } from "react";
+	
+	const useToggle = (initialValue = true) => {
+		const [value, setValue] = useState(initialValue);
+		const toggle = () => {
+			setValue(oldValue => !oldValue);
+		};
+		
+		return [value, toggle];
+	};
+	
+	export default useToggle;
+	
+	
+	Here, we return the piece of state itself, and a **function that we will use as a callback** to update the state.
+	
+	
+
+**Example - How to Use the Better Way in a Function:**
+	import useToggle from "./hooks/customHooks";
+	
+	const MoodClicker = () => {
+		const [isHappy, toggleHappy] = **useToggle();**
+		const [isDarkMode, toggleDarkMode] = **useToggle(false);**
+		
+		return (
+			<div className={**isDarkMode ? "Clicker-dark" : "Clicker-light"}**>
+				<h1>{**isHappy** ? 'one' : 'two'}</h1>
+				<button onClick={**toggleHappy**}>Change Mood</button>
+				<button onClick={**toggleDarkMode**}>Change Mode</button>
+			</div>
+		);
+	};
+	
+	
+	In this example, we cut out lines of code by not having to write the "update state" type of functions. We are using both the state itself, and also the **toggle** functions returned from **useToggle.**
+
+

@@ -1,0 +1,75 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-10T00:51:23-05:00
+
+====== Binary Search Trees ======
+Created Sunday 10 January 2021
+
+**Runway Reservation System: A Basic Scheduling Problem**
+
+Assume an airport has a single runway, it's busy and there are safety issues.
+	Reservations for future landings is a great problem for a BST
+	We want to reserve requests for a specified landing time T
+	**insert** T to the set R of landing times **if no other landings are scheduled within K minutes**
+	once T has happened, **delete** it from R
+	
+	We want to accomplish this in **O(lg n)** time, where **n** is the size of the set R
+	
+
+**Example:**
+	Suppose our set R has the times [**37, 41.2, 49, 56.3**] in it
+	The **current time** is **37**
+	You get a request for the time **53** 
+	Assume k(minutes) = 3
+	**53** is allowed because it **53 - 49 > k**
+	**44** would not be allowed because **44 - 41.2 < k**
+	**20 **would not be allowed because it is in the past
+
+
+**Examples of Non-Compatible Data Structures:**
+	- unsorted list/array:	anything you'd have to do is linear and not compatible with **O(lg n) **time
+	- sorted array:	can **find** the insertion point in **O(lg n)** time, the comparison is **O(1)**, but the **insertion** is **O(n)** time.
+	- heaps:	**searching ** is **O(n)** time
+	- dictionaries/hash tables:	same as heaps
+	
+	**We want fast insertion into a sorted array: Enter Binary Search Trees**
+	
+
+**Binary Search Trees:**
+{{.\pasted_image.png}}	
+**all elements greater than the KEY(49) are to the right, and all less than the KEY are to the left**
+
+A Binary Search Tree has pointers, similar to a linked list.
+
+**Invariant:	For all nodes X, if Y is in the LEFT subtree of X, then the KEY of Y is <= the KEY of X**
+				**if Y is in the RIGHT subtree of x, then the KEY of Y is >= the KEY of X**
+				
+				So in the example above, 64 is in the right subtree of X (49), so this means it is greater than 49
+				Vice Versa for the Node 46, if it had a right child, it would have to be >= 46, but also less than 49.
+
+
+
+**Insertion into a Binary Search Tree:**
+	Insert **49** simple
+	Insert **79:** 79 has to be inserted to the right side of 49
+	Insert **46:** 46 has to be inserted to the left side of 49
+	Insert **41:** 41 < 49, so go left. Then, 41 < 46, so it will be inserted to the left of 46
+	Insert **64: **64 > 49, so go right. Then, 64 < 79, so it will be the left child of 79.
+	
+	**Binary Search Tree Insertion Operation:**
+		perform a check to make sure that **key - insertion value >= k**
+		**46 - 42 = 4**, so **4** is greater than **k**
+		Then, realize that 42 is less than 49, so insert it on the left
+		42 < 46, so check the next Node
+		42 > 41, but it is **not at least K greater than 41**, so this Node cannot be inserted
+	
+	**if h = height of tree:**
+		**insertion into Binary Search Tree is done in O(h) time**
+
+
+**Binary Search Tree: Other Operations**
+	**find_min(): **to find the minimum element in a binary search tree, you keep going to the left until you get to the bottom of the tree **O(h)**
+	**find_max(): **same as above, except go to the right
+	
+	
+	

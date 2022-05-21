@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-19T00:55:04-05:00
+
+====== IIFE ======
+Created Wednesday 19 January 2022
+
+An IIFE is an **Immediately Invoked Function Expression. **Notice how it is **wrapped in parentheses** and then **immediately called.**
+
+It is useful for scoping something right away and protecting the global namespace.
+
+**Example:**
+
+const $ = (function() {
+  const version = '3.1.4';
+  return {
+	displayVersion() {
+	  **return version;             // a closure example**
+	},
+	html(elem) {
+	  return document.querySelector(elem).innerHTML;
+	}
+  };
+})();
+
+In the example above, we set **$** equal to a function that returns an object. That object has two methods on it, **displayVersion **and **html**. Now, we can call both of those methods:
+
+**$.displayVersion();**
+	**// "3.1.4"**
+**$.html("li")**
+	**// "<li>My First TODO</li>"**
+	

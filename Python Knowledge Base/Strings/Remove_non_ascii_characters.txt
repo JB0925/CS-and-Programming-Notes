@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-05T01:02:18-05:00
+
+====== Remove non ascii characters ======
+Created Saturday 05 December 2020
+
+import re
+re.sub(r'[^\x00-\x7f]',r'', your-non-ascii-string)
+
+
+**Example 2:**
+
+>>>"Hej då".encode("ascii", errors="ignore").decode()
+'hej d'
+
+
+https://stackoverflow.com/questions/8689795/how-can-i-remove-non-ascii-characters-but-leave-periods-and-spaces-using-python
+
+
+**Example with Pandas:**
+
+df.DB_user.replace({r'[^\x00-\x7F]+':''}, regex=True, inplace=True)
+
+https://stackoverflow.com/questions/36340627/remove-non-ascii-characters-from-pandas-column

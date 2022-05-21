@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-29T12:04:25-04:00
+
+====== Hoisting With Functions ======
+Created Monday 29 March 2021
+
+Functions are also hoisted and can be accessed before they are written. Think of the function as being declared at the top of the document. 
+If called before declaration, it will still return what it is meant to return.
+
+**NOTE:** This does not work with **function expressions**, i.e. creating and storing a function in a vaariable all at once.
+

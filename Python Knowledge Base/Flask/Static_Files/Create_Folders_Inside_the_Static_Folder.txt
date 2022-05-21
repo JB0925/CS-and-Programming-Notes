@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-19T23:20:56-05:00
+
+====== Create Folders Inside the Static Folder ======
+Created Thursday 19 November 2020
+
+Folder: Static
+|
+|________Folder: Styles
+
+
+**How to Access Folders Nested Inside Your Static Folder:**
+
+<html>
+<head>
+	<title>{% block title %} {% endblock %}</title>
+	#**if you want to use bootstrap, put your bootstrap link here above the custom css link#**
+	"**<link rel="stylesheet" type="text/css" href= "**{{ url_for('static', filename="style.css")}}**">"		**{{.\pasted_image.png}}{{.\pasted_image001.png}}
+</head>
+<body>
+	{% block content %}
+	{% endblock %}
+</body>
+</html>
+
+
+**Basically, you are passing a relative path to "url_for()"**

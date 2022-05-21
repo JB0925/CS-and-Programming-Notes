@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-03T22:20:06-04:00
+
+====== Including Bootstrap ======
+Created Saturday 03 April 2021
+
+To include Bootstrap, you just do it the same way you do with Flask and Django. **CSS:** at the top in the Head. **JS:** at the bottom of the body.

@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-01T01:25:54-05:00
+
+====== Give Each App a URLPattern ======
+Created Monday 01 February 2021
+
+Just as we created a **URLPattern** for our **view **called **homePageView**, we also need for the **overall PROJECT called "pages"**
+
+This time, we navigate to the **main urls.py** file in the **config** directory, and add **pages.urls **into the **urlpatterns** list:
+	
+	- add **pages.urls** to the overall **project** path (**config/urls.py**):
+	{{.\pasted_image001.png}}
+	
+	- add the **view** "**homePageView**" to (**pages/urls.py** ):
+	{{.\pasted_image002.png}}
+	

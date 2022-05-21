@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-03T14:22:11-04:00
+
+====== Promise.all ======
+Created Friday 03 September 2021
+
+**Promise.all** accepts an array of Promises, and returns **one new** Promise.
+
+The new Promise will resolve when every Promise in the array resolves, and will be rejected if any Promise in the array is rejected.
+
+It is typically used as a way to run some code after another block of code has completed.
+
+**Promise.all** is very useful when you want to send out several **independent** requests **in parallel.**
+
+
+
+**Example:**
+	let promisesArray = [];
+	for (let i = 0; i < 5; i++) {
+		promisesArray.push(
+			axios.get('myUrl')
+		)
+	}
+	
+	**Promise.all(promisesArray)**
+	.then(arr => (
+		arr.forEach(p => console.log(p.name))
+	))
+	.catch(err => console.log(err));
+	
+
+**NOTE: **It is important to remember that **Promises.all** returns the new Promise in an array, which is why we are calling **forEach** on it.
+
+
+

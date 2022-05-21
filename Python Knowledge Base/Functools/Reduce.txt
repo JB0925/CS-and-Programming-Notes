@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-14T21:08:22-05:00
+
+====== Reduce ======
+Created Thursday 14 January 2021
+
+This function is designed to return common elements between several iterables. 
+It handles errors in the case of getting a **None** input or an empty iterable.
+
+{{.\pasted_image.png}}
+
+
+https://www.geeksforgeeks.org/python-find-common-elements-in-list-of-lists/
+
+
+**Two More Reduce Examples:**
+{{.\pasted_image001.png}}
+
+In example one, we are adding every element of a list 
+
+In example two, we are returning the maximum element of a list

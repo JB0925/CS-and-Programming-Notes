@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-03-26T19:24:05-04:00
+
+====== Permutations - Backtrack ======
+Created Saturday 26 March 2022
+
+The **Backtrack** algorithm is an algorithm that allows us to find all permutations of a given set of numbers:
+	**Example Input:**
+		[1,2,3]
+	**Example Output:**
+		[ [], [1],[2],[3],[1,2],[1,3],[2,3],[1,2,3] ]
+		
+
+**Backtracking **is an algorithm for finding all solutions by exploring all potential candidates. If the solution continually pops off the last item of a temporary array in order to get all of the possible permutations of one number ([1,2], [1,3], [2,3]), etc.
+
+**Diagram:**
+
+{{~/Desktop/ScreenShots/Backtrack Algorithm.png}}
+
+**The Algorithm:**
+
+def subsets(nums: List[int]) -> List[List[int]]:
+	def **backtrack**(first = 0, curr = []):
+		
+		**// The combination is done when the**
+		**// length of curr is equal to k**
+		if len(curr) == k:
+			output.append(curr[:])
+			return
+		
+		**// first is always increasing, so i will be**
+		**// different each time. We pop off the**
+		**// last element of curr to enable new**
+		**// combinations**
+		for i in range(first, n):
+			curr.append(nums[i])
+			**backtrack(i+1, curr)**
+			curr.pop()
+	
+	**// Calling Code**
+	output = []
+	n = len(nums)
+	
+	**// This is where the "k" from above comes **
+	**// from.**
+	for k in range(n+1):
+		backtrack()
+	return output
+	

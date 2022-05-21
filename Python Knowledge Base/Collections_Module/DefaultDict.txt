@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-19T23:09:06-04:00
+
+====== DefaultDict ======
+Created Wednesday 19 August 2020
+
+A default dict is similar to a regular dict, but you can make the TYPE of its value a list, tuple, dict, str, int, or even a Counter from collections.
+
+**x = defaultdict(Counter)**
+
+**for row in reader:**
+	**x[row['Character']].update({row['Episode']: len(row['Line'].split())})**
+	
+	
+using the **update()** method with Counter is similar to using setdefault(key, val), then x[key] += 1 with a regular dict.
+
+
+using a defaultdict is a great way to combine multiple types of values together (**SEE ABOVE)**
+
+
+https://stackoverflow.com/questions/5029934/defaultdict-of-defaultdict/5029958#5029958
+
+
+**Smooth Way to Use Defaultdict!:**
+
+{{.\pasted_image.png}}

@@ -1,0 +1,56 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-23T19:58:48-04:00
+
+====== Class Fields or Attributes ======
+Created Saturday 23 April 2022
+
+The **Fields** object in java gives you access to each attribute in a Java class. From there, you can iterate over them, get their names, set them to new values, etc.
+
+**Examples:**
+
+**Field myField = myObject.getClass.getDeclaredField(attributeName);**
+	- gets a particular field from a class, if it exists.
+	
+
+**Example 2:**
+
+for (Field field : myObject.getClass().getDeclaredFields()) {
+	System.out.println(field.getName());
+		**// iterates over the name of each field**
+}
+
+
+**Example 3 - get the current value of a particular field:**
+	myObject.getClass().getDeclaredField(attrName).get(myObject);
+
+
+**Example 4 - Finding a Field and setting its value to something else:**
+	**NOTES:**
+		- **history** is an object, which is essentially a list of stored states of another object. It stores the state of the object at different points in time. Think of it as a **save** function.
+		
+		- **attributeName** is the name of the attribute that you are trying to find
+
+public void undo(History history, String attributeName, int index) {
+			**// Getting a previously saved version of the object**
+		DocumentState previousState = this.restore(history, index, attributeName);
+		try {
+			**// getting the document from the "frozen" version**
+			Document oldDocument = previousState.getDocument();
+			
+			**// getting the particular field that we want to access**
+			Field oldField = oldDocument.getClass().getDeclaredField(attributeName);
+			
+			**// setting the attribute of the current object to the value of the saved version of the object**
+			
+			**// remember, "this" refers to the current document in its current state**
+			
+			**// This statement says, "get the field, then set its current value (this) to the value of the saved version (oldField.get(oldDocument))**
+			this.getClass().getDeclaredField(attributeName)**.set(this**, oldField.get(oldDocument));
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+
+

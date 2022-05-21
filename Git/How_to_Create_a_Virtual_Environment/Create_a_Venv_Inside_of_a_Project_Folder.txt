@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-30T12:07:48-04:00
+
+====== Create a Venv Inside of a Project Folder ======
+Created Friday 30 October 2020
+
+1). **mkdir project_name**
+
+2). **python -m venv project_name\venv_name**
+
+
+
+**To activate that Virtual Environment:**
+
+	**project_name\venv_name\Scripts\activate.bat**
+	
+
+**To install the necessary dependencies in the Virtual Environment:**
+	
+	**pip install -r requirements.txt				#**file name has to be found in the path leading to the Venv. (Desktop)
+	
+	
+	
+	
+	
+	
+**It is common to put your Virtual Environment inside of a project folder, but you DON'T want to put project files inside of a Venv.**
+
+
+**To save files in the folder, but not in the Venv itself:**
+		- **cd project_folder**
+		- **create a file and save it in the directory, not the Venv.**
+

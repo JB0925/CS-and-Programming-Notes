@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-05-06T23:35:31-04:00
+
+====== Hash Function Families ======
+Created Friday 06 May 2022
+
+Hash Function Families are a collection of random hash functions. They are used in things like Bloom Filters and Count-Min Sketches, with the idea being that each function hashes the key and the number produced by the hash function serves as an index into the table. The value at that index is set to True, or a value is stored at that index, etc.

@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-28T10:46:04-04:00
+
+====== setInterval and clearInterval ======
+Created Wednesday 28 April 2021
+
+Both **setInterval** and **clearInterval** are used to make something happen in the browser at intervallic time periods. 
+
+**setInterval** takes a function first, then an amount of time **measured in milliseconds (1 second = 1,000 milliseconds).**
+
+**clearInterval** only takes an object that already has had **setInterval** called on it,
+
+**Example:**
+
+{{~/Desktop/ScreenShots/setInterval and clearInterval.png}}
+
+Here, I created an interval object called **this.interval** with **setInterval**, and passed it the **this.tick** function name (**DONT CALL IT**) and **20, or 20 milliseconds**. **this.tick** counts down the timer (**the duration input value**) until it gets to 0, then it calls **this.pause**.
+
+**this.pause()** is used to clear the interval, simply by passing the interval object in.
+
+These functions, **start() **and **pause()**, are then added to event listeners for the Play and Pause buttons:
+
+{{~/Desktop/ScreenShots/setInterval addEventListener.png}}
+

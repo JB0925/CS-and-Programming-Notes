@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-14T23:26:40-05:00
+
+====== Inheritance ======
+Created Sunday 14 February 2021
+
+Inheritance deals with how the child element of a parent **inherit** the styles of the parent **IF **no styles have been given to those elements.
+
+**Example:**
+	**body {**
+		**color: purple;**
+	**}**
+
+
+Let's pretend our HTML looks like this:
+<html>
+<head>
+	<title>Some Title</title>
+</head>
+<body>
+	<h1>Hello</h1>
+	<ol>
+		<li><a href="#">Link 1</a>
+	</ol>
+	
+**If NO style has been given for the <h1> and <li> elements, they will INHERIT the style of the body.**
+
+If we add this to our styles:
+	**h1 {**
+		**color: blue;**
+	**}**
+
+Then the h1 will turn blue and no longer inherit the style from its parent.
+
+
+
+**NOTE:** if you want an element to inherit from its parent, you can use** inherit**:
+{{.\pasted_image.png}}
+
+In this example, the **button** and **input** elements are **inheriting** from their parent, the **form** element.
+
+
+

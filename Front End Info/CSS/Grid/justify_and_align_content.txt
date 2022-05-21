@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-12T11:54:49-04:00
+
+====== justify and align content ======
+Created Wednesday 12 May 2021
+
+**justify-content: end;** pushes items to the end (right) of the row axis. **start** does the opposite (pushes to the left).
+**justify-content: center;** pushes all items in the container to the center of the row axis. **Items are not centered vertically **(hint: align-content)
+
+**align-content: start, end, and center.**
+	- these properties align the content **vertically** (from top to bottom)
+		- **start **= top
+		- **center** = middle
+		- **end** = bottom
+
+
+**NOTE:** Setting **justify-content: center;** and **align-content: center;** will fully center the container vertically AND horizontally.
+
+
+
+**justify-content: space-between, space-evenly, space-around**
+	- these do the same thing as they do in flexbox **along the row axis.**
+
+

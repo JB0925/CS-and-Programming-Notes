@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-03T21:56:28-04:00
+
+====== Including CSS and Static Files ======
+Created Saturday 03 April 2021
+
+Create a directory at root level (inside of dir with **init** file) called **static**.
+
+In that directory create a **myfile.css **(call it whatever)
+
+In the head of the main html file, create a link for the css stylesheet
+	{{.\pasted_image.png}}
+	
+	**NOTE:** In the red is how you link the css stylesheet. **This goes in "base.pt"**
+	**NOTE2: **You will have to **poetry add aiofiles** for the above and below to work.
+
+Over in the **main.py** file, in the **configure_routes()** function, add the below:
+	{{.\pasted_image001.png}}
+	
+	**NOTE:** 'StaticFiles is from **starlette**, which Fastapi is based on. To import this, at the top of the file, add:
+	
+	{{.\pasted_image002.png}}
+	
+	
+	

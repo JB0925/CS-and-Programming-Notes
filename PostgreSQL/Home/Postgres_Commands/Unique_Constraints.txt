@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-04T14:26:33-05:00
+
+====== Unique Constraints ======
+Created Thursday 04 March 2021
+
+**UNIQUE constraints allow us to have a unique value for every new entry into a column.**
+
+When using UNIQUE, you will never get two objects with the same information in the column with the UNIQUE constraint.
+
+
+**Example:**
+	**ALTER TABLE table_name ADD CONSTRAINT unique_email UNIQUE(email);**
+		- like PRIMARY KEY, you can pass in more than one column to UNIQUE()
+
+
+
+**Drop a Constraint:**
+	**ALTER TABLE table_name DROP CONSTRAINT unique_email;**
+	
+	OR
+	
+	**ALTER TABLE table_name ADD UNIQUE (email);**
+		- difference is the table name is defined by Postgres
+
+
+
+
+
+
+
+

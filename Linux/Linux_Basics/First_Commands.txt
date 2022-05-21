@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-10T23:08:11-05:00
+
+====== First Commands ======
+Created Sunday 10 January 2021
+
+All of the first commands from the class will go in as subpages under the **How to Use Linux** page
+
+**Commands Covered:**
+	whoami, echo, date, cal, history, hostname, uptime, clear, command not found, man

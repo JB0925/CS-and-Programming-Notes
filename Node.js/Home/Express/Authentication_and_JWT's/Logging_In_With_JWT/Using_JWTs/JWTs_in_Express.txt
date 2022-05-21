@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-23T22:06:54-04:00
+
+====== JWTs in Express ======
+Created Thursday 23 September 2021
+
+**Login Route Revisited:**
+
+router.post("/login-1", async(req, res, next) => {
+	try {
+		const { username, password } = req.body;
+		const result = await db.query(
+			`SELECT password
+			 FROM users
+			 WHERE username = $1`,
+			 [username]
+		);
+		const user = result.rows[0];
+		if (user) {
+			if (await bcrypt.compare(password, user.password) === true) {
+				**let token = jwt.sign({ username }, SECRET_KEY);**
+				**return res.json({ token });**
+			}
+		}
+		throw new ExpressError("Invalid username or password", 400);
+		
+	} catch (err) {
+		return next(err);
+	}
+});

@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-21T22:14:17-05:00
+
+====== Django allauth ======
+Created Sunday 21 February 2021
+
+1). In a venv, install **django-allauth**
+
+2). **django-admin startproject project_name .** and then **python manage.py startapp app_name**
+
+3). Navigate to **project_name/settings.py** and add the following:
+	- INSTALLED_APPS: {{.\pasted_image.png}}
+		- **1st Django native apps, then 3rd party apps, then your personal apps**
+	
+	- Add Templates:{{.\pasted_image001.png}}
+		- be sure to create these directories in the **project_name** directory as well
+	
+	
+	- AUTHENTICATION_BACKENDS: {{.\pasted_image002.png}}
+		- add this list. Can be found on the django-allauth documentation
+	
+	
+	- SITE_ID
+		- add in the variable SITE_ID to **project_name/settings.py** and set it to 1, i.e. **SITE_ID = 1**
+
+
+4). Go to **project_name/urls.py** and add the following to **urlpatterns:**
+		{{.\pasted_image003.png}}
+		**Be sure to import 'include'**
+
+		**Also, be sure to include "path('', include('app_name.urls')),"**
+
+
+5). Run your **migrations** via **python manage.py migrate.** This will not only run the initial db migrations, but also the ones necessary for the **allauth** apps. **NOTE: This will also let you know that everything you've done so far has worked.**
+
+
+6). Set the **EMAIL_BACKEND** and the **LOGIN_REDIRECT_URL:**
+		- this also goes in the **project_name/settings.py** file
+		{{.\pasted_image004.png}}
+
+
+7). Start the local server and go to accounts/signup. If everything above worked correctly, you will be prompted to register.
+		- redirects to a 404 for the time being, but check **bash** because it will give you an address to go to to "check your email".
+		- if you then confirm the email, and go to **localhost:8000/accounts/logout**, you will be asked if you want to logout.
+
+
+8). Use the '**@login_required **decorator to route between a login page, registration page, and back to the search page
+

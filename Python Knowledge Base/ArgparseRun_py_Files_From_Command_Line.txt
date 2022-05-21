@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-27T23:27:09-05:00
+
+====== ArgparseRun py Files From Command Line ======
+Created Friday 27 November 2020
+
+if you use the **argparse** library, you can run python files from the command line, much like you might run **git add -A** or **ls -l** on Linux:
+
+**Example Code and Explanations:**
+{{.\pasted_image.png}}
+
+The above creates the parser object using **argparse**. 
+To begin, we set the program name with **prog='bmi'**
+Then, we set the usage. This is seen when help is called:	**usage='bmi.py [-h] [-w WEIGHT] [-l LENGTH]'**
+Then we set the description, which is printed after usage when we call help **(-h)		description='Calculate your BMI.'**
+
+Next, we add arguments to the parser:
+	**1). parser.add_argument('-w', '--weight', help='Your weight in kg')**
+	**2). parser.add_argument('-l', '--length', help='Your length in cm')**
+	
+	The first two items on each line (**-w, --weight, -l, --length)**
+	(**the args var is not needed in this function)**
+
+Finally, we return the parser itself, which is a **argparse.ArgumentParser** object.    			Next function below:
+
+{{.\pasted_image001.png}}
+
+This function is used to handle what happens if you run this on the command line:
+
+First, if the args parameter is None, it calls the function above and uses the **parse_args()** function
+
+**NOTE: parser.parse_args()** returns a **[[NameSpace]]** object, which is not very useful in and of itself, but you can call its arguments much like you can an instance of a class (**it IS an instance of a class**) or a namedtuple.
+
+Then, it checks if **args.weight** and **args.length** have been passed to the call to the program and, if so, calls the function with **args.weight **and **args.length, **calculates the BMI, and prints a message with the person's BMI.
+
+If **args.weight** and/or **args.length** have not been passed in, we **raise [[SystemExit]]** and the program shuts down
+
+
+
+**OUTPUT:**
+
+	on the command line, the command **python Bite_56.py -h** returns:
+	{{.\pasted_image002.png}}
+
+
+	if you call the same program, but use **python Bite_56.py -w 80 -l 187**, it returns:
+	{{.\pasted_image003.png}}
+	

@@ -1,0 +1,68 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-09T11:33:31-05:00
+
+====== Deployment Checklist ======
+Created Tuesday 09 March 2021
+
+1). Make sure gunicorn and whitenoise are installed.
+
+2). Make sure you have an up to date requirements.txt
+
+3). Create a Procfile and add the following:
+		- **web: gunicorn project_name.wsgi --log-file - **
+		
+4). Make sure you've added environment variables and the **.env **file
+		- make sure you've gitignored it
+		- Be sure to set DEBUG=FALSE before production
+		- **See the .env file page for more info**
+
+5). Set ALLOWED_HOSTS in **settings.py**
+		- ['**.herokuapp.com', 'localhost', '127.0.0.1'**]
+
+6). Make sure static files are set up, and proper static file variables are set in **settings.py - **see Will Vincent's book for the proper setup.
+		- **IMPORTANT: IF YOUR STATIC SUBFOLDERS ARE EMPTY, git won't recognize them. ADD AN EMPTY .keep FILE IN THE STATIC FOLDER (NOT IN A SUBFOLDER) just so Git will track it.**
+
+			- static folder in the root directory
+			- css/js/img folders in the static folder
+			- empty .keep file if the subdirectories are empty
+			- 'whitenoise.runserver_nostatic' above 'django.contrib.staticfiles' in INSTALLED_APPS
+			- 'whitenoise.middleware.WhiteNoiseMiddleware' right after 'django.contrib.sessions.middleware.SessionMiddleware'
+			
+			**In settings.py:**
+				- STATIC_URL '/static/'
+				- STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+				- STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
+				- STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+				
+
+7). Push all to Github on master branch.
+
+8). login to Heroku with **heroku login**
+
+9). **heroku create app_name-here**
+
+10). Connect to Git with **heroku [[git:remote]] -a app_name-here**
+
+11). Provision a Postgresql DB with **heroku addons:create [[heroku-postgresql:hobby-dev]]**
+		- copy the db address in case you need it later
+
+12). Get your secret key from the **.env** file. Copy it. Link it with Heroku by typing **heroku [[config:set]] SECRET_KEY='kfsklgklsngsddklgnnwrptwhjtwiethjrsnxlmb nflqwotr2-5953'**
+
+13). Turn off collectstatic on deploy with:
+		**heroku config:set DISABLE_COLLECTSTATIC=1**
+
+
+14). Push to Heroku with **git push heroku master**
+
+15). Set scale with **heroku [[ps:scale]] web=1**
+
+16). Re-enable collectstatic with **heroku config:unset DISABLE_COLLECTSTATIC**
+
+17). Run **heroku run python manage.py collectstatic **to collect the static files
+
+18). Run **heroku run python manage.py migrate** to update and migrate the db's.
+
+19). **heroku run python manage.py createsuperuser**  - create a superuser for the site
+
+

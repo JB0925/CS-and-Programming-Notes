@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T13:53:56-05:00
+
+====== Mock a JS Module ======
+Created Sunday 09 January 2022
+
+You can mock an entire module using **jest.mock**.
+
+This can be a third party library like **axios**, or a custom written module.
+
+At the end of the test, you can call **mockReset()** to restore original functionality to the function.
+
+**jest.mock** takes two arguments. 
+	1). Path to the module to mock (relative to where **jest.mock** is currently being called)
+	
+	2). a funtion to return the mock implementation of the module. So, if you call **myModule.speak()**, it will return the mock version that you specified, not the real version.
+	
+
+**Example:**
+	jest.mock("../utils", () => {
+		return {
+			getWinner: jest.fn((p1, p2) => p1)
+		}
+	});
+	
+	
+	**Afterward:**
+		utils.getWinner.mockReset();
+

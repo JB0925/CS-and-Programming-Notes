@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-12T12:11:31-04:00
+
+====== Auto-fit vs. auto-fill ======
+Created Wednesday 12 May 2021
+
+Remember this:
+
+	**.container {**
+		**grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));**
+	**}**
+	
+	
+	- This would end up stretching each column up until 1fr, UNTIL it hit the next 100px threshold, and then it would add another column to the row.
+		- with **auto-fit**, these items would keep growing if there were no more items to add to the row
+		- **the syntax for auto-fill is the same**. The difference is that, with **auto-fill**, the items continue to stay at the 100px threshold, and new, empty, grid columns are created.
+

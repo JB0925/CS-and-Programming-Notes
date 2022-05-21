@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-28T00:29:54-05:00
+
+====== ChainMap ======
+Created Saturday 28 November 2020
+
+[[ChainMap]] is a neat way to combine multiple dictionaries into one object. They are searched in the order they are entered.
+
+{{.\pasted_image.png}}
+
+In this example, "ChainMap" takes group3 first, group2, second, and group1 last, so it will search group3 first, group2 second, and group1 last.
+
+https://docs.python.org/3/library/collections.html#collections.ChainMap

@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-07-31T17:02:15-04:00
+
+====== BeautifulSoup ======
+Created Friday 31 July 2020
+
+from bs4 import BeautifulSoup
+
+Create a [[BeautifulSoup]] object:
+
+soup = BeautifulSoup(text_to_parse, 'html.parser')
+
+Use **var = soup.find(class_='class-name').get_text  **if you are looking for one item
+To find several items:
+
+	**data = soup.find_all(True, {'class':['holiday', 'regional', 'publicholiday']})**
+
+The above object allowed me to get the dates and holidays of the year, stuck into three different classes. This made things fast!
+
+From there, you can iterate over it, like this:
+
+	**days = [tag.a.text.strip() for tag in data if tag.a != None]**
+**      months = [tag.time.text for tag in data if tag.time != None]**
+
+To use the dot notation, I had to go into the html to find the tags **(a, time)** that were used to store the holidays and dates.
+Don't forget to call "**.text**" on them to, to get only the regular text.
+
+https://stackoverflow.com/questions/18725760/beautifulsoup-findall-given-multiple-classes
+
+
+

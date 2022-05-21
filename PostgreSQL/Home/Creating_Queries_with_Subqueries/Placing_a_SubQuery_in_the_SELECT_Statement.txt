@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-04T12:13:29-04:00
+
+====== Placing a SubQuery in the SELECT Statement ======
+Created Tuesday 04 May 2021
+
+To place a Subquery in the SELECT statement of your query, it must reference only ONE value, also known as a **scalar value**.
+
+**Example:**
+	- SELECT (SELECT MAX(price) FROM products) - price AS the_difference
+	  FROM products;
+	
+	**This would return every row's price column, but it would be THE DIFFERENCE between it's price column and the max price in the table.**

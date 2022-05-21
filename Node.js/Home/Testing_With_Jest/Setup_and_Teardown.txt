@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-08T20:42:21-04:00
+
+====== Setup and Teardown ======
+Created Wednesday 08 September 2021
+
+You will most likely need to use data in some of your tests. You could rewrite the same data structure in each **test** function.
+
+**A Better Way:**
+	- create a **beforeEach** inside of the **describe **and create the data structure. This will make it so that the data structure is created before every **test** function and then can be used.
+
+
+**Example:**
+	describe("getCartTotal", function () {
+	  // will hold the cart for the tests
+	  **let cart;**
+	
+	**  beforeEach(function () {**
+		**cart = [**
+		**  { item: "le croix", **
+		**  price: 4.99, qty: 3 },**
+		**  { item: "pretzels", **
+		**  price: 8.99, qty: 10 }**
+		**];**
+	**  });**
+	
+	  test("gets total w/o discount", function () {
+		const total = getCartTotal(cart);
+		expect(total).toBe(104.87);
+	  });
+	
+	  test("gets total w/discount", function () {
+		const total = getCartTotal(cart, 0.5);
+		expect(total).toBe(52.44);
+	  });
+	}); 
+	

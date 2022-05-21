@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-23T10:20:56-04:00
+
+====== Minimum Size Subarray Sum ======
+Created Thursday 23 September 2021
+
+**Problem:**
+	- given a target, what is the **smallest subarray** that can be created that will be **greater than or equal to** the target?
+	
+
+**Code:**
+	**def min_subarray_sum(arr, target):**
+		# set variables for the minimum size, the current sum, and the starting index
+		**min_size = max(arr)+1**
+		**current_sum = 0**
+		**starting_idx = 0**
+		
+		# loop through each number in the array and add it to the current sum
+		**for i in range(len(arr)):**
+			**current_sum += arr[i]**
+			
+			# if current_sum >= target, this loop will run, else we go to the next number in the array
+			**while current_sum >= target:**
+				# find the current window size and set min_size = min of current size and min_size
+				**current_size = i - starting_idx + 1** 
+				**min_size = min(current_size, min_size)**
+				
+				# slide the window forward by excluding the last value (one at current starting index)
+				**current_sum -= nums[starting_idx]**
+				#increase the starting index
+				**starting_index += 1**
+			
+			**return 0 if min_size > max(nums) else min_size**
+

@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-03T15:08:02-05:00
+
+====== VSCode Auto-Formatting ======
+Created Wednesday 03 February 2021
+
+1). Type Ctrl + Shift + p
+
+2). Search for "Format Document" and click on it.
+
+	Doing this will make any poorly formed HTML easier to read and more useable.

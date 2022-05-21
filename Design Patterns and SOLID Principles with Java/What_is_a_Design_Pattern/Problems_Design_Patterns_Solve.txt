@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-22T10:45:05-04:00
+
+====== Problems Design Patterns Solve ======
+Created Friday 22 April 2022
+
+Some problems that Design Patterns solve include:
+	- code duplication
+	- code bloat
+	- untestable code
+	- rigid, brittle design
+	- inheritance abuse
+	- unmaintainable code
+	- untestable code
+	
+
+**By Using Design Patterns:**
+	- you can reuse patterns to avoid problems
+	- you can improve code readability and testability
+	- you establish a common vocabulary between developers
+
+**Be Careful:**
+	- it is not always appropriate to use design patterns
+	- They only solve problems that are noticeable in large scale applications
+	

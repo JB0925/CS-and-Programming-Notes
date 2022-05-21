@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-21T09:03:55-05:00
+
+====== Interpreters vs. Compilers ======
+Created Thursday 21 January 2021
+
+Think of **Interpreters **and **Compilers** as translators. 
+
+
+**Interpreters:**
+	- take a set of instructions
+	- interprets them **one at a time**, and passes them on to the hardware in the interpreted state
+	- runs more slowly than a compiler
+
+
+**Compiler:**
+	- takes a set of instructions
+	- interprets them **all at once**, then passes them back to you
+	- you then give the interpreted instructions to the machine, and the machine **executes them all at once**
+	- after compiling (which takes some time), **everything moves very fast**
+	- the problem here is that, if you make a mistake, it is too late to fix it

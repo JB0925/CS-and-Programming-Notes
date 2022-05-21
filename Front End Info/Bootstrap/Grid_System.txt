@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-28T00:17:15-05:00
+
+====== Grid System ======
+Created Sunday 28 February 2021
+
+The grid system only works inside of a container.
+It also has to have a row and a column.
+Each row has 12 units of space to divide up.
+You can have multiple columns in a row and divide them up differently, so long as they add up to 12 in the end.
+
+**<div class='container'>**
+	**<div class='row'>**
+		**<div class='col-6'>**
+
+		**</div>**
+	**</div>**
+**</div>**
+
+
+**Example:**
+	This:
+		{{.\pasted_image.png}}
+	
+	Creates This:
+		{{.\pasted_image001.png}}
+
+**NOTE:**
+	- if you give one column a number such as **col-9**, but don't give the other columns a number, the other columns become auto sized.
+	

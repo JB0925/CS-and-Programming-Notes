@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-04-26T21:41:42-04:00
+
+====== Strategy Pattern vs State Pattern ======
+Created Tuesday 26 April 2022
+
+The Strategy Pattern and the State Pattern are extremely similar. They both involve isolating the things that can change, creating an interface for those things, and instantiating subclasses that implement those interfaces. Instances of these subclasses go inside of the Parent class.
+
+So how are they different?
+	- state pattern typically deals with one piece of state.
+	- the strategy pattern typically has multiple pieces of state that can each have unique features.
+	
+	- for example, in the State pattern, we created a DirectionService class that has a "travelMode" field.
+		- this field can take on multiple forms (train, car, airplane, bus, bicycle, walk, etc.), but it is the ONLY one in the class
+		
+	- now, think of an example where you have a class that stores images. It might have more than one field:
+		- compressor
+		- filter
+		
+		- each of those is probably going to have it's own algorithm, and each one can encompass different forms i.e., a compressor could be a JPEG, a PNG, etc.
+		
+		- **With the Strategy Pattern, we isolate them, program to interfaces, and allow our classes to use them that way, and no longer be responsible for more than one thing.**
+

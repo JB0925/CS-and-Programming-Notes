@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-19T09:56:11-05:00
+
+====== Find - How to Handle Errors with Find ======
+Created Tuesday 19 January 2021
+
+**NOTE: **for much more information on **find**, see the **Corey Schafer Terminal** section on **find**
+
+
+**How to Handle Errors with Find:**
+
+Sometimes, if you search for a file, you will get "permission denied" errors.
+
+You can handle these so that you don't have to see them in two ways:
+
+**1). find . -name "*.txt" 2 > file.txt**
+		- this will write any error messages to a "file.txt" you are creating in the **pwd**
+
+**2). find . -name "*.txt" 2> '/dev/null**
+		- this will do the same as above, but sends the messages to a file where things are lost forever
+

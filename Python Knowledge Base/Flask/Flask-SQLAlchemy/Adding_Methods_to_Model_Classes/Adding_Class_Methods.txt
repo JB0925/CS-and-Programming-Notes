@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-07-17T20:51:51-04:00
+
+====== Adding Class Methods ======
+Created Saturday 17 July 2021
+
+You can also add class methods if you need to get data from the class in general, and not just a specific instance:
+
+**Example:**
+
+`@classmethod
+def get_by_species(cls, species):
+	return cls.query.filter_by(species=species).all()
+
+
+If called, this method would return all pets whose species was equal to the passed in species.
+
+
+**Another Example:**
+
+`@classmethod
+def get_hungry_pets(cls):
+	return cls.query.filter(Pet.hunger >= 50).all()

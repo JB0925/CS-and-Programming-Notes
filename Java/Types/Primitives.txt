@@ -1,0 +1,46 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-07T00:20:02-05:00
+
+====== Primitives ======
+Created Monday 07 February 2022
+
+int:
+	**int myNum = 10;**
+	
+	Range: -2147483648, 2147483647
+
+char:
+	**char myChar = 'd';**
+	
+	Char is a single character.
+	**NOTE:** chars are wrapped in single quotes
+
+byte:
+	**byte myNum = 100;**
+	
+	Range: -128, 127
+
+short:
+	**short myNum = 15678;**
+	
+	Range: -32768, 32767
+
+long:
+	**long myNum = 100L;  NOTE: need the "L" on the end**
+	
+	Range: -9223372036854775808, 9223372036854775807
+
+float:
+	**float myNum = 3.56f;**
+	
+	Range: 1.4E-45, 3.4028235E38 
+
+boolean:
+	**boolean isMyNum = true;**
+
+double:
+	**double myNum = 14.234506d;**
+	
+	Range: 4.9E-324, 1.7976931348623157E308 
+

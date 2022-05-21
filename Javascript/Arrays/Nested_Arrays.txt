@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-18T10:00:09-04:00
+
+====== Nested Arrays ======
+Created Thursday 18 March 2021
+
+Just like Python, you can nest arrays inside of an array.
+
+**Example:**
+	**var ourArray = 'John', 23], ['Sarah', 10678;**

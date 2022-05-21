@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-09-06T22:48:47-04:00
+
+====== Error First Callbacks ======
+Created Monday 06 September 2021
+
+Node.js callbacks use an **error-first** pattern.
+
+This means that the callback's first parameter should be listed as **error** or **err, **otherwise **null** as args.
+
+**Example:**
+	fs.readFile('myFile.txt', 'utf8', function(err, data) {
+		if (err) {
+			// handle error
+		}
+		
+		// if no error, other code goes here
+	});
+
+
+**How To Handle Errors:**
+	In Node, you will often do one of these two things:
+	
+	- console.log the error
+	
+	- exit the program with **process.exit(1)**;

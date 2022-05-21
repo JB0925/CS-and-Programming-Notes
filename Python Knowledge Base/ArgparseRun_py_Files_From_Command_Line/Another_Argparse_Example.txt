@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-28T22:51:36-05:00
+
+====== Another Argparse Example ======
+Created Thursday 28 January 2021
+
+**Below is the parser for a simple calculator class:**
+{{.\pasted_image.png}}
+
+**NOTE: The "nargs='+' parameter allows you to pass in a list (such as a list of numbers for a calculator)**
+
+
+**The function below shows how the parser is used to call the calculator from the command line:**
+{{.\pasted_image001.png}}
+{{.\pasted_image002.png}}
+
+{{.\pasted_image003.png}}
+
+Essentially, we are calling the parser object we created from the previous function, then using the **parse_args()** method as the arguments gathered from the command line to pass into the calculator.
+
+Next, we pull the arguments out of **vars(args).items()** and perform some more operations.
+
+This file is meant to be run from the command line.

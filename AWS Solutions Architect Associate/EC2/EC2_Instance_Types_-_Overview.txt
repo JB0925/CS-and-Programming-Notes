@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-09T11:39:18-05:00
+
+====== EC2 Instance Types - Overview ======
+Created Sunday 09 January 2022
+
+You can use different types of EC2 instances that are optimized for different use cases.
+
+AWS has the following naming convention:
+	- **m5.2xlarge**
+	
+	**m** is the **instance class**
+	
+	**5** is the generation of the instance
+	
+	**2xlarge** is the size within the instance class

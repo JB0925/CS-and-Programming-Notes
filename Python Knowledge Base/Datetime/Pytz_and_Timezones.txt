@@ -1,0 +1,71 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-14T23:11:59-04:00
+
+====== Pytz and Timezones ======
+Created Monday 14 September 2020
+
+**pytz needs to be imported**
+
+to make a naive datetime object timezone aware:
+	**unaware = datetime(2019, 4, 11, 14, 45)**
+	**aware = datetime(2019, 4, 11, 14, 45, pytz.UTC)**
+	
+	**now_aware = pytz.utc.localize(unaware)**
+	**assert aware == now_aware**
+	
+to give a string region a timezone:
+	region = 'Europe/Madrid'
+	tz = pytz.timezone(region)
+	
+	#to compare **tz** with a given UTC time:
+		**tz = tz.localize(datetime_object_here) **.....returns the datetime object, + or - a number of hours (the zone at the end i.e. **+02:00 **or **-10:00**)
+		from there, you can determine if the time is within a particular range for another time zone by:
+		
+		f**inal_times = []**
+		**    times = [pytz.timezone(time) for time in timezones]**
+		**    for time in times:**
+		**        time = time.localize(utc)**
+		**        zone = time.strftime('%z')			**#....takes out the timezone portion of the datetime object and turns it into a string
+		**        if zone[0] == '-':**
+		**            zone = int(zone.replace('+','').replace('-','')[0:2])**
+		**            time_ = time.hour - zone**
+		**            final_times.append(time_)**
+		**        else:**
+		**            zone = int(zone.replace('+','').replace('-','')[0:2])**
+		**            time_ = time.hour + zone**
+		**            final_times.append(time_)**
+		    
+		**    for time in final_times:**
+		**        if time not in MEETING_HOURS:**
+		**            return False**
+		    
+		**    return True**
+
+
+another solution to the above:
+
+**utc_aware = utc.replace(tzinfo=pytz.utc)**
+
+**    localized_times = []**
+
+**    for tz in timezones:**
+**        if tz not in TIMEZONES:**
+**            raise ValueError('not a valid timezone')**
+
+**        tz = pytz.timezone(tz)**
+**        localized_times.append(utc_aware.astimezone(tz))**
+
+**    return all(dt.hour in MEETING_HOURS for dt in localized_times)**
+
+
+Good links:
+
+https://stackoverflow.com/questions/7065164/how-to-make-an-unaware-datetime-timezone-aware-in-python
+
+https://techmonger.github.io/32/pytz-example-conversion/
+
+http://pytz.sourceforge.net/
+
+https://www.journaldev.com/23370/python-pytz
+

@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-07T01:36:13-05:00
+
+====== Serial and Sequences ======
+Created Sunday 07 March 2021
+
+Serial = BIGSERIAL
+
+BIGSERIAL is often used for the **id** value as a primary key
+
+If, for some reason, you wanted to increment the id **sequence** further, you can just call:
+	**SELECT nextval('person_id_seq'::regclass);**
+	- you could do this several times and increment the sequence several times, but this will also increase the id for the next record that gets added, i.e. 1, 2, 3, 9...or something similar
+	
+
+**To roll the sequence back:**
+	- **ALTER SEQUENCE person_id_seq RESTART WITH 10;**
+		- 10 could be whatever your last **id** value is
+
+

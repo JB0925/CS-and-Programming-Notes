@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-24T23:52:57-04:00
+
+====== Creating Expression Statements in HTML ======
+Created Saturday 24 October 2020
+
+Inside of your HTML Template, you can pass pseudo Python code as an expression:
+
+{{.\pasted_image002.png}}
+
+**NOTE: **notice the single curly braces per line and the "%" signs, as well as the **{% endif %}** and **{% endfor %} **needed to close the if statement and for loop. 
+		Also, no colon after the **range** statement.
+		Also, notice the double curly braces around x. If you don't have those, it will just print "x" any time x % 2 == 1
+
+
+**Pass a List from Flask to HTML:**
+
+{{.\pasted_image003.png}}
+
+{{.\pasted_image004.png}}
+
+

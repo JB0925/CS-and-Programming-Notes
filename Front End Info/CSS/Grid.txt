@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-10T23:32:14-04:00
+
+====== Grid ======
+Created Monday 10 May 2021
+
+To use CSS grid, much like Flexbox, you need to have your elements inside of a container.
+
+First, set the **display** of the container to **grid**
+

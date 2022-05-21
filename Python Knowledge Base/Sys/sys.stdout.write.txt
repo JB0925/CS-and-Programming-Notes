@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-18T22:21:34-04:00
+
+====== sys.stdout.write ======
+Created Sunday 18 October 2020
+
+**print() vs. sys.stdout.write()**
+
+another way to print a string is to use **sys.stdout.write()**
+
+Below is some code using **sys.stdout.write(), sys.stdout.flush(), **and **itertools.cycle()** to create a spinner object when something is loading:
+
+
+from itertools import cycle
+import sys
+from time import time, sleep
+
+SPINNER_STATES = ['-', '\\', '|', '/']  # had to escape \
+STATE_TRANSITION_TIME = 0.1
+
+
+**def spinner(seconds):**
+	"""Make a terminal loader/spinner animation using the imports aboveself.
+	   Takes seconds argument = time for the spinner to runself.
+	   Does not return anything, only prints to stdout."""
+	**sys.stdout.write('[bobbelderbos@imac 171 (master)]$ python animation.py\n')**
+**    animation = cycle(SPINNER_STATES)**
+**    start = time()**
+**    while time() - start < seconds:**
+**        sys.stdout.write('\r' + next(animation))**
+**        sys.stdout.flush()**
+**        sleep(STATE_TRANSITION_TIME)**
+        
+**if __name__ == '__main__':**
+**    spinner(2)**

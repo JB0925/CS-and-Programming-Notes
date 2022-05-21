@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-16T13:20:40-04:00
+
+====== arrayList as a Data Structure ======
+Created Wednesday 16 September 2020
+
+**1). Accessing  - O(1).....(Get Method)**
+
+**2). Searching -  O(n)**
+
+**3). Inserting -    O(n)......(Add(Object, Index) or Add(Object))**
+
+**4). Deleting -     O(n).......(Remove(Object) or Remove(Index))**

@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-01-26T21:54:30-05:00
+
+====== YouTube Docker-Node Production ======
+Created Wednesday 26 January 2022
+
+First, create an AWS EC2 instance with Ubuntu 20.4 

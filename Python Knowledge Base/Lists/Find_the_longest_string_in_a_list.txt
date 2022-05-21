@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-08T13:45:13-04:00
+
+====== Find the longest string in a list ======
+Created Saturday 08 August 2020
+
+lst = ['carrot', 'bird', 'analogous', 'hi']
+
+print(max(lst, key=len))
+
+**analogous**
+
+
+
+https://www.kite.com/python/answers/how-to-find-the-longest-string-in-a-list-in-python#:~:text=Use%20max()%20to%20find,of%20all%20strings%20in%20a_list%20.

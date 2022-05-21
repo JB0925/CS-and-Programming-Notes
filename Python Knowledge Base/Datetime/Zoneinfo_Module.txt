@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-04T22:59:31-05:00
+
+====== Zoneinfo Module ======
+Created Thursday 04 February 2021
+
+Starting in Python 3.9, we can get timezone info using the **zoneinfo** module. Here is a usage snippet:
+
+{{.\pasted_image.png}}

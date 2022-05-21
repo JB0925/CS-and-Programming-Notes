@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-14T22:38:59-05:00
+
+====== Method Overloading ======
+Created Monday 14 February 2022
+
+Method overloading refers to having more than one method in the class with the same name.
+
+The way to make this work, is that you have to have give each method different parameters.
+
+They can return different things, but if the parameters are the same, it will throw an error.

@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-11-03T20:55:35-04:00
+
+====== How to Use Redux-Thunk ======
+Created Wednesday 03 November 2021
+
+Once **redux-thunk** is installed, in **index.js**, these imports are needed:
+
+**import { createStore, applyMiddleware } from "redux";**
+**import rootReducer from "./myReducerFile";**
+**import { Provider } from "react-redux";**
+**import thunk from "redux-thunk";**
+
+
+**How to create the Store:**
+	const store = createStore(
+		rootReducer,
+		applyMiddleware(thunk)
+	);
+	
+
+**How to create the Store AND Use Redux dev-tools:**
+	**first, import "compose" from "redux"**
+	
+	import { createStore, applyMiddleware, compose } from "redux";
+	import DevTools from "./containers/DevTools";
+	
+	const store = createStore(
+		rootReducer,
+		**compose**(applyMiddleware(thunk),
+		window.__REDUX_DEVTOOLS_EXTENSION__
+		&& window.__REDUX_DEVTOOLS_EXTENSION()
+		);
+	);
+	

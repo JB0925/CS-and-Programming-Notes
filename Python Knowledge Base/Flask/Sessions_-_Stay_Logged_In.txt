@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-30T23:16:06-04:00
+
+====== Sessions - Stay Logged In ======
+Created Friday 30 October 2020
+
+Sessions are used to pass user information around on a website and make it so that each page gets the user information, rather than the user having to log in each time they go to a new page.
+
+They are built on top of cookies.
+
+**from flask import session**
+
+Step 1):	**create user session data in the login function:**
+{{.\pasted_image.png}}
+
+
+Step 2):	**In the user function, check to see if the user is in session and, if so, user = session['user']**
+			**return the user inbetween h1 html tags**
+			**else: redirect the user back to the login page**
+
+{{.\pasted_image002.png}}
+
+
+Step 3):	**Make sure to add the secret key just below the app definition:**
+{{.\pasted_image003.png}}
+
+
+

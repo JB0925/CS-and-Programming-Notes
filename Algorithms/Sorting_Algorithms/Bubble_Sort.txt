@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-08T23:33:31-04:00
+
+====== Bubble Sort ======
+Created Thursday 08 October 2020
+
+**Bubble Sort** uses a much simpler algorithm than **Selection Sort**, and is also **faster** in terms of **Time/Space Complexity**.
+
+It forms the basis for the **Odd-Even Sort **and the **Cocktail-Shaker Sort**.
+
+**Bubble Sort:**
+	- simple
+	- in-place (no extra memory)
+	- comparison based
+	- stable (preserves the order of duplicate values)
+	
+	It repeatedly steps through an unsorted list, compares **adjacent** elements, and swaps them if they are in the wrong order
+		- this is repeated until the list is sorted
+
+
+**All that said, Bubble Sort is not very good....**
+
+
+**How to:**
+	step1). Initialize two variables:
+		- 1). A boolean **swappedValues**
+		- 2). an integer **traversingIndex**
+	
+	step2). set **swappedValues = True**
+	
+	step3). While **swappedValues == True:**
+				- set **swappedValues == False**
+				- **traversingIndex = 0**
+				start at the **traversingIndex and go to the next to last element in the list		#**next step explains why
+				if lst[ti] > lst[ti+1]:
+					lst[ti], lst[ti+1] = lst[ti+1], lst[i]
+					**swappedValues** = True
+
+
+**def bubble_sort(a):**
+	**swap = True**
+	
+	**while swap:**
+		**swap = False**
+		**try:**
+			**for i in range(len(a)):**
+				**if a[i] > a[i+1]:**
+					**swap = True**
+					**a[i], a[i+1] = a[i+1], a[i]**
+		
+		**except IndexError:**
+			**pass**
+	
+	**return a**
+
+

@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-18T01:38:46-04:00
+
+====== Removing Elements ======
+Created Sunday 18 April 2021
+
+To remove elements, we have **remove** and **removeChild.**
+
+To use **removeChild**, you first have to get its parent, then get the element that you want to remove.
+
+**Example:**
+	- const ul = document,querySelector('ul');
+	- const li = ul.querySelector('.special');
+		- **getting the child by querying the parent**
+	
+	- **ul.removeChild( li);**
+		- removes the child li from the parent ul
+		- also returns the removed element, in case you want to do something to it.
+
+
+**Remove Example:**
+	- does not need the parent
+	- **const li = document.querySelector('li .special');**
+	- **li.remove()**
+		- removes the element
+

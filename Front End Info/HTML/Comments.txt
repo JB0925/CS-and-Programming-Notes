@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-04T14:20:29-05:00
+
+====== Comments ======
+Created Thursday 04 February 2021
+
+To write a comment in HTML, use the following:
+		**<!-- your comment goes here →**
+		
+		In VSCode, you can type what you want, then **highlight** the code and press **Ctrl + / ** to create comments.
+		
+

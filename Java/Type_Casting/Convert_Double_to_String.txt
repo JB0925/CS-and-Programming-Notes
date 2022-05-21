@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-02-14T20:37:59-05:00
+
+====== Convert Double to String ======
+Created Monday 14 February 2022
+
+String myDouble = **Double.toString(num1);**

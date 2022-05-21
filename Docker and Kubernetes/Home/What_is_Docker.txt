@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-03-08T12:22:14-05:00
+
+====== What is Docker ======
+Created Monday 08 March 2021
+
+**What is Docker?**
+	- Docker is a tool for running applications in an isolated environment.
+	- Similar to a Virtual Machine, but faster and doesn't require a lot of memory or an OS to operate
+	- Your app runs in the same environment everywhere (if it works on my machine, it works on your machine, etc.)
+	- is pretty much the current standard for software deployment
+	
+	
+

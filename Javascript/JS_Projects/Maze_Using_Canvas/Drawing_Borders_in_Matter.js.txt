@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-03T21:37:11-04:00
+
+====== Drawing Borders in Matter.js ======
+Created Monday 03 May 2021
+
+{{~/Desktop/ScreenShots/Matter.js Borders.png}}
+
+Easy way to add borders:
+	- create an array of **Bodies** objects (shapes)
+	- remember, the first two numbers are **where to center the objects on the canvas.** So, 400, 0 means 400 on the X axis (**remember we created this with a width of 800**) and 0 on the Y axis. **This means that this will be centered on the top-middle of the canvas.**
+	
+	- Play with the positioning of the rectangles (first two numbers). For instance, **800** means 800 on the X axis **out of a possible 800 points. **300 is 300 on the Y axis, or centered i.e. 300 / 600.
+	
+	- The last two numbers are the **height and width** of the rectangle, so make them according to your needs
+	
+	- **Remember to set these with "{isStatic: true}"**, as these borders should not move.
+	
+	- Finally, call **World.add(world, walls)**. The **World.add()** call can take a single object or an array of objects.

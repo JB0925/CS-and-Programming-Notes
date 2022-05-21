@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-20T11:05:35-04:00
+
+====== Input and Change Events ======
+Created Tuesday 20 April 2021
+
+An **input** event allows you to capture data being passed into an input in real time. 
+
+
+**Example:**
+
+We already selected all of our relevant input elements (minus the submit one) **here**:
+
+{{~/Desktop/Screen Shot 2021-04-20 at 11.36.45 AM.png}}
+
+
+Now, we can create **input** event listeners for them. Here, I've created one for each one, and the data gets stored in an object:
+{{~/Desktop/Screen Shot 2021-04-20 at 11.39.14 AM.png}}
+
+
+
+In the console, if you run **formData** after every key press, it will update the **formData** object.
+
+**NOTE: Again, we used "checked" to get the bool from the checked input type.**
+
+
+
+**Example 2:**
+	- getting all of the input elements and looping through them to add event listeners
+	
+	- **NOTE: This was a little wonky because a checkbox uses "checked" instead of "value", and the "veggies" input is not an actual input, so it had to be done separately.**
+	
+	**In the future, an easier way to do it would have been to group all three selected inputs above into a list and loop through them.**
+	
+{{~/Desktop/Screen Shot 2021-04-20 at 12.09.31 PM.png}}
+
+
+
+**Change Events:**
+
+	- **change events follow the same syntax as "input" events. **
+	
+	- The major difference is that while **input** events respond to every keystroke, **change** events respond when an input is clicked **out of focus (clicked off of) OR the ENTER key is pressed.**
+	
+	**Other than that, they behave the same way.**
+	
+	
+
+
+
+

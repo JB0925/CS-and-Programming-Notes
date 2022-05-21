@@ -1,0 +1,42 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-05-15T23:35:22-04:00
+
+====== sort ======
+Created Saturday 15 May 2021
+
+**sort <filename>**
+	- will return output from file sorted alphabetically
+	- **NOTE: **lowercase letters are sorted first
+		- **Example: **if you have **A** and **a**, the sort will return "**a A**"
+
+**sort -r <filename>**
+	- will return same as above, except sorted in reverse alphabetical order
+
+**NUMERICAL SORTS:**
+	**sort -n <filename>**
+		- sorts output of file in numeric order
+	
+	**sort -nr <filename>**
+		- sorts output of file from greatest to least in numeric order
+
+
+**SORT BY FIELD OR COLUMN:**
+	**Example Data:**
+		- chocolate 2.99 4
+		- apricot 3.57 3
+		- potatoes 3.29 1
+		
+	**sort -nk2 <filename>**
+		- sorts file output by field or column, based on the number passed in after the **k** option
+		
+		**The above would be sorted as:**
+			- chocolate 2.99 4
+			- potatoes 3.29 1
+			- apricot 3.57 3
+			
+			**sorted by the second column**
+	
+	**sort -nrk2 <filename>**
+		- same as above, but sorted from greatest to least
+

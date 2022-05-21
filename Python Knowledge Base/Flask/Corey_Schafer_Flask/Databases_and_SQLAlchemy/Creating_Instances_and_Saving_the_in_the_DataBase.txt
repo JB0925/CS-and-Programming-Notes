@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-02T14:56:30-05:00
+
+====== Creating Instances and Saving the in the DataBase ======
+Created Wednesday 02 December 2020
+
+{{.\pasted_image.png}}
+
+above is the User class
+
+
+**Create an instance:**
+	person = User(username='jesse', email='jessebrink@gmail.com', password='somestring')
+		**NOTE: you do NOT need to pass in the image_file since it has a default, and the _id will generate a unique integer every time**
+	
+	person_2 = User(username='ron', email='ron@ron.com', password='idek')
+
+
+**Add the User and Commit the Data to the Database:**
+	db.session.add(person)
+	db.session.add(person_2)
+	db.session.commit()
+	**the above commits all values to the database**
+	
+
+**Query the DataBase:**
+	format= ClassName.query.all()
+		so **User.query.all()**
+			returns [User: Jesse,"jessebrink@gmail.com, default.jpg, User: ron, "ron@ron.com, default.jpg]	
+		**User.query.first()**
+			returns User: Jesse, jessebrink@gmail.com default.jpg			**NOTE: No list**
+			
+		**NOTE: the "__repr__" function defined in the class is responsible for the format of the return value.**
+		
+		
+		**User.query.filter_by(username='Jesse').all()**
+			returns [User: Jesse, jessebrink@gmail.com default.jpg]
+	
+	
+	can capture query in a variable:
+		**user = User.query.filter_by(username='Jesse').all()**
+		
+		**user = User.query.get(1)		#** the "1" is the ID number of the user
+			returns User: Jesse, jessebrink@gmail.com, default.jpg
+			
+		**user.posts**
+			returns [ ] currently, because the user has made no posts
+
+

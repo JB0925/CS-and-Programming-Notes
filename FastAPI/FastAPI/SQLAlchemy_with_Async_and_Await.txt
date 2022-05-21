@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-04-07T23:54:47-04:00
+
+====== SQLAlchemy with Async and Await ======
+Created Wednesday 07 April 2021
+
+**pip3 install sqlalchemy 1.4.6**
+
+
+1). In **db_session.py**, import **from sqlalchemy.ext.asyncio import [[AsyncEngine]]**
+		- create an **async_engine**
+			**_async_engine: Optional[AsyncEngine] = None**
+		
+		- add "**global _async_engine" **to the **global_init()** and **create_session()** functions
+			add the engine to the **global_init()** file 
+				**_async_engine = create_async_engine(conn_string, echo=False)**
+
+
+2). Create a new **create_session()** function called "**create_async_session() -> AsyncSession:"** to replace the standard **create_session()** function
+		- **def create_async_session():**
+			**global _async_engine**
+			
+			**if not _async_engine:**
+				**raise Exception('You must call "global_init()" before using this method)**
+			
+			**session: 'AsyncSession = AysncSession(_async_engine)**
+			**session.sync_session.expire_on_commit = False**
+			
+			**return session**
+			
+

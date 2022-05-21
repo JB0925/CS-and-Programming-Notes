@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-02T21:14:58-05:00
+
+====== difflib.SequenceMatcher ======
+Created Wednesday 02 December 2020
+
+One of the things you can do with difflib.SequenceMatcher is to find similar words within a text. Here I took in a set, turned it into a list, and used a double for loop to use "SequenceMatcher to find words that were >= 95% similar.
+
+**Example:**
+{{.\pasted_image.png}}
+
+**NOTE: "tag ! = tags[i]		**# don't get the same word as a match
+
+
+**Example 2:**
+{{.\pasted_image001.png}}
+
+**NOTE: the use of itertools.product to grab a pair of tags instead of the double for loop.**
+
+**NOTE: the use of the * to call for both items in the pair i.e. args**
+
+**NOTE: the use of the generator**
+
+
+https://docs.python.org/3/library/difflib.html#difflib.SequenceMatcher
+
+https://www.kite.com/python/docs/difflib.SequenceMatcher
